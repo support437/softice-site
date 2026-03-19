@@ -30,6 +30,18 @@ body {
     to { transform: translateY(-10vh); }
 }
 
+/* ✨ FADE-IN ANIMATION */
+.fade {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 1s ease;
+}
+
+.fade.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 /* HERO */
 .hero {
     height: 100vh;
@@ -68,6 +80,7 @@ body {
     color: #e0e0ff;
 }
 
+/* CTA */
 .cta-pill {
     margin-top: 15px;
     background: rgba(255,255,255,0.15);
@@ -86,37 +99,44 @@ body {
     text-decoration: none;
     font-weight: bold;
     cursor: pointer;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    transition: all 0.3s ease;
+    animation: pulse 2s infinite;
 }
 
 .btn:hover {
-    transform: scale(1.05);
-    box-shadow: 0 10px 25px rgba(255, 77, 210, 0.4);
+    transform: scale(1.08);
+    box-shadow: 0 10px 30px rgba(255, 77, 210, 0.6);
+}
+
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(255,77,210,0.6); }
+    70% { box-shadow: 0 0 0 20px rgba(255,77,210,0); }
+    100% { box-shadow: 0 0 0 0 rgba(255,77,210,0); }
 }
 
 /* DISNEY SECTION */
 .disney-section {
     background: white;
     color: #111;
-    padding: 80px 20px;
+    padding: 100px 20px;
     text-align: center;
 }
 
 .disney-title {
-    font-size: 34px;
-    margin-bottom: 40px;
+    font-size: 36px;
+    margin-bottom: 50px;
 }
 
 .disney-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 20px;
+    gap: 25px;
 }
 
 .tile {
     position: relative;
     overflow: hidden;
-    border-radius: 14px;
+    border-radius: 16px;
 }
 
 .tile img {
@@ -128,7 +148,7 @@ body {
 }
 
 .tile:hover img {
-    transform: scale(1.08);
+    transform: scale(1.1);
 }
 
 .tile::after {
@@ -147,11 +167,11 @@ body {
     font-weight: bold;
     color: white;
     z-index: 2;
-    text-shadow: 0 4px 20px rgba(0,0,0,0.7);
 }
 
+/* PARENT */
 .parent-section {
-    margin-top: 60px;
+    margin-top: 70px;
     position: relative;
     border-radius: 16px;
     overflow: hidden;
@@ -175,16 +195,9 @@ body {
     color: white;
 }
 
-.parent-overlay h3 {
-    font-size: 28px;
-}
-
-.parent-overlay p {
-    font-size: 18px;
-}
-
+/* VIDEO */
 .section {
-    padding: 80px 20px;
+    padding: 90px 20px;
     text-align: center;
 }
 
@@ -200,6 +213,7 @@ iframe {
     border-radius: 16px;
 }
 
+/* FORM */
 .form-box {
     display: flex;
     flex-direction: column;
@@ -226,6 +240,7 @@ iframe {
     font-weight: bold;
 }
 
+/* POPUP */
 .popup, .overlay {
     display: none;
     position: fixed;
@@ -262,7 +277,7 @@ for (let i = 0; i < 40; i++) {
 }
 </script>
 
-<section class="hero">
+<section class="hero fade">
     <div class="hero-content">
         <h1>Magical Bedtime Moments 🌙</h1>
         <p>Stories that help your child fall asleep peacefully</p>
@@ -275,34 +290,33 @@ for (let i = 0; i < 40; i++) {
 
         <a href="https://play.google.com/store/apps/details?id=com.softiceinnovationslabs.bedtimestorybooks"
            class="btn"
-           target="_blank"
-           rel="noopener noreferrer">
+           target="_blank">
            ▶ Get it on Google Play
         </a>
     </div>
 </section>
 
 <section class="disney-section">
-    <h2 class="disney-title">Simple. Calm. Effective.</h2>
+    <h2 class="disney-title fade">Simple. Calm. Effective.</h2>
 
     <div class="disney-grid">
-        <div class="tile">
+        <div class="tile fade">
             <img src="choose.png">
             <div class="overlay-text">Choose</div>
         </div>
 
-        <div class="tile">
+        <div class="tile fade">
             <img src="listen.png">
             <div class="overlay-text">Listen</div>
         </div>
 
-        <div class="tile">
+        <div class="tile fade">
             <img src="sleep.png">
             <div class="overlay-text">Sleep</div>
         </div>
     </div>
 
-    <div class="parent-section">
+    <div class="parent-section fade">
         <img src="parents-park.png">
         <div class="parent-overlay">
             <h3>Made for Parents</h3>
@@ -311,14 +325,14 @@ for (let i = 0; i < 40; i++) {
     </div>
 </section>
 
-<section class="section">
+<section class="section fade">
     <h2>See It In Action</h2>
     <div class="video-container">
         <iframe src="https://www.youtube.com/embed/DR9JqKL95LE"></iframe>
     </div>
 </section>
 
-<section class="section">
+<section class="section fade">
     <h2>Stay Connected ✨</h2>
 
     <form action="https://formspree.io/f/mzdjogng" method="POST" class="form-box" id="form">
@@ -336,6 +350,18 @@ for (let i = 0; i < 40; i++) {
 </div>
 
 <script>
+// fade-in on scroll
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add("show");
+        }
+    });
+});
+
+document.querySelectorAll(".fade").forEach(el => observer.observe(el));
+
+// form
 const form = document.getElementById('form');
 
 form.addEventListener("submit", async function(event) {
