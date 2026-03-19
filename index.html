@@ -34,7 +34,7 @@ p {
     color: #d0d0ff;
 }
 
-/* CTA TAG */
+/* CTA */
 .cta {
     margin-top: 10px;
     font-size: 16px;
@@ -90,14 +90,82 @@ p {
     justify-content: center;
 }
 
-/* IFRAME */
+/* FORM */
+.form-box {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-items: center;
+}
+
+.form-box input,
+.form-box textarea {
+    width: 90%;
+    max-width: 400px;
+    padding: 12px;
+    border-radius: 10px;
+    border: none;
+    font-size: 16px;
+}
+
+.form-box textarea {
+    min-height: 80px;
+    resize: none;
+}
+
+.form-box button {
+    padding: 14px 24px;
+    background: #00c2ff;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* SUCCESS POPUP */
+.popup {
+    display: none;
+    position: fixed;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #1a1a40;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    z-index: 1000;
+}
+
+.popup button {
+    margin-top: 15px;
+    padding: 10px 20px;
+    border: none;
+    background: #ff4dd2;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.overlay {
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.6);
+    top: 0;
+    left: 0;
+    z-index: 999;
+}
+
 iframe {
     width: 100%;
     height: 315px;
     border-radius: 12px;
 }
 
-/* FOOTER */
 footer {
     margin-top: 60px;
     padding: 20px;
@@ -106,7 +174,6 @@ footer {
 }
 
 a { color: #9b7bff; }
-
 </style>
 </head>
 
@@ -114,7 +181,6 @@ a { color: #9b7bff; }
 
 <div class="container">
 
-    <!-- LOGO -->
     <img src="logo.webp" alt="Bedtime Stories for Kids" class="logo">
 
     <p>Magical stories for kids. Calm, fun, and safe. 🌙✨</p>
@@ -129,21 +195,17 @@ a { color: #9b7bff; }
         ▶ Download on Google Play
     </a>
 
-    <!-- 🎥 YOUTUBE -->
+    <!-- VIDEO -->
     <div class="section">
         <h2>🎬 Watch the App</h2>
         <div class="video-container">
-            <iframe src="https://www.youtube.com/embed/DR9JqKL95LE"
-                frameborder="0"
-                allowfullscreen>
-            </iframe>
+            <iframe src="https://www.youtube.com/embed/DR9JqKL95LE" allowfullscreen></iframe>
         </div>
     </div>
 
-    <!-- 🎵 TIKTOK -->
+    <!-- TIKTOK -->
     <div class="section">
         <h2>🔥 TikTok Preview</h2>
-
         <div class="tiktok-container">
             <blockquote class="tiktok-embed"
                 cite="https://www.tiktok.com/@bedtimestoriescozytales/video/7616349018985205005"
@@ -156,28 +218,42 @@ a { color: #9b7bff; }
     <!-- FEATURES -->
     <div class="section">
         <h2>✨ Why Parents Love It</h2>
-
         <div class="features">
             <div class="feature-box">
                 <h3>💰 No Subscription</h3>
                 <p>Only $1.99 per book. Pay once, own forever.</p>
             </div>
-
             <div class="feature-box">
                 <h3>📖 Read Aloud</h3>
                 <p>Stories are narrated for your child.</p>
             </div>
-
             <div class="feature-box">
                 <h3>🎨 Beautiful Stories</h3>
                 <p>Colorful illustrations and lovable characters.</p>
             </div>
-
             <div class="feature-box">
                 <h3>👶 Kid Friendly</h3>
                 <p>Safe, simple, and designed for young children.</p>
             </div>
         </div>
+    </div>
+
+    <!-- EMAIL CAPTURE -->
+    <div class="section">
+        <h2>💌 Stay Updated</h2>
+        <p>Get new stories, features, and free books!</p>
+
+        <form action="https://formspree.io/f/mzdjogng" method="POST" class="form-box" id="form">
+
+            <input type="hidden" name="_subject" value="New App Signup">
+
+            <input type="email" name="email" placeholder="Enter your email" required>
+
+            <textarea name="message" placeholder="Any feedback? (optional)"></textarea>
+
+            <button type="submit">✨ Notify Me</button>
+
+        </form>
     </div>
 
     <!-- CONTACT -->
@@ -190,9 +266,7 @@ a { color: #9b7bff; }
     <div class="section">
         <h2>🔒 Privacy</h2>
         <p>
-            <a href="https://softice-privacy.pages.dev/">
-                View Privacy Policy
-            </a>
+            <a href="https://softice-privacy.pages.dev/">View Privacy Policy</a>
         </p>
     </div>
 
@@ -202,8 +276,42 @@ a { color: #9b7bff; }
     © 2026 Softice Innovations Labs LLC
 </footer>
 
-<!-- TikTok Script -->
+<!-- POPUP -->
+<div class="overlay" id="overlay"></div>
+<div class="popup" id="popup">
+    <h3>🎉 Thank You!</h3>
+    <p>You’re now on the list!</p>
+    <button onclick="closePopup()">Close</button>
+</div>
+
+<!-- SCRIPTS -->
 <script async src="https://www.tiktok.com/embed.js"></script>
+
+<script>
+const form = document.getElementById('form');
+
+form.addEventListener("submit", async function(event) {
+    event.preventDefault();
+
+    const data = new FormData(form);
+
+    await fetch(form.action, {
+        method: form.method,
+        body: data,
+        headers: { 'Accept': 'application/json' }
+    });
+
+    document.getElementById('popup').style.display = 'block';
+    document.getElementById('overlay').style.display = 'block';
+
+    form.reset();
+});
+
+function closePopup() {
+    document.getElementById('popup').style.display = 'none';
+    document.getElementById('overlay').style.display = 'none';
+}
+</script>
 
 </body>
 </html>
