@@ -18,7 +18,15 @@ body {
     padding: 40px 20px;
 }
 
-h1 { font-size: 36px; }
+/* LOGO */
+.logo {
+    width: 90%;
+    max-width: 420px;
+    margin-bottom: 15px;
+    filter: drop-shadow(0px 10px 25px rgba(0,0,0,0.6));
+}
+
+/* TEXT */
 h2 { margin-top: 40px; }
 
 p {
@@ -26,21 +34,35 @@ p {
     color: #d0d0ff;
 }
 
+/* CTA TAG */
+.cta {
+    margin-top: 10px;
+    font-size: 16px;
+    background: rgba(255,255,255,0.1);
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 20px;
+}
+
+/* BUTTON */
 .btn {
     display: inline-block;
     margin-top: 20px;
     padding: 15px 25px;
-    background: #6a0dad;
+    background: #ff4dd2;
     color: white;
     text-decoration: none;
-    border-radius: 8px;
+    border-radius: 10px;
     font-size: 18px;
+    font-weight: bold;
 }
 
+/* SECTIONS */
 .section {
     margin-top: 60px;
 }
 
+/* FEATURES */
 .features {
     display: flex;
     flex-wrap: wrap;
@@ -49,9 +71,9 @@ p {
 }
 
 .feature-box {
-    background: rgba(255,255,255,0.05);
+    background: rgba(255,255,255,0.06);
     padding: 20px;
-    border-radius: 12px;
+    border-radius: 14px;
     width: 260px;
 }
 
@@ -68,18 +90,23 @@ p {
     justify-content: center;
 }
 
+/* IFRAME */
 iframe {
     width: 100%;
     height: 315px;
     border-radius: 12px;
 }
 
+/* FOOTER */
 footer {
     margin-top: 60px;
     padding: 20px;
     font-size: 14px;
     color: #aaa;
 }
+
+a { color: #9b7bff; }
+
 </style>
 </head>
 
@@ -87,8 +114,16 @@ footer {
 
 <div class="container">
 
-    <h1>📚 Bedtime Stories for Kids </h1>
-    <p>Magical stories for kids. Calm, fun, and safe.</p>
+    <!-- LOGO -->
+    <img src="logo.webp" alt="Bedtime Stories for Kids" class="logo">
+
+    <p>Magical stories for kids. Calm, fun, and safe. 🌙✨</p>
+
+    <div class="cta">
+        🎁 2 FREE BOOKS • 🚫 NO SUBSCRIPTION
+    </div>
+
+    <br>
 
     <a href="https://play.google.com/store/apps/details?id=com.softiceinnovationslabs.bedtimestorybooks" class="btn">
         ▶ Download on Google Play
@@ -155,7 +190,7 @@ footer {
     <div class="section">
         <h2>🔒 Privacy</h2>
         <p>
-            <a href="https://softice-privacy.pages.dev/" style="color:#9b7bff;">
+            <a href="https://softice-privacy.pages.dev/">
                 View Privacy Policy
             </a>
         </p>
