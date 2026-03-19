@@ -40,7 +40,6 @@ body {
     position: relative;
 }
 
-/* ✅ FIXED HERO OVERLAY (lighter, no grey wash) */
 .hero::after {
     content: "";
     position: absolute;
@@ -56,18 +55,20 @@ body {
     position: relative;
     z-index: 2;
     text-align: center;
-    text-shadow: 0 6px 30px rgba(0,0,0,0.6); /* ✨ glow instead of dark overlay */
+    text-shadow: 0 6px 30px rgba(0,0,0,0.6);
 }
 
 .hero h1 {
     font-size: 42px;
+    font-weight: 700;
 }
 
 .hero p {
     font-size: 20px;
-    color: #d0d0ff;
+    color: #e0e0ff;
 }
 
+/* CTA PILL */
 .cta-pill {
     margin-top: 15px;
     background: rgba(255,255,255,0.15);
@@ -76,6 +77,7 @@ body {
     display: inline-block;
 }
 
+/* BUTTON */
 .btn {
     display: inline-block;
     margin-top: 25px;
@@ -85,6 +87,13 @@ body {
     border-radius: 40px;
     text-decoration: none;
     font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 25px rgba(255, 77, 210, 0.4);
 }
 
 /* DISNEY SECTION */
@@ -114,7 +123,6 @@ body {
     border-radius: 14px;
 }
 
-/* IMAGE FIX */
 .tile img {
     width: 100%;
     height: 360px;
@@ -274,7 +282,12 @@ for (let i = 0; i < 40; i++) {
 
         <br>
 
-        <a href="#" class="btn">▶ Download on Google Play</a>
+        <a href="https://play.google.com/store/apps/details?id=com.softiceinnovationslabs.bedtimestorybooks"
+           class="btn"
+           target="_blank"
+           rel="noopener noreferrer">
+           ▶ Get it on Google Play
+        </a>
     </div>
 </section>
 
