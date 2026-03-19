@@ -30,13 +30,12 @@ body {
     to { transform: translateY(-10vh); }
 }
 
-/* ✨ FADE-IN ANIMATION */
+/* FADE ANIMATION */
 .fade {
     opacity: 0;
     transform: translateY(40px);
     transition: all 1s ease;
 }
-
 .fade.show {
     opacity: 1;
     transform: translateY(0);
@@ -56,28 +55,22 @@ body {
     content: "";
     position: absolute;
     inset: 0;
-    background: linear-gradient(
-        to bottom,
-        rgba(0,0,0,0.15),
-        rgba(0,0,0,0.35)
-    );
+    background: linear-gradient(to bottom, rgba(0,0,0,0.15), rgba(0,0,0,0.35));
 }
 
 .hero-content {
     position: relative;
     z-index: 2;
     text-align: center;
-    text-shadow: 0 6px 30px rgba(0,0,0,0.6);
 }
 
 .hero h1 {
     font-size: 42px;
-    font-weight: 700;
 }
 
 .hero p {
     font-size: 20px;
-    color: #e0e0ff;
+    color: #ddd;
 }
 
 /* CTA */
@@ -98,14 +91,7 @@ body {
     border-radius: 40px;
     text-decoration: none;
     font-weight: bold;
-    cursor: pointer;
-    transition: all 0.3s ease;
     animation: pulse 2s infinite;
-}
-
-.btn:hover {
-    transform: scale(1.08);
-    box-shadow: 0 10px 30px rgba(255, 77, 210, 0.6);
 }
 
 @keyframes pulse {
@@ -114,7 +100,7 @@ body {
     100% { box-shadow: 0 0 0 0 rgba(255,77,210,0); }
 }
 
-/* DISNEY SECTION */
+/* SECTION */
 .disney-section {
     background: white;
     color: #111;
@@ -122,15 +108,10 @@ body {
     text-align: center;
 }
 
-.disney-title {
-    font-size: 36px;
-    margin-bottom: 50px;
-}
-
 .disney-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 25px;
+    gap: 20px;
 }
 
 .tile {
@@ -143,7 +124,6 @@ body {
     width: 100%;
     height: 360px;
     object-fit: cover;
-    object-position: center 20%;
     transition: transform 0.5s ease;
 }
 
@@ -165,52 +145,34 @@ body {
     transform: translate(-50%, -50%);
     font-size: 30px;
     font-weight: bold;
-    color: white;
-    z-index: 2;
 }
 
 /* PARENT */
 .parent-section {
-    margin-top: 70px;
+    margin-top: 60px;
     position: relative;
-    border-radius: 16px;
-    overflow: hidden;
 }
 
 .parent-section img {
     width: 100%;
     height: 420px;
     object-fit: cover;
-    object-position: center 20%;
 }
 
 .parent-overlay {
     position: absolute;
     inset: 0;
-    background: rgba(0,0,0,0.45);
+    background: rgba(0,0,0,0.4);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    color: white;
 }
 
 /* VIDEO */
 .section {
-    padding: 90px 20px;
+    padding: 80px 20px;
     text-align: center;
-}
-
-.video-container {
-    width: 90%;
-    max-width: 700px;
-    margin: auto;
-}
-
-iframe {
-    width: 100%;
-    height: 350px;
-    border-radius: 16px;
 }
 
 /* FORM */
@@ -219,7 +181,6 @@ iframe {
     flex-direction: column;
     gap: 14px;
     align-items: center;
-    margin-top: 30px;
 }
 
 .form-box input,
@@ -237,30 +198,33 @@ iframe {
     color: white;
     border-radius: 30px;
     border: none;
-    font-weight: bold;
 }
 
-/* POPUP */
-.popup, .overlay {
-    display: none;
-    position: fixed;
+/* FOOTER */
+.footer {
+    background: #0b0b1f;
+    padding: 60px 20px 40px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    text-align: center;
 }
 
-.popup {
-    top: 30%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: #1a1a40;
-    padding: 25px;
-    border-radius: 12px;
-    z-index: 1000;
+.footer h3 {
+    margin-bottom: 10px;
 }
 
-.overlay {
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.6);
-    z-index: 999;
+.footer p {
+    color: #ccc;
+}
+
+.footer a {
+    color: #7aa7ff;
+    text-decoration: none;
+}
+
+.footer-copy {
+    margin-top: 30px;
+    color: #aaa;
+    font-size: 14px;
 }
 </style>
 </head>
@@ -282,22 +246,17 @@ for (let i = 0; i < 40; i++) {
         <h1>Magical Bedtime Moments 🌙</h1>
         <p>Stories that help your child fall asleep peacefully</p>
 
-        <div class="cta-pill">
-            🎁 2 FREE BOOKS • 🚫 NO SUBSCRIPTION
-        </div>
-
-        <br>
+        <div class="cta-pill">🎁 2 FREE BOOKS • 🚫 NO SUBSCRIPTION</div>
 
         <a href="https://play.google.com/store/apps/details?id=com.softiceinnovationslabs.bedtimestorybooks"
-           class="btn"
-           target="_blank">
+           class="btn" target="_blank">
            ▶ Get it on Google Play
         </a>
     </div>
 </section>
 
 <section class="disney-section">
-    <h2 class="disney-title fade">Simple. Calm. Effective.</h2>
+    <h2 class="fade">Simple. Calm. Effective.</h2>
 
     <div class="disney-grid">
         <div class="tile fade">
@@ -327,9 +286,7 @@ for (let i = 0; i < 40; i++) {
 
 <section class="section fade">
     <h2>See It In Action</h2>
-    <div class="video-container">
-        <iframe src="https://www.youtube.com/embed/DR9JqKL95LE"></iframe>
-    </div>
+    <iframe width="90%" height="350" src="https://www.youtube.com/embed/DR9JqKL95LE"></iframe>
 </section>
 
 <section class="section fade">
@@ -337,20 +294,25 @@ for (let i = 0; i < 40; i++) {
 
     <form action="https://formspree.io/f/mzdjogng" method="POST" class="form-box" id="form">
         <input type="email" name="email" placeholder="Enter your email" required>
-        <textarea name="message" placeholder="Tell us what your child loves (optional)"></textarea>
+        <textarea name="message" placeholder="Tell us what your child loves"></textarea>
         <button type="submit">✨ Notify Me</button>
     </form>
 </section>
 
-<div class="overlay" id="overlay"></div>
-<div class="popup" id="popup">
-    <h3>🎉 Check your email!</h3>
-    <p>Your free story is on the way ✨</p>
-    <button onclick="closePopup()">Close</button>
-</div>
+<footer class="footer">
+    <h3>📩 Contact</h3>
+    <p>support@softiceinnovationslabs.com</p>
+
+    <h3>🔒 Privacy</h3>
+    <a href="https://softice-privacy.pages.dev/" target="_blank">View Privacy Policy</a>
+
+    <div class="footer-copy">
+        © 2026 Softice Innovations Labs LLC
+    </div>
+</footer>
 
 <script>
-// fade-in on scroll
+// fade animation
 const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -358,32 +320,17 @@ const observer = new IntersectionObserver(entries => {
         }
     });
 });
-
 document.querySelectorAll(".fade").forEach(el => observer.observe(el));
 
-// form
+// form popup
 const form = document.getElementById('form');
-
-form.addEventListener("submit", async function(event) {
-    event.preventDefault();
-
+form.addEventListener("submit", async function(e) {
+    e.preventDefault();
     const data = new FormData(form);
-
-    await fetch(form.action, {
-        method: "POST",
-        body: data,
-        headers: { 'Accept': 'application/json' }
-    });
-
-    document.getElementById('popup').style.display = 'block';
-    document.getElementById('overlay').style.display = 'block';
+    await fetch(form.action, { method: "POST", body: data });
+    alert("Check your email ✨");
     form.reset();
 });
-
-function closePopup() {
-    document.getElementById('popup').style.display = 'none';
-    document.getElementById('overlay').style.display = 'none';
-}
 </script>
 
 </body>
