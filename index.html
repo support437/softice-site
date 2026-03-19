@@ -12,10 +12,30 @@ body {
     background: linear-gradient(to bottom, #0b0b1f, #1a1a40);
     color: white;
     text-align: center;
+    overflow-x: hidden;
 }
 
+/* ⭐ FLOATING STARS */
+.star {
+    position: fixed;
+    width: 6px;
+    height: 6px;
+    background: white;
+    border-radius: 50%;
+    opacity: 0.8;
+    animation: floatUp linear infinite;
+}
+
+@keyframes floatUp {
+    from { transform: translateY(100vh); }
+    to { transform: translateY(-10vh); }
+}
+
+/* CONTAINER */
 .container {
     padding: 40px 20px;
+    position: relative;
+    z-index: 2;
 }
 
 /* LOGO */
@@ -77,19 +97,6 @@ p {
     width: 260px;
 }
 
-/* VIDEO */
-.video-container {
-    width: 90%;
-    max-width: 600px;
-    margin: auto;
-}
-
-/* TIKTOK */
-.tiktok-container {
-    display: flex;
-    justify-content: center;
-}
-
 /* FORM */
 .form-box {
     margin-top: 20px;
@@ -109,11 +116,6 @@ p {
     font-size: 16px;
 }
 
-.form-box textarea {
-    min-height: 80px;
-    resize: none;
-}
-
 .form-box button {
     padding: 14px 24px;
     background: #00c2ff;
@@ -125,39 +127,11 @@ p {
     cursor: pointer;
 }
 
-/* SUCCESS POPUP */
-.popup {
-    display: none;
-    position: fixed;
-    top: 30%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: #1a1a40;
-    padding: 25px;
-    border-radius: 12px;
-    box-shadow: 0 0 20px rgba(0,0,0,0.5);
-    z-index: 1000;
-}
-
-.popup button {
-    margin-top: 15px;
-    padding: 10px 20px;
-    border: none;
-    background: #ff4dd2;
-    color: white;
-    border-radius: 8px;
-    cursor: pointer;
-}
-
-.overlay {
-    display: none;
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.6);
-    top: 0;
-    left: 0;
-    z-index: 999;
+/* VIDEO */
+.video-container {
+    width: 90%;
+    max-width: 600px;
+    margin: auto;
 }
 
 iframe {
@@ -166,30 +140,61 @@ iframe {
     border-radius: 12px;
 }
 
+/* POPUP */
+.popup, .overlay {
+    display: none;
+    position: fixed;
+}
+
+.popup {
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #1a1a40;
+    padding: 25px;
+    border-radius: 12px;
+    z-index: 1000;
+}
+
+.overlay {
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.6);
+    z-index: 999;
+}
+
+/* FOOTER */
 footer {
     margin-top: 60px;
     padding: 20px;
     font-size: 14px;
     color: #aaa;
 }
-
-a { color: #9b7bff; }
 </style>
 </head>
 
 <body>
 
+<!-- ⭐ STARS -->
+<script>
+for (let i = 0; i < 40; i++) {
+    const star = document.createElement("div");
+    star.className = "star";
+    star.style.left = Math.random() * 100 + "vw";
+    star.style.animationDuration = (5 + Math.random() * 10) + "s";
+    document.body.appendChild(star);
+}
+</script>
+
 <div class="container">
 
-    <img src="logo.webp" alt="Bedtime Stories for Kids" class="logo">
+    <img src="logo.webp" class="logo">
 
-    <p>Magical stories for kids. Calm, fun, and safe. 🌙✨</p>
+    <p>Magical bedtime stories for kids 🌙✨</p>
 
     <div class="cta">
         🎁 2 FREE BOOKS • 🚫 NO SUBSCRIPTION
     </div>
-
-    <br>
 
     <a href="https://play.google.com/store/apps/details?id=com.softiceinnovationslabs.bedtimestorybooks" class="btn">
         ▶ Download on Google Play
@@ -199,19 +204,7 @@ a { color: #9b7bff; }
     <div class="section">
         <h2>🎬 Watch the App</h2>
         <div class="video-container">
-            <iframe src="https://www.youtube.com/embed/DR9JqKL95LE" allowfullscreen></iframe>
-        </div>
-    </div>
-
-    <!-- TIKTOK -->
-    <div class="section">
-        <h2>🔥 TikTok Preview</h2>
-        <div class="tiktok-container">
-            <blockquote class="tiktok-embed"
-                cite="https://www.tiktok.com/@bedtimestoriescozytales/video/7616349018985205005"
-                data-video-id="7616349018985205005"
-                style="max-width: 325px;">
-            </blockquote>
+            <iframe src="https://www.youtube.com/embed/DR9JqKL95LE"></iframe>
         </div>
     </div>
 
@@ -219,73 +212,33 @@ a { color: #9b7bff; }
     <div class="section">
         <h2>✨ Why Parents Love It</h2>
         <div class="features">
-            <div class="feature-box">
-                <h3>💰 No Subscription</h3>
-                <p>Only $1.99 per book. Pay once, own forever.</p>
-            </div>
-            <div class="feature-box">
-                <h3>📖 Read Aloud</h3>
-                <p>Stories are narrated for your child.</p>
-            </div>
-            <div class="feature-box">
-                <h3>🎨 Beautiful Stories</h3>
-                <p>Colorful illustrations and lovable characters.</p>
-            </div>
-            <div class="feature-box">
-                <h3>👶 Kid Friendly</h3>
-                <p>Safe, simple, and designed for young children.</p>
-            </div>
+            <div class="feature-box">💰 No Subscription</div>
+            <div class="feature-box">📖 Read Aloud</div>
+            <div class="feature-box">🎨 Beautiful Stories</div>
+            <div class="feature-box">👶 Kid Friendly</div>
         </div>
     </div>
 
-    <!-- EMAIL CAPTURE -->
+    <!-- 🚀 LEAD MAGNET -->
     <div class="section">
-        <h2>💌 Stay Updated</h2>
-        <p>Get new stories, features, and free books!</p>
+        <h2>🎁 Get a FREE Story!</h2>
+        <p>Sign up and receive a free bedtime story download!</p>
 
         <form action="https://formspree.io/f/mzdjogng" method="POST" class="form-box" id="form">
-
-            <input type="hidden" name="_subject" value="New App Signup">
-
             <input type="email" name="email" placeholder="Enter your email" required>
-
-            <textarea name="message" placeholder="Any feedback? (optional)"></textarea>
-
-            <button type="submit">✨ Notify Me</button>
-
+            <button type="submit">✨ Get Free Story</button>
         </form>
     </div>
 
-    <!-- CONTACT -->
-    <div class="section">
-        <h2>📩 Contact</h2>
-        <p>support@softiceinnovationslabs.com</p>
-    </div>
-
-    <!-- PRIVACY -->
-    <div class="section">
-        <h2>🔒 Privacy</h2>
-        <p>
-            <a href="https://softice-privacy.pages.dev/">View Privacy Policy</a>
-        </p>
-    </div>
-
 </div>
-
-<footer>
-    © 2026 Softice Innovations Labs LLC
-</footer>
 
 <!-- POPUP -->
 <div class="overlay" id="overlay"></div>
 <div class="popup" id="popup">
-    <h3>🎉 Thank You!</h3>
-    <p>You’re now on the list!</p>
+    <h3>🎉 Check your email!</h3>
+    <p>Your free story is on the way ✨</p>
     <button onclick="closePopup()">Close</button>
 </div>
-
-<!-- SCRIPTS -->
-<script async src="https://www.tiktok.com/embed.js"></script>
 
 <script>
 const form = document.getElementById('form');
@@ -296,14 +249,13 @@ form.addEventListener("submit", async function(event) {
     const data = new FormData(form);
 
     await fetch(form.action, {
-        method: form.method,
+        method: "POST",
         body: data,
         headers: { 'Accept': 'application/json' }
     });
 
     document.getElementById('popup').style.display = 'block';
     document.getElementById('overlay').style.display = 'block';
-
     form.reset();
 });
 
