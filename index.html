@@ -8,14 +8,13 @@
 <style>
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
-    background: linear-gradient(to bottom, #0b0b1f, #1a1a40);
+    font-family: 'Segoe UI', sans-serif;
+    background: #0b0b1f;
     color: white;
-    text-align: center;
     overflow-x: hidden;
 }
 
-/* ⭐ FLOATING STARS */
+/* ⭐ STARS */
 .star {
     position: fixed;
     width: 6px;
@@ -31,111 +30,136 @@ body {
     to { transform: translateY(-10vh); }
 }
 
-/* CONTAINER */
-.container {
-    padding: 40px 20px;
+/* HERO */
+.hero {
+    height: 100vh;
+    background: url('family-hero.png') center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(11,11,31,0.6), rgba(11,11,31,0.9));
+}
+
+.hero-content {
     position: relative;
     z-index: 2;
+    text-align: center;
+    padding: 20px;
 }
 
-/* LOGO */
-.logo {
-    width: 90%;
-    max-width: 420px;
-    margin-bottom: 15px;
-    filter: drop-shadow(0px 10px 25px rgba(0,0,0,0.6));
+.hero h1 {
+    font-size: 42px;
+    margin-bottom: 10px;
 }
 
-/* TEXT */
-h2 { margin-top: 40px; }
-
-p {
-    font-size: 18px;
+.hero p {
+    font-size: 20px;
     color: #d0d0ff;
 }
 
 /* CTA */
-.cta {
-    margin-top: 10px;
-    font-size: 16px;
-    background: rgba(255,255,255,0.1);
+.cta-pill {
+    margin-top: 15px;
+    background: rgba(255,255,255,0.15);
     display: inline-block;
-    padding: 10px 20px;
-    border-radius: 20px;
+    padding: 12px 22px;
+    border-radius: 30px;
 }
 
-/* BUTTON */
 .btn {
     display: inline-block;
-    margin-top: 20px;
-    padding: 16px 28px;
+    margin-top: 25px;
+    padding: 16px 32px;
     background: linear-gradient(135deg, #ff4dd2, #ff88e6);
     color: white;
-    text-decoration: none;
-    border-radius: 30px;
-    font-size: 18px;
+    border-radius: 40px;
     font-weight: bold;
-    box-shadow: 0 8px 20px rgba(255,77,210,0.4);
+    text-decoration: none;
+    box-shadow: 0 10px 30px rgba(255,77,210,0.4);
 }
 
-/* SECTIONS */
+/* SECTION */
 .section {
-    margin-top: 60px;
+    padding: 80px 20px;
+    text-align: center;
 }
 
-/* 🌟 WHITE DISNEY SECTIONS */
-.white-section {
-    background: #ffffff;
+.section.white {
+    background: white;
     color: #111;
-    padding: 70px 20px;
 }
 
-.white-section p {
+.section.white p {
     color: #444;
 }
 
-.white-section h2 {
-    color: #111;
+.section h2 {
+    font-size: 34px;
+    margin-bottom: 20px;
 }
 
-/* FEATURES */
-.features {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-}
-
-.feature-box {
-    background: #f5f5f5;
-    padding: 20px;
-    border-radius: 20px;
-    width: 260px;
-    color: #111;
-    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+.section p {
+    font-size: 18px;
+    max-width: 700px;
+    margin: auto;
 }
 
 /* IMAGE */
 .section img {
     width: 100%;
-    max-width: 500px;
+    max-width: 520px;
     border-radius: 20px;
-    margin-top: 20px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    margin-top: 30px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+}
+
+/* VIDEO */
+.video-container {
+    width: 90%;
+    max-width: 700px;
+    margin: auto;
+}
+
+iframe {
+    width: 100%;
+    height: 350px;
+    border-radius: 16px;
+}
+
+/* HOW IT WORKS */
+.steps {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 40px;
+}
+
+.step {
+    max-width: 220px;
 }
 
 /* FORM */
 .form-box {
-    margin-top: 20px;
+    margin-top: 30px;
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 14px;
     align-items: center;
 }
 
-.form-box input {
+.form-box input,
+.form-box textarea {
     width: 90%;
-    max-width: 400px;
+    max-width: 420px;
     padding: 14px;
     border-radius: 12px;
     border: none;
@@ -143,28 +167,14 @@ p {
 }
 
 .form-box button {
-    padding: 14px 24px;
+    padding: 14px 28px;
     background: #00c2ff;
     color: white;
     border: none;
     border-radius: 30px;
-    font-size: 16px;
     font-weight: bold;
     cursor: pointer;
     box-shadow: 0 8px 20px rgba(0,194,255,0.4);
-}
-
-/* VIDEO */
-.video-container {
-    width: 90%;
-    max-width: 600px;
-    margin: auto;
-}
-
-iframe {
-    width: 100%;
-    height: 315px;
-    border-radius: 16px;
 }
 
 /* POPUP */
@@ -192,8 +202,7 @@ iframe {
 
 /* FOOTER */
 footer {
-    margin-top: 60px;
-    padding: 20px;
+    padding: 30px;
     font-size: 14px;
     color: #aaa;
 }
@@ -213,89 +222,96 @@ for (let i = 0; i < 40; i++) {
 }
 </script>
 
-<div class="container">
+<!-- HERO -->
+<section class="hero">
+    <div class="hero-content">
+        <h1>Magical Bedtime Moments 🌙</h1>
+        <p>Stories that help your child fall asleep peacefully</p>
 
-    <!-- HERO -->
-    <img src="logo.webp" class="logo">
+        <div class="cta-pill">
+            🎁 2 FREE BOOKS • 🚫 NO SUBSCRIPTION
+        </div>
 
-    <p>Magical bedtime stories for kids 🌙✨</p>
+        <br>
 
-    <div class="cta">
-        🎁 2 FREE BOOKS • 🚫 NO SUBSCRIPTION
+        <a href="https://play.google.com/store/apps/details?id=com.softiceinnovationslabs.bedtimestorybooks" class="btn">
+            ▶ Download on Google Play
+        </a>
     </div>
+</section>
 
-    <a href="https://play.google.com/store/apps/details?id=com.softiceinnovationslabs.bedtimestorybooks" class="btn">
-        ▶ Download on Google Play
-    </a>
-
-</div>
-
-<!-- ❤️ EMOTIONAL SECTION -->
-<section class="white-section">
+<!-- ❤️ EMOTIONAL -->
+<section class="section white">
     <h2>Turn Bedtime Into a Magical Moment</h2>
-
     <p>
-        No more bedtime stress. Just calm, cozy stories that bring you and your child closer.
+        Calm nights. Cozy stories. A peaceful child drifting into sleep.
     </p>
-
-    <img src="family-bedtime.jpg" alt="Parent reading to child">
-
-    <p>
-        Let your child drift into sleep while a gentle voice tells a beautiful story.
-    </p>
+    <img src="family-hero.png">
 </section>
 
 <!-- 🎬 VIDEO -->
-<div class="section">
-    <h2>🎬 Watch the App</h2>
+<section class="section">
+    <h2>See It In Action</h2>
     <div class="video-container">
         <iframe src="https://www.youtube.com/embed/DR9JqKL95LE"></iframe>
     </div>
-</div>
+</section>
 
 <!-- 📖 HOW IT WORKS -->
-<section class="white-section">
-    <h2>How It Works</h2>
+<section class="section white">
+    <h2>Simple. Calm. Effective.</h2>
 
-    <div class="features">
-        <div class="feature-box">📚 Choose a Story</div>
-        <div class="feature-box">🎧 Tap & Play</div>
-        <div class="feature-box">😴 Fall Asleep</div>
+    <div class="steps">
+        <div class="step">
+            <h3>📚 Choose</h3>
+            <p>Select a bedtime story</p>
+        </div>
+
+        <div class="step">
+            <h3>🎧 Listen</h3>
+            <p>Relax with soothing narration</p>
+        </div>
+
+        <div class="step">
+            <h3>😴 Sleep</h3>
+            <p>Your child drifts off peacefully</p>
+        </div>
     </div>
 </section>
 
-<!-- ✨ FEATURES -->
-<section class="white-section">
-    <h2>Why Parents Love It</h2>
-
-    <div class="features">
-        <div class="feature-box">💰 No Subscription</div>
-        <div class="feature-box">🎙️ Read Aloud</div>
-        <div class="feature-box">🎨 Beautiful Stories</div>
-        <div class="feature-box">👶 Kid Friendly</div>
-    </div>
+<!-- ✨ VALUE -->
+<section class="section white">
+    <h2>Made for Parents</h2>
+    <p>
+        No subscriptions. No stress. Just magical stories your child will love.
+    </p>
 </section>
 
-<!-- 🚀 FORM -->
-<section class="white-section">
-    <h2>🎁 Get a FREE Story!</h2>
+<!-- 📩 EMAIL + FEEDBACK -->
+<section class="section">
+    <h2>Stay Connected to the Magic ✨</h2>
 
-    <p>Sign up and receive a free bedtime story download!</p>
+    <p>Get new stories, free books, and updates.</p>
 
     <form action="https://formspree.io/f/mzdjogng" method="POST" class="form-box" id="form">
         <input type="email" name="email" placeholder="Enter your email" required>
-        <button type="submit">✨ Get Free Story</button>
+        <textarea name="message" placeholder="Tell us what your child loves (optional)"></textarea>
+        <button type="submit">✨ Notify Me</button>
     </form>
 </section>
 
 <!-- CTA FINAL -->
-<div class="section">
-    <h2>Start Your Child’s Bedtime Journey Tonight 🌙</h2>
-
+<section class="section">
+    <h2>Start Tonight 🌙</h2>
     <a href="https://play.google.com/store/apps/details?id=com.softiceinnovationslabs.bedtimestorybooks" class="btn">
         📲 Download Now
     </a>
-</div>
+</section>
+
+<footer>
+    support@softiceinnovationslabs.com <br><br>
+    <a href="https://softice-privacy.pages.dev/" style="color:#aaa;">Privacy Policy</a>
+</footer>
 
 <!-- POPUP -->
 <div class="overlay" id="overlay"></div>
