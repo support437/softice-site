@@ -43,8 +43,7 @@ body {
 .hero::after {
     content: "";
     position: absolute;
-    width: 100%;
-    height: 100%;
+    inset: 0;
     background: linear-gradient(to bottom, rgba(11,11,31,0.6), rgba(11,11,31,0.9));
 }
 
@@ -52,12 +51,10 @@ body {
     position: relative;
     z-index: 2;
     text-align: center;
-    padding: 20px;
 }
 
 .hero h1 {
     font-size: 42px;
-    margin-bottom: 10px;
 }
 
 .hero p {
@@ -65,13 +62,12 @@ body {
     color: #d0d0ff;
 }
 
-/* CTA */
 .cta-pill {
     margin-top: 15px;
     background: rgba(255,255,255,0.15);
-    display: inline-block;
     padding: 12px 22px;
     border-radius: 30px;
+    display: inline-block;
 }
 
 .btn {
@@ -81,47 +77,106 @@ body {
     background: linear-gradient(135deg, #ff4dd2, #ff88e6);
     color: white;
     border-radius: 40px;
-    font-weight: bold;
     text-decoration: none;
-    box-shadow: 0 10px 30px rgba(255,77,210,0.4);
+    font-weight: bold;
 }
 
-/* SECTION */
+/* DISNEY SECTION */
+.disney-section {
+    background: white;
+    color: #111;
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.disney-title {
+    font-size: 34px;
+    margin-bottom: 40px;
+}
+
+/* GRID */
+.disney-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+/* TILE */
+.tile {
+    position: relative;
+    overflow: hidden;
+    border-radius: 14px;
+}
+
+.tile img {
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.tile:hover img {
+    transform: scale(1.08);
+}
+
+.tile::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.35);
+}
+
+/* TEXT OVER IMAGE */
+.overlay-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 30px;
+    font-weight: bold;
+    color: white;
+    z-index: 2;
+}
+
+/* PARENT IMAGE */
+.parent-section {
+    margin-top: 60px;
+    position: relative;
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+.parent-section img {
+    width: 100%;
+    height: 380px;
+    object-fit: cover;
+}
+
+.parent-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.45);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.parent-overlay h3 {
+    font-size: 28px;
+}
+
+.parent-overlay p {
+    font-size: 18px;
+}
+
+/* VIDEO */
 .section {
     padding: 80px 20px;
     text-align: center;
 }
 
-.section.white {
-    background: white;
-    color: #111;
-}
-
-.section.white p {
-    color: #444;
-}
-
-.section h2 {
-    font-size: 34px;
-    margin-bottom: 20px;
-}
-
-.section p {
-    font-size: 18px;
-    max-width: 700px;
-    margin: auto;
-}
-
-/* IMAGE */
-.section img {
-    width: 100%;
-    max-width: 520px;
-    border-radius: 20px;
-    margin-top: 30px;
-    box-shadow: 0 15px 40px rgba(0,0,0,0.2);
-}
-
-/* VIDEO */
 .video-container {
     width: 90%;
     max-width: 700px;
@@ -134,26 +189,13 @@ iframe {
     border-radius: 16px;
 }
 
-/* HOW IT WORKS */
-.steps {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 40px;
-    margin-top: 40px;
-}
-
-.step {
-    max-width: 220px;
-}
-
 /* FORM */
 .form-box {
-    margin-top: 30px;
     display: flex;
     flex-direction: column;
     gap: 14px;
     align-items: center;
+    margin-top: 30px;
 }
 
 .form-box input,
@@ -163,18 +205,15 @@ iframe {
     padding: 14px;
     border-radius: 12px;
     border: none;
-    font-size: 16px;
 }
 
 .form-box button {
     padding: 14px 28px;
     background: #00c2ff;
     color: white;
-    border: none;
     border-radius: 30px;
+    border: none;
     font-weight: bold;
-    cursor: pointer;
-    box-shadow: 0 8px 20px rgba(0,194,255,0.4);
 }
 
 /* POPUP */
@@ -198,13 +237,6 @@ iframe {
     height: 100%;
     background: rgba(0,0,0,0.6);
     z-index: 999;
-}
-
-/* FOOTER */
-footer {
-    padding: 30px;
-    font-size: 14px;
-    color: #aaa;
 }
 </style>
 </head>
@@ -234,22 +266,46 @@ for (let i = 0; i < 40; i++) {
 
         <br>
 
-        <a href="https://play.google.com/store/apps/details?id=com.softiceinnovationslabs.bedtimestorybooks" class="btn">
-            ▶ Download on Google Play
-        </a>
+        <a href="#" class="btn">▶ Download on Google Play</a>
     </div>
 </section>
 
-<!-- ❤️ EMOTIONAL -->
-<section class="section white">
-    <h2>Turn Bedtime Into a Magical Moment</h2>
-    <p>
-        Calm nights. Cozy stories. A peaceful child drifting into sleep.
-    </p>
-    <img src="family-hero.png">
+<!-- 🎯 DISNEY GRID SECTION -->
+<section class="disney-section">
+
+    <h2 class="disney-title">Simple. Calm. Effective.</h2>
+
+    <div class="disney-grid">
+
+        <div class="tile">
+            <img src="choose.jpg">
+            <div class="overlay-text">Choose</div>
+        </div>
+
+        <div class="tile">
+            <img src="listen.jpg">
+            <div class="overlay-text">Listen</div>
+        </div>
+
+        <div class="tile">
+            <img src="sleep.jpg">
+            <div class="overlay-text">Sleep</div>
+        </div>
+
+    </div>
+
+    <!-- PARENT IMAGE -->
+    <div class="parent-section">
+        <img src="parents-park.jpg">
+        <div class="parent-overlay">
+            <h3>Made for Parents</h3>
+            <p>No subscriptions. No stress. Just magical moments.</p>
+        </div>
+    </div>
+
 </section>
 
-<!-- 🎬 VIDEO -->
+<!-- VIDEO -->
 <section class="section">
     <h2>See It In Action</h2>
     <div class="video-container">
@@ -257,41 +313,9 @@ for (let i = 0; i < 40; i++) {
     </div>
 </section>
 
-<!-- 📖 HOW IT WORKS -->
-<section class="section white">
-    <h2>Simple. Calm. Effective.</h2>
-
-    <div class="steps">
-        <div class="step">
-            <h3>📚 Choose</h3>
-            <p>Select a bedtime story</p>
-        </div>
-
-        <div class="step">
-            <h3>🎧 Listen</h3>
-            <p>Relax with soothing narration</p>
-        </div>
-
-        <div class="step">
-            <h3>😴 Sleep</h3>
-            <p>Your child drifts off peacefully</p>
-        </div>
-    </div>
-</section>
-
-<!-- ✨ VALUE -->
-<section class="section white">
-    <h2>Made for Parents</h2>
-    <p>
-        No subscriptions. No stress. Just magical stories your child will love.
-    </p>
-</section>
-
-<!-- 📩 EMAIL + FEEDBACK -->
+<!-- EMAIL -->
 <section class="section">
-    <h2>Stay Connected to the Magic ✨</h2>
-
-    <p>Get new stories, free books, and updates.</p>
+    <h2>Stay Connected ✨</h2>
 
     <form action="https://formspree.io/f/mzdjogng" method="POST" class="form-box" id="form">
         <input type="email" name="email" placeholder="Enter your email" required>
@@ -299,19 +323,6 @@ for (let i = 0; i < 40; i++) {
         <button type="submit">✨ Notify Me</button>
     </form>
 </section>
-
-<!-- CTA FINAL -->
-<section class="section">
-    <h2>Start Tonight 🌙</h2>
-    <a href="https://play.google.com/store/apps/details?id=com.softiceinnovationslabs.bedtimestorybooks" class="btn">
-        📲 Download Now
-    </a>
-</section>
-
-<footer>
-    support@softiceinnovationslabs.com <br><br>
-    <a href="https://softice-privacy.pages.dev/" style="color:#aaa;">Privacy Policy</a>
-</footer>
 
 <!-- POPUP -->
 <div class="overlay" id="overlay"></div>
