@@ -346,7 +346,6 @@ form.addEventListener("submit", async function(e) {
     const data = new FormData(form);
     await fetch(form.action, { method: "POST", body: data });
     alert("Check your email ✨");
-    form.reset();
 });
 </script>
 
