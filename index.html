@@ -243,6 +243,53 @@ body {
     color: #aaa;
     font-size: 14px;
 }
+
+/* CUSTOM POPUP */
+.popup-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.6);
+    z-index: 9998;
+}
+
+.popup-box {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: min(90%, 420px);
+    background: #16163a;
+    color: white;
+    border-radius: 18px;
+    padding: 28px 24px;
+    text-align: center;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.45);
+    z-index: 9999;
+}
+
+.popup-box h3 {
+    margin: 0 0 10px;
+    font-size: 28px;
+}
+
+.popup-box p {
+    margin: 0 0 20px;
+    color: #d9dcff;
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+.popup-box button {
+    padding: 12px 26px;
+    background: linear-gradient(135deg, #ff4dd2, #ff88e6);
+    color: white;
+    border: none;
+    border-radius: 30px;
+    font-weight: bold;
+    cursor: pointer;
+}
 </style>
 </head>
 
@@ -328,6 +375,13 @@ for (let i = 0; i < 40; i++) {
     </div>
 </footer>
 
+<div class="popup-overlay" id="popupOverlay"></div>
+<div class="popup-box" id="popupBox">
+    <h3>Thank you</h3>
+    <p>for contacting Softice Innovations Labs</p>
+    <button type="button" onclick="closePopup()">OK</button>
+</div>
+
 <script>
 // fade animation
 const observer = new IntersectionObserver(entries => {
@@ -338,6 +392,17 @@ const observer = new IntersectionObserver(entries => {
     });
 });
 document.querySelectorAll(".fade").forEach(el => observer.observe(el));
+
+// custom popup
+function openPopup() {
+    document.getElementById("popupOverlay").style.display = "block";
+    document.getElementById("popupBox").style.display = "block";
+}
+
+function closePopup() {
+    document.getElementById("popupOverlay").style.display = "none";
+    document.getElementById("popupBox").style.display = "none";
+}
 
 // form submit
 const form = document.getElementById('form');
@@ -362,13 +427,13 @@ form.addEventListener("submit", async function(e) {
             throw new Error("Form submission failed");
         }
 
-        alert("Check your email ✨");
-    } catch (error) {
-        alert("There was a problem sending your message. Please try again.");
-    } finally {
         form.reset();
         emailInput.value = "";
         messageInput.value = "";
+
+        openPopup();
+    } catch (error) {
+        alert("There was a problem sending your message. Please try again.");
     }
 });
 </script>
