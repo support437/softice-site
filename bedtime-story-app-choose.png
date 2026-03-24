@@ -1,1 +1,50 @@
 
+<section class="choose-section">
+    <div class="choose-image-wrap">
+        <img src="bedtime-story-app-choose.png" alt="Choose your bedtime story book">
+    </div>
+    <div class="choose-content">
+        <h2>Choose</h2>
+        <p>Browse magical bedtime books, pick your favorite story, and start reading in seconds.</p>
+    </div>
+</section>
+
+<style>
+.choose-section {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    padding: 80px 20px;
+    background: #ffffff;
+}
+
+.choose-image-wrap {
+    flex: 1 1 450px;
+    max-width: 520px;
+}
+
+.choose-image-wrap img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.choose-content {
+    flex: 1 1 420px;
+    max-width: 520px;
+}
+
+.choose-content h2 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    color: #f4c542;
+}
+
+.choose-content p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #333;
+}
+</style>
