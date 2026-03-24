@@ -1,11 +1,21 @@
-
-<section class="choose-section">
+<section class="choose-section" aria-labelledby="choose-bedtime-story-heading">
     <div class="choose-image-wrap">
-        <img src="bedtime-story-app-choose.png" alt="Choose your bedtime story book">
+        <img
+            src="bedtime-story-app-choose.png"
+            alt="Bedtime Story Books app showing children choosing a bedtime story"
+            title="Choose a bedtime story"
+            loading="lazy"
+            decoding="async"
+            width="520"
+            height="520"
+        >
     </div>
+
     <div class="choose-content">
-        <h2>Choose</h2>
-        <p>Browse magical bedtime books, pick your favorite story, and start reading in seconds.</p>
+        <h2 id="choose-bedtime-story-heading">Choose a Bedtime Story</h2>
+        <p>
+            Browse magical bedtime books, choose a calming story for kids, and start reading in seconds with a simple bedtime story app designed for peaceful nighttime routines.
+        </p>
     </div>
 </section>
 
@@ -18,6 +28,8 @@
     gap: 50px;
     padding: 80px 20px;
     background: #ffffff;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .choose-image-wrap {
@@ -29,6 +41,7 @@
     width: 100%;
     height: auto;
     display: block;
+    border-radius: 20px;
 }
 
 .choose-content {
@@ -37,14 +50,35 @@
 }
 
 .choose-content h2 {
-    font-size: 3rem;
+    font-size: 2.6rem;
     margin-bottom: 20px;
     color: #f4c542;
+    line-height: 1.2;
 }
 
 .choose-content p {
-    font-size: 1.2rem;
+    font-size: 1.15rem;
     line-height: 1.8;
     color: #333;
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    .choose-section {
+        padding: 60px 20px;
+        gap: 30px;
+    }
+
+    .choose-content {
+        text-align: center;
+    }
+
+    .choose-content h2 {
+        font-size: 2.1rem;
+    }
+
+    .choose-content p {
+        font-size: 1.05rem;
+    }
 }
 </style>
