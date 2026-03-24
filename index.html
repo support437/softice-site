@@ -15,6 +15,7 @@
 <meta name="apple-mobile-web-app-title" content="Cozy Tales">
 <link rel="canonical" href="https://softice-site.pages.dev/">
 <link rel="alternate" hreflang="en" href="https://softice-site.pages.dev/">
+<link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
 
 <meta property="og:title" content="Bedtime Stories for Kids – Cozy Tales">
 <meta property="og:description" content="Calming bedtime stories for kids with read-aloud narration, 2 free books, and no subscription.">
@@ -69,34 +70,40 @@ body {
 
 /* HERO */
 .hero {
-    height: 100vh;
+    min-height: 100vh;
     background: url('family-hero.png') center/cover no-repeat;
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
+    padding: 40px 20px;
+    text-align: center;
 }
 
 .hero::after {
     content: "";
     position: absolute;
     inset: 0;
-    background: linear-gradient(to bottom, rgba(0,0,0,0.15), rgba(0,0,0,0.35));
+    background: linear-gradient(to bottom, rgba(0,0,0,0.15), rgba(0,0,0,0.40));
 }
 
 .hero-content {
     position: relative;
     z-index: 2;
-    text-align: center;
+    max-width: 900px;
 }
 
 .hero h1 {
     font-size: 42px;
+    margin-bottom: 14px;
 }
 
 .hero p {
     font-size: 20px;
     color: #ddd;
+    line-height: 1.7;
+    max-width: 760px;
+    margin: 0 auto;
 }
 
 /* CTA */
@@ -151,6 +158,7 @@ body {
     height: 360px;
     object-fit: cover;
     transition: transform 0.5s ease;
+    display: block;
 }
 
 .tile:hover img {
@@ -192,6 +200,7 @@ body {
     width: 100%;
     height: 420px;
     object-fit: cover;
+    display: block;
 }
 
 .parent-overlay {
@@ -218,6 +227,53 @@ body {
     text-align: center;
 }
 
+.section p {
+    max-width: 850px;
+    margin: 0 auto;
+    color: #ddd;
+    font-size: 18px;
+    line-height: 1.8;
+}
+
+/* RESOURCES */
+.resource-links {
+    max-width: 850px;
+    margin: 30px auto 0;
+    text-align: left;
+}
+
+.resource-links h3 {
+    margin-bottom: 18px;
+    color: white;
+}
+
+.resource-links ul {
+    margin: 0;
+    padding-left: 24px;
+    line-height: 2;
+    font-size: 18px;
+}
+
+.resource-links a {
+    color: #7aa7ff;
+    text-decoration: none;
+}
+
+/* FAQ */
+.faq-wrap {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: left;
+    color: #ddd;
+    line-height: 1.8;
+}
+
+.faq-wrap h3 {
+    color: white;
+    margin-top: 28px;
+    margin-bottom: 8px;
+}
+
 /* FORM */
 .form-box {
     display: flex;
@@ -233,6 +289,12 @@ body {
     padding: 14px;
     border-radius: 12px;
     border: none;
+    font: inherit;
+}
+
+.form-box textarea {
+    min-height: 110px;
+    resize: vertical;
 }
 
 .form-box button {
@@ -241,6 +303,8 @@ body {
     color: white;
     border-radius: 30px;
     border: none;
+    font: inherit;
+    cursor: pointer;
 }
 
 /* SOCIAL MEDIA */
@@ -399,6 +463,27 @@ body {
     font-weight: bold;
     cursor: pointer;
 }
+
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 34px;
+    }
+
+    .hero p,
+    .section p,
+    .resource-links ul,
+    .faq-wrap {
+        font-size: 17px;
+    }
+
+    .parent-section img {
+        height: 320px;
+    }
+
+    .tile img {
+        height: 300px;
+    }
+}
 </style>
 </head>
 
@@ -473,40 +558,42 @@ for (let i = 0; i < 40; i++) {
 
 <section class="section fade" aria-label="Bedtime stories app details">
     <h2>Why Parents Love Our Bedtime Stories App</h2>
-    <p style="max-width:850px; margin:0 auto; color:#ddd; font-size:18px; line-height:1.8;">
+    <p>
         Bedtime Story Books – Cozy Tales is a bedtime stories app for kids designed to make nighttime routines calmer, easier, and more magical. Families can enjoy sleep stories for children, read-aloud narration, peaceful visuals, and a no subscription experience that keeps story time simple.
+    </p>
+    <p style="margin-top:24px;">
+        Explore our guides for free bedtime stories for kids, the best bedtime story apps, and helpful bedtime resources for parents.
     </p>
 </section>
 
 <section class="section fade" aria-label="Helpful bedtime resources">
     <h2>Helpful Bedtime Resources for Parents</h2>
 
-    <div style="max-width:850px; margin:0 auto; color:#ddd; font-size:18px; line-height:1.9; text-align:left;">
-
-        <p>
-            👉 <a href="/best-bedtime-stories-for-kids.html" style="color:#7aa7ff; text-decoration:none;">
-            Best Bedtime Stories for Kids (2026 Guide)
-            </a>
-        </p>
-
-        <p>
-            👉 <a href="/free-bedtime-stories-for-kids.html" style="color:#7aa7ff; text-decoration:none;">
-            Free Bedtime Stories for Kids (No Subscription)
-            </a>
-        </p>
-
-        <p>
-            👉 <a href="/bedtime-story-app-for-kids.html" style="color:#7aa7ff; text-decoration:none;">
-            Best Bedtime Story App for Kids
-            </a>
-        </p>
-
+    <div class="resource-links">
+        <h3>Guides to Explore</h3>
+        <ul>
+            <li>
+                <a href="/best-bedtime-stories-for-kids.html">
+                    Best Bedtime Stories for Kids (2026 Guide)
+                </a>
+            </li>
+            <li>
+                <a href="/free-bedtime-stories-for-kids.html">
+                    Free Bedtime Stories for Kids (No Subscription)
+                </a>
+            </li>
+            <li>
+                <a href="/bedtime-story-app-for-kids.html">
+                    Best Bedtime Story App for Kids
+                </a>
+            </li>
+        </ul>
     </div>
 </section>
 
 <section class="section fade" aria-label="Frequently asked questions">
     <h2>Frequently Asked Questions</h2>
-    <div style="max-width:900px; margin:0 auto; text-align:left; color:#ddd; line-height:1.8;">
+    <div class="faq-wrap">
         <h3>What is the best bedtime stories app for kids?</h3>
         <p>Cozy Tales is designed for families looking for bedtime stories for kids with calming narration, peaceful visuals, and a simple no subscription experience.</p>
 
