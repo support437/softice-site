@@ -4,20 +4,22 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Bedtime Stories for Kids | No Subscription App 😴📖</title>
+<title>Bedtime Stories for Kids | No Subscription App</title>
 <meta name="description" content="Discover bedtime stories for kids with Cozy Tales. Enjoy calming sleep stories, read-aloud narration, 2 free books, and no subscription.">
-<meta name="keywords" content="bedtime stories for kids, sleep stories for children, bedtime story app, kids bedtime app, read aloud stories for kids, bedtime books for kids, calming stories for kids">
 <meta name="author" content="Softice Innovations Labs LLC">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
 <meta name="googlebot" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
 <meta name="theme-color" content="#0b0b1f">
 <meta name="application-name" content="Bedtime Story Books – Cozy Tales">
 <meta name="apple-mobile-web-app-title" content="Cozy Tales">
+
 <link rel="canonical" href="https://softice-site.pages.dev/">
 <link rel="alternate" hreflang="en" href="https://softice-site.pages.dev/">
 <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
 
-<meta property="og:title" content="Bedtime Stories for Kids – Cozy Tales">
+<link rel="preload" as="image" href="family-hero.png">
+
+<meta property="og:title" content="Bedtime Stories for Kids | No Subscription App">
 <meta property="og:description" content="Calming bedtime stories for kids with read-aloud narration, 2 free books, and no subscription.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://softice-site.pages.dev/">
@@ -27,7 +29,7 @@
 <meta property="og:locale" content="en_US">
 
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Bedtime Stories for Kids – Cozy Tales">
+<meta name="twitter:title" content="Bedtime Stories for Kids | No Subscription App">
 <meta name="twitter:description" content="Calming bedtime stories for kids with read-aloud narration, 2 free books, and no subscription.">
 <meta name="twitter:image" content="https://softice-site.pages.dev/family-hero.png">
 <meta name="twitter:image:alt" content="Bedtime Stories for Kids – Cozy Tales family bedtime story app preview">
@@ -41,6 +43,10 @@ body {
     overflow-x: hidden;
 }
 
+img {
+    max-width: 100%;
+}
+
 /* ⭐ STARS */
 .star {
     position: fixed;
@@ -50,6 +56,7 @@ body {
     border-radius: 50%;
     opacity: 0.8;
     animation: floatUp linear infinite;
+    pointer-events: none;
 }
 
 @keyframes floatUp {
@@ -96,6 +103,7 @@ body {
 .hero h1 {
     font-size: 42px;
     margin-bottom: 14px;
+    line-height: 1.2;
 }
 
 .hero p {
@@ -141,16 +149,25 @@ body {
     text-align: center;
 }
 
+.disney-section h2 {
+    font-size: 2.8rem;
+    margin-bottom: 40px;
+    line-height: 1.2;
+}
+
 .disney-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 20px;
+    max-width: 1600px;
+    margin: 0 auto;
 }
 
 .tile {
     position: relative;
     overflow: hidden;
     border-radius: 16px;
+    background: #e8e8e8;
 }
 
 .tile img {
@@ -194,6 +211,11 @@ body {
 .parent-section {
     margin-top: 60px;
     position: relative;
+    max-width: 1600px;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: hidden;
+    border-radius: 16px;
 }
 
 .parent-section img {
@@ -211,6 +233,8 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: 20px;
+    text-align: center;
 }
 
 .parent-overlay h3,
@@ -225,6 +249,10 @@ body {
 .section {
     padding: 80px 20px;
     text-align: center;
+}
+
+.section h2 {
+    line-height: 1.2;
 }
 
 .section p {
@@ -257,6 +285,11 @@ body {
 .resource-links a {
     color: #7aa7ff;
     text-decoration: none;
+}
+
+.resource-links a:hover,
+.footer a:hover {
+    text-decoration: underline;
 }
 
 /* FAQ */
@@ -483,6 +516,10 @@ body {
     .tile img {
         height: 300px;
     }
+
+    .disney-section h2 {
+        font-size: 2.2rem;
+    }
 }
 </style>
 </head>
@@ -500,42 +537,73 @@ for (let i = 0; i < 40; i++) {
 </script>
 
 <main>
-<section class="hero fade">
+<section class="hero fade" aria-label="Bedtime Story Books homepage hero">
     <div class="hero-content">
-        <h1>Bedtime Stories for Kids 🌙</h1>
+        <h1>Bedtime Stories for Kids</h1>
         <p>Calming bedtime stories for kids with read-aloud narration, peaceful sleep support, and no subscription.</p>
 
         <div class="cta-pill">🎁 2 FREE BOOKS • 🚫 NO SUBSCRIPTION</div>
 
         <a href="https://play.google.com/store/apps/details?id=com.softiceinnovationslabs.bedtimestorybooks"
-           class="btn" target="_blank" rel="noopener noreferrer" aria-label="Download Bedtime Story Books – Cozy Tales on Google Play">
+           class="btn" target="_blank" rel="noopener noreferrer"
+           aria-label="Download Bedtime Story Books – Cozy Tales on Google Play">
            ▶ Get it on Google Play
         </a>
     </div>
 </section>
 
-<section class="disney-section">
-    <h2 class="fade">Simple. Calm. Effective.</h2>
+<section class="disney-section" aria-labelledby="simple-calm-effective-heading">
+    <h2 id="simple-calm-effective-heading" class="fade">Simple. Calm. Effective.</h2>
 
     <div class="disney-grid">
         <div class="tile fade">
-            <img src="tablet.png" alt="Bedtime stories app for kids on tablet screen">
+            <img
+                src="tablet.png"
+                alt="Child choosing a bedtime story in the Bedtime Story Books app on a tablet"
+                loading="lazy"
+                decoding="async"
+                width="520"
+                height="360"
+                onerror="this.style.border='3px solid red'; console.log('Failed to load:', this.src);"
+            >
             <div class="overlay-text">Choose</div>
         </div>
 
         <div class="tile fade">
-            <img src="listen.png" alt="Kids bedtime app with calming read aloud narration">
+            <img
+                src="listen.png"
+                alt="Kids listening to calming read aloud bedtime stories in the app"
+                loading="lazy"
+                decoding="async"
+                width="520"
+                height="360"
+                onerror="this.style.border='3px solid red'; console.log('Failed to load:', this.src);"
+            >
             <div class="overlay-text">Listen</div>
         </div>
 
         <div class="tile fade">
-            <img src="sleep.png" alt="Sleep stories for children and peaceful bedtime routine">
+            <img
+                src="sleep.png"
+                alt="Child sleeping peacefully after listening to a bedtime story"
+                loading="lazy"
+                decoding="async"
+                width="520"
+                height="360"
+            >
             <div class="overlay-text">Sleep</div>
         </div>
     </div>
 
     <div class="parent-section fade">
-        <img src="parents-park.png" alt="Parents using a bedtime stories app for kids during a peaceful family moment">
+        <img
+            src="parents-park.png"
+            alt="Parents enjoying a peaceful family bedtime moment with a bedtime stories app for kids"
+            loading="lazy"
+            decoding="async"
+            width="1600"
+            height="420"
+        >
         <div class="parent-overlay">
             <h3>Made for Parents</h3>
             <p>No subscriptions. No stress. Just magical moments.</p>
@@ -543,8 +611,8 @@ for (let i = 0; i < 40; i++) {
     </div>
 </section>
 
-<section class="section fade">
-    <h2>See It In Action</h2>
+<section class="section fade" aria-labelledby="see-it-in-action-heading">
+    <h2 id="see-it-in-action-heading">See It In Action</h2>
     <iframe
         width="90%"
         height="350"
@@ -556,8 +624,8 @@ for (let i = 0; i < 40; i++) {
         allowfullscreen></iframe>
 </section>
 
-<section class="section fade" aria-label="Bedtime stories app details">
-    <h2>Why Parents Love Our Bedtime Stories App</h2>
+<section class="section fade" aria-labelledby="why-parents-love-heading">
+    <h2 id="why-parents-love-heading">Why Parents Love Our Bedtime Stories App</h2>
     <p>
         Bedtime Story Books – Cozy Tales is a bedtime stories app for kids designed to make nighttime routines calmer, easier, and more magical. Families can enjoy sleep stories for children, read-aloud narration, peaceful visuals, and a no subscription experience that keeps story time simple.
     </p>
@@ -566,8 +634,8 @@ for (let i = 0; i < 40; i++) {
     </p>
 </section>
 
-<section class="section fade" aria-label="Helpful bedtime resources">
-    <h2>Helpful Bedtime Resources for Parents</h2>
+<section class="section fade" aria-labelledby="helpful-resources-heading">
+    <h2 id="helpful-resources-heading">Helpful Bedtime Resources for Parents</h2>
 
     <div class="resource-links">
         <h3>Guides to Explore</h3>
@@ -591,8 +659,8 @@ for (let i = 0; i < 40; i++) {
     </div>
 </section>
 
-<section class="section fade" aria-label="Frequently asked questions">
-    <h2>Frequently Asked Questions</h2>
+<section class="section fade" aria-labelledby="faq-heading">
+    <h2 id="faq-heading">Frequently Asked Questions</h2>
     <div class="faq-wrap">
         <h3>What is the best bedtime stories app for kids?</h3>
         <p>Cozy Tales is designed for families looking for bedtime stories for kids with calming narration, peaceful visuals, and a simple no subscription experience.</p>
@@ -608,8 +676,8 @@ for (let i = 0; i < 40; i++) {
     </div>
 </section>
 
-<section class="section fade">
-    <h2>Stay Connected ✨</h2>
+<section class="section fade" aria-labelledby="stay-connected-heading">
+    <h2 id="stay-connected-heading">Stay Connected ✨</h2>
 
     <form action="https://formspree.io/f/mzdjogng" method="POST" class="form-box" id="form" autocomplete="off">
         <input type="email" name="email" id="email" placeholder="Enter your email" required autocomplete="off" aria-label="Enter your email">
@@ -621,19 +689,19 @@ for (let i = 0; i < 40; i++) {
         <h3>Follow Us</h3>
         <div class="social-links">
             <a href="https://www.tiktok.com/@bedtimestoriescozytales" target="_blank" rel="noopener noreferrer" class="tiktok" data-label="TikTok" aria-label="Follow Cozy Tales on TikTok">
-                <img src="tiktok_icon_2.png" alt="TikTok">
+                <img src="tiktok_icon_2.png" alt="TikTok icon" loading="lazy" decoding="async" width="30" height="30">
             </a>
 
             <a href="https://www.instagram.com/bedtime.stories.forkids/" target="_blank" rel="noopener noreferrer" class="instagram" data-label="Instagram" aria-label="Follow Cozy Tales on Instagram">
-                <img src="instagram_icon_2.png" alt="Instagram">
+                <img src="instagram_icon_2.png" alt="Instagram icon" loading="lazy" decoding="async" width="30" height="30">
             </a>
 
             <a href="https://www.youtube.com/@BedtimeStoriesCozyTales" target="_blank" rel="noopener noreferrer" class="youtube" data-label="YouTube" aria-label="Follow Cozy Tales on YouTube">
-                <img src="youtube_icon_2.png" alt="YouTube">
+                <img src="youtube_icon_2.png" alt="YouTube icon" loading="lazy" decoding="async" width="30" height="30">
             </a>
 
             <a href="#" target="_blank" rel="noopener noreferrer" class="facebook" data-label="Facebook" aria-label="Follow Cozy Tales on Facebook">
-                <img src="facebook_icon_2.png" alt="Facebook">
+                <img src="facebook_icon_2.png" alt="Facebook icon" loading="lazy" decoding="async" width="30" height="30">
             </a>
         </div>
     </div>
