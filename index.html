@@ -4,22 +4,25 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Bedtime Stories for Kids | No Subscription App</title>
-<meta name="description" content="Discover bedtime stories for kids with Cozy Tales. Enjoy calming sleep stories, read-aloud narration, 2 free books, and no subscription.">
+<title>Bedtime Stories for Kids | 2 Free Books, No Subscription App</title>
+<meta name="description" content="Discover bedtime stories for kids with Cozy Tales. Enjoy calming sleep stories, read-aloud narration, 2 free books, bedtime routines, and no subscription.">
 <meta name="author" content="Softice Innovations Labs LLC">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
 <meta name="googlebot" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
 <meta name="theme-color" content="#0b0b1f">
 <meta name="application-name" content="Bedtime Story Books – Cozy Tales">
 <meta name="apple-mobile-web-app-title" content="Cozy Tales">
+<meta name="format-detection" content="telephone=no">
 
 <link rel="canonical" href="https://softice-site.pages.dev/">
 <link rel="alternate" hreflang="en" href="https://softice-site.pages.dev/">
 <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
 <link rel="preload" as="image" href="family-hero.webp">
+<link rel="preconnect" href="https://play.google.com">
+<link rel="preconnect" href="https://www.youtube.com">
 
-<meta property="og:title" content="Bedtime Stories for Kids | No Subscription App">
-<meta property="og:description" content="Calming bedtime stories for kids with read-aloud narration, 2 free books, and no subscription.">
+<meta property="og:title" content="Bedtime Stories for Kids | 2 Free Books, No Subscription App">
+<meta property="og:description" content="Calming bedtime stories for kids with read-aloud narration, bedtime routines, 2 free books, and no subscription.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://softice-site.pages.dev/">
 <meta property="og:image" content="https://softice-site.pages.dev/family-hero.webp">
@@ -28,8 +31,8 @@
 <meta property="og:locale" content="en_US">
 
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Bedtime Stories for Kids | No Subscription App">
-<meta name="twitter:description" content="Calming bedtime stories for kids with read-aloud narration, 2 free books, and no subscription.">
+<meta name="twitter:title" content="Bedtime Stories for Kids | 2 Free Books, No Subscription App">
+<meta name="twitter:description" content="Calming bedtime stories for kids with read-aloud narration, bedtime routines, 2 free books, and no subscription.">
 <meta name="twitter:image" content="https://softice-site.pages.dev/family-hero.webp">
 <meta name="twitter:image:alt" content="Bedtime Stories for Kids – Cozy Tales family bedtime story app preview">
 
@@ -46,7 +49,6 @@ img {
     max-width: 100%;
 }
 
-/* ⭐ STARS */
 .star {
     position: fixed;
     width: 6px;
@@ -63,7 +65,6 @@ img {
     to { transform: translateY(-10vh); }
 }
 
-/* FADE ANIMATION */
 .fade {
     opacity: 0;
     transform: translateY(40px);
@@ -74,7 +75,6 @@ img {
     transform: translateY(0);
 }
 
-/* HERO */
 .hero {
     min-height: 100vh;
     background: url('family-hero.webp') center/cover no-repeat;
@@ -96,7 +96,7 @@ img {
 .hero-content {
     position: relative;
     z-index: 2;
-    max-width: 900px;
+    max-width: 920px;
 }
 
 .hero h1 {
@@ -109,13 +109,18 @@ img {
     font-size: 20px;
     color: #ddd;
     line-height: 1.7;
-    max-width: 760px;
+    max-width: 780px;
     margin: 0 auto;
 }
 
-/* CTA */
+.updated-note {
+    margin-top: 18px;
+    font-size: 16px;
+    color: #f0f3ff;
+}
+
 .cta-pill {
-    margin-top: 15px;
+    margin-top: 18px;
     background: rgba(255,255,255,0.15);
     padding: 12px 22px;
     border-radius: 30px;
@@ -140,7 +145,6 @@ img {
     100% { box-shadow: 0 0 0 0 rgba(255,77,210,0); }
 }
 
-/* SECTION */
 .disney-section {
     background: white;
     color: #111;
@@ -204,7 +208,6 @@ img {
         0 4px 20px rgba(0,0,0,0.8);
 }
 
-/* PARENT */
 .parent-section {
     margin-top: 60px;
     position: relative;
@@ -239,7 +242,6 @@ img {
         0 4px 20px rgba(0,0,0,0.8);
 }
 
-/* VIDEO */
 .section {
     padding: 80px 20px;
     text-align: center;
@@ -250,14 +252,13 @@ img {
 }
 
 .section p {
-    max-width: 850px;
+    max-width: 900px;
     margin: 0 auto;
     color: #ddd;
     font-size: 18px;
     line-height: 1.8;
 }
 
-/* RESOURCES */
 .resource-links {
     max-width: 950px;
     margin: 30px auto 0;
@@ -298,6 +299,7 @@ img {
     border: 1px solid rgba(255,255,255,0.08);
     border-radius: 16px;
     padding: 20px;
+    text-align: left;
 }
 
 .resource-card h3 {
@@ -320,7 +322,6 @@ img {
     text-decoration: none;
 }
 
-/* FAQ */
 .faq-wrap {
     max-width: 900px;
     margin: 0 auto;
@@ -335,7 +336,6 @@ img {
     margin-bottom: 8px;
 }
 
-/* FORM */
 .form-box {
     display: flex;
     flex-direction: column;
@@ -368,7 +368,6 @@ img {
     cursor: pointer;
 }
 
-/* SOCIAL MEDIA */
 .social-follow {
     margin-top: 28px;
     text-align: center;
@@ -451,9 +450,6 @@ img {
     box-shadow: 0 0 20px rgba(24, 119, 242, 0.45);
 }
 
-  
-
-/* FOOTER */
 .footer {
     background: #0b0b1f;
     padding: 60px 20px 40px;
@@ -480,7 +476,6 @@ img {
     font-size: 14px;
 }
 
-/* CUSTOM POPUP */
 .popup-overlay {
     display: none;
     position: fixed;
@@ -535,7 +530,8 @@ img {
     .hero p,
     .section p,
     .resource-links ul,
-    .faq-wrap {
+    .faq-wrap,
+    .updated-note {
         font-size: 17px;
     }
 
@@ -571,7 +567,7 @@ for (let i = 0; i < 40; i++) {
     <div class="hero-content">
         <h1>Bedtime Stories for Kids</h1>
         <p>Calming bedtime stories for kids with read-aloud narration, peaceful sleep support, and no subscription.</p>
-         <p>Updated March 2026 – New bedtime stories and guides added weekly.</p>
+        <p class="updated-note"><strong>Updated March 2026</strong> – New bedtime stories and guides added weekly.</p>
 
         <div class="cta-pill">🎁 2 FREE BOOKS • 🚫 NO SUBSCRIPTION</div>
 
@@ -672,7 +668,7 @@ for (let i = 0; i < 40; i++) {
         Bedtime Story Books – Cozy Tales is a bedtime stories app for kids designed to make nighttime routines calmer, easier, and more magical. Families can enjoy sleep stories for children, read-aloud narration, peaceful visuals, and a no subscription experience that keeps story time simple.
     </p>
     <p style="margin-top:24px;">
-        Explore our guides for free bedtime stories for kids, the best bedtime story apps, and helpful bedtime resources for parents.
+        Explore our guides for free bedtime stories for kids, the best bedtime story apps, bedtime routines for kids, and calming sleep resources for parents.
     </p>
 </section>
 
@@ -876,7 +872,6 @@ for (let i = 0; i < 40; i++) {
 </script>
 
 <script>
-// fade animation
 const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -886,7 +881,6 @@ const observer = new IntersectionObserver(entries => {
 });
 document.querySelectorAll(".fade").forEach(el => observer.observe(el));
 
-// custom popup
 function openPopup() {
     document.getElementById("popupOverlay").style.display = "block";
     document.getElementById("popupBox").style.display = "block";
@@ -897,7 +891,6 @@ function closePopup() {
     document.getElementById("popupBox").style.display = "none";
 }
 
-// form submit
 const form = document.getElementById('form');
 const emailInput = document.getElementById('email');
 const messageInput = document.getElementById('message');
