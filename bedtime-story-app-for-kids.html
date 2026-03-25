@@ -42,27 +42,33 @@ body {
     margin: auto;
 }
 
-.floating-cta {
-    position: absolute;
+/* GLOBAL FLOATING CTA */
+.floating-cta-global {
+    position: fixed;
+    bottom: 20px;
     left: 50%;
-    bottom: 32px;
     transform: translateX(-50%);
-    display: inline-block;
-    padding: 12px 22px;
     background: #ffcc00;
     color: #000;
     text-decoration: none;
     font-weight: bold;
-    border-radius: 10px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.28);
-    z-index: 2;
+    padding: 14px 24px;
+    border-radius: 30px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    z-index: 9999;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.floating-cta-global:hover {
+    transform: translateX(-50%) scale(1.05);
+    text-decoration: none;
 }
 
 /* CONTENT */
 .container {
     max-width: 860px;
     margin: auto;
-    padding: 40px 20px;
+    padding: 40px 20px 100px 20px;
 }
 
 h1 {
@@ -125,10 +131,12 @@ a:hover {
         max-height: none;
     }
 
-    .floating-cta {
-        bottom: 18px;
-        padding: 10px 18px;
-        font-size: 0.95rem;
+    .floating-cta-global {
+        width: 90%;
+        text-align: center;
+        padding: 14px;
+        font-size: 1rem;
+        bottom: 16px;
     }
 
     h1 {
@@ -143,7 +151,6 @@ a:hover {
 <!-- FULL IMAGE HERO -->
 <section class="hero-banner">
     <img src="bedtime-story-app-choose.webp" alt="Best Bedtime Story App for Kids" class="hero-img">
-    <a href="/" class="floating-cta">Explore the App</a>
 </section>
 
 <div class="container">
@@ -212,6 +219,8 @@ The best bedtime story app for kids is one that helps make bedtime smoother, cal
 </div>
 
 </div>
+
+<a href="/" class="floating-cta-global">Try 2 Free Books</a>
 
 </body>
 </html>
