@@ -42,39 +42,20 @@ body {
     margin: auto;
 }
 
-.hero-banner .overlay {
+.floating-cta {
     position: absolute;
-    top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
-    background: rgba(0,0,0,0.45);
-    padding: 30px;
-    border-radius: 12px;
-    text-align: center;
-    color: white;
-    max-width: 800px;
-    width: calc(100% - 40px);
-    box-sizing: border-box;
-}
-
-.hero-banner h1 {
-    margin: 0 0 10px;
-    font-size: 2.2rem;
-}
-
-.hero-banner p {
-    margin-bottom: 20px;
-    font-size: 1.05rem;
-}
-
-.cta-button {
+    bottom: 32px;
+    transform: translateX(-50%);
     display: inline-block;
-    padding: 12px 20px;
+    padding: 12px 22px;
     background: #ffcc00;
     color: #000;
     text-decoration: none;
     font-weight: bold;
-    border-radius: 8px;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.28);
+    z-index: 2;
 }
 
 /* CONTENT */
@@ -82,6 +63,14 @@ body {
     max-width: 860px;
     margin: auto;
     padding: 40px 20px;
+}
+
+h1 {
+    color: #111;
+    line-height: 1.3;
+    font-size: 2.2rem;
+    margin-top: 0;
+    margin-bottom: 12px;
 }
 
 h2 {
@@ -125,23 +114,25 @@ a:hover {
     margin: 24px 0;
 }
 
+.freshness {
+    margin-bottom: 20px;
+    font-size: 1rem;
+}
+
 /* MOBILE */
 @media (max-width: 768px) {
     .hero-img {
         max-height: none;
     }
 
-    .hero-banner .overlay {
-        padding: 18px;
-        width: 90%;
-    }
-
-    .hero-banner h1 {
-        font-size: 1.5rem;
-    }
-
-    .hero-banner p {
+    .floating-cta {
+        bottom: 18px;
+        padding: 10px 18px;
         font-size: 0.95rem;
+    }
+
+    h1 {
+        font-size: 1.8rem;
     }
 }
 </style>
@@ -152,15 +143,14 @@ a:hover {
 <!-- FULL IMAGE HERO -->
 <section class="hero-banner">
     <img src="bedtime-story-app-choose.webp" alt="Best Bedtime Story App for Kids" class="hero-img">
-
-    <div class="overlay">
-        <h1>Best Bedtime Story App for Kids</h1>
-        <p>Discover calming read-aloud stories, simple design, and a no subscription model for peaceful bedtime routines.</p>
-        <a href="/" class="cta-button">Explore the App</a>
-    </div>
+    <a href="/" class="floating-cta">Explore the App</a>
 </section>
 
 <div class="container">
+
+<h1>Best Bedtime Story App for Kids</h1>
+
+<p class="freshness"><strong>Updated March 2026 – New bedtime stories and guides added weekly.</strong></p>
 
 <p>
 Finding the best bedtime story app for kids can make evenings calmer, more consistent, and more enjoyable for both children and parents. A well-designed bedtime app can turn nightly reading into a soothing routine with gentle narration, simple navigation, and stories children look forward to hearing again and again.
