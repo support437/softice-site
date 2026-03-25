@@ -127,24 +127,6 @@ img {
     display: inline-block;
 }
 
-.btn {
-    display: inline-block;
-    margin-top: 25px;
-    padding: 16px 32px;
-    background: linear-gradient(135deg, #ff4dd2, #ff88e6);
-    color: white;
-    border-radius: 40px;
-    text-decoration: none;
-    font-weight: bold;
-    animation: pulse 2s infinite;
-}
-
-@keyframes pulse {
-    0% { box-shadow: 0 0 0 0 rgba(255,77,210,0.6); }
-    70% { box-shadow: 0 0 0 20px rgba(255,77,210,0); }
-    100% { box-shadow: 0 0 0 0 rgba(255,77,210,0); }
-}
-
 .disney-section {
     background: white;
     color: #111;
@@ -522,6 +504,38 @@ img {
     cursor: pointer;
 }
 
+/* FLOATING GOOGLE PLAY BUTTON */
+.floating-google-play {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%) translateY(20px);
+    background: #ffcc00;
+    color: #000;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 14px 26px;
+    border-radius: 30px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    z-index: 9999;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s ease;
+}
+
+.floating-google-play.show {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateX(-50%) translateY(0);
+}
+
+.floating-google-play:hover {
+    text-decoration: none;
+    transform: translateX(-50%) scale(1.05);
+}
+
 @media (max-width: 768px) {
     .hero h1 {
         font-size: 34px;
@@ -545,6 +559,14 @@ img {
 
     .disney-section h2 {
         font-size: 2.2rem;
+    }
+
+    .floating-google-play {
+        width: 90%;
+        text-align: center;
+        bottom: 16px;
+        font-size: 1rem;
+        padding: 14px;
     }
 }
 </style>
@@ -570,12 +592,6 @@ for (let i = 0; i < 40; i++) {
         <p class="updated-note"><strong>Updated March 2026</strong> – New bedtime stories and guides added weekly.</p>
 
         <div class="cta-pill">🎁 2 FREE BOOKS • 🚫 NO SUBSCRIPTION</div>
-
-        <a href="https://play.google.com/store/apps/details?id=com.softiceinnovationslabs.bedtimestorybooks"
-           class="btn" target="_blank" rel="noopener noreferrer"
-           aria-label="Download Bedtime Story Books – Cozy Tales on Google Play">
-           ▶ Get it on Google Play
-        </a>
     </div>
 </section>
 
@@ -687,6 +703,9 @@ for (let i = 0; i < 40; i++) {
             <li>
                 <a href="/bedtime-story-app-for-kids.html">Best Bedtime Story App for Kids</a>
             </li>
+            <li>
+                <a href="/short-bedtime-stories-for-kids.html">Short Bedtime Stories for Kids</a>
+            </li>
         </ul>
     </div>
 </section>
@@ -729,6 +748,12 @@ for (let i = 0; i < 40; i++) {
             <h3>Calming Fairy Tales for Kids</h3>
             <p>Explore gentle fairy tales for bedtime with peaceful themes, magical stories, and calming nighttime reading for children.</p>
             <a href="/calming-fairy-tales-for-kids.html">Read the guide</a>
+        </div>
+
+        <div class="resource-card">
+            <h3>Short Bedtime Stories for Kids</h3>
+            <p>Quick calming story ideas that help children relax before sleep and fit naturally into busy bedtime routines.</p>
+            <a href="/short-bedtime-stories-for-kids.html">Read the guide</a>
         </div>
     </div>
 </section>
@@ -800,6 +825,14 @@ for (let i = 0; i < 40; i++) {
     <p>for contacting Softice Innovations Labs</p>
     <button type="button" onclick="closePopup()">OK</button>
 </div>
+
+<a href="https://play.google.com/store/apps/details?id=com.softiceinnovationslabs.bedtimestorybooks"
+   class="floating-google-play"
+   id="floatingGooglePlay"
+   target="_blank"
+   rel="noopener noreferrer">
+   ▶ Get it on Google Play
+</a>
 
 <script type="application/ld+json">
 {
@@ -928,6 +961,26 @@ form.addEventListener("submit", async function(e) {
         alert("There was a problem sending your message. Please try again.");
     }
 });
+
+(function () {
+    const cta = document.getElementById('floatingGooglePlay');
+
+    function toggleCta() {
+        const scrollY = window.scrollY || window.pageYOffset;
+        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+        const triggerPoint = Math.min(220, docHeight * 0.18);
+
+        if (scrollY > triggerPoint) {
+            cta.classList.add('show');
+        } else {
+            cta.classList.remove('show');
+        }
+    }
+
+    window.addEventListener('scroll', toggleCta, { passive: true });
+    window.addEventListener('load', toggleCta);
+    window.addEventListener('resize', toggleCta);
+})();
 </script>
 
 </body>
