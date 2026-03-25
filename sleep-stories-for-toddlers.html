@@ -19,60 +19,153 @@
 <style>
 body {
     font-family: Arial, sans-serif;
-    padding: 40px 20px;
-    max-width: 860px;
-    margin: auto;
+    padding: 0;
+    margin: 0;
     line-height: 1.8;
     color: #222;
     background: #fff;
 }
-h1, h2 {
+
+/* HERO IMAGE */
+.hero-banner {
+    position: relative;
+    width: 100%;
+    text-align: center;
+    background: #0b0b1f;
+}
+
+.hero-img {
+    width: 100%;
+    max-height: 520px;
+    object-fit: contain;
+    display: block;
+    margin: auto;
+}
+
+/* SMART FLOATING CTA */
+.floating-cta-global {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%) translateY(20px);
+    background: #ffcc00;
+    color: #000;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 14px 24px;
+    border-radius: 30px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    z-index: 9999;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s ease;
+}
+
+.floating-cta-global.show {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateX(-50%) translateY(0);
+}
+
+.floating-cta-global:hover {
+    text-decoration: none;
+}
+
+/* CONTENT */
+.container {
+    max-width: 860px;
+    margin: auto;
+    padding: 40px 20px 100px 20px;
+}
+
+h1 {
     color: #111;
     line-height: 1.3;
-}
-h1 {
     font-size: 2.2rem;
-    margin-bottom: 20px;
+    margin-top: 0;
+    margin-bottom: 12px;
 }
+
 h2 {
+    color: #111;
+    line-height: 1.3;
     font-size: 1.5rem;
     margin-top: 36px;
     margin-bottom: 12px;
 }
+
 p {
     margin-bottom: 18px;
     font-size: 1.05rem;
 }
+
 a {
     color: #0066ff;
     text-decoration: none;
 }
+
 a:hover {
     text-decoration: underline;
 }
+
 .nav-links {
     margin-top: 40px;
     padding-top: 20px;
     border-top: 1px solid #ddd;
 }
+
 .nav-links a {
     display: inline-block;
     margin-right: 18px;
     margin-bottom: 10px;
 }
+
 .highlight {
     background: #f7f9fc;
     border-left: 4px solid #0066ff;
     padding: 16px 18px;
     margin: 24px 0;
 }
+
+.freshness {
+    margin-bottom: 20px;
+    font-size: 1rem;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+    .hero-img {
+        max-height: none;
+    }
+
+    .floating-cta-global {
+        width: 90%;
+        text-align: center;
+        bottom: 16px;
+        padding: 14px;
+        font-size: 1rem;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+}
 </style>
 </head>
 <body>
 
+<!-- HERO IMAGE ONLY -->
+<section class="hero-banner">
+    <img src="bedtime-story-app-choose.webp" alt="Sleep Stories for Toddlers" class="hero-img">
+</section>
+
+<div class="container">
+
 <h1>Sleep Stories for Toddlers</h1>
 
-<p><strong>Updated March 2026 – New bedtime stories and guides added weekly.</strong></p>
+<p class="freshness"><strong>Updated March 2026 – New bedtime stories and guides added weekly.</strong></p>
 
 <p>
 Sleep stories for toddlers can make bedtime feel softer, calmer, and easier to manage. Young children often respond well to simple stories with gentle pacing, kind characters, and peaceful endings.
@@ -135,6 +228,32 @@ Sleep stories for toddlers can help bedtime feel more relaxing and less stressfu
     <a href="https://softice-site.pages.dev/best-bedtime-stories-for-kids.html">Best Bedtime Stories for Kids</a>
     <a href="https://softice-site.pages.dev/bedtime-stories-for-toddlers.html">Bedtime Stories for Toddlers</a>
 </div>
+
+</div>
+
+<a href="/" class="floating-cta-global" id="floatingCta">Try 2 Free Books</a>
+
+<script>
+(function () {
+    const cta = document.getElementById('floatingCta');
+
+    function toggleCta() {
+        const scrollY = window.scrollY || window.pageYOffset;
+        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+        const triggerPoint = Math.min(220, docHeight * 0.18);
+
+        if (scrollY > triggerPoint) {
+            cta.classList.add('show');
+        } else {
+            cta.classList.remove('show');
+        }
+    }
+
+    window.addEventListener('scroll', toggleCta, { passive: true });
+    window.addEventListener('load', toggleCta);
+    window.addEventListener('resize', toggleCta);
+})();
+</script>
 
 </body>
 </html>
