@@ -42,46 +42,41 @@ body {
     margin: auto;
 }
 
-.hero-banner .overlay {
-    position: absolute;
-    top: 50%;
+/* GLOBAL FLOATING CTA */
+.floating-cta-global {
+    position: fixed;
+    bottom: 20px;
     left: 50%;
-    transform: translate(-50%, -50%);
-    background: rgba(0,0,0,0.45);
-    padding: 30px;
-    border-radius: 12px;
-    text-align: center;
-    color: white;
-    max-width: 800px;
-    width: calc(100% - 40px);
-    box-sizing: border-box;
-}
-
-.hero-banner h1 {
-    margin: 0 0 10px;
-    font-size: 2.2rem;
-}
-
-.hero-banner p {
-    margin-bottom: 20px;
-    font-size: 1.05rem;
-}
-
-.cta-button {
-    display: inline-block;
-    padding: 12px 20px;
+    transform: translateX(-50%);
     background: #ffcc00;
     color: #000;
     text-decoration: none;
     font-weight: bold;
-    border-radius: 8px;
+    padding: 14px 24px;
+    border-radius: 30px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    z-index: 9999;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.floating-cta-global:hover {
+    transform: translateX(-50%) scale(1.05);
+    text-decoration: none;
 }
 
 /* CONTENT */
 .container {
     max-width: 860px;
     margin: auto;
-    padding: 40px 20px;
+    padding: 40px 20px 100px 20px;
+}
+
+h1 {
+    color: #111;
+    line-height: 1.3;
+    font-size: 2.2rem;
+    margin-top: 0;
+    margin-bottom: 12px;
 }
 
 h2 {
@@ -125,23 +120,27 @@ a:hover {
     margin: 24px 0;
 }
 
+.freshness {
+    margin-bottom: 20px;
+    font-size: 1rem;
+}
+
 /* MOBILE */
 @media (max-width: 768px) {
     .hero-img {
         max-height: none;
     }
 
-    .hero-banner .overlay {
-        padding: 18px;
+    .floating-cta-global {
         width: 90%;
+        text-align: center;
+        padding: 14px;
+        font-size: 1rem;
+        bottom: 16px;
     }
 
-    .hero-banner h1 {
-        font-size: 1.5rem;
-    }
-
-    .hero-banner p {
-        font-size: 0.95rem;
+    h1 {
+        font-size: 1.8rem;
     }
 }
 </style>
@@ -151,17 +150,13 @@ a:hover {
 <!-- FULL IMAGE HERO -->
 <section class="hero-banner">
     <img src="calming-fairy-tales-for-kids.webp" alt="Bedtime Stories for Toddlers" class="hero-img">
-
-    <div class="overlay">
-        <h1>Bedtime Stories for Toddlers</h1>
-        <p>Gentle bedtime stories to help toddlers feel calm, safe, and ready for sleep.</p>
-        <a href="/" class="cta-button">Explore the App</a>
-    </div>
 </section>
 
 <div class="container">
 
-<p><strong>Updated March 2026 – New bedtime stories and guides added weekly.</strong></p>
+<h1>Bedtime Stories for Toddlers</h1>
+
+<p class="freshness"><strong>Updated March 2026 – New bedtime stories and guides added weekly.</strong></p>
 
 <p>
 Bedtime stories for toddlers help young children wind down at the end of the day. A gentle story creates a comforting pause between daytime activity and nighttime rest.
@@ -223,6 +218,8 @@ The best bedtime stories for toddlers are the ones that make children feel calm,
 </div>
 
 </div>
+
+<a href="/" class="floating-cta-global">Try 2 Free Books</a>
 
 </body>
 </html>
