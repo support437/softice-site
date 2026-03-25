@@ -26,18 +26,20 @@ body {
     background: #fff;
 }
 
-/* FULL IMAGE HERO */
+/* FULL IMAGE HERO — NO CUTTING */
 .hero-banner {
     position: relative;
     width: 100%;
-    max-height: 520px;
-    overflow: hidden;
+    text-align: center;
+    background: #0b0b1f;
 }
 
 .hero-img {
     width: 100%;
-    height: auto;
+    max-height: 520px;
+    object-fit: contain;
     display: block;
+    margin: auto;
 }
 
 .hero-banner .overlay {
@@ -123,7 +125,7 @@ a:hover {
 
 /* MOBILE */
 @media (max-width: 768px) {
-    .hero-banner {
+    .hero-img {
         max-height: none;
     }
 
