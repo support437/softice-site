@@ -26,21 +26,24 @@ body {
     background: #fff;
 }
 
-/* HERO BANNER */
+/* FULL IMAGE HERO */
 .hero-banner {
     position: relative;
     width: 100%;
-    height: 380px;
-    background-image: url('calming-fairy-tales-for-kids.webp');
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+}
+
+.hero-img {
+    width: 100%;
+    height: auto;
+    display: block;
 }
 
 .hero-banner .overlay {
-    background: rgba(0, 0, 0, 0.45);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0,0,0,0.45);
     padding: 30px;
     border-radius: 12px;
     text-align: center;
@@ -73,11 +76,6 @@ body {
     max-width: 860px;
     margin: auto;
     padding: 40px 20px;
-}
-
-h1, h2 {
-    color: #111;
-    line-height: 1.3;
 }
 
 h2 {
@@ -123,8 +121,10 @@ a:hover {
 
 <body>
 
-<!-- HERO BANNER -->
+<!-- FULL IMAGE HERO -->
 <section class="hero-banner">
+    <img src="calming-fairy-tales-for-kids.webp" alt="Bedtime Stories for Kids" class="hero-img">
+
     <div class="overlay">
         <h1>Bedtime Routine for Kids</h1>
         <p>Build calm, simple bedtime habits that help children relax and sleep peacefully.</p>
