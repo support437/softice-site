@@ -19,16 +19,14 @@
 <style>
 body {
     font-family: Arial, sans-serif;
-    padding: 0;
     margin: 0;
     line-height: 1.8;
-    color: #222;
     background: #fff;
+    color: #222;
 }
 
-/* HERO IMAGE */
+/* HERO */
 .hero-banner {
-    position: relative;
     width: 100%;
     text-align: center;
     background: #0b0b1f;
@@ -38,125 +36,96 @@ body {
     width: 100%;
     max-height: 520px;
     object-fit: contain;
-    display: block;
-    margin: auto;
 }
 
-/* SMART FLOATING CTA */
+/* FLOATING CTA */
 .floating-cta-global {
     position: fixed;
     bottom: 20px;
     left: 50%;
-    transform: translateX(-50%) translateY(20px);
+    transform: translateX(-50%);
     background: #ffcc00;
     color: #000;
-    text-decoration: none;
-    font-weight: bold;
     padding: 14px 24px;
     border-radius: 30px;
+    font-weight: bold;
+    text-decoration: none;
     box-shadow: 0 10px 25px rgba(0,0,0,0.3);
     z-index: 9999;
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
-    transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s ease;
+    animation: pulseGlow 2.2s ease-in-out infinite;
 }
 
-.floating-cta-global.show {
-    opacity: 1;
-    visibility: visible;
-    pointer-events: auto;
-    transform: translateX(-50%) translateY(0);
-}
-
-.floating-cta-global:hover {
-    text-decoration: none;
+@keyframes pulseGlow {
+    0% { transform: translateX(-50%) scale(1); }
+    50% { transform: translateX(-50%) scale(1.05); }
+    100% { transform: translateX(-50%) scale(1); }
 }
 
 /* CONTENT */
 .container {
     max-width: 860px;
     margin: auto;
-    padding: 40px 20px 100px 20px;
+    padding: 40px 20px 100px;
 }
 
-h1 {
-    color: #111;
-    line-height: 1.3;
-    font-size: 2.2rem;
-    margin-top: 0;
-    margin-bottom: 12px;
-}
+h1 { font-size: 2.2rem; }
+h2 { font-size: 1.5rem; margin-top: 36px; }
 
-h2 {
-    color: #111;
-    line-height: 1.3;
-    font-size: 1.5rem;
-    margin-top: 36px;
-    margin-bottom: 12px;
-}
-
-p {
-    margin-bottom: 18px;
-    font-size: 1.05rem;
-}
+p { font-size: 1.05rem; margin-bottom: 18px; }
 
 a {
     color: #0066ff;
     text-decoration: none;
 }
 
-a:hover {
-    text-decoration: underline;
+a:hover { text-decoration: underline; }
+
+/* RELATED */
+.related-links {
+    background: #f7f9fc;
+    padding: 18px;
+    border-radius: 12px;
+    margin-top: 30px;
 }
 
-.nav-links {
-    margin-top: 40px;
-    padding-top: 20px;
-    border-top: 1px solid #ddd;
-}
-
-.nav-links a {
+.related-links a {
     display: inline-block;
-    margin-right: 18px;
+    margin-right: 15px;
     margin-bottom: 10px;
 }
 
+/* NAV */
+.nav-links {
+    margin-top: 40px;
+    border-top: 1px solid #ddd;
+    padding-top: 20px;
+}
+
+.nav-links a { margin-right: 15px; }
+
+/* HIGHLIGHT */
 .highlight {
     background: #f7f9fc;
     border-left: 4px solid #0066ff;
-    padding: 16px 18px;
+    padding: 16px;
     margin: 24px 0;
 }
 
-.freshness {
-    margin-bottom: 20px;
-    font-size: 1rem;
-}
+.freshness { margin-bottom: 20px; }
 
 /* MOBILE */
 @media (max-width: 768px) {
-    .hero-img {
-        max-height: none;
-    }
-
+    .hero-img { max-height: none; }
     .floating-cta-global {
         width: 90%;
         text-align: center;
-        bottom: 16px;
-        padding: 14px;
-        font-size: 1rem;
-    }
-
-    h1 {
-        font-size: 1.8rem;
     }
 }
 </style>
 </head>
+
 <body>
 
-<!-- HERO IMAGE ONLY -->
 <section class="hero-banner">
     <img src="calming-fairy-tales-for-kids.webp" alt="Calming Stories for Kids" class="hero-img">
 </section>
@@ -165,82 +134,69 @@ a:hover {
 
 <h1>Calming Stories for Kids</h1>
 
-<p class="freshness"><strong>Updated March 2026 – New bedtime stories and guides added weekly.</strong></p>
+<p class="freshness"><strong>Updated March 2026 – New bedtime stories added weekly.</strong></p>
 
 <p>
-Calming stories for kids can help turn bedtime into a more peaceful and comforting experience. Stories with gentle language and soothing themes help children slow down emotionally and mentally before sleep.
+Calming stories for kids help create a peaceful transition into sleep. Many families combine 
+<a href="short-bedtime-stories-for-kids.html">short bedtime stories</a> with calming routines for better results.
 </p>
 
 <p>
-For many families, calming stories are one of the easiest tools for reducing bedtime stress. Instead of excitement and noise, they create a quiet moment of connection and rest.
+These stories reduce stress, slow down the mind, and create a quiet emotional space before bedtime.
 </p>
 
 <h2>Why Calming Stories Work</h2>
 <p>
-Children respond strongly to tone, rhythm, and repetition. A soft story with a reassuring ending helps the body and mind prepare for sleep in a natural way.
+Children respond to rhythm and tone. A gentle story helps prepare both the mind and body for sleep.
 </p>
 
 <div class="highlight">
-Calming stories for kids support peaceful bedtime routines by helping children feel safe, relaxed, and ready for sleep.
+Calming stories help children feel safe, relaxed, and ready for sleep.
 </div>
 
 <h2>What Makes a Story Calming?</h2>
 <p>
-Calming stories usually include kind characters, simple plots, soft pacing, and low-stress settings. Bedtime is not the best time for loud, intense, or overstimulating stories.
+Soft pacing, simple plots, and peaceful endings are key elements.
 </p>
 
 <h2>Read-Aloud Calming Stories</h2>
 <p>
-Read-aloud stories can be especially effective because the narrator’s voice adds warmth and consistency. Parents often use bedtime story apps when they want a calm option that is quick and simple to start.
+<a href="https://softice-site.pages.dev/">Bedtime Story Books – Cozy Tales</a> offers calming read-aloud stories with no subscription.
 </p>
 
+<h2>How to Use Stories at Night</h2>
 <p>
-<a href="https://softice-site.pages.dev/">Bedtime Story Books – Cozy Tales</a> offers calming read-aloud bedtime stories for kids with no subscription, making peaceful story time easier for families.
-</p>
-
-<h2>How to Use Calming Stories at Night</h2>
-<p>
-Keep the room dim, reduce distractions, and choose one story at a time. Use calming stories as the last activity before sleep so children can carry that quiet mood into bedtime.
+Use calming stories as the final step in a 
+<a href="bedtime-routine-for-kids.html">bedtime routine</a>.
 </p>
 
 <h2>Final Thoughts</h2>
 <p>
-The best calming stories for kids are the ones that help children feel peaceful and secure. When used consistently, they can become an important part of a healthy bedtime routine.
+The best calming stories help children feel peaceful and ready for rest.
 </p>
+
+<!-- RELATED -->
+<div class="related-links">
+    <h2>Explore More</h2>
+    <a href="bedtime-stories-for-kids.html">All bedtime stories</a>
+    <a href="short-bedtime-stories-for-kids.html">Short bedtime stories</a>
+    <a href="bedtime-stories-for-toddlers.html">Toddler stories</a>
+</div>
 
 <div class="nav-links">
     <a href="https://softice-site.pages.dev/">Home</a>
-    <a href="https://softice-site.pages.dev/best-bedtime-stories-for-kids.html">Best Bedtime Stories for Kids</a>
-    <a href="https://softice-site.pages.dev/free-bedtime-stories-for-kids.html">Free Bedtime Stories for Kids</a>
-    <a href="https://softice-site.pages.dev/how-to-help-kids-sleep.html">How to Help Kids Sleep</a>
-     <a href="bedtime-stories-for-kids.html"> Explore all bedtime stories for kids </a>
+    <a href="best-bedtime-stories-for-kids.html">Best Stories</a>
+    <a href="free-bedtime-stories-for-kids.html">Free Stories</a>
+    <a href="how-to-help-kids-sleep.html">Sleep Help</a>
+    <a href="bedtime-stories-for-kids.html">All bedtime stories</a>
 </div>
 
 </div>
 
-<a href="/" class="floating-cta-global" id="floatingCta">Try 2 Free Books</a>
-
-<script>
-(function () {
-    const cta = document.getElementById('floatingCta');
-
-    function toggleCta() {
-        const scrollY = window.scrollY || window.pageYOffset;
-        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-        const triggerPoint = Math.min(220, docHeight * 0.18);
-
-        if (scrollY > triggerPoint) {
-            cta.classList.add('show');
-        } else {
-            cta.classList.remove('show');
-        }
-    }
-
-    window.addEventListener('scroll', toggleCta, { passive: true });
-    window.addEventListener('load', toggleCta);
-    window.addEventListener('resize', toggleCta);
-})();
-</script>
+<a href="https://play.google.com/store/apps/details?id=com.softiceinnovationslabs.bedtimestorybooks"
+   class="floating-cta-global">
+   Try 2 Free Books
+</a>
 
 </body>
 </html>
