@@ -42,12 +42,12 @@ body {
     margin: auto;
 }
 
-/* SMART FLOATING CTA */
+/* FLOATING CTA - ALWAYS VISIBLE */
 .floating-cta-global {
     position: fixed;
     bottom: 20px;
     left: 50%;
-    transform: translateX(-50%) translateY(20px);
+    transform: translateX(-50%);
     background: #ffcc00;
     color: #000;
     text-decoration: none;
@@ -56,21 +56,13 @@ body {
     border-radius: 30px;
     box-shadow: 0 10px 25px rgba(0,0,0,0.3);
     z-index: 9999;
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
-    transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s ease;
+    animation: pulseGlow 2.2s ease-in-out infinite;
 }
 
-.floating-cta-global.show {
-    opacity: 1;
-    visibility: visible;
-    pointer-events: auto;
-    transform: translateX(-50%) translateY(0);
-}
-
-.floating-cta-global:hover {
-    text-decoration: none;
+@keyframes pulseGlow {
+    0% { transform: translateX(-50%) scale(1); }
+    50% { transform: translateX(-50%) scale(1.05); }
+    100% { transform: translateX(-50%) scale(1); }
 }
 
 /* CONTENT */
@@ -93,7 +85,6 @@ h2 {
     margin-top: 36px;
     margin-bottom: 12px;
     color: #111;
-    line-height: 1.3;
 }
 
 p {
@@ -110,6 +101,21 @@ a:hover {
     text-decoration: underline;
 }
 
+/* RELATED LINKS */
+.related-links {
+    background: #f7f9fc;
+    border-radius: 12px;
+    padding: 18px;
+    margin-top: 30px;
+}
+
+.related-links a {
+    display: inline-block;
+    margin-right: 15px;
+    margin-bottom: 10px;
+}
+
+/* NAV */
 .nav-links {
     margin-top: 40px;
     padding-top: 20px;
@@ -131,32 +137,24 @@ a:hover {
 
 .freshness {
     margin-bottom: 20px;
-    font-size: 1rem;
 }
 
 /* MOBILE */
 @media (max-width: 768px) {
-    .hero-img {
-        max-height: none;
-    }
+    .hero-img { max-height: none; }
 
     .floating-cta-global {
         width: 90%;
         text-align: center;
-        bottom: 16px;
-        padding: 14px;
-        font-size: 1rem;
     }
 
-    h1 {
-        font-size: 1.8rem;
-    }
+    h1 { font-size: 1.8rem; }
 }
 </style>
 </head>
+
 <body>
 
-<!-- HERO IMAGE ONLY -->
 <section class="hero-banner">
     <img src="calming-fairy-tales-for-kids.webp" alt="Bedtime Stories for Toddlers" class="hero-img">
 </section>
@@ -172,12 +170,13 @@ Bedtime stories for toddlers help young children wind down at the end of the day
 </p>
 
 <p>
-Many parents look for toddler bedtime stories that are short, calming, and easy to understand. A short story for kids or a simple story for children is often more effective than longer or overstimulating stories when the goal is sleep.
+Many parents look for toddler bedtime stories that are short, calming, and easy to understand. A 
+<a href="short-bedtime-stories-for-kids.html">short story for kids</a> is often more effective than longer stories when the goal is sleep.
 </p>
 
 <h2>Why Toddlers Benefit from Bedtime Stories</h2>
 <p>
-Toddlers often find comfort in familiar routines. Bedtime stories add warmth and consistency to the evening, helping children feel more secure and emotionally settled before sleep.
+Toddlers often find comfort in familiar routines. Bedtime stories add warmth and consistency to the evening, helping children feel more secure.
 </p>
 
 <div class="highlight">
@@ -186,72 +185,49 @@ Bedtime stories for toddlers work best when they are short, comforting, and part
 
 <h2>What to Look for in a Toddler Story</h2>
 <p>
-Choose bedtime stories with soft pacing, gentle emotions, and a peaceful ending. Stories with simple words and reassuring scenes are easier for toddlers to follow and enjoy at bedtime.
-</p>
-
-<p>
-Many parents also use bedtime stories for kids that include familiar characters and calm settings. Kids bedtime stories work best when they feel safe, predictable, and relaxing.
+Choose bedtime stories with soft pacing, gentle emotions, and a peaceful ending. 
+<a href="calming-stories-for-kids.html">Calming stories</a> are especially effective for toddlers.
 </p>
 
 <h2>Story Apps for Toddlers</h2>
 <p>
-Some parents prefer story apps that include read-aloud narration, especially on busy evenings. A good bedtime story app for toddlers should feel calm, easy to use, and not overloaded with distractions.
-</p>
-
-<p>
-<a href="https://softice-site.pages.dev/">Bedtime Story Books – Cozy Tales</a> offers read-aloud bedtime stories for kids with a no subscription model, making it a simple option for family story time.
+<a href="https://softice-site.pages.dev/">Bedtime Story Books – Cozy Tales</a> offers read-aloud bedtime stories for kids with a no subscription model.
 </p>
 
 <h2>Building a Toddler Bedtime Routine</h2>
 <p>
-Bedtime stories are most effective when combined with a consistent routine. You can learn more in our 
-<a href="https://softice-site.pages.dev/bedtime-routine-for-kids.html">bedtime routine for kids guide</a>, which explains how to create calm and predictable nights.
-</p>
-
-<h2>Creating a Toddler Bedtime Habit</h2>
-<p>
-Try to read or play the story at the same point each evening. A familiar rhythm helps toddlers know what comes next and reduces bedtime resistance over time.
+You can learn more in our 
+<a href="bedtime-routine-for-kids.html">bedtime routine for kids guide</a>.
 </p>
 
 <h2>Final Thoughts</h2>
 <p>
-The best bedtime stories for toddlers are the ones that make children feel calm, safe, and ready for sleep. Start with simple stories and turn them into a nightly tradition your toddler looks forward to.
+The best bedtime stories for toddlers are the ones that make children feel calm, safe, and ready for sleep.
 </p>
+
+<!-- RELATED LINKS -->
+<div class="related-links">
+    <h2>Explore More</h2>
+    <a href="bedtime-stories-for-kids.html">All bedtime stories</a>
+    <a href="short-bedtime-stories-for-kids.html">Short bedtime stories</a>
+    <a href="calming-stories-for-kids.html">Calming stories</a>
+</div>
 
 <div class="nav-links">
     <a href="https://softice-site.pages.dev/">Home</a>
-    <a href="https://softice-site.pages.dev/sleep-stories-for-toddlers.html">Sleep Stories for Toddlers</a>
-    <a href="https://softice-site.pages.dev/free-bedtime-stories-for-kids.html">Free Bedtime Stories for Kids</a>
-    <a href="https://softice-site.pages.dev/best-bedtime-stories-for-kids.html">Best Bedtime Stories for Kids</a>
-    <a href="https://softice-site.pages.dev/bedtime-story-app-for-kids.html">Best Bedtime Story App for Kids</a>
-     <a href="bedtime-stories-for-kids.html"> Explore all bedtime stories for kids </a>
+    <a href="sleep-stories-for-toddlers.html">Sleep Stories for Toddlers</a>
+    <a href="free-bedtime-stories-for-kids.html">Free Stories</a>
+    <a href="best-bedtime-stories-for-kids.html">Best Stories</a>
+    <a href="bedtime-story-app-for-kids.html">Story App</a>
+    <a href="bedtime-stories-for-kids.html">All bedtime stories</a>
 </div>
 
 </div>
 
-<a href="/" class="floating-cta-global" id="floatingCta">Try 2 Free Books</a>
-
-<script>
-(function () {
-    const cta = document.getElementById('floatingCta');
-
-    function toggleCta() {
-        const scrollY = window.scrollY || window.pageYOffset;
-        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-        const triggerPoint = Math.min(220, docHeight * 0.18);
-
-        if (scrollY > triggerPoint) {
-            cta.classList.add('show');
-        } else {
-            cta.classList.remove('show');
-        }
-    }
-
-    window.addEventListener('scroll', toggleCta, { passive: true });
-    window.addEventListener('load', toggleCta);
-    window.addEventListener('resize', toggleCta);
-})();
-</script>
+<a href="https://play.google.com/store/apps/details?id=com.softiceinnovationslabs.bedtimestorybooks"
+   class="floating-cta-global">
+   Try 2 Free Books
+</a>
 
 </body>
 </html>
