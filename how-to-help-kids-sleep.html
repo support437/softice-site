@@ -37,11 +37,12 @@ body {
     object-fit: contain;
 }
 
+/* FLOATING CTA - MATCHES MAIN PAGE STYLE, KEEPING EXACT YELLOW */
 .floating-cta-global {
     position: fixed;
     bottom: 20px;
     left: 50%;
-    transform: translateX(-50%) translateY(20px);
+    transform: translateX(-50%);
     background: #ffcc00;
     color: #000;
     text-decoration: none;
@@ -50,15 +51,19 @@ body {
     border-radius: 30px;
     box-shadow: 0 10px 25px rgba(0,0,0,0.3);
     z-index: 9999;
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.25s ease;
+    animation: pulse 2s infinite;
 }
 
-.floating-cta-global.show {
-    opacity: 1;
-    visibility: visible;
-    transform: translateX(-50%) translateY(0);
+.floating-cta-global:hover {
+    text-decoration: none;
+    transform: translateX(-50%) scale(1.05);
+}
+
+/* SAME RING PULSE STYLE AS HOMEPAGE */
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(255, 204, 0, 0.55); }
+    70% { box-shadow: 0 0 0 20px rgba(255, 204, 0, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(255, 204, 0, 0); }
 }
 
 .container {
@@ -75,8 +80,14 @@ p {
     margin-bottom: 18px;
 }
 
-a { color: #0066ff; text-decoration: none; }
-a:hover { text-decoration: underline; }
+a {
+    color: #0066ff;
+    text-decoration: none;
+}
+
+a:hover { 
+    text-decoration: underline; 
+}
 
 .highlight {
     background: #f7f9fc;
@@ -95,6 +106,21 @@ ul {
     margin-top: 10px;
 }
 
+/* MOBILE */
+@media (max-width: 768px) {
+    .hero-img { 
+        max-height: none; 
+    }
+
+    .floating-cta-global {
+        width: 90%;
+        text-align: center;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+}
 </style>
 </head>
 
@@ -206,28 +232,7 @@ Or explore all stories:
 
 </div>
 
-<a href="/" class="floating-cta-global" id="floatingCta">Try 2 Free Books</a>
-
-<script>
-(function () {
-    const cta = document.getElementById('floatingCta');
-
-    function toggleCta() {
-        const scrollY = window.scrollY || window.pageYOffset;
-        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-        const triggerPoint = Math.min(220, docHeight * 0.18);
-
-        if (scrollY > triggerPoint) {
-            cta.classList.add('show');
-        } else {
-            cta.classList.remove('show');
-        }
-    }
-
-    window.addEventListener('scroll', toggleCta, { passive: true });
-    window.addEventListener('load', toggleCta);
-})();
-</script>
+<a href="/" class="floating-cta-global">Try 2 Free Books</a>
 
 </body>
 </html>
