@@ -76,7 +76,7 @@ a:hover {
     margin-bottom: 10px;
 }
 
-/* FLOATING BUTTON */
+/* FLOATING BUTTON - MATCHES MAIN PAGE ANIMATION STYLE */
 .floating-cta-global {
     position: fixed;
     bottom: 20px;
@@ -90,13 +90,18 @@ a:hover {
     border-radius: 30px;
     box-shadow: 0 10px 25px rgba(0,0,0,0.3);
     z-index: 9999;
-    animation: pulseGlow 2.2s ease-in-out infinite;
+    animation: pulse 2s infinite;
 }
 
-@keyframes pulseGlow {
-    0% { transform: translateX(-50%) scale(1); }
-    50% { transform: translateX(-50%) scale(1.06); }
-    100% { transform: translateX(-50%) scale(1); }
+.floating-cta-global:hover {
+    text-decoration: none;
+    transform: translateX(-50%) scale(1.05);
+}
+
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(255, 204, 0, 0.55); }
+    70% { box-shadow: 0 0 0 20px rgba(255, 204, 0, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(255, 204, 0, 0); }
 }
 
 /* RELATED LINKS */
