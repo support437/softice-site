@@ -127,6 +127,24 @@ img {
     display: inline-block;
 }
 
+.btn {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 16px 32px;
+    background: linear-gradient(135deg, #ff4dd2, #ff88e6);
+    color: white;
+    border-radius: 40px;
+    text-decoration: none;
+    font-weight: bold;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(255,77,210,0.6); }
+    70% { box-shadow: 0 0 0 20px rgba(255,77,210,0); }
+    100% { box-shadow: 0 0 0 0 rgba(255,77,210,0); }
+}
+
 .disney-section {
     background: white;
     color: #111;
@@ -241,12 +259,30 @@ img {
     line-height: 1.8;
 }
 
-.section a {
+.resource-links {
+    max-width: 950px;
+    margin: 30px auto 0;
+    text-align: left;
+}
+
+.resource-links h3 {
+    margin-bottom: 18px;
+    color: white;
+}
+
+.resource-links ul {
+    margin: 0;
+    padding-left: 24px;
+    line-height: 2;
+    font-size: 18px;
+}
+
+.resource-links a {
     color: #7aa7ff;
     text-decoration: none;
 }
 
-.section a:hover,
+.resource-links a:hover,
 .footer a:hover {
     text-decoration: underline;
 }
@@ -255,7 +291,7 @@ img {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     gap: 18px;
-    margin-top: 30px;
+    margin-top: 24px;
 }
 
 .resource-card {
@@ -508,12 +544,6 @@ img {
     transform: translateX(-50%) scale(1.05);
 }
 
-@keyframes pulse {
-    0% { box-shadow: 0 0 0 0 rgba(255,77,210,0.6); }
-    70% { box-shadow: 0 0 0 20px rgba(255,77,210,0); }
-    100% { box-shadow: 0 0 0 0 rgba(255,77,210,0); }
-}
-
 @media (max-width: 768px) {
     .hero h1 {
         font-size: 34px;
@@ -521,6 +551,7 @@ img {
 
     .hero p,
     .section p,
+    .resource-links ul,
     .faq-wrap,
     .updated-note {
         font-size: 17px;
@@ -567,6 +598,7 @@ for (let i = 0; i < 40; i++) {
         <h1>Bedtime Stories for Kids</h1>
         <p>Calming bedtime stories for kids with read-aloud narration, peaceful sleep support, and no subscription.</p>
         <p class="updated-note"><strong>Updated March 2026</strong> – New bedtime stories and guides added weekly.</p>
+
         <div class="cta-pill">🎁 2 FREE BOOKS • 🚫 NO SUBSCRIPTION</div>
     </div>
 </section>
@@ -650,96 +682,101 @@ for (let i = 0; i < 40; i++) {
         Looking for bedtime stories for kids that help children relax and fall asleep more peacefully? Cozy Tales combines calming sleep stories, read-aloud narration, gentle fairy tales, and a bedtime experience designed for toddlers, preschoolers, babies, and young children.
     </p>
     <p style="margin-top:24px;">
-        Families looking for <a href="/free-bedtime-stories-for-kids.html">free bedtime stories for kids</a>, <a href="/sleep-stories-for-toddlers.html">sleep stories for toddlers</a>, and <a href="/bedtime-stories-for-preschoolers.html">bedtime stories for preschoolers</a> can explore our growing bedtime guide library below.
+        Unlike many other kids apps, Bedtime Story Books – Cozy Tales offers a no subscription model, helping families enjoy bedtime storytelling without recurring monthly fees.
     </p>
 </section>
 
-<section class="section fade" aria-labelledby="hub-heading">
-    <h2 id="hub-heading">Explore Bedtime Stories by Age and Need</h2>
+<section class="section fade" aria-labelledby="why-parents-love-heading">
+    <h2 id="why-parents-love-heading">Why Parents Love Our Bedtime Stories App</h2>
     <p>
-        This homepage works as a bedtime stories hub, helping families explore age-based story guides, calming bedtime stories, bedtime routines, and practical sleep resources without overcrowding the page with too many links.
+        Bedtime Story Books – Cozy Tales is a bedtime stories app for kids designed to make nighttime routines calmer, easier, and more magical. Families can enjoy sleep stories for children, read-aloud narration, peaceful visuals, and a no subscription experience that keeps story time simple.
+    </p>
+    <p style="margin-top:24px;">
+        Parents looking for <a href="/free-bedtime-stories-for-kids.html">free bedtime stories for kids</a>, <a href="/short-bedtime-stories-for-kids.html">short bedtime stories</a>, <a href="/sleep-stories-for-toddlers.html">sleep stories for toddlers</a>, and <a href="/bedtime-stories-for-preschoolers.html">bedtime stories for preschoolers</a> can explore our growing bedtime guide library below.
+    </p>
+</section>
+
+<section class="section fade" aria-labelledby="helpful-resources-heading">
+    <h2 id="helpful-resources-heading">Helpful Bedtime Resources for Parents</h2>
+    <p>
+        This homepage also works as a bedtime stories hub, helping families explore age-based story guides, bedtime routines, calming sleep resources, and read-aloud story ideas all in one place.
     </p>
 
-    <div class="resource-grid">
-        <div class="resource-card">
-            <h3>Bedtime Stories for Kids</h3>
-            <p>Your main guide to calming bedtime stories, sleep stories, and gentle story ideas for better nights.</p>
-            <a href="/bedtime-stories-for-kids.html">Read the guide</a>
-        </div>
-
-        <div class="resource-card">
-            <h3>Free Bedtime Stories</h3>
-            <p>Start with free bedtime stories for kids and explore calm bedtime reading without subscription pressure.</p>
-            <a href="/free-bedtime-stories-for-kids.html">Read the guide</a>
-        </div>
-
-        <div class="resource-card">
-            <h3>Bedtime Stories for Babies</h3>
-            <p>Soft rhythm, gentle sounds, and simple story patterns designed for very young listeners.</p>
-            <a href="/bedtime-stories-for-babies.html">Read the guide</a>
-        </div>
-
-        <div class="resource-card">
-            <h3>Bedtime Stories for Toddlers</h3>
-            <p>Gentle story ideas for toddlers with simple language, calm themes, and soothing bedtime structure.</p>
-            <a href="/bedtime-stories-for-toddlers.html">Read the guide</a>
-        </div>
-
-        <div class="resource-card">
-            <h3>Bedtime Stories for Preschoolers</h3>
-            <p>Story ideas for preschoolers with simple but engaging storytelling that still supports calm sleep.</p>
-            <a href="/bedtime-stories-for-preschoolers.html">Read the guide</a>
-        </div>
-
-        <div class="resource-card">
-            <h3>Short Bedtime Stories</h3>
-            <p>Quick, calming stories for busy evenings when you still want a peaceful bedtime routine.</p>
-            <a href="/short-bedtime-stories-for-kids.html">Read the guide</a>
-        </div>
-
-        <div class="resource-card">
-            <h3>Calming Stories for Kids</h3>
-            <p>Peaceful bedtime stories that help children slow down, feel safe, and settle before sleep.</p>
-            <a href="/calming-stories-for-kids.html">Read the guide</a>
-        </div>
-
-        <div class="resource-card">
-            <h3>Benefits of Bedtime Stories</h3>
-            <p>Learn how bedtime stories improve sleep, language growth, emotional comfort, and family connection.</p>
-            <a href="/benefits-of-bedtime-stories.html">Read the guide</a>
-        </div>
+    <div class="resource-links">
+        <h3>Core Guides</h3>
+        <ul>
+            <li><a href="bedtime-stories-for-kids.html">Bedtime Stories for Kids</a></li>
+            <li><a href="/best-bedtime-stories-for-kids.html">Best Bedtime Stories for Kids (2026 Guide)</a></li>
+            <li><a href="/free-bedtime-stories-for-kids.html">Free Bedtime Stories for Kids (No Subscription)</a></li>
+            <li><a href="/bedtime-story-app-for-kids.html">Best Bedtime Story App for Kids</a></li>
+            <li><a href="/short-bedtime-stories-for-kids.html">Short Bedtime Stories for Kids</a></li>
+            <li><a href="/benefits-of-bedtime-stories.html">Benefits of Bedtime Stories for Kids</a></li>
+        </ul>
     </div>
 </section>
 
-<section class="section fade" aria-labelledby="parent-guides-heading">
-    <h2 id="parent-guides-heading">Helpful Sleep Guides for Parents</h2>
-    <p>
-        Build a calmer bedtime routine with practical parent guides focused on children’s sleep, bedtime structure, and soothing nighttime habits.
-    </p>
+<section class="section fade" aria-labelledby="more-sleep-guides-heading">
+    <h2 id="more-sleep-guides-heading">More Sleep and Bedtime Guides</h2>
 
     <div class="resource-grid">
         <div class="resource-card">
             <h3>Bedtime Routine for Kids</h3>
-            <p>Create a calm bedtime routine with simple nightly steps, story time, and predictable sleep habits.</p>
+            <p>Learn how to create a calm bedtime routine for kids with peaceful habits, story time, and simple nightly structure.</p>
             <a href="/bedtime-routine-for-kids.html">Read the guide</a>
         </div>
 
         <div class="resource-card">
-            <h3>How to Help Kids Sleep</h3>
-            <p>Simple ways to help children sleep better using routines, bedtime stories, and a calm evening environment.</p>
-            <a href="/how-to-help-kids-sleep.html">Read the guide</a>
-        </div>
-
-        <div class="resource-card">
             <h3>Sleep Stories for Toddlers</h3>
-            <p>Short sleep stories designed to help toddlers slow down, feel secure, and drift into a calmer bedtime.</p>
+            <p>Explore short, gentle sleep stories for toddlers that help little ones slow down and settle before bed.</p>
             <a href="/sleep-stories-for-toddlers.html">Read the guide</a>
         </div>
 
         <div class="resource-card">
-            <h3>Calming Fairy Tales</h3>
-            <p>Gentle fairy tales for bedtime with soft themes, magical storytelling, and peaceful nighttime reading.</p>
+            <h3>Bedtime Stories for Toddlers</h3>
+            <p>Find bedtime stories for toddlers with simple language, soft themes, and peaceful storytelling for sleep.</p>
+            <a href="/bedtime-stories-for-toddlers.html">Read the guide</a>
+        </div>
+
+        <div class="resource-card">
+            <h3>Bedtime Stories for Babies</h3>
+            <p>Discover gentle bedtime stories for babies with soft rhythm, comforting sounds, and calming bedtime narration.</p>
+            <a href="/bedtime-stories-for-babies.html">Read the guide</a>
+        </div>
+
+        <div class="resource-card">
+            <h3>Bedtime Stories for Preschoolers</h3>
+            <p>Explore bedtime stories for preschoolers with simple language, gentle themes, and engaging but calming storytelling.</p>
+            <a href="/bedtime-stories-for-preschoolers.html">Read the guide</a>
+        </div>
+
+        <div class="resource-card">
+            <h3>Calming Stories for Kids</h3>
+            <p>Discover calming stories for kids that support peaceful bedtime routines and help children feel safe and relaxed.</p>
+            <a href="/calming-stories-for-kids.html">Read the guide</a>
+        </div>
+
+        <div class="resource-card">
+            <h3>How to Help Kids Sleep</h3>
+            <p>Get simple and practical tips to help kids sleep better with routines, bedtime stories, and a calm evening environment.</p>
+            <a href="/how-to-help-kids-sleep.html">Read the guide</a>
+        </div>
+
+        <div class="resource-card">
+            <h3>Calming Fairy Tales for Kids</h3>
+            <p>Explore gentle fairy tales for bedtime with peaceful themes, magical stories, and calming nighttime reading for children.</p>
             <a href="/calming-fairy-tales-for-kids.html">Read the guide</a>
+        </div>
+
+        <div class="resource-card">
+            <h3>Short Bedtime Stories for Kids</h3>
+            <p>Quick calming story ideas that help children relax before sleep and fit naturally into busy bedtime routines.</p>
+            <a href="/short-bedtime-stories-for-kids.html">Read the guide</a>
+        </div>
+
+        <div class="resource-card">
+            <h3>Benefits of Bedtime Stories</h3>
+            <p>Learn how bedtime stories support better sleep, emotional comfort, language growth, and stronger family connection.</p>
+            <a href="/benefits-of-bedtime-stories.html">Read the guide</a>
         </div>
     </div>
 </section>
