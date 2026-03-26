@@ -41,7 +41,7 @@ body {
     margin: auto;
 }
 
-/* ✅ UPDATED CTA (ALWAYS VISIBLE + PULSE) */
+/* ✅ FIXED CTA - MATCHES HOMEPAGE EXACT STYLE */
 .floating-cta-global {
     position: fixed;
     bottom: 20px;
@@ -55,12 +55,7 @@ body {
     border-radius: 30px;
     box-shadow: 0 10px 25px rgba(0,0,0,0.3);
     z-index: 9999;
-
-    opacity: 1;
-    visibility: visible;
-    pointer-events: auto;
-
-    animation: pulseCTA 2.2s ease-in-out infinite;
+    animation: pulse 2s infinite;
 }
 
 .floating-cta-global:hover {
@@ -68,19 +63,11 @@ body {
     box-shadow: 0 14px 32px rgba(0,0,0,0.35);
 }
 
-@keyframes pulseCTA {
-    0% {
-        transform: translateX(-50%) scale(1);
-        box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-    }
-    50% {
-        transform: translateX(-50%) scale(1.06);
-        box-shadow: 0 16px 34px rgba(0,0,0,0.4);
-    }
-    100% {
-        transform: translateX(-50%) scale(1);
-        box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-    }
+/* 🔥 HOMEPAGE RING PULSE (CORRECT STYLE) */
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(255, 204, 0, 0.55); }
+    70% { box-shadow: 0 0 0 20px rgba(255, 204, 0, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(255, 204, 0, 0); }
 }
 
 .container {
