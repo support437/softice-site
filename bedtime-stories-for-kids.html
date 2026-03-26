@@ -29,10 +29,10 @@ body {
 .container {
     max-width: 900px;
     margin: auto;
-    padding: 20px;
+    padding: 20px 20px 100px 20px;
 }
 
-/* HERO IMAGE */
+/* HERO */
 .hero img {
     width: 100%;
     height: auto;
@@ -75,6 +75,51 @@ a:hover {
     font-size: 18px;
     margin-bottom: 10px;
 }
+
+/* FLOATING BUTTON */
+.floating-cta-global {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #ffcc00;
+    color: #000;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 14px 24px;
+    border-radius: 30px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    z-index: 9999;
+    animation: pulseGlow 2.2s ease-in-out infinite;
+}
+
+@keyframes pulseGlow {
+    0% { transform: translateX(-50%) scale(1); }
+    50% { transform: translateX(-50%) scale(1.06); }
+    100% { transform: translateX(-50%) scale(1); }
+}
+
+/* RELATED LINKS */
+.related-links {
+    background: #f7f9fc;
+    border-radius: 12px;
+    padding: 18px;
+    margin-top: 30px;
+}
+
+.related-links a {
+    display: inline-block;
+    margin-right: 15px;
+    margin-bottom: 10px;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+    .floating-cta-global {
+        width: 90%;
+        text-align: center;
+    }
+}
 </style>
 </head>
 
@@ -91,88 +136,76 @@ a:hover {
 
 <p>
 Bedtime stories for kids are one of the most powerful ways to help children relax, feel safe, and fall asleep peacefully. 
-Whether you're looking for short bedtime stories, calming stories, or toddler-friendly sleep stories, the right story can turn bedtime into a calm and enjoyable routine.
+Whether you're looking for <a href="short-bedtime-stories-for-kids.html">short bedtime stories</a>, calming stories, or toddler-friendly sleep stories, the right story can turn bedtime into a calm and enjoyable routine.
 </p>
 
 <p>
 Explore our complete guide below to find the best bedtime stories based on your child’s age, mood, and sleep needs.
 </p>
 
-<!-- BEST STORIES -->
 <h2>Best Bedtime Stories for Kids</h2>
-
 <p>
 Looking for the most popular and effective bedtime stories? These stories are designed to calm the mind, reduce overstimulation, and help kids settle into sleep naturally.
 </p>
-
 <p>
 👉 <a href="best-bedtime-stories-for-kids.html">Explore the best bedtime stories for kids</a>
 </p>
 
-<!-- FREE STORIES -->
 <h2>Free Bedtime Stories</h2>
-
 <p>
-Free bedtime stories are perfect for parents who want to try calming stories without commitment. Many apps and guides offer free stories to help you build a bedtime routine.
+Free bedtime stories are perfect for parents who want to try calming stories without commitment.
 </p>
-
 <p>
 👉 <a href="free-bedtime-stories-for-kids.html">Read free bedtime stories for kids</a>
 </p>
 
-<!-- TODDLER STORIES -->
 <h2>Bedtime Stories for Toddlers</h2>
-
 <p>
-Toddlers need simple, gentle stories with repetitive language and soft tones. These stories help younger children feel secure and ready for sleep.
+Toddlers need simple, gentle stories with repetitive language and soft tones.
 </p>
-
 <p>
 👉 <a href="bedtime-stories-for-toddlers.html">Bedtime stories for toddlers</a><br>
 👉 <a href="sleep-stories-for-toddlers.html">Sleep stories for toddlers</a>
 </p>
 
-<!-- SHORT STORIES -->
 <h2>Short Bedtime Stories</h2>
-
 <p>
-Short bedtime stories are ideal for busy nights or when your child is already sleepy. These quick stories still provide comfort and routine without taking too long.
+Short bedtime stories are ideal for busy nights.
 </p>
-
 <p>
 👉 <a href="short-bedtime-stories-for-kids.html">Read short bedtime stories</a>
 </p>
 
-<!-- CALMING STORIES -->
 <h2>Calming Bedtime Stories</h2>
-
 <p>
-Calming stories use gentle language, soft imagery, and slow pacing to help children relax deeply before sleep.
+Calming stories use gentle language and slow pacing.
 </p>
-
 <p>
 👉 <a href="calming-stories-for-kids.html">Calming stories for kids</a><br>
 👉 <a href="calming-fairy-tales-for-kids.html">Calming fairy tales</a>
 </p>
 
-<!-- SLEEP HELP -->
 <h2>How Bedtime Stories Help Kids Sleep</h2>
-
 <p>
-Bedtime stories are not just entertainment — they play an important role in improving sleep quality, reducing anxiety, and creating a predictable nighttime routine.
+Bedtime stories help improve sleep quality and reduce anxiety.
 </p>
-
 <p>
 👉 <a href="how-to-help-kids-sleep.html">Learn how stories help kids sleep</a><br>
 👉 <a href="bedtime-routine-for-kids.html">Build a better bedtime routine</a>
 </p>
 
+<!-- RELATED LINKS BLOCK -->
+<div class="related-links">
+    <h2>Explore More</h2>
+    <a href="short-bedtime-stories-for-kids.html">Short bedtime stories</a>
+    <a href="calming-stories-for-kids.html">Calming stories</a>
+    <a href="bedtime-routine-for-kids.html">Bedtime routines</a>
+</div>
+
 <!-- CTA -->
 <div class="cta">
     <strong>Try 2 Free Bedtime Stories — No Subscription</strong>
-    <p>
-    Discover a simple way to help your child relax, unwind, and fall asleep faster.
-    </p>
+    <p>Help your child relax and fall asleep faster.</p>
     <p>
     👉 <a href="https://play.google.com/store/apps/details?id=com.softiceinnovationslabs.bedtimestorybooks">
     Get it now on Google Play
@@ -180,12 +213,17 @@ Bedtime stories are not just entertainment — they play an important role in im
     </p>
 </div>
 
-<!-- INTERNAL LINK BACK TO HOME -->
 <p style="margin-top:40px;">
 ← <a href="https://softice-site.pages.dev/">Back to homepage</a>
 </p>
 
 </div>
+
+<!-- FLOATING BUTTON -->
+<a href="https://play.google.com/store/apps/details?id=com.softiceinnovationslabs.bedtimestorybooks"
+   class="floating-cta-global">
+   Try 2 Free Books
+</a>
 
 </body>
 </html>
