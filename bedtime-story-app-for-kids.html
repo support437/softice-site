@@ -26,7 +26,6 @@ body {
     background: #ffffff;
 }
 
-/* HERO IMAGE */
 .hero-banner {
     position: relative;
     width: 100%;
@@ -42,13 +41,13 @@ body {
     margin: auto;
 }
 
-/* FLOATING CTA - ALWAYS VISIBLE */
+/* ✅ FIXED CTA (MATCHES MAIN PAGE EXACT STYLE) */
 .floating-cta-global {
     position: fixed;
     bottom: 20px;
     left: 50%;
     transform: translateX(-50%);
-    background: #ffcc00;
+    background: #ffcc00; /* KEEP ORIGINAL YELLOW */
     color: #000;
     text-decoration: none;
     font-weight: bold;
@@ -56,16 +55,21 @@ body {
     border-radius: 30px;
     box-shadow: 0 10px 25px rgba(0,0,0,0.3);
     z-index: 9999;
-    animation: pulseGlow 2.2s ease-in-out infinite;
+    animation: pulse 2s infinite;
 }
 
-@keyframes pulseGlow {
-    0% { transform: translateX(-50%) scale(1); }
-    50% { transform: translateX(-50%) scale(1.05); }
-    100% { transform: translateX(-50%) scale(1); }
+.floating-cta-global:hover {
+    text-decoration: none;
+    transform: translateX(-50%) scale(1.05);
 }
 
-/* CONTENT */
+/* 🔥 HOMEPAGE STYLE RING PULSE */
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(255, 204, 0, 0.55); }
+    70% { box-shadow: 0 0 0 20px rgba(255, 204, 0, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(255, 204, 0, 0); }
+}
+
 .container {
     max-width: 860px;
     margin: auto;
@@ -205,7 +209,6 @@ Look for calm content, simple design, and stories suited to your child’s age.
 The best bedtime story app helps make bedtime smoother and more enjoyable.
 </p>
 
-<!-- RELATED LINKS -->
 <div class="related-links">
     <h2>Explore More</h2>
     <a href="bedtime-stories-for-kids.html">All bedtime stories</a>
