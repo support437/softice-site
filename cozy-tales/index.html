@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Cozy Tales | Bedtime Stories App for Kids</title>
+<meta name="description" content="Cozy Tales is a bedtime stories app for kids with 2 free stories, calming narration, magical illustrations, and no subscription.">
+<meta name="keywords" content="bedtime stories app for kids, bedtime stories for kids, sleep stories for toddlers, kids bedtime app, no subscription kids app">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<link rel="canonical" href="https://softice-site.pages.dev/cozy-tales/">
+
+<meta property="og:title" content="Cozy Tales | Bedtime Stories App for Kids">
+<meta property="og:description" content="A magical bedtime story app for kids with 2 free stories, gentle narration, and no subscription.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://softice-site.pages.dev/cozy-tales/">
+<meta property="og:image" content="https://softice-site.pages.dev/family-hero.webp">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Cozy Tales | Bedtime Stories App for Kids">
+<meta name="twitter:description" content="2 free bedtime stories, gentle narration, and no subscription.">
+<meta name="twitter:image" content="https://softice-site.pages.dev/family-hero.webp">
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: white;
+    background: linear-gradient(180deg, #0b0b1f 0%, #16163a 45%, #1f2150 100%);
+    overflow-x: hidden;
+}
+
+/* Floating stars */
+.star {
+    position: fixed;
+    width: 4px;
+    height: 4px;
+    background: rgba(255,255,255,0.9);
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(255,255,255,0.8);
+    animation: floatUp linear infinite;
+    z-index: 0;
+}
+
+@keyframes floatUp {
+    from {
+        transform: translateY(100vh);
+        opacity: 0;
+    }
+    20% {
+        opacity: 0.9;
+    }
+    80% {
+        opacity: 0.9;
+    }
+    to {
+        transform: translateY(-10vh);
+        opacity: 0;
+    }
+}
+
+/* Hero */
+.hero {
+    position: relative;
+    z-index: 2;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 20px 120px;
+    background:
+        linear-gradient(rgba(11,11,31,0.45), rgba(11,11,31,0.72)),
+        url('family-hero.webp') center center / cover no-repeat;
+}
+
+.hero-content {
+    max-width: 1100px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 40px;
+    align-items: center;
+}
+
+.badge {
+    display: inline-block;
+    background: rgba(255, 213, 79, 0.15);
+    color: #ffe082;
+    border: 1px solid rgba(255, 213, 79, 0.4);
+    padding: 10px 16px;
+    border-radius: 999px;
+    font-size: 14px;
+    margin-bottom: 18px;
+    backdrop-filter: blur(6px);
+}
+
+.hero h1 {
+    font-size: 54px;
+    line-height: 1.08;
+    margin: 0 0 16px;
+    text-shadow: 0 3px 18px rgba(0,0,0,0.45);
+}
+
+.hero p {
+    font-size: 20px;
+    line-height: 1.6;
+    margin: 0 0 24px;
+    color: #f2f2f8;
+    max-width: 680px;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.35);
+}
+
+.hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-bottom: 20px;
+}
+
+.cta-primary,
+.cta-secondary {
+    display: inline-block;
+    text-decoration: none;
+    border-radius: 14px;
+    padding: 16px 26px;
+    font-size: 18px;
+    font-weight: bold;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+}
+
+.cta-primary {
+    background: #FFD54F;
+    color: #111;
+    box-shadow: 0 8px 24px rgba(255, 213, 79, 0.35);
+    animation: pulse 1.8s infinite;
+}
+
+.cta-primary:hover {
+    transform: translateY(-2px) scale(1.02);
+}
+
+.cta-secondary {
+    background: rgba(255,255,255,0.12);
+    color: white;
+    border: 1px solid rgba(255,255,255,0.22);
+    backdrop-filter: blur(8px);
+}
+
+.cta-secondary:hover {
+    transform: translateY(-2px);
+    background: rgba(255,255,255,0.18);
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.045); }
+    100% { transform: scale(1); }
+}
+
+.hero-notes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-top: 14px;
+    color: #ffe9a8;
+    font-size: 15px;
+}
+
+.hero-card {
+    background: rgba(255,255,255,0.12);
+    border: 1px solid rgba(255,255,255,0.18);
+    border-radius: 24px;
+    padding: 28px;
+    backdrop-filter: blur(12px);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.28);
+}
+
+.hero-card h2 {
+    margin-top: 0;
+    font-size: 28px;
+    color: #ffe082;
+}
+
+.hero-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 18px 0 0;
+}
+
+.hero-card li {
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.12);
+    font-size: 17px;
+}
+
+.hero-card li:last-child {
+    border-bottom: none;
+}
+
+/* Sections */
+.section {
+    position: relative;
+    z-index: 2;
+    padding: 90px 20px;
+}
+
+.container {
+    max-width: 1150px;
+    margin: 0 auto;
+}
+
+.section h2 {
+    font-size: 40px;
+    text-align: center;
+    margin: 0 0 16px;
+}
+
+.section-subtext {
+    max-width: 760px;
+    margin: 0 auto 48px;
+    text-align: center;
+    font-size: 19px;
+    line-height: 1.6;
+    color: #dde0f5;
+}
+
+/* Feature cards */
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.feature-card {
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 24px;
+    padding: 28px;
+    box-shadow: 0 12px 34px rgba(0,0,0,0.18);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 18px 40px rgba(0,0,0,0.24);
+}
+
+.feature-icon {
+    font-size: 34px;
+    margin-bottom: 14px;
+}
+
+.feature-card h3 {
+    margin: 0 0 10px;
+    font-size: 24px;
+    color: #ffe082;
+}
+
+.feature-card p {
+    margin: 0;
+    font-size: 17px;
+    line-height: 1.6;
+    color: #eef0fa;
+}
+
+/* Showcase */
+.showcase {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 34px;
+    align-items: center;
+}
+
+.showcase img {
+    width: 100%;
+    border-radius: 26px;
+    display: block;
+    box-shadow: 0 18px 42px rgba(0,0,0,0.28);
+}
+
+.showcase-text h3 {
+    font-size: 32px;
+    margin-top: 0;
+    color: #ffe082;
+}
+
+.showcase-text p {
+    font-size: 18px;
+    line-height: 1.7;
+    color: #eef0fa;
+}
+
+.check-list {
+    list-style: none;
+    padding: 0;
+    margin: 24px 0 0;
+}
+
+.check-list li {
+    margin-bottom: 14px;
+    font-size: 17px;
+    color: #ffffff;
+}
+
+/* Reviews */
+.review-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.review-card {
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 24px;
+    padding: 26px;
+}
+
+.review-stars {
+    font-size: 22px;
+    color: #FFD54F;
+    margin-bottom: 12px;
+}
+
+.review-card p {
+    font-size: 17px;
+    line-height: 1.7;
+    color: #eef0fa;
+    margin: 0 0 16px;
+}
+
+.review-name {
+    font-size: 15px;
+    color: #ffe082;
+}
+
+/* FAQ */
+.faq-grid {
+    display: grid;
+    gap: 18px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.faq-item {
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 20px;
+    padding: 22px 24px;
+}
+
+.faq-item h3 {
+    margin: 0 0 10px;
+    font-size: 22px;
+    color: #ffe082;
+}
+
+.faq-item p {
+    margin: 0;
+    font-size: 17px;
+    line-height: 1.7;
+    color: #eef0fa;
+}
+
+/* Final CTA */
+.final-cta {
+    text-align: center;
+    background: linear-gradient(180deg, rgba(255,213,79,0.12), rgba(255,213,79,0.05));
+    border-top: 1px solid rgba(255,255,255,0.08);
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.final-cta h2 {
+    margin-bottom: 14px;
+}
+
+.final-cta p {
+    max-width: 700px;
+    margin: 0 auto 30px;
+    font-size: 19px;
+    line-height: 1.7;
+    color: #eef0fa;
+}
+
+/* Footer */
+.footer {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding: 32px 20px 90px;
+    color: rgba(255,255,255,0.72);
+    font-size: 15px;
+}
+
+.footer a {
+    color: #ffe082;
+    text-decoration: none;
+}
+
+/* Floating button */
+.floating-cta {
+    position: fixed;
+    right: 18px;
+    bottom: 18px;
+    z-index: 999;
+    background: #FFD54F;
+    color: #111;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 16px 22px;
+    border-radius: 999px;
+    box-shadow: 0 12px 28px rgba(0,0,0,0.28);
+    animation: pulse 1.6s infinite;
+}
+
+/* Responsive */
+@media (max-width: 980px) {
+    .hero {
+        padding-top: 50px;
+        padding-bottom: 80px;
+    }
+
+    .hero-content,
+    .features-grid,
+    .showcase,
+    .review-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero h1 {
+        font-size: 40px;
+    }
+
+    .section h2 {
+        font-size: 32px;
+    }
+}
+
+@media (max-width: 640px) {
+    .hero h1 {
+        font-size: 34px;
+    }
+
+    .hero p,
+    .section-subtext,
+    .final-cta p {
+        font-size: 17px;
+    }
+
+    .cta-primary,
+    .cta-secondary,
+    .floating-cta {
+        font-size: 16px;
+    }
+
+    .hero-card,
+    .feature-card,
+    .review-card,
+    .faq-item {
+        padding: 22px;
+    }
+}
+</style>
+</head>
+<body>
+
+<div class="star" style="left:5%; animation-duration: 14s; animation-delay: 0s;"></div>
+<div class="star" style="left:12%; animation-duration: 18s; animation-delay: 2s;"></div>
+<div class="star" style="left:20%; animation-duration: 15s; animation-delay: 5s;"></div>
+<div class="star" style="left:28%; animation-duration: 20s; animation-delay: 1s;"></div>
+<div class="star" style="left:36%; animation-duration: 17s; animation-delay: 4s;"></div>
+<div class="star" style="left:45%; animation-duration: 13s; animation-delay: 3s;"></div>
+<div class="star" style="left:54%; animation-duration: 19s; animation-delay: 6s;"></div>
+<div class="star" style="left:62%; animation-duration: 16s; animation-delay: 1s;"></div>
+<div class="star" style="left:70%; animation-duration: 21s; animation-delay: 7s;"></div>
+<div class="star" style="left:79%; animation-duration: 15s; animation-delay: 2s;"></div>
+<div class="star" style="left:88%; animation-duration: 18s; animation-delay: 4s;"></div>
+<div class="star" style="left:95%; animation-duration: 14s; animation-delay: 6s;"></div>
+
+<section class="hero">
+    <div class="hero-content">
+        <div>
+            <div class="badge">✨ 2 FREE stories included • No subscription</div>
+            <h1>Cozy Tales makes bedtime calmer, easier, and more magical</h1>
+            <p>
+                Cozy Tales is a premium bedtime stories app for kids with gentle narration,
+                colorful storybook illustrations, and a peaceful reading experience parents can trust.
+            </p>
+
+            <div class="hero-buttons">
+                <a class="cta-primary" href="https://softice-site.pages.dev/play/">Get it on Google Play</a>
+                <a class="cta-secondary" href="https://softice-site.pages.dev/">Visit Main Website</a>
+            </div>
+
+            <div class="hero-notes">
+                <span>📚 2 free stories</span>
+                <span>💤 Calm bedtime routine</span>
+                <span>🎧 Gentle narration</span>
+                <span>❌ No monthly fee</span>
+            </div>
+        </div>
+
+        <div class="hero-card">
+            <h2>Why parents love it 💛</h2>
+            <ul>
+                <li>📖 Easy story reading for toddlers and young kids</li>
+                <li>🎧 Read-aloud narration for relaxed bedtime moments</li>
+                <li>✨ Magical illustrations that feel warm and comforting</li>
+                <li>💸 One-time book purchases — no subscription pressure</li>
+                <li>🌙 Designed for peaceful nighttime routines</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+        <h2>A bedtime app built for real parents</h2>
+        <p class="section-subtext">
+            Parents are tired of kids apps charging monthly subscriptions. Cozy Tales keeps it simple:
+            start with free stories, unlock more when you want, and enjoy bedtime without extra stress.
+        </p>
+
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">📚</div>
+                <h3>2 Free Stories</h3>
+                <p>Start reading right away with two included bedtime stories your child can enjoy from the beginning.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">🎧</div>
+                <h3>Gentle Narration</h3>
+                <p>Calm read-aloud storytelling helps children relax and enjoy a peaceful story before sleep.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">❌</div>
+                <h3>No Subscription</h3>
+                <p>No monthly fee, no hidden plan, no pressure. Just simple story access for families.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+        <div class="showcase">
+            <div>
+                <img src="https://softice-site.pages.dev/bedtime-story-app-for-kids.webp" alt="Cozy Tales bedtime stories app for kids with colorful storybook reading experience">
+            </div>
+
+            <div class="showcase-text">
+                <h3>Turn bedtime into a calmer routine</h3>
+                <p>
+                    Cozy Tales helps transform stressful nights into cozy story moments. With soothing visuals,
+                    family-friendly storytelling, and a simple design, it gives parents an easier way to wind down the day.
+                </p>
+
+                <ul class="check-list">
+                    <li>✅ Perfect for bedtime routines</li>
+                    <li>✅ Great for toddlers and preschoolers</li>
+                    <li>✅ Simple app experience with no clutter</li>
+                    <li>✅ Magical sleep story atmosphere</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+        <h2>What parents are looking for</h2>
+        <p class="section-subtext">
+            Families want bedtime stories for kids that feel calm, simple, and worth keeping. Cozy Tales was built around that.
+        </p>
+
+        <div class="review-grid">
+            <div class="review-card">
+                <div class="review-stars">★★★★★</div>
+                <p>“Finally, a kids story app that doesn’t push another monthly subscription. The bedtime mood feels peaceful.”</p>
+                <div class="review-name">Parent review style example</div>
+            </div>
+
+            <div class="review-card">
+                <div class="review-stars">★★★★★</div>
+                <p>“The narration and illustrations make bedtime feel more relaxed. My child enjoys listening while settling down.”</p>
+                <div class="review-name">Family bedtime feedback style</div>
+            </div>
+
+            <div class="review-card">
+                <div class="review-stars">★★★★★</div>
+                <p>“I like that there are free stories to start and no subscription pressure. It feels much more parent-friendly.”</p>
+                <div class="review-name">Parent-friendly value example</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+        <h2>Questions parents ask</h2>
+        <div class="faq-grid">
+            <div class="faq-item">
+                <h3>What is Cozy Tales?</h3>
+                <p>Cozy Tales is a bedtime stories app for kids designed to make bedtime feel calmer with gentle narration, colorful story pages, and a simple family-friendly experience.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>Does Cozy Tales have a subscription?</h3>
+                <p>No. Cozy Tales is built around a no-subscription model. Families can start with 2 free stories and unlock more books individually.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>Is Cozy Tales good for toddlers?</h3>
+                <p>Yes. Cozy Tales is designed for young children, including toddlers and preschoolers, with bedtime-friendly story presentation and an easy reading experience.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>Where can I download Cozy Tales?</h3>
+                <p>You can download Cozy Tales on Google Play and explore the included free stories to get started.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section final-cta">
+    <div class="container">
+        <h2>Try Cozy Tales today 🌙</h2>
+        <p>
+            Discover a bedtime stories app for kids that feels calm, magical, and simple to use.
+            Start with 2 free stories and enjoy a bedtime routine without subscription stress.
+        </p>
+        <a class="cta-primary" href="https://softice-site.pages.dev/play/">Download on Google Play</a>
+    </div>
+</section>
+
+<div class="footer">
+    © 2026 Softice Innovations Labs LLC •
+    <a href="https://softice-site.pages.dev/">Home</a> •
+    <a href="https://softice-privacy.pages.dev/">Privacy Policy</a>
+</div>
+
+<a class="floating-cta" href="https://softice-site.pages.dev/play/">Get it on Google Play</a>
+
+</body>
+</html>
