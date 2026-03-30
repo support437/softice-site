@@ -73,9 +73,25 @@ h2 {
     color: #111;
 }
 
-p {
+h3 {
+    font-size: 1.15rem;
+    line-height: 1.3;
+    margin-top: 24px;
+    margin-bottom: 10px;
+    color: #111;
+}
+
+p, li {
     font-size: 1.08rem;
     color: #333;
+}
+
+p {
+    margin: 0 0 18px;
+}
+
+ul {
+    padding-left: 22px;
     margin: 0 0 18px;
 }
 
@@ -108,6 +124,13 @@ a:hover {
     display: inline-block;
     margin-right: 18px;
     margin-bottom: 10px;
+}
+
+.faq-box {
+    background: #fafafa;
+    border-radius: 12px;
+    padding: 20px;
+    margin-top: 28px;
 }
 
 .floating-cta-global {
@@ -146,6 +169,7 @@ a:hover {
     }
 
     p,
+    li,
     .intro {
         font-size: 1rem;
     }
@@ -228,11 +252,31 @@ a:hover {
         The benefits of bedtime stories go far beyond reading practice. They support better sleep, emotional security, language growth, imagination, and family bonding. A short, calm bedtime story can become one of the most valuable parts of a child’s nighttime routine.
     </p>
 
+    <div class="faq-box">
+        <h2>Frequently Asked Questions</h2>
+
+        <h3>How do bedtime stories help kids sleep better?</h3>
+        <p>
+            Bedtime stories create a calming routine, reduce stimulation before sleep, and help children transition into bedtime more peacefully.
+        </p>
+
+        <h3>Do bedtime stories help learning?</h3>
+        <p>
+            Yes. Bedtime reading supports vocabulary growth, listening skills, sentence understanding, and early language development.
+        </p>
+
+        <h3>Why are bedtime stories good for bonding?</h3>
+        <p>
+            Reading together creates a quiet moment of parent-child connection, helping children feel safe, loved, and emotionally secure.
+        </p>
+    </div>
+
     <h2>Explore More</h2>
     <div class="related-links">
         <a href="bedtime-stories-for-kids.html">All bedtime stories</a>
         <a href="calming-stories-for-kids.html">Calming stories</a>
         <a href="bedtime-routine-for-kids.html">Bedtime routine guide</a>
+        <a href="bedtime-story-app-for-kids.html">Best bedtime story app</a>
     </div>
 
 </div>
@@ -253,16 +297,55 @@ a:hover {
   "image": "https://softice-site.pages.dev/bedtime-story-app-choose.webp",
   "author": {
     "@type": "Organization",
-    "name": "Softice Innovations Labs LLC"
+    "name": "Softice Innovations Labs LLC",
+    "url": "https://softice-site.pages.dev/"
   },
   "publisher": {
     "@type": "Organization",
-    "name": "Softice Innovations Labs LLC"
+    "name": "Softice Innovations Labs LLC",
+    "url": "https://softice-site.pages.dev/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://softice-site.pages.dev/logo.png"
+    }
   },
   "mainEntityOfPage": {
     "@type": "WebPage",
     "@id": "https://softice-site.pages.dev/benefits-of-bedtime-stories.html"
   }
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How do bedtime stories help kids sleep better?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Bedtime stories create a calming routine, reduce stimulation before sleep, and help children transition into bedtime more peacefully."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do bedtime stories help learning?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Bedtime reading supports vocabulary growth, listening skills, sentence understanding, and early language development."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why are bedtime stories good for bonding?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Reading together creates a quiet moment of parent-child connection, helping children feel safe, loved, and emotionally secure."
+      }
+    }
+  ]
 }
 </script>
 
