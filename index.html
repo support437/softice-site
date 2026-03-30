@@ -863,9 +863,13 @@ for (let i = 0; i < 40; i++) {
   "@graph": [
     {
       "@type": "Organization",
+      "@id": "https://softice-site.pages.dev/#organization",
       "name": "Softice Innovations Labs LLC",
       "url": "https://softice-site.pages.dev/",
-      "logo": "https://softice-site.pages.dev/family-hero.webp",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://softice-site.pages.dev/family-hero.webp"
+      },
       "sameAs": [
         "https://www.tiktok.com/@bedtimestoriescozytales",
         "https://www.instagram.com/bedtime.stories.forkids/",
@@ -874,12 +878,17 @@ for (let i = 0; i < 40; i++) {
     },
     {
       "@type": "WebSite",
+      "@id": "https://softice-site.pages.dev/#website",
       "name": "Bedtime Story Books – Cozy Tales",
       "url": "https://softice-site.pages.dev/",
-      "description": "Bedtime stories for kids with calming narration, 2 free books, and no subscription."
+      "description": "Bedtime stories for kids with calming narration, 2 free books, and no subscription.",
+      "publisher": {
+        "@id": "https://softice-site.pages.dev/#organization"
+      }
     },
     {
       "@type": "SoftwareApplication",
+      "@id": "https://softice-site.pages.dev/#app",
       "name": "Bedtime Story Books – Cozy Tales",
       "operatingSystem": "Android",
       "applicationCategory": "EducationalApplication",
@@ -887,13 +896,14 @@ for (let i = 0; i < 40; i++) {
       "downloadUrl": "https://play.google.com/store/apps/details?id=com.softiceinnovationslabs.bedtimestorybooks",
       "image": "https://softice-site.pages.dev/family-hero.webp",
       "publisher": {
-        "@type": "Organization",
-        "name": "Softice Innovations Labs LLC"
+        "@id": "https://softice-site.pages.dev/#organization"
       },
       "description": "Calming bedtime stories for kids with read-aloud narration, 2 free books, and no subscription."
     },
     {
       "@type": "FAQPage",
+      "@id": "https://softice-site.pages.dev/#faq",
+      "name": "Bedtime Story Books – Cozy Tales FAQ",
       "mainEntity": [
         {
           "@type": "Question",
