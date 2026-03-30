@@ -63,9 +63,24 @@ h2 {
     color: #111;
 }
 
-p {
+h3 {
+    margin-top: 24px;
+    font-size: 1.15rem;
+    line-height: 1.3;
+    color: #111;
+}
+
+p, li {
     font-size: 1.05rem;
     color: #333;
+}
+
+p {
+    margin: 0 0 16px;
+}
+
+ul {
+    padding-left: 22px;
     margin: 0 0 16px;
 }
 
@@ -121,6 +136,13 @@ a:hover {
     margin: 5px 10px 5px 0;
 }
 
+.faq-box {
+    background: #fafafa;
+    border-radius: 12px;
+    padding: 20px;
+    margin-top: 30px;
+}
+
 @media (max-width: 768px) {
     .container {
         padding: 20px 18px 110px;
@@ -134,7 +156,7 @@ a:hover {
         font-size: 1.3rem;
     }
 
-    p {
+    p, li {
         font-size: 1rem;
     }
 
@@ -239,6 +261,26 @@ a:hover {
         <a href="short-bedtime-stories-for-kids.html">Short stories</a>
         <a href="calming-stories-for-kids.html">Calming stories</a>
         <a href="bedtime-routine-for-kids.html">Bedtime routines</a>
+        <a href="bedtime-stories-for-toddlers.html">Toddler stories</a>
+    </div>
+
+    <div class="faq-box">
+        <h2>Frequently Asked Questions</h2>
+
+        <h3>What are bedtime stories for kids?</h3>
+        <p>
+            Bedtime stories for kids are gentle stories designed to help children relax, feel safe, and settle into sleep more peacefully.
+        </p>
+
+        <h3>Are bedtime stories good for sleep?</h3>
+        <p>
+            Yes. Bedtime stories can help lower stress, build a calming nighttime routine, and create a comforting parent-child bonding moment before sleep.
+        </p>
+
+        <h3>What type of bedtime stories work best?</h3>
+        <p>
+            Short, calming, age-appropriate stories usually work best. Toddlers often enjoy simple stories, while older kids may prefer gentle adventures or fairy tales.
+        </p>
     </div>
 
     <div class="cta">
@@ -266,16 +308,51 @@ a:hover {
   "image": "https://softice-site.pages.dev/bedtime-story-app-choose.webp",
   "author": {
     "@type": "Organization",
-    "name": "Softice Innovations Labs LLC"
+    "name": "Softice Innovations Labs LLC",
+    "url": "https://softice-site.pages.dev/"
   },
   "publisher": {
     "@type": "Organization",
-    "name": "Softice Innovations Labs LLC"
+    "name": "Softice Innovations Labs LLC",
+    "url": "https://softice-site.pages.dev/"
   },
   "mainEntityOfPage": {
     "@type": "WebPage",
     "@id": "https://softice-site.pages.dev/bedtime-stories-for-kids.html"
   }
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What are bedtime stories for kids?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Bedtime stories for kids are gentle stories designed to help children relax, feel safe, and settle into sleep more peacefully."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are bedtime stories good for sleep?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Bedtime stories can help lower stress, build a calming nighttime routine, and create a comforting parent-child bonding moment before sleep."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What type of bedtime stories work best?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Short, calming, age-appropriate stories usually work best. Toddlers often enjoy simple stories, while older kids may prefer gentle adventures or fairy tales."
+      }
+    }
+  ]
 }
 </script>
 
