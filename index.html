@@ -322,6 +322,65 @@ img {
     text-decoration: none;
 }
 
+.story-library-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 22px;
+    margin-top: 34px;
+}
+
+.story-library-card {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 18px;
+    padding: 16px;
+    text-align: left;
+    box-shadow: 0 10px 24px rgba(0,0,0,0.18);
+    transition: transform 0.28s ease, box-shadow 0.28s ease;
+}
+
+.story-library-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 32px rgba(0,0,0,0.24);
+}
+
+.story-library-card img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 12px;
+    display: block;
+    margin-bottom: 14px;
+}
+
+.story-library-card h3 {
+    margin: 0 0 10px;
+    color: white;
+    font-size: 20px;
+    line-height: 1.3;
+}
+
+.story-library-card p {
+    color: #d7d7e6;
+    font-size: 16px;
+    line-height: 1.7;
+    margin-bottom: 14px;
+}
+
+.story-library-card a.story-cover-link {
+    text-decoration: none;
+}
+
+.story-library-card a.story-link {
+    color: #7aa7ff;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.story-library-card a.story-link:hover {
+    text-decoration: underline;
+}
+
 .faq-wrap {
     max-width: 900px;
     margin: 0 auto;
@@ -569,6 +628,10 @@ img {
         font-size: 2.2rem;
     }
 
+    .story-library-card img {
+        height: 280px;
+    }
+
     .floating-google-play {
         width: 90%;
         text-align: center;
@@ -712,6 +775,276 @@ for (let i = 0; i < 40; i++) {
             <li><a href="/short-bedtime-stories-for-kids.html">Short Bedtime Stories for Kids</a></li>
             <li><a href="/benefits-of-bedtime-stories.html">Benefits of Bedtime Stories for Kids</a></li>
         </ul>
+    </div>
+</section>
+
+<section class="section fade" aria-labelledby="story-library-heading">
+    <h2 id="story-library-heading">Story Collection Inside the Cozy Tales App</h2>
+    <p>
+        Explore our growing bedtime story collection. Each book below is ready to connect to its own landing page with a story preview, bedtime details, YouTube video, TikTok video, Instagram content, and direct app access.
+    </p>
+
+    <div class="story-library-grid">
+        <div class="story-library-card">
+            <a class="story-cover-link" href="/monkey-milos-big-sea-adventure.html">
+                <img src="monkey-milos-big-sea-adventure-book-cover.webp" alt="Monkey Milo’s Big Sea Adventure book cover" loading="lazy" decoding="async">
+                <h3>Monkey Milo’s Big Sea Adventure</h3>
+            </a>
+            <p>A gentle ocean bedtime story with peaceful adventure and cozy nighttime energy.</p>
+            <a class="story-link" href="/monkey-milos-big-sea-adventure.html">Open story page</a>
+        </div>
+
+        <div class="story-library-card">
+            <a class="story-cover-link" href="/the-cheerful-chicks-sunny-dream.html">
+                <img src="the-cheerful-chicks-sunny-dream-book-cover.webp" alt="The Cheerful Chick’s Sunny Dream book cover" loading="lazy" decoding="async">
+                <h3>The Cheerful Chick’s Sunny Dream</h3>
+            </a>
+            <p>A bright and calming bedtime story designed to help young children relax before sleep.</p>
+            <a class="story-link" href="/the-cheerful-chicks-sunny-dream.html">Open story page</a>
+        </div>
+
+        <div class="story-library-card">
+            <a class="story-cover-link" href="/zara-the-zippy-zebra.html">
+                <img src="zara-the-zippy-zebra-book-cover.webp" alt="Zara the Zippy Zebra book cover" loading="lazy" decoding="async">
+                <h3>Zara the Zippy Zebra</h3>
+            </a>
+            <p>A playful bedtime story with a soft, child-friendly rhythm and a peaceful ending.</p>
+            <a class="story-link" href="/zara-the-zippy-zebra.html">Open story page</a>
+        </div>
+
+        <div class="story-library-card">
+            <a class="story-cover-link" href="/timmy-the-dreamy-tiger.html">
+                <img src="timmy-the-dreamy-tiger-book-cover.webp" alt="Timmy the Dreamy Tiger book cover" loading="lazy" decoding="async">
+                <h3>Timmy the Dreamy Tiger</h3>
+            </a>
+            <p>A dreamy bedtime adventure for kids who love calm stories and bedtime imagination.</p>
+            <a class="story-link" href="/timmy-the-dreamy-tiger.html">Open story page</a>
+        </div>
+
+        <div class="story-library-card">
+            <a class="story-cover-link" href="/the-sleepy-dinosaur.html">
+                <img src="the-sleepy-dinosaur-book-cover.webp" alt="The Sleepy Dinosaur book cover" loading="lazy" decoding="async">
+                <h3>The Sleepy Dinosaur</h3>
+            </a>
+            <p>A soft dinosaur bedtime favorite created to help children unwind and settle into sleep.</p>
+            <a class="story-link" href="/the-sleepy-dinosaur.html">Open story page</a>
+        </div>
+
+        <div class="story-library-card">
+            <a class="story-cover-link" href="/the-friendly-fish.html">
+                <img src="the-friendly-fish-book-cover.webp" alt="The Friendly Fish book cover" loading="lazy" decoding="async">
+                <h3>The Friendly Fish</h3>
+            </a>
+            <p>A soothing underwater bedtime story filled with calm visuals and gentle storytelling.</p>
+            <a class="story-link" href="/the-friendly-fish.html">Open story page</a>
+        </div>
+
+        <div class="story-library-card">
+            <a class="story-cover-link" href="/little-lions-adventure.html">
+                <img src="little-lions-adventure-book-cover.webp" alt="Little Lion’s Adventure book cover" loading="lazy" decoding="async">
+                <h3>Little Lion’s Adventure</h3>
+            </a>
+            <p>A warm bedtime story that blends little adventure with a calm nighttime feeling.</p>
+            <a class="story-link" href="/little-lions-adventure.html">Open story page</a>
+        </div>
+
+        <div class="story-library-card">
+            <a class="story-cover-link" href="/monkey-milos-big-adventures.html">
+                <img src="monkey-milos-big-adventures-book-cover.webp" alt="Monkey Milo’s Big Adventures book cover" loading="lazy" decoding="async">
+                <h3>Monkey Milo’s Big Adventures</h3>
+            </a>
+            <p>A fun bedtime story collection starring Monkey Milo in a gentle nighttime adventure.</p>
+            <a class="story-link" href="/monkey-milos-big-adventures.html">Open story page</a>
+        </div>
+
+        <div class="story-library-card">
+            <a class="story-cover-link" href="/bear-big-adventure.html">
+                <img src="bear-big-adventure-book-cover.webp" alt="Bear Big Adventure book cover" loading="lazy" decoding="async">
+                <h3>Bear Big Adventure</h3>
+            </a>
+            <p>A cozy bedtime adventure story with a gentle bear and a comforting nighttime mood.</p>
+            <a class="story-link" href="/bear-big-adventure.html">Open story page</a>
+        </div>
+
+        <div class="story-library-card">
+            <a class="story-cover-link" href="/bunnys-garden-picnic.html">
+                <img src="bunnys-garden-picnic-book-cover.webp" alt="Bunny's Garden Picnic book cover" loading="lazy" decoding="async">
+                <h3>Bunny's Garden Picnic</h3>
+            </a>
+            <p>A sweet garden bedtime story with bunny charm, calm pacing, and soft bedtime comfort.</p>
+            <a class="story-link" href="/bunnys-garden-picnic.html">Open story page</a>
+        </div>
+
+        <div class="story-library-card">
+            <a class="story-cover-link" href="/cuddly-cows-starry-night.html">
+                <img src="cuddly-cows-starry-night-book-cover.webp" alt="Cuddly Cow's Starry Night book cover" loading="lazy" decoding="async">
+                <h3>Cuddly Cow's Starry Night</h3>
+            </a>
+            <p>A peaceful starry-night bedtime story made for children who love calm animal stories.</p>
+            <a class="story-link" href="/cuddly-cows-starry-night.html">Open story page</a>
+        </div>
+
+        <div class="story-library-card">
+            <a class="story-cover-link" href="/the-sleepy-dinosaur-2.html">
+                <img src="the-sleepy-dinosaur-2-book-cover.webp" alt="The Sleepy Dinosaur second edition book cover" loading="lazy" decoding="async">
+                <h3>The Sleepy Dinosaur #2</h3>
+            </a>
+            <p>A second sleepy dinosaur bedtime title reserved with a unique page and image filename.</p>
+            <a class="story-link" href="/the-sleepy-dinosaur-2.html">Open story page</a>
+        </div>
+
+        <div class="story-library-card">
+            <a class="story-cover-link" href="/the-little-ducks-rainy-day.html">
+                <img src="the-little-ducks-rainy-day-book-cover.webp" alt="The Little Duck's Rainy Day book cover" loading="lazy" decoding="async">
+                <h3>The Little Duck's Rainy Day</h3>
+            </a>
+            <p>A rainy-day bedtime story with soft storytelling and a peaceful sleepy atmosphere.</p>
+            <a class="story-link" href="/the-little-ducks-rainy-day.html">Open story page</a>
+        </div>
+
+        <div class="story-library-card">
+            <a class="story-cover-link" href="/ellies-sweet-dreams.html">
+                <img src="ellies-sweet-dreams-book-cover.webp" alt="Ellie's Sweet Dreams book cover" loading="lazy" decoding="async">
+                <h3>Ellie's Sweet Dreams</h3>
+            </a>
+            <p>A calming bedtime story designed around gentle dreams, comfort, and peaceful rest.</p>
+            <a class="story-link" href="/ellies-sweet-dreams.html">Open story page</a>
+        </div>
+
+        <div class="story-library-card">
+            <a class="story-cover-link" href="/little-fox-big-adventures.html">
+                <img src="little-fox-big-adventures-book-cover.webp" alt="Little Fox Big Adventures book cover" loading="lazy" decoding="async">
+                <h3>Little Fox Big Adventures</h3>
+            </a>
+            <p>A bedtime fox story that blends gentle curiosity with a calm and comforting ending.</p>
+            <a class="story-link" href="/little-fox-big-adventures.html">Open story page</a>
+        </div>
+
+        <div class="story-library-card">
+            <a class="story-cover-link" href="/giraffes-tall-tales.html">
+                <img src="giraffes-tall-tales-book-cover.webp" alt="Giraffe's Tall Tales book cover" loading="lazy" decoding="async">
+                <h3>Giraffe's Tall Tales</h3>
+            </a>
+            <p>A tall, gentle bedtime story with playful charm and a relaxing nighttime tone.</p>
+            <a class="story-link" href="/giraffes-tall-tales.html">Open story page</a>
+        </div>
+
+        <div class="story-library-card">
+            <a class="story-cover-link" href="/koalas-moonlit-cuddle.html">
+                <img src="koalas-moonlit-cuddle-book-cover.webp" alt="Koala's Moonlit Cuddle book cover" loading="lazy" decoding="async">
+                <h3>Koala's Moonlit Cuddle</h3>
+            </a>
+            <p>A moonlit cuddle bedtime story with gentle comfort, sleepy pacing, and cozy warmth.</p>
+            <a class="story-link" href="/koalas-moonlit-cuddle.html">Open story page</a>
+        </div>
+
+        <div class="story-library-card">
+            <a class="story-cover-link" href="/the-little-lambs-adventures.html">
+                <img src="the-little-lambs-adventures-book-cover.webp" alt="The Little Lamb's Adventures book cover" loading="lazy" decoding="async">
+                <h3>The Little Lamb's Adventures</h3>
+            </a>
+            <p>A soft and comforting lamb bedtime story created for peaceful nighttime reading.</p>
+            <a class="story-link" href="/the-little-lambs-adventures.html">Open story page</a>
+        </div>
+
+        <div class="story-library-card">
+            <a class="story-cover-link" href="/little-lions-adventure-2.html">
+                <img src="little-lions-adventure-2-book-cover.webp" alt="Little Lion's Adventure second edition book cover" loading="lazy" decoding="async">
+                <h3>Little Lion's Adventure #2</h3>
+            </a>
+            <p>A second lion story placeholder with a unique SEO filename and future landing page link.</p>
+            <a class="story-link" href="/little-lions-adventure-2.html">Open story page</a>
+        </div>
+
+        <div class="story-library-card">
+            <a class="story-cover-link" href="/monkey-milos-big-adventure.html">
+                <img src="monkey-milos-big-adventure-book-cover.webp" alt="Monkey Milo's Big Adventure book cover" loading="lazy" decoding="async">
+                <h3>Monkey Milo's Big Adventure</h3>
+            </a>
+            <p>A bedtime adventure story featuring Monkey Milo in a calm and child-friendly journey.</p>
+            <a class="story-link" href="/monkey-milos-big-adventure.html">Open story page</a>
+        </div>
+
+        <div class="story-library-card">
+            <a class="story-cover-link" href="/owl-and-the-moon.html">
+                <img src="owl-and-the-moon-book-cover.webp" alt="Owl and the Moon book cover" loading="lazy" decoding="async">
+                <h3>Owl and the Moon</h3>
+            </a>
+            <p>A quiet moonlit bedtime story with owl magic, soft rhythms, and peaceful bedtime comfort.</p>
+            <a class="story-link" href="/owl-and-the-moon.html">Open story page</a>
+        </div>
+
+        <div class="story-library-card">
+            <a class="story-cover-link" href="/pandas-cozy-bamboo-nap.html">
+                <img src="pandas-cozy-bamboo-nap-book-cover.webp" alt="Panda's Cozy Bamboo Nap book cover" loading="lazy" decoding="async">
+                <h3>Panda's Cozy Bamboo Nap</h3>
+            </a>
+            <p>A soft panda bedtime story built for sleepy cuddles and relaxing nighttime reading.</p>
+            <a class="story-link" href="/pandas-cozy-bamboo-nap.html">Open story page</a>
+        </div>
+
+        <div class="story-library-card">
+            <a class="story-cover-link" href="/the-little-penguin.html">
+                <img src="the-little-penguin-book-cover.webp" alt="The Little Penguin book cover" loading="lazy" decoding="async">
+                <h3>The Little Penguin</h3>
+            </a>
+            <p>A gentle bedtime penguin story with sweet visuals and a calm snowy bedtime feeling.</p>
+            <a class="story-link" href="/the-little-penguin.html">Open story page</a>
+        </div>
+
+        <div class="story-library-card">
+            <a class="story-cover-link" href="/the-playful-puppys-night-adventure.html">
+                <img src="the-playful-puppys-night-adventure-book-cover.webp" alt="The Playful Puppy's Night Adventure book cover" loading="lazy" decoding="async">
+                <h3>The Playful Puppy's Night Adventure</h3>
+            </a>
+            <p>A playful but bedtime-friendly puppy story with soft pacing and a cozy night ending.</p>
+            <a class="story-link" href="/the-playful-puppys-night-adventure.html">Open story page</a>
+        </div>
+
+        <div class="story-library-card">
+            <a class="story-cover-link" href="/the-sleepy-kitten.html">
+                <img src="the-sleepy-kitten-book-cover.webp" alt="The Sleepy Kitten book cover" loading="lazy" decoding="async">
+                <h3>The Sleepy Kitten</h3>
+            </a>
+            <p>A sleepy kitten bedtime story filled with softness, comfort, and relaxing bedtime energy.</p>
+            <a class="story-link" href="/the-sleepy-kitten.html">Open story page</a>
+        </div>
+
+        <div class="story-library-card">
+            <a class="story-cover-link" href="/the-little-turtles-moon-swim.html">
+                <img src="the-little-turtles-moon-swim-book-cover.webp" alt="The Little Turtle's Moon Swim book cover" loading="lazy" decoding="async">
+                <h3>The Little Turtle's Moon Swim</h3>
+            </a>
+            <p>A peaceful moon-swim bedtime story that helps kids imagine calm nighttime water scenes.</p>
+            <a class="story-link" href="/the-little-turtles-moon-swim.html">Open story page</a>
+        </div>
+
+        <div class="story-library-card">
+            <a class="story-cover-link" href="/magical-unicorn-dreams.html">
+                <img src="magical-unicorn-dreams-book-cover.webp" alt="Magical Unicorn Dreams book cover" loading="lazy" decoding="async">
+                <h3>Magical Unicorn Dreams</h3>
+            </a>
+            <p>A magical bedtime unicorn story with dreamy colors, calm wonder, and a gentle sleepy mood.</p>
+            <a class="story-link" href="/magical-unicorn-dreams.html">Open story page</a>
+        </div>
+
+        <div class="story-library-card">
+            <a class="story-cover-link" href="/the-playful-puppys-snow-adventure.html">
+                <img src="the-playful-puppys-snow-adventure-book-cover.webp" alt="The Playful Puppy's Snow Adventure book cover" loading="lazy" decoding="async">
+                <h3>The Playful Puppy's Snow Adventure</h3>
+            </a>
+            <p>A snowy bedtime puppy story with playful charm and a peaceful ending for bedtime.</p>
+            <a class="story-link" href="/the-playful-puppys-snow-adventure.html">Open story page</a>
+        </div>
+
+        <div class="story-library-card">
+            <a class="story-cover-link" href="/monkey-milos-big-adventures-2.html">
+                <img src="monkey-milos-big-adventures-2-book-cover.webp" alt="Monkey Milo's Big Adventures 2 book cover" loading="lazy" decoding="async">
+                <h3>Monkey Milo's Big Adventures #2</h3>
+            </a>
+            <p>A second Monkey Milo adventures title reserved with a unique future landing page setup.</p>
+            <a class="story-link" href="/monkey-milos-big-adventures-2.html">Open story page</a>
+        </div>
     </div>
 </section>
 
