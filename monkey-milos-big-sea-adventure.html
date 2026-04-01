@@ -12,6 +12,18 @@
 
 <meta name="author" content="Softice Innovations Labs LLC">
 <meta name="robots" content="index, follow">
+<link rel="canonical" href="https://softice-site.pages.dev/monkey-milos-big-sea-adventure.html">
+
+<meta property="og:title" content="Monkey Milo’s Big Sea Adventure | Bedtime Stories for Children">
+<meta property="og:description" content="A calming bedtime story for children with gentle adventure, peaceful storytelling, and a soothing bedtime experience.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://softice-site.pages.dev/monkey-milos-big-sea-adventure.html">
+<meta property="og:image" content="https://softice-site.pages.dev/monkey-milos-big-sea-adventure.webp">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Monkey Milo’s Big Sea Adventure | Bedtime Stories for Children">
+<meta name="twitter:description" content="A calming bedtime story for children with gentle adventure, peaceful narration, and a relaxing bedtime feel.">
+<meta name="twitter:image" content="https://softice-site.pages.dev/monkey-milos-big-sea-adventure.webp">
 
 <style>
 * { box-sizing: border-box; }
@@ -23,25 +35,37 @@ body {
     color: white;
     text-align: center;
     overflow-x: hidden;
+    position: relative;
 }
 
-/* ⭐ FLOATING STARS */
+/* FLOATING STARS */
 .star {
     position: fixed;
     width: 6px;
     height: 6px;
-    background: white;
+    background: rgba(255,255,255,0.9);
     border-radius: 50%;
     opacity: 0.8;
     animation: floatDown linear infinite;
     z-index: 1;
+    pointer-events: none;
 }
 
 @keyframes floatDown {
-    from { transform: translateY(-10vh); opacity: 0; }
-    10% { opacity: 1; }
-    90% { opacity: 0.8; }
-    to { transform: translateY(110vh); opacity: 0; }
+    from {
+        transform: translateY(-10vh);
+        opacity: 0;
+    }
+    10% {
+        opacity: 0.9;
+    }
+    90% {
+        opacity: 0.7;
+    }
+    to {
+        transform: translateY(110vh);
+        opacity: 0;
+    }
 }
 
 /* HERO */
@@ -50,9 +74,10 @@ body {
     width: 100%;
     background: #0b0b1f;
     overflow: hidden;
+    z-index: 2;
 }
 
-.hero-banner img {
+.hero-banner-img {
     width: 100%;
     height: auto;
     display: block;
@@ -60,24 +85,27 @@ body {
 
 .hero-overlay {
     position: absolute;
-    bottom: 30px;
     left: 50%;
+    bottom: 24px;
     transform: translateX(-50%);
     width: 100%;
     padding: 0 20px;
-    background: linear-gradient(to top, rgba(11,11,31,0.85), rgba(11,11,31,0.1), transparent);
+    background: linear-gradient(to top, rgba(11,11,31,0.88), rgba(11,11,31,0.18), rgba(11,11,31,0));
 }
 
 .hero-overlay h1 {
-    font-size: 40px;
     margin: 0;
-    text-shadow: 0 3px 10px rgba(0,0,0,0.5);
+    font-size: 42px;
+    color: #ffffff;
+    text-shadow: 0 3px 10px rgba(0,0,0,0.45);
 }
 
 .hero-overlay p {
+    margin: 12px auto 0;
+    max-width: 900px;
     font-size: 18px;
-    margin-top: 10px;
     color: #f7f0d7;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.4);
 }
 
 /* CONTENT */
@@ -85,30 +113,38 @@ body {
     max-width: 900px;
     margin: auto;
     padding: 30px 20px 80px;
+    position: relative;
+    z-index: 2;
 }
 
 .content-card {
     background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.08);
     border-radius: 20px;
-    padding: 25px;
-    backdrop-filter: blur(4px);
+    padding: 28px 22px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.22);
+    backdrop-filter: blur(2px);
 }
 
 h2 {
     color: #ffd84d;
-    margin-top: 35px;
+    margin-top: 36px;
+    font-size: 28px;
 }
 
 p {
     line-height: 1.7;
-    color: #eee;
+    color: #f1f1f1;
+    font-size: 17px;
 }
 
 .video-container {
-    margin: 20px auto;
     max-width: 800px;
-    border-radius: 12px;
+    margin: 25px auto;
+    border-radius: 14px;
     overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.28);
+    background: #000;
 }
 
 iframe {
@@ -117,98 +153,239 @@ iframe {
     border: none;
 }
 
-/* CTA */
+.tiktok a {
+    display: block;
+    margin: 10px 0;
+    color: #ffd84d;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.tiktok a:hover {
+    text-decoration: underline;
+}
+
+.cta {
+    margin: 42px 0 10px;
+}
+
 .cta a {
     background: linear-gradient(45deg, #ff4fa3, #ff7a59);
-    padding: 14px 25px;
+    padding: 15px 28px;
     border-radius: 30px;
     color: white;
     text-decoration: none;
     font-weight: bold;
+    display: inline-block;
+    box-shadow: 0 10px 25px rgba(255,79,163,0.30);
 }
 
-/* FLOATING BUTTON */
+.cta a:hover {
+    background: linear-gradient(45deg, #ff2e8a, #ff6a3d);
+}
+
 .floating-btn {
     position: fixed;
     bottom: 15px;
     right: 15px;
     background: #ffd84d;
+    color: black;
     padding: 12px 18px;
     border-radius: 25px;
-    color: black;
+    font-weight: bold;
+    text-decoration: none;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.25);
+    z-index: 999;
+}
+
+.floating-btn:hover {
+    background: #ffcc1a;
+}
+
+.related-links a {
+    color: #ffd84d;
+    margin: 0 8px;
     font-weight: bold;
     text-decoration: none;
 }
 
-/* MOBILE */
+.related-links a:hover {
+    text-decoration: underline;
+}
+
+.highlight-list {
+    margin: 22px auto 0;
+    max-width: 650px;
+    text-align: left;
+    color: #f7f7f7;
+    line-height: 1.8;
+    font-size: 17px;
+}
+
+.highlight-list strong {
+    color: #ffd84d;
+}
+
 @media (max-width: 768px) {
-    .hero-overlay h1 { font-size: 26px; }
-    iframe { height: 220px; }
+    .hero-overlay {
+        bottom: 14px;
+        padding: 0 14px;
+    }
+
+    .hero-overlay h1 {
+        font-size: 28px;
+    }
+
+    .hero-overlay p {
+        font-size: 16px;
+    }
+
+    iframe {
+        height: 220px;
+    }
+
+    h2 {
+        font-size: 24px;
+    }
+
+    p,
+    .highlight-list {
+        font-size: 16px;
+    }
+
+    .floating-btn {
+        right: 10px;
+        left: 10px;
+        bottom: 10px;
+        text-align: center;
+    }
 }
 </style>
 </head>
 
 <body>
 
-<!-- ⭐ STARS -->
-<script>
-for(let i=0;i<25;i++){
-  let s=document.createElement('div');
-  s.className='star';
-  s.style.left=Math.random()*100+'%';
-  s.style.animationDuration=(8+Math.random()*10)+'s';
-  document.body.appendChild(s);
-}
-</script>
+<!-- FLOATING STARS -->
+<div class="star" style="left:3%; animation-duration: 10s; animation-delay: 0s;"></div>
+<div class="star" style="left:8%; animation-duration: 13s; animation-delay: 1s;"></div>
+<div class="star" style="left:14%; animation-duration: 11s; animation-delay: 2s;"></div>
+<div class="star" style="left:20%; animation-duration: 15s; animation-delay: 0.5s;"></div>
+<div class="star" style="left:27%; animation-duration: 12s; animation-delay: 1.5s;"></div>
+<div class="star" style="left:34%; animation-duration: 16s; animation-delay: 2.2s;"></div>
+<div class="star" style="left:41%; animation-duration: 10s; animation-delay: 1.2s;"></div>
+<div class="star" style="left:48%; animation-duration: 14s; animation-delay: 0.3s;"></div>
+<div class="star" style="left:55%; animation-duration: 12s; animation-delay: 2.5s;"></div>
+<div class="star" style="left:62%; animation-duration: 17s; animation-delay: 0.8s;"></div>
+<div class="star" style="left:69%; animation-duration: 11s; animation-delay: 1.7s;"></div>
+<div class="star" style="left:76%; animation-duration: 15s; animation-delay: 0.1s;"></div>
+<div class="star" style="left:83%; animation-duration: 13s; animation-delay: 2.8s;"></div>
+<div class="star" style="left:90%; animation-duration: 12s; animation-delay: 1.1s;"></div>
+<div class="star" style="left:96%; animation-duration: 16s; animation-delay: 2s;"></div>
 
 <!-- HERO -->
 <section class="hero-banner">
-    <img src="/monkey-milos-big-sea-adventure.webp?v=2" alt="Monkey Milo Hero Banner">
+    <img src="/monkey-milos-big-sea-adventure.webp?v=2"
+         alt="Monkey Milo bedtime stories for children hero banner"
+         class="hero-banner-img">
 
     <div class="hero-overlay">
         <h1>Monkey Milo’s Big Sea Adventure 🌙</h1>
-        <p>A gentle pirate adventure full of wonder, friendship, and calm bedtime magic.</p>
+        <p>A gentle pirate adventure full of wonder, friendship, and calm bedtime magic for children.</p>
     </div>
 </section>
 
 <div class="container">
-<div class="content-card">
+    <div class="content-card">
 
-<p>
-Monkey Milo’s Big Sea Adventure is one of our most loved <strong>bedtime stories for children</strong>, created to help kids relax and fall asleep peacefully.
-</p>
+        <p>
+            Monkey Milo’s Big Sea Adventure is one of our most loved <strong>bedtime stories for children</strong>, created to help kids relax, feel safe, and fall asleep peacefully.
+            If you are looking for <strong>kids bedtime stories</strong> with a gentle adventure and a calm bedtime feel, this story is a wonderful choice.
+        </p>
 
-<p>
-Milo dreams of becoming a pirate captain and sails across glowing oceans, meeting friendly creatures and discovering magical treasures.
-</p>
+        <p>
+            Far across the sparkling Caribbean Sea, little Milo dreams of becoming a brave pirate captain. With curiosity in his heart and joy in every wave, he builds his own ship, gathers a lovable crew, and sets off on a magical journey across glowing waters and tropical islands.
+        </p>
 
-<p>
-This gentle adventure makes it one of the best <strong>bedtime stories for kids</strong> for calm nighttime routines.
-</p>
+        <p>
+            Along the way, Milo faces a wild storm, discovers a mysterious treasure map, and meets a playful giant octopus — all in a way that feels exciting but never overwhelming. That balance makes it one of the most comforting <strong>bedtime stories for kids</strong> and a strong fit for peaceful nighttime routines.
+        </p>
 
-<h2>Watch 🎬</h2>
+        <p>
+            As the adventure gently settles under soft starlight, the story becomes a perfect <strong>short bedtime story</strong> that helps children relax their minds and drift naturally into sleep.
+        </p>
 
-<div class="video-container">
-<iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID"></iframe>
+        <div class="highlight-list">
+            <strong>✨ Perfect for:</strong><br>
+            • Bedtime stories for children before sleep<br>
+            • Calm nighttime routines<br>
+            • Quick bedtime stories on busy evenings<br>
+            • Parents looking for free bedtime stories
+        </div>
+
+        <h2>Watch This Bedtime Story Experience 🎬</h2>
+
+        <div class="video-container">
+            <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID" allowfullscreen></iframe>
+        </div>
+
+        <h2>Quick Bedtime Story Moments 🎥</h2>
+
+        <div class="tiktok">
+            <a href="YOUR_TIKTOK_LINK_1" target="_blank" rel="noopener noreferrer">▶ Watch on TikTok</a>
+            <a href="YOUR_TIKTOK_LINK_2" target="_blank" rel="noopener noreferrer">▶ More bedtime story clips</a>
+        </div>
+
+        <h2>Why This Works for Bedtime Stories for Children</h2>
+
+        <p>
+            Cozy Tales focuses on <strong>bedtime stories for children</strong> that are calm, gentle, and designed specifically for sleep. Each story uses soft narration, peaceful pacing, and comforting visuals to support healthy bedtime habits.
+        </p>
+
+        <p>
+            Parents who want reliable <strong>children bedtime stories</strong> often look for something safe, soothing, and easy to enjoy every night. Monkey Milo’s Big Sea Adventure was created to give families that warm bedtime experience.
+        </p>
+
+        <h2>Explore More Bedtime Stories</h2>
+
+        <p class="related-links">
+            <a href="the-cheerful-chicks-sunny-dream.html">The Cheerful Chick’s Sunny Dream</a> |
+            <a href="bedtime-stories-for-kids.html">Bedtime Stories for Kids</a> |
+            <a href="short-bedtime-stories-for-kids.html">Short Bedtime Stories</a> |
+            <a href="free-bedtime-stories-for-kids.html">Free Bedtime Stories</a>
+        </p>
+
+        <div class="cta">
+            <a href="https://play.google.com/store/apps/details?id=com.softiceinnovationslabs.bedtimestorybooks" target="_blank" rel="noopener noreferrer">
+                📲 Get 2 FREE Bedtime Stories
+            </a>
+        </div>
+
+    </div>
 </div>
 
-<h2>Explore More</h2>
-
-<p>
-<a href="the-cheerful-chicks-sunny-dream.html">Cheerful Chick</a> |
-<a href="short-bedtime-stories-for-kids.html">Short Stories</a>
-</p>
-
-<div class="cta">
-<a href="https://play.google.com/store/apps/details?id=com.softiceinnovationslabs.bedtimestorybooks">
-📲 Get 2 FREE Stories
+<a href="https://play.google.com/store/apps/details?id=com.softiceinnovationslabs.bedtimestorybooks" class="floating-btn" target="_blank" rel="noopener noreferrer">
+    📲 Get App
 </a>
-</div>
 
-</div>
-</div>
-
-<a href="#" class="floating-btn">📲 Get App</a>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Monkey Milo’s Big Sea Adventure",
+  "description": "A calming bedtime story for children designed to support sleep routines and relaxation.",
+  "image": "https://softice-site.pages.dev/monkey-milos-big-sea-adventure.webp",
+  "author": {
+    "@type": "Organization",
+    "name": "Softice Innovations Labs LLC"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Softice Innovations Labs LLC",
+    "url": "https://softice-site.pages.dev/"
+  },
+  "mainEntityOfPage": "https://softice-site.pages.dev/monkey-milos-big-sea-adventure.html"
+}
+</script>
 
 </body>
 </html>
