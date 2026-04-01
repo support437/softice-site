@@ -26,7 +26,13 @@
 <meta name="twitter:image" content="https://softice-site.pages.dev/monkey-milos-big-sea-adventure.webp">
 
 <style>
-* { box-sizing: border-box; }
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
 
 body {
     margin: 0;
@@ -38,7 +44,7 @@ body {
     position: relative;
 }
 
-/* FLOATING STARS */
+/* FLOATING STARS / SNOW */
 .star {
     position: fixed;
     width: 6px;
@@ -91,6 +97,7 @@ body {
     width: 100%;
     padding: 0 20px;
     background: linear-gradient(to top, rgba(11,11,31,0.88), rgba(11,11,31,0.18), rgba(11,11,31,0));
+    pointer-events: none;
 }
 
 .hero-overlay h1 {
@@ -108,11 +115,15 @@ body {
     text-shadow: 0 2px 8px rgba(0,0,0,0.4);
 }
 
+.mobile-title {
+    display: none;
+}
+
 /* CONTENT */
 .container {
     max-width: 900px;
     margin: auto;
-    padding: 30px 20px 80px;
+    padding: 30px 20px 90px;
     position: relative;
     z-index: 2;
 }
@@ -184,24 +195,6 @@ iframe {
     background: linear-gradient(45deg, #ff2e8a, #ff6a3d);
 }
 
-.floating-btn {
-    position: fixed;
-    bottom: 15px;
-    right: 15px;
-    background: #ffd84d;
-    color: black;
-    padding: 12px 18px;
-    border-radius: 25px;
-    font-weight: bold;
-    text-decoration: none;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.25);
-    z-index: 999;
-}
-
-.floating-btn:hover {
-    background: #ffcc1a;
-}
-
 .related-links a {
     color: #ffd84d;
     margin: 0 8px;
@@ -226,18 +219,42 @@ iframe {
     color: #ffd84d;
 }
 
+/* FLOATING APP BUTTON */
+.floating-btn {
+    position: fixed;
+    bottom: 15px;
+    right: 15px;
+    background: #ffd84d;
+    color: black;
+    padding: 12px 18px;
+    border-radius: 25px;
+    font-weight: bold;
+    text-decoration: none;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.25);
+    z-index: 99999;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.floating-btn:hover {
+    background: #ffcc1a;
+    transform: translateY(-2px);
+    box-shadow: 0 14px 26px rgba(0,0,0,0.32);
+}
+
+/* MOBILE */
 @media (max-width: 768px) {
     .hero-overlay {
-        bottom: 14px;
-        padding: 0 14px;
+        display: none;
     }
 
-    .hero-overlay h1 {
-        font-size: 28px;
-    }
-
-    .hero-overlay p {
-        font-size: 16px;
+    .mobile-title {
+        display: block;
+        font-size: 26px;
+        margin: 20px 10px 0;
+        color: #ffffff;
+        position: relative;
+        z-index: 2;
     }
 
     iframe {
@@ -258,6 +275,12 @@ iframe {
         left: 10px;
         bottom: 10px;
         text-align: center;
+        border-radius: 16px;
+        padding: 14px 18px;
+    }
+
+    .container {
+        padding-top: 18px;
     }
 }
 </style>
@@ -284,7 +307,7 @@ iframe {
 
 <!-- HERO -->
 <section class="hero-banner">
-    <img src="/monkey-milos-big-sea-adventure.webp?v=2"
+    <img src="/monkey-milos-big-sea-adventure.webp?v=4"
          alt="Monkey Milo bedtime stories for children hero banner"
          class="hero-banner-img">
 
@@ -293,6 +316,8 @@ iframe {
         <p>A gentle pirate adventure full of wonder, friendship, and calm bedtime magic for children.</p>
     </div>
 </section>
+
+<h1 class="mobile-title">Monkey Milo’s Big Sea Adventure 🌙</h1>
 
 <div class="container">
     <div class="content-card">
@@ -363,8 +388,12 @@ iframe {
     </div>
 </div>
 
-<a href="https://play.google.com/store/apps/details?id=com.softiceinnovationslabs.bedtimestorybooks" class="floating-btn" target="_blank" rel="noopener noreferrer">
-    📲 Get App
+<a href="https://play.google.com/store/apps/details?id=com.softiceinnovationslabs.bedtimestorybooks"
+   class="floating-btn"
+   target="_blank"
+   rel="noopener noreferrer"
+   onclick="window.open(this.href, '_blank'); return false;">
+   📲 Get App
 </a>
 
 <script type="application/ld+json">
