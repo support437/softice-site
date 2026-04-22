@@ -33,6 +33,17 @@
 <meta name="twitter:description" content="A calming bedtime story for kids with gentle adventure, peaceful narration, and a YouTube story video.">
 <meta name="twitter:image" content="https://softiceinnovationslabs.com/monkey-milos-big-sea-adventure.webp">
 
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-CE1N5QBRTE"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-CE1N5QBRTE', {
+    debug_mode: true
+});
+</script>
+
 <style>
 * {
     box-sizing: border-box;
@@ -375,16 +386,20 @@ iframe {
         <h2>Quick Bedtime Story Moments 🎥</h2>
 
         <div class="tiktok">
-            <a href="https://www.tiktok.com/@bedtimestoriescozytales?utm_source=website&utm_medium=story_page&utm_campaign=monkey_milo_tiktok"
+            <a href="https://www.tiktok.com/@bedtimestoriescozytales?utm_source=softice_site&utm_medium=organic&utm_campaign=monkey_milo_tiktok_main&utm_content=story_page"
                target="_blank"
                rel="noopener noreferrer"
-               data-track-click="tiktok_main">
+               data-track="story-link-click"
+               data-track-location="monkey_milo_social_section"
+               data-track-title="TikTok Main">
                ▶ Watch on TikTok
             </a>
-            <a href="https://www.youtube.com/@BedtimeStoriesCozyTales?utm_source=website&utm_medium=story_page&utm_campaign=monkey_milo_tiktok_clips"
+            <a href="https://www.youtube.com/@BedtimeStoriesCozyTales?utm_source=softice_site&utm_medium=organic&utm_campaign=monkey_milo_youtube_clips&utm_content=story_page"
                target="_blank"
                rel="noopener noreferrer"
-               data-track-click="tiktok_more">
+               data-track="story-link-click"
+               data-track-location="monkey_milo_social_section"
+               data-track-title="YouTube Clips">
                ▶ More bedtime story clips
             </a>
         </div>
@@ -402,17 +417,31 @@ iframe {
         <h2>Explore More Bedtime Stories</h2>
 
         <p class="related-links">
-            <a href="the-cheerful-chicks-sunny-dream.html">The Cheerful Chick’s Sunny Dream</a> |
-            <a href="bedtime-stories-for-kids.html">Bedtime Stories for Kids</a> |
-            <a href="short-bedtime-stories-for-kids.html">Short Bedtime Stories</a> |
-            <a href="free-bedtime-stories-for-kids.html">Free Bedtime Stories</a>
+            <a href="the-cheerful-chicks-sunny-dream.html"
+               data-track="story-link-click"
+               data-track-location="monkey_milo_related_links"
+               data-track-title="The Cheerful Chick’s Sunny Dream">The Cheerful Chick’s Sunny Dream</a> |
+            <a href="bedtime-stories-for-kids.html"
+               data-track="story-link-click"
+               data-track-location="monkey_milo_related_links"
+               data-track-title="Bedtime Stories for Kids">Bedtime Stories for Kids</a> |
+            <a href="short-bedtime-stories-for-kids.html"
+               data-track="story-link-click"
+               data-track-location="monkey_milo_related_links"
+               data-track-title="Short Bedtime Stories">Short Bedtime Stories</a> |
+            <a href="free-bedtime-stories-for-kids.html"
+               data-track="story-link-click"
+               data-track-location="monkey_milo_related_links"
+               data-track-title="Free Bedtime Stories">Free Bedtime Stories</a>
         </p>
 
         <div class="cta">
-            <a href="https://play.google.com/store/apps/details?id=com.softiceinnovationslabs.bedtimestorybooks&utm_source=website&utm_medium=story_page&utm_campaign=monkey_milo_cta"
+            <a href="https://play.google.com/store/apps/details?id=com.softiceinnovationslabs.bedtimestorybooks&utm_source=softice_site&utm_medium=organic&utm_campaign=monkey_milo_story_cta&utm_content=get_2_free_bedtime_stories"
                target="_blank"
                rel="noopener noreferrer"
-               data-track-click="play_store_cta">
+               data-track="google-play-click"
+               data-track-location="monkey_milo_story_cta"
+               data-track-content="get_2_free_bedtime_stories">
                 📲 Get 2 FREE Bedtime Stories
             </a>
         </div>
@@ -420,11 +449,13 @@ iframe {
     </div>
 </div>
 
-<a href="https://play.google.com/store/apps/details?id=com.softiceinnovationslabs.bedtimestorybooks&utm_source=website&utm_medium=floating_button&utm_campaign=monkey_milo_floating"
+<a href="https://play.google.com/store/apps/details?id=com.softiceinnovationslabs.bedtimestorybooks&utm_source=softice_site&utm_medium=organic&utm_campaign=monkey_milo_floating_cta&utm_content=get_app"
    class="floating-btn"
    target="_blank"
    rel="noopener noreferrer"
-   data-track-click="play_store_floating">
+   data-track="google-play-click"
+   data-track-location="monkey_milo_floating_cta"
+   data-track-content="get_app">
    📲 Get App
 </a>
 
@@ -481,41 +512,90 @@ iframe {
 
 <script>
 (function () {
-    window.dataLayer = window.dataLayer || [];
-
-    function trackEvent(eventName, params) {
-        window.dataLayer.push({
-            event: eventName,
-            ...params
-        });
-
-        if (typeof window.gtag === 'function') {
-            window.gtag('event', eventName, params);
-        }
+    function getDeviceType() {
+        const ua = navigator.userAgent || "";
+        if (/tablet|ipad|playbook|silk/i.test(ua)) return "tablet";
+        if (/Mobile|Android|iPhone|iPod/i.test(ua)) return "mobile";
+        return "desktop";
     }
 
-    trackEvent('story_page_view', {
-        page_name: 'monkey-milos-big-sea-adventure',
-        page_type: 'story_page',
-        story_title: 'Monkey Milo’s Big Sea Adventure'
+    function getSessionId() {
+        let sessionId = sessionStorage.getItem("softice_session_id");
+        if (!sessionId) {
+            sessionId = "sess_" + Date.now() + "_" + Math.random().toString(36).slice(2, 10);
+            sessionStorage.setItem("softice_session_id", sessionId);
+        }
+        return sessionId;
+    }
+
+    function trackEvent(eventName, params) {
+        if (typeof gtag === "function") {
+            gtag("event", eventName, params);
+        }
+        console.log("Tracked event:", eventName, params);
+    }
+
+    function commonParams() {
+        return {
+            page_location: window.location.href,
+            page_path: window.location.pathname,
+            page_title: document.title,
+            referrer: document.referrer || "direct",
+            device_type: getDeviceType(),
+            session_id: getSessionId()
+        };
+    }
+
+    window.addEventListener("load", function () {
+        trackEvent("monkey_milo_story_page_view", {
+            ...commonParams(),
+            page_name: "monkey-milos-big-sea-adventure",
+            page_type: "story_page",
+            story_title: "Monkey Milo’s Big Sea Adventure"
+        });
     });
 
-    document.querySelectorAll('[data-track-click]').forEach(function (element) {
-        element.addEventListener('click', function () {
-            trackEvent('story_page_click', {
-                page_name: 'monkey-milos-big-sea-adventure',
-                click_target: element.getAttribute('data-track-click'),
-                story_title: 'Monkey Milo’s Big Sea Adventure',
-                destination_url: element.href
+    document.addEventListener("click", function (e) {
+        const el = e.target.closest("[data-track]");
+        if (!el) return;
+
+        const trackType = el.getAttribute("data-track");
+        const trackLocation = el.getAttribute("data-track-location") || "unknown_location";
+        const trackTitle = el.getAttribute("data-track-title") || (el.textContent || "").trim() || "unknown_title";
+
+        if (trackType === "google-play-click") {
+            trackEvent("google_play_click", {
+                ...commonParams(),
+                page_name: "monkey-milos-big-sea-adventure",
+                page_type: "story_page",
+                story_title: "Monkey Milo’s Big Sea Adventure",
+                cta_location: trackLocation,
+                cta_content: el.getAttribute("data-track-content") || "unknown_content",
+                link_url: el.href,
+                link_text: (el.textContent || "").trim()
             });
-        });
+        }
+
+        if (trackType === "story-link-click") {
+            trackEvent("story_page_click", {
+                ...commonParams(),
+                page_name: "monkey-milos-big-sea-adventure",
+                page_type: "story_page",
+                story_title: "Monkey Milo’s Big Sea Adventure",
+                click_location: trackLocation,
+                click_target: trackTitle,
+                destination_url: el.href
+            });
+        }
     });
 
     var youtubeFrame = document.querySelector('iframe[src*="youtube.com/embed/whfGxGU0paA"]');
     if (youtubeFrame) {
         youtubeFrame.addEventListener('load', function () {
             trackEvent('story_video_embed_loaded', {
+                ...commonParams(),
                 page_name: 'monkey-milos-big-sea-adventure',
+                page_type: 'story_page',
                 story_title: 'Monkey Milo’s Big Sea Adventure',
                 video_platform: 'youtube',
                 video_id: 'whfGxGU0paA'
