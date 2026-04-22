@@ -36,6 +36,17 @@
 <meta name="twitter:image" content="https://softiceinnovationslabs.com/family-hero.webp">
 <meta name="twitter:image:alt" content="Bedtime Stories for Kids – Cozy Tales family bedtime story app preview">
 
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-XXXXXXXXXX', {
+    debug_mode: true
+});
+</script>
+
 <style>
 body {
     margin: 0;
@@ -732,15 +743,20 @@ for (let i = 0; i < 40; i++) {
 
 <section class="section fade" aria-labelledby="see-it-in-action-heading">
     <h2 id="see-it-in-action-heading">See It In Action</h2>
-    <iframe
-        width="90%"
-        height="350"
-        src="https://www.youtube.com/embed/DR9JqKL95LE"
-        title="Bedtime stories for kids app video preview"
-        loading="lazy"
-        referrerpolicy="strict-origin-when-cross-origin"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        allowfullscreen></iframe>
+    <div id="youtubeEmbedWrapper"
+         data-track="youtube-embed-click"
+         data-track-location="homepage_video_section"
+         data-track-title="YouTube App Preview">
+        <iframe
+            width="90%"
+            height="350"
+            src="https://www.youtube.com/embed/DR9JqKL95LE"
+            title="Bedtime stories for kids app video preview"
+            loading="lazy"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen></iframe>
+    </div>
 </section>
 
 <section class="section fade" aria-labelledby="bedtime-stories-sleep-heading">
@@ -759,7 +775,19 @@ for (let i = 0; i < 40; i++) {
         Bedtime Story Books – Cozy Tales is a bedtime stories app for kids designed to make nighttime routines calmer, easier, and more magical. Families can enjoy sleep stories for children, read-aloud narration, peaceful visuals, and a no subscription experience that keeps story time simple.
     </p>
     <p style="margin-top:24px;">
-        Parents looking for <a href="/free-bedtime-stories-for-kids.html">free bedtime stories for kids</a>, <a href="/short-bedtime-stories-for-kids.html">short bedtime stories</a>, <a href="/sleep-stories-for-toddlers.html">sleep stories for toddlers</a>, and <a href="/bedtime-stories-for-preschoolers.html">bedtime stories for preschoolers</a> can explore our growing bedtime guide library below.
+        Parents looking for <a href="/free-bedtime-stories-for-kids.html"
+        data-track="resource-link-click"
+        data-track-location="homepage_text_links"
+        data-track-title="Free Bedtime Stories for Kids">free bedtime stories for kids</a>, <a href="/short-bedtime-stories-for-kids.html"
+        data-track="resource-link-click"
+        data-track-location="homepage_text_links"
+        data-track-title="Short Bedtime Stories for Kids">short bedtime stories</a>, <a href="/sleep-stories-for-toddlers.html"
+        data-track="resource-link-click"
+        data-track-location="homepage_text_links"
+        data-track-title="Sleep Stories for Toddlers">sleep stories for toddlers</a>, and <a href="/bedtime-stories-for-preschoolers.html"
+        data-track="resource-link-click"
+        data-track-location="homepage_text_links"
+        data-track-title="Bedtime Stories for Preschoolers">bedtime stories for preschoolers</a> can explore our growing bedtime guide library below.
     </p>
 </section>
 
@@ -772,12 +800,30 @@ for (let i = 0; i < 40; i++) {
     <div class="resource-links">
         <h3>Core Guides</h3>
         <ul>
-            <li><a href="bedtime-stories-for-kids.html">Bedtime Stories for Kids</a></li>
-            <li><a href="/best-bedtime-stories-for-kids.html">Best Bedtime Stories for Kids (2026 Guide)</a></li>
-            <li><a href="/free-bedtime-stories-for-kids.html">Free Bedtime Stories for Kids (No Subscription)</a></li>
-            <li><a href="/bedtime-story-app-for-kids.html">Best Bedtime Story App for Kids</a></li>
-            <li><a href="/short-bedtime-stories-for-kids.html">Short Bedtime Stories for Kids</a></li>
-            <li><a href="/benefits-of-bedtime-stories.html">Benefits of Bedtime Stories for Kids</a></li>
+            <li><a href="bedtime-stories-for-kids.html"
+                data-track="resource-link-click"
+                data-track-location="homepage_core_guides"
+                data-track-title="Bedtime Stories for Kids">Bedtime Stories for Kids</a></li>
+            <li><a href="/best-bedtime-stories-for-kids.html"
+                data-track="resource-link-click"
+                data-track-location="homepage_core_guides"
+                data-track-title="Best Bedtime Stories for Kids (2026 Guide)">Best Bedtime Stories for Kids (2026 Guide)</a></li>
+            <li><a href="/free-bedtime-stories-for-kids.html"
+                data-track="resource-link-click"
+                data-track-location="homepage_core_guides"
+                data-track-title="Free Bedtime Stories for Kids (No Subscription)">Free Bedtime Stories for Kids (No Subscription)</a></li>
+            <li><a href="/bedtime-story-app-for-kids.html"
+                data-track="resource-link-click"
+                data-track-location="homepage_core_guides"
+                data-track-title="Best Bedtime Story App for Kids">Best Bedtime Story App for Kids</a></li>
+            <li><a href="/short-bedtime-stories-for-kids.html"
+                data-track="resource-link-click"
+                data-track-location="homepage_core_guides"
+                data-track-title="Short Bedtime Stories for Kids">Short Bedtime Stories for Kids</a></li>
+            <li><a href="/benefits-of-bedtime-stories.html"
+                data-track="resource-link-click"
+                data-track-location="homepage_core_guides"
+                data-track-title="Benefits of Bedtime Stories for Kids">Benefits of Bedtime Stories for Kids</a></li>
         </ul>
     </div>
 </section>
@@ -790,264 +836,438 @@ for (let i = 0; i < 40; i++) {
 
     <div class="story-library-grid">
         <div class="story-library-card">
-            <a class="story-cover-link" href="/monkey-milos-big-sea-adventure.html">
+            <a class="story-cover-link" href="/monkey-milos-big-sea-adventure.html"
+               data-track="story-card-click"
+               data-track-location="homepage_story_cover"
+               data-track-title="Monkey Milo’s Big Sea Adventure">
                 <img src="monkey-milos-big-sea-adventure-book-cover.webp" alt="Monkey Milo’s Big Sea Adventure book cover" loading="lazy" decoding="async">
                 <h3>Monkey Milo’s Big Sea Adventure</h3>
             </a>
             <p>A gentle ocean bedtime story with peaceful adventure and cozy nighttime energy.</p>
-            <a class="story-link" href="/monkey-milos-big-sea-adventure.html">Open story page</a>
+            <a class="story-link" href="/monkey-milos-big-sea-adventure.html"
+               data-track="story-card-click"
+               data-track-location="homepage_story_library"
+               data-track-title="Monkey Milo’s Big Sea Adventure">Open story page</a>
         </div>
 
         <div class="story-library-card">
-            <a class="story-cover-link" href="/the-cheerful-chicks-sunny-dream.html">
+            <a class="story-cover-link" href="/the-cheerful-chicks-sunny-dream.html"
+               data-track="story-card-click"
+               data-track-location="homepage_story_cover"
+               data-track-title="The Cheerful Chick’s Sunny Dream">
                 <img src="the-cheerful-chicks-sunny-dream-book-cover.webp" alt="The Cheerful Chick’s Sunny Dream book cover" loading="lazy" decoding="async">
                 <h3>The Cheerful Chick’s Sunny Dream</h3>
             </a>
             <p>A bright and calming bedtime story designed to help young children relax before sleep.</p>
-            <a class="story-link" href="/the-cheerful-chicks-sunny-dream.html">Open story page</a>
+            <a class="story-link" href="/the-cheerful-chicks-sunny-dream.html"
+               data-track="story-card-click"
+               data-track-location="homepage_story_library"
+               data-track-title="The Cheerful Chick’s Sunny Dream">Open story page</a>
         </div>
 
         <div class="story-library-card">
-            <a class="story-cover-link" href="/zara-the-zippy-zebra.html">
+            <a class="story-cover-link" href="/zara-the-zippy-zebra.html"
+               data-track="story-card-click"
+               data-track-location="homepage_story_cover"
+               data-track-title="Zara the Zippy Zebra">
                 <img src="zara-the-zippy-zebra-book-cover.webp" alt="Zara the Zippy Zebra book cover" loading="lazy" decoding="async">
                 <h3>Zara the Zippy Zebra</h3>
             </a>
             <p>A playful bedtime story with a soft, child-friendly rhythm and a peaceful ending.</p>
-            <a class="story-link" href="/zara-the-zippy-zebra.html">Open story page</a>
+            <a class="story-link" href="/zara-the-zippy-zebra.html"
+               data-track="story-card-click"
+               data-track-location="homepage_story_library"
+               data-track-title="Zara the Zippy Zebra">Open story page</a>
         </div>
 
         <div class="story-library-card">
-            <a class="story-cover-link" href="/timmy-the-dreamy-tiger.html">
+            <a class="story-cover-link" href="/timmy-the-dreamy-tiger.html"
+               data-track="story-card-click"
+               data-track-location="homepage_story_cover"
+               data-track-title="Timmy the Dreamy Tiger">
                 <img src="timmy-the-dreamy-tiger-book-cover.webp" alt="Timmy the Dreamy Tiger book cover" loading="lazy" decoding="async">
                 <h3>Timmy the Dreamy Tiger</h3>
             </a>
             <p>A dreamy bedtime adventure for kids who love calm stories and bedtime imagination.</p>
-            <a class="story-link" href="/timmy-the-dreamy-tiger.html">Open story page</a>
+            <a class="story-link" href="/timmy-the-dreamy-tiger.html"
+               data-track="story-card-click"
+               data-track-location="homepage_story_library"
+               data-track-title="Timmy the Dreamy Tiger">Open story page</a>
         </div>
 
         <div class="story-library-card">
-            <a class="story-cover-link" href="/the-sleepy-dinosaur.html">
+            <a class="story-cover-link" href="/the-sleepy-dinosaur.html"
+               data-track="story-card-click"
+               data-track-location="homepage_story_cover"
+               data-track-title="The Sleepy Dinosaur">
                 <img src="the-sleepy-dinosaur-book-cover.webp" alt="The Sleepy Dinosaur book cover" loading="lazy" decoding="async">
                 <h3>The Sleepy Dinosaur</h3>
             </a>
             <p>A soft dinosaur bedtime favorite created to help children unwind and settle into sleep.</p>
-            <a class="story-link" href="/the-sleepy-dinosaur.html">Open story page</a>
+            <a class="story-link" href="/the-sleepy-dinosaur.html"
+               data-track="story-card-click"
+               data-track-location="homepage_story_library"
+               data-track-title="The Sleepy Dinosaur">Open story page</a>
         </div>
 
         <div class="story-library-card">
-            <a class="story-cover-link" href="/the-friendly-fish.html">
+            <a class="story-cover-link" href="/the-friendly-fish.html"
+               data-track="story-card-click"
+               data-track-location="homepage_story_cover"
+               data-track-title="The Friendly Fish">
                 <img src="the-friendly-fish-book-cover.webp" alt="The Friendly Fish book cover" loading="lazy" decoding="async">
                 <h3>The Friendly Fish</h3>
             </a>
             <p>A soothing underwater bedtime story filled with calm visuals and gentle storytelling.</p>
-            <a class="story-link" href="/the-friendly-fish.html">Open story page</a>
+            <a class="story-link" href="/the-friendly-fish.html"
+               data-track="story-card-click"
+               data-track-location="homepage_story_library"
+               data-track-title="The Friendly Fish">Open story page</a>
         </div>
 
         <div class="story-library-card">
-            <a class="story-cover-link" href="/little-lions-adventure.html">
+            <a class="story-cover-link" href="/little-lions-adventure.html"
+               data-track="story-card-click"
+               data-track-location="homepage_story_cover"
+               data-track-title="Little Lion’s Adventure">
                 <img src="little-lions-adventure-book-cover.webp" alt="Little Lion’s Adventure book cover" loading="lazy" decoding="async">
                 <h3>Little Lion’s Adventure</h3>
             </a>
             <p>A warm bedtime story that blends little adventure with a calm nighttime feeling.</p>
-            <a class="story-link" href="/little-lions-adventure.html">Open story page</a>
+            <a class="story-link" href="/little-lions-adventure.html"
+               data-track="story-card-click"
+               data-track-location="homepage_story_library"
+               data-track-title="Little Lion’s Adventure">Open story page</a>
         </div>
 
         <div class="story-library-card">
-            <a class="story-cover-link" href="/monkey-milos-big-adventures.html">
+            <a class="story-cover-link" href="/monkey-milos-big-adventures.html"
+               data-track="story-card-click"
+               data-track-location="homepage_story_cover"
+               data-track-title="Monkey Milo’s Big Adventures">
                 <img src="monkey-milos-big-adventures-book-cover.webp" alt="Monkey Milo’s Big Adventures book cover" loading="lazy" decoding="async">
                 <h3>Monkey Milo’s Big Adventures</h3>
             </a>
             <p>A fun bedtime story collection starring Monkey Milo in a gentle nighttime adventure.</p>
-            <a class="story-link" href="/monkey-milos-big-adventures.html">Open story page</a>
+            <a class="story-link" href="/monkey-milos-big-adventures.html"
+               data-track="story-card-click"
+               data-track-location="homepage_story_library"
+               data-track-title="Monkey Milo’s Big Adventures">Open story page</a>
         </div>
 
         <div class="story-library-card">
-            <a class="story-cover-link" href="/bear-big-adventure.html">
+            <a class="story-cover-link" href="/bear-big-adventure.html"
+               data-track="story-card-click"
+               data-track-location="homepage_story_cover"
+               data-track-title="Bear Big Adventure">
                 <img src="bear-big-adventure-book-cover.webp" alt="Bear Big Adventure book cover" loading="lazy" decoding="async">
                 <h3>Bear Big Adventure</h3>
             </a>
             <p>A cozy bedtime adventure story with a gentle bear and a comforting nighttime mood.</p>
-            <a class="story-link" href="/bear-big-adventure.html">Open story page</a>
+            <a class="story-link" href="/bear-big-adventure.html"
+               data-track="story-card-click"
+               data-track-location="homepage_story_library"
+               data-track-title="Bear Big Adventure">Open story page</a>
         </div>
 
         <div class="story-library-card">
-            <a class="story-cover-link" href="/bunnys-garden-picnic.html">
+            <a class="story-cover-link" href="/bunnys-garden-picnic.html"
+               data-track="story-card-click"
+               data-track-location="homepage_story_cover"
+               data-track-title="Bunny's Garden Picnic">
                 <img src="bunnys-garden-picnic-book-cover.webp" alt="Bunny's Garden Picnic book cover" loading="lazy" decoding="async">
                 <h3>Bunny's Garden Picnic</h3>
             </a>
             <p>A sweet garden bedtime story with bunny charm, calm pacing, and soft bedtime comfort.</p>
-            <a class="story-link" href="/bunnys-garden-picnic.html">Open story page</a>
+            <a class="story-link" href="/bunnys-garden-picnic.html"
+               data-track="story-card-click"
+               data-track-location="homepage_story_library"
+               data-track-title="Bunny's Garden Picnic">Open story page</a>
         </div>
 
         <div class="story-library-card">
-            <a class="story-cover-link" href="/cuddly-cows-starry-night.html">
+            <a class="story-cover-link" href="/cuddly-cows-starry-night.html"
+               data-track="story-card-click"
+               data-track-location="homepage_story_cover"
+               data-track-title="Cuddly Cow's Starry Night">
                 <img src="cuddly-cows-starry-night-book-cover.webp" alt="Cuddly Cow's Starry Night book cover" loading="lazy" decoding="async">
                 <h3>Cuddly Cow's Starry Night</h3>
             </a>
             <p>A peaceful starry-night bedtime story made for children who love calm animal stories.</p>
-            <a class="story-link" href="/cuddly-cows-starry-night.html">Open story page</a>
+            <a class="story-link" href="/cuddly-cows-starry-night.html"
+               data-track="story-card-click"
+               data-track-location="homepage_story_library"
+               data-track-title="Cuddly Cow's Starry Night">Open story page</a>
         </div>
 
         <div class="story-library-card">
-            <a class="story-cover-link" href="/the-sleepy-dinosaur-2.html">
+            <a class="story-cover-link" href="/the-sleepy-dinosaur-2.html"
+               data-track="story-card-click"
+               data-track-location="homepage_story_cover"
+               data-track-title="The Sleepy Dinosaur #2">
                 <img src="the-sleepy-dinosaur-2-book-cover.webp" alt="The Sleepy Dinosaur second edition book cover" loading="lazy" decoding="async">
                 <h3>The Sleepy Dinosaur #2</h3>
             </a>
             <p>A soft and cozy bedtime story about a sleepy little dinosaur, designed to help kids relax and drift off to sleep peacefully.</p>
-            <a class="story-link" href="/the-sleepy-dinosaur-2.html">Open story page</a>
+            <a class="story-link" href="/the-sleepy-dinosaur-2.html"
+               data-track="story-card-click"
+               data-track-location="homepage_story_library"
+               data-track-title="The Sleepy Dinosaur #2">Open story page</a>
         </div>
 
         <div class="story-library-card">
-            <a class="story-cover-link" href="/the-little-ducks-rainy-day.html">
+            <a class="story-cover-link" href="/the-little-ducks-rainy-day.html"
+               data-track="story-card-click"
+               data-track-location="homepage_story_cover"
+               data-track-title="The Little Duck's Rainy Day">
                 <img src="the-little-ducks-rainy-day-book-cover.webp" alt="The Little Duck's Rainy Day book cover" loading="lazy" decoding="async">
                 <h3>The Little Duck's Rainy Day</h3>
             </a>
             <p>A rainy-day bedtime story with soft storytelling and a peaceful sleepy atmosphere.</p>
-            <a class="story-link" href="/the-little-ducks-rainy-day.html">Open story page</a>
+            <a class="story-link" href="/the-little-ducks-rainy-day.html"
+               data-track="story-card-click"
+               data-track-location="homepage_story_library"
+               data-track-title="The Little Duck's Rainy Day">Open story page</a>
         </div>
 
         <div class="story-library-card">
-            <a class="story-cover-link" href="/ellies-sweet-dreams.html">
+            <a class="story-cover-link" href="/ellies-sweet-dreams.html"
+               data-track="story-card-click"
+               data-track-location="homepage_story_cover"
+               data-track-title="Ellie's Sweet Dreams">
                 <img src="ellies-sweet-dreams-book-cover.webp" alt="Ellie's Sweet Dreams book cover" loading="lazy" decoding="async">
                 <h3>Ellie's Sweet Dreams</h3>
             </a>
             <p>A calming bedtime story designed around gentle dreams, comfort, and peaceful rest.</p>
-            <a class="story-link" href="/ellies-sweet-dreams.html">Open story page</a>
+            <a class="story-link" href="/ellies-sweet-dreams.html"
+               data-track="story-card-click"
+               data-track-location="homepage_story_library"
+               data-track-title="Ellie's Sweet Dreams">Open story page</a>
         </div>
 
         <div class="story-library-card">
-            <a class="story-cover-link" href="/little-fox-big-adventures.html">
+            <a class="story-cover-link" href="/little-fox-big-adventures.html"
+               data-track="story-card-click"
+               data-track-location="homepage_story_cover"
+               data-track-title="Little Fox Big Adventures">
                 <img src="little-fox-big-adventures-book-cover.webp" alt="Little Fox Big Adventures book cover" loading="lazy" decoding="async">
                 <h3>Little Fox Big Adventures</h3>
             </a>
             <p>A bedtime fox story that blends gentle curiosity with a calm and comforting ending.</p>
-            <a class="story-link" href="/little-fox-big-adventures.html">Open story page</a>
+            <a class="story-link" href="/little-fox-big-adventures.html"
+               data-track="story-card-click"
+               data-track-location="homepage_story_library"
+               data-track-title="Little Fox Big Adventures">Open story page</a>
         </div>
 
         <div class="story-library-card">
-            <a class="story-cover-link" href="/giraffes-tall-tales.html">
+            <a class="story-cover-link" href="/giraffes-tall-tales.html"
+               data-track="story-card-click"
+               data-track-location="homepage_story_cover"
+               data-track-title="Giraffe's Tall Tales">
                 <img src="giraffes-tall-tales-book-cover.webp" alt="Giraffe's Tall Tales book cover" loading="lazy" decoding="async">
                 <h3>Giraffe's Tall Tales</h3>
             </a>
             <p>A tall, gentle bedtime story with playful charm and a relaxing nighttime tone.</p>
-            <a class="story-link" href="/giraffes-tall-tales.html">Open story page</a>
+            <a class="story-link" href="/giraffes-tall-tales.html"
+               data-track="story-card-click"
+               data-track-location="homepage_story_library"
+               data-track-title="Giraffe's Tall Tales">Open story page</a>
         </div>
 
         <div class="story-library-card">
-            <a class="story-cover-link" href="/koalas-moonlit-cuddle.html">
+            <a class="story-cover-link" href="/koalas-moonlit-cuddle.html"
+               data-track="story-card-click"
+               data-track-location="homepage_story_cover"
+               data-track-title="Koala's Moonlit Cuddle">
                 <img src="koalas-moonlit-cuddle-book-cover.webp" alt="Koala's Moonlit Cuddle book cover" loading="lazy" decoding="async">
                 <h3>Koala's Moonlit Cuddle</h3>
             </a>
             <p>A moonlit cuddle bedtime story with gentle comfort, sleepy pacing, and cozy warmth.</p>
-            <a class="story-link" href="/koalas-moonlit-cuddle.html">Open story page</a>
+            <a class="story-link" href="/koalas-moonlit-cuddle.html"
+               data-track="story-card-click"
+               data-track-location="homepage_story_library"
+               data-track-title="Koala's Moonlit Cuddle">Open story page</a>
         </div>
 
         <div class="story-library-card">
-            <a class="story-cover-link" href="/the-little-lambs-adventures.html">
+            <a class="story-cover-link" href="/the-little-lambs-adventures.html"
+               data-track="story-card-click"
+               data-track-location="homepage_story_cover"
+               data-track-title="The Little Lamb's Adventures">
                 <img src="the-little-lambs-adventures-book-cover.webp" alt="The Little Lamb's Adventures book cover" loading="lazy" decoding="async">
                 <h3>The Little Lamb's Adventures</h3>
             </a>
             <p>A soft and comforting lamb bedtime story created for peaceful nighttime reading.</p>
-            <a class="story-link" href="/the-little-lambs-adventures.html">Open story page</a>
+            <a class="story-link" href="/the-little-lambs-adventures.html"
+               data-track="story-card-click"
+               data-track-location="homepage_story_library"
+               data-track-title="The Little Lamb's Adventures">Open story page</a>
         </div>
 
         <div class="story-library-card">
-            <a class="story-cover-link" href="/little-lions-adventure-2.html">
+            <a class="story-cover-link" href="/little-lions-adventure-2.html"
+               data-track="story-card-click"
+               data-track-location="homepage_story_cover"
+               data-track-title="Little Lion's Adventure #2">
                 <img src="little-lions-adventure-2-book-cover.webp" alt="Little Lion's Adventure second edition book cover" loading="lazy" decoding="async">
                 <h3>Little Lion's Adventure #2</h3>
             </a>
             <p>A gentle bedtime story about a little lion’s cozy adventure, designed to help kids relax and fall asleep peacefully.</p>
-            <a class="story-link" href="/little-lions-adventure-2.html">Open story page</a>
+            <a class="story-link" href="/little-lions-adventure-2.html"
+               data-track="story-card-click"
+               data-track-location="homepage_story_library"
+               data-track-title="Little Lion's Adventure #2">Open story page</a>
         </div>
 
         <div class="story-library-card">
-            <a class="story-cover-link" href="/monkey-milos-big-adventure.html">
+            <a class="story-cover-link" href="/monkey-milos-big-adventure.html"
+               data-track="story-card-click"
+               data-track-location="homepage_story_cover"
+               data-track-title="Monkey Milo's Big Adventure">
                 <img src="monkey-milos-big-adventure-book-cover.webp" alt="Monkey Milo's Big Adventure book cover" loading="lazy" decoding="async">
                 <h3>Monkey Milo's Big Adventure</h3>
             </a>
             <p>A bedtime adventure story featuring Monkey Milo in a calm and child-friendly journey.</p>
-            <a class="story-link" href="/monkey-milos-big-adventure.html">Open story page</a>
+            <a class="story-link" href="/monkey-milos-big-adventure.html"
+               data-track="story-card-click"
+               data-track-location="homepage_story_library"
+               data-track-title="Monkey Milo's Big Adventure">Open story page</a>
         </div>
 
         <div class="story-library-card">
-            <a class="story-cover-link" href="/owl-and-the-moon.html">
+            <a class="story-cover-link" href="/owl-and-the-moon.html"
+               data-track="story-card-click"
+               data-track-location="homepage_story_cover"
+               data-track-title="Owl and the Moon">
                 <img src="owl-and-the-moon-book-cover.webp" alt="Owl and the Moon book cover" loading="lazy" decoding="async">
                 <h3>Owl and the Moon</h3>
             </a>
             <p>A quiet moonlit bedtime story with owl magic, soft rhythms, and peaceful bedtime comfort.</p>
-            <a class="story-link" href="/owl-and-the-moon.html">Open story page</a>
+            <a class="story-link" href="/owl-and-the-moon.html"
+               data-track="story-card-click"
+               data-track-location="homepage_story_library"
+               data-track-title="Owl and the Moon">Open story page</a>
         </div>
 
         <div class="story-library-card">
-            <a class="story-cover-link" href="/pandas-cozy-bamboo-nap.html">
+            <a class="story-cover-link" href="/pandas-cozy-bamboo-nap.html"
+               data-track="story-card-click"
+               data-track-location="homepage_story_cover"
+               data-track-title="Panda's Cozy Bamboo Nap">
                 <img src="pandas-cozy-bamboo-nap-book-cover.webp" alt="Panda's Cozy Bamboo Nap book cover" loading="lazy" decoding="async">
                 <h3>Panda's Cozy Bamboo Nap</h3>
             </a>
             <p>A soft panda bedtime story built for sleepy cuddles and relaxing nighttime reading.</p>
-            <a class="story-link" href="/pandas-cozy-bamboo-nap.html">Open story page</a>
+            <a class="story-link" href="/pandas-cozy-bamboo-nap.html"
+               data-track="story-card-click"
+               data-track-location="homepage_story_library"
+               data-track-title="Panda's Cozy Bamboo Nap">Open story page</a>
         </div>
 
         <div class="story-library-card">
-            <a class="story-cover-link" href="/the-little-penguin.html">
+            <a class="story-cover-link" href="/the-little-penguin.html"
+               data-track="story-card-click"
+               data-track-location="homepage_story_cover"
+               data-track-title="The Little Penguin">
                 <img src="the-little-penguin-book-cover.webp" alt="The Little Penguin book cover" loading="lazy" decoding="async">
                 <h3>The Little Penguin</h3>
             </a>
             <p>A gentle bedtime penguin story with sweet visuals and a calm snowy bedtime feeling.</p>
-            <a class="story-link" href="/the-little-penguin.html">Open story page</a>
+            <a class="story-link" href="/the-little-penguin.html"
+               data-track="story-card-click"
+               data-track-location="homepage_story_library"
+               data-track-title="The Little Penguin">Open story page</a>
         </div>
 
         <div class="story-library-card">
-            <a class="story-cover-link" href="/the-playful-puppys-night-adventure.html">
+            <a class="story-cover-link" href="/the-playful-puppys-night-adventure.html"
+               data-track="story-card-click"
+               data-track-location="homepage_story_cover"
+               data-track-title="The Playful Puppy's Night Adventure">
                 <img src="the-playful-puppys-night-adventure-book-cover.webp" alt="The Playful Puppy's Night Adventure book cover" loading="lazy" decoding="async">
                 <h3>The Playful Puppy's Night Adventure</h3>
             </a>
             <p>A playful but bedtime-friendly puppy story with soft pacing and a cozy night ending.</p>
-            <a class="story-link" href="/the-playful-puppys-night-adventure.html">Open story page</a>
+            <a class="story-link" href="/the-playful-puppys-night-adventure.html"
+               data-track="story-card-click"
+               data-track-location="homepage_story_library"
+               data-track-title="The Playful Puppy's Night Adventure">Open story page</a>
         </div>
 
         <div class="story-library-card">
-            <a class="story-cover-link" href="/the-sleepy-kitten.html">
+            <a class="story-cover-link" href="/the-sleepy-kitten.html"
+               data-track="story-card-click"
+               data-track-location="homepage_story_cover"
+               data-track-title="The Sleepy Kitten">
                 <img src="the-sleepy-kitten-book-cover.webp" alt="The Sleepy Kitten book cover" loading="lazy" decoding="async">
                 <h3>The Sleepy Kitten</h3>
             </a>
             <p>A sleepy kitten bedtime story filled with softness, comfort, and relaxing bedtime energy.</p>
-            <a class="story-link" href="/the-sleepy-kitten.html">Open story page</a>
+            <a class="story-link" href="/the-sleepy-kitten.html"
+               data-track="story-card-click"
+               data-track-location="homepage_story_library"
+               data-track-title="The Sleepy Kitten">Open story page</a>
         </div>
 
         <div class="story-library-card">
-            <a class="story-cover-link" href="/the-little-turtles-moon-swim.html">
+            <a class="story-cover-link" href="/the-little-turtles-moon-swim.html"
+               data-track="story-card-click"
+               data-track-location="homepage_story_cover"
+               data-track-title="The Little Turtle's Moon Swim">
                 <img src="the-little-turtles-moon-swim-book-cover.webp" alt="The Little Turtle's Moon Swim book cover" loading="lazy" decoding="async">
                 <h3>The Little Turtle's Moon Swim</h3>
             </a>
             <p>A peaceful moon-swim bedtime story that helps kids imagine calm nighttime water scenes.</p>
-            <a class="story-link" href="/the-little-turtles-moon-swim.html">Open story page</a>
+            <a class="story-link" href="/the-little-turtles-moon-swim.html"
+               data-track="story-card-click"
+               data-track-location="homepage_story_library"
+               data-track-title="The Little Turtle's Moon Swim">Open story page</a>
         </div>
 
         <div class="story-library-card">
-            <a class="story-cover-link" href="/magical-unicorn-dreams.html">
+            <a class="story-cover-link" href="/magical-unicorn-dreams.html"
+               data-track="story-card-click"
+               data-track-location="homepage_story_cover"
+               data-track-title="Magical Unicorn Dreams">
                 <img src="magical-unicorn-dreams-book-cover.webp" alt="Magical Unicorn Dreams book cover" loading="lazy" decoding="async">
                 <h3>Magical Unicorn Dreams</h3>
             </a>
             <p>A magical bedtime unicorn story with dreamy colors, calm wonder, and a gentle sleepy mood.</p>
-            <a class="story-link" href="/magical-unicorn-dreams.html">Open story page</a>
+            <a class="story-link" href="/magical-unicorn-dreams.html"
+               data-track="story-card-click"
+               data-track-location="homepage_story_library"
+               data-track-title="Magical Unicorn Dreams">Open story page</a>
         </div>
 
         <div class="story-library-card">
-            <a class="story-cover-link" href="/the-playful-puppys-snow-adventure.html">
+            <a class="story-cover-link" href="/the-playful-puppys-snow-adventure.html"
+               data-track="story-card-click"
+               data-track-location="homepage_story_cover"
+               data-track-title="The Playful Puppy's Snow Adventure">
                 <img src="the-playful-puppys-snow-adventure-book-cover.webp" alt="The Playful Puppy's Snow Adventure book cover" loading="lazy" decoding="async">
                 <h3>The Playful Puppy's Snow Adventure</h3>
             </a>
             <p>A snowy bedtime puppy story with playful charm and a peaceful ending for bedtime.</p>
-            <a class="story-link" href="/the-playful-puppys-snow-adventure.html">Open story page</a>
+            <a class="story-link" href="/the-playful-puppys-snow-adventure.html"
+               data-track="story-card-click"
+               data-track-location="homepage_story_library"
+               data-track-title="The Playful Puppy's Snow Adventure">Open story page</a>
         </div>
 
         <div class="story-library-card">
-            <a class="story-cover-link" href="/monkey-milos-big-adventures-2.html">
+            <a class="story-cover-link" href="/monkey-milos-big-adventures-2.html"
+               data-track="story-card-click"
+               data-track-location="homepage_story_cover"
+               data-track-title="Monkey Milo's Big Adventures #2">
                 <img src="monkey-milos-big-adventures-2-book-cover.webp" alt="Monkey Milo's Big Adventures 2 book cover" loading="lazy" decoding="async">
                 <h3>Monkey Milo's Big Adventures #2</h3>
             </a>
             <p>A brave little firefighter story with a calm bedtime ending, perfect for helping kids relax and fall asleep.</p>
-            <a class="story-link" href="/monkey-milos-big-adventures-2.html">Open story page</a>
+            <a class="story-link" href="/monkey-milos-big-adventures-2.html"
+               data-track="story-card-click"
+               data-track-location="homepage_story_library"
+               data-track-title="Monkey Milo's Big Adventures #2">Open story page</a>
         </div>
     </div>
 </section>
@@ -1059,61 +1279,91 @@ for (let i = 0; i < 40; i++) {
         <div class="resource-card">
             <h3>Bedtime Routine for Kids</h3>
             <p>Learn how to create a calm bedtime routine for kids with peaceful habits, story time, and simple nightly structure.</p>
-            <a href="/bedtime-routine-for-kids.html">Read the guide</a>
+            <a href="/bedtime-routine-for-kids.html"
+               data-track="resource-link-click"
+               data-track-location="homepage_more_sleep_guides"
+               data-track-title="Bedtime Routine for Kids">Read the guide</a>
         </div>
 
         <div class="resource-card">
             <h3>Sleep Stories for Toddlers</h3>
             <p>Explore short, gentle sleep stories for toddlers that help little ones slow down and settle before bed.</p>
-            <a href="/sleep-stories-for-toddlers.html">Read the guide</a>
+            <a href="/sleep-stories-for-toddlers.html"
+               data-track="resource-link-click"
+               data-track-location="homepage_more_sleep_guides"
+               data-track-title="Sleep Stories for Toddlers">Read the guide</a>
         </div>
 
         <div class="resource-card">
             <h3>Bedtime Stories for Toddlers</h3>
             <p>Find bedtime stories for toddlers with simple language, soft themes, and peaceful storytelling for sleep.</p>
-            <a href="/bedtime-stories-for-toddlers.html">Read the guide</a>
+            <a href="/bedtime-stories-for-toddlers.html"
+               data-track="resource-link-click"
+               data-track-location="homepage_more_sleep_guides"
+               data-track-title="Bedtime Stories for Toddlers">Read the guide</a>
         </div>
 
         <div class="resource-card">
             <h3>Bedtime Stories for Babies</h3>
             <p>Discover gentle bedtime stories for babies with soft rhythm, comforting sounds, and calming bedtime narration.</p>
-            <a href="/bedtime-stories-for-babies.html">Read the guide</a>
+            <a href="/bedtime-stories-for-babies.html"
+               data-track="resource-link-click"
+               data-track-location="homepage_more_sleep_guides"
+               data-track-title="Bedtime Stories for Babies">Read the guide</a>
         </div>
 
         <div class="resource-card">
             <h3>Bedtime Stories for Preschoolers</h3>
             <p>Explore bedtime stories for preschoolers with simple language, gentle themes, and engaging but calming storytelling.</p>
-            <a href="/bedtime-stories-for-preschoolers.html">Read the guide</a>
+            <a href="/bedtime-stories-for-preschoolers.html"
+               data-track="resource-link-click"
+               data-track-location="homepage_more_sleep_guides"
+               data-track-title="Bedtime Stories for Preschoolers">Read the guide</a>
         </div>
 
         <div class="resource-card">
             <h3>Calming Stories for Kids</h3>
             <p>Discover calming stories for kids that support peaceful bedtime routines and help children feel safe and relaxed.</p>
-            <a href="/calming-stories-for-kids.html">Read the guide</a>
+            <a href="/calming-stories-for-kids.html"
+               data-track="resource-link-click"
+               data-track-location="homepage_more_sleep_guides"
+               data-track-title="Calming Stories for Kids">Read the guide</a>
         </div>
 
         <div class="resource-card">
             <h3>How to Help Kids Sleep</h3>
             <p>Get simple and practical tips to help kids sleep better with routines, bedtime stories, and a calm evening environment.</p>
-            <a href="/how-to-help-kids-sleep.html">Read the guide</a>
+            <a href="/how-to-help-kids-sleep.html"
+               data-track="resource-link-click"
+               data-track-location="homepage_more_sleep_guides"
+               data-track-title="How to Help Kids Sleep">Read the guide</a>
         </div>
 
         <div class="resource-card">
             <h3>Calming Fairy Tales for Kids</h3>
             <p>Explore gentle fairy tales for bedtime with peaceful themes, magical stories, and calming nighttime reading for children.</p>
-            <a href="/calming-fairy-tales-for-kids.html">Read the guide</a>
+            <a href="/calming-fairy-tales-for-kids.html"
+               data-track="resource-link-click"
+               data-track-location="homepage_more_sleep_guides"
+               data-track-title="Calming Fairy Tales for Kids">Read the guide</a>
         </div>
 
         <div class="resource-card">
             <h3>Short Bedtime Stories for Kids</h3>
             <p>Quick calming story ideas that help children relax before sleep and fit naturally into busy bedtime routines.</p>
-            <a href="/short-bedtime-stories-for-kids.html">Read the guide</a>
+            <a href="/short-bedtime-stories-for-kids.html"
+               data-track="resource-link-click"
+               data-track-location="homepage_more_sleep_guides"
+               data-track-title="Short Bedtime Stories for Kids">Read the guide</a>
         </div>
 
         <div class="resource-card">
             <h3>Benefits of Bedtime Stories</h3>
             <p>Learn how bedtime stories support better sleep, emotional comfort, language growth, and stronger family connection.</p>
-            <a href="/benefits-of-bedtime-stories.html">Read the guide</a>
+            <a href="/benefits-of-bedtime-stories.html"
+               data-track="resource-link-click"
+               data-track-location="homepage_more_sleep_guides"
+               data-track-title="Benefits of Bedtime Stories">Read the guide</a>
         </div>
     </div>
 </section>
@@ -1147,19 +1397,31 @@ for (let i = 0; i < 40; i++) {
     <div class="social-follow">
         <h3>Follow Us</h3>
         <div class="social-links">
-            <a href="https://www.tiktok.com/@bedtimestoriescozytales" target="_blank" rel="noopener noreferrer" class="tiktok" data-label="TikTok" aria-label="Follow Cozy Tales on TikTok">
+            <a href="https://www.tiktok.com/@bedtimestoriescozytales" target="_blank" rel="noopener noreferrer" class="tiktok" data-label="TikTok" aria-label="Follow Cozy Tales on TikTok"
+               data-track="social-click"
+               data-track-location="homepage_social_follow"
+               data-track-title="TikTok">
                 <img src="tiktok_icon_2.png" alt="TikTok icon" loading="lazy" decoding="async" width="30" height="30">
             </a>
 
-            <a href="https://www.instagram.com/bedtime.stories.forkids/" target="_blank" rel="noopener noreferrer" class="instagram" data-label="Instagram" aria-label="Follow Cozy Tales on Instagram">
+            <a href="https://www.instagram.com/bedtime.stories.forkids/" target="_blank" rel="noopener noreferrer" class="instagram" data-label="Instagram" aria-label="Follow Cozy Tales on Instagram"
+               data-track="social-click"
+               data-track-location="homepage_social_follow"
+               data-track-title="Instagram">
                 <img src="instagram_icon_2.png" alt="Instagram icon" loading="lazy" decoding="async" width="30" height="30">
             </a>
 
-            <a href="https://www.youtube.com/@BedtimeStoriesCozyTales" target="_blank" rel="noopener noreferrer" class="youtube" data-label="YouTube" aria-label="Follow Cozy Tales on YouTube">
+            <a href="https://www.youtube.com/@BedtimeStoriesCozyTales" target="_blank" rel="noopener noreferrer" class="youtube" data-label="YouTube" aria-label="Follow Cozy Tales on YouTube"
+               data-track="social-click"
+               data-track-location="homepage_social_follow"
+               data-track-title="YouTube">
                 <img src="youtube_icon_2.png" alt="YouTube icon" loading="lazy" decoding="async" width="30" height="30">
             </a>
 
-            <a href="#" target="_blank" rel="noopener noreferrer" class="facebook" data-label="Facebook" aria-label="Follow Cozy Tales on Facebook">
+            <a href="#" target="_blank" rel="noopener noreferrer" class="facebook" data-label="Facebook" aria-label="Follow Cozy Tales on Facebook"
+               data-track="social-click"
+               data-track-location="homepage_social_follow"
+               data-track-title="Facebook">
                 <img src="facebook_icon_2.png" alt="Facebook icon" loading="lazy" decoding="async" width="30" height="30">
             </a>
         </div>
@@ -1186,11 +1448,14 @@ for (let i = 0; i < 40; i++) {
     <button type="button" onclick="closePopup()">OK</button>
 </div>
 
-<a href="https://play.google.com/store/apps/details?id=com.softiceinnovationslabs.bedtimestorybooks"
+<a href="https://play.google.com/store/apps/details?id=com.softiceinnovationslabs.bedtimestorybooks&utm_source=softice_site&utm_medium=organic&utm_campaign=homepage_floating_cta&utm_content=floating_google_play"
    class="floating-google-play"
    id="floatingGooglePlay"
    target="_blank"
-   rel="noopener noreferrer">
+   rel="noopener noreferrer"
+   data-track="google-play-click"
+   data-track-location="homepage_floating_cta"
+   data-track-content="floating_google_play">
    ▶ Get it on Google Play
 </a>
 
@@ -1230,7 +1495,7 @@ for (let i = 0; i < 40; i++) {
       "operatingSystem": "Android",
       "applicationCategory": "EducationalApplication",
       "url": "https://softiceinnovationslabs.com/",
-      "downloadUrl": "https://play.google.com/store/apps/details?id=com.softiceinnovationslabs.bedtimestorybooks",
+      "downloadUrl": "https://play.google.com/store/apps/details?id=com.softiceinnovationslabs.bedtimestorybooks&utm_source=softice_site&utm_medium=organic&utm_campaign=homepage_floating_cta&utm_content=floating_google_play",
       "image": "https://softiceinnovationslabs.com/family-hero.webp",
       "publisher": {
         "@id": "https://softiceinnovationslabs.com/#organization"
@@ -1326,11 +1591,120 @@ form.addEventListener("submit", async function(e) {
         emailInput.value = "";
         messageInput.value = "";
 
+        if (typeof gtag === "function") {
+            gtag("event", "form_submit", {
+                page_location: window.location.href,
+                page_path: window.location.pathname,
+                page_title: document.title,
+                form_name: "homepage_notify_me_form"
+            });
+        }
+        console.log("Tracked event:", "form_submit", {
+            page_location: window.location.href,
+            page_path: window.location.pathname,
+            page_title: document.title,
+            form_name: "homepage_notify_me_form"
+        });
+
         openPopup();
     } catch (error) {
         alert("There was a problem sending your message. Please try again.");
     }
 });
+
+(function () {
+    function getDeviceType() {
+        const ua = navigator.userAgent || "";
+        if (/tablet|ipad|playbook|silk/i.test(ua)) return "tablet";
+        if (/Mobile|Android|iPhone|iPod/i.test(ua)) return "mobile";
+        return "desktop";
+    }
+
+    function getSessionId() {
+        let sessionId = sessionStorage.getItem("softice_session_id");
+        if (!sessionId) {
+            sessionId = "sess_" + Date.now() + "_" + Math.random().toString(36).slice(2, 10);
+            sessionStorage.setItem("softice_session_id", sessionId);
+        }
+        return sessionId;
+    }
+
+    function trackEvent(eventName, params) {
+        if (typeof gtag === "function") {
+            gtag("event", eventName, params);
+        }
+        console.log("Tracked event:", eventName, params);
+    }
+
+    function commonParams() {
+        return {
+            page_location: window.location.href,
+            page_path: window.location.pathname,
+            page_title: document.title,
+            referrer: document.referrer || "direct",
+            device_type: getDeviceType(),
+            session_id: getSessionId()
+        };
+    }
+
+    window.addEventListener("load", function () {
+        trackEvent("homepage_view", commonParams());
+    });
+
+    document.addEventListener("click", function (e) {
+        const el = e.target.closest("[data-track]");
+        if (!el) return;
+
+        const trackType = el.getAttribute("data-track");
+        const trackLocation = el.getAttribute("data-track-location") || "unknown_location";
+        const trackTitle = el.getAttribute("data-track-title") || (el.textContent || "").trim() || "unknown_title";
+
+        if (trackType === "google-play-click") {
+            trackEvent("google_play_click", {
+                ...commonParams(),
+                cta_location: trackLocation,
+                cta_content: el.getAttribute("data-track-content") || "unknown_content",
+                link_url: el.href,
+                link_text: (el.textContent || "").trim()
+            });
+        }
+
+        if (trackType === "story-card-click") {
+            trackEvent("story_card_click", {
+                ...commonParams(),
+                click_location: trackLocation,
+                story_title: trackTitle,
+                link_url: el.href
+            });
+        }
+
+        if (trackType === "resource-link-click") {
+            trackEvent("resource_link_click", {
+                ...commonParams(),
+                click_location: trackLocation,
+                resource_title: trackTitle,
+                link_url: el.href
+            });
+        }
+
+        if (trackType === "social-click") {
+            trackEvent("social_click", {
+                ...commonParams(),
+                click_location: trackLocation,
+                social_platform: trackTitle,
+                link_url: el.href
+            });
+        }
+
+        if (trackType === "youtube-embed-click") {
+            trackEvent("youtube_embed_click", {
+                ...commonParams(),
+                click_location: trackLocation,
+                video_title: trackTitle
+            });
+        }
+    });
+})();
 </script>
 
 </body>
