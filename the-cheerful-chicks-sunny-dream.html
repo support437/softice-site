@@ -377,7 +377,7 @@ iframe {
 <div class="star" style="left:90%; animation-duration: 12s; animation-delay: 1.1s;"></div>
 <div class="star" style="left:96%; animation-duration: 16s; animation-delay: 2s;"></div>
 
-<section class="hero-banner">
+<section class="hero-banner" data-section-track="cheerful_chick_hero">
     <img src="/the-cheerful-chicks-sunny-dream.png?v=1"
          alt="The Cheerful Chick bedtime story for kids hero banner"
          class="hero-banner-img"
@@ -395,7 +395,7 @@ iframe {
 <h1 class="mobile-title">The Cheerful Chick’s Sunny Dream</h1>
 
 <div class="container">
-    <div class="content-card">
+    <div class="content-card" data-section-track="cheerful_chick_content_card">
 
         <p>
             <strong>The Cheerful Chick’s Sunny Dream</strong> is a heartwarming <strong>bedtime story for kids</strong> designed to help children relax, feel safe, and drift into sleep peacefully. It is built around soft storytelling, kind characters, and a gentle emotional rhythm that works beautifully at bedtime.
@@ -413,7 +413,7 @@ iframe {
             As the story softly ends under the stars, it becomes a perfect <strong>short bedtime story</strong> that helps children wind down with a calm and happy heart.
         </p>
 
-        <div class="highlight-list">
+        <div class="highlight-list" data-section-track="cheerful_chick_highlight_list">
             <strong>✨ Perfect for:</strong><br>
             • bedtime stories for children before sleep<br>
             • calm nighttime routines<br>
@@ -427,7 +427,7 @@ iframe {
             Watch <strong>The Cheerful Chick’s Sunny Dream</strong> on YouTube as a gentle <strong>bedtime story for kids</strong> with calming visuals, soft storytelling, and a peaceful rhythm that fits beautifully into bedtime routines. This story experience also supports families searching for <strong>short bedtime stories for kids</strong>, <strong>calming stories for kids</strong>, and <strong>sleep stories for toddlers</strong>.
         </p>
 
-        <div class="video-container">
+        <div class="video-container" data-section-track="cheerful_chick_video_section">
             <iframe
                 src="https://www.youtube.com/embed/vGRv7g7CRs4"
                 title="The Cheerful Chick’s Sunny Dream bedtime story for kids video on YouTube"
@@ -439,7 +439,7 @@ iframe {
 
         <h2>Quick Bedtime Story Moments 🎥</h2>
 
-        <div class="tiktok">
+        <div class="tiktok" data-section-track="cheerful_chick_social_section">
             <a href="https://www.tiktok.com/@bedtimestoriescozytales?utm_source=softice_site&utm_medium=organic&utm_campaign=cheerful_chick_tiktok_main&utm_content=story_page"
                target="_blank"
                rel="noopener noreferrer"
@@ -457,17 +457,19 @@ iframe {
 
         <h2>Why This Works for Bedtime Stories for Children</h2>
 
-        <p>
-            Cozy Tales focuses on calm <strong>bedtime stories for children</strong> with gentle narration, peaceful pacing, and comforting visuals — helping parents build better bedtime routines with less stress and more consistency.
-        </p>
+        <section data-section-track="cheerful_chick_why_it_works">
+            <p>
+                Cozy Tales focuses on calm <strong>bedtime stories for children</strong> with gentle narration, peaceful pacing, and comforting visuals — helping parents build better bedtime routines with less stress and more consistency.
+            </p>
 
-        <p>
-            Parents looking for reliable <strong>children bedtime stories</strong> often want something safe, soothing, and easy to enjoy every night. The Cheerful Chick’s Sunny Dream was created to give families that warm bedtime experience.
-        </p>
+            <p>
+                Parents looking for reliable <strong>children bedtime stories</strong> often want something safe, soothing, and easy to enjoy every night. The Cheerful Chick’s Sunny Dream was created to give families that warm bedtime experience.
+            </p>
+        </section>
 
         <h2>Helpful Related Guides</h2>
 
-        <div class="guide-grid">
+        <div class="guide-grid" data-section-track="cheerful_chick_guide_grid">
             <div class="guide-card">
                 <h3>Bedtime Stories for Kids</h3>
                 <p>Explore more calming story ideas, guides, and bedtime reading resources for families.</p>
@@ -505,7 +507,7 @@ iframe {
             </div>
         </div>
 
-        <div class="faq-box">
+        <div class="faq-box" data-section-track="cheerful_chick_faq">
             <h2>Frequently Asked Questions</h2>
 
             <h3>Is The Cheerful Chick’s Sunny Dream a good bedtime story?</h3>
@@ -529,7 +531,7 @@ iframe {
             </p>
         </div>
 
-        <div class="cta">
+        <div class="cta" data-section-track="cheerful_chick_story_cta_section">
             <a href="https://play.google.com/store/apps/details?id=com.softiceinnovationslabs.bedtimestorybooks&utm_source=softice_site&utm_medium=organic&utm_campaign=cheerful_chick_story_cta&utm_content=get_2_free_stories"
                target="_blank"
                rel="noopener noreferrer"
@@ -678,6 +680,82 @@ iframe {
         };
     }
 
+    const trackedScrollMilestones = new Set();
+    const trackedTimeMilestones = new Set();
+    const trackedSections = new Set();
+
+    function getScrollPercent() {
+        const scrollTop = window.scrollY || window.pageYOffset;
+        const docHeight = Math.max(
+            document.body.scrollHeight,
+            document.documentElement.scrollHeight
+        );
+        const winHeight = window.innerHeight;
+        const scrollable = docHeight - winHeight;
+
+        if (scrollable <= 0) return 100;
+        return Math.min(100, Math.round((scrollTop / scrollable) * 100));
+    }
+
+    function trackScrollDepth() {
+        const currentScroll = getScrollPercent();
+        [25, 50, 75, 90].forEach(milestone => {
+            if (currentScroll >= milestone && !trackedScrollMilestones.has(milestone)) {
+                trackedScrollMilestones.add(milestone);
+                trackEvent("scroll_depth", {
+                    ...commonParams(),
+                    page_name: "the-cheerful-chicks-sunny-dream",
+                    page_type: "story_page",
+                    story_title: "The Cheerful Chick’s Sunny Dream",
+                    scroll_percent: milestone
+                });
+            }
+        });
+    }
+
+    function startEngagedTimeTracking() {
+        [30, 60, 120].forEach(seconds => {
+            setTimeout(() => {
+                if (!trackedTimeMilestones.has(seconds)) {
+                    trackedTimeMilestones.add(seconds);
+                    trackEvent("engaged_time_milestone", {
+                        ...commonParams(),
+                        page_name: "the-cheerful-chicks-sunny-dream",
+                        page_type: "story_page",
+                        story_title: "The Cheerful Chick’s Sunny Dream",
+                        engaged_time_seconds: seconds
+                    });
+                }
+            }, seconds * 1000);
+        });
+    }
+
+    function trackSections() {
+        const sectionObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) return;
+
+                const sectionName = entry.target.getAttribute("data-section-track");
+                if (!sectionName || trackedSections.has(sectionName)) return;
+
+                trackedSections.add(sectionName);
+                trackEvent("section_view", {
+                    ...commonParams(),
+                    page_name: "the-cheerful-chicks-sunny-dream",
+                    page_type: "story_page",
+                    story_title: "The Cheerful Chick’s Sunny Dream",
+                    section_name: sectionName
+                });
+            });
+        }, {
+            threshold: 0.35
+        });
+
+        document.querySelectorAll("[data-section-track]").forEach(section => {
+            sectionObserver.observe(section);
+        });
+    }
+
     window.addEventListener("load", function () {
         trackEvent("cheerful_chick_story_page_view", {
             ...commonParams(),
@@ -685,7 +763,13 @@ iframe {
             page_type: "story_page",
             story_title: "The Cheerful Chick’s Sunny Dream"
         });
+
+        trackScrollDepth();
+        startEngagedTimeTracking();
+        trackSections();
     });
+
+    window.addEventListener("scroll", trackScrollDepth, { passive: true });
 
     document.addEventListener("click", function (e) {
         const el = e.target.closest("[data-track]");
