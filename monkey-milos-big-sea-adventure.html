@@ -325,7 +325,7 @@ iframe {
 <div class="star" style="left:96%; animation-duration: 16s; animation-delay: 2s;"></div>
 
 <!-- HERO -->
-<section class="hero-banner">
+<section class="hero-banner" data-section-track="monkey_milo_hero">
     <img src="/monkey-milos-big-sea-adventure.webp?v=4"
          alt="Monkey Milo bedtime stories for children hero banner"
          class="hero-banner-img">
@@ -339,7 +339,7 @@ iframe {
 <h1 class="mobile-title">Monkey Milo’s Big Sea Adventure 🌙</h1>
 
 <div class="container">
-    <div class="content-card">
+    <div class="content-card" data-section-track="monkey_milo_content_card">
 
         <p>
             Monkey Milo’s Big Sea Adventure is one of our most loved <strong>bedtime stories for children</strong>, created to help kids relax, feel safe, and fall asleep peacefully.
@@ -358,7 +358,7 @@ iframe {
             As the adventure gently settles under soft starlight, the story becomes a perfect <strong>short bedtime story</strong> that helps children relax their minds and drift naturally into sleep.
         </p>
 
-        <div class="highlight-list">
+        <div class="highlight-list" data-section-track="monkey_milo_highlight_list">
             <strong>✨ Perfect for:</strong><br>
             • Bedtime stories for children before sleep<br>
             • Calm nighttime routines<br>
@@ -372,7 +372,7 @@ iframe {
             Watch <strong>Monkey Milo’s Big Sea Adventure</strong> on YouTube as a calming <strong>bedtime story for kids</strong> with gentle adventure, soft storytelling, and a peaceful bedtime rhythm. This story also supports families searching for <strong>short bedtime stories for kids</strong>, <strong>calming stories for kids</strong>, and <strong>sleep stories for toddlers</strong>.
         </p>
 
-        <div class="video-container">
+        <div class="video-container" data-section-track="monkey_milo_video_section">
             <iframe
                 src="https://www.youtube.com/embed/whfGxGU0paA?rel=0&modestbranding=1"
                 title="Monkey Milo’s Big Sea Adventure | Bedtime Story for Kids"
@@ -385,7 +385,7 @@ iframe {
 
         <h2>Quick Bedtime Story Moments 🎥</h2>
 
-        <div class="tiktok">
+        <div class="tiktok" data-section-track="monkey_milo_social_section">
             <a href="https://www.tiktok.com/@bedtimestoriescozytales?utm_source=softice_site&utm_medium=organic&utm_campaign=monkey_milo_tiktok_main&utm_content=story_page"
                target="_blank"
                rel="noopener noreferrer"
@@ -406,17 +406,19 @@ iframe {
 
         <h2>Why This Works for Bedtime Stories for Children</h2>
 
-        <p>
-            Cozy Tales focuses on <strong>bedtime stories for children</strong> that are calm, gentle, and designed specifically for sleep. Each story uses soft narration, peaceful pacing, and comforting visuals to support healthy bedtime habits.
-        </p>
+        <section data-section-track="monkey_milo_why_it_works">
+            <p>
+                Cozy Tales focuses on <strong>bedtime stories for children</strong> that are calm, gentle, and designed specifically for sleep. Each story uses soft narration, peaceful pacing, and comforting visuals to support healthy bedtime habits.
+            </p>
 
-        <p>
-            Parents who want reliable <strong>children bedtime stories</strong> often look for something safe, soothing, and easy to enjoy every night. Monkey Milo’s Big Sea Adventure was created to give families that warm bedtime experience.
-        </p>
+            <p>
+                Parents who want reliable <strong>children bedtime stories</strong> often look for something safe, soothing, and easy to enjoy every night. Monkey Milo’s Big Sea Adventure was created to give families that warm bedtime experience.
+            </p>
+        </section>
 
         <h2>Explore More Bedtime Stories</h2>
 
-        <p class="related-links">
+        <p class="related-links" data-section-track="monkey_milo_related_links">
             <a href="the-cheerful-chicks-sunny-dream.html"
                data-track="story-link-click"
                data-track-location="monkey_milo_related_links"
@@ -435,7 +437,7 @@ iframe {
                data-track-title="Free Bedtime Stories">Free Bedtime Stories</a>
         </p>
 
-        <div class="cta">
+        <div class="cta" data-section-track="monkey_milo_story_cta_section">
             <a href="https://play.google.com/store/apps/details?id=com.softiceinnovationslabs.bedtimestorybooks&utm_source=softice_site&utm_medium=organic&utm_campaign=monkey_milo_story_cta&utm_content=get_2_free_bedtime_stories"
                target="_blank"
                rel="noopener noreferrer"
@@ -546,6 +548,82 @@ iframe {
         };
     }
 
+    const trackedScrollMilestones = new Set();
+    const trackedTimeMilestones = new Set();
+    const trackedSections = new Set();
+
+    function getScrollPercent() {
+        const scrollTop = window.scrollY || window.pageYOffset;
+        const docHeight = Math.max(
+            document.body.scrollHeight,
+            document.documentElement.scrollHeight
+        );
+        const winHeight = window.innerHeight;
+        const scrollable = docHeight - winHeight;
+
+        if (scrollable <= 0) return 100;
+        return Math.min(100, Math.round((scrollTop / scrollable) * 100));
+    }
+
+    function trackScrollDepth() {
+        const currentScroll = getScrollPercent();
+        [25, 50, 75, 90].forEach(milestone => {
+            if (currentScroll >= milestone && !trackedScrollMilestones.has(milestone)) {
+                trackedScrollMilestones.add(milestone);
+                trackEvent("scroll_depth", {
+                    ...commonParams(),
+                    page_name: "monkey-milos-big-sea-adventure",
+                    page_type: "story_page",
+                    story_title: "Monkey Milo’s Big Sea Adventure",
+                    scroll_percent: milestone
+                });
+            }
+        });
+    }
+
+    function startEngagedTimeTracking() {
+        [30, 60, 120].forEach(seconds => {
+            setTimeout(() => {
+                if (!trackedTimeMilestones.has(seconds)) {
+                    trackedTimeMilestones.add(seconds);
+                    trackEvent("engaged_time_milestone", {
+                        ...commonParams(),
+                        page_name: "monkey-milos-big-sea-adventure",
+                        page_type: "story_page",
+                        story_title: "Monkey Milo’s Big Sea Adventure",
+                        engaged_time_seconds: seconds
+                    });
+                }
+            }, seconds * 1000);
+        });
+    }
+
+    function trackSections() {
+        const sectionObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) return;
+
+                const sectionName = entry.target.getAttribute("data-section-track");
+                if (!sectionName || trackedSections.has(sectionName)) return;
+
+                trackedSections.add(sectionName);
+                trackEvent("section_view", {
+                    ...commonParams(),
+                    page_name: "monkey-milos-big-sea-adventure",
+                    page_type: "story_page",
+                    story_title: "Monkey Milo’s Big Sea Adventure",
+                    section_name: sectionName
+                });
+            });
+        }, {
+            threshold: 0.35
+        });
+
+        document.querySelectorAll("[data-section-track]").forEach(section => {
+            sectionObserver.observe(section);
+        });
+    }
+
     window.addEventListener("load", function () {
         trackEvent("monkey_milo_story_page_view", {
             ...commonParams(),
@@ -553,7 +631,13 @@ iframe {
             page_type: "story_page",
             story_title: "Monkey Milo’s Big Sea Adventure"
         });
+
+        trackScrollDepth();
+        startEngagedTimeTracking();
+        trackSections();
     });
+
+    window.addEventListener("scroll", trackScrollDepth, { passive: true });
 
     document.addEventListener("click", function (e) {
         const el = e.target.closest("[data-track]");
