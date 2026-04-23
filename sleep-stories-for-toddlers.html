@@ -221,7 +221,7 @@ a:hover { text-decoration: underline; }
 
 <body>
 
-<section class="hero-banner">
+<section class="hero-banner" data-section-track="toddler_sleep_page_hero">
     <img
         src="/bedtime-story-app-choose.webp"
         alt="Tablet showing gentle sleep stories for toddlers in a calming bedtime app"
@@ -247,6 +247,7 @@ Sleep stories for toddlers help young children relax, settle down, and feel safe
 For many families, bedtime can be challenging. A short, calming story helps toddlers transition from activity to rest and builds a routine they can trust night after night.
 </p>
 
+<section data-section-track="toddler_sleep_page_why_stories_help">
 <h2>Why Sleep Stories Help Toddlers</h2>
 
 <p>
@@ -256,7 +257,9 @@ Toddlers thrive on repetition and structure. A bedtime story creates a familiar 
 <div class="highlight">
 The best sleep stories for toddlers are short, gentle, and predictable — helping children relax and fall asleep faster.
 </div>
+</section>
 
+<section data-section-track="toddler_sleep_page_good_story">
 <h2>What Makes a Good Toddler Sleep Story?</h2>
 
 <p>
@@ -266,7 +269,9 @@ Good toddler stories use simple language, soothing rhythm, and peaceful themes. 
 <p>
 Many parents prefer bedtime stories that feel warm, familiar, and easy to follow. Calm animal stories, bedtime themes, dreams, moonlight, and reassuring routines often work especially well.
 </p>
+</section>
 
+<section data-section-track="toddler_sleep_page_short_stories_section">
 <h2>Short Bedtime Stories for Toddlers</h2>
 
 <p>
@@ -280,7 +285,9 @@ data-track="resource-link-click"
 data-track-location="toddler_sleep_page_short_stories_section"
 data-track-title="short bedtime stories">short bedtime stories</a>.
 </p>
+</section>
 
+<section data-section-track="toddler_sleep_page_read_aloud_section">
 <h2>Read-Aloud Sleep Stories</h2>
 
 <p>
@@ -293,7 +300,9 @@ data-track="resource-link-click"
 data-track-location="toddler_sleep_page_read_aloud_section"
 data-track-title="Bedtime Story Books – Cozy Tales">Bedtime Story Books – Cozy Tales</a> offers read-aloud bedtime stories with no subscription.
 </p>
+</section>
 
+<section data-section-track="toddler_sleep_page_routine_section">
 <h2>Build a Toddler Bedtime Routine</h2>
 
 <p>
@@ -307,7 +316,9 @@ data-track="resource-link-click"
 data-track-location="toddler_sleep_page_routine_section"
 data-track-title="bedtime routine for kids">bedtime routine for kids</a>.
 </p>
+</section>
 
+<section data-section-track="toddler_sleep_page_guide_grid_section">
 <h2>Explore More Story Guides</h2>
 
 <div class="guide-grid">
@@ -349,14 +360,17 @@ data-track-title="bedtime routine for kids">bedtime routine for kids</a>.
 </div>
 
 </div>
+</section>
 
+<section data-section-track="toddler_sleep_page_final_thoughts">
 <h2>Final Thoughts</h2>
 
 <p>
 Sleep stories for toddlers are one of the simplest ways to make bedtime feel calmer and easier. When stories are short, gentle, and consistent, they can help toddlers feel safe, relaxed, and more ready for sleep.
 </p>
+</section>
 
-<div class="faq-box">
+<div class="faq-box" data-section-track="toddler_sleep_page_faq">
 <h2>Frequently Asked Questions</h2>
 
 <h3>What kind of sleep stories are best for toddlers?</h3>
@@ -380,7 +394,7 @@ Yes. Read-aloud bedtime stories can make bedtime easier by offering a calm, repe
 </p>
 </div>
 
-<div class="cta-box">
+<div class="cta-box" data-section-track="toddler_sleep_page_cta_box">
 <h2>Try a Bedtime Story App</h2>
 <p>
 <strong>Bedtime Story Books – Cozy Tales</strong> includes calming stories, 2 free books, and no subscription.
@@ -393,7 +407,7 @@ Yes. Read-aloud bedtime stories can make bedtime easier by offering a calm, repe
 </p>
 </div>
 
-<div class="related-links">
+<div class="related-links" data-section-track="toddler_sleep_page_related_links">
 <h2>Related Pages</h2>
 <a href="/free-bedtime-stories-for-kids.html"
    data-track="resource-link-click"
@@ -413,7 +427,7 @@ Yes. Read-aloud bedtime stories can make bedtime easier by offering a calm, repe
    data-track-title="Bedtime routine guide">Bedtime routine guide</a>
 </div>
 
-<div class="nav-links">
+<div class="nav-links" data-section-track="toddler_sleep_page_nav_links">
 <a href="https://softiceinnovationslabs.com/"
    data-track="resource-link-click"
    data-track-location="toddler_sleep_page_nav_links"
@@ -553,9 +567,84 @@ Yes. Read-aloud bedtime stories can make bedtime easier by offering a calm, repe
         };
     }
 
+    const trackedScrollMilestones = new Set();
+    const trackedTimeMilestones = new Set();
+    const trackedSections = new Set();
+
+    function getScrollPercent() {
+        const scrollTop = window.scrollY || window.pageYOffset;
+        const docHeight = Math.max(
+            document.body.scrollHeight,
+            document.documentElement.scrollHeight
+        );
+        const winHeight = window.innerHeight;
+        const scrollable = docHeight - winHeight;
+
+        if (scrollable <= 0) return 100;
+        return Math.min(100, Math.round((scrollTop / scrollable) * 100));
+    }
+
+    function trackScrollDepth() {
+        const currentScroll = getScrollPercent();
+        [25, 50, 75, 90].forEach(milestone => {
+            if (currentScroll >= milestone && !trackedScrollMilestones.has(milestone)) {
+                trackedScrollMilestones.add(milestone);
+                trackEvent("scroll_depth", {
+                    ...commonParams(),
+                    page_name: "toddler_sleep_page",
+                    scroll_percent: milestone
+                });
+            }
+        });
+    }
+
+    function startEngagedTimeTracking() {
+        [30, 60, 120].forEach(seconds => {
+            setTimeout(() => {
+                if (!trackedTimeMilestones.has(seconds)) {
+                    trackedTimeMilestones.add(seconds);
+                    trackEvent("engaged_time_milestone", {
+                        ...commonParams(),
+                        page_name: "toddler_sleep_page",
+                        engaged_time_seconds: seconds
+                    });
+                }
+            }, seconds * 1000);
+        });
+    }
+
+    function trackSections() {
+        const sectionObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) return;
+
+                const sectionName = entry.target.getAttribute("data-section-track");
+                if (!sectionName || trackedSections.has(sectionName)) return;
+
+                trackedSections.add(sectionName);
+                trackEvent("section_view", {
+                    ...commonParams(),
+                    page_name: "toddler_sleep_page",
+                    section_name: sectionName
+                });
+            });
+        }, {
+            threshold: 0.35
+        });
+
+        document.querySelectorAll("[data-section-track]").forEach(section => {
+            sectionObserver.observe(section);
+        });
+    }
+
     window.addEventListener("load", function () {
         trackEvent("toddler_sleep_page_view", commonParams());
+        trackScrollDepth();
+        startEngagedTimeTracking();
+        trackSections();
     });
+
+    window.addEventListener("scroll", trackScrollDepth, { passive: true });
 
     document.addEventListener("click", function (e) {
         const el = e.target.closest("[data-track]");
