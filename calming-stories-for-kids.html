@@ -230,7 +230,7 @@ a:hover {
 
 <body>
 
-<section class="hero-banner">
+<section class="hero-banner" data-section-track="calming_page_hero">
     <img
         src="/calming-fairy-tales-for-kids.webp"
         alt="Peaceful calming bedtime story scene for kids"
@@ -256,6 +256,7 @@ Calming stories for kids are designed to slow the mind, reduce overstimulation, 
 Unlike exciting stories, calming bedtime stories focus on gentle pacing, simple language, and soothing themes that help children relax naturally. For many families, they become one of the easiest ways to make bedtime feel softer and more predictable.
 </p>
 
+<section data-section-track="calming_page_why_they_help">
 <h2>Why Calming Stories Help Kids Sleep</h2>
 <p>
 Children often struggle with sleep because their minds are still active. A calming story gives the brain something soft and predictable to focus on, helping children shift from activity into rest.
@@ -264,7 +265,9 @@ Children often struggle with sleep because their minds are still active. A calmi
 <div class="highlight">
 Calming stories work by slowing thoughts, lowering energy, and creating a peaceful mental state before sleep.
 </div>
+</section>
 
+<section data-section-track="calming_page_signs_needed">
 <h2>Signs Your Child May Need Calming Stories</h2>
 <p>
 If your child struggles to settle down, asks for “one more thing,” resists bedtime, or seems restless at night, calming stories can help create a smoother transition into sleep.
@@ -273,7 +276,9 @@ If your child struggles to settle down, asks for “one more thing,” resists b
 <p>
 Children who feel worried, overstimulated, or emotionally busy after the day may also benefit from a short and gentle bedtime story routine.
 </p>
+</section>
 
+<section data-section-track="calming_page_what_makes_calming">
 <h2>What Makes a Story Truly Calming?</h2>
 <p>
 The best calming stories usually include:
@@ -286,7 +291,9 @@ The best calming stories usually include:
     <li>No sudden excitement or tension</li>
     <li>Peaceful endings</li>
 </ul>
+</section>
 
+<section data-section-track="calming_page_when_to_use">
 <h2>When to Use Calming Stories</h2>
 <p>
 Use calming stories as the final step in your <a href="/bedtime-routine-for-kids.html"
@@ -294,7 +301,9 @@ data-track="resource-link-click"
 data-track-location="calming_page_when_to_use"
 data-track-title="bedtime routine">bedtime routine</a>. This helps signal that sleep is coming next and gives children a familiar rhythm they can rely on each night.
 </p>
+</section>
 
+<section data-section-track="calming_page_read_aloud">
 <h2>Read-Aloud vs Listening Stories</h2>
 <p>
 Some children relax best when listening to a parent’s voice, while others respond well to narrated stories. Both can work well as long as the story tone stays calm and bedtime-friendly.
@@ -306,7 +315,9 @@ data-track="resource-link-click"
 data-track-location="calming_page_read_aloud"
 data-track-title="Cozy Tales">Cozy Tales</a> offers calming read-aloud bedtime stories designed to help children relax naturally, with 2 free books and no subscription.
 </p>
+</section>
 
+<section data-section-track="calming_page_story_examples">
 <h2>Story Examples Kids May Enjoy</h2>
 <p>
 Some families find it helpful to mix general calming story guides with simple story pages children can revisit again and again. Gentle characters, soft endings, and familiar bedtime rhythms often work best.
@@ -331,7 +342,9 @@ Some families find it helpful to mix general calming story guides with simple st
            data-track-title="The Cheerful Chick">Read The Cheerful Chick</a>
     </div>
 </div>
+</section>
 
+<section data-section-track="calming_page_guides">
 <h2>Helpful Related Guides</h2>
 <div class="guide-grid">
     <div class="guide-card">
@@ -370,13 +383,16 @@ Some families find it helpful to mix general calming story guides with simple st
            data-track-title="Bedtime Routine Guide">Read bedtime routine guide</a>
     </div>
 </div>
+</section>
 
+<section data-section-track="calming_page_final_thoughts">
 <h2>Final Thoughts</h2>
 <p>
 Calming stories for kids are one of the simplest tools parents can use to improve bedtime. With the right tone and structure, stories can turn a stressful bedtime into a peaceful experience and help children feel safer, more relaxed, and more ready for sleep.
 </p>
+</section>
 
-<div class="faq-box">
+<div class="faq-box" data-section-track="calming_page_faq">
     <h2>Frequently Asked Questions</h2>
 
     <h3>How do calming stories help children sleep?</h3>
@@ -400,7 +416,7 @@ Calming stories for kids are one of the simplest tools parents can use to improv
     </p>
 </div>
 
-<div class="cta-box">
+<div class="cta-box" data-section-track="calming_page_cta_box">
     <strong>Try 2 Free Bedtime Stories — No Subscription</strong>
     <p>Explore calming read-aloud bedtime stories designed to help children relax naturally and sleep more peacefully.</p>
     <p><a href="https://softiceinnovationslabs.com/cozy-tales/"
@@ -409,7 +425,7 @@ Calming stories for kids are one of the simplest tools parents can use to improv
           data-track-title="Visit Cozy Tales">Visit Cozy Tales</a></p>
 </div>
 
-<div class="related-links">
+<div class="related-links" data-section-track="calming_page_related_links">
     <h2>Explore More</h2>
     <a href="/monkey-milo.html"
        data-track="resource-link-click"
@@ -437,7 +453,7 @@ Calming stories for kids are one of the simplest tools parents can use to improv
        data-track-title="Benefits of bedtime stories">Benefits of bedtime stories</a>
 </div>
 
-<div class="nav-links">
+<div class="nav-links" data-section-track="calming_page_nav_links">
     <a href="https://softiceinnovationslabs.com/"
        data-track="resource-link-click"
        data-track-location="calming_page_nav_links"
@@ -606,9 +622,84 @@ Calming stories for kids are one of the simplest tools parents can use to improv
         };
     }
 
+    const trackedScrollMilestones = new Set();
+    const trackedTimeMilestones = new Set();
+    const trackedSections = new Set();
+
+    function getScrollPercent() {
+        const scrollTop = window.scrollY || window.pageYOffset;
+        const docHeight = Math.max(
+            document.body.scrollHeight,
+            document.documentElement.scrollHeight
+        );
+        const winHeight = window.innerHeight;
+        const scrollable = docHeight - winHeight;
+
+        if (scrollable <= 0) return 100;
+        return Math.min(100, Math.round((scrollTop / scrollable) * 100));
+    }
+
+    function trackScrollDepth() {
+        const currentScroll = getScrollPercent();
+        [25, 50, 75, 90].forEach(milestone => {
+            if (currentScroll >= milestone && !trackedScrollMilestones.has(milestone)) {
+                trackedScrollMilestones.add(milestone);
+                trackEvent("scroll_depth", {
+                    ...commonParams(),
+                    scroll_percent: milestone,
+                    page_name: "calming_page"
+                });
+            }
+        });
+    }
+
+    function startEngagedTimeTracking() {
+        [30, 60, 120].forEach(seconds => {
+            setTimeout(() => {
+                if (!trackedTimeMilestones.has(seconds)) {
+                    trackedTimeMilestones.add(seconds);
+                    trackEvent("engaged_time_milestone", {
+                        ...commonParams(),
+                        engaged_time_seconds: seconds,
+                        page_name: "calming_page"
+                    });
+                }
+            }, seconds * 1000);
+        });
+    }
+
+    function trackSections() {
+        const sectionObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) return;
+
+                const sectionName = entry.target.getAttribute("data-section-track");
+                if (!sectionName || trackedSections.has(sectionName)) return;
+
+                trackedSections.add(sectionName);
+                trackEvent("section_view", {
+                    ...commonParams(),
+                    section_name: sectionName,
+                    page_name: "calming_page"
+                });
+            });
+        }, {
+            threshold: 0.35
+        });
+
+        document.querySelectorAll("[data-section-track]").forEach(section => {
+            sectionObserver.observe(section);
+        });
+    }
+
     window.addEventListener("load", function () {
         trackEvent("calming_page_view", commonParams());
+        trackScrollDepth();
+        startEngagedTimeTracking();
+        trackSections();
     });
+
+    window.addEventListener("scroll", trackScrollDepth, { passive: true });
 
     document.addEventListener("click", function (e) {
         const el = e.target.closest("[data-track]");
