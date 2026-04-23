@@ -2,12 +2,182 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta http-equiv="refresh" content="0; url=https://play.google.com/store/apps/details?id=com.softiceinnovationslabs.bedtimestorybooks">
-<link rel="canonical" href="https://softice-site.pages.dev/play/">
-<title>Redirecting to Google Play...</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Get Bedtime Story Books – Cozy Tales on Google Play</title>
+<meta name="description" content="Get Bedtime Story Books – Cozy Tales on Google Play. 2 free books, calming bedtime stories for kids, and no subscription.">
+<meta name="author" content="Softice Innovations Labs LLC">
 <meta name="robots" content="noindex, follow">
+<meta name="googlebot" content="noindex, follow">
+<meta name="theme-color" content="#0b0b1f">
+
+<link rel="canonical" href="https://softiceinnovationslabs.com/play/">
+<link rel="preconnect" href="https://play.google.com">
+
+<meta property="og:title" content="Get Bedtime Story Books – Cozy Tales on Google Play">
+<meta property="og:description" content="2 free books, calming bedtime stories for kids, and no subscription.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://softiceinnovationslabs.com/play/">
+<meta property="og:image" content="https://softiceinnovationslabs.com/family-hero.webp">
+<meta property="og:image:alt" content="Bedtime Story Books – Cozy Tales app preview">
+<meta property="og:site_name" content="Bedtime Story Books – Cozy Tales">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Get Bedtime Story Books – Cozy Tales on Google Play">
+<meta name="twitter:description" content="2 free books, calming bedtime stories for kids, and no subscription.">
+<meta name="twitter:image" content="https://softiceinnovationslabs.com/family-hero.webp">
+
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-CE1N5QBRTE"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-CE1N5QBRTE', {
+    debug_mode: true
+});
+</script>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #0b0b1f;
+    color: white;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 24px;
+}
+
+.container {
+    max-width: 640px;
+}
+
+h1 {
+    font-size: 2rem;
+    line-height: 1.2;
+    margin-bottom: 14px;
+}
+
+p {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: #d9dcff;
+    margin-bottom: 18px;
+}
+
+.btn {
+    display: inline-block;
+    margin-top: 12px;
+    padding: 16px 28px;
+    background: linear-gradient(135deg, #ff4dd2, #ff88e6);
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 32px;
+    box-shadow: 0 10px 24px rgba(0,0,0,0.28);
+}
+
+.btn:hover {
+    text-decoration: none;
+}
+
+.small {
+    margin-top: 18px;
+    font-size: 0.95rem;
+    color: #aeb5e8;
+}
+</style>
 </head>
+
 <body>
-<p>Redirecting to Google Play...</p>
+<div class="container">
+    <h1>Opening Google Play…</h1>
+    <p>
+        Bedtime Story Books – Cozy Tales includes 2 free books, calming bedtime stories for kids, and no subscription.
+    </p>
+    <a
+        href="https://play.google.com/store/apps/details?id=com.softiceinnovationslabs.bedtimestorybooks&utm_source=softice_site&utm_medium=organic&utm_campaign=play_page_redirect&utm_content=fallback_button"
+        class="btn"
+        id="fallbackPlayButton"
+        target="_blank"
+        rel="noopener noreferrer"
+    >
+        Get it on Google Play
+    </a>
+    <p class="small">If you are not redirected automatically, tap the button above.</p>
+</div>
+
+<script>
+(function () {
+    const PLAY_URL = "https://play.google.com/store/apps/details?id=com.softiceinnovationslabs.bedtimestorybooks&utm_source=softice_site&utm_medium=organic&utm_campaign=play_page_redirect&utm_content=auto_redirect";
+
+    function getDeviceType() {
+        const ua = navigator.userAgent || "";
+        if (/tablet|ipad|playbook|silk/i.test(ua)) return "tablet";
+        if (/Mobile|Android|iPhone|iPod/i.test(ua)) return "mobile";
+        return "desktop";
+    }
+
+    function getSessionId() {
+        let sessionId = sessionStorage.getItem("softice_session_id");
+        if (!sessionId) {
+            sessionId = "sess_" + Date.now() + "_" + Math.random().toString(36).slice(2, 10);
+            sessionStorage.setItem("softice_session_id", sessionId);
+        }
+        return sessionId;
+    }
+
+    function commonParams() {
+        return {
+            page_location: window.location.href,
+            page_path: window.location.pathname,
+            page_title: document.title,
+            referrer: document.referrer || "direct",
+            device_type: getDeviceType(),
+            session_id: getSessionId()
+        };
+    }
+
+    function trackEvent(eventName, params) {
+        if (typeof gtag === "function") {
+            gtag("event", eventName, params);
+        }
+        console.log("Tracked event:", eventName, params);
+    }
+
+    window.addEventListener("load", function () {
+        trackEvent("play_page_view", {
+            ...commonParams(),
+            page_name: "play_redirect_page"
+        });
+
+        trackEvent("google_play_redirect_attempt", {
+            ...commonParams(),
+            page_name: "play_redirect_page",
+            redirect_type: "auto_redirect",
+            destination_url: PLAY_URL
+        });
+
+        setTimeout(function () {
+            window.location.href = PLAY_URL;
+        }, 700);
+    });
+
+    document.getElementById("fallbackPlayButton").addEventListener("click", function () {
+        trackEvent("google_play_click", {
+            ...commonParams(),
+            cta_location: "play_page_fallback_button",
+            cta_content: "fallback_button",
+            link_url: this.href,
+            link_text: this.textContent.trim()
+        });
+    });
+})();
+</script>
+
 </body>
 </html>
