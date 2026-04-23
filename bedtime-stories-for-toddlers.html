@@ -238,7 +238,7 @@ a:hover {
 
 <body>
 
-<section class="hero-banner">
+<section class="hero-banner" data-section-track="bedtime_toddlers_page_hero">
     <img
         src="/calming-fairy-tales-for-kids.webp"
         alt="Calm bedtime story scene for toddlers"
@@ -271,6 +271,7 @@ data-track-title="Short story for kids">short story for kids</a> is often more e
 At the toddler stage, bedtime stories usually work best when they use simple language, gentle repetition, and peaceful endings. Familiar themes and calm read-aloud pacing can help children feel secure as bedtime approaches.
 </p>
 
+<section data-section-track="bedtime_toddlers_page_why_stories_help">
 <h2>Why Toddlers Benefit from Bedtime Stories</h2>
 <p>
 Toddlers often find comfort in familiar routines. Bedtime stories add warmth and consistency to the evening, helping children feel more secure while giving parents a calm, repeatable way to end the day.
@@ -283,7 +284,9 @@ Story time also helps toddlers shift from active play to quiet rest. Instead of 
 <div class="highlight">
 Bedtime stories for toddlers work best when they are short, comforting, repetitive, and part of a consistent nightly routine.
 </div>
+</section>
 
+<section data-section-track="bedtime_toddlers_page_story_type">
 <h2>What to Look for in a Toddler Story</h2>
 <p>
 Choose bedtime stories with soft pacing, gentle emotions, and a peaceful ending. <a href="/calming-stories-for-kids.html"
@@ -295,7 +298,9 @@ data-track-title="Calming stories">Calming stories</a> are especially effective 
 <p>
 Stories with simple animal characters, bedtime themes, soft nighttime settings, and reassuring language are often the easiest for toddlers to enjoy before sleep.
 </p>
+</section>
 
+<section data-section-track="bedtime_toddlers_page_app_section">
 <h2>Story Apps for Toddlers</h2>
 <p>
 Some families prefer bedtime story apps because they combine read-aloud narration, calm visuals, and a simple bedtime flow that is easy to repeat every evening.
@@ -307,7 +312,9 @@ data-track="resource-link-click"
 data-track-location="bedtime_toddlers_page_app_section"
 data-track-title="Bedtime Story Books – Cozy Tales">Bedtime Story Books – Cozy Tales</a> offers read-aloud bedtime stories for kids with a no-subscription model and 2 free books to start with.
 </p>
+</section>
 
+<section data-section-track="bedtime_toddlers_page_routine_section">
 <h2>Building a Toddler Bedtime Routine</h2>
 <p>
 A calm story works even better when it is part of a predictable nightly routine. Quiet lighting, slower activity, and reading at the same time each night can all help bedtime feel smoother.
@@ -319,7 +326,9 @@ data-track="resource-link-click"
 data-track-location="bedtime_toddlers_page_routine_section"
 data-track-title="bedtime routine for kids guide">bedtime routine for kids guide</a>, which pairs naturally with toddler story time.
 </p>
+</section>
 
+<section data-section-track="bedtime_toddlers_page_guides">
 <h2>Helpful Related Guides</h2>
 <div class="guide-grid">
     <div class="guide-card">
@@ -358,13 +367,16 @@ data-track-title="bedtime routine for kids guide">bedtime routine for kids guide
            data-track-title="All Bedtime Stories">View all bedtime stories</a>
     </div>
 </div>
+</section>
 
+<section data-section-track="bedtime_toddlers_page_final_thoughts">
 <h2>Final Thoughts</h2>
 <p>
 The best bedtime stories for toddlers are the ones that make children feel calm, safe, and ready for sleep. Short, soothing bedtime reading can become one of the most comforting parts of the toddler bedtime routine.
 </p>
+</section>
 
-<div class="faq-box">
+<div class="faq-box" data-section-track="bedtime_toddlers_page_faq">
     <h2>Frequently Asked Questions</h2>
 
     <h3>What kind of bedtime stories are best for toddlers?</h3>
@@ -388,7 +400,7 @@ The best bedtime stories for toddlers are the ones that make children feel calm,
     </p>
 </div>
 
-<div class="cta-box">
+<div class="cta-box" data-section-track="bedtime_toddlers_page_cta_box">
     <strong>Try 2 Free Bedtime Stories — No Subscription</strong>
     <p>Explore a calming bedtime story experience designed for peaceful evenings and family-friendly story time.</p>
     <p><a href="https://softiceinnovationslabs.com/cozy-tales/"
@@ -397,7 +409,7 @@ The best bedtime stories for toddlers are the ones that make children feel calm,
           data-track-title="Visit Cozy Tales">Visit Cozy Tales</a></p>
 </div>
 
-<div class="related-links">
+<div class="related-links" data-section-track="bedtime_toddlers_page_related_links">
     <h2>Explore More</h2>
     <a href="/bedtime-stories-for-kids.html"
        data-track="resource-link-click"
@@ -417,7 +429,7 @@ The best bedtime stories for toddlers are the ones that make children feel calm,
        data-track-title="Sleep stories for toddlers">Sleep stories for toddlers</a>
 </div>
 
-<div class="nav-links">
+<div class="nav-links" data-section-track="bedtime_toddlers_page_nav_links">
     <a href="https://softiceinnovationslabs.com/"
        data-track="resource-link-click"
        data-track-location="bedtime_toddlers_page_nav_links"
@@ -557,9 +569,84 @@ The best bedtime stories for toddlers are the ones that make children feel calm,
         };
     }
 
+    const trackedScrollMilestones = new Set();
+    const trackedTimeMilestones = new Set();
+    const trackedSections = new Set();
+
+    function getScrollPercent() {
+        const scrollTop = window.scrollY || window.pageYOffset;
+        const docHeight = Math.max(
+            document.body.scrollHeight,
+            document.documentElement.scrollHeight
+        );
+        const winHeight = window.innerHeight;
+        const scrollable = docHeight - winHeight;
+
+        if (scrollable <= 0) return 100;
+        return Math.min(100, Math.round((scrollTop / scrollable) * 100));
+    }
+
+    function trackScrollDepth() {
+        const currentScroll = getScrollPercent();
+        [25, 50, 75, 90].forEach(milestone => {
+            if (currentScroll >= milestone && !trackedScrollMilestones.has(milestone)) {
+                trackedScrollMilestones.add(milestone);
+                trackEvent("scroll_depth", {
+                    ...commonParams(),
+                    scroll_percent: milestone,
+                    page_name: "bedtime_toddlers_page"
+                });
+            }
+        });
+    }
+
+    function startEngagedTimeTracking() {
+        [30, 60, 120].forEach(seconds => {
+            setTimeout(() => {
+                if (!trackedTimeMilestones.has(seconds)) {
+                    trackedTimeMilestones.add(seconds);
+                    trackEvent("engaged_time_milestone", {
+                        ...commonParams(),
+                        engaged_time_seconds: seconds,
+                        page_name: "bedtime_toddlers_page"
+                    });
+                }
+            }, seconds * 1000);
+        });
+    }
+
+    function trackSections() {
+        const sectionObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) return;
+
+                const sectionName = entry.target.getAttribute("data-section-track");
+                if (!sectionName || trackedSections.has(sectionName)) return;
+
+                trackedSections.add(sectionName);
+                trackEvent("section_view", {
+                    ...commonParams(),
+                    section_name: sectionName,
+                    page_name: "bedtime_toddlers_page"
+                });
+            });
+        }, {
+            threshold: 0.35
+        });
+
+        document.querySelectorAll("[data-section-track]").forEach(section => {
+            sectionObserver.observe(section);
+        });
+    }
+
     window.addEventListener("load", function () {
         trackEvent("bedtime_toddlers_page_view", commonParams());
+        trackScrollDepth();
+        startEngagedTimeTracking();
+        trackSections();
     });
+
+    window.addEventListener("scroll", trackScrollDepth, { passive: true });
 
     document.addEventListener("click", function (e) {
         const el = e.target.closest("[data-track]");
