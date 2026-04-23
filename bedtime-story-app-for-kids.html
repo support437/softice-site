@@ -238,7 +238,7 @@ a:hover {
 
 <body>
 
-<section class="hero-banner">
+<section class="hero-banner" data-section-track="bedtime_app_page_hero">
     <img
         src="/bedtime-story-app-choose.webp"
         alt="Tablet showing a colorful bedtime story app for kids"
@@ -264,10 +264,11 @@ Finding the best bedtime story app for kids can make evenings calmer, easier, an
 Parents often look for a bedtime story app that combines peaceful visuals, read-aloud narration, short bedtime-friendly stories, and a simple experience that children can enjoy without turning bedtime into more screen stress.
 </p>
 
-<div class="highlight-box">
+<div class="highlight-box" data-section-track="bedtime_app_page_value_box">
 A strong bedtime story app should feel calm, easy to use, and designed around better nighttime routines rather than noisy entertainment or subscription pressure.
 </div>
 
+<section data-section-track="bedtime_app_page_good_app">
 <h2>What Makes a Bedtime Story App Good for Kids?</h2>
 <p>
 The best bedtime story apps use child-friendly storytelling, calm visuals, and a bedtime-friendly flow that supports winding down before sleep. Stories should feel soothing, simple, and easy for families to repeat as part of a nightly routine.
@@ -276,7 +277,9 @@ The best bedtime story apps use child-friendly storytelling, calm visuals, and a
 <p>
 Many families also prefer apps with clear navigation, gentle read-aloud pacing, and a design that works well for toddlers, preschoolers, and young children who need a softer bedtime transition.
 </p>
+</section>
 
+<section data-section-track="bedtime_app_page_read_aloud">
 <h2>Why Read-Aloud Stories Help at Bedtime</h2>
 <p>
 Read-aloud bedtime stories create a familiar rhythm that can help children settle more easily. A calm voice, a steady pace, and peaceful story themes often make bedtime feel safer, more predictable, and less rushed.
@@ -285,7 +288,9 @@ Read-aloud bedtime stories create a familiar rhythm that can help children settl
 <p>
 This can be especially helpful for families who want bedtime to feel warm and consistent, even on busy evenings when reading aloud manually every night may feel harder to maintain.
 </p>
+</section>
 
+<section data-section-track="bedtime_app_page_no_subscription">
 <h2>No Subscription Bedtime Apps</h2>
 <p>
 Many parents prefer bedtime apps without monthly fees. A no-subscription model keeps bedtime simple and avoids turning a basic family routine into another recurring bill.
@@ -297,7 +302,9 @@ Many parents prefer bedtime apps without monthly fees. A no-subscription model k
    data-track-location="bedtime_app_page_no_subscription"
    data-track-title="Bedtime Story Books – Cozy Tales">Bedtime Story Books – Cozy Tales</a> offers calming read-aloud bedtime stories with 2 free books and no subscription.
 </p>
+</section>
 
+<section data-section-track="bedtime_app_page_who_benefits">
 <h2>Who Benefits Most From a Bedtime Story App?</h2>
 <p>
 Bedtime story apps can be especially helpful for families with toddlers, preschoolers, and young children who respond well to routine, repetition, and soothing storytelling. They also work well for parents who want a calmer bedtime structure without overstimulation.
@@ -306,7 +313,9 @@ Bedtime story apps can be especially helpful for families with toddlers, prescho
 <p>
 If your child already enjoys bedtime reading, a bedtime app can make it easier to keep that peaceful rhythm going night after night.
 </p>
+</section>
 
+<section data-section-track="bedtime_app_page_guides">
 <h2>Helpful Related Guides</h2>
 <div class="guide-grid">
     <div class="guide-card">
@@ -345,13 +354,16 @@ If your child already enjoys bedtime reading, a bedtime app can make it easier t
            data-track-title="Bedtime Routine Guide">Read bedtime routine guide</a>
     </div>
 </div>
+</section>
 
+<section data-section-track="bedtime_app_page_final_thoughts">
 <h2>Final Thoughts</h2>
 <p>
 The best bedtime story app for kids helps make bedtime smoother, calmer, and more repeatable. Families often do best with apps that combine gentle narration, simple navigation, bedtime-friendly stories, and a calm overall experience without monthly subscription pressure.
 </p>
+</section>
 
-<div class="faq-box">
+<div class="faq-box" data-section-track="bedtime_app_page_faq">
     <h2>Frequently Asked Questions</h2>
 
     <h3>What makes a bedtime story app good for kids?</h3>
@@ -375,7 +387,7 @@ The best bedtime story app for kids helps make bedtime smoother, calmer, and mor
     </p>
 </div>
 
-<div class="cta-box">
+<div class="cta-box" data-section-track="bedtime_app_page_cta_box">
     <strong>Try 2 Free Bedtime Stories — No Subscription</strong>
     <p>Explore a calming bedtime story app designed for peaceful evenings and family-friendly story time.</p>
     <p><a href="https://softiceinnovationslabs.com/cozy-tales/"
@@ -384,7 +396,7 @@ The best bedtime story app for kids helps make bedtime smoother, calmer, and mor
           data-track-title="Visit Cozy Tales">Visit Cozy Tales</a></p>
 </div>
 
-<div class="related-links">
+<div class="related-links" data-section-track="bedtime_app_page_related_links">
     <h2>Explore More</h2>
     <a href="/bedtime-stories-for-kids.html"
        data-track="resource-link-click"
@@ -404,7 +416,7 @@ The best bedtime story app for kids helps make bedtime smoother, calmer, and mor
        data-track-title="Stories for preschoolers">Stories for preschoolers</a>
 </div>
 
-<div class="nav-links">
+<div class="nav-links" data-section-track="bedtime_app_page_nav_links">
     <a href="https://softiceinnovationslabs.com/"
        data-track="resource-link-click"
        data-track-location="bedtime_app_page_nav_links"
@@ -540,9 +552,84 @@ Try 2 Free Books
         };
     }
 
+    const trackedScrollMilestones = new Set();
+    const trackedTimeMilestones = new Set();
+    const trackedSections = new Set();
+
+    function getScrollPercent() {
+        const scrollTop = window.scrollY || window.pageYOffset;
+        const docHeight = Math.max(
+            document.body.scrollHeight,
+            document.documentElement.scrollHeight
+        );
+        const winHeight = window.innerHeight;
+        const scrollable = docHeight - winHeight;
+
+        if (scrollable <= 0) return 100;
+        return Math.min(100, Math.round((scrollTop / scrollable) * 100));
+    }
+
+    function trackScrollDepth() {
+        const currentScroll = getScrollPercent();
+        [25, 50, 75, 90].forEach(milestone => {
+            if (currentScroll >= milestone && !trackedScrollMilestones.has(milestone)) {
+                trackedScrollMilestones.add(milestone);
+                trackEvent("scroll_depth", {
+                    ...commonParams(),
+                    scroll_percent: milestone,
+                    page_name: "bedtime_app_page"
+                });
+            }
+        });
+    }
+
+    function startEngagedTimeTracking() {
+        [30, 60, 120].forEach(seconds => {
+            setTimeout(() => {
+                if (!trackedTimeMilestones.has(seconds)) {
+                    trackedTimeMilestones.add(seconds);
+                    trackEvent("engaged_time_milestone", {
+                        ...commonParams(),
+                        engaged_time_seconds: seconds,
+                        page_name: "bedtime_app_page"
+                    });
+                }
+            }, seconds * 1000);
+        });
+    }
+
+    function trackSections() {
+        const sectionObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) return;
+
+                const sectionName = entry.target.getAttribute("data-section-track");
+                if (!sectionName || trackedSections.has(sectionName)) return;
+
+                trackedSections.add(sectionName);
+                trackEvent("section_view", {
+                    ...commonParams(),
+                    section_name: sectionName,
+                    page_name: "bedtime_app_page"
+                });
+            });
+        }, {
+            threshold: 0.35
+        });
+
+        document.querySelectorAll("[data-section-track]").forEach(section => {
+            sectionObserver.observe(section);
+        });
+    }
+
     window.addEventListener("load", function () {
         trackEvent("bedtime_app_page_view", commonParams());
+        trackScrollDepth();
+        startEngagedTimeTracking();
+        trackSections();
     });
+
+    window.addEventListener("scroll", trackScrollDepth, { passive: true });
 
     document.addEventListener("click", function (e) {
         const el = e.target.closest("[data-track]");
