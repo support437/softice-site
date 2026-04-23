@@ -671,7 +671,7 @@ for (let i = 0; i < 40; i++) {
 </script>
 
 <main>
-<section class="hero fade" aria-label="Bedtime Story Books homepage hero">
+<section class="hero fade" aria-label="Bedtime Story Books homepage hero" data-section-track="homepage_hero">
     <div class="hero-content">
         <h1>Bedtime Stories for Kids</h1>
         <p>Calming bedtime stories for kids with read-aloud narration, peaceful sleep support, and no subscription.</p>
@@ -681,7 +681,7 @@ for (let i = 0; i < 40; i++) {
     </div>
 </section>
 
-<section class="disney-section" aria-labelledby="simple-calm-effective-heading">
+<section class="disney-section fade" aria-labelledby="simple-calm-effective-heading" data-section-track="homepage_simple_calm_effective">
     <h2 id="simple-calm-effective-heading" class="fade">Simple. Calm. Effective.</h2>
 
     <div class="disney-grid">
@@ -741,7 +741,7 @@ for (let i = 0; i < 40; i++) {
     </div>
 </section>
 
-<section class="section fade" aria-labelledby="see-it-in-action-heading">
+<section class="section fade" aria-labelledby="see-it-in-action-heading" data-section-track="homepage_video_section">
     <h2 id="see-it-in-action-heading">See It In Action</h2>
     <div id="youtubeEmbedWrapper"
          data-track="youtube-embed-click"
@@ -759,7 +759,7 @@ for (let i = 0; i < 40; i++) {
     </div>
 </section>
 
-<section class="section fade" aria-labelledby="bedtime-stories-sleep-heading">
+<section class="section fade" aria-labelledby="bedtime-stories-sleep-heading" data-section-track="homepage_benefit_intro">
     <h2 id="bedtime-stories-sleep-heading">Bedtime Stories for Kids That Help Children Sleep</h2>
     <p>
         Looking for bedtime stories for kids that help children relax and fall asleep more peacefully? Cozy Tales combines calming sleep stories, read-aloud narration, gentle fairy tales, and a bedtime experience designed for toddlers, preschoolers, babies, and young children.
@@ -769,7 +769,7 @@ for (let i = 0; i < 40; i++) {
     </p>
 </section>
 
-<section class="section fade" aria-labelledby="why-parents-love-heading">
+<section class="section fade" aria-labelledby="why-parents-love-heading" data-section-track="homepage_why_parents_love">
     <h2 id="why-parents-love-heading">Why Parents Love Our Bedtime Stories App</h2>
     <p>
         Bedtime Story Books – Cozy Tales is a bedtime stories app for kids designed to make nighttime routines calmer, easier, and more magical. Families can enjoy sleep stories for children, read-aloud narration, peaceful visuals, and a no subscription experience that keeps story time simple.
@@ -791,7 +791,7 @@ for (let i = 0; i < 40; i++) {
     </p>
 </section>
 
-<section class="section fade" aria-labelledby="helpful-resources-heading">
+<section class="section fade" aria-labelledby="helpful-resources-heading" data-section-track="homepage_core_guides_section">
     <h2 id="helpful-resources-heading">Helpful Bedtime Resources for Parents</h2>
     <p>
         This homepage also works as a bedtime stories hub, helping families explore age-based story guides, bedtime routines, calming sleep resources, and read-aloud story ideas all in one place.
@@ -828,7 +828,7 @@ for (let i = 0; i < 40; i++) {
     </div>
 </section>
 
-<section class="section fade" aria-labelledby="story-library-heading">
+<section class="section fade" aria-labelledby="story-library-heading" data-section-track="homepage_story_library_section">
     <h2 id="story-library-heading">Story Collection Inside the Cozy Tales App</h2>
     <p>
         Explore our growing bedtime story collection. Each book below is ready to connect to its own landing page with a story preview, bedtime details, YouTube video, TikTok video, Instagram content, and direct app access.
@@ -1008,7 +1008,7 @@ for (let i = 0; i < 40; i++) {
                 <img src="the-sleepy-dinosaur-2-book-cover.webp" alt="The Sleepy Dinosaur second edition book cover" loading="lazy" decoding="async">
                 <h3>The Sleepy Dinosaur #2</h3>
             </a>
-            <p>A soft and cozy bedtime story about a sleepy little dinosaur, designed to help kids relax and drift off to sleep peacefully.</p>
+            <p>A soft and cozy bedtime story about a sleepy little dinosaur, designed to help kids relax and fall asleep peacefully.</p>
             <a class="story-link" href="/the-sleepy-dinosaur-2.html"
                data-track="story-card-click"
                data-track-location="homepage_story_library"
@@ -1272,7 +1272,7 @@ for (let i = 0; i < 40; i++) {
     </div>
 </section>
 
-<section class="section fade" aria-labelledby="more-sleep-guides-heading">
+<section class="section fade" aria-labelledby="more-sleep-guides-heading" data-section-track="homepage_more_sleep_guides">
     <h2 id="more-sleep-guides-heading">More Sleep and Bedtime Guides</h2>
 
     <div class="resource-grid">
@@ -1368,7 +1368,7 @@ for (let i = 0; i < 40; i++) {
     </div>
 </section>
 
-<section class="section fade" aria-labelledby="faq-heading">
+<section class="section fade" aria-labelledby="faq-heading" data-section-track="homepage_faq_section">
     <h2 id="faq-heading">Frequently Asked Questions</h2>
     <div class="faq-wrap">
         <h3>What is the best bedtime stories app for kids?</h3>
@@ -1385,7 +1385,7 @@ for (let i = 0; i < 40; i++) {
     </div>
 </section>
 
-<section class="section fade" aria-labelledby="stay-connected-heading">
+<section class="section fade" aria-labelledby="stay-connected-heading" data-section-track="homepage_stay_connected">
     <h2 id="stay-connected-heading">Stay Connected ✨</h2>
 
     <form action="https://formspree.io/f/mzdjogng" method="POST" class="form-box" id="form" autocomplete="off">
@@ -1565,53 +1565,6 @@ function closePopup() {
     document.getElementById("popupBox").style.display = "none";
 }
 
-const form = document.getElementById('form');
-const emailInput = document.getElementById('email');
-const messageInput = document.getElementById('message');
-
-form.addEventListener("submit", async function(e) {
-    e.preventDefault();
-
-    const data = new FormData(form);
-
-    try {
-        const response = await fetch(form.action, {
-            method: "POST",
-            body: data,
-            headers: {
-                "Accept": "application/json"
-            }
-        });
-
-        if (!response.ok) {
-            throw new Error("Form submission failed");
-        }
-
-        form.reset();
-        emailInput.value = "";
-        messageInput.value = "";
-
-        if (typeof gtag === "function") {
-            gtag("event", "form_submit", {
-                page_location: window.location.href,
-                page_path: window.location.pathname,
-                page_title: document.title,
-                form_name: "homepage_notify_me_form"
-            });
-        }
-        console.log("Tracked event:", "form_submit", {
-            page_location: window.location.href,
-            page_path: window.location.pathname,
-            page_title: document.title,
-            form_name: "homepage_notify_me_form"
-        });
-
-        openPopup();
-    } catch (error) {
-        alert("There was a problem sending your message. Please try again.");
-    }
-});
-
 (function () {
     function getDeviceType() {
         const ua = navigator.userAgent || "";
@@ -1647,9 +1600,84 @@ form.addEventListener("submit", async function(e) {
         };
     }
 
+    const trackedScrollMilestones = new Set();
+    const trackedTimeMilestones = new Set();
+    const trackedSections = new Set();
+
+    function getScrollPercent() {
+        const scrollTop = window.scrollY || window.pageYOffset;
+        const docHeight = Math.max(
+            document.body.scrollHeight,
+            document.documentElement.scrollHeight
+        );
+        const winHeight = window.innerHeight;
+        const scrollable = docHeight - winHeight;
+
+        if (scrollable <= 0) return 100;
+        return Math.min(100, Math.round((scrollTop / scrollable) * 100));
+    }
+
+    function trackScrollDepth() {
+        const currentScroll = getScrollPercent();
+        [25, 50, 75, 90].forEach(milestone => {
+            if (currentScroll >= milestone && !trackedScrollMilestones.has(milestone)) {
+                trackedScrollMilestones.add(milestone);
+                trackEvent("scroll_depth", {
+                    ...commonParams(),
+                    scroll_percent: milestone,
+                    page_name: "homepage"
+                });
+            }
+        });
+    }
+
+    function startEngagedTimeTracking() {
+        [30, 60, 120].forEach(seconds => {
+            setTimeout(() => {
+                if (!trackedTimeMilestones.has(seconds)) {
+                    trackedTimeMilestones.add(seconds);
+                    trackEvent("engaged_time_milestone", {
+                        ...commonParams(),
+                        engaged_time_seconds: seconds,
+                        page_name: "homepage"
+                    });
+                }
+            }, seconds * 1000);
+        });
+    }
+
+    function trackSections() {
+        const sectionObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) return;
+
+                const sectionName = entry.target.getAttribute("data-section-track");
+                if (!sectionName || trackedSections.has(sectionName)) return;
+
+                trackedSections.add(sectionName);
+                trackEvent("section_view", {
+                    ...commonParams(),
+                    section_name: sectionName,
+                    page_name: "homepage"
+                });
+            });
+        }, {
+            threshold: 0.35
+        });
+
+        document.querySelectorAll("[data-section-track]").forEach(section => {
+            sectionObserver.observe(section);
+        });
+    }
+
     window.addEventListener("load", function () {
         trackEvent("homepage_view", commonParams());
+        trackScrollDepth();
+        startEngagedTimeTracking();
+        trackSections();
     });
+
+    window.addEventListener("scroll", trackScrollDepth, { passive: true });
 
     document.addEventListener("click", function (e) {
         const el = e.target.closest("[data-track]");
@@ -1702,6 +1730,43 @@ form.addEventListener("submit", async function(e) {
                 click_location: trackLocation,
                 video_title: trackTitle
             });
+        }
+    });
+
+    const form = document.getElementById('form');
+    const emailInput = document.getElementById('email');
+    const messageInput = document.getElementById('message');
+
+    form.addEventListener("submit", async function(e) {
+        e.preventDefault();
+
+        const data = new FormData(form);
+
+        try {
+            const response = await fetch(form.action, {
+                method: "POST",
+                body: data,
+                headers: {
+                    "Accept": "application/json"
+                }
+            });
+
+            if (!response.ok) {
+                throw new Error("Form submission failed");
+            }
+
+            form.reset();
+            emailInput.value = "";
+            messageInput.value = "";
+
+            trackEvent("form_submit", {
+                ...commonParams(),
+                form_name: "homepage_notify_me_form"
+            });
+
+            openPopup();
+        } catch (error) {
+            alert("There was a problem sending your message. Please try again.");
         }
     });
 })();
