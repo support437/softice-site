@@ -221,7 +221,7 @@ a:hover { text-decoration: underline; }
 
 <body>
 
-<section class="hero-banner">
+<section class="hero-banner" data-section-track="short_stories_page_hero">
     <img
         src="/bedtime-story-app-choose.webp"
         alt="Tablet showing short bedtime stories for kids in a calming bedtime app"
@@ -247,6 +247,7 @@ Short bedtime stories for kids are perfect for busy evenings. They help children
 Many parents prefer short bedtime stories because they fit naturally into evening routines while still creating a calm, comforting moment before sleep. A short story can be enough to help children slow down, feel safe, and settle more easily.
 </p>
 
+<section data-section-track="short_stories_page_why_they_work">
 <h2>Why Short Bedtime Stories Work</h2>
 
 <p>
@@ -256,7 +257,9 @@ Short stories are easier for children to follow and help them wind down faster. 
 <div class="highlight">
 Short bedtime stories help kids relax quickly, making bedtime smoother, calmer, and more predictable.
 </div>
+</section>
 
+<section data-section-track="short_stories_page_what_makes_good">
 <h2>What Makes a Good Short Bedtime Story?</h2>
 
 <p>
@@ -266,7 +269,9 @@ The best short bedtime stories use simple language, gentle pacing, and peaceful 
 <p>
 Stories with soft themes like bedtime routines, animals, dreams, moonlight, friendship, or quiet adventures often work especially well before sleep.
 </p>
+</section>
 
+<section data-section-track="short_stories_page_comparison_section">
 <h2>Short Stories vs. Longer Stories</h2>
 
 <p>
@@ -279,7 +284,9 @@ data-track="resource-link-click"
 data-track-location="short_stories_page_comparison_section"
 data-track-title="calming bedtime stories">calming bedtime stories</a> if your child needs a little more wind-down support.
 </p>
+</section>
 
+<section data-section-track="short_stories_page_read_aloud_section">
 <h2>Read-Aloud Short Stories</h2>
 
 <p>
@@ -292,7 +299,9 @@ data-track="resource-link-click"
 data-track-location="short_stories_page_read_aloud_section"
 data-track-title="free bedtime stories">free bedtime stories</a> if you want to start with calming bedtime content at no cost.
 </p>
+</section>
 
+<section data-section-track="short_stories_page_routine_section">
 <h2>Build a Better Bedtime Routine</h2>
 
 <p>
@@ -302,7 +311,9 @@ data-track="resource-link-click"
 data-track-location="short_stories_page_routine_section"
 data-track-title="bedtime routine for kids">bedtime routine for kids</a>.
 </p>
+</section>
 
+<section data-section-track="short_stories_page_story_guides">
 <h2>Explore More Story Guides</h2>
 
 <div class="card-links">
@@ -344,14 +355,17 @@ data-track-title="bedtime routine for kids">bedtime routine for kids</a>.
 </div>
 
 </div>
+</section>
 
+<section data-section-track="short_stories_page_final_thoughts">
 <h2>Final Thoughts</h2>
 
 <p>
 Short bedtime stories for kids are one of the easiest ways to create a calm bedtime habit. They are simple, practical, and easy to repeat every night — which is exactly why they work so well for many families.
 </p>
+</section>
 
-<div class="faq-box">
+<div class="faq-box" data-section-track="short_stories_page_faq">
 <h2>Frequently Asked Questions</h2>
 
 <h3>Are short bedtime stories better for sleep?</h3>
@@ -375,7 +389,7 @@ Yes. Short read-aloud stories make it easier to keep bedtime calm and consistent
 </p>
 </div>
 
-<div class="cta-box">
+<div class="cta-box" data-section-track="short_stories_page_cta_box">
 <h2>Try a Bedtime Story App</h2>
 <p>
 <strong>Bedtime Story Books – Cozy Tales</strong> includes calming stories, 2 free books, and no subscription.
@@ -388,7 +402,7 @@ Yes. Short read-aloud stories make it easier to keep bedtime calm and consistent
 </p>
 </div>
 
-<div class="related-links">
+<div class="related-links" data-section-track="short_stories_page_related_links">
 <h2>Explore More</h2>
 <a href="/calming-stories-for-kids.html"
    data-track="resource-link-click"
@@ -408,7 +422,7 @@ Yes. Short read-aloud stories make it easier to keep bedtime calm and consistent
    data-track-title="Bedtime routine guide">Bedtime routine guide</a>
 </div>
 
-<div class="nav-links">
+<div class="nav-links" data-section-track="short_stories_page_nav_links">
 <a href="https://softiceinnovationslabs.com/"
    data-track="resource-link-click"
    data-track-location="short_stories_page_nav_links"
@@ -544,9 +558,84 @@ Yes. Short read-aloud stories make it easier to keep bedtime calm and consistent
         };
     }
 
+    const trackedScrollMilestones = new Set();
+    const trackedTimeMilestones = new Set();
+    const trackedSections = new Set();
+
+    function getScrollPercent() {
+        const scrollTop = window.scrollY || window.pageYOffset;
+        const docHeight = Math.max(
+            document.body.scrollHeight,
+            document.documentElement.scrollHeight
+        );
+        const winHeight = window.innerHeight;
+        const scrollable = docHeight - winHeight;
+
+        if (scrollable <= 0) return 100;
+        return Math.min(100, Math.round((scrollTop / scrollable) * 100));
+    }
+
+    function trackScrollDepth() {
+        const currentScroll = getScrollPercent();
+        [25, 50, 75, 90].forEach(milestone => {
+            if (currentScroll >= milestone && !trackedScrollMilestones.has(milestone)) {
+                trackedScrollMilestones.add(milestone);
+                trackEvent("scroll_depth", {
+                    ...commonParams(),
+                    page_name: "short_stories_page",
+                    scroll_percent: milestone
+                });
+            }
+        });
+    }
+
+    function startEngagedTimeTracking() {
+        [30, 60, 120].forEach(seconds => {
+            setTimeout(() => {
+                if (!trackedTimeMilestones.has(seconds)) {
+                    trackedTimeMilestones.add(seconds);
+                    trackEvent("engaged_time_milestone", {
+                        ...commonParams(),
+                        page_name: "short_stories_page",
+                        engaged_time_seconds: seconds
+                    });
+                }
+            }, seconds * 1000);
+        });
+    }
+
+    function trackSections() {
+        const sectionObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) return;
+
+                const sectionName = entry.target.getAttribute("data-section-track");
+                if (!sectionName || trackedSections.has(sectionName)) return;
+
+                trackedSections.add(sectionName);
+                trackEvent("section_view", {
+                    ...commonParams(),
+                    page_name: "short_stories_page",
+                    section_name: sectionName
+                });
+            });
+        }, {
+            threshold: 0.35
+        });
+
+        document.querySelectorAll("[data-section-track]").forEach(section => {
+            sectionObserver.observe(section);
+        });
+    }
+
     window.addEventListener("load", function () {
         trackEvent("short_stories_page_view", commonParams());
+        trackScrollDepth();
+        startEngagedTimeTracking();
+        trackSections();
     });
+
+    window.addEventListener("scroll", trackScrollDepth, { passive: true });
 
     document.addEventListener("click", function (e) {
         const el = e.target.closest("[data-track]");
