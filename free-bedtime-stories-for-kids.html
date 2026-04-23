@@ -239,7 +239,7 @@ a:hover {
 
 <body>
 
-<section class="hero-banner">
+<section class="hero-banner" data-section-track="free_stories_page_hero">
     <img
         src="/bedtime-story-app-for-kids.webp"
         alt="Tablet showing a bedtime story app with free bedtime stories for kids"
@@ -265,6 +265,7 @@ Free bedtime stories for kids are one of the easiest ways to build a calm, consi
 Whether you need short bedtime stories, calming sleep stories, or gentle read-aloud options, starting with free stories helps you discover what works best for your child and bedtime routine.
 </p>
 
+<section data-section-track="free_stories_page_sleep_benefit">
 <h2>Why Free Bedtime Stories Help Kids Sleep Better</h2>
 
 <p>
@@ -278,7 +279,9 @@ This helps reduce resistance at bedtime and supports emotional comfort. Over tim
 <div class="highlight">
 Free bedtime stories help children relax, feel safe, and transition into sleep naturally without adding pressure or extra cost for families.
 </div>
+</section>
 
+<section data-section-track="free_stories_page_what_to_look_for">
 <h2>What to Look for in Free Bedtime Stories</h2>
 
 <p>
@@ -288,7 +291,9 @@ The best free bedtime stories for kids are slow-paced, gentle, and easy to follo
 <p>
 Avoid overly exciting or fast-paced stories at night. The goal is to create a quiet and soothing experience that prepares your child for sleep rather than stimulating them more.
 </p>
+</section>
 
+<section data-section-track="free_stories_page_read_aloud">
 <h2>Read-Aloud Free Bedtime Stories</h2>
 
 <p>
@@ -298,7 +303,9 @@ Read-aloud bedtime stories are especially helpful for busy parents. Instead of r
 <p>
 This creates a relaxing, hands-free bedtime experience while still maintaining emotional connection through storytelling.
 </p>
+</section>
 
+<section data-section-track="free_stories_page_app_section">
 <h2>Try a Free Bedtime Story App</h2>
 
 <p>
@@ -311,7 +318,9 @@ data-track-title="Bedtime Story Books – Cozy Tales">Bedtime Story Books – Co
 <p>
 Families can start with free stories and decide later if they want to unlock more — without pressure or recurring fees.
 </p>
+</section>
 
+<section data-section-track="free_stories_page_routine_section">
 <h2>Build a Complete Bedtime Routine</h2>
 
 <p>
@@ -325,7 +334,9 @@ data-track="resource-link-click"
 data-track-location="free_stories_page_routine_section"
 data-track-title="bedtime routine for kids">bedtime routine for kids</a>.
 </p>
+</section>
 
+<section data-section-track="free_stories_page_guides">
 <h2>Helpful Related Guides</h2>
 <div class="guide-grid">
     <div class="guide-card">
@@ -364,7 +375,9 @@ data-track-title="bedtime routine for kids">bedtime routine for kids</a>.
            data-track-title="Toddler Sleep Stories">Read toddler sleep stories</a>
     </div>
 </div>
+</section>
 
+<section data-section-track="free_stories_page_explore_more">
 <h2>Explore More Bedtime Stories</h2>
 
 <p>
@@ -374,8 +387,9 @@ data-track="resource-link-click"
 data-track-location="free_stories_page_explore_more"
 data-track-title="Bedtime stories for kids">Bedtime stories for kids</a>.
 </p>
+</section>
 
-<div class="faq-box">
+<div class="faq-box" data-section-track="free_stories_page_faq">
     <h2>Frequently Asked Questions</h2>
 
     <h3>Are free bedtime stories good for kids?</h3>
@@ -399,7 +413,7 @@ data-track-title="Bedtime stories for kids">Bedtime stories for kids</a>.
     </p>
 </div>
 
-<div class="cta-box">
+<div class="cta-box" data-section-track="free_stories_page_cta_box">
     <strong>Try 2 Free Bedtime Stories — No Subscription</strong>
     <p>Explore calming free bedtime stories designed to support peaceful bedtime routines and easier evenings for families.</p>
     <p><a href="https://softiceinnovationslabs.com/cozy-tales/"
@@ -408,7 +422,7 @@ data-track-title="Bedtime stories for kids">Bedtime stories for kids</a>.
           data-track-title="Visit Cozy Tales">Visit Cozy Tales</a></p>
 </div>
 
-<div class="related-links">
+<div class="related-links" data-section-track="free_stories_page_related_links">
 <h2>Explore More</h2>
 <a href="/short-bedtime-stories-for-kids.html"
    data-track="resource-link-click"
@@ -428,7 +442,7 @@ data-track-title="Bedtime stories for kids">Bedtime stories for kids</a>.
    data-track-title="Best bedtime story app">Best bedtime story app</a>
 </div>
 
-<div class="nav-links">
+<div class="nav-links" data-section-track="free_stories_page_nav_links">
 <a href="https://softiceinnovationslabs.com/"
    data-track="resource-link-click"
    data-track-location="free_stories_page_nav_links"
@@ -564,9 +578,84 @@ data-track-title="Bedtime stories for kids">Bedtime stories for kids</a>.
         };
     }
 
+    const trackedScrollMilestones = new Set();
+    const trackedTimeMilestones = new Set();
+    const trackedSections = new Set();
+
+    function getScrollPercent() {
+        const scrollTop = window.scrollY || window.pageYOffset;
+        const docHeight = Math.max(
+            document.body.scrollHeight,
+            document.documentElement.scrollHeight
+        );
+        const winHeight = window.innerHeight;
+        const scrollable = docHeight - winHeight;
+
+        if (scrollable <= 0) return 100;
+        return Math.min(100, Math.round((scrollTop / scrollable) * 100));
+    }
+
+    function trackScrollDepth() {
+        const currentScroll = getScrollPercent();
+        [25, 50, 75, 90].forEach(milestone => {
+            if (currentScroll >= milestone && !trackedScrollMilestones.has(milestone)) {
+                trackedScrollMilestones.add(milestone);
+                trackEvent("scroll_depth", {
+                    ...commonParams(),
+                    scroll_percent: milestone,
+                    page_name: "free_stories_page"
+                });
+            }
+        });
+    }
+
+    function startEngagedTimeTracking() {
+        [30, 60, 120].forEach(seconds => {
+            setTimeout(() => {
+                if (!trackedTimeMilestones.has(seconds)) {
+                    trackedTimeMilestones.add(seconds);
+                    trackEvent("engaged_time_milestone", {
+                        ...commonParams(),
+                        engaged_time_seconds: seconds,
+                        page_name: "free_stories_page"
+                    });
+                }
+            }, seconds * 1000);
+        });
+    }
+
+    function trackSections() {
+        const sectionObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) return;
+
+                const sectionName = entry.target.getAttribute("data-section-track");
+                if (!sectionName || trackedSections.has(sectionName)) return;
+
+                trackedSections.add(sectionName);
+                trackEvent("section_view", {
+                    ...commonParams(),
+                    section_name: sectionName,
+                    page_name: "free_stories_page"
+                });
+            });
+        }, {
+            threshold: 0.35
+        });
+
+        document.querySelectorAll("[data-section-track]").forEach(section => {
+            sectionObserver.observe(section);
+        });
+    }
+
     window.addEventListener("load", function () {
         trackEvent("free_stories_page_view", commonParams());
+        trackScrollDepth();
+        startEngagedTimeTracking();
+        trackSections();
     });
+
+    window.addEventListener("scroll", trackScrollDepth, { passive: true });
 
     document.addEventListener("click", function (e) {
         const el = e.target.closest("[data-track]");
