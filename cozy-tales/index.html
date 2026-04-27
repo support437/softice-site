@@ -14,7 +14,7 @@
 <meta name="apple-mobile-web-app-title" content="Cozy Tales">
 <meta name="format-detection" content="telephone=no">
 
-<link rel="canonical" href="https://softiceinnovationslabs.com/">
+<link rel="canonical" href="https://softiceinnovationslabs.com/cozy-tales/">
 <link rel="alternate" hreflang="en" href="https://softiceinnovationslabs.com/cozy-tales/">
 <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
 <link rel="preload" as="image" href="/family-hero.webp">
@@ -35,6 +35,15 @@
 <meta name="twitter:description" content="A calming bedtime story app for kids with read-aloud narration, 2 free books, and no subscription.">
 <meta name="twitter:image" content="https://softiceinnovationslabs.com/family-hero.webp">
 <meta name="twitter:image:alt" content="Cozy Tales bedtime story app preview for families">
+
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-CE1N5QBRTE"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-CE1N5QBRTE');
+</script>
 
 <style>
 body {
@@ -592,20 +601,23 @@ for (let i = 0; i < 40; i++) {
 </script>
 
 <main>
-<section class="hero fade" aria-label="Cozy Tales landing page hero">
+<section class="hero fade" aria-label="Cozy Tales landing page hero" data-section-track="cozy_tales_page_hero">
     <div class="hero-content">
         <h1>Cozy Tales 🌙</h1>
         <p>A calming bedtime story app for kids with peaceful narration, magical story moments, 2 free books, and no subscription.</p>
         <p class="updated-note"><strong>Updated April 2026</strong> – A cozy way to help children wind down before sleep.</p>
         <div class="cta-pill">🎁 2 FREE BOOKS • 🚫 NO SUBSCRIPTION</div>
-        <a href="https://play.google.com/store/apps/details?id=com.softiceinnovationslabs.bedtimestorybooks"
+        <a href="https://play.google.com/store/apps/details?id=com.softiceinnovationslabs.bedtimestorybooks&utm_source=softice_site&utm_medium=organic&utm_campaign=cozy_tales_page_hero_cta&utm_content=try_cozy_tales_google_play"
            class="btn"
            target="_blank"
-           rel="noopener noreferrer">Try Cozy Tales on Google Play</a>
+           rel="noopener noreferrer"
+           data-track="google-play-click"
+           data-track-location="cozy_tales_page_hero_cta"
+           data-track-content="try_cozy_tales_google_play">Try Cozy Tales on Google Play</a>
     </div>
 </section>
 
-<section class="disney-section" aria-labelledby="how-cozy-tales-works-heading">
+<section class="disney-section" aria-labelledby="how-cozy-tales-works-heading" data-section-track="cozy_tales_page_simple_flow">
     <h2 id="how-cozy-tales-works-heading" class="fade">A Simple Bedtime Flow Families Love</h2>
 
     <div class="disney-grid">
@@ -662,20 +674,24 @@ for (let i = 0; i < 40; i++) {
     </div>
 </section>
 
-<section class="section fade" aria-labelledby="see-cozy-tales-heading">
+<section class="section fade" aria-labelledby="see-cozy-tales-heading" data-section-track="cozy_tales_page_video_section">
     <h2 id="see-cozy-tales-heading">See Cozy Tales In Action</h2>
-    <iframe
-        width="90%"
-        height="350"
-        src="https://www.youtube.com/embed/DR9JqKL95LE"
-        title="Cozy Tales bedtime story app video preview"
-        loading="lazy"
-        referrerpolicy="strict-origin-when-cross-origin"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        allowfullscreen></iframe>
+    <div data-track="youtube-embed-click"
+         data-track-location="cozy_tales_page_video_section"
+         data-track-title="Cozy Tales App Preview">
+        <iframe
+            width="90%"
+            height="350"
+            src="https://www.youtube.com/embed/DR9JqKL95LE"
+            title="Cozy Tales bedtime story app video preview"
+            loading="lazy"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen></iframe>
+    </div>
 </section>
 
-<section class="section fade" aria-labelledby="why-families-try-heading">
+<section class="section fade" aria-labelledby="why-families-try-heading" data-section-track="cozy_tales_page_why_families_try">
     <h2 id="why-families-try-heading">Why Families Try Cozy Tales</h2>
     <p>
         Cozy Tales helps make bedtime feel calmer, easier, and more comforting. Families can enjoy bedtime stories for kids with read-aloud narration, gentle visuals, and a peaceful flow that fits naturally into nighttime routines.
@@ -685,7 +701,7 @@ for (let i = 0; i < 40; i++) {
     </p>
 </section>
 
-<section class="section fade" aria-labelledby="what-you-get-heading">
+<section class="section fade" aria-labelledby="what-you-get-heading" data-section-track="cozy_tales_page_what_you_get">
     <h2 id="what-you-get-heading">What You Get With Cozy Tales</h2>
     <p>
         Cozy Tales is designed for toddlers, preschoolers, and young children who respond well to soft bedtime storytelling. It combines calm story experiences, family-friendly visuals, and a structure that helps children relax before bed.
@@ -703,37 +719,49 @@ for (let i = 0; i < 40; i++) {
     </div>
 </section>
 
-<section class="section fade" aria-labelledby="explore-more-heading">
+<section class="section fade" aria-labelledby="explore-more-heading" data-section-track="cozy_tales_page_guides">
     <h2 id="explore-more-heading">Explore More Bedtime Guides</h2>
 
     <div class="resource-grid">
         <div class="resource-card">
             <h3>Bedtime Stories for Kids</h3>
             <p>Explore more calm bedtime story ideas and family-friendly reading inspiration.</p>
-            <a href="/bedtime-stories-for-kids.html">Read the guide</a>
+            <a href="/bedtime-stories-for-kids"
+               data-track="resource-link-click"
+               data-track-location="cozy_tales_page_guides"
+               data-track-title="Bedtime Stories for Kids">Read the guide</a>
         </div>
 
         <div class="resource-card">
             <h3>Short Bedtime Stories</h3>
             <p>Quick, calming stories for nights when you want a peaceful bedtime without a long routine.</p>
-            <a href="/short-bedtime-stories-for-kids.html">Read the guide</a>
+            <a href="/short-bedtime-stories-for-kids"
+               data-track="resource-link-click"
+               data-track-location="cozy_tales_page_guides"
+               data-track-title="Short Bedtime Stories">Read the guide</a>
         </div>
 
         <div class="resource-card">
             <h3>Sleep Stories for Toddlers</h3>
             <p>Gentle toddler-friendly sleep stories that help little ones slow down and settle before bed.</p>
-            <a href="/sleep-stories-for-toddlers.html">Read the guide</a>
+            <a href="/sleep-stories-for-toddlers"
+               data-track="resource-link-click"
+               data-track-location="cozy_tales_page_guides"
+               data-track-title="Sleep Stories for Toddlers">Read the guide</a>
         </div>
 
         <div class="resource-card">
             <h3>Calming Stories for Kids</h3>
             <p>Find peaceful story ideas that support bedtime routines and help children feel safe and relaxed.</p>
-            <a href="/calming-stories-for-kids.html">Read the guide</a>
+            <a href="/calming-stories-for-kids"
+               data-track="resource-link-click"
+               data-track-location="cozy_tales_page_guides"
+               data-track-title="Calming Stories for Kids">Read the guide</a>
         </div>
     </div>
 </section>
 
-<section class="section fade" aria-labelledby="faq-heading">
+<section class="section fade" aria-labelledby="faq-heading" data-section-track="cozy_tales_page_faq">
     <h2 id="faq-heading">Frequently Asked Questions</h2>
     <div class="faq-wrap">
         <h3>What is Cozy Tales?</h3>
@@ -750,7 +778,7 @@ for (let i = 0; i < 40; i++) {
     </div>
 </section>
 
-<section class="section fade" aria-labelledby="stay-connected-heading">
+<section class="section fade" aria-labelledby="stay-connected-heading" data-section-track="cozy_tales_page_stay_connected">
     <h2 id="stay-connected-heading">Stay Connected ✨</h2>
 
     <form action="https://formspree.io/f/mzdjogng" method="POST" class="form-box" id="form" autocomplete="off">
@@ -762,19 +790,31 @@ for (let i = 0; i < 40; i++) {
     <div class="social-follow">
         <h3>Follow Us</h3>
         <div class="social-links">
-            <a href="https://www.tiktok.com/@bedtimestoriescozytales" target="_blank" rel="noopener noreferrer" class="tiktok" data-label="TikTok" aria-label="Follow Cozy Tales on TikTok">
+            <a href="https://www.tiktok.com/@bedtimestoriescozytales" target="_blank" rel="noopener noreferrer" class="tiktok" data-label="TikTok" aria-label="Follow Cozy Tales on TikTok"
+               data-track="social-click"
+               data-track-location="cozy_tales_page_social_follow"
+               data-track-title="TikTok">
                 <img src="/tiktok_icon_2.png" alt="TikTok icon" loading="lazy" decoding="async" width="30" height="30">
             </a>
 
-            <a href="https://www.instagram.com/bedtime.stories.forkids/" target="_blank" rel="noopener noreferrer" class="instagram" data-label="Instagram" aria-label="Follow Cozy Tales on Instagram">
+            <a href="https://www.instagram.com/bedtime.stories.forkids/" target="_blank" rel="noopener noreferrer" class="instagram" data-label="Instagram" aria-label="Follow Cozy Tales on Instagram"
+               data-track="social-click"
+               data-track-location="cozy_tales_page_social_follow"
+               data-track-title="Instagram">
                 <img src="/instagram_icon_2.png" alt="Instagram icon" loading="lazy" decoding="async" width="30" height="30">
             </a>
 
-            <a href="https://www.youtube.com/@BedtimeStoriesCozyTales" target="_blank" rel="noopener noreferrer" class="youtube" data-label="YouTube" aria-label="Follow Cozy Tales on YouTube">
+            <a href="https://www.youtube.com/@BedtimeStoriesCozyTales" target="_blank" rel="noopener noreferrer" class="youtube" data-label="YouTube" aria-label="Follow Cozy Tales on YouTube"
+               data-track="social-click"
+               data-track-location="cozy_tales_page_social_follow"
+               data-track-title="YouTube">
                 <img src="/youtube_icon_2.png" alt="YouTube icon" loading="lazy" decoding="async" width="30" height="30">
             </a>
 
-            <a href="#" target="_blank" rel="noopener noreferrer" class="facebook" data-label="Facebook" aria-label="Follow Cozy Tales on Facebook">
+            <a href="#" target="_blank" rel="noopener noreferrer" class="facebook" data-label="Facebook" aria-label="Follow Cozy Tales on Facebook"
+               data-track="social-click"
+               data-track-location="cozy_tales_page_social_follow"
+               data-track-title="Facebook">
                 <img src="/facebook_icon_2.png" alt="Facebook icon" loading="lazy" decoding="async" width="30" height="30">
             </a>
         </div>
@@ -801,11 +841,14 @@ for (let i = 0; i < 40; i++) {
     <button type="button" onclick="closePopup()">OK</button>
 </div>
 
-<a href="https://play.google.com/store/apps/details?id=com.softiceinnovationslabs.bedtimestorybooks"
+<a href="https://play.google.com/store/apps/details?id=com.softiceinnovationslabs.bedtimestorybooks&utm_source=softice_site&utm_medium=organic&utm_campaign=cozy_tales_page_floating_cta&utm_content=floating_google_play"
    class="floating-google-play"
    id="floatingGooglePlay"
    target="_blank"
-   rel="noopener noreferrer">
+   rel="noopener noreferrer"
+   data-track="google-play-click"
+   data-track-location="cozy_tales_page_floating_cta"
+   data-track-content="floating_google_play">
    ▶ Get it on Google Play
 </a>
 
@@ -815,9 +858,13 @@ for (let i = 0; i < 40; i++) {
   "@graph": [
     {
       "@type": "Organization",
+      "@id": "https://softiceinnovationslabs.com/#organization",
       "name": "Softice Innovations Labs LLC",
       "url": "https://softiceinnovationslabs.com/",
-      "logo": "https://softiceinnovationslabs.com/family-hero.webp",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://softiceinnovationslabs.com/family-hero.webp"
+      },
       "sameAs": [
         "https://www.tiktok.com/@bedtimestoriescozytales",
         "https://www.instagram.com/bedtime.stories.forkids/",
@@ -826,26 +873,32 @@ for (let i = 0; i < 40; i++) {
     },
     {
       "@type": "WebPage",
+      "@id": "https://softiceinnovationslabs.com/cozy-tales/#webpage",
       "name": "Cozy Tales",
       "url": "https://softiceinnovationslabs.com/cozy-tales/",
-      "description": "A dedicated Cozy Tales landing page for families looking for a calming bedtime story app for kids."
+      "description": "A dedicated Cozy Tales landing page for families looking for a calming bedtime story app for kids.",
+      "publisher": {
+        "@id": "https://softiceinnovationslabs.com/#organization"
+      }
     },
     {
       "@type": "SoftwareApplication",
+      "@id": "https://softiceinnovationslabs.com/cozy-tales/#app",
       "name": "Bedtime Story Books – Cozy Tales",
       "operatingSystem": "Android",
       "applicationCategory": "EducationalApplication",
       "url": "https://softiceinnovationslabs.com/cozy-tales/",
-      "downloadUrl": "https://play.google.com/store/apps/details?id=com.softiceinnovationslabs.bedtimestorybooks",
+      "downloadUrl": "https://play.google.com/store/apps/details?id=com.softiceinnovationslabs.bedtimestorybooks&utm_source=softice_site&utm_medium=organic&utm_campaign=cozy_tales_page_floating_cta&utm_content=floating_google_play",
       "image": "https://softiceinnovationslabs.com/family-hero.webp",
       "publisher": {
-        "@type": "Organization",
-        "name": "Softice Innovations Labs LLC"
+        "@id": "https://softiceinnovationslabs.com/#organization"
       },
       "description": "A calming bedtime story app for kids with read-aloud narration, 2 free books, and no subscription."
     },
     {
       "@type": "FAQPage",
+      "@id": "https://softiceinnovationslabs.com/cozy-tales/#faq",
+      "name": "Cozy Tales FAQ",
       "mainEntity": [
         {
           "@type": "Question",
@@ -905,37 +958,202 @@ function closePopup() {
     document.getElementById("popupBox").style.display = "none";
 }
 
-const form = document.getElementById('form');
-const emailInput = document.getElementById('email');
-const messageInput = document.getElementById('message');
+(function () {
+    function getDeviceType() {
+        const ua = navigator.userAgent || "";
+        if (/tablet|ipad|playbook|silk/i.test(ua)) return "tablet";
+        if (/Mobile|Android|iPhone|iPod/i.test(ua)) return "mobile";
+        return "desktop";
+    }
 
-form.addEventListener("submit", async function(e) {
-    e.preventDefault();
+    function getSessionId() {
+        let sessionId = sessionStorage.getItem("softice_session_id");
+        if (!sessionId) {
+            sessionId = "sess_" + Date.now() + "_" + Math.random().toString(36).slice(2, 10);
+            sessionStorage.setItem("softice_session_id", sessionId);
+        }
+        return sessionId;
+    }
 
-    const data = new FormData(form);
+    function trackEvent(eventName, params) {
+        if (typeof gtag === "function") {
+            gtag("event", eventName, params);
+        }
+        console.log("Tracked event:", eventName, params);
+    }
 
-    try {
-        const response = await fetch(form.action, {
-            method: "POST",
-            body: data,
-            headers: {
-                "Accept": "application/json"
+    function commonParams() {
+        return {
+            page_location: window.location.href,
+            page_path: window.location.pathname,
+            page_title: document.title,
+            referrer: document.referrer || "direct",
+            device_type: getDeviceType(),
+            session_id: getSessionId()
+        };
+    }
+
+    const trackedScrollMilestones = new Set();
+    const trackedTimeMilestones = new Set();
+    const trackedSections = new Set();
+
+    function getScrollPercent() {
+        const scrollTop = window.scrollY || window.pageYOffset;
+        const docHeight = Math.max(
+            document.body.scrollHeight,
+            document.documentElement.scrollHeight
+        );
+        const winHeight = window.innerHeight;
+        const scrollable = docHeight - winHeight;
+
+        if (scrollable <= 0) return 100;
+        return Math.min(100, Math.round((scrollTop / scrollable) * 100));
+    }
+
+    function trackScrollDepth() {
+        const currentScroll = getScrollPercent();
+        [25, 50, 75, 90].forEach(milestone => {
+            if (currentScroll >= milestone && !trackedScrollMilestones.has(milestone)) {
+                trackedScrollMilestones.add(milestone);
+                trackEvent("scroll_depth", {
+                    ...commonParams(),
+                    scroll_percent: milestone,
+                    page_name: "cozy_tales_page"
+                });
             }
         });
+    }
 
-        if (!response.ok) {
-            throw new Error("Form submission failed");
+    function startEngagedTimeTracking() {
+        [30, 60, 120].forEach(seconds => {
+            setTimeout(() => {
+                if (!trackedTimeMilestones.has(seconds)) {
+                    trackedTimeMilestones.add(seconds);
+                    trackEvent("engaged_time_milestone", {
+                        ...commonParams(),
+                        engaged_time_seconds: seconds,
+                        page_name: "cozy_tales_page"
+                    });
+                }
+            }, seconds * 1000);
+        });
+    }
+
+    function trackSections() {
+        const sectionObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) return;
+
+                const sectionName = entry.target.getAttribute("data-section-track");
+                if (!sectionName || trackedSections.has(sectionName)) return;
+
+                trackedSections.add(sectionName);
+                trackEvent("section_view", {
+                    ...commonParams(),
+                    section_name: sectionName,
+                    page_name: "cozy_tales_page"
+                });
+            });
+        }, {
+            threshold: 0.35
+        });
+
+        document.querySelectorAll("[data-section-track]").forEach(section => {
+            sectionObserver.observe(section);
+        });
+    }
+
+    window.addEventListener("load", function () {
+        trackEvent("cozy_tales_page_view", commonParams());
+        trackScrollDepth();
+        startEngagedTimeTracking();
+        trackSections();
+    });
+
+    window.addEventListener("scroll", trackScrollDepth, { passive: true });
+
+    document.addEventListener("click", function (e) {
+        const el = e.target.closest("[data-track]");
+        if (!el) return;
+
+        const trackType = el.getAttribute("data-track");
+        const trackLocation = el.getAttribute("data-track-location") || "unknown_location";
+        const trackTitle = el.getAttribute("data-track-title") || (el.textContent || "").trim() || "unknown_title";
+
+        if (trackType === "google-play-click") {
+            trackEvent("google_play_click", {
+                ...commonParams(),
+                cta_location: trackLocation,
+                cta_content: el.getAttribute("data-track-content") || "unknown_content",
+                link_url: el.href,
+                link_text: (el.textContent || "").trim()
+            });
         }
 
-        form.reset();
-        emailInput.value = "";
-        messageInput.value = "";
+        if (trackType === "resource-link-click") {
+            trackEvent("resource_link_click", {
+                ...commonParams(),
+                click_location: trackLocation,
+                resource_title: trackTitle,
+                link_url: el.href
+            });
+        }
 
-        openPopup();
-    } catch (error) {
-        alert("There was a problem sending your message. Please try again.");
-    }
-});
+        if (trackType === "social-click") {
+            trackEvent("social_click", {
+                ...commonParams(),
+                click_location: trackLocation,
+                social_platform: trackTitle,
+                link_url: el.href
+            });
+        }
+
+        if (trackType === "youtube-embed-click") {
+            trackEvent("youtube_embed_click", {
+                ...commonParams(),
+                click_location: trackLocation,
+                video_title: trackTitle
+            });
+        }
+    });
+
+    const form = document.getElementById('form');
+    const emailInput = document.getElementById('email');
+    const messageInput = document.getElementById('message');
+
+    form.addEventListener("submit", async function(e) {
+        e.preventDefault();
+
+        const data = new FormData(form);
+
+        try {
+            const response = await fetch(form.action, {
+                method: "POST",
+                body: data,
+                headers: {
+                    "Accept": "application/json"
+                }
+            });
+
+            if (!response.ok) {
+                throw new Error("Form submission failed");
+            }
+
+            form.reset();
+            emailInput.value = "";
+            messageInput.value = "";
+
+            trackEvent("form_submit", {
+                ...commonParams(),
+                form_name: "cozy_tales_notify_me_form"
+            });
+
+            openPopup();
+        } catch (error) {
+            alert("There was a problem sending your message. Please try again.");
+        }
+    });
+})();
 </script>
 
 </body>
