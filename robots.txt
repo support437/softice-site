@@ -5,5 +5,5 @@ Allow: /
 # Sitemap location
 Sitemap: https://softiceinnovationslabs.com/sitemap.xml
 
-# Crawl delay (optional for bots like Bing)
-Crawl-delay: 1
+
+
