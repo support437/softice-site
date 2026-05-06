@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>PetCare Log | Legal & Policy Center</title>
+  <meta
+    name="description"
+    content="PetCare Log legal pages by Softice Innovations Labs LLC: Privacy Policy and Terms of Service."
+  />
+
+  <style>
+    :root {
+      --bg: #0b1220;
+      --bg2: #101b31;
+      --card: #111a2b;
+      --text: #eaf1ff;
+      --muted: #b9c6e3;
+      --accent: #ff7a1a;
+      --accent-2: #ffb066;
+      --border: #22304d;
+    }
+
+    * { box-sizing: border-box; }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      min-height: 100%;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background: linear-gradient(180deg, var(--bg) 0%, var(--bg2) 100%);
+    }
+
+    .wrap {
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      padding: 24px;
+    }
+
+    .card {
+      width: 100%;
+      max-width: 860px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 34px 28px;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.28);
+      text-align: center;
+    }
+
+    .app-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 14px;
+      padding: 10px 16px;
+      border-radius: 999px;
+      background: rgba(255, 122, 26, 0.12);
+      border: 1px solid rgba(255, 122, 26, 0.35);
+      color: var(--accent-2);
+      font-weight: 800;
+    }
+
+    h1 {
+      margin: 0 0 10px;
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      line-height: 1.2;
+    }
+
+    p.sub {
+      margin: 0 auto 26px;
+      max-width: 700px;
+      color: var(--muted);
+      font-size: 1rem;
+      line-height: 1.65;
+    }
+
+    .brand {
+      color: var(--accent-2);
+      font-weight: 700;
+    }
+
+    .buttons {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 14px;
+      margin-top: 20px;
+    }
+
+    .btn {
+      display: inline-block;
+      width: 100%;
+      padding: 14px 18px;
+      border-radius: 12px;
+      border: 1px solid var(--accent);
+      background: rgba(255, 122, 26, 0.12);
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: 700;
+      letter-spacing: 0.2px;
+      transition: transform 0.15s ease, background 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .btn:hover {
+      background: rgba(255, 122, 26, 0.2);
+      transform: translateY(-1px);
+      box-shadow: 0 8px 18px rgba(255, 122, 26, 0.18);
+    }
+
+    .btn:active {
+      transform: translateY(0);
+    }
+
+    .footer {
+      margin-top: 28px;
+      padding-top: 16px;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .small {
+      display: block;
+      margin-top: 8px;
+      font-size: 0.85rem;
+      opacity: 0.9;
+    }
+  </style>
+</head>
+
+<body>
+  <main class="wrap">
+    <section class="card">
+      <div class="app-badge">🐾 PetCare Log</div>
+
+      <h1>Legal & Policy Center</h1>
+
+      <p class="sub">
+        Welcome to the official legal pages for
+        <span class="brand">PetCare Log</span>, a pet care tracking app by
+        <span class="brand">Softice Innovations Labs LLC</span>.
+        Use the links below to view our current Privacy Policy and Terms of Service.
+      </p>
+
+      <div class="buttons">
+        <a class="btn" href="./petcare-log-privacy-policy.html" aria-label="Open PetCare Log Privacy Policy">
+          Privacy Policy
+        </a>
+
+        <a class="btn" href="./petcare-log-terms.html" aria-label="Open PetCare Log Terms of Service">
+          Terms of Service
+        </a>
+      </div>
+
+      <div class="footer">
+        © 2026 Softice Innovations Labs LLC. All rights reserved.
+        <span class="small">Contact: support@softiceinnovationslabs.com</span>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
