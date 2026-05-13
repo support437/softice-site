@@ -27,7 +27,7 @@
   />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://softiceinnovationslabs.com/calmpulse/" />
-  <meta property="og:image" content="https://softiceinnovationslabs.com/images/calmpulse/calmpulse-og.png" />
+  <meta property="og:image" content="https://softiceinnovationslabs.com/images/calmpulse/calmpulse-og.webp" />
 
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="CalmPulse: Anxiety Relief, Breathing & Panic Reset App" />
@@ -35,7 +35,7 @@
     name="twitter:description"
     content="Quick calming tools for anxiety, stress, panic reset, breathing, overthinking, and quiet reset moments."
   />
-  <meta name="twitter:image" content="https://softiceinnovationslabs.com/images/calmpulse/calmpulse-og.png" />
+  <meta name="twitter:image" content="https://softiceinnovationslabs.com/images/calmpulse/calmpulse-og.webp" />
 
   <meta name="theme-color" content="#071a4f" />
 
@@ -67,7 +67,7 @@
     "applicationCategory": "HealthApplication",
     "description": "CalmPulse is an anxiety relief and calm breathing app for adults with panic reset tools, breathing exercises, calm timer sessions, Smart Calm check-ins, progress tracking, and optional CalmPulse Pro features.",
     "url": "https://softiceinnovationslabs.com/calmpulse/",
-    "image": "https://softiceinnovationslabs.com/images/calmpulse/calmpulse-og.png",
+    "image": "https://softiceinnovationslabs.com/images/calmpulse/calmpulse-og.webp",
     "publisher": {
       "@type": "Organization",
       "name": "Softice Innovations Labs LLC",
@@ -142,7 +142,7 @@
       min-height: 690px;
       background:
         linear-gradient(180deg, rgba(5, 18, 57, 0.18), rgba(5, 18, 57, 0.88)),
-        url("images/calmpulse/calmpulse-mountain-hero.png") center / cover no-repeat,
+        url("images/calmpulse/calmpulse-mountain-hero.webp") center / cover no-repeat,
         linear-gradient(135deg, #06123a, #09256c 58%, #0d3a85);
       color: white;
     }
@@ -202,29 +202,31 @@
       color: #ffffff;
     }
 
-    .play-small {
+    .google-play-link {
       display: inline-flex;
       align-items: center;
-      gap: 10px;
-      padding: 14px 18px;
-      border-radius: 12px;
-      background: #ffffff;
-      color: #13245d;
-      font-size: 14px;
-      font-weight: 800;
-      box-shadow: 0 16px 30px rgba(0,0,0,0.22);
-      white-space: nowrap;
+      justify-content: center;
+      border-radius: 14px;
+      transition: transform 0.2s ease, filter 0.2s ease;
     }
 
-    .play-icon {
-      width: 0;
-      height: 0;
-      border-top: 12px solid transparent;
-      border-bottom: 12px solid transparent;
-      border-left: 19px solid #34a853;
-      position: relative;
-      filter: drop-shadow(6px 0 0 #4285f4);
-      margin-right: 6px;
+    .google-play-link:hover {
+      transform: translateY(-2px);
+      filter: brightness(1.04);
+    }
+
+    .google-play-link img {
+      display: block;
+      width: auto;
+      height: auto;
+    }
+
+    .google-play-link-small img {
+      height: 54px;
+    }
+
+    .google-play-link-large img {
+      height: 86px;
     }
 
     .hero-inner {
@@ -257,48 +259,6 @@
       font-weight: 500;
     }
 
-    .google-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 18px;
-      padding: 16px 28px 16px 22px;
-      min-width: 320px;
-      border-radius: 14px;
-      background: #ffffff;
-      color: #111827;
-      box-shadow: 0 20px 42px rgba(0,0,0,0.28);
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
-
-    .google-badge:hover,
-    .play-small:hover,
-    .cta-button:hover {
-      transform: translateY(-2px);
-    }
-
-    .google-badge .play-icon {
-      transform: scale(1.25);
-    }
-
-    .badge-text {
-      display: flex;
-      flex-direction: column;
-      line-height: 1;
-    }
-
-    .badge-text span:first-child {
-      font-size: 15px;
-      font-weight: 700;
-      letter-spacing: 0.04em;
-    }
-
-    .badge-text span:last-child {
-      font-size: 35px;
-      font-weight: 600;
-      letter-spacing: -0.04em;
-      margin-top: 5px;
-    }
-
     .trust-row {
       display: flex;
       flex-wrap: wrap;
@@ -323,7 +283,6 @@
 
     .phone {
       width: 342px;
-      min-height: 590px;
       border: 9px solid #101726;
       border-radius: 42px;
       background: #07194f;
@@ -333,104 +292,10 @@
       overflow: hidden;
     }
 
-    .phone-notch {
-      width: 110px;
-      height: 25px;
-      background: #101726;
-      border-radius: 0 0 18px 18px;
-      margin: 0 auto;
-    }
-
-    .phone-screen {
-      min-height: 560px;
-      background:
-        linear-gradient(180deg, rgba(7, 26, 79, 0.2), rgba(7, 26, 79, 0.98)),
-        url("images/calmpulse/calmpulse-phone-home.png") center / cover no-repeat,
-        linear-gradient(180deg, #0d2b77, #071849);
-      padding: 18px;
-      color: white;
-    }
-
-    .phone-top {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 26px;
-      font-size: 14px;
-      font-weight: 800;
-    }
-
-    .phone-title {
-      margin: 0 0 8px;
-      font-size: 26px;
-      line-height: 1.02;
-      font-weight: 900;
-      letter-spacing: -0.05em;
-    }
-
-    .phone-sub {
-      margin: 0 0 130px;
-      font-size: 13px;
-      color: rgba(255,255,255,0.82);
-    }
-
-    .phone-card {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      min-height: 62px;
-      margin-bottom: 12px;
-      padding: 12px 14px;
-      border-radius: 16px;
-      background: rgba(255,255,255,0.78);
-      color: #0b2463;
-      backdrop-filter: blur(10px);
-      box-shadow: 0 10px 24px rgba(0,0,0,0.16);
-    }
-
-    .phone-card strong {
+    .phone-image {
+      width: 100%;
+      height: auto;
       display: block;
-      font-size: 13px;
-      font-weight: 900;
-    }
-
-    .phone-card small {
-      display: block;
-      margin-top: 3px;
-      font-size: 10px;
-      color: rgba(11,36,99,0.72);
-      font-weight: 700;
-    }
-
-    .mini-icon {
-      flex: 0 0 auto;
-      width: 34px;
-      height: 34px;
-      border-radius: 12px;
-      display: grid;
-      place-items: center;
-      color: white;
-      font-weight: 900;
-      background: linear-gradient(135deg, #3b5bff, #7c78ff);
-    }
-
-    .mini-icon.green {
-      background: linear-gradient(135deg, #28c18d, #38d9a9);
-    }
-
-    .mini-icon.blue {
-      background: linear-gradient(135deg, #4d7cff, #63b3ff);
-    }
-
-    .phone-bottom {
-      display: flex;
-      justify-content: space-around;
-      padding: 13px 6px 6px;
-      font-size: 10px;
-      color: rgba(11,36,99,0.58);
-      background: white;
-      margin: 12px -18px -18px;
-      font-weight: 800;
     }
 
     .section {
@@ -977,14 +842,12 @@
         font-size: 46px;
       }
 
-      .google-badge {
-        min-width: 0;
-        width: 100%;
-        justify-content: center;
+      .google-play-link-small {
+        display: none;
       }
 
-      .play-small {
-        display: none;
+      .google-play-link-large img {
+        height: 74px;
       }
 
       .phone {
@@ -1031,13 +894,16 @@
         </div>
 
         <a
-          class="play-small js-google-play-click"
+          class="google-play-link google-play-link-small js-google-play-click"
           href="https://play.google.com/store/apps/details?id=com.softiceinnovationslabs.calmpulseapp"
           data-link-location="top_nav"
           aria-label="Download CalmPulse on Google Play"
         >
-          <span class="play-icon" aria-hidden="true"></span>
-          Download on Google Play
+          <img
+            src="images/calmpulse/google-play-badge.png"
+            alt="Get it on Google Play"
+            loading="eager"
+          />
         </a>
       </nav>
 
@@ -1050,16 +916,16 @@
           </p>
 
           <a
-            class="google-badge js-google-play-click"
+            class="google-play-link google-play-link-large js-google-play-click"
             href="https://play.google.com/store/apps/details?id=com.softiceinnovationslabs.calmpulseapp"
             data-link-location="hero"
             aria-label="Get CalmPulse on Google Play"
           >
-            <span class="play-icon" aria-hidden="true"></span>
-            <span class="badge-text">
-              <span>GET IT ON</span>
-              <span>Google Play</span>
-            </span>
+            <img
+              src="images/calmpulse/google-play-badge.png"
+              alt="Get it on Google Play"
+              loading="eager"
+            />
           </a>
 
           <div class="trust-row" aria-label="CalmPulse benefits">
@@ -1072,43 +938,12 @@
 
         <div class="phone-wrap" aria-label="CalmPulse app preview">
           <div class="phone">
-            <div class="phone-notch"></div>
-            <div class="phone-screen">
-              <div class="phone-top">
-                <span>✦ CalmPulse</span>
-                <span>⚙</span>
-              </div>
-
-              <h2 class="phone-title">How are you<br />feeling right now?</h2>
-              <p class="phone-sub">Choose a tool to get started.</p>
-
-              <div class="phone-card">
-                <span class="mini-icon">✦</span>
-                <span><strong>Smart Calm Check-In</strong><small>Tell CalmPulse how you feel.</small></span>
-              </div>
-
-              <div class="phone-card">
-                <span class="mini-icon">♥</span>
-                <span><strong>Panic Reset</strong><small>Instant relief when anxiety hits.</small></span>
-              </div>
-
-              <div class="phone-card">
-                <span class="mini-icon blue">○</span>
-                <span><strong>2-Minute Breathing</strong><small>Guided breathing to calm your mind.</small></span>
-              </div>
-
-              <div class="phone-card">
-                <span class="mini-icon green">◷</span>
-                <span><strong>Calm Timer</strong><small>Set a timer for gentle calm.</small></span>
-              </div>
-
-              <div class="phone-bottom">
-                <span>⌂<br />Home</span>
-                <span>▥<br />Progress</span>
-                <span>◌<br />Tools</span>
-                <span>♙<br />Profile</span>
-              </div>
-            </div>
+            <img
+              class="phone-image"
+              src="images/calmpulse/calmpulse-phone-home.webp"
+              alt="CalmPulse app home screen showing Smart Calm Check-In, Panic Reset, Breathing, and Calm Timer"
+              loading="eager"
+            />
           </div>
         </div>
       </section>
@@ -1215,23 +1050,43 @@
         <button class="arrow" type="button" aria-label="Previous screenshot">‹</button>
 
         <div class="screenshot">
-          <img src="images/calmpulse/calmpulse-screen-home.png" alt="CalmPulse home screen with Smart Calm Check-In, Panic Reset, Breathing, and Calm Timer" />
+          <img
+            src="images/calmpulse/calmpulse-screen-home.webp"
+            alt="CalmPulse home screen with Smart Calm Check-In, Panic Reset, Breathing, and Calm Timer"
+            loading="lazy"
+          />
         </div>
 
         <div class="screenshot">
-          <img src="images/calmpulse/calmpulse-screen-panic-reset.png" alt="CalmPulse Panic Reset screen for anxiety relief support" />
+          <img
+            src="images/calmpulse/calmpulse-screen-panic-reset.webp"
+            alt="CalmPulse Panic Reset screen for anxiety relief support"
+            loading="lazy"
+          />
         </div>
 
         <div class="screenshot">
-          <img src="images/calmpulse/calmpulse-screen-breathing.png" alt="CalmPulse 2-Minute Breathing exercise screen" />
+          <img
+            src="images/calmpulse/calmpulse-screen-breathing.webp"
+            alt="CalmPulse 2-Minute Breathing exercise screen"
+            loading="lazy"
+          />
         </div>
 
         <div class="screenshot">
-          <img src="images/calmpulse/calmpulse-screen-calm-timer.png" alt="CalmPulse Calm Timer screen with relaxing timer controls" />
+          <img
+            src="images/calmpulse/calmpulse-screen-calm-timer.webp"
+            alt="CalmPulse Calm Timer screen with relaxing timer controls"
+            loading="lazy"
+          />
         </div>
 
         <div class="screenshot">
-          <img src="images/calmpulse/calmpulse-screen-progress.png" alt="CalmPulse Progress screen with mood and calming session tracking" />
+          <img
+            src="images/calmpulse/calmpulse-screen-progress.webp"
+            alt="CalmPulse Progress screen with mood and calming session tracking"
+            loading="lazy"
+          />
         </div>
 
         <button class="arrow" type="button" aria-label="Next screenshot">›</button>
@@ -1348,16 +1203,16 @@
       </div>
 
       <a
-        class="google-badge js-google-play-click"
+        class="google-play-link google-play-link-large js-google-play-click"
         href="https://play.google.com/store/apps/details?id=com.softiceinnovationslabs.calmpulseapp"
         data-link-location="bottom_cta"
         aria-label="Get CalmPulse on Google Play"
       >
-        <span class="play-icon" aria-hidden="true"></span>
-        <span class="badge-text">
-          <span>GET IT ON</span>
-          <span>Google Play</span>
-        </span>
+        <img
+          src="images/calmpulse/google-play-badge.png"
+          alt="Get it on Google Play"
+          loading="lazy"
+        />
       </a>
     </section>
 
