@@ -180,13 +180,10 @@
     .brand-mark {
       width: 42px;
       height: 42px;
-      border-radius: 14px;
-      background:
-        radial-gradient(circle at 50% 30%, #ffffff 0 13%, transparent 14%),
-        radial-gradient(circle at 35% 60%, #73a5ff 0 22%, transparent 23%),
-        radial-gradient(circle at 65% 60%, #3b5bff 0 22%, transparent 23%),
-        linear-gradient(135deg, #153fff, #36d29a);
-      box-shadow: 0 10px 24px rgba(59, 91, 255, 0.42);
+      display: block;
+      object-fit: contain;
+      flex: 0 0 auto;
+      filter: drop-shadow(0 10px 22px rgba(59, 91, 255, 0.42));
     }
 
     .nav-links {
@@ -881,7 +878,13 @@
     <header class="hero">
       <nav class="nav" aria-label="Main navigation">
         <a href="/" class="brand" aria-label="CalmPulse home">
-          <span class="brand-mark" aria-hidden="true"></span>
+          <img
+            class="brand-mark"
+            src="images/calmpulse/calmpulse_lotus_icon.png"
+            alt=""
+            aria-hidden="true"
+            loading="eager"
+          />
           <span>CalmPulse</span>
         </a>
 
@@ -1195,7 +1198,13 @@
 
     <section class="section bottom-cta">
       <div class="bottom-copy">
-        <span class="brand-mark" aria-hidden="true"></span>
+        <img
+          class="brand-mark"
+          src="images/calmpulse/calmpulse_lotus_icon.png"
+          alt=""
+          aria-hidden="true"
+          loading="lazy"
+        />
         <div>
           <h2>Ready to feel better?</h2>
           <p>Download CalmPulse now and take the first step.</p>
