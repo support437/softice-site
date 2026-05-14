@@ -58,8 +58,8 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 9px;
-      padding: 10px 24px;
+      gap: 10px;
+      padding: 10px 24px 10px 14px;
       border-radius: 999px;
       border: 1px solid rgba(111, 162, 255, 0.58);
       background: var(--accent-soft);
@@ -68,27 +68,16 @@
       font-size: 18px;
       line-height: 1;
       margin-bottom: 22px;
+      box-shadow: 0 0 24px rgba(95, 140, 255, 0.16);
     }
 
     .brand-icon {
-      width: 22px;
-      height: 22px;
-      display: inline-block;
-      background: linear-gradient(180deg, #7fb4ff, #1a4fff);
-      border-radius: 7px;
-      position: relative;
-      box-shadow: 0 0 18px rgba(95, 140, 255, 0.38);
-    }
-
-    .brand-icon::before {
-      content: "✦";
-      color: white;
-      font-size: 15px;
-      position: absolute;
-      inset: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      width: 34px;
+      height: 34px;
+      display: block;
+      object-fit: contain;
+      flex: 0 0 auto;
+      filter: drop-shadow(0 0 12px rgba(95, 140, 255, 0.42));
     }
 
     h1 {
@@ -180,6 +169,16 @@
         border-radius: 18px;
       }
 
+      .brand-pill {
+        font-size: 17px;
+        padding: 9px 20px 9px 12px;
+      }
+
+      .brand-icon {
+        width: 30px;
+        height: 30px;
+      }
+
       .intro {
         font-size: 16px;
         margin-bottom: 26px;
@@ -205,7 +204,12 @@
 <body>
   <main class="legal-card">
     <div class="brand-pill">
-      <span class="brand-icon" aria-hidden="true"></span>
+      <img
+        class="brand-icon"
+        src="/images/calmpulse/calmpulse_lotus_icon.png"
+        alt=""
+        aria-hidden="true"
+      />
       <span>CalmPulse</span>
     </div>
 
