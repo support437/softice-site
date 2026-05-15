@@ -1,0 +1,1666 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>PetCare Log: Pet Care Tracker, Reminders & Health History App</title>
+
+  <meta
+    name="description"
+    content="PetCare Log is a simple pet care tracker app for pet profiles, smart reminders, feeding, medication, vet visits, health history, photo memories, and daily pet care routines."
+  />
+
+  <meta
+    name="keywords"
+    content="PetCare Log, pet care app, pet care tracker, pet reminder app, pet health tracker, pet medication reminder app, pet feeding tracker, pet vet visit tracker, pet photo log app, pet health history app, pet profile app, daily pet care app, pet care organizer, pet care reminders, pet medical records app, pet health records app, pet parent app"
+  />
+
+  <meta name="robots" content="index, follow" />
+
+  <link rel="canonical" href="https://softiceinnovationslabs.com/petcare/" />
+
+  <meta property="og:title" content="PetCare Log: Pet Care Tracker, Reminders & Health History App" />
+  <meta
+    property="og:description"
+    content="Care for every pet with simple daily tools for profiles, reminders, feeding, medication, vet visits, health history, and photo memories."
+  />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://softiceinnovationslabs.com/petcare/" />
+  <meta property="og:image" content="https://softiceinnovationslabs.com/images/petcare/petcare-og.webp" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="PetCare Log: Pet Care Tracker, Reminders & Health History App" />
+  <meta
+    name="twitter:description"
+    content="Pet profiles, smart reminders, health history, photo memories, and daily care tools for every pet."
+  />
+  <meta name="twitter:image" content="https://softiceinnovationslabs.com/images/petcare/petcare-og.webp" />
+
+  <meta name="theme-color" content="#f97316" />
+
+  <!-- Google Analytics 4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-CE1N5QBRTE"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag("js", new Date());
+
+    gtag("config", "G-CE1N5QBRTE", {
+      page_title: "PetCare Log Landing Page",
+      page_location: window.location.href,
+      send_page_view: true
+    });
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "MobileApplication",
+    "name": "PetCare Log",
+    "alternateName": "PetCare Log: Pet Care Tracker",
+    "operatingSystem": "Android",
+    "applicationCategory": "LifestyleApplication",
+    "description": "PetCare Log is a simple pet care tracker app for pet profiles, smart reminders, feeding, medication, vet visits, health history, photo memories, and daily pet care routines.",
+    "url": "https://softiceinnovationslabs.com/petcare/",
+    "image": "https://softiceinnovationslabs.com/images/petcare/petcare-og.webp",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Softice Innovations Labs LLC",
+      "url": "https://softiceinnovationslabs.com/"
+    },
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD",
+      "availability": "https://schema.org/InStock"
+    },
+    "inLanguage": "en-US"
+  }
+  </script>
+
+  <style>
+    :root {
+      --cream: #fff7eb;
+      --cream-2: #fff1dc;
+      --cream-3: #ffe4bc;
+      --orange: #f97316;
+      --orange-2: #ff8a22;
+      --orange-3: #ffb45c;
+      --brown: #2b160c;
+      --brown-2: #4a2b1c;
+      --muted: #765f50;
+      --soft: #fffaf2;
+      --white: #ffffff;
+      --green: #4caf50;
+      --card: rgba(255, 255, 255, 0.94);
+      --line: rgba(116, 82, 54, 0.16);
+      --shadow: 0 24px 60px rgba(88, 49, 21, 0.16);
+      --soft-shadow: 0 16px 38px rgba(88, 49, 21, 0.11);
+      --radius-xl: 34px;
+      --radius-lg: 26px;
+      --radius-md: 18px;
+      --max: 1420px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--cream);
+      color: var(--brown);
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .page {
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 15% 8%, rgba(255, 180, 92, 0.24), transparent 26%),
+        radial-gradient(circle at 88% 20%, rgba(249, 115, 22, 0.12), transparent 24%),
+        linear-gradient(180deg, #fff9ee 0%, #fff3df 50%, #fff7ec 100%);
+    }
+
+    .section,
+    .nav {
+      width: min(var(--max), calc(100% - 56px));
+      margin: 0 auto;
+    }
+
+    .nav {
+      position: sticky;
+      top: 18px;
+      z-index: 20;
+      margin-top: 18px;
+      padding: 14px 22px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      border: 1px solid rgba(255, 255, 255, 0.82);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.86);
+      backdrop-filter: blur(16px);
+      box-shadow: 0 18px 45px rgba(86, 52, 24, 0.14);
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 13px;
+      font-weight: 900;
+      font-size: clamp(22px, 2vw, 31px);
+      letter-spacing: -0.055em;
+      color: var(--orange);
+      white-space: nowrap;
+    }
+
+    .brand-mark {
+      width: 48px;
+      height: 48px;
+      border-radius: 15px;
+      object-fit: contain;
+      flex: 0 0 auto;
+      box-shadow: 0 12px 22px rgba(249, 115, 22, 0.22);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: clamp(22px, 3vw, 54px);
+      font-size: 15px;
+      font-weight: 800;
+      color: var(--brown);
+    }
+
+    .nav-links a:hover {
+      color: var(--orange);
+    }
+
+    .play-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-height: 50px;
+      padding: 0 24px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, var(--orange), #f25b08);
+      color: #ffffff;
+      font-weight: 900;
+      font-size: 15px;
+      box-shadow: 0 14px 30px rgba(249, 115, 22, 0.3);
+      transition: transform 0.2s ease, filter 0.2s ease;
+      white-space: nowrap;
+    }
+
+    .play-button:hover {
+      transform: translateY(-2px);
+      filter: brightness(1.04);
+    }
+
+    .play-button::before {
+      content: "▶";
+      font-size: 14px;
+    }
+
+    .hero {
+      position: relative;
+      padding: 24px 0 18px;
+    }
+
+    .hero-inner {
+      width: min(1320px, calc(100% - 56px));
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.02fr 0.78fr 0.92fr;
+      gap: 34px;
+      align-items: center;
+      min-height: 500px;
+    }
+
+    .hero-copy {
+      padding-left: 24px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 16px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: rgba(249, 115, 22, 0.1);
+      color: var(--orange);
+      font-size: 13px;
+      font-weight: 900;
+    }
+
+    .hero-copy h1 {
+      margin: 0;
+      max-width: 590px;
+      font-size: clamp(46px, 5.1vw, 78px);
+      line-height: 0.98;
+      letter-spacing: -0.075em;
+      font-weight: 950;
+      color: var(--brown);
+    }
+
+    .hero-copy .highlight {
+      color: var(--orange);
+      font-style: italic;
+      position: relative;
+      display: inline-block;
+    }
+
+    .hero-copy .highlight::after {
+      content: "";
+      position: absolute;
+      left: 4%;
+      right: -5%;
+      bottom: -7px;
+      height: 12px;
+      border-bottom: 4px solid var(--orange);
+      border-radius: 50%;
+      transform: rotate(-5deg);
+      opacity: 0.75;
+    }
+
+    .hero-copy p {
+      max-width: 520px;
+      margin: 26px 0 26px;
+      color: var(--brown-2);
+      font-size: clamp(18px, 1.7vw, 23px);
+      line-height: 1.42;
+      font-weight: 650;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 22px;
+      margin-bottom: 24px;
+    }
+
+    .text-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      color: var(--orange);
+      font-weight: 900;
+      font-size: 15px;
+    }
+
+    .text-link::after {
+      content: "›";
+      font-size: 22px;
+      line-height: 0;
+    }
+
+    .rating-row {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .avatar-stack {
+      display: flex;
+      align-items: center;
+    }
+
+    .avatar-stack img {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      border: 3px solid #fff9ee;
+      object-fit: cover;
+      margin-left: -9px;
+      box-shadow: 0 8px 18px rgba(88, 49, 21, 0.16);
+    }
+
+    .avatar-stack img:first-child {
+      margin-left: 0;
+    }
+
+    .stars {
+      color: #f7a400;
+      letter-spacing: 2px;
+      font-size: 17px;
+      font-weight: 900;
+    }
+
+    .rating-copy {
+      color: var(--brown-2);
+      font-size: 12px;
+      font-weight: 750;
+    }
+
+    .phone-stage {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      z-index: 4;
+    }
+
+    .phone {
+      width: min(310px, 100%);
+      border: 9px solid #151515;
+      border-radius: 44px;
+      background: #fff7ed;
+      box-shadow:
+        0 34px 62px rgba(45, 24, 12, 0.28),
+        inset 0 0 0 1px rgba(255,255,255,0.1);
+      overflow: hidden;
+    }
+
+    .phone-image {
+      width: 100%;
+      height: auto;
+    }
+
+    .photo-collage {
+      position: relative;
+      min-height: 460px;
+    }
+
+    .photo-card {
+      position: absolute;
+      overflow: hidden;
+      border: 8px solid rgba(255, 255, 255, 0.9);
+      background: #ffffff;
+      box-shadow: var(--shadow);
+    }
+
+    .photo-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .photo-card.cat {
+      top: 0;
+      right: 0;
+      width: 390px;
+      height: 300px;
+      border-radius: 34px;
+    }
+
+    .photo-card.dog {
+      top: 236px;
+      left: 6px;
+      width: 390px;
+      height: 230px;
+      border-radius: 30px;
+    }
+
+    .hand-note {
+      position: absolute;
+      right: 6px;
+      bottom: 12px;
+      width: 140px;
+      color: var(--orange);
+      font-family: "Comic Sans MS", "Segoe Print", cursive;
+      font-weight: 700;
+      text-align: center;
+      transform: rotate(-6deg);
+      line-height: 1.25;
+    }
+
+    .hand-note .heart {
+      display: block;
+      font-size: 38px;
+      line-height: 1;
+    }
+
+    .feature-strip {
+      margin-top: 2px;
+      padding: 22px 26px;
+      border-radius: var(--radius-lg);
+      background: rgba(255,255,255,0.88);
+      box-shadow: var(--soft-shadow);
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 0;
+      position: relative;
+      z-index: 6;
+    }
+
+    .feature {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 14px;
+      align-items: center;
+      padding: 0 24px;
+      border-right: 1px solid var(--line);
+    }
+
+    .feature:first-child {
+      padding-left: 8px;
+    }
+
+    .feature:last-child {
+      border-right: 0;
+      padding-right: 8px;
+    }
+
+    .feature-icon {
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      color: var(--orange);
+      font-size: 28px;
+      font-weight: 950;
+      background: linear-gradient(135deg, #fff3df, #ffe1b6);
+      box-shadow: 0 10px 22px rgba(249, 115, 22, 0.13);
+    }
+
+    .feature h3 {
+      margin: 0;
+      font-size: 15px;
+      letter-spacing: -0.02em;
+      font-weight: 950;
+    }
+
+    .feature p {
+      margin: 4px 0 0;
+      color: var(--brown-2);
+      font-size: 12px;
+      line-height: 1.35;
+      font-weight: 650;
+    }
+
+    .content-grid {
+      display: grid;
+      grid-template-columns: 1.22fr 0.86fr 1fr;
+      gap: 12px;
+      padding: 24px 0 16px;
+    }
+
+    .panel {
+      border-radius: var(--radius-lg);
+      background: rgba(255, 255, 255, 0.88);
+      box-shadow: var(--soft-shadow);
+      border: 1px solid rgba(255,255,255,0.7);
+    }
+
+    .screens-panel,
+    .pro-panel,
+    .reviews-panel {
+      padding: 22px;
+    }
+
+    .panel-title {
+      margin: 0 0 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      font-size: 19px;
+      letter-spacing: -0.035em;
+      font-weight: 950;
+    }
+
+    .panel-title a {
+      color: var(--orange);
+      font-size: 12px;
+      letter-spacing: 0;
+      font-weight: 900;
+    }
+
+    .screens-row {
+      display: grid;
+      grid-template-columns: 34px repeat(4, 1fr) 34px;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .arrow {
+      width: 36px;
+      height: 36px;
+      border: 0;
+      border-radius: 50%;
+      background: #ffffff;
+      color: var(--orange);
+      font-size: 26px;
+      line-height: 1;
+      box-shadow: 0 10px 22px rgba(88, 49, 21, 0.14);
+      cursor: pointer;
+    }
+
+    .mini-screen {
+      border-radius: 18px;
+      border: 1px solid rgba(116,82,54,0.16);
+      background: #fff9ef;
+      overflow: hidden;
+      box-shadow: inset 0 0 0 2px rgba(255,255,255,0.8);
+    }
+
+    .mini-screen img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      object-position: top center;
+    }
+
+    .dots {
+      margin: 16px auto 0;
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    .dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: #e3d1bf;
+    }
+
+    .dot.active {
+      width: 22px;
+      border-radius: 999px;
+      background: var(--orange);
+    }
+
+    .compare {
+      width: 100%;
+      border-collapse: collapse;
+      overflow: hidden;
+      border-radius: 16px;
+      font-size: 13px;
+      background: #fff8ed;
+      box-shadow: inset 0 0 0 1px var(--line);
+    }
+
+    .compare th,
+    .compare td {
+      border: 1px solid rgba(116,82,54,0.14);
+      padding: 9px 12px;
+      text-align: left;
+      vertical-align: middle;
+      color: var(--brown-2);
+      font-weight: 720;
+    }
+
+    .compare th {
+      text-align: center;
+      color: var(--brown);
+      font-size: 16px;
+      font-weight: 950;
+      background: linear-gradient(180deg, #fffaf1, #fff0dc);
+    }
+
+    .compare th span {
+      display: block;
+      color: var(--orange);
+      font-size: 11px;
+      font-weight: 900;
+      margin-top: 2px;
+    }
+
+    .compare td:nth-child(2),
+    .compare td:nth-child(3) {
+      text-align: center;
+      white-space: nowrap;
+    }
+
+    .no {
+      color: #96918b;
+      font-weight: 950;
+    }
+
+    .yes {
+      color: var(--green);
+      font-weight: 950;
+    }
+
+    .price-row {
+      display: flex;
+      align-items: end;
+      justify-content: space-around;
+      margin-top: 12px;
+      color: var(--orange);
+      text-align: center;
+      font-weight: 950;
+    }
+
+    .price-row .free-price {
+      color: var(--brown);
+      font-size: 28px;
+    }
+
+    .price-row .pro-price {
+      font-size: 23px;
+      line-height: 1.05;
+    }
+
+    .price-row small {
+      display: block;
+      font-size: 12px;
+      color: var(--orange);
+    }
+
+    .reviews-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+
+    .reviews-head h2 {
+      margin: 0;
+      font-size: 19px;
+      letter-spacing: -0.035em;
+    }
+
+    .reviews-score {
+      font-size: 12px;
+      color: var(--brown-2);
+      font-weight: 850;
+      white-space: nowrap;
+    }
+
+    .review {
+      display: grid;
+      grid-template-columns: 64px 1fr;
+      gap: 14px;
+      padding: 12px;
+      margin-bottom: 10px;
+      border-radius: 16px;
+      background: #fffaf2;
+      border: 1px solid rgba(116,82,54,0.14);
+      box-shadow: 0 8px 18px rgba(88,49,21,0.06);
+    }
+
+    .review img {
+      width: 64px;
+      height: 64px;
+      border-radius: 18px;
+      object-fit: cover;
+    }
+
+    .review h3 {
+      margin: 0;
+      font-size: 13px;
+      font-weight: 950;
+    }
+
+    .review .stars {
+      font-size: 12px;
+      letter-spacing: 1px;
+      margin: 2px 0 4px;
+    }
+
+    .review p {
+      margin: 0;
+      color: var(--brown-2);
+      font-size: 12px;
+      line-height: 1.35;
+      font-weight: 650;
+    }
+
+    .review time {
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 750;
+    }
+
+    .read-more {
+      display: inline-flex;
+      margin-top: 8px;
+      color: var(--orange);
+      font-size: 13px;
+      font-weight: 950;
+    }
+
+    .seo-intro {
+      padding: 30px 0 10px;
+      text-align: center;
+    }
+
+    .seo-intro h2 {
+      max-width: 820px;
+      margin: 0 auto 14px;
+      font-size: clamp(32px, 4vw, 48px);
+      line-height: 1.05;
+      letter-spacing: -0.06em;
+      font-weight: 950;
+    }
+
+    .seo-intro p {
+      max-width: 880px;
+      margin: 0 auto;
+      color: var(--brown-2);
+      font-size: 18px;
+      line-height: 1.65;
+      font-weight: 650;
+    }
+
+    .faq {
+      padding: 34px 0 12px;
+    }
+
+    .faq h2 {
+      margin: 0 0 22px;
+      text-align: center;
+      font-size: clamp(30px, 4vw, 42px);
+      letter-spacing: -0.05em;
+      line-height: 1.1;
+      font-weight: 950;
+    }
+
+    .faq-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+
+    .faq article {
+      padding: 24px;
+      border-radius: var(--radius-lg);
+      background: rgba(255, 255, 255, 0.9);
+      box-shadow: var(--soft-shadow);
+    }
+
+    .faq h3 {
+      margin: 0 0 8px;
+      font-size: 19px;
+      font-weight: 950;
+    }
+
+    .faq p {
+      margin: 0;
+      color: var(--brown-2);
+      font-size: 15px;
+      line-height: 1.55;
+      font-weight: 650;
+    }
+
+    .bottom-cta {
+      position: relative;
+      margin: 26px auto 44px;
+      min-height: 168px;
+      padding: 32px 38px;
+      border-radius: var(--radius-lg);
+      background:
+        linear-gradient(90deg, rgba(255, 235, 197, 0.98), rgba(255, 215, 160, 0.78)),
+        #ffe0ae;
+      color: var(--brown);
+      display: grid;
+      grid-template-columns: 1.05fr 0.75fr 1.05fr;
+      gap: 22px;
+      align-items: center;
+      box-shadow: var(--soft-shadow);
+      overflow: hidden;
+    }
+
+    .bottom-cta h2 {
+      margin: 0;
+      font-size: clamp(26px, 3vw, 34px);
+      letter-spacing: -0.055em;
+      font-weight: 950;
+    }
+
+    .bottom-cta p {
+      margin: 8px 0 20px;
+      color: var(--brown-2);
+      font-size: 18px;
+      font-weight: 650;
+    }
+
+    .bottom-pets {
+      align-self: end;
+      justify-self: center;
+      max-height: 180px;
+      object-fit: contain;
+      filter: drop-shadow(0 18px 28px rgba(88, 49, 21, 0.13));
+    }
+
+    .benefit-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+      color: var(--brown-2);
+      font-size: 13px;
+      font-weight: 850;
+    }
+
+    .benefit {
+      display: grid;
+      grid-template-columns: 42px 1fr;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .benefit span {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      color: var(--orange);
+      background: #fff5e7;
+      border: 2px solid rgba(249, 115, 22, 0.35);
+      font-size: 19px;
+      font-weight: 950;
+    }
+
+    .legal-note {
+      width: min(var(--max), calc(100% - 56px));
+      margin: -20px auto 46px;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.55;
+      text-align: center;
+      font-weight: 650;
+    }
+
+    .footer {
+      padding: 28px 24px 38px;
+      background: #2b160c;
+      color: rgba(255,255,255,0.78);
+      text-align: center;
+      font-size: 14px;
+      font-weight: 650;
+    }
+
+    .footer a {
+      color: #ffffff;
+      margin: 0 10px;
+    }
+
+    @media (max-width: 1180px) {
+      .hero-inner {
+        grid-template-columns: 1fr 330px;
+      }
+
+      .photo-collage {
+        grid-column: 1 / -1;
+        min-height: 260px;
+      }
+
+      .photo-card.cat {
+        left: 0;
+        right: auto;
+        width: 48%;
+        height: 240px;
+      }
+
+      .photo-card.dog {
+        top: 42px;
+        left: auto;
+        right: 0;
+        width: 48%;
+        height: 210px;
+      }
+
+      .hand-note {
+        right: 44%;
+        bottom: 10px;
+      }
+
+      .feature-strip {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 18px;
+      }
+
+      .feature {
+        border-right: 0;
+        padding: 0;
+      }
+
+      .content-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .mini-screen img {
+        height: 330px;
+      }
+
+      .bottom-cta {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .bottom-pets {
+        order: 3;
+      }
+
+      .benefit-grid {
+        max-width: 560px;
+        margin: 0 auto;
+      }
+    }
+
+    @media (max-width: 900px) {
+      .nav-links {
+        display: none;
+      }
+
+      .hero-inner {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .hero-copy {
+        padding-left: 0;
+      }
+
+      .hero-copy p,
+      .hero-copy h1 {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .hero-actions,
+      .rating-row {
+        justify-content: center;
+      }
+
+      .phone {
+        width: min(320px, 88vw);
+      }
+
+      .screens-row {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .screens-row .arrow {
+        display: none;
+      }
+
+      .faq-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .section,
+      .nav,
+      .hero-inner,
+      .legal-note {
+        width: min(100% - 28px, var(--max));
+      }
+
+      .nav {
+        top: 10px;
+        border-radius: 22px;
+      }
+
+      .brand {
+        font-size: 22px;
+      }
+
+      .brand-mark {
+        width: 42px;
+        height: 42px;
+      }
+
+      .nav .play-button {
+        display: none;
+      }
+
+      .hero-copy h1 {
+        font-size: 45px;
+      }
+
+      .hero-actions {
+        gap: 14px;
+      }
+
+      .play-button {
+        width: 100%;
+      }
+
+      .rating-row {
+        align-items: flex-start;
+      }
+
+      .photo-collage {
+        display: none;
+      }
+
+      .feature-strip,
+      .screens-row,
+      .benefit-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .mini-screen img {
+        height: auto;
+      }
+
+      .compare {
+        font-size: 12px;
+      }
+
+      .compare th,
+      .compare td {
+        padding: 8px 7px;
+      }
+
+      .bottom-cta {
+        padding: 28px 22px;
+      }
+
+      .footer a {
+        display: inline-block;
+        margin: 6px 8px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="page">
+    <nav class="nav" aria-label="Main navigation">
+      <a href="/" class="brand" aria-label="PetCare Log home">
+        <img
+          class="brand-mark"
+          src="images/petcare/petcare-logo.webp"
+          alt=""
+          aria-hidden="true"
+          loading="eager"
+        />
+        <span>PetCare Log</span>
+      </a>
+
+      <div class="nav-links">
+        <a href="#why">Why PetCare Log</a>
+        <a href="#features">Features</a>
+        <a href="#screenshots">Screenshots</a>
+        <a href="#pro">Pro</a>
+      </div>
+
+      <a
+        class="play-button js-google-play-click"
+        href="https://play.google.com/store/apps/details?id=com.softiceinnovationslabs.petcarelogapp"
+        data-link-location="top_nav"
+        aria-label="Download PetCare Log on Google Play"
+      >
+        Download on Google Play
+      </a>
+    </nav>
+
+    <header class="hero">
+      <section class="hero-inner">
+        <div class="hero-copy">
+          <div class="eyebrow">🐾 Made for every pet parent</div>
+
+          <h1>Care for <span class="highlight">every</span> pet with calm, simple daily tools</h1>
+
+          <p>
+            Pet profiles, smart reminders, health history, and photo memories—everything
+            you need to keep your pets happy and healthy.
+          </p>
+
+          <div class="hero-actions">
+            <a
+              class="play-button js-google-play-click"
+              href="https://play.google.com/store/apps/details?id=com.softiceinnovationslabs.petcarelogapp"
+              data-link-location="hero"
+              aria-label="Download PetCare Log on Google Play"
+            >
+              Download on Google Play
+            </a>
+
+            <a
+              class="text-link js-nav-cta"
+              href="#features"
+              data-link-location="hero_explore_features"
+            >
+              Explore Features
+            </a>
+          </div>
+
+          <div class="rating-row" aria-label="Loved by pet parents">
+            <div class="avatar-stack" aria-hidden="true">
+              <img src="images/petcare/petcare-avatar-dog-1.webp" alt="" loading="eager" />
+              <img src="images/petcare/petcare-avatar-cat-1.webp" alt="" loading="eager" />
+              <img src="images/petcare/petcare-avatar-dog-2.webp" alt="" loading="eager" />
+            </div>
+            <div>
+              <div class="stars">★★★★★</div>
+              <div class="rating-copy">Loved by 20,000+ pet parents</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="phone-stage" aria-label="PetCare Log app preview">
+          <div class="phone">
+            <img
+              class="phone-image"
+              src="images/petcare/petcare-hero-phone.webp"
+              alt="PetCare Log app home screen showing pet profile, today's plan, reminders, and bottom navigation"
+              loading="eager"
+            />
+          </div>
+        </div>
+
+        <div class="photo-collage" aria-label="Happy pets and pet parent photos">
+          <div class="photo-card cat">
+            <img
+              src="images/petcare/petcare-hero-woman-cat.webp"
+              alt="A pet parent warmly holding a cat"
+              loading="eager"
+            />
+          </div>
+
+          <div class="photo-card dog">
+            <img
+              src="images/petcare/petcare-hero-golden-dog.webp"
+              alt="Happy golden retriever outside in warm sunlight"
+              loading="eager"
+            />
+          </div>
+
+          <div class="hand-note">
+            <span class="heart">♡</span>
+            Because every moment together matters
+          </div>
+        </div>
+      </section>
+    </header>
+
+    <section id="features" class="section feature-strip" aria-label="PetCare Log features">
+      <article class="feature">
+        <div class="feature-icon">🐾</div>
+        <div>
+          <h3>Multiple Pet Profiles</h3>
+          <p>Manage all your pets in one safe place.</p>
+        </div>
+      </article>
+
+      <article class="feature">
+        <div class="feature-icon">🔔</div>
+        <div>
+          <h3>Smart Reminders</h3>
+          <p>Never miss meals, meds, or vet visits.</p>
+        </div>
+      </article>
+
+      <article class="feature">
+        <div class="feature-icon">💓</div>
+        <div>
+          <h3>Health History</h3>
+          <p>Track symptoms, vet visits, and treatments.</p>
+        </div>
+      </article>
+
+      <article class="feature">
+        <div class="feature-icon">🖼</div>
+        <div>
+          <h3>Photo Memories</h3>
+          <p>Save precious moments that last forever.</p>
+        </div>
+      </article>
+
+      <article class="feature">
+        <div class="feature-icon">🛡</div>
+        <div>
+          <h3>Private & Secure</h3>
+          <p>Your pet’s data stays safe with you.</p>
+        </div>
+      </article>
+    </section>
+
+    <section id="why" class="section seo-intro">
+      <h2>A pet care app built for calm daily routines</h2>
+      <p>
+        PetCare Log helps pet parents organize daily pet care with pet profiles, feeding tracking,
+        medication reminders, vet visit history, daily checklist tools, health records, and photo memories.
+        Whether you care for a dog, cat, bunny, bird, or another beloved pet, PetCare Log keeps everything
+        in one simple place.
+      </p>
+    </section>
+
+    <section class="section content-grid">
+      <section id="screenshots" class="panel screens-panel js-observe-section" data-section-name="screenshots">
+        <h2 class="panel-title">
+          See PetCare Log in action
+          <a href="#screenshots" class="js-nav-cta" data-link-location="view_all_screenshots">View all screenshots ›</a>
+        </h2>
+
+        <div class="screens-row" aria-label="PetCare Log app screenshots">
+          <button class="arrow js-screenshot-arrow" type="button" aria-label="Previous screenshot">‹</button>
+
+          <div class="mini-screen">
+            <img
+              src="images/petcare/petcare-screen-pet-profiles.webp"
+              alt="PetCare Log pet profiles screen"
+              loading="lazy"
+            />
+          </div>
+
+          <div class="mini-screen">
+            <img
+              src="images/petcare/petcare-screen-reminders.webp"
+              alt="PetCare Log reminders screen"
+              loading="lazy"
+            />
+          </div>
+
+          <div class="mini-screen">
+            <img
+              src="images/petcare/petcare-screen-health-history.webp"
+              alt="PetCare Log health history screen"
+              loading="lazy"
+            />
+          </div>
+
+          <div class="mini-screen">
+            <img
+              src="images/petcare/petcare-screen-photo-memories.webp"
+              alt="PetCare Log photo memories screen"
+              loading="lazy"
+            />
+          </div>
+
+          <button class="arrow js-screenshot-arrow" type="button" aria-label="Next screenshot">›</button>
+        </div>
+
+        <div class="dots" aria-hidden="true">
+          <span class="dot active"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+        </div>
+      </section>
+
+      <section id="pro" class="panel pro-panel js-observe-section" data-section-name="pro">
+        <h2 class="panel-title">Free vs Pro</h2>
+
+        <table class="compare" aria-label="PetCare Log Free vs Pro comparison">
+          <thead>
+            <tr>
+              <th>Free <span>Always free</span></th>
+              <th>Pro <span>More love, more power</span></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Up to 1 pet profile</td>
+              <td><span class="yes">✓</span> Unlimited pet profiles</td>
+            </tr>
+            <tr>
+              <td>Basic reminders</td>
+              <td><span class="yes">✓</span> Advanced reminders</td>
+            </tr>
+            <tr>
+              <td>Basic health history</td>
+              <td><span class="yes">✓</span> Full health analytics</td>
+            </tr>
+            <tr>
+              <td>Limited photo memories</td>
+              <td><span class="yes">✓</span> Unlimited photos</td>
+            </tr>
+            <tr>
+              <td><span class="no">—</span> Data backup</td>
+              <td><span class="yes">✓</span> Cloud backup</td>
+            </tr>
+            <tr>
+              <td><span class="no">—</span> Export health reports</td>
+              <td><span class="yes">✓</span> Export to PDF</td>
+            </tr>
+            <tr>
+              <td><span class="no">—</span> Premium support</td>
+              <td><span class="yes">✓</span> Priority support</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="price-row">
+          <div>
+            <div class="free-price">$0</div>
+            <small>Forever</small>
+          </div>
+          <div>
+            <div class="pro-price">$4.99 / month</div>
+            <small>or $29.99 / year</small>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel reviews-panel js-observe-section" data-section-name="reviews">
+        <div class="reviews-head">
+          <h2>Loved by pet parents</h2>
+          <div class="reviews-score"><span class="stars">★★★★★</span> 4.8/5</div>
+        </div>
+
+        <article class="review">
+          <img src="images/petcare/petcare-review-jessica.webp" alt="Pet parent review avatar" loading="lazy" />
+          <div>
+            <h3>Jessica L.</h3>
+            <div class="stars">★★★★★</div>
+            <p>PetCare Log has made my life so much easier. The reminders and health history tracking help me take better care of my pup.</p>
+            <time>2 days ago</time>
+          </div>
+        </article>
+
+        <article class="review">
+          <img src="images/petcare/petcare-review-mike.webp" alt="Pet parent review avatar" loading="lazy" />
+          <div>
+            <h3>Mike R.</h3>
+            <div class="stars">★★★★★</div>
+            <p>Love how simple and beautiful the app is. I use it for my two cats and it keeps everything organized.</p>
+            <time>1 week ago</time>
+          </div>
+        </article>
+
+        <article class="review">
+          <img src="images/petcare/petcare-review-priya.webp" alt="Pet parent review avatar" loading="lazy" />
+          <div>
+            <h3>Priya S.</h3>
+            <div class="stars">★★★★★</div>
+            <p>The photo memories feature is my favorite. It’s like a diary of all our special moments.</p>
+            <time>2 weeks ago</time>
+          </div>
+        </article>
+
+        <a
+          class="read-more js-google-play-click"
+          href="https://play.google.com/store/apps/details?id=com.softiceinnovationslabs.petcarelogapp"
+          data-link-location="reviews_read_more"
+        >
+          Read more reviews on Google Play ›
+        </a>
+      </section>
+    </section>
+
+    <section class="section faq js-observe-section" data-section-name="faq">
+      <h2>PetCare Log FAQ</h2>
+
+      <div class="faq-grid">
+        <article>
+          <h3>What is PetCare Log?</h3>
+          <p>
+            PetCare Log is a pet care tracker app that helps pet parents organize profiles,
+            feeding logs, medication reminders, vet visits, health history, daily care tasks,
+            and photo memories.
+          </p>
+        </article>
+
+        <article>
+          <h3>Is PetCare Log only for dogs and cats?</h3>
+          <p>
+            No. PetCare Log is designed for every pet. You can use it for dogs, cats, rabbits,
+            birds, and other pets that need daily care, reminders, and health tracking.
+          </p>
+        </article>
+
+        <article>
+          <h3>Is PetCare Log free?</h3>
+          <p>
+            PetCare Log is free to start. PetCare Log Pro is optional and unlocks unlimited pets,
+            more photo memories, advanced reminders, backup, exports, and premium features.
+          </p>
+        </article>
+
+        <article>
+          <h3>Does PetCare Log help with medication reminders?</h3>
+          <p>
+            Yes. PetCare Log includes reminder tools for medication, feeding, vet visits, and daily
+            care routines so pet parents can stay organized.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section bottom-cta js-observe-section" data-section-name="bottom_cta">
+      <div>
+        <h2>Give your pets the care they deserve.</h2>
+        <p>Simple tools. Peace of mind. Happier pets.</p>
+
+        <a
+          class="play-button js-google-play-click"
+          href="https://play.google.com/store/apps/details?id=com.softiceinnovationslabs.petcarelogapp"
+          data-link-location="bottom_cta"
+          aria-label="Download PetCare Log on Google Play"
+        >
+          Download on Google Play
+        </a>
+      </div>
+
+      <img
+        class="bottom-pets"
+        src="images/petcare/petcare-hero-pets-bottom.webp"
+        alt="Happy dog and cat together"
+        loading="lazy"
+      />
+
+      <div class="benefit-grid" aria-label="PetCare Log benefits">
+        <div class="benefit"><span>♡</span><strong>Made for<br />Pet Parents</strong></div>
+        <div class="benefit"><span>☺</span><strong>Easy to Use<br />Every Day</strong></div>
+        <div class="benefit"><span>☁</span><strong>Offline Friendly<br />Works Anywhere</strong></div>
+        <div class="benefit"><span>♥</span><strong>Made with Love<br />for Pets</strong></div>
+      </div>
+    </section>
+
+    <p class="legal-note">
+      PetCare Log is a pet care organization app and does not provide veterinary diagnosis,
+      veterinary treatment, or emergency care. For medical questions about your pet, contact
+      a licensed veterinarian.
+    </p>
+  </main>
+
+  <footer class="footer">
+    <p>
+      © 2026 Softice Innovations Labs LLC ·
+      <a href="petcare-log-privacy-policy.html">Privacy Policy</a>
+      <a href="petcare-log-terms.html">Terms</a>
+      <a href="mailto:support@softiceinnovationslabs.com">Support</a>
+    </p>
+  </footer>
+
+  <script>
+    (function () {
+      const hasGtag = typeof window.gtag === "function";
+
+      function sendEvent(eventName, params) {
+        if (!hasGtag) {
+          return;
+        }
+
+        window.gtag("event", eventName, params);
+      }
+
+      sendEvent("petcare_page_view", {
+        app_name: "PetCare Log",
+        page_name: "petcare_landing_page",
+        page_location: window.location.href
+      });
+
+      document.querySelectorAll(".js-google-play-click").forEach(function (link) {
+        link.addEventListener("click", function () {
+          sendEvent("google_play_click", {
+            app_name: "PetCare Log",
+            page_name: "petcare_landing_page",
+            link_location: link.dataset.linkLocation || "unknown",
+            destination_url: link.href
+          });
+
+          sendEvent("petcare_google_play_click", {
+            app_name: "PetCare Log",
+            link_location: link.dataset.linkLocation || "unknown",
+            destination_url: link.href
+          });
+        });
+      });
+
+      document.querySelectorAll(".nav-links a, .js-nav-cta").forEach(function (link) {
+        link.addEventListener("click", function () {
+          sendEvent("nav_click", {
+            app_name: "PetCare Log",
+            page_name: "petcare_landing_page",
+            link_text: link.textContent.trim(),
+            link_href: link.getAttribute("href"),
+            link_location: link.dataset.linkLocation || "nav"
+          });
+        });
+      });
+
+      document.querySelectorAll(".js-screenshot-arrow").forEach(function (button) {
+        button.addEventListener("click", function () {
+          sendEvent("screenshot_arrow_click", {
+            app_name: "PetCare Log",
+            page_name: "petcare_landing_page",
+            arrow_label: button.getAttribute("aria-label") || "unknown"
+          });
+
+          sendEvent("petcare_screenshot_interaction", {
+            app_name: "PetCare Log",
+            arrow_label: button.getAttribute("aria-label") || "unknown"
+          });
+        });
+      });
+
+      const sectionMap = {
+        screenshots: "petcare_screenshots_section_view",
+        pro: "petcare_pro_section_view",
+        reviews: "petcare_reviews_section_view",
+        faq: "petcare_faq_section_view",
+        bottom_cta: "petcare_bottom_cta_view"
+      };
+
+      const sectionViewsSent = {};
+
+      if ("IntersectionObserver" in window) {
+        const observer = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (!entry.isIntersecting) {
+              return;
+            }
+
+            const sectionName = entry.target.dataset.sectionName || "unknown";
+            const eventName = sectionMap[sectionName] || "petcare_section_view";
+
+            if (sectionViewsSent[sectionName]) {
+              return;
+            }
+
+            sectionViewsSent[sectionName] = true;
+
+            sendEvent(eventName, {
+              app_name: "PetCare Log",
+              page_name: "petcare_landing_page",
+              section_name: sectionName
+            });
+          });
+        }, {
+          threshold: 0.45
+        });
+
+        document.querySelectorAll(".js-observe-section").forEach(function (section) {
+          observer.observe(section);
+        });
+      }
+
+      const scrollDepthsTracked = {
+        25: false,
+        50: false,
+        75: false,
+        90: false
+      };
+
+      function trackScrollDepth() {
+        const scrollTop = window.scrollY || document.documentElement.scrollTop;
+        const documentHeight =
+          document.documentElement.scrollHeight - window.innerHeight;
+
+        if (documentHeight <= 0) {
+          return;
+        }
+
+        const scrollPercent = Math.round((scrollTop / documentHeight) * 100);
+
+        Object.keys(scrollDepthsTracked).forEach(function (depth) {
+          const numericDepth = Number(depth);
+
+          if (!scrollDepthsTracked[depth] && scrollPercent >= numericDepth) {
+            scrollDepthsTracked[depth] = true;
+
+            sendEvent("scroll_depth", {
+              app_name: "PetCare Log",
+              page_name: "petcare_landing_page",
+              percent_scrolled: numericDepth
+            });
+
+            sendEvent("petcare_scroll_" + numericDepth, {
+              app_name: "PetCare Log",
+              page_name: "petcare_landing_page",
+              percent_scrolled: numericDepth
+            });
+          }
+        });
+      }
+
+      window.addEventListener("scroll", trackScrollDepth, {
+        passive: true
+      });
+
+      const engagedTimes = [
+        {
+          seconds: 15,
+          sent: false
+        },
+        {
+          seconds: 30,
+          sent: false
+        },
+        {
+          seconds: 60,
+          sent: false
+        },
+        {
+          seconds: 120,
+          sent: false
+        }
+      ];
+
+      engagedTimes.forEach(function (item) {
+        window.setTimeout(function () {
+          if (!item.sent) {
+            item.sent = true;
+
+            sendEvent("engaged_time", {
+              app_name: "PetCare Log",
+              page_name: "petcare_landing_page",
+              seconds: item.seconds
+            });
+
+            sendEvent("petcare_engaged_" + item.seconds + "s", {
+              app_name: "PetCare Log",
+              page_name: "petcare_landing_page",
+              seconds: item.seconds
+            });
+          }
+        }, item.seconds * 1000);
+      });
+    })();
+  </script>
+</body>
+</html>
