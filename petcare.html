@@ -499,27 +499,27 @@
       font-weight: 900;
     }
 
-    .screens-row {
+    .screens-carousel {
       display: grid;
-      grid-template-columns: 34px repeat(4, 1fr) 34px;
-      gap: 10px;
+      grid-template-columns: 40px 1fr 40px;
+      gap: 14px;
       align-items: center;
     }
 
-    .arrow {
-      width: 36px;
-      height: 36px;
-      border: 0;
-      border-radius: 50%;
-      background: #ffffff;
-      color: var(--orange);
-      font-size: 26px;
-      line-height: 1;
-      box-shadow: 0 10px 22px rgba(88, 49, 21, 0.14);
-      cursor: pointer;
+    .screens-viewport {
+      overflow: hidden;
+      width: 100%;
+    }
+
+    .screens-track {
+      display: flex;
+      gap: 14px;
+      transition: transform 0.35s ease;
+      will-change: transform;
     }
 
     .mini-screen {
+      flex: 0 0 calc((100% - 42px) / 4);
       border-radius: 18px;
       border: 1px solid rgba(116,82,54,0.16);
       background: #fff9ef;
@@ -535,6 +535,30 @@
       object-position: top center;
     }
 
+    .arrow {
+      width: 40px;
+      height: 40px;
+      border: 0;
+      border-radius: 50%;
+      background: #ffffff;
+      color: var(--orange);
+      font-size: 28px;
+      line-height: 1;
+      box-shadow: 0 10px 22px rgba(88, 49, 21, 0.14);
+      cursor: pointer;
+      transition: transform 0.2s ease, opacity 0.2s ease;
+    }
+
+    .arrow:hover {
+      transform: translateY(-1px);
+    }
+
+    .arrow:disabled {
+      opacity: 0.35;
+      cursor: default;
+      transform: none;
+    }
+
     .dots {
       margin: 16px auto 0;
       display: flex;
@@ -545,8 +569,11 @@
     .dot {
       width: 9px;
       height: 9px;
+      border: 0;
+      padding: 0;
       border-radius: 50%;
       background: #e3d1bf;
+      cursor: pointer;
     }
 
     .dot.active {
@@ -896,12 +923,17 @@
         height: 9%;
       }
 
-      .screens-row {
-        grid-template-columns: repeat(2, 1fr);
+      .screens-carousel {
+        grid-template-columns: 36px 1fr 36px;
+        gap: 10px;
       }
 
-      .screens-row .arrow {
-        display: none;
+      .mini-screen {
+        flex-basis: calc((100% - 14px) / 2);
+      }
+
+      .mini-screen img {
+        height: 330px;
       }
 
       .faq-grid {
@@ -954,10 +986,18 @@
       }
 
       .feature-strip,
-      .screens-row,
       .benefit-grid,
       .keyword-grid {
         grid-template-columns: 1fr;
+      }
+
+      .screens-carousel {
+        grid-template-columns: 34px 1fr 34px;
+        gap: 8px;
+      }
+
+      .mini-screen {
+        flex-basis: 100%;
       }
 
       .mini-screen img {
@@ -1127,50 +1167,77 @@
           <a href="#screenshots" class="js-nav-cta" data-link-location="view_all_screenshots">View all screenshots ›</a>
         </h2>
 
-        <div class="screens-row" aria-label="PetCare Log app screenshots">
-          <button class="arrow js-screenshot-arrow" type="button" aria-label="Previous screenshot">‹</button>
+        <div class="screens-carousel" aria-label="PetCare Log app screenshots carousel">
+          <button class="arrow js-screenshot-arrow js-carousel-prev" type="button" aria-label="Previous screenshot">‹</button>
 
-          <div class="mini-screen js-screenshot-card" data-screen-name="pet_profiles">
-            <img
-              src="/images/petcare/petcare-screen-pet-profiles.webp"
-              alt="PetCare Log pet profiles screen for dogs, cats, birds, bunnies, and every pet"
-              loading="lazy"
-            />
+          <div class="screens-viewport">
+            <div class="screens-track">
+              <div class="mini-screen js-screenshot-card" data-screen-name="home">
+                <img
+                  src="/images/petcare/petcare-hero-phone.webp"
+                  alt="PetCare Log home dashboard screen"
+                  loading="lazy"
+                />
+              </div>
+
+              <div class="mini-screen js-screenshot-card" data-screen-name="reminders">
+                <img
+                  src="/images/petcare/petcare-screen-reminders.webp"
+                  alt="PetCare Log smart pet reminders screen for feeding, medication, vet visits, and daily care"
+                  loading="lazy"
+                />
+              </div>
+
+              <div class="mini-screen js-screenshot-card" data-screen-name="health_history">
+                <img
+                  src="/images/petcare/petcare-screen-health-history.webp"
+                  alt="PetCare Log pet health history screen for vet visits, symptoms, medication, and health records"
+                  loading="lazy"
+                />
+              </div>
+
+              <div class="mini-screen js-screenshot-card" data-screen-name="photo_memories">
+                <img
+                  src="/images/petcare/petcare-screen-photo-memories.webp"
+                  alt="PetCare Log photo memories screen for saving pet photos and special moments"
+                  loading="lazy"
+                />
+              </div>
+
+              <div class="mini-screen js-screenshot-card" data-screen-name="pet_profiles">
+                <img
+                  src="/images/petcare/petcare-screen-pet-profiles.webp"
+                  alt="PetCare Log pet profiles screen for dogs, cats, birds, bunnies, and every pet"
+                  loading="lazy"
+                />
+              </div>
+
+              <div class="mini-screen js-screenshot-card" data-screen-name="feeding">
+                <img
+                  src="/images/petcare/petcare-screen-feeding.webp"
+                  alt="PetCare Log feeding tracker screen"
+                  loading="lazy"
+                />
+              </div>
+
+              <div class="mini-screen js-screenshot-card" data-screen-name="vet_visits">
+                <img
+                  src="/images/petcare/petcare-screen-vet-visits.webp"
+                  alt="PetCare Log vet visit log screen"
+                  loading="lazy"
+                />
+              </div>
+            </div>
           </div>
 
-          <div class="mini-screen js-screenshot-card" data-screen-name="reminders">
-            <img
-              src="/images/petcare/petcare-screen-reminders.webp"
-              alt="PetCare Log smart pet reminders screen for feeding, medication, vet visits, and daily care"
-              loading="lazy"
-            />
-          </div>
-
-          <div class="mini-screen js-screenshot-card" data-screen-name="health_history">
-            <img
-              src="/images/petcare/petcare-screen-health-history.webp"
-              alt="PetCare Log pet health history screen for vet visits, symptoms, medication, and health records"
-              loading="lazy"
-            />
-          </div>
-
-          <div class="mini-screen js-screenshot-card" data-screen-name="photo_memories">
-            <img
-              src="/images/petcare/petcare-screen-photo-memories.webp"
-              alt="PetCare Log photo memories screen for saving pet photos and special moments"
-              loading="lazy"
-            />
-          </div>
-
-          <button class="arrow js-screenshot-arrow" type="button" aria-label="Next screenshot">›</button>
+          <button class="arrow js-screenshot-arrow js-carousel-next" type="button" aria-label="Next screenshot">›</button>
         </div>
 
-        <div class="dots" aria-hidden="true">
-          <span class="dot active"></span>
-          <span class="dot"></span>
-          <span class="dot"></span>
-          <span class="dot"></span>
-          <span class="dot"></span>
+        <div class="dots js-carousel-dots" aria-label="Screenshot carousel pagination">
+          <button class="dot active" type="button" aria-label="Go to screenshots group 1"></button>
+          <button class="dot" type="button" aria-label="Go to screenshots group 2"></button>
+          <button class="dot" type="button" aria-label="Go to screenshots group 3"></button>
+          <button class="dot" type="button" aria-label="Go to screenshots group 4"></button>
         </div>
       </section>
 
@@ -1461,6 +1528,114 @@
           });
         });
       });
+
+      const carouselTrack = document.querySelector(".screens-track");
+      const carouselCards = Array.from(document.querySelectorAll(".screens-track .mini-screen"));
+      const carouselPrev = document.querySelector(".js-carousel-prev");
+      const carouselNext = document.querySelector(".js-carousel-next");
+      const carouselDots = Array.from(document.querySelectorAll(".js-carousel-dots .dot"));
+
+      let carouselIndex = 0;
+      let lastCarouselViewSent = "";
+
+      function getCardsPerView() {
+        if (window.innerWidth <= 640) {
+          return 1;
+        }
+
+        if (window.innerWidth <= 900) {
+          return 2;
+        }
+
+        return 4;
+      }
+
+      function getMaxCarouselIndex() {
+        const cardsPerView = getCardsPerView();
+        return Math.max(0, carouselCards.length - cardsPerView);
+      }
+
+      function updateCarousel() {
+        if (!carouselTrack || carouselCards.length === 0) {
+          return;
+        }
+
+        const maxIndex = getMaxCarouselIndex();
+
+        if (carouselIndex > maxIndex) {
+          carouselIndex = maxIndex;
+        }
+
+        if (carouselIndex < 0) {
+          carouselIndex = 0;
+        }
+
+        const card = carouselCards[0];
+        const cardWidth = card.getBoundingClientRect().width;
+        const gap = parseFloat(window.getComputedStyle(carouselTrack).gap) || 0;
+        const offset = carouselIndex * (cardWidth + gap);
+
+        carouselTrack.style.transform = "translateX(-" + offset + "px)";
+
+        if (carouselPrev) {
+          carouselPrev.disabled = carouselIndex === 0;
+        }
+
+        if (carouselNext) {
+          carouselNext.disabled = carouselIndex >= maxIndex;
+        }
+
+        const cardsPerView = getCardsPerView();
+        const activeDotIndex = Math.floor(carouselIndex / cardsPerView);
+
+        carouselDots.forEach(function (dot, index) {
+          dot.classList.toggle("active", index === activeDotIndex);
+        });
+
+        const eventKey = carouselIndex + "_" + cardsPerView;
+
+        if (eventKey !== lastCarouselViewSent) {
+          lastCarouselViewSent = eventKey;
+
+          sendEvent("petcare_screenshot_carousel_view", {
+            app_name: "PetCare Log",
+            page_name: "petcare_landing_page",
+            carousel_index: carouselIndex,
+            cards_per_view: cardsPerView
+          });
+        }
+      }
+
+      if (carouselPrev) {
+        carouselPrev.addEventListener("click", function () {
+          carouselIndex -= getCardsPerView();
+          updateCarousel();
+        });
+      }
+
+      if (carouselNext) {
+        carouselNext.addEventListener("click", function () {
+          carouselIndex += getCardsPerView();
+          updateCarousel();
+        });
+      }
+
+      carouselDots.forEach(function (dot, index) {
+        dot.addEventListener("click", function () {
+          carouselIndex = index * getCardsPerView();
+          updateCarousel();
+
+          sendEvent("petcare_screenshot_dot_click", {
+            app_name: "PetCare Log",
+            page_name: "petcare_landing_page",
+            dot_index: index
+          });
+        });
+      });
+
+      window.addEventListener("resize", updateCarousel);
+
+      updateCarousel();
 
       document.querySelectorAll(".js-footer-link").forEach(function (link) {
         link.addEventListener("click", function () {
