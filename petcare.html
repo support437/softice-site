@@ -17,8 +17,16 @@
   />
 
   <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#f97316" />
 
   <link rel="canonical" href="https://softiceinnovationslabs.com/petcare/" />
+
+  <link
+    rel="preload"
+    as="image"
+    href="/images/petcare/petcare-hero-main.webp"
+    fetchpriority="high"
+  />
 
   <meta property="og:title" content="PetCare Log: Pet Care Tracker, Reminders & Health History App" />
   <meta
@@ -36,8 +44,6 @@
     content="Pet profiles, smart reminders, health history, photo memories, and daily care tools for every pet."
   />
   <meta name="twitter:image" content="https://softiceinnovationslabs.com/images/petcare/petcare-og.webp" />
-
-  <meta name="theme-color" content="#f97316" />
 
   <!-- Google Analytics 4 -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-CE1N5QBRTE"></script>
@@ -80,6 +86,47 @@
       "availability": "https://schema.org/InStock"
     },
     "inLanguage": "en-US"
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is PetCare Log?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "PetCare Log is a pet care tracker app that helps pet parents organize profiles, feeding logs, medication reminders, vet visits, health history, daily care tasks, and photo memories."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is PetCare Log only for dogs and cats?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. PetCare Log is designed for every pet. You can use it for dogs, cats, rabbits, birds, and other pets that need daily care, reminders, and health tracking."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is PetCare Log free?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "PetCare Log is free to start. PetCare Log Pro is optional and unlocks unlimited pets, more photo memories, advanced reminders, backup, exports, and premium features."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does PetCare Log help with medication reminders?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. PetCare Log includes reminder tools for medication, feeding, vet visits, and daily care routines so pet parents can stay organized."
+        }
+      }
+    ]
   }
   </script>
 
@@ -223,213 +270,44 @@
       font-size: 14px;
     }
 
-    .hero {
+    /* HERO IMAGE VERSION */
+    .hero-image-section {
       position: relative;
       padding: 24px 0 18px;
     }
 
-    .hero-inner {
-      width: min(1320px, calc(100% - 56px));
+    .hero-main-wrap {
+      position: relative;
+      width: min(var(--max), calc(100% - 56px));
       margin: 0 auto;
-      display: grid;
-      grid-template-columns: 1.02fr 0.78fr 0.92fr;
-      gap: 34px;
-      align-items: center;
-      min-height: 500px;
-    }
-
-    .hero-copy {
-      padding-left: 24px;
-    }
-
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      margin-bottom: 16px;
-      padding: 8px 14px;
-      border-radius: 999px;
-      background: rgba(249, 115, 22, 0.1);
-      color: var(--orange);
-      font-size: 13px;
-      font-weight: 900;
-    }
-
-    .hero-copy h1 {
-      margin: 0;
-      max-width: 590px;
-      font-size: clamp(46px, 5.1vw, 78px);
-      line-height: 0.98;
-      letter-spacing: -0.075em;
-      font-weight: 950;
-      color: var(--brown);
-    }
-
-    .hero-copy .highlight {
-      color: var(--orange);
-      font-style: italic;
-      position: relative;
-      display: inline-block;
-    }
-
-    .hero-copy .highlight::after {
-      content: "";
-      position: absolute;
-      left: 4%;
-      right: -5%;
-      bottom: -7px;
-      height: 12px;
-      border-bottom: 4px solid var(--orange);
-      border-radius: 50%;
-      transform: rotate(-5deg);
-      opacity: 0.75;
-    }
-
-    .hero-copy p {
-      max-width: 520px;
-      margin: 26px 0 26px;
-      color: var(--brown-2);
-      font-size: clamp(18px, 1.7vw, 23px);
-      line-height: 1.42;
-      font-weight: 650;
-    }
-
-    .hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 22px;
-      margin-bottom: 24px;
-    }
-
-    .text-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 9px;
-      color: var(--orange);
-      font-weight: 900;
-      font-size: 15px;
-    }
-
-    .text-link::after {
-      content: "›";
-      font-size: 22px;
-      line-height: 0;
-    }
-
-    .rating-row {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-    }
-
-    .avatar-stack {
-      display: flex;
-      align-items: center;
-    }
-
-    .avatar-stack img {
-      width: 38px;
-      height: 38px;
-      border-radius: 50%;
-      border: 3px solid #fff9ee;
-      object-fit: cover;
-      margin-left: -9px;
-      box-shadow: 0 8px 18px rgba(88, 49, 21, 0.16);
-    }
-
-    .avatar-stack img:first-child {
-      margin-left: 0;
-    }
-
-    .stars {
-      color: #f7a400;
-      letter-spacing: 2px;
-      font-size: 17px;
-      font-weight: 900;
-    }
-
-    .rating-copy {
-      color: var(--brown-2);
-      font-size: 12px;
-      font-weight: 750;
-    }
-
-    .phone-stage {
-      position: relative;
-      display: flex;
-      justify-content: center;
-      z-index: 4;
-    }
-
-    .phone {
-      width: min(310px, 100%);
-      border: 9px solid #151515;
-      border-radius: 44px;
-      background: #fff7ed;
-      box-shadow:
-        0 34px 62px rgba(45, 24, 12, 0.28),
-        inset 0 0 0 1px rgba(255,255,255,0.1);
+      border-radius: 34px;
       overflow: hidden;
+      background: #fff7eb;
+      box-shadow: 0 28px 70px rgba(88, 49, 21, 0.16);
     }
 
-    .phone-image {
+    .hero-main-image {
       width: 100%;
       height: auto;
-    }
-
-    .photo-collage {
-      position: relative;
-      min-height: 460px;
-    }
-
-    .photo-card {
-      position: absolute;
-      overflow: hidden;
-      border: 8px solid rgba(255, 255, 255, 0.9);
-      background: #ffffff;
-      box-shadow: var(--shadow);
-    }
-
-    .photo-card img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .photo-card.cat {
-      top: 0;
-      right: 0;
-      width: 390px;
-      height: 300px;
-      border-radius: 34px;
-    }
-
-    .photo-card.dog {
-      top: 236px;
-      left: 6px;
-      width: 390px;
-      height: 230px;
-      border-radius: 30px;
-    }
-
-    .hand-note {
-      position: absolute;
-      right: 6px;
-      bottom: 12px;
-      width: 140px;
-      color: var(--orange);
-      font-family: "Comic Sans MS", "Segoe Print", cursive;
-      font-weight: 700;
-      text-align: center;
-      transform: rotate(-6deg);
-      line-height: 1.25;
-    }
-
-    .hand-note .heart {
       display: block;
-      font-size: 38px;
-      line-height: 1;
+    }
+
+    .hero-main-click-area {
+      position: absolute;
+      left: 3.4%;
+      bottom: 5.5%;
+      width: 19.4%;
+      height: 8.5%;
+      border-radius: 16px;
+      z-index: 5;
+    }
+
+    .hero-main-click-area:hover {
+      background: rgba(255, 255, 255, 0.06);
+    }
+
+    .mobile-hero-cta {
+      display: none;
     }
 
     .feature-strip {
@@ -620,12 +498,6 @@
       margin-top: 2px;
     }
 
-    .compare td:nth-child(2),
-    .compare td:nth-child(3) {
-      text-align: center;
-      white-space: nowrap;
-    }
-
     .no {
       color: #96918b;
       font-weight: 950;
@@ -681,6 +553,13 @@
       color: var(--brown-2);
       font-weight: 850;
       white-space: nowrap;
+    }
+
+    .stars {
+      color: #f7a400;
+      letter-spacing: 2px;
+      font-size: 17px;
+      font-weight: 900;
     }
 
     .review {
@@ -741,10 +620,10 @@
       text-align: center;
     }
 
-    .seo-intro h2 {
-      max-width: 820px;
+    .seo-intro h1 {
+      max-width: 920px;
       margin: 0 auto 14px;
-      font-size: clamp(32px, 4vw, 48px);
+      font-size: clamp(34px, 4vw, 52px);
       line-height: 1.05;
       letter-spacing: -0.06em;
       font-weight: 950;
@@ -893,35 +772,6 @@
     }
 
     @media (max-width: 1180px) {
-      .hero-inner {
-        grid-template-columns: 1fr 330px;
-      }
-
-      .photo-collage {
-        grid-column: 1 / -1;
-        min-height: 260px;
-      }
-
-      .photo-card.cat {
-        left: 0;
-        right: auto;
-        width: 48%;
-        height: 240px;
-      }
-
-      .photo-card.dog {
-        top: 42px;
-        left: auto;
-        right: 0;
-        width: 48%;
-        height: 210px;
-      }
-
-      .hand-note {
-        right: 44%;
-        bottom: 10px;
-      }
-
       .feature-strip {
         grid-template-columns: repeat(2, 1fr);
         gap: 18px;
@@ -960,28 +810,16 @@
         display: none;
       }
 
-      .hero-inner {
-        grid-template-columns: 1fr;
-        text-align: center;
+      .hero-main-wrap {
+        width: min(100% - 28px, var(--max));
+        border-radius: 26px;
       }
 
-      .hero-copy {
-        padding-left: 0;
-      }
-
-      .hero-copy p,
-      .hero-copy h1 {
-        margin-left: auto;
-        margin-right: auto;
-      }
-
-      .hero-actions,
-      .rating-row {
-        justify-content: center;
-      }
-
-      .phone {
-        width: min(320px, 88vw);
+      .hero-main-click-area {
+        left: 3.5%;
+        bottom: 5.4%;
+        width: 28%;
+        height: 9%;
       }
 
       .screens-row {
@@ -1000,7 +838,6 @@
     @media (max-width: 640px) {
       .section,
       .nav,
-      .hero-inner,
       .legal-note {
         width: min(100% - 28px, var(--max));
       }
@@ -1023,24 +860,23 @@
         display: none;
       }
 
-      .hero-copy h1 {
-        font-size: 45px;
+      .hero-image-section {
+        padding-top: 14px;
       }
 
-      .hero-actions {
-        gap: 14px;
+      .hero-main-wrap {
+        width: min(100% - 18px, var(--max));
+        border-radius: 22px;
       }
 
-      .play-button {
-        width: 100%;
-      }
-
-      .rating-row {
-        align-items: flex-start;
-      }
-
-      .photo-collage {
+      .hero-main-click-area {
         display: none;
+      }
+
+      .mobile-hero-cta {
+        display: flex;
+        width: min(100% - 28px, 420px);
+        margin: 16px auto 0;
       }
 
       .feature-strip,
@@ -1105,84 +941,34 @@
       </a>
     </nav>
 
-    <header class="hero">
-      <section class="hero-inner">
-        <div class="hero-copy">
-          <div class="eyebrow">🐾 Made for every pet parent</div>
+    <header class="hero-image-section">
+      <section class="hero-main-wrap">
+        <img
+          class="hero-main-image"
+          src="/images/petcare/petcare-hero-main.webp"
+          alt="PetCare Log app landing hero showing pet profiles, smart reminders, health history, photo memories, Google Play download button, a phone app preview, a woman holding a cat, and a golden retriever"
+          width="1731"
+          height="909"
+          loading="eager"
+          fetchpriority="high"
+        />
 
-          <h1>Care for <span class="highlight">every</span> pet with calm, simple daily tools</h1>
-
-          <p>
-            Pet profiles, smart reminders, health history, and photo memories—everything
-            you need to keep your pets happy and healthy.
-          </p>
-
-          <div class="hero-actions">
-            <a
-              class="play-button js-google-play-click"
-              href="https://play.google.com/store/apps/details?id=com.softiceinnovationslabs.petcarelogapp"
-              data-link-location="hero"
-              aria-label="Download PetCare Log on Google Play"
-            >
-              Download on Google Play
-            </a>
-
-            <a
-              class="text-link js-nav-cta"
-              href="#features"
-              data-link-location="hero_explore_features"
-            >
-              Explore Features
-            </a>
-          </div>
-
-          <div class="rating-row" aria-label="Loved by pet parents">
-            <div class="avatar-stack" aria-hidden="true">
-              <img src="images/petcare/petcare-avatar-dog-1.webp" alt="" loading="eager" />
-              <img src="images/petcare/petcare-avatar-cat-1.webp" alt="" loading="eager" />
-              <img src="images/petcare/petcare-avatar-dog-2.webp" alt="" loading="eager" />
-            </div>
-            <div>
-              <div class="stars">★★★★★</div>
-              <div class="rating-copy">Loved by 20,000+ pet parents</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="phone-stage" aria-label="PetCare Log app preview">
-          <div class="phone">
-            <img
-              class="phone-image"
-              src="images/petcare/petcare-hero-phone.webp"
-              alt="PetCare Log app home screen showing pet profile, today's plan, reminders, and bottom navigation"
-              loading="eager"
-            />
-          </div>
-        </div>
-
-        <div class="photo-collage" aria-label="Happy pets and pet parent photos">
-          <div class="photo-card cat">
-            <img
-              src="/images/petcare/petcare-hero-woman-cat.webp"
-              alt="A pet parent warmly holding a cat"
-              loading="eager"
-            />
-          </div>
-
-          <div class="photo-card dog">
-            <img
-              src="images/petcare/petcare-hero-golden-dog.webp"
-              alt="Happy golden retriever outside in warm sunlight"
-              loading="eager"
-            />
-          </div>
-
-          <div class="hand-note">
-            <span class="heart">♡</span>
-            Because every moment together matters
-          </div>
-        </div>
+        <a
+          class="hero-main-click-area js-google-play-click"
+          href="https://play.google.com/store/apps/details?id=com.softiceinnovationslabs.petcarelogapp"
+          data-link-location="hero_image_google_play"
+          aria-label="Download PetCare Log on Google Play"
+        ></a>
       </section>
+
+      <a
+        class="play-button mobile-hero-cta js-google-play-click"
+        href="https://play.google.com/store/apps/details?id=com.softiceinnovationslabs.petcarelogapp"
+        data-link-location="mobile_hero_cta"
+        aria-label="Download PetCare Log on Google Play"
+      >
+        Download on Google Play
+      </a>
     </header>
 
     <section id="features" class="section feature-strip" aria-label="PetCare Log features">
@@ -1228,7 +1014,7 @@
     </section>
 
     <section id="why" class="section seo-intro">
-      <h2>A pet care app built for calm daily routines</h2>
+      <h1>A pet care app built for calm daily routines</h1>
       <p>
         PetCare Log helps pet parents organize daily pet care with pet profiles, feeding tracking,
         medication reminders, vet visit history, daily checklist tools, health records, and photo memories.
@@ -1249,7 +1035,7 @@
 
           <div class="mini-screen">
             <img
-              src="images/petcare/petcare-screen-pet-profiles.webp"
+              src="/images/petcare/petcare-screen-pet-profiles.webp"
               alt="PetCare Log pet profiles screen"
               loading="lazy"
             />
@@ -1257,7 +1043,7 @@
 
           <div class="mini-screen">
             <img
-              src="images/petcare/petcare-screen-reminders.webp"
+              src="/images/petcare/petcare-screen-reminders.webp"
               alt="PetCare Log reminders screen"
               loading="lazy"
             />
@@ -1265,7 +1051,7 @@
 
           <div class="mini-screen">
             <img
-              src="images/petcare/petcare-screen-health-history.webp"
+              src="/images/petcare/petcare-screen-health-history.webp"
               alt="PetCare Log health history screen"
               loading="lazy"
             />
@@ -1273,7 +1059,7 @@
 
           <div class="mini-screen">
             <img
-              src="images/petcare/petcare-screen-photo-memories.webp"
+              src="/images/petcare/petcare-screen-photo-memories.webp"
               alt="PetCare Log photo memories screen"
               loading="lazy"
             />
@@ -1352,7 +1138,7 @@
         </div>
 
         <article class="review">
-          <img src="images/petcare/petcare-review-jessica.webp" alt="Pet parent review avatar" loading="lazy" />
+          <img src="/images/petcare/petcare-review-jessica.webp" alt="Pet parent review avatar" loading="lazy" />
           <div>
             <h3>Jessica L.</h3>
             <div class="stars">★★★★★</div>
@@ -1362,7 +1148,7 @@
         </article>
 
         <article class="review">
-          <img src="images/petcare/petcare-review-mike.webp" alt="Pet parent review avatar" loading="lazy" />
+          <img src="/images/petcare/petcare-review-mike.webp" alt="Pet parent review avatar" loading="lazy" />
           <div>
             <h3>Mike R.</h3>
             <div class="stars">★★★★★</div>
@@ -1372,7 +1158,7 @@
         </article>
 
         <article class="review">
-          <img src="images/petcare/petcare-review-priya.webp" alt="Pet parent review avatar" loading="lazy" />
+          <img src="/images/petcare/petcare-review-priya.webp" alt="Pet parent review avatar" loading="lazy" />
           <div>
             <h3>Priya S.</h3>
             <div class="stars">★★★★★</div>
@@ -1470,8 +1256,8 @@
   <footer class="footer">
     <p>
       © 2026 Softice Innovations Labs LLC ·
-      <a href="petcare-log-privacy-policy.html">Privacy Policy</a>
-      <a href="petcare-log-terms.html">Terms</a>
+      <a href="/petcare-log-privacy-policy.html">Privacy Policy</a>
+      <a href="/petcare-log-terms.html">Terms</a>
       <a href="mailto:support@softiceinnovationslabs.com">Support</a>
     </p>
   </footer>
@@ -1623,22 +1409,10 @@
       });
 
       const engagedTimes = [
-        {
-          seconds: 15,
-          sent: false
-        },
-        {
-          seconds: 30,
-          sent: false
-        },
-        {
-          seconds: 60,
-          sent: false
-        },
-        {
-          seconds: 120,
-          sent: false
-        }
+        { seconds: 15, sent: false },
+        { seconds: 30, sent: false },
+        { seconds: 60, sent: false },
+        { seconds: 120, sent: false }
       ];
 
       engagedTimes.forEach(function (item) {
