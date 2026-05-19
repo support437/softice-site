@@ -4,37 +4,35 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Bedtime Stories for Kids | 2 Free Books, No Subscription App</title>
-<meta name="description" content="Discover bedtime stories for kids with Cozy Tales. Enjoy calming sleep stories, read-aloud narration, 2 free books, bedtime routines, fairy tales, and no subscription.">
+<title>Softice Innovations Labs | Thoughtful Mobile Apps for Everyday Life</title>
+<meta name="description" content="Softice Innovations Labs builds simple, beautiful mobile apps for pet care, calm, bedtime stories, discipline, focus, and everyday life.">
 <meta name="author" content="Softice Innovations Labs LLC">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
 <meta name="googlebot" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
-<meta name="theme-color" content="#0b0b1f">
-<meta name="application-name" content="Bedtime Story Books – Cozy Tales">
-<meta name="apple-mobile-web-app-title" content="Cozy Tales">
+<meta name="theme-color" content="#fff8ef">
+<meta name="application-name" content="Softice Innovations Labs">
+<meta name="apple-mobile-web-app-title" content="Softice Innovations Labs">
 <meta name="format-detection" content="telephone=no">
 
 <link rel="canonical" href="https://softiceinnovationslabs.com/">
 <link rel="alternate" hreflang="en" href="https://softiceinnovationslabs.com/">
 <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
-<link rel="preload" as="image" href="family-hero.webp">
-<link rel="preconnect" href="https://play.google.com">
-<link rel="preconnect" href="https://www.youtube.com">
+<link rel="preload" as="image" href="/images/softice/softice-hero-vase.webp">
 
-<meta property="og:title" content="Bedtime Stories for Kids | 2 Free Books, No Subscription App">
-<meta property="og:description" content="Calming bedtime stories for kids with read-aloud narration, bedtime routines, 2 free books, fairy tales, and no subscription.">
+<meta property="og:title" content="Softice Innovations Labs | Thoughtful Mobile Apps for Everyday Life">
+<meta property="og:description" content="Simple, beautiful mobile apps for pet care, calm, bedtime stories, discipline, focus, and everyday life.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://softiceinnovationslabs.com/">
-<meta property="og:image" content="https://softiceinnovationslabs.com/family-hero.webp">
-<meta property="og:image:alt" content="Bedtime Stories for Kids – Cozy Tales family bedtime story app preview">
-<meta property="og:site_name" content="Bedtime Story Books – Cozy Tales">
+<meta property="og:image" content="https://softiceinnovationslabs.com/images/softice/softice-og.webp">
+<meta property="og:image:alt" content="Softice Innovations Labs company website preview with mobile app cards">
+<meta property="og:site_name" content="Softice Innovations Labs">
 <meta property="og:locale" content="en_US">
 
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Bedtime Stories for Kids | 2 Free Books, No Subscription App">
-<meta name="twitter:description" content="Calming bedtime stories for kids with read-aloud narration, bedtime routines, 2 free books, fairy tales, and no subscription.">
-<meta name="twitter:image" content="https://softiceinnovationslabs.com/family-hero.webp">
-<meta name="twitter:image:alt" content="Bedtime Stories for Kids – Cozy Tales family bedtime story app preview">
+<meta name="twitter:title" content="Softice Innovations Labs | Thoughtful Mobile Apps for Everyday Life">
+<meta name="twitter:description" content="Simple, beautiful mobile apps for pet care, calm, bedtime stories, discipline, focus, and everyday life.">
+<meta name="twitter:image" content="https://softiceinnovationslabs.com/images/softice/softice-og.webp">
+<meta name="twitter:image:alt" content="Softice Innovations Labs company website preview with mobile app cards">
 
 <!-- Google Analytics 4 -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-CE1N5QBRTE"></script>
@@ -46,1416 +44,849 @@ gtag('config', 'G-CE1N5QBRTE');
 </script>
 
 <style>
+:root {
+    --bg: #fffaf3;
+    --panel: rgba(255,255,255,0.82);
+    --panel-solid: #ffffff;
+    --ink: #101728;
+    --muted: #5d6678;
+    --line: rgba(18, 24, 38, 0.10);
+    --orange: #f26b21;
+    --orange-dark: #dc5412;
+    --purple: #8c6ad9;
+    --green: #65b87b;
+    --yellow: #ffbc4a;
+    --shadow: 0 24px 70px rgba(39, 28, 15, 0.10);
+    --soft-shadow: 0 16px 38px rgba(39, 28, 15, 0.09);
+    --radius: 28px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     margin: 0;
-    font-family: 'Segoe UI', sans-serif;
-    background: #0b0b1f;
-    color: white;
+    font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    color: var(--ink);
+    background:
+        radial-gradient(circle at 80% 20%, rgba(255, 184, 91, 0.20), transparent 28%),
+        radial-gradient(circle at 18% 10%, rgba(255, 255, 255, 0.92), transparent 32%),
+        linear-gradient(180deg, #fffdf9 0%, #fff7ea 52%, #fffdf9 100%);
     overflow-x: hidden;
+}
+
+a {
+    color: inherit;
 }
 
 img {
     max-width: 100%;
+    display: block;
 }
 
-.star {
-    position: fixed;
-    width: 6px;
-    height: 6px;
-    background: white;
+.page-shell {
+    width: min(1400px, calc(100% - 44px));
+    margin: 18px auto;
+    border: 1px solid var(--line);
+    border-radius: 18px;
+    background: rgba(255,255,255,0.74);
+    box-shadow: 0 30px 90px rgba(31, 29, 26, 0.14);
+    overflow: hidden;
+    position: relative;
+}
+
+.browser-bar {
+    height: 54px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 0 22px;
+    background: linear-gradient(180deg, #fbfbfb, #f7f7f7);
+    border-bottom: 1px solid var(--line);
+}
+
+.traffic-lights {
+    display: flex;
+    gap: 8px;
+}
+
+.traffic-lights span {
+    width: 12px;
+    height: 12px;
     border-radius: 50%;
-    opacity: 0.8;
-    animation: floatUp linear infinite;
-    pointer-events: none;
 }
 
-@keyframes floatUp {
-    from { transform: translateY(100vh); }
-    to { transform: translateY(-10vh); }
-}
+.traffic-lights span:nth-child(1) { background: #ff5f57; }
+.traffic-lights span:nth-child(2) { background: #ffbd2e; }
+.traffic-lights span:nth-child(3) { background: #28c840; }
 
-.fade {
-    opacity: 0;
-    transform: translateY(40px);
-    transition: all 1s ease;
-}
-.fade.show {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.hero {
-    min-height: 100vh;
-    background: url('family-hero.webp') center/cover no-repeat;
+.browser-url {
+    margin: 0 auto;
+    width: min(520px, 48vw);
+    height: 30px;
+    border-radius: 999px;
+    border: 1px solid #dedede;
+    background: #fff;
+    color: #747985;
     display: flex;
     align-items: center;
     justify-content: center;
-    position: relative;
-    padding: 40px 20px;
-    text-align: center;
+    font-size: 13px;
 }
 
-.hero::after {
+.site-header {
+    height: 92px;
+    padding: 0 9%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(255,255,255,0.75);
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid rgba(18,24,38,0.06);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+}
+
+.logo-mark {
+    width: 44px;
+    height: 44px;
+    border-radius: 13px;
+    background: linear-gradient(135deg, #ff7b23, #e95b18);
+    display: grid;
+    place-items: center;
+    color: white;
+    font-weight: 900;
+    font-size: 24px;
+    box-shadow: 0 14px 34px rgba(242, 107, 33, 0.20);
+}
+
+.logo-text strong {
+    display: block;
+    font-size: 22px;
+    letter-spacing: -0.04em;
+    line-height: 1;
+}
+
+.logo-text small {
+    display: block;
+    margin-top: 3px;
+    color: #252c38;
+    font-size: 14px;
+    line-height: 1;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    gap: 34px;
+}
+
+.nav a,
+.nav button {
+    border: 0;
+    background: transparent;
+    font: inherit;
+    font-size: 14px;
+    font-weight: 650;
+    color: #283044;
+    text-decoration: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+.nav a:hover,
+.nav button:hover {
+    color: var(--orange);
+}
+
+.apps-menu {
+    position: relative;
+}
+
+.apps-dropdown {
+    position: absolute;
+    top: 26px;
+    right: 0;
+    width: 230px;
+    background: white;
+    border: 1px solid var(--line);
+    border-radius: 18px;
+    box-shadow: var(--soft-shadow);
+    padding: 10px;
+    opacity: 0;
+    transform: translateY(8px);
+    pointer-events: none;
+    transition: 0.2s ease;
+}
+
+.apps-menu:hover .apps-dropdown,
+.apps-menu:focus-within .apps-dropdown {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+.apps-dropdown a {
+    display: block;
+    padding: 11px 12px;
+    border-radius: 12px;
+}
+
+.apps-dropdown a:hover {
+    background: #fff5ea;
+}
+
+.header-cta,
+.primary-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: center;
+    min-height: 46px;
+    padding: 0 22px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, var(--orange), var(--orange-dark));
+    color: white !important;
+    text-decoration: none;
+    font-weight: 800;
+    box-shadow: 0 16px 28px rgba(242,107,33,0.24);
+}
+
+.primary-cta {
+    margin-top: 26px;
+    min-height: 54px;
+    padding: 0 25px;
+    border-radius: 14px;
+}
+
+.hero {
+    position: relative;
+    min-height: 700px;
+    padding: 72px 9% 42px;
+    overflow: hidden;
+}
+
+.hero::before {
     content: "";
     position: absolute;
     inset: 0;
-    background: linear-gradient(to bottom, rgba(0,0,0,0.15), rgba(0,0,0,0.40));
+    background:
+        radial-gradient(circle at 74% 26%, rgba(255, 204, 126, 0.35), transparent 20%),
+        linear-gradient(180deg, rgba(255,255,255,0.92), rgba(255,249,239,0.50) 55%, rgba(255,255,255,0.82));
+    z-index: 0;
+}
+
+.hero-plant {
+    position: absolute;
+    right: 8%;
+    top: 4px;
+    width: min(410px, 34vw);
+    height: auto;
+    opacity: 0.98;
+    filter: drop-shadow(0 28px 48px rgba(80, 55, 28, 0.12));
+    z-index: 1;
+}
+
+.hero-wave {
+    position: absolute;
+    left: 36%;
+    right: -5%;
+    top: 268px;
+    height: 120px;
+    background: rgba(255,255,255,0.72);
+    border-radius: 50% 0 0 0 / 100% 0 0 0;
+    transform: skewY(-2deg);
+    z-index: 1;
 }
 
 .hero-content {
     position: relative;
     z-index: 2;
-    max-width: 920px;
+    max-width: 610px;
+}
+
+.eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 9px 12px;
+    border-radius: 999px;
+    border: 1px solid rgba(242,107,33,0.18);
+    background: rgba(255,255,255,0.72);
+    color: #b34c13;
+    font-weight: 800;
+    font-size: 13px;
+    margin-bottom: 16px;
 }
 
 .hero h1 {
-    font-size: 42px;
-    margin-bottom: 14px;
-    line-height: 1.2;
+    margin: 0;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(42px, 5vw, 72px);
+    line-height: 0.96;
+    letter-spacing: -0.055em;
+    color: #091226;
 }
 
 .hero p {
-    font-size: 20px;
-    color: #ddd;
-    line-height: 1.7;
-    max-width: 780px;
-    margin: 0 auto;
+    margin: 26px 0 0;
+    font-size: 18px;
+    line-height: 1.75;
+    color: #50596c;
+    max-width: 560px;
 }
 
-.updated-note {
-    margin-top: 18px;
-    font-size: 16px;
-    color: #f0f3ff;
-}
-
-.cta-pill {
-    margin-top: 18px;
-    background: rgba(255,255,255,0.15);
-    padding: 12px 22px;
-    border-radius: 30px;
-    display: inline-block;
-}
-
-.btn {
-    display: inline-block;
-    margin-top: 25px;
-    padding: 16px 32px;
-    background: linear-gradient(135deg, #ff4dd2, #ff88e6);
-    color: white;
-    border-radius: 40px;
-    text-decoration: none;
-    font-weight: bold;
-    animation: pulse 2s infinite;
-}
-
-@keyframes pulse {
-    0% { box-shadow: 0 0 0 0 rgba(255,77,210,0.6); }
-    70% { box-shadow: 0 0 0 20px rgba(255,77,210,0); }
-    100% { box-shadow: 0 0 0 0 rgba(255,77,210,0); }
-}
-
-.disney-section {
-    background: white;
-    color: #111;
-    padding: 100px 20px;
-    text-align: center;
-}
-
-.disney-section h2 {
-    font-size: 2.8rem;
-    margin-bottom: 40px;
-    line-height: 1.2;
-}
-
-.disney-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 20px;
-}
-
-.tile {
+.apps-showcase {
     position: relative;
+    z-index: 3;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 24px;
+    margin-top: 62px;
+}
+
+.app-card {
+    border: 1px solid rgba(38,44,56,0.10);
+    border-radius: 22px;
+    background: rgba(255,255,255,0.76);
+    box-shadow: var(--soft-shadow);
     overflow: hidden;
-    border-radius: 16px;
-    background: #e8e8e8;
+    position: relative;
+    min-height: 350px;
+    transition: transform 0.26s ease, box-shadow 0.26s ease;
 }
 
-.tile img {
-    width: 100%;
-    height: 360px;
-    object-fit: cover;
-    transition: transform 0.5s ease;
-    display: block;
+.app-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 26px 54px rgba(39, 28, 15, 0.15);
 }
 
-.tile:hover img {
-    transform: scale(1.1);
+.phone-stage {
+    height: 205px;
+    padding: 18px 24px 0;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
 }
 
-.tile::after {
+.phone-stage::before {
     content: "";
     position: absolute;
-    inset: 0;
-    background: linear-gradient(
-        to bottom,
-        rgba(0,0,0,0.20),
-        rgba(0,0,0,0.55)
-    );
+    inset: 18px 20px 0;
+    background: linear-gradient(180deg, rgba(255,255,255,0.62), rgba(255,255,255,0));
+    border-radius: 20px 20px 0 0;
 }
 
-.overlay-text {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 30px;
-    font-weight: bold;
-    color: white;
-    z-index: 2;
-    text-shadow:
-        0 2px 8px rgba(0,0,0,0.9),
-        0 4px 20px rgba(0,0,0,0.8);
-}
-
-.parent-section {
-    margin-top: 60px;
+.phone-stage img {
     position: relative;
-    overflow: hidden;
-    border-radius: 16px;
-}
-
-.parent-section img {
-    width: 100%;
-    height: 420px;
-    object-fit: cover;
-    display: block;
-}
-
-.parent-overlay {
-    position: absolute;
-    inset: 0;
-    background: rgba(0,0,0,0.4);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-    text-align: center;
-}
-
-.parent-overlay h3,
-.parent-overlay p {
-    color: white;
-    text-shadow:
-        0 2px 8px rgba(0,0,0,0.9),
-        0 4px 20px rgba(0,0,0,0.8);
-}
-
-.section {
-    padding: 80px 20px;
-    text-align: center;
-}
-
-.section h2 {
-    line-height: 1.2;
-}
-
-.section p {
-    max-width: 900px;
-    margin: 0 auto;
-    color: #ddd;
-    font-size: 18px;
-    line-height: 1.8;
-}
-
-.resource-links {
-    max-width: 950px;
-    margin: 30px auto 0;
-    text-align: left;
-}
-
-.resource-links h3 {
-    margin-bottom: 18px;
-    color: white;
-}
-
-.resource-links ul {
-    margin: 0;
-    padding-left: 24px;
-    line-height: 2;
-    font-size: 18px;
-}
-
-.resource-links a {
-    color: #7aa7ff;
-    text-decoration: none;
-}
-
-.resource-links a:hover,
-.footer a:hover {
-    text-decoration: underline;
-}
-
-.resource-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 18px;
-    margin-top: 24px;
-}
-
-.resource-card {
-    background: rgba(255,255,255,0.06);
-    border: 1px solid rgba(255,255,255,0.08);
-    border-radius: 16px;
-    padding: 20px;
-    text-align: left;
-}
-
-.resource-card h3 {
-    margin-top: 0;
-    margin-bottom: 10px;
-    color: white;
-    font-size: 20px;
-}
-
-.resource-card p {
-    color: #d7d7e6;
-    font-size: 16px;
-    line-height: 1.7;
-    margin-bottom: 14px;
-}
-
-.resource-card a {
-    color: #7aa7ff;
-    font-weight: 600;
-    text-decoration: none;
-}
-
-.story-library-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 22px;
-    margin-top: 34px;
-}
-
-.story-library-card {
-    background: rgba(255,255,255,0.06);
-    border: 1px solid rgba(255,255,255,0.08);
-    border-radius: 18px;
-    padding: 16px;
-    text-align: left;
-    box-shadow: 0 10px 24px rgba(0,0,0,0.18);
-    transition: transform 0.28s ease, box-shadow 0.28s ease;
-}
-
-.story-library-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 16px 32px rgba(0,0,0,0.24);
-}
-
-.story-library-card img {
-    width: 100%;
+    z-index: 1;
+    width: 154px;
     height: auto;
-    aspect-ratio: 3 / 4;
     object-fit: contain;
-    background: rgba(255,255,255,0.04);
-    border-radius: 12px;
-    display: block;
-    margin-bottom: 14px;
+    filter: drop-shadow(0 20px 22px rgba(33,24,16,0.18));
 }
 
-.story-library-card h3 {
-    margin: 0 0 10px;
-    color: white;
-    font-size: 20px;
-    line-height: 1.3;
-}
-
-.story-library-card p {
-    color: #d7d7e6;
-    font-size: 16px;
-    line-height: 1.7;
-    margin-bottom: 14px;
-}
-
-.story-library-card a.story-cover-link {
-    text-decoration: none;
-}
-
-.story-library-card a.story-link {
-    color: #7aa7ff;
-    font-weight: 700;
-    text-decoration: none;
-}
-
-.story-library-card a.story-link:hover {
-    text-decoration: underline;
-}
-
-.faq-wrap {
-    max-width: 900px;
-    margin: 0 auto;
-    text-align: left;
-    color: #ddd;
-    line-height: 1.8;
-}
-
-.faq-wrap h3 {
-    color: white;
-    margin-top: 28px;
-    margin-bottom: 8px;
-}
-
-.form-box {
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
-    align-items: center;
-}
-
-.form-box input,
-.form-box textarea {
-    width: 90%;
-    max-width: 420px;
-    padding: 14px;
-    border-radius: 12px;
-    border: none;
-    font: inherit;
-}
-
-.form-box textarea {
-    min-height: 110px;
-    resize: vertical;
-}
-
-.form-box button {
-    padding: 14px 28px;
-    background: #00c2ff;
-    color: white;
-    border-radius: 30px;
-    border: none;
-    font: inherit;
-    cursor: pointer;
-}
-
-.social-follow {
-    margin-top: 28px;
-    text-align: center;
-}
-
-.social-follow h3 {
-    margin-bottom: 18px;
-    font-size: 24px;
-    color: white;
-}
-
-.social-links {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 16px;
-}
-
-.social-links a {
+.card-body {
     position: relative;
+    padding: 26px 26px 24px;
+    background: linear-gradient(180deg, rgba(255,255,255,0.92), #fff);
+    min-height: 145px;
+}
+
+.app-icon {
+    position: absolute;
+    left: 22px;
+    top: -28px;
+    width: 56px;
+    height: 56px;
+    border-radius: 16px;
+    display: grid;
+    place-items: center;
+    font-size: 27px;
+    color: white;
+    box-shadow: 0 18px 26px rgba(20,20,20,0.12);
+}
+
+.pet .app-icon { background: linear-gradient(135deg, #ff8a32, #f25f1d); }
+.calm .app-icon { background: linear-gradient(135deg, #b392f2, #815fc9); }
+.cozy .app-icon { background: linear-gradient(135deg, #ffc24b, #ff9e2e); }
+.zero .app-icon { background: linear-gradient(135deg, #75c683, #4ea363); }
+
+.card-body h2 {
+    margin: 6px 0 8px;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 23px;
+    letter-spacing: -0.035em;
+}
+
+.card-body p {
+    margin: 0;
+    color: #626b79;
+    font-size: 15px;
+    line-height: 1.55;
+}
+
+.learn-link {
+    margin-top: 18px;
     display: inline-flex;
     align-items: center;
-    justify-content: center;
-    width: 66px;
-    height: 66px;
-    border-radius: 50%;
-    background: rgba(255,255,255,0.12);
-    border: 1px solid rgba(255,255,255,0.18);
-    transition: transform 0.28s ease, background 0.28s ease, box-shadow 0.28s ease;
-    text-decoration: none;
-}
-
-.social-links a:hover {
-    transform: translateY(-4px) scale(1.08);
-    background: rgba(255,255,255,0.18);
-}
-
-.social-links a img {
-    width: 30px;
-    height: 30px;
-    object-fit: contain;
-    display: block;
-}
-
-.social-links a::after {
-    content: attr(data-label);
-    position: absolute;
-    bottom: -36px;
-    left: 50%;
-    transform: translateX(-50%) translateY(6px);
-    background: rgba(15,15,35,0.95);
-    color: white;
-    font-size: 13px;
-    padding: 6px 10px;
+    gap: 9px;
+    min-height: 38px;
+    padding: 0 16px;
     border-radius: 12px;
-    white-space: nowrap;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.22s ease, transform 0.22s ease;
-}
-
-.social-links a:hover::after {
-    opacity: 1;
-    transform: translateX(-50%) translateY(0);
-}
-
-.social-links a.tiktok:hover {
-    box-shadow: 0 0 20px rgba(0, 242, 234, 0.45);
-}
-
-.social-links a.instagram:hover {
-    box-shadow: 0 0 20px rgba(225, 48, 108, 0.45);
-}
-
-.social-links a.youtube:hover {
-    box-shadow: 0 0 20px rgba(255, 0, 0, 0.45);
-}
-
-.social-links a.facebook:hover {
-    box-shadow: 0 0 20px rgba(24, 119, 242, 0.45);
-}
-
-.footer {
-    background: #0b0b1f;
-    padding: 60px 20px 40px;
-    border-top: 1px solid rgba(255,255,255,0.1);
-    text-align: center;
-}
-
-.footer h3 {
-    margin-bottom: 10px;
-}
-
-.footer p {
-    color: #ccc;
-}
-
-.footer a {
-    color: #7aa7ff;
+    border: 1.5px solid currentColor;
     text-decoration: none;
-}
-
-.footer-copy {
-    margin-top: 30px;
-    color: #aaa;
+    font-weight: 800;
     font-size: 14px;
 }
 
-.popup-overlay {
-    display: none;
-    position: fixed;
-    inset: 0;
-    background: rgba(0,0,0,0.6);
-    z-index: 9998;
+.pet .learn-link { color: var(--orange); }
+.calm .learn-link { color: var(--purple); }
+.cozy .learn-link { color: #f39b12; }
+.zero .learn-link { color: #439f5e; }
+
+.why-softice {
+    position: relative;
+    z-index: 3;
+    width: min(1180px, 88%);
+    margin: 26px auto 0;
+    background: rgba(255,255,255,0.70);
+    border: 1px solid rgba(38,44,56,0.07);
+    border-radius: 28px;
+    box-shadow: 0 18px 54px rgba(39, 28, 15, 0.07);
+    padding: 22px 28px 28px;
+    backdrop-filter: blur(16px);
 }
 
-.popup-box {
-    display: none;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: min(90%, 420px);
-    background: #16163a;
-    color: white;
-    border-radius: 18px;
-    padding: 28px 24px;
+.why-softice h2 {
     text-align: center;
-    box-shadow: 0 20px 60px rgba(0,0,0,0.45);
-    z-index: 9999;
-}
-
-.popup-box h3 {
-    margin: 0 0 10px;
-    font-size: 28px;
-}
-
-.popup-box p {
     margin: 0 0 20px;
-    color: #d9dcff;
-    font-size: 18px;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 31px;
+    letter-spacing: -0.04em;
+}
+
+.why-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.reason {
+    display: grid;
+    grid-template-columns: 54px 1fr;
+    gap: 14px;
+    padding: 8px 26px;
+    border-left: 1px solid rgba(38,44,56,0.10);
+}
+
+.reason:first-child {
+    border-left: 0;
+}
+
+.reason-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 16px;
+    display: grid;
+    place-items: center;
+    background: #fff3e3;
+    color: var(--orange);
+    font-size: 24px;
+}
+
+.reason h3 {
+    margin: 0 0 5px;
+    font-size: 15px;
+}
+
+.reason p {
+    margin: 0;
+    color: #667085;
+    font-size: 13.5px;
     line-height: 1.5;
 }
 
-.popup-box button {
-    padding: 12px 26px;
-    background: linear-gradient(135deg, #ff4dd2, #ff88e6);
-    color: white;
-    border: none;
-    border-radius: 30px;
-    font-weight: bold;
-    cursor: pointer;
+.footer {
+    position: relative;
+    z-index: 3;
+    padding: 34px 9% 30px;
+    display: grid;
+    grid-template-columns: 1.55fr 0.72fr 0.72fr 0.72fr 1fr;
+    gap: 32px;
+    background: rgba(255,255,255,0.72);
+    border-top: 1px solid rgba(18,24,38,0.06);
 }
 
-/* FLOATING GOOGLE PLAY BUTTON - ALWAYS VISIBLE */
-.floating-google-play {
-    position: fixed;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: linear-gradient(135deg, #ff4dd2, #ff88e6);
-    color: white;
+.footer p {
+    margin: 12px 0 0;
+    color: #657083;
+    line-height: 1.55;
+    font-size: 14px;
+    max-width: 245px;
+}
+
+.footer h3 {
+    margin: 0 0 12px;
+    font-size: 15px;
+}
+
+.footer a {
+    display: block;
+    color: #586174;
     text-decoration: none;
-    font-weight: bold;
-    padding: 14px 26px;
-    border-radius: 30px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-    z-index: 9999;
-    animation: pulse 2s infinite;
+    font-size: 14px;
+    line-height: 2;
 }
 
-.floating-google-play:hover {
-    text-decoration: none;
-    transform: translateX(-50%) scale(1.05);
+.footer a:hover {
+    color: var(--orange);
 }
 
-@media (max-width: 768px) {
-    .hero h1 {
-        font-size: 34px;
+.socials {
+    display: flex;
+    gap: 12px;
+    margin-top: 12px;
+}
+
+.socials a {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    border: 1px solid var(--line);
+    display: grid;
+    place-items: center;
+    background: white;
+    line-height: 1;
+}
+
+.copyright {
+    grid-column: 1 / -1;
+    text-align: center;
+    color: #7d8491;
+    font-size: 13px;
+    margin-top: 6px;
+}
+
+@media (max-width: 1100px) {
+    .apps-showcase {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
-    .hero p,
-    .section p,
-    .resource-links ul,
-    .faq-wrap,
-    .updated-note {
-        font-size: 17px;
+    .why-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px;
     }
 
-    .parent-section img {
-        height: 320px;
+    .reason {
+        border-left: 0;
+        border-top: 1px solid rgba(38,44,56,0.10);
+        padding: 18px 8px;
     }
 
-    .tile img {
-        height: 300px;
+    .reason:nth-child(-n+2) {
+        border-top: 0;
     }
 
-    .disney-section h2 {
-        font-size: 2.2rem;
+    .footer {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 760px) {
+    .page-shell {
+        width: 100%;
+        margin: 0;
+        border-radius: 0;
+        border-left: 0;
+        border-right: 0;
     }
 
-    .story-library-card img {
+    .browser-bar {
+        display: none;
+    }
+
+    .site-header {
         height: auto;
-        max-height: 240px;
-        object-fit: contain;
+        min-height: 80px;
+        padding: 16px 20px;
+        align-items: flex-start;
+        gap: 16px;
     }
 
-    .floating-google-play {
-        width: 90%;
-        text-align: center;
-        bottom: 16px;
-        font-size: 1rem;
-        padding: 14px;
+    .nav {
+        gap: 12px;
+        justify-content: flex-end;
+        flex-wrap: wrap;
+    }
+
+    .nav a,
+    .nav button {
+        font-size: 13px;
+    }
+
+    .header-cta {
+        display: none;
+    }
+
+    .hero {
+        padding: 48px 22px 34px;
+        min-height: auto;
+    }
+
+    .hero-plant {
+        position: relative;
+        top: auto;
+        right: auto;
+        width: min(260px, 80%);
+        margin: 28px auto 0;
+        opacity: 0.9;
+    }
+
+    .hero-wave {
+        display: none;
+    }
+
+    .hero h1 {
+        font-size: 45px;
+        line-height: 1;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    .apps-showcase {
+        grid-template-columns: 1fr;
+        margin-top: 36px;
+        gap: 18px;
+    }
+
+    .app-card {
+        min-height: 330px;
+    }
+
+    .why-softice {
+        width: calc(100% - 32px);
+        margin-top: 22px;
+        padding: 24px 20px;
+    }
+
+    .why-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .reason,
+    .reason:nth-child(-n+2) {
+        border-top: 1px solid rgba(38,44,56,0.10);
+    }
+
+    .reason:first-child {
+        border-top: 0;
+    }
+
+    .footer {
+        grid-template-columns: 1fr;
+        padding: 34px 22px 28px;
     }
 }
 </style>
 </head>
 
 <body>
-
-<script>
-for (let i = 0; i < 40; i++) {
-    const star = document.createElement("div");
-    star.className = "star";
-    star.style.left = Math.random() * 100 + "vw";
-    star.style.animationDuration = (5 + Math.random() * 10) + "s";
-    document.body.appendChild(star);
-}
-</script>
-
-<main>
-<section class="hero fade" aria-label="Bedtime Story Books homepage hero" data-section-track="homepage_hero">
-    <div class="hero-content">
-        <h1>Bedtime Stories for Kids</h1>
-        <p>Calming bedtime stories for kids with read-aloud narration, peaceful sleep support, and no subscription.</p>
-        <p class="updated-note"><strong>Updated April 2026</strong> – New bedtime stories and guides added weekly.</p>
-
-        <div class="cta-pill">🎁 2 FREE BOOKS • 🚫 NO SUBSCRIPTION</div>
-    </div>
-</section>
-
-<section class="disney-section fade" aria-labelledby="simple-calm-effective-heading" data-section-track="homepage_simple_calm_effective">
-    <h2 id="simple-calm-effective-heading" class="fade">Simple. Calm. Effective.</h2>
-
-    <div class="disney-grid">
-        <div class="tile fade">
-            <img
-                src="bedtime-story-app-choose.webp"
-                alt="Child choosing a bedtime story in the Bedtime Story Books app on a tablet"
-                loading="lazy"
-                decoding="async"
-                width="520"
-                height="360"
-                onerror="this.style.border='3px solid red'; console.log('Failed to load:', this.src);"
-            >
-            <div class="overlay-text">Choose</div>
+<div class="page-shell">
+    <div class="browser-bar" aria-hidden="true">
+        <div class="traffic-lights">
+            <span></span><span></span><span></span>
         </div>
-
-        <div class="tile fade">
-            <img
-                src="kids-sleep-story-listen.webp"
-                alt="Kids listening to calming read aloud bedtime stories in the app"
-                loading="lazy"
-                decoding="async"
-                width="520"
-                height="360"
-                onerror="this.style.border='3px solid red'; console.log('Failed to load:', this.src);"
-            >
-            <div class="overlay-text">Listen</div>
-        </div>
-
-        <div class="tile fade">
-            <img
-                src="peaceful-kids-sleep.webp"
-                alt="Child sleeping peacefully after listening to a bedtime story"
-                loading="lazy"
-                decoding="async"
-                width="520"
-                height="360"
-                onerror="this.style.border='3px solid red'; console.log('Failed to load:', this.src);"
-            >
-            <div class="overlay-text">Sleep</div>
-        </div>
+        <div class="browser-url">softiceinnovationslabs.com</div>
     </div>
 
-    <div class="parent-section fade">
-        <img
-            src="parents-park.webp"
-            alt="Parents enjoying a peaceful family bedtime moment with a bedtime stories app for kids"
-            loading="lazy"
-            decoding="async"
-            width="1600"
-            height="420"
-        >
-        <div class="parent-overlay">
-            <h3>Made for Parents</h3>
-            <p>No subscriptions. No stress. Just magical moments.</p>
-        </div>
-    </div>
-</section>
+    <header class="site-header">
+        <a class="logo" href="/" aria-label="Softice Innovations Labs homepage">
+            <span class="logo-mark">S</span>
+            <span class="logo-text">
+                <strong>Softice</strong>
+                <small>Innovations Labs</small>
+            </span>
+        </a>
 
-<section class="section fade" aria-labelledby="see-it-in-action-heading" data-section-track="homepage_video_section">
-    <h2 id="see-it-in-action-heading">See It In Action</h2>
-    <div id="youtubeEmbedWrapper"
-         data-track="youtube-embed-click"
-         data-track-location="homepage_video_section"
-         data-track-title="YouTube App Preview">
-        <iframe
-            width="90%"
-            height="350"
-            src="https://www.youtube.com/embed/DR9JqKL95LE"
-            title="Bedtime stories for kids app video preview"
-            loading="lazy"
-            referrerpolicy="strict-origin-when-cross-origin"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen></iframe>
-    </div>
-</section>
+        <nav class="nav" aria-label="Main navigation">
+            <div class="apps-menu">
+                <button type="button" aria-label="Apps menu">Apps⌄</button>
+                <div class="apps-dropdown" aria-label="Apps links">
+                    <a href="/petcare/">PetCare Log</a>
+                    <a href="/calmpulse/">CalmPulse</a>
+                    <a href="/cozy-tales/">Cozy Tales</a>
+                    <a href="/zero-reset/">Zero Reset</a>
+                    <a href="/focusesprint/">FocusSprint</a>
+                </div>
+            </div>
+            <a href="#about">About</a>
+            <a href="#support">Support</a>
+            <a href="#contact">Contact</a>
+            <a class="header-cta" href="#contact">Get in Touch</a>
+        </nav>
+    </header>
 
-<section class="section fade" aria-labelledby="bedtime-stories-sleep-heading" data-section-track="homepage_benefit_intro">
-    <h2 id="bedtime-stories-sleep-heading">Bedtime Stories for Kids That Help Children Sleep</h2>
-    <p>
-        Looking for bedtime stories for kids that help children relax and fall asleep more peacefully? Cozy Tales combines calming sleep stories, read-aloud narration, gentle fairy tales, and a bedtime experience designed for toddlers, preschoolers, babies, and young children.
-    </p>
-    <p style="margin-top:24px;">
-        Unlike many other kids apps, Bedtime Story Books – Cozy Tales offers a no subscription model, helping families enjoy bedtime storytelling without recurring monthly fees.
-    </p>
-</section>
+    <main>
+        <section class="hero" id="about">
+            <img class="hero-plant" src="/images/softice/softice-hero-vase.webp" alt="Soft minimal plant vase illustration for Softice Innovations Labs">
+            <div class="hero-wave" aria-hidden="true"></div>
 
-<section class="section fade" aria-labelledby="why-parents-love-heading" data-section-track="homepage_why_parents_love">
-    <h2 id="why-parents-love-heading">Why Parents Love Our Bedtime Stories App</h2>
-    <p>
-        Bedtime Story Books – Cozy Tales is a bedtime stories app for kids designed to make nighttime routines calmer, easier, and more magical. Families can enjoy sleep stories for children, read-aloud narration, peaceful visuals, and a no subscription experience that keeps story time simple.
-    </p>
-    <p style="margin-top:24px;">
-        Parents looking for <a href="/free-bedtime-stories-for-kids"
-        data-track="resource-link-click"
-        data-track-location="homepage_text_links"
-        data-track-title="Free Bedtime Stories for Kids">free bedtime stories for kids</a>, <a href="/short-bedtime-stories-for-kids"
-        data-track="resource-link-click"
-        data-track-location="homepage_text_links"
-        data-track-title="Short Bedtime Stories for Kids">short bedtime stories</a>, <a href="/sleep-stories-for-toddlers"
-        data-track="resource-link-click"
-        data-track-location="homepage_text_links"
-        data-track-title="Sleep Stories for Toddlers">sleep stories for toddlers</a>, and <a href="/bedtime-stories-for-preschoolers"
-        data-track="resource-link-click"
-        data-track-location="homepage_text_links"
-        data-track-title="Bedtime Stories for Preschoolers">bedtime stories for preschoolers</a> can explore our growing bedtime guide library below.
-    </p>
-</section>
+            <div class="hero-content">
+                <span class="eyebrow">Softice Innovations Labs LLC</span>
+                <h1>Thoughtful apps for calmer, easier everyday life</h1>
+                <p>Softice Innovations Labs builds simple, beautiful mobile apps that support care, calm, stories, discipline, focus, and everyday life.</p>
+                <a class="primary-cta" href="#apps" data-track="homepage_cta_click" data-track-location="hero" data-track-title="Explore Our Apps">Explore Our Apps →</a>
+            </div>
 
-<section class="section fade" aria-labelledby="helpful-resources-heading" data-section-track="homepage_core_guides_section">
-    <h2 id="helpful-resources-heading">Helpful Bedtime Resources for Parents</h2>
-    <p>
-        This homepage also works as a bedtime stories hub, helping families explore age-based story guides, bedtime routines, calming sleep resources, and read-aloud story ideas all in one place.
-    </p>
+            <div class="apps-showcase" id="apps">
+                <article class="app-card pet">
+                    <div class="phone-stage">
+                        <img src="/images/softice/petcare-home-screen.webp" alt="PetCare Log app home screen showing real pet care dashboard">
+                    </div>
+                    <div class="card-body">
+                        <div class="app-icon" aria-hidden="true">🐾</div>
+                        <h2>PetCare Log</h2>
+                        <p>Track health, meals, walks, reminders, vet visits, and memories for your pets.</p>
+                        <a class="learn-link" href="/petcare/" data-track="app_card_click" data-track-location="app_showcase" data-track-title="PetCare Log">Learn More →</a>
+                    </div>
+                </article>
 
-    <div class="resource-links">
-        <h3>Core Guides</h3>
-        <ul>
-            <li><a href="/bedtime-stories-for-kids"
-                data-track="resource-link-click"
-                data-track-location="homepage_core_guides"
-                data-track-title="Bedtime Stories for Kids">Bedtime Stories for Kids</a></li>
-            <li><a href="/best-bedtime-stories-for-kids"
-                data-track="resource-link-click"
-                data-track-location="homepage_core_guides"
-                data-track-title="Best Bedtime Stories for Kids (2026 Guide)">Best Bedtime Stories for Kids (2026 Guide)</a></li>
-            <li><a href="/free-bedtime-stories-for-kids"
-                data-track="resource-link-click"
-                data-track-location="homepage_core_guides"
-                data-track-title="Free Bedtime Stories for Kids (No Subscription)">Free Bedtime Stories for Kids (No Subscription)</a></li>
-            <li><a href="/bedtime-story-app-for-kids"
-                data-track="resource-link-click"
-                data-track-location="homepage_core_guides"
-                data-track-title="Best Bedtime Story App for Kids">Best Bedtime Story App for Kids</a></li>
-            <li><a href="/short-bedtime-stories-for-kids"
-                data-track="resource-link-click"
-                data-track-location="homepage_core_guides"
-                data-track-title="Short Bedtime Stories for Kids">Short Bedtime Stories for Kids</a></li>
-            <li><a href="/benefits-of-bedtime-stories"
-                data-track="resource-link-click"
-                data-track-location="homepage_core_guides"
-                data-track-title="Benefits of Bedtime Stories for Kids">Benefits of Bedtime Stories for Kids</a></li>
-        </ul>
-    </div>
-</section>
+                <article class="app-card calm">
+                    <div class="phone-stage">
+                        <img src="/images/softice/calmpulse-home-screen.webp" alt="CalmPulse app home screen showing calm tools for breathing and anxiety reset">
+                    </div>
+                    <div class="card-body">
+                        <div class="app-icon" aria-hidden="true">🪷</div>
+                        <h2>CalmPulse</h2>
+                        <p>Calming tools for panic reset, breathing, mood check-ins, and peaceful moments.</p>
+                        <a class="learn-link" href="/calmpulse/" data-track="app_card_click" data-track-location="app_showcase" data-track-title="CalmPulse">Learn More →</a>
+                    </div>
+                </article>
 
-<section class="section fade" aria-labelledby="story-library-heading" data-section-track="homepage_story_library_section">
-    <h2 id="story-library-heading">Story Collection Inside the Cozy Tales App</h2>
-    <p>
-        Explore our growing bedtime story collection. Each book below is ready to connect to its own landing page with a story preview, bedtime details, YouTube video, TikTok video, Instagram content, and direct app access.
-    </p>
+                <article class="app-card cozy">
+                    <div class="phone-stage">
+                        <img src="/images/softice/cozy-tales-home-screen.webp" alt="Cozy Tales app home screen showing bedtime story books for kids">
+                    </div>
+                    <div class="card-body">
+                        <div class="app-icon" aria-hidden="true">📖</div>
+                        <h2>Cozy Tales</h2>
+                        <p>Heartwarming bedtime stories for kids with narration, music, and cozy illustrations.</p>
+                        <a class="learn-link" href="/cozy-tales/" data-track="app_card_click" data-track-location="app_showcase" data-track-title="Cozy Tales">Learn More →</a>
+                    </div>
+                </article>
 
-    <div class="story-library-grid">
-        <div class="story-library-card">
-            <a class="story-cover-link" href="/monkey-milos-big-sea-adventure"
-               data-track="story-card-click"
-               data-track-location="homepage_story_cover"
-               data-track-title="Monkey Milo’s Big Sea Adventure">
-                <img src="monkey-milos-big-sea-adventure-book-cover.webp" alt="Monkey Milo’s Big Sea Adventure book cover" loading="lazy" decoding="async">
-                <h3>Monkey Milo’s Big Sea Adventure</h3>
+                <article class="app-card zero">
+                    <div class="phone-stage">
+                        <img src="/images/softice/zero-reset-home-screen.webp" alt="Zero Reset app home screen showing discipline streak tracker">
+                    </div>
+                    <div class="card-body">
+                        <div class="app-icon" aria-hidden="true">0</div>
+                        <h2>Zero Reset</h2>
+                        <p>Build discipline streaks, reset excuses, and bounce back stronger every day.</p>
+                        <a class="learn-link" href="/zero-reset/" data-track="app_card_click" data-track-location="app_showcase" data-track-title="Zero Reset">Learn More →</a>
+                    </div>
+                </article>
+            </div>
+
+            <section class="why-softice" aria-labelledby="why-softice-heading">
+                <h2 id="why-softice-heading">Why Softice</h2>
+                <div class="why-grid">
+                    <div class="reason">
+                        <div class="reason-icon" aria-hidden="true">▣</div>
+                        <div>
+                            <h3>Simple Design</h3>
+                            <p>Clean, intuitive experiences that make sense from the very first tap.</p>
+                        </div>
+                    </div>
+                    <div class="reason">
+                        <div class="reason-icon" aria-hidden="true">♡</div>
+                        <div>
+                            <h3>Emotional Products</h3>
+                            <p>We build apps that connect with people and support their well-being.</p>
+                        </div>
+                    </div>
+                    <div class="reason">
+                        <div class="reason-icon" aria-hidden="true">▯</div>
+                        <div>
+                            <h3>Mobile-First</h3>
+                            <p>Designed for phones, built for real-world use on the go.</p>
+                        </div>
+                    </div>
+                    <div class="reason">
+                        <div class="reason-icon" aria-hidden="true">⌁</div>
+                        <div>
+                            <h3>Built for Real Life</h3>
+                            <p>Practical, reliable, and made to fit naturally into your everyday.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </section>
+    </main>
+
+    <footer class="footer" id="contact">
+        <div>
+            <a class="logo" href="/" aria-label="Softice Innovations Labs homepage">
+                <span class="logo-mark">S</span>
+                <span class="logo-text">
+                    <strong>Softice</strong>
+                    <small>Innovations Labs</small>
+                </span>
             </a>
-            <p>A gentle ocean bedtime story with peaceful adventure and cozy nighttime energy.</p>
-            <a class="story-link" href="/monkey-milos-big-sea-adventure"
-               data-track="story-card-click"
-               data-track-location="homepage_story_library"
-               data-track-title="Monkey Milo’s Big Sea Adventure">Open story page</a>
+            <p>We create thoughtful mobile apps that bring calm, care, clarity, and small daily wins to everyday life.</p>
         </div>
 
-        <div class="story-library-card">
-            <a class="story-cover-link" href="/the-cheerful-chicks-sunny-dream"
-               data-track="story-card-click"
-               data-track-location="homepage_story_cover"
-               data-track-title="The Cheerful Chick’s Sunny Dream">
-                <img src="the-cheerful-chicks-sunny-dream-book-cover.webp" alt="The Cheerful Chick’s Sunny Dream book cover" loading="lazy" decoding="async">
-                <h3>The Cheerful Chick’s Sunny Dream</h3>
-            </a>
-            <p>A bright and calming bedtime story designed to help young children relax before sleep.</p>
-            <a class="story-link" href="/the-cheerful-chicks-sunny-dream"
-               data-track="story-card-click"
-               data-track-location="homepage_story_library"
-               data-track-title="The Cheerful Chick’s Sunny Dream">Open story page</a>
+        <div>
+            <h3>Company</h3>
+            <a href="#about">About Us</a>
+            <a href="#apps">Our Apps</a>
+            <a href="mailto:support@softiceinnovationslabs.com">Contact</a>
         </div>
 
-        <div class="story-library-card">
-            <a class="story-cover-link" href="/zara-the-zippy-zebra"
-               data-track="story-card-click"
-               data-track-location="homepage_story_cover"
-               data-track-title="Zara the Zippy Zebra">
-                <img src="zara-the-zippy-zebra-book-cover.webp" alt="Zara the Zippy Zebra book cover" loading="lazy" decoding="async">
-                <h3>Zara the Zippy Zebra</h3>
-            </a>
-            <p>A playful bedtime story with a soft, child-friendly rhythm and a peaceful ending.</p>
-            <a class="story-link" href="/zara-the-zippy-zebra"
-               data-track="story-card-click"
-               data-track-location="homepage_story_library"
-               data-track-title="Zara the Zippy Zebra">Open story page</a>
+        <div>
+            <h3>Apps</h3>
+            <a href="/petcare/">PetCare Log</a>
+            <a href="/calmpulse/">CalmPulse</a>
+            <a href="/cozy-tales/">Cozy Tales</a>
+            <a href="/zero-reset/">Zero Reset</a>
         </div>
 
-        <div class="story-library-card">
-            <a class="story-cover-link" href="/timmy-the-dreamy-tiger"
-               data-track="story-card-click"
-               data-track-location="homepage_story_cover"
-               data-track-title="Timmy the Dreamy Tiger">
-                <img src="timmy-the-dreamy-tiger-book-cover.webp" alt="Timmy the Dreamy Tiger book cover" loading="lazy" decoding="async">
-                <h3>Timmy the Dreamy Tiger</h3>
-            </a>
-            <p>A dreamy bedtime adventure for kids who love calm stories and bedtime imagination.</p>
-            <a class="story-link" href="/timmy-the-dreamy-tiger"
-               data-track="story-card-click"
-               data-track-location="homepage_story_library"
-               data-track-title="Timmy the Dreamy Tiger">Open story page</a>
+        <div id="support">
+            <h3>Support</h3>
+            <a href="/support/">Help Center</a>
+            <a href="/privacy-policy/">Privacy Policy</a>
+            <a href="/terms/">Terms of Service</a>
         </div>
 
-        <div class="story-library-card">
-            <a class="story-cover-link" href="/the-sleepy-dinosaur"
-               data-track="story-card-click"
-               data-track-location="homepage_story_cover"
-               data-track-title="The Sleepy Dinosaur">
-                <img src="the-sleepy-dinosaur-book-cover.webp" alt="The Sleepy Dinosaur book cover" loading="lazy" decoding="async">
-                <h3>The Sleepy Dinosaur</h3>
-            </a>
-            <p>A soft dinosaur bedtime favorite created to help children unwind and settle into sleep.</p>
-            <a class="story-link" href="/the-sleepy-dinosaur"
-               data-track="story-card-click"
-               data-track-location="homepage_story_library"
-               data-track-title="The Sleepy Dinosaur">Open story page</a>
+        <div>
+            <h3>Let's connect</h3>
+            <a href="mailto:support@softiceinnovationslabs.com">support@softiceinnovationslabs.com</a>
+            <div class="socials" aria-label="Social links">
+                <a href="https://www.youtube.com/@BedtimeStoriesCozyTales" target="_blank" rel="noopener noreferrer" aria-label="YouTube">▶</a>
+                <a href="https://www.instagram.com/bedtime.stories.forkids/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">◎</a>
+                <a href="mailto:support@softiceinnovationslabs.com" aria-label="Email">✉</a>
+            </div>
         </div>
 
-        <div class="story-library-card">
-            <a class="story-cover-link" href="/the-friendly-fish"
-               data-track="story-card-click"
-               data-track-location="homepage_story_cover"
-               data-track-title="The Friendly Fish">
-                <img src="the-friendly-fish-book-cover.webp" alt="The Friendly Fish book cover" loading="lazy" decoding="async">
-                <h3>The Friendly Fish</h3>
-            </a>
-            <p>A soothing underwater bedtime story filled with calm visuals and gentle storytelling.</p>
-            <a class="story-link" href="/the-friendly-fish"
-               data-track="story-card-click"
-               data-track-location="homepage_story_library"
-               data-track-title="The Friendly Fish">Open story page</a>
-        </div>
-
-        <div class="story-library-card">
-            <a class="story-cover-link" href="/little-lions-adventure"
-               data-track="story-card-click"
-               data-track-location="homepage_story_cover"
-               data-track-title="Little Lion’s Adventure">
-                <img src="little-lions-adventure-book-cover.webp" alt="Little Lion’s Adventure book cover" loading="lazy" decoding="async">
-                <h3>Little Lion’s Adventure</h3>
-            </a>
-            <p>A warm bedtime story that blends little adventure with a calm nighttime feeling.</p>
-            <a class="story-link" href="/little-lions-adventure"
-               data-track="story-card-click"
-               data-track-location="homepage_story_library"
-               data-track-title="Little Lion’s Adventure">Open story page</a>
-        </div>
-
-        <div class="story-library-card">
-            <a class="story-cover-link" href="/monkey-milos-big-adventures"
-               data-track="story-card-click"
-               data-track-location="homepage_story_cover"
-               data-track-title="Monkey Milo’s Big Adventures">
-                <img src="monkey-milos-big-adventures-book-cover.webp" alt="Monkey Milo’s Big Adventures book cover" loading="lazy" decoding="async">
-                <h3>Monkey Milo’s Big Adventures</h3>
-            </a>
-            <p>A fun bedtime story collection starring Monkey Milo in a gentle nighttime adventure.</p>
-            <a class="story-link" href="/monkey-milos-big-adventures"
-               data-track="story-card-click"
-               data-track-location="homepage_story_library"
-               data-track-title="Monkey Milo’s Big Adventures">Open story page</a>
-        </div>
-
-        <div class="story-library-card">
-            <a class="story-cover-link" href="/bear-big-adventure"
-               data-track="story-card-click"
-               data-track-location="homepage_story_cover"
-               data-track-title="Bear Big Adventure">
-                <img src="bear-big-adventure-book-cover.webp" alt="Bear Big Adventure book cover" loading="lazy" decoding="async">
-                <h3>Bear Big Adventure</h3>
-            </a>
-            <p>A cozy bedtime adventure story with a gentle bear and a comforting nighttime mood.</p>
-            <a class="story-link" href="/bear-big-adventure"
-               data-track="story-card-click"
-               data-track-location="homepage_story_library"
-               data-track-title="Bear Big Adventure">Open story page</a>
-        </div>
-
-        <div class="story-library-card">
-            <a class="story-cover-link" href="/bunnys-garden-picnic"
-               data-track="story-card-click"
-               data-track-location="homepage_story_cover"
-               data-track-title="Bunny's Garden Picnic">
-                <img src="bunnys-garden-picnic-book-cover.webp" alt="Bunny's Garden Picnic book cover" loading="lazy" decoding="async">
-                <h3>Bunny's Garden Picnic</h3>
-            </a>
-            <p>A sweet garden bedtime story with bunny charm, calm pacing, and soft bedtime comfort.</p>
-            <a class="story-link" href="/bunnys-garden-picnic"
-               data-track="story-card-click"
-               data-track-location="homepage_story_library"
-               data-track-title="Bunny's Garden Picnic">Open story page</a>
-        </div>
-
-        <div class="story-library-card">
-            <a class="story-cover-link" href="/cuddly-cows-starry-night"
-               data-track="story-card-click"
-               data-track-location="homepage_story_cover"
-               data-track-title="Cuddly Cow's Starry Night">
-                <img src="cuddly-cows-starry-night-book-cover.webp" alt="Cuddly Cow's Starry Night book cover" loading="lazy" decoding="async">
-                <h3>Cuddly Cow's Starry Night</h3>
-            </a>
-            <p>A peaceful starry-night bedtime story made for children who love calm animal stories.</p>
-            <a class="story-link" href="/cuddly-cows-starry-night"
-               data-track="story-card-click"
-               data-track-location="homepage_story_library"
-               data-track-title="Cuddly Cow's Starry Night">Open story page</a>
-        </div>
-
-        <div class="story-library-card">
-            <a class="story-cover-link" href="/the-sleepy-dinosaur-2"
-               data-track="story-card-click"
-               data-track-location="homepage_story_cover"
-               data-track-title="The Sleepy Dinosaur #2">
-                <img src="the-sleepy-dinosaur-2-book-cover.webp" alt="The Sleepy Dinosaur second edition book cover" loading="lazy" decoding="async">
-                <h3>The Sleepy Dinosaur #2</h3>
-            </a>
-            <p>A soft and cozy bedtime story about a sleepy little dinosaur, designed to help kids relax and fall asleep peacefully.</p>
-            <a class="story-link" href="/the-sleepy-dinosaur-2"
-               data-track="story-card-click"
-               data-track-location="homepage_story_library"
-               data-track-title="The Sleepy Dinosaur #2">Open story page</a>
-        </div>
-
-        <div class="story-library-card">
-            <a class="story-cover-link" href="/the-little-ducks-rainy-day"
-               data-track="story-card-click"
-               data-track-location="homepage_story_cover"
-               data-track-title="The Little Duck's Rainy Day">
-                <img src="the-little-ducks-rainy-day-book-cover.webp" alt="The Little Duck's Rainy Day book cover" loading="lazy" decoding="async">
-                <h3>The Little Duck's Rainy Day</h3>
-            </a>
-            <p>A rainy-day bedtime story with soft storytelling and a peaceful sleepy atmosphere.</p>
-            <a class="story-link" href="/the-little-ducks-rainy-day"
-               data-track="story-card-click"
-               data-track-location="homepage_story_library"
-               data-track-title="The Little Duck's Rainy Day">Open story page</a>
-        </div>
-
-        <div class="story-library-card">
-            <a class="story-cover-link" href="/ellies-sweet-dreams"
-               data-track="story-card-click"
-               data-track-location="homepage_story_cover"
-               data-track-title="Ellie's Sweet Dreams">
-                <img src="ellies-sweet-dreams-book-cover.webp" alt="Ellie's Sweet Dreams book cover" loading="lazy" decoding="async">
-                <h3>Ellie's Sweet Dreams</h3>
-            </a>
-            <p>A calming bedtime story designed around gentle dreams, comfort, and peaceful rest.</p>
-            <a class="story-link" href="/ellies-sweet-dreams"
-               data-track="story-card-click"
-               data-track-location="homepage_story_library"
-               data-track-title="Ellie's Sweet Dreams">Open story page</a>
-        </div>
-
-        <div class="story-library-card">
-            <a class="story-cover-link" href="/little-fox-big-adventures"
-               data-track="story-card-click"
-               data-track-location="homepage_story_cover"
-               data-track-title="Little Fox Big Adventures">
-                <img src="little-fox-big-adventures-book-cover.webp" alt="Little Fox Big Adventures book cover" loading="lazy" decoding="async">
-                <h3>Little Fox Big Adventures</h3>
-            </a>
-            <p>A bedtime fox story that blends gentle curiosity with a calm and comforting ending.</p>
-            <a class="story-link" href="/little-fox-big-adventures"
-               data-track="story-card-click"
-               data-track-location="homepage_story_library"
-               data-track-title="Little Fox Big Adventures">Open story page</a>
-        </div>
-
-        <div class="story-library-card">
-            <a class="story-cover-link" href="/giraffes-tall-tales"
-               data-track="story-card-click"
-               data-track-location="homepage_story_cover"
-               data-track-title="Giraffe's Tall Tales">
-                <img src="giraffes-tall-tales-book-cover.webp" alt="Giraffe's Tall Tales book cover" loading="lazy" decoding="async">
-                <h3>Giraffe's Tall Tales</h3>
-            </a>
-            <p>A tall, gentle bedtime story with playful charm and a relaxing nighttime tone.</p>
-            <a class="story-link" href="/giraffes-tall-tales"
-               data-track="story-card-click"
-               data-track-location="homepage_story_library"
-               data-track-title="Giraffe's Tall Tales">Open story page</a>
-        </div>
-
-        <div class="story-library-card">
-            <a class="story-cover-link" href="/koalas-moonlit-cuddle"
-               data-track="story-card-click"
-               data-track-location="homepage_story_cover"
-               data-track-title="Koala's Moonlit Cuddle">
-                <img src="koalas-moonlit-cuddle-book-cover.webp" alt="Koala's Moonlit Cuddle book cover" loading="lazy" decoding="async">
-                <h3>Koala's Moonlit Cuddle</h3>
-            </a>
-            <p>A moonlit cuddle bedtime story with gentle comfort, sleepy pacing, and cozy warmth.</p>
-            <a class="story-link" href="/koalas-moonlit-cuddle"
-               data-track="story-card-click"
-               data-track-location="homepage_story_library"
-               data-track-title="Koala's Moonlit Cuddle">Open story page</a>
-        </div>
-
-        <div class="story-library-card">
-            <a class="story-cover-link" href="/the-little-lambs-adventures"
-               data-track="story-card-click"
-               data-track-location="homepage_story_cover"
-               data-track-title="The Little Lamb's Adventures">
-                <img src="the-little-lambs-adventures-book-cover.webp" alt="The Little Lamb's Adventures book cover" loading="lazy" decoding="async">
-                <h3>The Little Lamb's Adventures</h3>
-            </a>
-            <p>A soft and comforting lamb bedtime story created for peaceful nighttime reading.</p>
-            <a class="story-link" href="/the-little-lambs-adventures"
-               data-track="story-card-click"
-               data-track-location="homepage_story_library"
-               data-track-title="The Little Lamb's Adventures">Open story page</a>
-        </div>
-
-        <div class="story-library-card">
-            <a class="story-cover-link" href="/little-lions-adventure-2"
-               data-track="story-card-click"
-               data-track-location="homepage_story_cover"
-               data-track-title="Little Lion's Adventure #2">
-                <img src="little-lions-adventure-2-book-cover.webp" alt="Little Lion's Adventure second edition book cover" loading="lazy" decoding="async">
-                <h3>Little Lion's Adventure #2</h3>
-            </a>
-            <p>A gentle bedtime story about a little lion’s cozy adventure, designed to help kids relax and fall asleep peacefully.</p>
-            <a class="story-link" href="/little-lions-adventure-2"
-               data-track="story-card-click"
-               data-track-location="homepage_story_library"
-               data-track-title="Little Lion's Adventure #2">Open story page</a>
-        </div>
-
-        <div class="story-library-card">
-            <a class="story-cover-link" href="/monkey-milos-big-adventure"
-               data-track="story-card-click"
-               data-track-location="homepage_story_cover"
-               data-track-title="Monkey Milo's Big Adventure">
-                <img src="monkey-milos-big-adventure-book-cover.webp" alt="Monkey Milo's Big Adventure book cover" loading="lazy" decoding="async">
-                <h3>Monkey Milo's Big Adventure</h3>
-            </a>
-            <p>A bedtime adventure story featuring Monkey Milo in a calm and child-friendly journey.</p>
-            <a class="story-link" href="/monkey-milos-big-adventure"
-               data-track="story-card-click"
-               data-track-location="homepage_story_library"
-               data-track-title="Monkey Milo's Big Adventure">Open story page</a>
-        </div>
-
-        <div class="story-library-card">
-            <a class="story-cover-link" href="/owl-and-the-moon"
-               data-track="story-card-click"
-               data-track-location="homepage_story_cover"
-               data-track-title="Owl and the Moon">
-                <img src="owl-and-the-moon-book-cover.webp" alt="Owl and the Moon book cover" loading="lazy" decoding="async">
-                <h3>Owl and the Moon</h3>
-            </a>
-            <p>A quiet moonlit bedtime story with owl magic, soft rhythms, and peaceful bedtime comfort.</p>
-            <a class="story-link" href="/owl-and-the-moon"
-               data-track="story-card-click"
-               data-track-location="homepage_story_library"
-               data-track-title="Owl and the Moon">Open story page</a>
-        </div>
-
-        <div class="story-library-card">
-            <a class="story-cover-link" href="/pandas-cozy-bamboo-nap"
-               data-track="story-card-click"
-               data-track-location="homepage_story_cover"
-               data-track-title="Panda's Cozy Bamboo Nap">
-                <img src="pandas-cozy-bamboo-nap-book-cover.webp" alt="Panda's Cozy Bamboo Nap book cover" loading="lazy" decoding="async">
-                <h3>Panda's Cozy Bamboo Nap</h3>
-            </a>
-            <p>A soft panda bedtime story built for sleepy cuddles and relaxing nighttime reading.</p>
-            <a class="story-link" href="/pandas-cozy-bamboo-nap"
-               data-track="story-card-click"
-               data-track-location="homepage_story_library"
-               data-track-title="Panda's Cozy Bamboo Nap">Open story page</a>
-        </div>
-
-        <div class="story-library-card">
-            <a class="story-cover-link" href="/the-little-penguin"
-               data-track="story-card-click"
-               data-track-location="homepage_story_cover"
-               data-track-title="The Little Penguin">
-                <img src="the-little-penguin-book-cover.webp" alt="The Little Penguin book cover" loading="lazy" decoding="async">
-                <h3>The Little Penguin</h3>
-            </a>
-            <p>A gentle bedtime penguin story with sweet visuals and a calm snowy bedtime feeling.</p>
-            <a class="story-link" href="/the-little-penguin"
-               data-track="story-card-click"
-               data-track-location="homepage_story_library"
-               data-track-title="The Little Penguin">Open story page</a>
-        </div>
-
-        <div class="story-library-card">
-            <a class="story-cover-link" href="/the-playful-puppys-night-adventure"
-               data-track="story-card-click"
-               data-track-location="homepage_story_cover"
-               data-track-title="The Playful Puppy's Night Adventure">
-                <img src="the-playful-puppys-night-adventure-book-cover.webp" alt="The Playful Puppy's Night Adventure book cover" loading="lazy" decoding="async">
-                <h3>The Playful Puppy's Night Adventure</h3>
-            </a>
-            <p>A playful but bedtime-friendly puppy story with soft pacing and a cozy night ending.</p>
-            <a class="story-link" href="/the-playful-puppys-night-adventure"
-               data-track="story-card-click"
-               data-track-location="homepage_story_library"
-               data-track-title="The Playful Puppy's Night Adventure">Open story page</a>
-        </div>
-
-        <div class="story-library-card">
-            <a class="story-cover-link" href="/the-sleepy-kitten"
-               data-track="story-card-click"
-               data-track-location="homepage_story_cover"
-               data-track-title="The Sleepy Kitten">
-                <img src="the-sleepy-kitten-book-cover.webp" alt="The Sleepy Kitten book cover" loading="lazy" decoding="async">
-                <h3>The Sleepy Kitten</h3>
-            </a>
-            <p>A sleepy kitten bedtime story filled with softness, comfort, and relaxing bedtime energy.</p>
-            <a class="story-link" href="/the-sleepy-kitten"
-               data-track="story-card-click"
-               data-track-location="homepage_story_library"
-               data-track-title="The Sleepy Kitten">Open story page</a>
-        </div>
-
-        <div class="story-library-card">
-            <a class="story-cover-link" href="/the-little-turtles-moon-swim"
-               data-track="story-card-click"
-               data-track-location="homepage_story_cover"
-               data-track-title="The Little Turtle's Moon Swim">
-                <img src="the-little-turtles-moon-swim-book-cover.webp" alt="The Little Turtle's Moon Swim book cover" loading="lazy" decoding="async">
-                <h3>The Little Turtle's Moon Swim</h3>
-            </a>
-            <p>A peaceful moon-swim bedtime story that helps kids imagine calm nighttime water scenes.</p>
-            <a class="story-link" href="/the-little-turtles-moon-swim"
-               data-track="story-card-click"
-               data-track-location="homepage_story_library"
-               data-track-title="The Little Turtle's Moon Swim">Open story page</a>
-        </div>
-
-        <div class="story-library-card">
-            <a class="story-cover-link" href="/magical-unicorn-dreams"
-               data-track="story-card-click"
-               data-track-location="homepage_story_cover"
-               data-track-title="Magical Unicorn Dreams">
-                <img src="magical-unicorn-dreams-book-cover.webp" alt="Magical Unicorn Dreams book cover" loading="lazy" decoding="async">
-                <h3>Magical Unicorn Dreams</h3>
-            </a>
-            <p>A magical bedtime unicorn story with dreamy colors, calm wonder, and a gentle sleepy mood.</p>
-            <a class="story-link" href="/magical-unicorn-dreams"
-               data-track="story-card-click"
-               data-track-location="homepage_story_library"
-               data-track-title="Magical Unicorn Dreams">Open story page</a>
-        </div>
-
-        <div class="story-library-card">
-            <a class="story-cover-link" href="/the-playful-puppys-snow-adventure"
-               data-track="story-card-click"
-               data-track-location="homepage_story_cover"
-               data-track-title="The Playful Puppy's Snow Adventure">
-                <img src="the-playful-puppys-snow-adventure-book-cover.webp" alt="The Playful Puppy's Snow Adventure book cover" loading="lazy" decoding="async">
-                <h3>The Playful Puppy's Snow Adventure</h3>
-            </a>
-            <p>A snowy bedtime puppy story with playful charm and a peaceful ending for bedtime.</p>
-            <a class="story-link" href="/the-playful-puppys-snow-adventure"
-               data-track="story-card-click"
-               data-track-location="homepage_story_library"
-               data-track-title="The Playful Puppy's Snow Adventure">Open story page</a>
-        </div>
-
-        <div class="story-library-card">
-            <a class="story-cover-link" href="/monkey-milos-big-adventures-2"
-               data-track="story-card-click"
-               data-track-location="homepage_story_cover"
-               data-track-title="Monkey Milo's Big Adventures #2">
-                <img src="monkey-milos-big-adventures-2-book-cover.webp" alt="Monkey Milo's Big Adventures 2 book cover" loading="lazy" decoding="async">
-                <h3>Monkey Milo's Big Adventures #2</h3>
-            </a>
-            <p>A brave little firefighter story with a calm bedtime ending, perfect for helping kids relax and fall asleep.</p>
-            <a class="story-link" href="/monkey-milos-big-adventures-2"
-               data-track="story-card-click"
-               data-track-location="homepage_story_library"
-               data-track-title="Monkey Milo's Big Adventures #2">Open story page</a>
-        </div>
-    </div>
-</section>
-
-<section class="section fade" aria-labelledby="more-sleep-guides-heading" data-section-track="homepage_more_sleep_guides">
-    <h2 id="more-sleep-guides-heading">More Sleep and Bedtime Guides</h2>
-
-    <div class="resource-grid">
-        <div class="resource-card">
-            <h3>Bedtime Routine for Kids</h3>
-            <p>Learn how to create a calm bedtime routine for kids with peaceful habits, story time, and simple nightly structure.</p>
-            <a href="/bedtime-routine-for-kids"
-               data-track="resource-link-click"
-               data-track-location="homepage_more_sleep_guides"
-               data-track-title="Bedtime Routine for Kids">Read the guide</a>
-        </div>
-
-        <div class="resource-card">
-            <h3>Sleep Stories for Toddlers</h3>
-            <p>Explore short, gentle sleep stories for toddlers that help little ones slow down and settle before bed.</p>
-            <a href="/sleep-stories-for-toddlers"
-               data-track="resource-link-click"
-               data-track-location="homepage_more_sleep_guides"
-               data-track-title="Sleep Stories for Toddlers">Read the guide</a>
-        </div>
-
-        <div class="resource-card">
-            <h3>Bedtime Stories for Toddlers</h3>
-            <p>Find bedtime stories for toddlers with simple language, soft themes, and peaceful storytelling for sleep.</p>
-            <a href="/bedtime-stories-for-toddlers"
-               data-track="resource-link-click"
-               data-track-location="homepage_more_sleep_guides"
-               data-track-title="Bedtime Stories for Toddlers">Read the guide</a>
-        </div>
-
-        <div class="resource-card">
-            <h3>Bedtime Stories for Babies</h3>
-            <p>Discover gentle bedtime stories for babies with soft rhythm, comforting sounds, and calming bedtime narration.</p>
-            <a href="/bedtime-stories-for-babies"
-               data-track="resource-link-click"
-               data-track-location="homepage_more_sleep_guides"
-               data-track-title="Bedtime Stories for Babies">Read the guide</a>
-        </div>
-
-        <div class="resource-card">
-            <h3>Bedtime Stories for Preschoolers</h3>
-            <p>Explore bedtime stories for preschoolers with simple language, gentle themes, and engaging but calming storytelling.</p>
-            <a href="/bedtime-stories-for-preschoolers"
-               data-track="resource-link-click"
-               data-track-location="homepage_more_sleep_guides"
-               data-track-title="Bedtime Stories for Preschoolers">Read the guide</a>
-        </div>
-
-        <div class="resource-card">
-            <h3>Calming Stories for Kids</h3>
-            <p>Discover calming stories for kids that support peaceful bedtime routines and help children feel safe and relaxed.</p>
-            <a href="/calming-stories-for-kids"
-               data-track="resource-link-click"
-               data-track-location="homepage_more_sleep_guides"
-               data-track-title="Calming Stories for Kids">Read the guide</a>
-        </div>
-
-        <div class="resource-card">
-            <h3>How to Help Kids Sleep</h3>
-            <p>Get simple and practical tips to help kids sleep better with routines, bedtime stories, and a calm evening environment.</p>
-            <a href="/how-to-help-kids-sleep"
-               data-track="resource-link-click"
-               data-track-location="homepage_more_sleep_guides"
-               data-track-title="How to Help Kids Sleep">Read the guide</a>
-        </div>
-
-        <div class="resource-card">
-            <h3>Calming Fairy Tales for Kids</h3>
-            <p>Explore gentle fairy tales for bedtime with peaceful themes, magical stories, and calming nighttime reading for children.</p>
-            <a href="/calming-fairy-tales-for-kids"
-               data-track="resource-link-click"
-               data-track-location="homepage_more_sleep_guides"
-               data-track-title="Calming Fairy Tales for Kids">Read the guide</a>
-        </div>
-
-        <div class="resource-card">
-            <h3>Short Bedtime Stories for Kids</h3>
-            <p>Quick calming story ideas that help children relax before sleep and fit naturally into busy bedtime routines.</p>
-            <a href="/short-bedtime-stories-for-kids"
-               data-track="resource-link-click"
-               data-track-location="homepage_more_sleep_guides"
-               data-track-title="Short Bedtime Stories for Kids">Read the guide</a>
-        </div>
-
-        <div class="resource-card">
-            <h3>Benefits of Bedtime Stories</h3>
-            <p>Learn how bedtime stories support better sleep, emotional comfort, language growth, and stronger family connection.</p>
-            <a href="/benefits-of-bedtime-stories"
-               data-track="resource-link-click"
-               data-track-location="homepage_more_sleep_guides"
-               data-track-title="Benefits of Bedtime Stories">Read the guide</a>
-        </div>
-    </div>
-</section>
-
-<section class="section fade" aria-labelledby="faq-heading" data-section-track="homepage_faq_section">
-    <h2 id="faq-heading">Frequently Asked Questions</h2>
-    <div class="faq-wrap">
-        <h3>What is the best bedtime stories app for kids?</h3>
-        <p>Cozy Tales is designed for families looking for bedtime stories for kids with calming narration, peaceful visuals, and a simple no subscription experience.</p>
-
-        <h3>Does Cozy Tales include free bedtime stories?</h3>
-        <p>Yes. Cozy Tales includes 2 free books so families can explore the app before choosing more stories.</p>
-
-        <h3>Is Cozy Tales a no subscription kids bedtime app?</h3>
-        <p>Yes. Cozy Tales focuses on a no subscription experience so parents can enjoy magical bedtime moments without recurring monthly charges.</p>
-
-        <h3>Does the app include read aloud bedtime stories?</h3>
-        <p>Yes. Cozy Tales includes read-aloud narration to help children relax and enjoy peaceful sleep stories for children.</p>
-    </div>
-</section>
-
-<section class="section fade" aria-labelledby="stay-connected-heading" data-section-track="homepage_stay_connected">
-    <h2 id="stay-connected-heading">Stay Connected ✨</h2>
-
-    <form action="https://formspree.io/f/mzdjogng" method="POST" class="form-box" id="form" autocomplete="off">
-        <input type="email" name="email" id="email" placeholder="Enter your email" required autocomplete="off" aria-label="Enter your email">
-        <textarea name="message" id="message" placeholder="Tell us what your child loves" autocomplete="off" aria-label="Tell us what your child loves"></textarea>
-        <button type="submit" aria-label="Notify me about bedtime stories for kids">✨ Notify Me</button>
-    </form>
-
-    <div class="social-follow">
-        <h3>Follow Us</h3>
-        <div class="social-links">
-            <a href="https://www.tiktok.com/@bedtimestoriescozytales" target="_blank" rel="noopener noreferrer" class="tiktok" data-label="TikTok" aria-label="Follow Cozy Tales on TikTok"
-               data-track="social-click"
-               data-track-location="homepage_social_follow"
-               data-track-title="TikTok">
-                <img src="tiktok_icon_2.png" alt="TikTok icon" loading="lazy" decoding="async" width="30" height="30">
-            </a>
-
-            <a href="https://www.instagram.com/bedtime.stories.forkids/" target="_blank" rel="noopener noreferrer" class="instagram" data-label="Instagram" aria-label="Follow Cozy Tales on Instagram"
-               data-track="social-click"
-               data-track-location="homepage_social_follow"
-               data-track-title="Instagram">
-                <img src="instagram_icon_2.png" alt="Instagram icon" loading="lazy" decoding="async" width="30" height="30">
-            </a>
-
-            <a href="https://www.youtube.com/@BedtimeStoriesCozyTales" target="_blank" rel="noopener noreferrer" class="youtube" data-label="YouTube" aria-label="Follow Cozy Tales on YouTube"
-               data-track="social-click"
-               data-track-location="homepage_social_follow"
-               data-track-title="YouTube">
-                <img src="youtube_icon_2.png" alt="YouTube icon" loading="lazy" decoding="async" width="30" height="30">
-            </a>
-
-            <a href="#" target="_blank" rel="noopener noreferrer" class="facebook" data-label="Facebook" aria-label="Follow Cozy Tales on Facebook"
-               data-track="social-click"
-               data-track-location="homepage_social_follow"
-               data-track-title="Facebook">
-                <img src="facebook_icon_2.png" alt="Facebook icon" loading="lazy" decoding="async" width="30" height="30">
-            </a>
-        </div>
-    </div>
-</section>
-</main>
-
-<footer class="footer">
-    <h3>📩 Contact</h3>
-    <p>support@softiceinnovationslabs.com</p>
-
-    <h3>🔒 Privacy</h3>
-    <a href="https://softice-privacy.pages.dev/" target="_blank" rel="noopener noreferrer">View Privacy Policy</a>
-
-    <div class="footer-copy">
-        © 2026 Softice Innovations Labs LLC
-    </div>
-</footer>
-
-<div class="popup-overlay" id="popupOverlay"></div>
-<div class="popup-box" id="popupBox">
-    <h3>Thank you</h3>
-    <p>for contacting Softice Innovations Labs</p>
-    <button type="button" onclick="closePopup()">OK</button>
+        <div class="copyright">© 2026 Softice Innovations Labs LLC. All rights reserved.</div>
+    </footer>
 </div>
-
-<a href="https://play.google.com/store/apps/details?id=com.softiceinnovationslabs.bedtimestorybooks&utm_source=softice_site&utm_medium=organic&utm_campaign=homepage_floating_cta&utm_content=floating_google_play"
-   class="floating-google-play"
-   id="floatingGooglePlay"
-   target="_blank"
-   rel="noopener noreferrer"
-   data-track="google-play-click"
-   data-track-location="homepage_floating_cta"
-   data-track-content="floating_google_play">
-   ▶ Get it on Google Play
-</a>
 
 <script type="application/ld+json">
 {
@@ -1466,103 +897,32 @@ for (let i = 0; i < 40; i++) {
       "@id": "https://softiceinnovationslabs.com/#organization",
       "name": "Softice Innovations Labs LLC",
       "url": "https://softiceinnovationslabs.com/",
+      "email": "support@softiceinnovationslabs.com",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://softiceinnovationslabs.com/family-hero.webp"
+        "url": "https://softiceinnovationslabs.com/images/softice/softice-logo-mark.png"
       },
       "sameAs": [
-        "https://www.tiktok.com/@bedtimestoriescozytales",
+        "https://www.youtube.com/@BedtimeStoriesCozyTales",
         "https://www.instagram.com/bedtime.stories.forkids/",
-        "https://www.youtube.com/@BedtimeStoriesCozyTales"
+        "https://www.tiktok.com/@bedtimestoriescozytales"
       ]
     },
     {
       "@type": "WebSite",
       "@id": "https://softiceinnovationslabs.com/#website",
-      "name": "Bedtime Story Books – Cozy Tales",
+      "name": "Softice Innovations Labs",
       "url": "https://softiceinnovationslabs.com/",
-      "description": "Bedtime stories for kids with calming narration, 2 free books, and no subscription.",
+      "description": "Softice Innovations Labs builds simple, beautiful mobile apps for pet care, calm, bedtime stories, discipline, focus, and everyday life.",
       "publisher": {
         "@id": "https://softiceinnovationslabs.com/#organization"
       }
-    },
-    {
-      "@type": "SoftwareApplication",
-      "@id": "https://softiceinnovationslabs.com/#app",
-      "name": "Bedtime Story Books – Cozy Tales",
-      "operatingSystem": "Android",
-      "applicationCategory": "EducationalApplication",
-      "url": "https://softiceinnovationslabs.com/",
-      "downloadUrl": "https://play.google.com/store/apps/details?id=com.softiceinnovationslabs.bedtimestorybooks&utm_source=softice_site&utm_medium=organic&utm_campaign=homepage_floating_cta&utm_content=floating_google_play",
-      "image": "https://softiceinnovationslabs.com/family-hero.webp",
-      "publisher": {
-        "@id": "https://softiceinnovationslabs.com/#organization"
-      },
-      "description": "Calming bedtime stories for kids with read-aloud narration, 2 free books, and no subscription."
-    },
-    {
-      "@type": "FAQPage",
-      "@id": "https://softiceinnovationslabs.com/#faq",
-      "name": "Bedtime Story Books – Cozy Tales FAQ",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "What is the best bedtime stories app for kids?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Cozy Tales is designed for families looking for bedtime stories for kids with calming narration, peaceful visuals, and a simple no subscription experience."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Does Cozy Tales include free bedtime stories?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Yes. Cozy Tales includes 2 free books so families can explore the app before choosing more stories."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Is Cozy Tales a no subscription kids bedtime app?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Yes. Cozy Tales focuses on a no subscription experience so parents can enjoy magical bedtime moments without recurring monthly charges."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Does the app include read aloud bedtime stories?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Yes. Cozy Tales includes read-aloud narration to help children relax and enjoy peaceful sleep stories for children."
-          }
-        }
-      ]
     }
   ]
 }
 </script>
 
 <script>
-const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add("show");
-        }
-    });
-});
-document.querySelectorAll(".fade").forEach(el => observer.observe(el));
-
-function openPopup() {
-    document.getElementById("popupOverlay").style.display = "block";
-    document.getElementById("popupBox").style.display = "block";
-}
-
-function closePopup() {
-    document.getElementById("popupOverlay").style.display = "none";
-    document.getElementById("popupBox").style.display = "none";
-}
-
 (function () {
     function getDeviceType() {
         const ua = navigator.userAgent || "";
@@ -1598,177 +958,25 @@ function closePopup() {
         };
     }
 
-    const trackedScrollMilestones = new Set();
-    const trackedTimeMilestones = new Set();
-    const trackedSections = new Set();
-
-    function getScrollPercent() {
-        const scrollTop = window.scrollY || window.pageYOffset;
-        const docHeight = Math.max(
-            document.body.scrollHeight,
-            document.documentElement.scrollHeight
-        );
-        const winHeight = window.innerHeight;
-        const scrollable = docHeight - winHeight;
-
-        if (scrollable <= 0) return 100;
-        return Math.min(100, Math.round((scrollTop / scrollable) * 100));
-    }
-
-    function trackScrollDepth() {
-        const currentScroll = getScrollPercent();
-        [25, 50, 75, 90].forEach(milestone => {
-            if (currentScroll >= milestone && !trackedScrollMilestones.has(milestone)) {
-                trackedScrollMilestones.add(milestone);
-                trackEvent("scroll_depth", {
-                    ...commonParams(),
-                    scroll_percent: milestone,
-                    page_name: "homepage"
-                });
-            }
-        });
-    }
-
-    function startEngagedTimeTracking() {
-        [30, 60, 120].forEach(seconds => {
-            setTimeout(() => {
-                if (!trackedTimeMilestones.has(seconds)) {
-                    trackedTimeMilestones.add(seconds);
-                    trackEvent("engaged_time_milestone", {
-                        ...commonParams(),
-                        engaged_time_seconds: seconds,
-                        page_name: "homepage"
-                    });
-                }
-            }, seconds * 1000);
-        });
-    }
-
-    function trackSections() {
-        const sectionObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (!entry.isIntersecting) return;
-
-                const sectionName = entry.target.getAttribute("data-section-track");
-                if (!sectionName || trackedSections.has(sectionName)) return;
-
-                trackedSections.add(sectionName);
-                trackEvent("section_view", {
-                    ...commonParams(),
-                    section_name: sectionName,
-                    page_name: "homepage"
-                });
-            });
-        }, {
-            threshold: 0.35
-        });
-
-        document.querySelectorAll("[data-section-track]").forEach(section => {
-            sectionObserver.observe(section);
-        });
-    }
-
     window.addEventListener("load", function () {
-        trackEvent("homepage_view", commonParams());
-        trackScrollDepth();
-        startEngagedTimeTracking();
-        trackSections();
+        trackEvent("company_homepage_view", {
+            ...commonParams(),
+            page_name: "softice_company_homepage"
+        });
     });
-
-    window.addEventListener("scroll", trackScrollDepth, { passive: true });
 
     document.addEventListener("click", function (e) {
         const el = e.target.closest("[data-track]");
         if (!el) return;
 
-        const trackType = el.getAttribute("data-track");
-        const trackLocation = el.getAttribute("data-track-location") || "unknown_location";
-        const trackTitle = el.getAttribute("data-track-title") || (el.textContent || "").trim() || "unknown_title";
-
-        if (trackType === "google-play-click") {
-            trackEvent("google_play_click", {
-                ...commonParams(),
-                cta_location: trackLocation,
-                cta_content: el.getAttribute("data-track-content") || "unknown_content",
-                link_url: el.href,
-                link_text: (el.textContent || "").trim()
-            });
-        }
-
-        if (trackType === "story-card-click") {
-            trackEvent("story_card_click", {
-                ...commonParams(),
-                click_location: trackLocation,
-                story_title: trackTitle,
-                link_url: el.href
-            });
-        }
-
-        if (trackType === "resource-link-click") {
-            trackEvent("resource_link_click", {
-                ...commonParams(),
-                click_location: trackLocation,
-                resource_title: trackTitle,
-                link_url: el.href
-            });
-        }
-
-        if (trackType === "social-click") {
-            trackEvent("social_click", {
-                ...commonParams(),
-                click_location: trackLocation,
-                social_platform: trackTitle,
-                link_url: el.href
-            });
-        }
-
-        if (trackType === "youtube-embed-click") {
-            trackEvent("youtube_embed_click", {
-                ...commonParams(),
-                click_location: trackLocation,
-                video_title: trackTitle
-            });
-        }
-    });
-
-    const form = document.getElementById('form');
-    const emailInput = document.getElementById('email');
-    const messageInput = document.getElementById('message');
-
-    form.addEventListener("submit", async function(e) {
-        e.preventDefault();
-
-        const data = new FormData(form);
-
-        try {
-            const response = await fetch(form.action, {
-                method: "POST",
-                body: data,
-                headers: {
-                    "Accept": "application/json"
-                }
-            });
-
-            if (!response.ok) {
-                throw new Error("Form submission failed");
-            }
-
-            form.reset();
-            emailInput.value = "";
-            messageInput.value = "";
-
-            trackEvent("form_submit", {
-                ...commonParams(),
-                form_name: "homepage_notify_me_form"
-            });
-
-            openPopup();
-        } catch (error) {
-            alert("There was a problem sending your message. Please try again.");
-        }
+        trackEvent(el.getAttribute("data-track"), {
+            ...commonParams(),
+            click_location: el.getAttribute("data-track-location") || "unknown_location",
+            click_title: el.getAttribute("data-track-title") || (el.textContent || "").trim(),
+            link_url: el.href || ""
+        });
     });
 })();
 </script>
-
 </body>
 </html>
