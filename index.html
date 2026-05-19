@@ -1,982 +1,857 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Softice Innovations Labs | Thoughtful Mobile Apps for Everyday Life</title>
-<meta name="description" content="Softice Innovations Labs builds simple, beautiful mobile apps for pet care, calm, bedtime stories, discipline, focus, and everyday life.">
-<meta name="author" content="Softice Innovations Labs LLC">
-<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
-<meta name="googlebot" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
-<meta name="theme-color" content="#fff8ef">
-<meta name="application-name" content="Softice Innovations Labs">
-<meta name="apple-mobile-web-app-title" content="Softice Innovations Labs">
-<meta name="format-detection" content="telephone=no">
-
-<link rel="canonical" href="https://softiceinnovationslabs.com/">
-<link rel="alternate" hreflang="en" href="https://softiceinnovationslabs.com/">
-<link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
-<link rel="preload" as="image" href="/images/softice/softice-hero-vase.webp">
-
-<meta property="og:title" content="Softice Innovations Labs | Thoughtful Mobile Apps for Everyday Life">
-<meta property="og:description" content="Simple, beautiful mobile apps for pet care, calm, bedtime stories, discipline, focus, and everyday life.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://softiceinnovationslabs.com/">
-<meta property="og:image" content="https://softiceinnovationslabs.com/images/softice/softice-og.webp">
-<meta property="og:image:alt" content="Softice Innovations Labs company website preview with mobile app cards">
-<meta property="og:site_name" content="Softice Innovations Labs">
-<meta property="og:locale" content="en_US">
-
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Softice Innovations Labs | Thoughtful Mobile Apps for Everyday Life">
-<meta name="twitter:description" content="Simple, beautiful mobile apps for pet care, calm, bedtime stories, discipline, focus, and everyday life.">
-<meta name="twitter:image" content="https://softiceinnovationslabs.com/images/softice/softice-og.webp">
-<meta name="twitter:image:alt" content="Softice Innovations Labs company website preview with mobile app cards">
-
-<!-- Google Analytics 4 -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-CE1N5QBRTE"></script>
-<script>
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', 'G-CE1N5QBRTE');
-</script>
-
-<style>
-:root {
-    --bg: #fffaf3;
-    --panel: rgba(255,255,255,0.82);
-    --panel-solid: #ffffff;
-    --ink: #101728;
-    --muted: #5d6678;
-    --line: rgba(18, 24, 38, 0.10);
-    --orange: #f26b21;
-    --orange-dark: #dc5412;
-    --purple: #8c6ad9;
-    --green: #65b87b;
-    --yellow: #ffbc4a;
-    --shadow: 0 24px 70px rgba(39, 28, 15, 0.10);
-    --soft-shadow: 0 16px 38px rgba(39, 28, 15, 0.09);
-    --radius: 28px;
-}
-
-* {
-    box-sizing: border-box;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-body {
-    margin: 0;
-    font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    color: var(--ink);
-    background:
-        radial-gradient(circle at 80% 20%, rgba(255, 184, 91, 0.20), transparent 28%),
-        radial-gradient(circle at 18% 10%, rgba(255, 255, 255, 0.92), transparent 32%),
-        linear-gradient(180deg, #fffdf9 0%, #fff7ea 52%, #fffdf9 100%);
-    overflow-x: hidden;
-}
-
-a {
-    color: inherit;
-}
-
-img {
-    max-width: 100%;
-    display: block;
-}
-
-.page-shell {
-    width: min(1400px, calc(100% - 44px));
-    margin: 18px auto;
-    border: 1px solid var(--line);
-    border-radius: 18px;
-    background: rgba(255,255,255,0.74);
-    box-shadow: 0 30px 90px rgba(31, 29, 26, 0.14);
-    overflow: hidden;
-    position: relative;
-}
-
-.browser-bar {
-    height: 54px;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    padding: 0 22px;
-    background: linear-gradient(180deg, #fbfbfb, #f7f7f7);
-    border-bottom: 1px solid var(--line);
-}
-
-.traffic-lights {
-    display: flex;
-    gap: 8px;
-}
-
-.traffic-lights span {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-}
-
-.traffic-lights span:nth-child(1) { background: #ff5f57; }
-.traffic-lights span:nth-child(2) { background: #ffbd2e; }
-.traffic-lights span:nth-child(3) { background: #28c840; }
-
-.browser-url {
-    margin: 0 auto;
-    width: min(520px, 48vw);
-    height: 30px;
-    border-radius: 999px;
-    border: 1px solid #dedede;
-    background: #fff;
-    color: #747985;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 13px;
-}
-
-.site-header {
-    height: 92px;
-    padding: 0 9%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background: rgba(255,255,255,0.75);
-    backdrop-filter: blur(16px);
-    border-bottom: 1px solid rgba(18,24,38,0.06);
-    position: sticky;
-    top: 0;
-    z-index: 10;
-}
-
-.logo {
-    display: inline-flex;
-    align-items: center;
-    gap: 12px;
-    text-decoration: none;
-}
-
-.logo-mark {
-    width: 44px;
-    height: 44px;
-    border-radius: 13px;
-    background: linear-gradient(135deg, #ff7b23, #e95b18);
-    display: grid;
-    place-items: center;
-    color: white;
-    font-weight: 900;
-    font-size: 24px;
-    box-shadow: 0 14px 34px rgba(242, 107, 33, 0.20);
-}
-
-.logo-text strong {
-    display: block;
-    font-size: 22px;
-    letter-spacing: -0.04em;
-    line-height: 1;
-}
-
-.logo-text small {
-    display: block;
-    margin-top: 3px;
-    color: #252c38;
-    font-size: 14px;
-    line-height: 1;
-}
-
-.nav {
-    display: flex;
-    align-items: center;
-    gap: 34px;
-}
-
-.nav a,
-.nav button {
-    border: 0;
-    background: transparent;
-    font: inherit;
-    font-size: 14px;
-    font-weight: 650;
-    color: #283044;
-    text-decoration: none;
-    cursor: pointer;
-    padding: 0;
-}
-
-.nav a:hover,
-.nav button:hover {
-    color: var(--orange);
-}
-
-.apps-menu {
-    position: relative;
-}
-
-.apps-dropdown {
-    position: absolute;
-    top: 26px;
-    right: 0;
-    width: 230px;
-    background: white;
-    border: 1px solid var(--line);
-    border-radius: 18px;
-    box-shadow: var(--soft-shadow);
-    padding: 10px;
-    opacity: 0;
-    transform: translateY(8px);
-    pointer-events: none;
-    transition: 0.2s ease;
-}
-
-.apps-menu:hover .apps-dropdown,
-.apps-menu:focus-within .apps-dropdown {
-    opacity: 1;
-    transform: translateY(0);
-    pointer-events: auto;
-}
-
-.apps-dropdown a {
-    display: block;
-    padding: 11px 12px;
-    border-radius: 12px;
-}
-
-.apps-dropdown a:hover {
-    background: #fff5ea;
-}
-
-.header-cta,
-.primary-cta {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    justify-content: center;
-    min-height: 46px;
-    padding: 0 22px;
-    border-radius: 12px;
-    background: linear-gradient(135deg, var(--orange), var(--orange-dark));
-    color: white !important;
-    text-decoration: none;
-    font-weight: 800;
-    box-shadow: 0 16px 28px rgba(242,107,33,0.24);
-}
-
-.primary-cta {
-    margin-top: 26px;
-    min-height: 54px;
-    padding: 0 25px;
-    border-radius: 14px;
-}
-
-.hero {
-    position: relative;
-    min-height: 700px;
-    padding: 72px 9% 42px;
-    overflow: hidden;
-}
-
-.hero::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background:
-        radial-gradient(circle at 74% 26%, rgba(255, 204, 126, 0.35), transparent 20%),
-        linear-gradient(180deg, rgba(255,255,255,0.92), rgba(255,249,239,0.50) 55%, rgba(255,255,255,0.82));
-    z-index: 0;
-}
-
-.hero-plant {
-    position: absolute;
-    right: 8%;
-    top: 4px;
-    width: min(410px, 34vw);
-    height: auto;
-    opacity: 0.98;
-    filter: drop-shadow(0 28px 48px rgba(80, 55, 28, 0.12));
-    z-index: 1;
-}
-
-.hero-wave {
-    position: absolute;
-    left: 36%;
-    right: -5%;
-    top: 268px;
-    height: 120px;
-    background: rgba(255,255,255,0.72);
-    border-radius: 50% 0 0 0 / 100% 0 0 0;
-    transform: skewY(-2deg);
-    z-index: 1;
-}
-
-.hero-content {
-    position: relative;
-    z-index: 2;
-    max-width: 610px;
-}
-
-.eyebrow {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    padding: 9px 12px;
-    border-radius: 999px;
-    border: 1px solid rgba(242,107,33,0.18);
-    background: rgba(255,255,255,0.72);
-    color: #b34c13;
-    font-weight: 800;
-    font-size: 13px;
-    margin-bottom: 16px;
-}
-
-.hero h1 {
-    margin: 0;
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: clamp(42px, 5vw, 72px);
-    line-height: 0.96;
-    letter-spacing: -0.055em;
-    color: #091226;
-}
-
-.hero p {
-    margin: 26px 0 0;
-    font-size: 18px;
-    line-height: 1.75;
-    color: #50596c;
-    max-width: 560px;
-}
-
-.apps-showcase {
-    position: relative;
-    z-index: 3;
-    display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 24px;
-    margin-top: 62px;
-}
-
-.app-card {
-    border: 1px solid rgba(38,44,56,0.10);
-    border-radius: 22px;
-    background: rgba(255,255,255,0.76);
-    box-shadow: var(--soft-shadow);
-    overflow: hidden;
-    position: relative;
-    min-height: 350px;
-    transition: transform 0.26s ease, box-shadow 0.26s ease;
-}
-
-.app-card:hover {
-    transform: translateY(-7px);
-    box-shadow: 0 26px 54px rgba(39, 28, 15, 0.15);
-}
-
-.phone-stage {
-    height: 205px;
-    padding: 18px 24px 0;
-    display: flex;
-    justify-content: center;
-    overflow: hidden;
-    position: relative;
-}
-
-.phone-stage::before {
-    content: "";
-    position: absolute;
-    inset: 18px 20px 0;
-    background: linear-gradient(180deg, rgba(255,255,255,0.62), rgba(255,255,255,0));
-    border-radius: 20px 20px 0 0;
-}
-
-.phone-stage img {
-    position: relative;
-    z-index: 1;
-    width: 154px;
-    height: auto;
-    object-fit: contain;
-    filter: drop-shadow(0 20px 22px rgba(33,24,16,0.18));
-}
-
-.card-body {
-    position: relative;
-    padding: 26px 26px 24px;
-    background: linear-gradient(180deg, rgba(255,255,255,0.92), #fff);
-    min-height: 145px;
-}
-
-.app-icon {
-    position: absolute;
-    left: 22px;
-    top: -28px;
-    width: 56px;
-    height: 56px;
-    border-radius: 16px;
-    display: grid;
-    place-items: center;
-    font-size: 27px;
-    color: white;
-    box-shadow: 0 18px 26px rgba(20,20,20,0.12);
-}
-
-.pet .app-icon { background: linear-gradient(135deg, #ff8a32, #f25f1d); }
-.calm .app-icon { background: linear-gradient(135deg, #b392f2, #815fc9); }
-.cozy .app-icon { background: linear-gradient(135deg, #ffc24b, #ff9e2e); }
-.zero .app-icon { background: linear-gradient(135deg, #75c683, #4ea363); }
-
-.card-body h2 {
-    margin: 6px 0 8px;
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: 23px;
-    letter-spacing: -0.035em;
-}
-
-.card-body p {
-    margin: 0;
-    color: #626b79;
-    font-size: 15px;
-    line-height: 1.55;
-}
-
-.learn-link {
-    margin-top: 18px;
-    display: inline-flex;
-    align-items: center;
-    gap: 9px;
-    min-height: 38px;
-    padding: 0 16px;
-    border-radius: 12px;
-    border: 1.5px solid currentColor;
-    text-decoration: none;
-    font-weight: 800;
-    font-size: 14px;
-}
-
-.pet .learn-link { color: var(--orange); }
-.calm .learn-link { color: var(--purple); }
-.cozy .learn-link { color: #f39b12; }
-.zero .learn-link { color: #439f5e; }
-
-.why-softice {
-    position: relative;
-    z-index: 3;
-    width: min(1180px, 88%);
-    margin: 26px auto 0;
-    background: rgba(255,255,255,0.70);
-    border: 1px solid rgba(38,44,56,0.07);
-    border-radius: 28px;
-    box-shadow: 0 18px 54px rgba(39, 28, 15, 0.07);
-    padding: 22px 28px 28px;
-    backdrop-filter: blur(16px);
-}
-
-.why-softice h2 {
-    text-align: center;
-    margin: 0 0 20px;
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: 31px;
-    letter-spacing: -0.04em;
-}
-
-.why-grid {
-    display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-}
-
-.reason {
-    display: grid;
-    grid-template-columns: 54px 1fr;
-    gap: 14px;
-    padding: 8px 26px;
-    border-left: 1px solid rgba(38,44,56,0.10);
-}
-
-.reason:first-child {
-    border-left: 0;
-}
-
-.reason-icon {
-    width: 48px;
-    height: 48px;
-    border-radius: 16px;
-    display: grid;
-    place-items: center;
-    background: #fff3e3;
-    color: var(--orange);
-    font-size: 24px;
-}
-
-.reason h3 {
-    margin: 0 0 5px;
-    font-size: 15px;
-}
-
-.reason p {
-    margin: 0;
-    color: #667085;
-    font-size: 13.5px;
-    line-height: 1.5;
-}
-
-.footer {
-    position: relative;
-    z-index: 3;
-    padding: 34px 9% 30px;
-    display: grid;
-    grid-template-columns: 1.55fr 0.72fr 0.72fr 0.72fr 1fr;
-    gap: 32px;
-    background: rgba(255,255,255,0.72);
-    border-top: 1px solid rgba(18,24,38,0.06);
-}
-
-.footer p {
-    margin: 12px 0 0;
-    color: #657083;
-    line-height: 1.55;
-    font-size: 14px;
-    max-width: 245px;
-}
-
-.footer h3 {
-    margin: 0 0 12px;
-    font-size: 15px;
-}
-
-.footer a {
-    display: block;
-    color: #586174;
-    text-decoration: none;
-    font-size: 14px;
-    line-height: 2;
-}
-
-.footer a:hover {
-    color: var(--orange);
-}
-
-.socials {
-    display: flex;
-    gap: 12px;
-    margin-top: 12px;
-}
-
-.socials a {
-    width: 34px;
-    height: 34px;
-    border-radius: 50%;
-    border: 1px solid var(--line);
-    display: grid;
-    place-items: center;
-    background: white;
-    line-height: 1;
-}
-
-.copyright {
-    grid-column: 1 / -1;
-    text-align: center;
-    color: #7d8491;
-    font-size: 13px;
-    margin-top: 6px;
-}
-
-@media (max-width: 1100px) {
-    .apps-showcase {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Softice Innovations Labs | Thoughtful Mobile Apps for Everyday Life</title>
+  <meta name="description" content="Softice Innovations Labs builds simple, beautiful mobile apps for pet care, calm, bedtime stories, discipline, focus, and everyday life." />
+  <meta name="author" content="Softice Innovations Labs LLC" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+  <meta name="theme-color" content="#fff8ef" />
+
+  <link rel="canonical" href="https://softiceinnovationslabs.com/" />
+  <link rel="alternate" hreflang="en" href="https://softiceinnovationslabs.com/" />
+
+  <link rel="preload" as="image" href="/images/softice/softice-og.webp" />
+  <link rel="preload" as="image" href="/images/softice/softice-logo-mark.png" />
+
+  <meta property="og:title" content="Softice Innovations Labs | Thoughtful Mobile Apps for Everyday Life" />
+  <meta property="og:description" content="Simple, beautiful mobile apps for pet care, calm, bedtime stories, discipline, focus, and everyday life." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://softiceinnovationslabs.com/" />
+  <meta property="og:image" content="https://softiceinnovationslabs.com/images/softice/softice-og.webp" />
+  <meta property="og:image:alt" content="Softice Innovations Labs homepage with mobile app previews" />
+  <meta property="og:site_name" content="Softice Innovations Labs" />
+  <meta property="og:locale" content="en_US" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Softice Innovations Labs | Thoughtful Mobile Apps for Everyday Life" />
+  <meta name="twitter:description" content="Simple, beautiful mobile apps for pet care, calm, bedtime stories, discipline, focus, and everyday life." />
+  <meta name="twitter:image" content="https://softiceinnovationslabs.com/images/softice/softice-og.webp" />
+
+  <!-- Google Analytics 4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-CE1N5QBRTE"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag("js", new Date());
+    gtag("config", "G-CE1N5QBRTE");
+  </script>
+
+  <style>
+    :root {
+      --bg: #fff8ef;
+      --panel: rgba(255, 255, 255, 0.84);
+      --panel-solid: #ffffff;
+      --ink: #071226;
+      --muted: #566172;
+      --line: rgba(7, 18, 38, 0.11);
+      --orange: #f26b21;
+      --orange-dark: #db5515;
+      --purple: #8c6ad9;
+      --green: #57a86a;
+      --yellow: #f6a51c;
+      --shadow: 0 28px 80px rgba(40, 28, 16, 0.12);
+      --soft-shadow: 0 18px 44px rgba(40, 28, 16, 0.10);
+      --radius-xl: 34px;
+      --radius-lg: 24px;
+      --max: 1280px;
     }
 
-    .why-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 18px;
+    * {
+      box-sizing: border-box;
     }
 
-    .reason {
-        border-left: 0;
-        border-top: 1px solid rgba(38,44,56,0.10);
-        padding: 18px 8px;
+    html {
+      scroll-behavior: smooth;
     }
 
-    .reason:nth-child(-n+2) {
-        border-top: 0;
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 80% 4%, rgba(255, 192, 102, 0.30), transparent 32%),
+        radial-gradient(circle at 12% 0%, rgba(255,255,255,0.95), transparent 30%),
+        linear-gradient(180deg, #fffdf8 0%, #fff7ea 56%, #ffffff 100%);
+      overflow-x: hidden;
     }
 
-    .footer {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-}
-
-@media (max-width: 760px) {
-    .page-shell {
-        width: 100%;
-        margin: 0;
-        border-radius: 0;
-        border-left: 0;
-        border-right: 0;
+    a {
+      color: inherit;
     }
 
-    .browser-bar {
-        display: none;
+    img {
+      max-width: 100%;
+      display: block;
     }
 
     .site-header {
-        height: auto;
-        min-height: 80px;
-        padding: 16px 20px;
-        align-items: flex-start;
-        gap: 16px;
+      width: min(var(--max), calc(100% - 40px));
+      margin: 22px auto 0;
+      min-height: 84px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      padding: 16px 22px;
+      background: rgba(255,255,255,0.78);
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      box-shadow: 0 16px 45px rgba(35, 25, 12, 0.07);
+      backdrop-filter: blur(18px);
+      position: sticky;
+      top: 14px;
+      z-index: 20;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 13px;
+      text-decoration: none;
+      min-width: 240px;
+    }
+
+    .brand-logo-wrap {
+      width: 54px;
+      height: 54px;
+      border-radius: 16px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, #ff8a2a, #e95412);
+      box-shadow: 0 14px 34px rgba(242, 107, 33, 0.18);
+      overflow: hidden;
+      flex: 0 0 auto;
+    }
+
+    .brand-logo-img {
+      width: 54px;
+      height: 54px;
+      object-fit: contain;
+    }
+
+    .brand-logo-fallback {
+      color: #fff;
+      font-weight: 950;
+      font-size: 30px;
+      line-height: 1;
+      display: none;
+    }
+
+    .brand-logo-img[src=""],
+    .brand-logo-img:not([src]) {
+      display: none;
+    }
+
+    .brand-logo-img[src=""] + .brand-logo-fallback,
+    .brand-logo-img:not([src]) + .brand-logo-fallback {
+      display: block;
+    }
+
+    .brand-text strong {
+      display: block;
+      font-size: 22px;
+      line-height: 1;
+      letter-spacing: -0.04em;
+    }
+
+    .brand-text span {
+      display: block;
+      margin-top: 4px;
+      font-size: 14px;
+      color: #2b3443;
+      line-height: 1;
     }
 
     .nav {
-        gap: 12px;
-        justify-content: flex-end;
-        flex-wrap: wrap;
+      display: flex;
+      align-items: center;
+      gap: 26px;
+      color: #273144;
+      font-size: 14px;
+      font-weight: 750;
     }
 
-    .nav a,
-    .nav button {
-        font-size: 13px;
+    .nav a {
+      text-decoration: none;
     }
 
-    .header-cta {
-        display: none;
+    .nav a:hover {
+      color: var(--orange);
+    }
+
+    .nav-cta {
+      min-height: 45px;
+      padding: 0 20px;
+      border-radius: 13px;
+      background: linear-gradient(135deg, var(--orange), var(--orange-dark));
+      color: #fff !important;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 14px 28px rgba(242, 107, 33, 0.24);
     }
 
     .hero {
-        padding: 48px 22px 34px;
-        min-height: auto;
+      width: min(var(--max), calc(100% - 40px));
+      margin: 26px auto 0;
+      position: relative;
+      overflow: hidden;
+      border-radius: 36px;
+      background:
+        radial-gradient(circle at 75% 6%, rgba(255, 195, 104, 0.34), transparent 36%),
+        linear-gradient(135deg, rgba(255,255,255,0.92), rgba(255,248,239,0.82));
+      border: 1px solid rgba(7,18,38,0.08);
+      box-shadow: var(--shadow);
     }
 
-    .hero-plant {
-        position: relative;
-        top: auto;
-        right: auto;
-        width: min(260px, 80%);
-        margin: 28px auto 0;
-        opacity: 0.9;
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 0.78fr 1.22fr;
+      align-items: center;
+      gap: 24px;
+      padding: 54px 48px 52px;
     }
 
-    .hero-wave {
-        display: none;
+    .hero-copy {
+      position: relative;
+      z-index: 2;
     }
 
-    .hero h1 {
-        font-size: 45px;
-        line-height: 1;
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      min-height: 36px;
+      padding: 0 14px;
+      border-radius: 999px;
+      color: #b34a13;
+      font-size: 13px;
+      font-weight: 850;
+      background: rgba(255,255,255,0.78);
+      border: 1px solid rgba(242,107,33,0.16);
+      margin-bottom: 18px;
     }
 
-    .hero p {
-        font-size: 16px;
+    h1 {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(44px, 5vw, 70px);
+      line-height: 0.98;
+      letter-spacing: -0.055em;
+      color: var(--ink);
     }
 
-    .apps-showcase {
-        grid-template-columns: 1fr;
-        margin-top: 36px;
-        gap: 18px;
+    .hero-copy p {
+      margin: 24px 0 0;
+      max-width: 520px;
+      font-size: 18px;
+      line-height: 1.7;
+      color: var(--muted);
+    }
+
+    .primary-cta {
+      margin-top: 28px;
+      min-height: 55px;
+      padding: 0 26px;
+      border-radius: 15px;
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      color: #fff;
+      text-decoration: none;
+      font-weight: 900;
+      background: linear-gradient(135deg, var(--orange), var(--orange-dark));
+      box-shadow: 0 18px 34px rgba(242,107,33,0.26);
+    }
+
+    .hero-image-wrap {
+      position: relative;
+      z-index: 2;
+      border-radius: 30px;
+      overflow: hidden;
+      background: rgba(255,255,255,0.40);
+      box-shadow: 0 22px 60px rgba(38, 25, 10, 0.10);
+    }
+
+    .hero-image {
+      width: 100%;
+      min-height: 430px;
+      object-fit: cover;
+      object-position: center;
+      transform: scale(1.01);
+    }
+
+    .section {
+      width: min(var(--max), calc(100% - 40px));
+      margin: 42px auto 0;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 24px;
+      margin-bottom: 22px;
+    }
+
+    .section-header h2 {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(34px, 4vw, 50px);
+      line-height: 1;
+      letter-spacing: -0.045em;
+      color: var(--ink);
+    }
+
+    .section-header p {
+      margin: 0;
+      max-width: 480px;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+
+    .apps-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 22px;
     }
 
     .app-card {
-        min-height: 330px;
+      position: relative;
+      overflow: hidden;
+      border-radius: 30px;
+      background: rgba(255,255,255,0.84);
+      border: 1px solid rgba(7,18,38,0.09);
+      box-shadow: var(--soft-shadow);
+      min-height: 620px;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.24s ease, box-shadow 0.24s ease;
     }
 
-    .why-softice {
-        width: calc(100% - 32px);
-        margin-top: 22px;
-        padding: 24px 20px;
+    .app-card:hover {
+      transform: translateY(-7px);
+      box-shadow: 0 30px 70px rgba(40, 28, 16, 0.15);
+    }
+
+    .phone-stage {
+      height: 440px;
+      padding: 20px 16px 0;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      overflow: hidden;
+      background: linear-gradient(180deg, rgba(255,255,255,0.65), rgba(255,255,255,0.25));
+    }
+
+    .phone-stage img {
+      height: 435px;
+      width: auto;
+      max-width: none;
+      object-fit: contain;
+      filter: drop-shadow(0 25px 28px rgba(20,20,20,0.16));
+    }
+
+    .app-body {
+      padding: 30px 24px 25px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.90), #fff);
+      flex: 1;
+      position: relative;
+    }
+
+    .app-icon {
+      position: absolute;
+      top: -28px;
+      left: 24px;
+      width: 58px;
+      height: 58px;
+      border-radius: 18px;
+      color: white;
+      display: grid;
+      place-items: center;
+      font-size: 28px;
+      font-weight: 950;
+      box-shadow: 0 18px 30px rgba(0,0,0,0.13);
+    }
+
+    .app-card.pet .app-icon { background: linear-gradient(135deg, #ff8930, #f25e18); }
+    .app-card.calm .app-icon { background: linear-gradient(135deg, #b392f2, #7f5cc8); }
+    .app-card.cozy .app-icon { background: linear-gradient(135deg, #ffc54a, #ff9b1f); }
+    .app-card.zero .app-icon { background: linear-gradient(135deg, #ff2c2c, #111); }
+
+    .app-body h3 {
+      margin: 6px 0 8px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 25px;
+      line-height: 1.05;
+      letter-spacing: -0.035em;
+    }
+
+    .app-body p {
+      margin: 0;
+      color: #5f6978;
+      font-size: 15.5px;
+      line-height: 1.55;
+    }
+
+    .learn-link {
+      margin-top: 19px;
+      min-height: 40px;
+      padding: 0 16px;
+      border-radius: 12px;
+      border: 1.5px solid currentColor;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      font-weight: 850;
+      font-size: 14px;
+    }
+
+    .pet .learn-link { color: var(--orange); }
+    .calm .learn-link { color: var(--purple); }
+    .cozy .learn-link { color: var(--yellow); }
+    .zero .learn-link { color: #e92626; }
+
+    .why {
+      margin-top: 38px;
+      padding: 34px;
+      border-radius: 34px;
+      background: rgba(255,255,255,0.78);
+      border: 1px solid rgba(7,18,38,0.08);
+      box-shadow: var(--soft-shadow);
+    }
+
+    .why h2 {
+      margin: 0 0 24px;
+      text-align: center;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 38px;
+      letter-spacing: -0.045em;
     }
 
     .why-grid {
-        grid-template-columns: 1fr;
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 18px;
     }
 
-    .reason,
-    .reason:nth-child(-n+2) {
-        border-top: 1px solid rgba(38,44,56,0.10);
+    .why-item {
+      padding: 20px;
+      border-radius: 22px;
+      background: rgba(255,255,255,0.72);
+      border: 1px solid rgba(7,18,38,0.07);
     }
 
-    .reason:first-child {
-        border-top: 0;
+    .why-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 15px;
+      display: grid;
+      place-items: center;
+      margin-bottom: 14px;
+      background: #fff0dc;
+      color: var(--orange);
+      font-size: 24px;
+    }
+
+    .why-item h3 {
+      margin: 0 0 8px;
+      font-size: 15px;
+    }
+
+    .why-item p {
+      margin: 0;
+      color: #647084;
+      font-size: 13.5px;
+      line-height: 1.55;
     }
 
     .footer {
-        grid-template-columns: 1fr;
-        padding: 34px 22px 28px;
+      width: min(var(--max), calc(100% - 40px));
+      margin: 42px auto 26px;
+      padding: 34px;
+      display: grid;
+      grid-template-columns: 1.4fr 0.8fr 0.8fr 0.8fr 1fr;
+      gap: 28px;
+      border-radius: 34px;
+      background: rgba(255,255,255,0.76);
+      border: 1px solid rgba(7,18,38,0.08);
+      box-shadow: 0 18px 50px rgba(35, 25, 12, 0.07);
     }
-}
-</style>
+
+    .footer h3 {
+      margin: 0 0 12px;
+      font-size: 15px;
+    }
+
+    .footer p,
+    .footer a {
+      color: #637084;
+      font-size: 14px;
+      line-height: 1.8;
+      text-decoration: none;
+    }
+
+    .footer a {
+      display: block;
+    }
+
+    .footer a:hover {
+      color: var(--orange);
+    }
+
+    .copyright {
+      grid-column: 1 / -1;
+      text-align: center;
+      color: #7d8794;
+      font-size: 13px;
+      padding-top: 6px;
+    }
+
+    @media (max-width: 1180px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-image {
+        min-height: auto;
+      }
+
+      .apps-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .why-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .footer {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 760px) {
+      .site-header {
+        width: calc(100% - 24px);
+        margin-top: 12px;
+        top: 8px;
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .nav {
+        width: 100%;
+        flex-wrap: wrap;
+        gap: 15px;
+      }
+
+      .nav-cta {
+        min-height: 40px;
+        padding: 0 15px;
+      }
+
+      .hero,
+      .section,
+      .footer {
+        width: calc(100% - 24px);
+      }
+
+      .hero-grid {
+        padding: 32px 18px 22px;
+      }
+
+      h1 {
+        font-size: 43px;
+      }
+
+      .hero-copy p {
+        font-size: 16px;
+      }
+
+      .hero-image-wrap {
+        border-radius: 22px;
+      }
+
+      .apps-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .app-card {
+        min-height: 590px;
+      }
+
+      .phone-stage {
+        height: 410px;
+      }
+
+      .phone-stage img {
+        height: 405px;
+      }
+
+      .why-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer {
+        grid-template-columns: 1fr;
+      }
+
+      .section-header {
+        align-items: start;
+        flex-direction: column;
+      }
+    }
+  </style>
 </head>
 
 <body>
-<div class="page-shell">
-    <div class="browser-bar" aria-hidden="true">
-        <div class="traffic-lights">
-            <span></span><span></span><span></span>
+  <header class="site-header">
+    <a class="brand" href="/" aria-label="Softice Innovations Labs homepage">
+      <span class="brand-logo-wrap">
+        <img class="brand-logo-img" src="/images/softice/softice-logo-mark.png" alt="Softice Innovations Labs logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" />
+        <span class="brand-logo-fallback">S</span>
+      </span>
+      <span class="brand-text">
+        <strong>Softice</strong>
+        <span>Innovations Labs</span>
+      </span>
+    </a>
+
+    <nav class="nav" aria-label="Main navigation">
+      <a href="#apps">Apps</a>
+      <a href="#about">About</a>
+      <a href="#support">Support</a>
+      <a href="mailto:support@softiceinnovationslabs.com">Contact</a>
+      <a class="nav-cta" href="mailto:support@softiceinnovationslabs.com">Get in Touch</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="about">
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <span class="eyebrow">Softice Innovations Labs LLC</span>
+          <h1>Thoughtful apps for calmer, easier everyday life</h1>
+          <p>We build simple, beautiful mobile apps that support care, calm, stories, discipline, focus, and everyday life.</p>
+          <a class="primary-cta" href="#apps" data-track="homepage_cta_click" data-track-location="hero" data-track-title="Explore Our Apps">Explore Our Apps →</a>
         </div>
-        <div class="browser-url">softiceinnovationslabs.com</div>
+
+        <div class="hero-image-wrap">
+          <img class="hero-image" src="/images/softice/softice-og.webp" alt="Softice Innovations Labs app collection hero image with PetCare Log, CalmPulse, Cozy Tales, and Zero Reset previews" />
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="apps">
+      <div class="section-header">
+        <h2>Our Apps</h2>
+        <p>Each app is designed with a clear purpose: simple tools, emotional design, and real everyday usefulness.</p>
+      </div>
+
+      <div class="apps-grid">
+        <article class="app-card pet">
+          <div class="phone-stage">
+            <img src="/images/softice/petcare-home-screen.png" alt="PetCare Log app dashboard screen" />
+          </div>
+          <div class="app-body">
+            <div class="app-icon" aria-hidden="true">🐾</div>
+            <h3>PetCare Log</h3>
+            <p>Track health, meals, walks, medication reminders, vet visits, and photo memories for every pet.</p>
+            <a class="learn-link" href="/petcare/" data-track="app_card_click" data-track-location="app_showcase" data-track-title="PetCare Log">Learn More →</a>
+          </div>
+        </article>
+
+        <article class="app-card calm">
+          <div class="phone-stage">
+            <img src="/images/softice/calmpulse-home-screen.png" alt="CalmPulse app home screen with breathing and calming tools" />
+          </div>
+          <div class="app-body">
+            <div class="app-icon" aria-hidden="true">✦</div>
+            <h3>CalmPulse</h3>
+            <p>Calming tools for panic reset, breathing, calm timer, mood check-ins, and peaceful moments.</p>
+            <a class="learn-link" href="/calmpulse/" data-track="app_card_click" data-track-location="app_showcase" data-track-title="CalmPulse">Learn More →</a>
+          </div>
+        </article>
+
+        <article class="app-card cozy">
+          <div class="phone-stage">
+            <img src="/images/softice/cozy-tales-home-screen.png" alt="Cozy Tales bedtime stories app home screen" />
+          </div>
+          <div class="app-body">
+            <div class="app-icon" aria-hidden="true">📖</div>
+            <h3>Cozy Tales</h3>
+            <p>Heartwarming bedtime stories for kids with narration, soft music, and cozy illustrated storybooks.</p>
+            <a class="learn-link" href="/cozy-tales/" data-track="app_card_click" data-track-location="app_showcase" data-track-title="Cozy Tales">Learn More →</a>
+          </div>
+        </article>
+
+        <article class="app-card zero">
+          <div class="phone-stage">
+            <img src="/images/softice/zero-reset-home-screen.png" alt="Zero Reset discipline streak tracker app screen" />
+          </div>
+          <div class="app-body">
+            <div class="app-icon" aria-hidden="true">0</div>
+            <h3>Zero Reset</h3>
+            <p>Build discipline streaks, track daily check-ins, stay consistent, and bounce back stronger.</p>
+            <a class="learn-link" href="/zero-reset/" data-track="app_card_click" data-track-location="app_showcase" data-track-title="Zero Reset">Learn More →</a>
+          </div>
+        </article>
+      </div>
+
+      <section class="why" aria-labelledby="why-softice-heading">
+        <h2 id="why-softice-heading">Why Softice</h2>
+        <div class="why-grid">
+          <div class="why-item">
+            <div class="why-icon" aria-hidden="true">♡</div>
+            <h3>Simple Design</h3>
+            <p>Clean, intuitive experiences that make sense from the first tap.</p>
+          </div>
+          <div class="why-item">
+            <div class="why-icon" aria-hidden="true">✦</div>
+            <h3>Emotional Products</h3>
+            <p>Apps built to feel supportive, calm, useful, and human.</p>
+          </div>
+          <div class="why-item">
+            <div class="why-icon" aria-hidden="true">▯</div>
+            <h3>Mobile-First</h3>
+            <p>Designed for phones and built for real-world use on the go.</p>
+          </div>
+          <div class="why-item">
+            <div class="why-icon" aria-hidden="true">⌁</div>
+            <h3>Built for Real Life</h3>
+            <p>Practical, reliable tools made to fit naturally into everyday life.</p>
+          </div>
+          <div class="why-item">
+            <div class="why-icon" aria-hidden="true">⌂</div>
+            <h3>Trusted & Secure</h3>
+            <p>Privacy-conscious experiences with clear, focused product design.</p>
+          </div>
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <footer class="footer" id="support">
+    <div>
+      <a class="brand" href="/" aria-label="Softice Innovations Labs homepage">
+        <span class="brand-logo-wrap">
+          <img class="brand-logo-img" src="/images/softice/softice-logo-mark.png" alt="Softice Innovations Labs logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" />
+          <span class="brand-logo-fallback">S</span>
+        </span>
+        <span class="brand-text">
+          <strong>Softice</strong>
+          <span>Innovations Labs</span>
+        </span>
+      </a>
+      <p>We create thoughtful mobile apps that bring calm, care, clarity, and small daily wins to everyday life.</p>
     </div>
 
-    <header class="site-header">
-        <a class="logo" href="/" aria-label="Softice Innovations Labs homepage">
-            <span class="logo-mark">S</span>
-            <span class="logo-text">
-                <strong>Softice</strong>
-                <small>Innovations Labs</small>
-            </span>
-        </a>
+    <div>
+      <h3>Company</h3>
+      <a href="#about">About Us</a>
+      <a href="#apps">Our Apps</a>
+      <a href="mailto:support@softiceinnovationslabs.com">Contact</a>
+    </div>
 
-        <nav class="nav" aria-label="Main navigation">
-            <div class="apps-menu">
-                <button type="button" aria-label="Apps menu">Apps⌄</button>
-                <div class="apps-dropdown" aria-label="Apps links">
-                    <a href="/petcare/">PetCare Log</a>
-                    <a href="/calmpulse/">CalmPulse</a>
-                    <a href="/cozy-tales/">Cozy Tales</a>
-                    <a href="/zero-reset/">Zero Reset</a>
-                    <a href="/focusesprint/">FocusSprint</a>
-                </div>
-            </div>
-            <a href="#about">About</a>
-            <a href="#support">Support</a>
-            <a href="#contact">Contact</a>
-            <a class="header-cta" href="#contact">Get in Touch</a>
-        </nav>
-    </header>
+    <div>
+      <h3>Apps</h3>
+      <a href="/petcare/">PetCare Log</a>
+      <a href="/calmpulse/">CalmPulse</a>
+      <a href="/cozy-tales/">Cozy Tales</a>
+      <a href="/zero-reset/">Zero Reset</a>
+    </div>
 
-    <main>
-        <section class="hero" id="about">
-            <img class="hero-plant" src="/images/softice/softice-hero-vase.webp" alt="Soft minimal plant vase illustration for Softice Innovations Labs">
-            <div class="hero-wave" aria-hidden="true"></div>
+    <div>
+      <h3>Support</h3>
+      <a href="/support/">Help Center</a>
+      <a href="/privacy-policy/">Privacy Policy</a>
+      <a href="/terms/">Terms of Service</a>
+    </div>
 
-            <div class="hero-content">
-                <span class="eyebrow">Softice Innovations Labs LLC</span>
-                <h1>Thoughtful apps for calmer, easier everyday life</h1>
-                <p>Softice Innovations Labs builds simple, beautiful mobile apps that support care, calm, stories, discipline, focus, and everyday life.</p>
-                <a class="primary-cta" href="#apps" data-track="homepage_cta_click" data-track-location="hero" data-track-title="Explore Our Apps">Explore Our Apps →</a>
-            </div>
+    <div>
+      <h3>Let's connect</h3>
+      <a href="mailto:support@softiceinnovationslabs.com">support@softiceinnovationslabs.com</a>
+      <a href="https://www.youtube.com/@BedtimeStoriesCozyTales" target="_blank" rel="noopener noreferrer">YouTube</a>
+      <a href="https://www.instagram.com/bedtime.stories.forkids/" target="_blank" rel="noopener noreferrer">Instagram</a>
+    </div>
 
-            <div class="apps-showcase" id="apps">
-                <article class="app-card pet">
-                    <div class="phone-stage">
-                        <img src="/images/softice/petcare-home-screen.webp" alt="PetCare Log app home screen showing real pet care dashboard">
-                    </div>
-                    <div class="card-body">
-                        <div class="app-icon" aria-hidden="true">🐾</div>
-                        <h2>PetCare Log</h2>
-                        <p>Track health, meals, walks, reminders, vet visits, and memories for your pets.</p>
-                        <a class="learn-link" href="/petcare/" data-track="app_card_click" data-track-location="app_showcase" data-track-title="PetCare Log">Learn More →</a>
-                    </div>
-                </article>
+    <div class="copyright">© 2026 Softice Innovations Labs LLC. All rights reserved.</div>
+  </footer>
 
-                <article class="app-card calm">
-                    <div class="phone-stage">
-                        <img src="/images/softice/calmpulse-home-screen.webp" alt="CalmPulse app home screen showing calm tools for breathing and anxiety reset">
-                    </div>
-                    <div class="card-body">
-                        <div class="app-icon" aria-hidden="true">🪷</div>
-                        <h2>CalmPulse</h2>
-                        <p>Calming tools for panic reset, breathing, mood check-ins, and peaceful moments.</p>
-                        <a class="learn-link" href="/calmpulse/" data-track="app_card_click" data-track-location="app_showcase" data-track-title="CalmPulse">Learn More →</a>
-                    </div>
-                </article>
-
-                <article class="app-card cozy">
-                    <div class="phone-stage">
-                        <img src="/images/softice/cozy-tales-home-screen.webp" alt="Cozy Tales app home screen showing bedtime story books for kids">
-                    </div>
-                    <div class="card-body">
-                        <div class="app-icon" aria-hidden="true">📖</div>
-                        <h2>Cozy Tales</h2>
-                        <p>Heartwarming bedtime stories for kids with narration, music, and cozy illustrations.</p>
-                        <a class="learn-link" href="/cozy-tales/" data-track="app_card_click" data-track-location="app_showcase" data-track-title="Cozy Tales">Learn More →</a>
-                    </div>
-                </article>
-
-                <article class="app-card zero">
-                    <div class="phone-stage">
-                        <img src="/images/softice/zero-reset-home-screen.webp" alt="Zero Reset app home screen showing discipline streak tracker">
-                    </div>
-                    <div class="card-body">
-                        <div class="app-icon" aria-hidden="true">0</div>
-                        <h2>Zero Reset</h2>
-                        <p>Build discipline streaks, reset excuses, and bounce back stronger every day.</p>
-                        <a class="learn-link" href="/zero-reset/" data-track="app_card_click" data-track-location="app_showcase" data-track-title="Zero Reset">Learn More →</a>
-                    </div>
-                </article>
-            </div>
-
-            <section class="why-softice" aria-labelledby="why-softice-heading">
-                <h2 id="why-softice-heading">Why Softice</h2>
-                <div class="why-grid">
-                    <div class="reason">
-                        <div class="reason-icon" aria-hidden="true">▣</div>
-                        <div>
-                            <h3>Simple Design</h3>
-                            <p>Clean, intuitive experiences that make sense from the very first tap.</p>
-                        </div>
-                    </div>
-                    <div class="reason">
-                        <div class="reason-icon" aria-hidden="true">♡</div>
-                        <div>
-                            <h3>Emotional Products</h3>
-                            <p>We build apps that connect with people and support their well-being.</p>
-                        </div>
-                    </div>
-                    <div class="reason">
-                        <div class="reason-icon" aria-hidden="true">▯</div>
-                        <div>
-                            <h3>Mobile-First</h3>
-                            <p>Designed for phones, built for real-world use on the go.</p>
-                        </div>
-                    </div>
-                    <div class="reason">
-                        <div class="reason-icon" aria-hidden="true">⌁</div>
-                        <div>
-                            <h3>Built for Real Life</h3>
-                            <p>Practical, reliable, and made to fit naturally into your everyday.</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </section>
-    </main>
-
-    <footer class="footer" id="contact">
-        <div>
-            <a class="logo" href="/" aria-label="Softice Innovations Labs homepage">
-                <span class="logo-mark">S</span>
-                <span class="logo-text">
-                    <strong>Softice</strong>
-                    <small>Innovations Labs</small>
-                </span>
-            </a>
-            <p>We create thoughtful mobile apps that bring calm, care, clarity, and small daily wins to everyday life.</p>
-        </div>
-
-        <div>
-            <h3>Company</h3>
-            <a href="#about">About Us</a>
-            <a href="#apps">Our Apps</a>
-            <a href="mailto:support@softiceinnovationslabs.com">Contact</a>
-        </div>
-
-        <div>
-            <h3>Apps</h3>
-            <a href="/petcare/">PetCare Log</a>
-            <a href="/calmpulse/">CalmPulse</a>
-            <a href="/cozy-tales/">Cozy Tales</a>
-            <a href="/zero-reset/">Zero Reset</a>
-        </div>
-
-        <div id="support">
-            <h3>Support</h3>
-            <a href="/support/">Help Center</a>
-            <a href="/privacy-policy/">Privacy Policy</a>
-            <a href="/terms/">Terms of Service</a>
-        </div>
-
-        <div>
-            <h3>Let's connect</h3>
-            <a href="mailto:support@softiceinnovationslabs.com">support@softiceinnovationslabs.com</a>
-            <div class="socials" aria-label="Social links">
-                <a href="https://www.youtube.com/@BedtimeStoriesCozyTales" target="_blank" rel="noopener noreferrer" aria-label="YouTube">▶</a>
-                <a href="https://www.instagram.com/bedtime.stories.forkids/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">◎</a>
-                <a href="mailto:support@softiceinnovationslabs.com" aria-label="Email">✉</a>
-            </div>
-        </div>
-
-        <div class="copyright">© 2026 Softice Innovations Labs LLC. All rights reserved.</div>
-    </footer>
-</div>
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "Organization",
-      "@id": "https://softiceinnovationslabs.com/#organization",
-      "name": "Softice Innovations Labs LLC",
-      "url": "https://softiceinnovationslabs.com/",
-      "email": "support@softiceinnovationslabs.com",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://softiceinnovationslabs.com/images/softice/softice-logo-mark.png"
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://softiceinnovationslabs.com/#organization",
+        "name": "Softice Innovations Labs LLC",
+        "url": "https://softiceinnovationslabs.com/",
+        "email": "support@softiceinnovationslabs.com",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://softiceinnovationslabs.com/images/softice/softice-logo-mark.png"
+        },
+        "sameAs": [
+          "https://www.youtube.com/@BedtimeStoriesCozyTales",
+          "https://www.instagram.com/bedtime.stories.forkids/",
+          "https://www.tiktok.com/@bedtimestoriescozytales"
+        ]
       },
-      "sameAs": [
-        "https://www.youtube.com/@BedtimeStoriesCozyTales",
-        "https://www.instagram.com/bedtime.stories.forkids/",
-        "https://www.tiktok.com/@bedtimestoriescozytales"
-      ]
-    },
-    {
-      "@type": "WebSite",
-      "@id": "https://softiceinnovationslabs.com/#website",
-      "name": "Softice Innovations Labs",
-      "url": "https://softiceinnovationslabs.com/",
-      "description": "Softice Innovations Labs builds simple, beautiful mobile apps for pet care, calm, bedtime stories, discipline, focus, and everyday life.",
-      "publisher": {
-        "@id": "https://softiceinnovationslabs.com/#organization"
+      {
+        "@type": "WebSite",
+        "@id": "https://softiceinnovationslabs.com/#website",
+        "name": "Softice Innovations Labs",
+        "url": "https://softiceinnovationslabs.com/",
+        "description": "Softice Innovations Labs builds simple, beautiful mobile apps for pet care, calm, bedtime stories, discipline, focus, and everyday life.",
+        "publisher": {
+          "@id": "https://softiceinnovationslabs.com/#organization"
+        }
       }
-    }
-  ]
-}
-</script>
+    ]
+  }
+  </script>
 
-<script>
-(function () {
-    function getDeviceType() {
-        const ua = navigator.userAgent || "";
-        if (/tablet|ipad|playbook|silk/i.test(ua)) return "tablet";
-        if (/Mobile|Android|iPhone|iPod/i.test(ua)) return "mobile";
-        return "desktop";
-    }
-
-    function getSessionId() {
-        let sessionId = sessionStorage.getItem("softice_session_id");
-        if (!sessionId) {
-            sessionId = "sess_" + Date.now() + "_" + Math.random().toString(36).slice(2, 10);
-            sessionStorage.setItem("softice_session_id", sessionId);
-        }
-        return sessionId;
-    }
-
-    function trackEvent(eventName, params) {
+  <script>
+    (function () {
+      function trackEvent(eventName, params) {
         if (typeof gtag === "function") {
-            gtag("event", eventName, params);
+          gtag("event", eventName, params);
         }
-        console.log("Tracked event:", eventName, params);
-    }
+      }
 
-    function commonParams() {
+      function commonParams() {
         return {
-            page_location: window.location.href,
-            page_path: window.location.pathname,
-            page_title: document.title,
-            referrer: document.referrer || "direct",
-            device_type: getDeviceType(),
-            session_id: getSessionId()
+          page_location: window.location.href,
+          page_path: window.location.pathname,
+          page_title: document.title,
+          referrer: document.referrer || "direct"
         };
-    }
+      }
 
-    window.addEventListener("load", function () {
+      window.addEventListener("load", function () {
         trackEvent("company_homepage_view", {
-            ...commonParams(),
-            page_name: "softice_company_homepage"
+          ...commonParams(),
+          page_name: "softice_company_homepage"
         });
-    });
+      });
 
-    document.addEventListener("click", function (e) {
-        const el = e.target.closest("[data-track]");
+      document.addEventListener("click", function (event) {
+        const el = event.target.closest("[data-track]");
         if (!el) return;
 
         trackEvent(el.getAttribute("data-track"), {
-            ...commonParams(),
-            click_location: el.getAttribute("data-track-location") || "unknown_location",
-            click_title: el.getAttribute("data-track-title") || (el.textContent || "").trim(),
-            link_url: el.href || ""
+          ...commonParams(),
+          click_location: el.getAttribute("data-track-location") || "unknown",
+          click_title: el.getAttribute("data-track-title") || (el.textContent || "").trim(),
+          link_url: el.href || ""
         });
-    });
-})();
-</script>
+      });
+    })();
+  </script>
 </body>
 </html>
