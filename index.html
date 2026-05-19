@@ -42,8 +42,7 @@
   <style>
     :root {
       --bg: #fff8ef;
-      --panel: rgba(255, 255, 255, 0.84);
-      --panel-solid: #ffffff;
+      --panel: rgba(255, 255, 255, 0.86);
       --ink: #071226;
       --muted: #566172;
       --line: rgba(7, 18, 38, 0.11);
@@ -52,57 +51,53 @@
       --purple: #8c6ad9;
       --green: #57a86a;
       --yellow: #f6a51c;
+      --red: #e92626;
       --shadow: 0 28px 80px rgba(40, 28, 16, 0.12);
       --soft-shadow: 0 18px 44px rgba(40, 28, 16, 0.10);
-      --radius-xl: 34px;
-      --radius-lg: 24px;
-      --max: 1280px;
+      --max: 1320px;
     }
 
-    * {
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
 
     body {
       margin: 0;
       font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       color: var(--ink);
       background:
-        radial-gradient(circle at 80% 4%, rgba(255, 192, 102, 0.30), transparent 32%),
-        radial-gradient(circle at 12% 0%, rgba(255,255,255,0.95), transparent 30%),
-        linear-gradient(180deg, #fffdf8 0%, #fff7ea 56%, #ffffff 100%);
+        radial-gradient(circle at 82% 4%, rgba(255, 192, 102, 0.32), transparent 34%),
+        linear-gradient(180deg, #fffdf8 0%, #fff7ea 54%, #ffffff 100%);
       overflow-x: hidden;
     }
 
-    a {
-      color: inherit;
-    }
+    a { color: inherit; }
+    img { max-width: 100%; display: block; }
 
-    img {
-      max-width: 100%;
-      display: block;
+    .visually-hidden {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      clip: rect(0 0 0 0);
+      white-space: nowrap;
     }
 
     .site-header {
       width: min(var(--max), calc(100% - 40px));
-      margin: 22px auto 0;
-      min-height: 84px;
+      margin: 18px auto 0;
+      min-height: 78px;
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 24px;
-      padding: 16px 22px;
-      background: rgba(255,255,255,0.78);
+      padding: 14px 20px;
+      background: rgba(255,255,255,0.86);
       border: 1px solid var(--line);
-      border-radius: 24px;
-      box-shadow: 0 16px 45px rgba(35, 25, 12, 0.07);
+      border-radius: 22px;
+      box-shadow: 0 14px 40px rgba(35, 25, 12, 0.07);
       backdrop-filter: blur(18px);
       position: sticky;
-      top: 14px;
+      top: 12px;
       z-index: 20;
     }
 
@@ -138,16 +133,6 @@
       font-size: 30px;
       line-height: 1;
       display: none;
-    }
-
-    .brand-logo-img[src=""],
-    .brand-logo-img:not([src]) {
-      display: none;
-    }
-
-    .brand-logo-img[src=""] + .brand-logo-fallback,
-    .brand-logo-img:not([src]) + .brand-logo-fallback {
-      display: block;
     }
 
     .brand-text strong {
@@ -198,90 +183,57 @@
       width: min(var(--max), calc(100% - 40px));
       margin: 26px auto 0;
       position: relative;
+    }
+
+    .hero-card {
+      position: relative;
       overflow: hidden;
       border-radius: 36px;
       background:
-        radial-gradient(circle at 75% 6%, rgba(255, 195, 104, 0.34), transparent 36%),
-        linear-gradient(135deg, rgba(255,255,255,0.92), rgba(255,248,239,0.82));
+        radial-gradient(circle at 78% 10%, rgba(255, 195, 104, 0.34), transparent 38%),
+        rgba(255,255,255,0.76);
       border: 1px solid rgba(7,18,38,0.08);
       box-shadow: var(--shadow);
     }
 
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 0.78fr 1.22fr;
+    .hero-banner {
+      width: 100%;
+      aspect-ratio: 1200 / 630;
+      object-fit: contain;
+      object-position: center;
+      background: #fff8ef;
+    }
+
+    .hero-action-bar {
+      display: flex;
       align-items: center;
-      gap: 24px;
-      padding: 54px 48px 52px;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 18px 24px;
+      background: rgba(255,255,255,0.76);
+      border-top: 1px solid rgba(7,18,38,0.07);
     }
 
-    .hero-copy {
-      position: relative;
-      z-index: 2;
-    }
-
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 9px;
-      min-height: 36px;
-      padding: 0 14px;
-      border-radius: 999px;
-      color: #b34a13;
-      font-size: 13px;
-      font-weight: 850;
-      background: rgba(255,255,255,0.78);
-      border: 1px solid rgba(242,107,33,0.16);
-      margin-bottom: 18px;
-    }
-
-    h1 {
+    .hero-action-bar p {
       margin: 0;
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(44px, 5vw, 70px);
-      line-height: 0.98;
-      letter-spacing: -0.055em;
-      color: var(--ink);
-    }
-
-    .hero-copy p {
-      margin: 24px 0 0;
-      max-width: 520px;
-      font-size: 18px;
-      line-height: 1.7;
       color: var(--muted);
+      line-height: 1.55;
+      font-size: 15px;
     }
 
     .primary-cta {
-      margin-top: 28px;
-      min-height: 55px;
-      padding: 0 26px;
-      border-radius: 15px;
+      min-height: 48px;
+      padding: 0 22px;
+      border-radius: 14px;
       display: inline-flex;
       align-items: center;
-      gap: 12px;
+      gap: 10px;
       color: #fff;
       text-decoration: none;
       font-weight: 900;
       background: linear-gradient(135deg, var(--orange), var(--orange-dark));
-      box-shadow: 0 18px 34px rgba(242,107,33,0.26);
-    }
-
-    .hero-image-wrap {
-      position: relative;
-      z-index: 2;
-      border-radius: 30px;
-      overflow: hidden;
-      background: rgba(255,255,255,0.40);
-      box-shadow: 0 22px 60px rgba(38, 25, 10, 0.10);
-    }
-
-    .hero-image {
-      width: 100%;
-      min-height: 430px;
-      object-fit: cover;
-      object-position: center;
-      transform: scale(1.01);
+      box-shadow: 0 18px 34px rgba(242,107,33,0.24);
+      white-space: nowrap;
     }
 
     .section {
@@ -294,13 +246,13 @@
       align-items: end;
       justify-content: space-between;
       gap: 24px;
-      margin-bottom: 22px;
+      margin-bottom: 24px;
     }
 
     .section-header h2 {
       margin: 0;
       font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(34px, 4vw, 50px);
+      font-size: clamp(34px, 4vw, 52px);
       line-height: 1;
       letter-spacing: -0.045em;
       color: var(--ink);
@@ -308,7 +260,7 @@
 
     .section-header p {
       margin: 0;
-      max-width: 480px;
+      max-width: 500px;
       color: var(--muted);
       line-height: 1.65;
     }
@@ -316,17 +268,17 @@
     .apps-grid {
       display: grid;
       grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 22px;
+      gap: 24px;
     }
 
     .app-card {
       position: relative;
       overflow: hidden;
-      border-radius: 30px;
-      background: rgba(255,255,255,0.84);
+      border-radius: 32px;
+      background: rgba(255,255,255,0.88);
       border: 1px solid rgba(7,18,38,0.09);
       box-shadow: var(--soft-shadow);
-      min-height: 620px;
+      min-height: 680px;
       display: flex;
       flex-direction: column;
       transition: transform 0.24s ease, box-shadow 0.24s ease;
@@ -338,37 +290,38 @@
     }
 
     .phone-stage {
-      height: 440px;
-      padding: 20px 16px 0;
+      height: 485px;
+      padding: 18px 14px 0;
       display: flex;
       justify-content: center;
       align-items: flex-start;
       overflow: hidden;
-      background: linear-gradient(180deg, rgba(255,255,255,0.65), rgba(255,255,255,0.25));
+      background: linear-gradient(180deg, rgba(255,255,255,0.70), rgba(255,255,255,0.20));
     }
 
     .phone-stage img {
-      height: 435px;
+      height: 482px;
       width: auto;
       max-width: none;
       object-fit: contain;
-      filter: drop-shadow(0 25px 28px rgba(20,20,20,0.16));
+      object-position: center top;
+      filter: drop-shadow(0 28px 30px rgba(20,20,20,0.16));
     }
 
     .app-body {
-      padding: 30px 24px 25px;
-      background: linear-gradient(180deg, rgba(255,255,255,0.90), #fff);
+      padding: 32px 24px 26px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.92), #fff);
       flex: 1;
       position: relative;
     }
 
     .app-icon {
       position: absolute;
-      top: -28px;
+      top: -30px;
       left: 24px;
-      width: 58px;
-      height: 58px;
-      border-radius: 18px;
+      width: 60px;
+      height: 60px;
+      border-radius: 19px;
       color: white;
       display: grid;
       place-items: center;
@@ -380,12 +333,12 @@
     .app-card.pet .app-icon { background: linear-gradient(135deg, #ff8930, #f25e18); }
     .app-card.calm .app-icon { background: linear-gradient(135deg, #b392f2, #7f5cc8); }
     .app-card.cozy .app-icon { background: linear-gradient(135deg, #ffc54a, #ff9b1f); }
-    .app-card.zero .app-icon { background: linear-gradient(135deg, #ff2c2c, #111); }
+    .app-card.zero .app-icon { background: linear-gradient(135deg, #e92626, #121212); }
 
     .app-body h3 {
-      margin: 6px 0 8px;
+      margin: 8px 0 9px;
       font-family: Georgia, "Times New Roman", serif;
-      font-size: 25px;
+      font-size: 26px;
       line-height: 1.05;
       letter-spacing: -0.035em;
     }
@@ -414,13 +367,13 @@
     .pet .learn-link { color: var(--orange); }
     .calm .learn-link { color: var(--purple); }
     .cozy .learn-link { color: var(--yellow); }
-    .zero .learn-link { color: #e92626; }
+    .zero .learn-link { color: var(--red); }
 
     .why {
-      margin-top: 38px;
+      margin-top: 40px;
       padding: 34px;
       border-radius: 34px;
-      background: rgba(255,255,255,0.78);
+      background: rgba(255,255,255,0.80);
       border: 1px solid rgba(7,18,38,0.08);
       box-shadow: var(--soft-shadow);
     }
@@ -429,7 +382,7 @@
       margin: 0 0 24px;
       text-align: center;
       font-family: Georgia, "Times New Roman", serif;
-      font-size: 38px;
+      font-size: 40px;
       letter-spacing: -0.045em;
     }
 
@@ -442,7 +395,7 @@
     .why-item {
       padding: 20px;
       border-radius: 22px;
-      background: rgba(255,255,255,0.72);
+      background: rgba(255,255,255,0.74);
       border: 1px solid rgba(7,18,38,0.07);
     }
 
@@ -478,7 +431,7 @@
       grid-template-columns: 1.4fr 0.8fr 0.8fr 0.8fr 1fr;
       gap: 28px;
       border-radius: 34px;
-      background: rgba(255,255,255,0.76);
+      background: rgba(255,255,255,0.78);
       border: 1px solid rgba(7,18,38,0.08);
       box-shadow: 0 18px 50px rgba(35, 25, 12, 0.07);
     }
@@ -513,14 +466,6 @@
     }
 
     @media (max-width: 1180px) {
-      .hero-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .hero-image {
-        min-height: auto;
-      }
-
       .apps-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
@@ -560,20 +505,19 @@
         width: calc(100% - 24px);
       }
 
-      .hero-grid {
-        padding: 32px 18px 22px;
+      .hero-card {
+        border-radius: 24px;
       }
 
-      h1 {
-        font-size: 43px;
+      .hero-banner {
+        aspect-ratio: 1200 / 630;
+        object-fit: contain;
       }
 
-      .hero-copy p {
-        font-size: 16px;
-      }
-
-      .hero-image-wrap {
-        border-radius: 22px;
+      .hero-action-bar {
+        align-items: flex-start;
+        flex-direction: column;
+        padding: 16px;
       }
 
       .apps-grid {
@@ -581,15 +525,15 @@
       }
 
       .app-card {
-        min-height: 590px;
+        min-height: 650px;
       }
 
       .phone-stage {
-        height: 410px;
+        height: 455px;
       }
 
       .phone-stage img {
-        height: 405px;
+        height: 452px;
       }
 
       .why-grid {
@@ -632,16 +576,12 @@
 
   <main>
     <section class="hero" id="about">
-      <div class="hero-grid">
-        <div class="hero-copy">
-          <span class="eyebrow">Softice Innovations Labs LLC</span>
-          <h1>Thoughtful apps for calmer, easier everyday life</h1>
-          <p>We build simple, beautiful mobile apps that support care, calm, stories, discipline, focus, and everyday life.</p>
+      <h1 class="visually-hidden">Softice Innovations Labs builds thoughtful mobile apps for calmer, easier everyday life</h1>
+      <div class="hero-card">
+        <img class="hero-banner" src="/images/softice/softice-og.webp" alt="Softice Innovations Labs hero banner with PetCare Log, CalmPulse, Cozy Tales, and Zero Reset app previews" />
+        <div class="hero-action-bar">
+          <p>Simple, beautiful mobile apps for care, calm, bedtime stories, discipline, focus, and everyday life.</p>
           <a class="primary-cta" href="#apps" data-track="homepage_cta_click" data-track-location="hero" data-track-title="Explore Our Apps">Explore Our Apps →</a>
-        </div>
-
-        <div class="hero-image-wrap">
-          <img class="hero-image" src="/images/softice/softice-og.webp" alt="Softice Innovations Labs app collection hero image with PetCare Log, CalmPulse, Cozy Tales, and Zero Reset previews" />
         </div>
       </div>
     </section>
@@ -655,7 +595,7 @@
       <div class="apps-grid">
         <article class="app-card pet">
           <div class="phone-stage">
-            <img src="/images/softice/petcare-home-screen.png" alt="PetCare Log app dashboard screen" />
+            <img src="/images/softice/petcare-home-screen.webp" alt="PetCare Log app dashboard screen" loading="lazy" />
           </div>
           <div class="app-body">
             <div class="app-icon" aria-hidden="true">🐾</div>
@@ -667,7 +607,7 @@
 
         <article class="app-card calm">
           <div class="phone-stage">
-            <img src="/images/softice/calmpulse-home-screen.png" alt="CalmPulse app home screen with breathing and calming tools" />
+            <img src="/images/softice/calmpulse-home-screen.webp" alt="CalmPulse app home screen with breathing and calming tools" loading="lazy" />
           </div>
           <div class="app-body">
             <div class="app-icon" aria-hidden="true">✦</div>
@@ -679,7 +619,7 @@
 
         <article class="app-card cozy">
           <div class="phone-stage">
-            <img src="/images/softice/cozy-tales-home-screen.png" alt="Cozy Tales bedtime stories app home screen" />
+            <img src="/images/softice/cozy-tales-home-screen.webp" alt="Cozy Tales bedtime stories app home screen" loading="lazy" />
           </div>
           <div class="app-body">
             <div class="app-icon" aria-hidden="true">📖</div>
@@ -691,7 +631,7 @@
 
         <article class="app-card zero">
           <div class="phone-stage">
-            <img src="/images/softice/zero-reset-home-screen.png" alt="Zero Reset discipline streak tracker app screen" />
+            <img src="/images/softice/zero-reset-home-screen.webp" alt="Zero Reset discipline streak tracker app screen" loading="lazy" />
           </div>
           <div class="app-body">
             <div class="app-icon" aria-hidden="true">0</div>
