@@ -9,18 +9,30 @@
   <meta name="author" content="Softice Innovations Labs LLC" />
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
   <meta name="theme-color" content="#fff8ef" />
+  <meta name="application-name" content="Softice Innovations Labs" />
+  <meta name="apple-mobile-web-app-title" content="Softice Innovations Labs" />
+  <meta name="format-detection" content="telephone=no" />
 
   <link rel="canonical" href="https://softiceinnovationslabs.com/" />
   <link rel="alternate" hreflang="en" href="https://softiceinnovationslabs.com/" />
+  <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
+
+  <!-- Icon paths: primary root file + fallback locations handled by JS below -->
+  <link rel="icon" type="image/png" href="/softice-logo-mark.png" />
+  <link rel="apple-touch-icon" href="/softice-logo-mark.png" />
 
   <link rel="preload" as="image" href="/images/softice/softice-og.webp" />
-  <link rel="preload" as="image" href="/images/softice/softice-logo-mark.png" />
+  <link rel="preload" as="image" href="/softice-logo-mark.png" />
 
   <meta property="og:title" content="Softice Innovations Labs | Thoughtful Mobile Apps for Everyday Life" />
   <meta property="og:description" content="Simple, beautiful mobile apps for pet care, calm, bedtime stories, discipline, focus, and everyday life." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://softiceinnovationslabs.com/" />
   <meta property="og:image" content="https://softiceinnovationslabs.com/images/softice/softice-og.webp" />
+  <meta property="og:image:secure_url" content="https://softiceinnovationslabs.com/images/softice/softice-og.webp" />
+  <meta property="og:image:type" content="image/webp" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
   <meta property="og:image:alt" content="Softice Innovations Labs homepage with mobile app previews" />
   <meta property="og:site_name" content="Softice Innovations Labs" />
   <meta property="og:locale" content="en_US" />
@@ -29,6 +41,7 @@
   <meta name="twitter:title" content="Softice Innovations Labs | Thoughtful Mobile Apps for Everyday Life" />
   <meta name="twitter:description" content="Simple, beautiful mobile apps for pet care, calm, bedtime stories, discipline, focus, and everyday life." />
   <meta name="twitter:image" content="https://softiceinnovationslabs.com/images/softice/softice-og.webp" />
+  <meta name="twitter:image:alt" content="Softice Innovations Labs homepage with mobile app previews" />
 
   <!-- Google Analytics 4 -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-CE1N5QBRTE"></script>
@@ -125,14 +138,26 @@
       width: 54px;
       height: 54px;
       object-fit: contain;
+      display: block;
     }
 
     .brand-logo-fallback {
+      width: 54px;
+      height: 54px;
       color: #fff;
       font-weight: 950;
       font-size: 30px;
       line-height: 1;
       display: none;
+      place-items: center;
+    }
+
+    .brand-logo-wrap.logo-fallback-active .brand-logo-img {
+      display: none;
+    }
+
+    .brand-logo-wrap.logo-fallback-active .brand-logo-fallback {
+      display: grid;
     }
 
     .brand-text strong {
@@ -241,6 +266,8 @@
     .section {
       width: min(var(--max), calc(100% - 40px));
       margin: 42px auto 0;
+      content-visibility: auto;
+      contain-intrinsic-size: 900px;
     }
 
     .section-header {
@@ -562,7 +589,7 @@
   <header class="site-header">
     <a class="brand" href="/" aria-label="Softice Innovations Labs homepage">
       <span class="brand-logo-wrap">
-        <img class="brand-logo-img" src="/images/softice/softice-logo-mark.png" alt="Softice Innovations Labs logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" />
+        <img class="brand-logo-img" src="/softice-logo-mark.png" alt="Softice Innovations Labs logo" width="54" height="54" decoding="async" data-logo-srcs="/softice-logo-mark.png,/images/softice/softice-logo-mark.png,/images/softice-logo-mark.png,softice-logo-mark.png" />
         <span class="brand-logo-fallback">S</span>
       </span>
       <span class="brand-text">
@@ -572,33 +599,33 @@
     </a>
 
     <nav class="nav" aria-label="Main navigation">
-      <a href="#apps">Apps</a>
-      <a href="#about">About</a>
-      <a href="#support">Support</a>
-      <a href="mailto:support@softiceinnovationslabs.com">Contact</a>
-      <a class="nav-cta" href="mailto:support@softiceinnovationslabs.com">Get in Touch</a>
+      <a href="#apps" data-track="nav_click" data-track-location="header" data-track-title="Apps">Apps</a>
+      <a href="#about" data-track="nav_click" data-track-location="header" data-track-title="About">About</a>
+      <a href="#support" data-track="nav_click" data-track-location="header" data-track-title="Support">Support</a>
+      <a href="mailto:support@softiceinnovationslabs.com" data-track="contact_click" data-track-location="header" data-track-title="Contact Email">Contact</a>
+      <a class="nav-cta" href="mailto:support@softiceinnovationslabs.com" data-track="contact_click" data-track-location="header_cta" data-track-title="Get in Touch">Get in Touch</a>
     </nav>
   </header>
 
   <main>
-    <section class="hero" id="about">
+    <section class="hero" id="about" data-section-track="company_hero">
       <h1 class="visually-hidden">Softice Innovations Labs builds thoughtful mobile apps for calmer, easier everyday life</h1>
       <div class="hero-card">
-        <img class="hero-banner" src="/images/softice/softice-og.webp" alt="Softice Innovations Labs hero banner with PetCare Log, CalmPulse, Cozy Tales, and Zero Reset app previews" />
+        <img class="hero-banner" src="/images/softice/softice-og.webp" alt="Softice Innovations Labs hero banner with PetCare Log, CalmPulse, Cozy Tales, and Zero Reset app previews" width="1200" height="630" fetchpriority="high" decoding="async" />
         <a class="hero-overlay-cta" href="#apps" data-track="homepage_cta_click" data-track-location="hero_image_overlay" data-track-title="Explore Our Apps">Explore Our Apps →</a>
       </div>
     </section>
 
-    <section class="section" id="apps">
+    <section class="section" id="apps" data-section-track="company_apps">
       <div class="section-header">
         <h2>Our Apps</h2>
         <p>Each app is designed with a clear purpose: simple tools, emotional design, and real everyday usefulness.</p>
       </div>
 
       <div class="apps-grid">
-        <article class="app-card pet">
+        <article class="app-card pet" data-app-card data-app-name="PetCare Log">
           <div class="phone-stage">
-            <img src="/images/softice/petcare-home-screen.webp" alt="PetCare Log app dashboard screen" loading="lazy" />
+            <img src="/images/softice/petcare-home-screen.webp" alt="PetCare Log app dashboard screen" width="900" height="1400" loading="lazy" decoding="async" />
           </div>
           <div class="app-body">
             <div class="app-icon" aria-hidden="true">🐾</div>
@@ -608,9 +635,9 @@
           </div>
         </article>
 
-        <article class="app-card calm">
+        <article class="app-card calm" data-app-card data-app-name="CalmPulse">
           <div class="phone-stage">
-            <img src="/images/softice/calmpulse-home-screen.webp" alt="CalmPulse app home screen with breathing and calming tools" loading="lazy" />
+            <img src="/images/softice/calmpulse-home-screen.webp" alt="CalmPulse app home screen with breathing and calming tools" width="900" height="1400" loading="lazy" decoding="async" />
           </div>
           <div class="app-body">
             <div class="app-icon" aria-hidden="true">✦</div>
@@ -620,9 +647,9 @@
           </div>
         </article>
 
-        <article class="app-card cozy">
+        <article class="app-card cozy" data-app-card data-app-name="Cozy Tales">
           <div class="phone-stage">
-            <img src="/images/softice/cozy-tales-home-screen.webp" alt="Cozy Tales bedtime stories app home screen" loading="lazy" />
+            <img src="/images/softice/cozy-tales-home-screen.webp" alt="Cozy Tales bedtime stories app home screen" width="900" height="1400" loading="lazy" decoding="async" />
           </div>
           <div class="app-body">
             <div class="app-icon" aria-hidden="true">📖</div>
@@ -632,9 +659,9 @@
           </div>
         </article>
 
-        <article class="app-card zero">
+        <article class="app-card zero" data-app-card data-app-name="Zero Reset">
           <div class="phone-stage">
-            <img src="/images/softice/zero-reset-home-screen.webp" alt="Zero Reset discipline streak tracker app screen" loading="lazy" />
+            <img src="/images/softice/zero-reset-home-screen.webp" alt="Zero Reset discipline streak tracker app screen" width="900" height="1400" loading="lazy" decoding="async" />
           </div>
           <div class="app-body">
             <div class="app-icon" aria-hidden="true">0</div>
@@ -645,7 +672,7 @@
         </article>
       </div>
 
-      <section class="why" aria-labelledby="why-softice-heading">
+      <section class="why" aria-labelledby="why-softice-heading" data-section-track="company_why_softice">
         <h2 id="why-softice-heading">Why Softice</h2>
         <div class="why-grid">
           <div class="why-item">
@@ -678,11 +705,11 @@
     </section>
   </main>
 
-  <footer class="footer" id="support">
+  <footer class="footer" id="support" data-section-track="company_footer">
     <div>
       <a class="brand" href="/" aria-label="Softice Innovations Labs homepage">
         <span class="brand-logo-wrap">
-          <img class="brand-logo-img" src="/images/softice/softice-logo-mark.png" alt="Softice Innovations Labs logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" />
+          <img class="brand-logo-img" src="/softice-logo-mark.png" alt="Softice Innovations Labs logo" width="54" height="54" decoding="async" data-logo-srcs="/softice-logo-mark.png,/images/softice/softice-logo-mark.png,/images/softice-logo-mark.png,softice-logo-mark.png" />
           <span class="brand-logo-fallback">S</span>
         </span>
         <span class="brand-text">
@@ -702,10 +729,10 @@
 
     <div>
       <h3>Apps</h3>
-      <a href="/petcare/">PetCare Log</a>
-      <a href="/calmpulse/">CalmPulse</a>
-      <a href="/cozy-tales/">Cozy Tales</a>
-      <a href="/zero-reset/">Zero Reset</a>
+      <a href="/petcare/" data-track="footer_app_click" data-track-location="footer_apps" data-track-title="PetCare Log">PetCare Log</a>
+      <a href="/calmpulse/" data-track="footer_app_click" data-track-location="footer_apps" data-track-title="CalmPulse">CalmPulse</a>
+      <a href="/cozy-tales/" data-track="footer_app_click" data-track-location="footer_apps" data-track-title="Cozy Tales">Cozy Tales</a>
+      <a href="/zero-reset/" data-track="footer_app_click" data-track-location="footer_apps" data-track-title="Zero Reset">Zero Reset</a>
     </div>
 
     <div>
@@ -717,9 +744,9 @@
 
     <div>
       <h3>Let's connect</h3>
-      <a href="mailto:support@softiceinnovationslabs.com">support@softiceinnovationslabs.com</a>
-      <a href="https://www.youtube.com/@BedtimeStoriesCozyTales" target="_blank" rel="noopener noreferrer">YouTube</a>
-      <a href="https://www.instagram.com/bedtime.stories.forkids/" target="_blank" rel="noopener noreferrer">Instagram</a>
+      <a href="mailto:support@softiceinnovationslabs.com" data-track="contact_click" data-track-location="footer" data-track-title="Support Email">support@softiceinnovationslabs.com</a>
+      <a href="https://www.youtube.com/@BedtimeStoriesCozyTales" target="_blank" rel="noopener noreferrer" data-track="outbound_social_click" data-track-location="footer" data-track-title="YouTube">YouTube</a>
+      <a href="https://www.instagram.com/bedtime.stories.forkids/" target="_blank" rel="noopener noreferrer" data-track="outbound_social_click" data-track-location="footer" data-track-title="Instagram">Instagram</a>
     </div>
 
     <div class="copyright">© 2026 Softice Innovations Labs LLC. All rights reserved.</div>
@@ -737,13 +764,22 @@
         "email": "support@softiceinnovationslabs.com",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://softiceinnovationslabs.com/images/softice/softice-logo-mark.png"
+          "url": "https://softiceinnovationslabs.com/softice-logo-mark.png",
+          "width": 512,
+          "height": 512
         },
+        "image": "https://softiceinnovationslabs.com/images/softice/softice-og.webp",
         "sameAs": [
           "https://www.youtube.com/@BedtimeStoriesCozyTales",
           "https://www.instagram.com/bedtime.stories.forkids/",
           "https://www.tiktok.com/@bedtimestoriescozytales"
-        ]
+        ],
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "email": "support@softiceinnovationslabs.com",
+          "contactType": "customer support",
+          "availableLanguage": "English"
+        }
       },
       {
         "@type": "WebSite",
@@ -754,6 +790,80 @@
         "publisher": {
           "@id": "https://softiceinnovationslabs.com/#organization"
         }
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://softiceinnovationslabs.com/#webpage",
+        "url": "https://softiceinnovationslabs.com/",
+        "name": "Softice Innovations Labs | Thoughtful Mobile Apps for Everyday Life",
+        "description": "Simple, beautiful mobile apps for pet care, calm, bedtime stories, discipline, focus, and everyday life.",
+        "isPartOf": {
+          "@id": "https://softiceinnovationslabs.com/#website"
+        },
+        "about": {
+          "@id": "https://softiceinnovationslabs.com/#organization"
+        },
+        "primaryImageOfPage": {
+          "@type": "ImageObject",
+          "url": "https://softiceinnovationslabs.com/images/softice/softice-og.webp",
+          "width": 1200,
+          "height": 630
+        }
+      },
+      {
+        "@type": "ItemList",
+        "@id": "https://softiceinnovationslabs.com/#apps",
+        "name": "Softice Innovations Labs mobile apps",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "PetCare Log",
+            "url": "https://softiceinnovationslabs.com/petcare/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "CalmPulse",
+            "url": "https://softiceinnovationslabs.com/calmpulse/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Cozy Tales",
+            "url": "https://softiceinnovationslabs.com/cozy-tales/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 4,
+            "name": "Zero Reset",
+            "url": "https://softiceinnovationslabs.com/zero-reset/"
+          }
+        ]
+      },
+      {
+        "@type": "SiteNavigationElement",
+        "@id": "https://softiceinnovationslabs.com/#site-navigation",
+        "name": [
+          "Apps",
+          "About",
+          "Support",
+          "Contact",
+          "PetCare Log",
+          "CalmPulse",
+          "Cozy Tales",
+          "Zero Reset"
+        ],
+        "url": [
+          "https://softiceinnovationslabs.com/#apps",
+          "https://softiceinnovationslabs.com/#about",
+          "https://softiceinnovationslabs.com/#support",
+          "mailto:support@softiceinnovationslabs.com",
+          "https://softiceinnovationslabs.com/petcare/",
+          "https://softiceinnovationslabs.com/calmpulse/",
+          "https://softiceinnovationslabs.com/cozy-tales/",
+          "https://softiceinnovationslabs.com/zero-reset/"
+        ]
       }
     ]
   }
@@ -761,10 +871,66 @@
 
   <script>
     (function () {
-      function trackEvent(eventName, params) {
-        if (typeof gtag === "function") {
-          gtag("event", eventName, params);
+      const LOGO_CANDIDATES = [
+        "/softice-logo-mark.png",
+        "/images/softice/softice-logo-mark.png",
+        "/images/softice-logo-mark.png",
+        "softice-logo-mark.png"
+      ];
+
+      function testImage(src) {
+        return new Promise(function (resolve) {
+          const img = new Image();
+          img.onload = function () { resolve(src); };
+          img.onerror = function () { resolve(null); };
+          img.src = src;
+        });
+      }
+
+      async function loadBrandLogo() {
+        let workingLogo = null;
+
+        for (const src of LOGO_CANDIDATES) {
+          workingLogo = await testImage(src);
+          if (workingLogo) break;
         }
+
+        document.querySelectorAll(".brand-logo-wrap").forEach(function (wrap) {
+          const img = wrap.querySelector(".brand-logo-img");
+          const fallback = wrap.querySelector(".brand-logo-fallback");
+
+          if (workingLogo && img) {
+            img.src = workingLogo;
+            img.style.display = "block";
+            wrap.classList.remove("logo-fallback-active");
+            if (fallback) fallback.style.display = "none";
+          } else {
+            wrap.classList.add("logo-fallback-active");
+          }
+        });
+
+        if (!workingLogo) {
+          trackEvent("logo_load_error", {
+            ...commonParams(),
+            attempted_paths: LOGO_CANDIDATES.join(",")
+          });
+        }
+      }
+
+      function getDeviceType() {
+        const ua = navigator.userAgent || "";
+        if (/tablet|ipad|playbook|silk/i.test(ua)) return "tablet";
+        if (/Mobile|Android|iPhone|iPod/i.test(ua)) return "mobile";
+        return "desktop";
+      }
+
+      function getSessionId() {
+        let sessionId = sessionStorage.getItem("softice_session_id");
+        if (!sessionId) {
+          sessionId = "sess_" + Date.now() + "_" + Math.random().toString(36).slice(2, 10);
+          sessionStorage.setItem("softice_session_id", sessionId);
+        }
+        return sessionId;
       }
 
       function commonParams() {
@@ -772,11 +938,21 @@
           page_location: window.location.href,
           page_path: window.location.pathname,
           page_title: document.title,
-          referrer: document.referrer || "direct"
+          referrer: document.referrer || "direct",
+          device_type: getDeviceType(),
+          session_id: getSessionId()
         };
       }
 
+      function trackEvent(eventName, params) {
+        if (typeof gtag === "function") {
+          gtag("event", eventName, params || {});
+        }
+      }
+
       window.addEventListener("load", function () {
+        loadBrandLogo();
+
         trackEvent("company_homepage_view", {
           ...commonParams(),
           page_name: "softice_company_homepage"
@@ -784,15 +960,110 @@
       });
 
       document.addEventListener("click", function (event) {
-        const el = event.target.closest("[data-track]");
-        if (!el) return;
+        const tracked = event.target.closest("[data-track]");
+        const link = event.target.closest("a[href]");
 
-        trackEvent(el.getAttribute("data-track"), {
-          ...commonParams(),
-          click_location: el.getAttribute("data-track-location") || "unknown",
-          click_title: el.getAttribute("data-track-title") || (el.textContent || "").trim(),
-          link_url: el.href || ""
+        if (tracked) {
+          trackEvent(tracked.getAttribute("data-track"), {
+            ...commonParams(),
+            click_location: tracked.getAttribute("data-track-location") || "unknown",
+            click_title: tracked.getAttribute("data-track-title") || (tracked.textContent || "").trim(),
+            link_url: tracked.href || ""
+          });
+        }
+
+        if (link && link.hostname && link.hostname !== window.location.hostname) {
+          trackEvent("outbound_click", {
+            ...commonParams(),
+            link_url: link.href,
+            link_domain: link.hostname,
+            link_text: (link.textContent || "").trim()
+          });
+        }
+
+        if (link && link.href && link.href.startsWith("mailto:")) {
+          trackEvent("email_click", {
+            ...commonParams(),
+            link_url: link.href,
+            link_text: (link.textContent || "").trim()
+          });
+        }
+      });
+
+      const trackedSections = new Set();
+      const sectionObserver = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (!entry.isIntersecting) return;
+
+          const sectionName = entry.target.getAttribute("data-section-track");
+          if (!sectionName || trackedSections.has(sectionName)) return;
+
+          trackedSections.add(sectionName);
+          trackEvent("section_view", {
+            ...commonParams(),
+            section_name: sectionName
+          });
         });
+      }, { threshold: 0.45 });
+
+      document.querySelectorAll("[data-section-track]").forEach(function (section) {
+        sectionObserver.observe(section);
+      });
+
+      const trackedApps = new Set();
+      const appObserver = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (!entry.isIntersecting) return;
+
+          const appName = entry.target.getAttribute("data-app-name");
+          if (!appName || trackedApps.has(appName)) return;
+
+          trackedApps.add(appName);
+          trackEvent("app_card_view", {
+            ...commonParams(),
+            app_name: appName
+          });
+        });
+      }, { threshold: 0.45 });
+
+      document.querySelectorAll("[data-app-card]").forEach(function (card) {
+        appObserver.observe(card);
+      });
+
+      const scrollMilestones = [25, 50, 75, 90, 100];
+      const reachedMilestones = new Set();
+
+      function handleScrollDepth() {
+        const scrollTop = window.scrollY || document.documentElement.scrollTop || 0;
+        const docHeight = Math.max(
+          document.body.scrollHeight,
+          document.documentElement.scrollHeight
+        ) - window.innerHeight;
+
+        if (docHeight <= 0) return;
+
+        const percent = Math.min(100, Math.round((scrollTop / docHeight) * 100));
+
+        scrollMilestones.forEach(function (milestone) {
+          if (percent >= milestone && !reachedMilestones.has(milestone)) {
+            reachedMilestones.add(milestone);
+            trackEvent("scroll_depth", {
+              ...commonParams(),
+              percent_scrolled: milestone
+            });
+          }
+        });
+      }
+
+      window.addEventListener("scroll", handleScrollDepth, { passive: true });
+
+      [10, 30, 60, 120].forEach(function (seconds) {
+        window.setTimeout(function () {
+          trackEvent("engaged_time", {
+            ...commonParams(),
+            seconds_engaged: seconds
+          });
+        }, seconds * 1000);
       });
     })();
   </script>
