@@ -202,38 +202,40 @@
       object-fit: contain;
       object-position: center;
       background: #fff8ef;
+      pointer-events: none;
     }
 
-    .hero-action-bar {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-      padding: 18px 24px;
-      background: rgba(255,255,255,0.76);
-      border-top: 1px solid rgba(7,18,38,0.07);
-    }
-
-    .hero-action-bar p {
-      margin: 0;
-      color: var(--muted);
-      line-height: 1.55;
-      font-size: 15px;
-    }
-
-    .primary-cta {
-      min-height: 48px;
-      padding: 0 22px;
-      border-radius: 14px;
+    .hero-overlay-cta {
+      position: absolute;
+      left: 4.25%;
+      bottom: 23.5%;
+      min-height: 52px;
+      padding: 0 24px;
+      border-radius: 15px;
       display: inline-flex;
       align-items: center;
+      justify-content: center;
       gap: 10px;
       color: #fff;
       text-decoration: none;
       font-weight: 900;
+      font-size: 15px;
       background: linear-gradient(135deg, var(--orange), var(--orange-dark));
-      box-shadow: 0 18px 34px rgba(242,107,33,0.24);
+      box-shadow: 0 18px 34px rgba(242,107,33,0.28);
       white-space: nowrap;
+      z-index: 4;
+      pointer-events: auto;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .hero-overlay-cta:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 22px 42px rgba(242,107,33,0.34);
+    }
+
+    .hero-overlay-cta:focus-visible {
+      outline: 3px solid rgba(242,107,33,0.35);
+      outline-offset: 4px;
     }
 
     .section {
@@ -514,10 +516,14 @@
         object-fit: contain;
       }
 
-      .hero-action-bar {
-        align-items: flex-start;
-        flex-direction: column;
-        padding: 16px;
+      .hero-overlay-cta {
+        left: 5%;
+        bottom: 20%;
+        min-height: 40px;
+        padding: 0 14px;
+        border-radius: 12px;
+        font-size: 12px;
+        box-shadow: 0 12px 24px rgba(242,107,33,0.24);
       }
 
       .apps-grid {
@@ -579,10 +585,7 @@
       <h1 class="visually-hidden">Softice Innovations Labs builds thoughtful mobile apps for calmer, easier everyday life</h1>
       <div class="hero-card">
         <img class="hero-banner" src="/images/softice/softice-og.webp" alt="Softice Innovations Labs hero banner with PetCare Log, CalmPulse, Cozy Tales, and Zero Reset app previews" />
-        <div class="hero-action-bar">
-          <p>Simple, beautiful mobile apps for care, calm, bedtime stories, discipline, focus, and everyday life.</p>
-          <a class="primary-cta" href="#apps" data-track="homepage_cta_click" data-track-location="hero" data-track-title="Explore Our Apps">Explore Our Apps →</a>
-        </div>
+        <a class="hero-overlay-cta" href="#apps" data-track="homepage_cta_click" data-track-location="hero_image_overlay" data-track-title="Explore Our Apps">Explore Our Apps →</a>
       </div>
     </section>
 
