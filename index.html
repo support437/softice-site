@@ -17,11 +17,11 @@
   <link rel="alternate" hreflang="en" href="https://softiceinnovationslabs.com/" />
   <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
 
-  <!-- Icon paths: primary root file + fallback locations handled by JS below -->
-  <link rel="icon" type="image/png" href="/softice-logo-mark.webp" />
-  <link rel="apple-touch-icon" href="/softice-logo-mark.webp" />
+  <link rel="icon" type="image/webp" href="/softice-logo-mark.webp" />
+  <link rel="apple-touch-icon" href="/softice-logo-mark.png" />
 
-  <link rel="preload" as="image" href="/images/softice/softice-og.webp" />
+  <link rel="preload" as="image" href="/images/softice/softice-og.webp" media="(min-width: 761px)" />
+  <link rel="preload" as="image" href="/images/softice/softice-og-mobile.webp" media="(max-width: 760px)" />
   <link rel="preload" as="image" href="/softice-logo-mark.webp" />
 
   <meta property="og:title" content="Softice Innovations Labs | Thoughtful Mobile Apps for Everyday Life" />
@@ -152,13 +152,8 @@
       place-items: center;
     }
 
-    .brand-logo-wrap.logo-fallback-active .brand-logo-img {
-      display: none;
-    }
-
-    .brand-logo-wrap.logo-fallback-active .brand-logo-fallback {
-      display: grid;
-    }
+    .brand-logo-wrap.logo-fallback-active .brand-logo-img { display: none; }
+    .brand-logo-wrap.logo-fallback-active .brand-logo-fallback { display: grid; }
 
     .brand-text strong {
       display: block;
@@ -184,13 +179,8 @@
       font-weight: 750;
     }
 
-    .nav a {
-      text-decoration: none;
-    }
-
-    .nav a:hover {
-      color: var(--orange);
-    }
+    .nav a { text-decoration: none; }
+    .nav a:hover { color: var(--orange); }
 
     .nav-cta {
       min-height: 45px;
@@ -221,8 +211,14 @@
       box-shadow: var(--shadow);
     }
 
+    .hero-card picture {
+      display: block;
+      line-height: 0;
+    }
+
     .hero-banner {
       width: 100%;
+      height: auto;
       aspect-ratio: 1200 / 630;
       object-fit: contain;
       object-position: center;
@@ -465,10 +461,7 @@
       box-shadow: 0 18px 50px rgba(35, 25, 12, 0.07);
     }
 
-    .footer h3 {
-      margin: 0 0 12px;
-      font-size: 15px;
-    }
+    .footer h3 { margin: 0 0 12px; font-size: 15px; }
 
     .footer p,
     .footer a {
@@ -478,13 +471,8 @@
       text-decoration: none;
     }
 
-    .footer a {
-      display: block;
-    }
-
-    .footer a:hover {
-      color: var(--orange);
-    }
+    .footer a { display: block; }
+    .footer a:hover { color: var(--orange); }
 
     .copyright {
       grid-column: 1 / -1;
@@ -495,37 +483,48 @@
     }
 
     @media (max-width: 1180px) {
-      .apps-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-
-      .why-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-
-      .footer {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
+      .apps-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .why-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .footer { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     }
 
     @media (max-width: 760px) {
       .site-header {
         width: calc(100% - 24px);
-        margin-top: 12px;
+        margin-top: 10px;
         top: 8px;
         align-items: flex-start;
         flex-direction: column;
+        gap: 14px;
+        padding: 14px;
+        border-radius: 22px;
+        min-height: auto;
       }
+
+      .brand {
+        min-width: 0;
+        gap: 12px;
+      }
+
+      .brand-logo-wrap,
+      .brand-logo-img,
+      .brand-logo-fallback {
+        width: 50px;
+        height: 50px;
+      }
+
+      .brand-text strong { font-size: 22px; }
+      .brand-text span { font-size: 13px; }
 
       .nav {
         width: 100%;
         flex-wrap: wrap;
-        gap: 15px;
+        gap: 14px 20px;
       }
 
       .nav-cta {
-        min-height: 40px;
-        padding: 0 15px;
+        min-height: 42px;
+        padding: 0 16px;
       }
 
       .hero,
@@ -534,48 +533,46 @@
         width: calc(100% - 24px);
       }
 
+      .hero {
+        margin-top: 14px;
+      }
+
       .hero-card {
-        border-radius: 24px;
+        border-radius: 28px;
       }
 
       .hero-banner {
-        aspect-ratio: 1200 / 630;
-        object-fit: contain;
+        aspect-ratio: 900 / 1400;
+        object-fit: cover;
+        object-position: center top;
       }
 
       .hero-overlay-cta {
-        left: 5%;
-        bottom: 20%;
-        min-height: 40px;
-        padding: 0 14px;
-        border-radius: 12px;
-        font-size: 12px;
-        box-shadow: 0 12px 24px rgba(242,107,33,0.24);
+        left: 50%;
+        bottom: 5.4%;
+        transform: translateX(-50%);
+        min-height: 50px;
+        padding: 0 22px;
+        border-radius: 15px;
+        font-size: 15px;
+        box-shadow: 0 16px 28px rgba(242,107,33,0.28);
       }
 
-      .apps-grid {
-        grid-template-columns: 1fr;
+      .hero-overlay-cta:hover {
+        transform: translateX(-50%) translateY(-2px);
       }
 
-      .app-card {
-        min-height: 650px;
-      }
+      .apps-grid { grid-template-columns: 1fr; }
 
-      .phone-stage {
-        height: 455px;
-      }
+      .app-card { min-height: 650px; }
 
-      .phone-stage img {
-        height: 452px;
-      }
+      .phone-stage { height: 455px; }
 
-      .why-grid {
-        grid-template-columns: 1fr;
-      }
+      .phone-stage img { height: 452px; }
 
-      .footer {
-        grid-template-columns: 1fr;
-      }
+      .why-grid { grid-template-columns: 1fr; }
+
+      .footer { grid-template-columns: 1fr; }
 
       .section-header {
         align-items: start;
@@ -589,7 +586,7 @@
   <header class="site-header">
     <a class="brand" href="/" aria-label="Softice Innovations Labs homepage">
       <span class="brand-logo-wrap">
-        <img class="brand-logo-img" src="/softice-logo-mark.webp" alt="Softice Innovations Labs logo" width="54" height="54" decoding="async" data-logo-srcs="/softice-logo-mark.webp,/images/softice/softice-logo-mark.png,/images/softice-logo-mark.png,softice-logo-mark.png" />
+        <img class="brand-logo-img" src="/softice-logo-mark.webp" alt="Softice Innovations Labs logo" width="54" height="54" decoding="async" data-logo-srcs="/softice-logo-mark.webp,/images/softice/softice-logo-mark.webp,/images/softice-logo-mark.webp,softice-logo-mark.webp,/softice-logo-mark.png,/images/softice/softice-logo-mark.png" />
         <span class="brand-logo-fallback">S</span>
       </span>
       <span class="brand-text">
@@ -611,7 +608,10 @@
     <section class="hero" id="about" data-section-track="company_hero">
       <h1 class="visually-hidden">Softice Innovations Labs builds thoughtful mobile apps for calmer, easier everyday life</h1>
       <div class="hero-card">
-        <img class="hero-banner" src="/images/softice/softice-og.webp" alt="Softice Innovations Labs hero banner with PetCare Log, CalmPulse, Cozy Tales, and Zero Reset app previews" width="1200" height="630" fetchpriority="high" decoding="async" />
+        <picture>
+          <source media="(max-width: 760px)" srcset="/images/softice/softice-og-mobile.webp" width="900" height="1400" />
+          <img class="hero-banner" src="/images/softice/softice-og.webp" alt="Softice Innovations Labs hero banner with PetCare Log, CalmPulse, Cozy Tales, and Zero Reset app previews" width="1200" height="630" fetchpriority="high" decoding="async" />
+        </picture>
         <a class="hero-overlay-cta" href="#apps" data-track="homepage_cta_click" data-track-location="hero_image_overlay" data-track-title="Explore Our Apps">Explore Our Apps →</a>
       </div>
     </section>
@@ -709,7 +709,7 @@
     <div>
       <a class="brand" href="/" aria-label="Softice Innovations Labs homepage">
         <span class="brand-logo-wrap">
-          <img class="brand-logo-img" src="/softice-logo-mark.webp" alt="Softice Innovations Labs logo" width="54" height="54" decoding="async" data-logo-srcs="/softice-logo-mark.webp,/images/softice/softice-logo-mark.webp,/images/softice-logo-mark.webp,softice-logo-mark.png" />
+          <img class="brand-logo-img" src="/softice-logo-mark.webp" alt="Softice Innovations Labs logo" width="54" height="54" decoding="async" data-logo-srcs="/softice-logo-mark.webp,/images/softice/softice-logo-mark.webp,/images/softice-logo-mark.webp,softice-logo-mark.webp,/softice-logo-mark.png,/images/softice/softice-logo-mark.png" />
           <span class="brand-logo-fallback">S</span>
         </span>
         <span class="brand-text">
@@ -764,7 +764,7 @@
         "email": "support@softiceinnovationslabs.com",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://softiceinnovationslabs.com/softice-logo-mark.png",
+          "url": "https://softiceinnovationslabs.com/softice-logo-mark.webp",
           "width": 512,
           "height": 512
         },
@@ -872,10 +872,12 @@
   <script>
     (function () {
       const LOGO_CANDIDATES = [
+        "/softice-logo-mark.webp",
+        "/images/softice/softice-logo-mark.webp",
+        "/images/softice-logo-mark.webp",
+        "softice-logo-mark.webp",
         "/softice-logo-mark.png",
-        "/images/softice/softice-logo-mark.png",
-        "/images/softice-logo-mark.png",
-        "softice-logo-mark.png"
+        "/images/softice/softice-logo-mark.png"
       ];
 
       function testImage(src) {
