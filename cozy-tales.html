@@ -21,7 +21,8 @@
   <link rel="icon" type="image/png" href="/images/cozy-tales/cozy-tales-logo-mark.png" />
   <link rel="apple-touch-icon" href="/images/cozy-tales/cozy-tales-logo-mark.png" />
 
-  <link rel="preload" as="image" href="/images/cozy-tales/cozy-tales-hero-desktop.webp" media="(min-width: 761px)" />
+  <link rel="preload" as="image" href="/images/cozy-tales/cozy-tales-hero-desktop.webp" media="(min-width: 1181px)" />
+  <link rel="preload" as="image" href="/images/cozy-tales/cozy-tales-hero-tablet.webp" media="(min-width: 761px) and (max-width: 1180px)" />
   <link rel="preload" as="image" href="/images/cozy-tales/cozy-tales-hero-mobile.webp" media="(max-width: 760px)" />
   <link rel="preload" as="image" href="/images/cozy-tales/cozy-tales-logo-horizontal.webp" />
 
@@ -78,6 +79,7 @@
     }
 
     * { box-sizing: border-box; }
+
     html { scroll-behavior: smooth; }
 
     body {
@@ -92,7 +94,11 @@
     }
 
     a { color: inherit; }
-    img { max-width: 100%; display: block; }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
 
     .visually-hidden {
       position: absolute;
@@ -101,6 +107,7 @@
       overflow: hidden;
       clip: rect(0 0 0 0);
       white-space: nowrap;
+      clip-path: inset(50%);
     }
 
     .shell {
@@ -130,11 +137,19 @@
     .floating-play img {
       width: 26px;
       height: 26px;
+      object-fit: contain;
     }
 
     @keyframes pulsePlay {
-      0%, 100% { transform: translateY(0) scale(1); box-shadow: 0 20px 42px rgba(255,169,35,0.28); }
-      50% { transform: translateY(-3px) scale(1.035); box-shadow: 0 26px 55px rgba(255,169,35,0.45); }
+      0%, 100% {
+        transform: translateY(0) scale(1);
+        box-shadow: 0 20px 42px rgba(255,169,35,0.28);
+      }
+
+      50% {
+        transform: translateY(-3px) scale(1.035);
+        box-shadow: 0 26px 55px rgba(255,169,35,0.45);
+      }
     }
 
     .topbar {
@@ -188,6 +203,7 @@
 
     .nav a {
       text-decoration: none;
+      white-space: nowrap;
     }
 
     .nav a:hover {
@@ -212,7 +228,7 @@
       margin: 16px auto 0;
       overflow: hidden;
       position: relative;
-      min-height: 660px;
+      min-height: 650px;
       border-radius: 34px;
       background: #0b0630;
       border: 1px solid var(--line);
@@ -224,8 +240,7 @@
       position: absolute;
       inset: 0;
       background:
-        linear-gradient(90deg, rgba(8,5,38,0.88) 0%, rgba(8,5,38,0.56) 42%, rgba(8,5,38,0.10) 100%),
-        linear-gradient(180deg, rgba(8,5,38,0.08) 0%, rgba(8,5,38,0.20) 100%);
+        linear-gradient(180deg, rgba(8,5,38,0.02) 0%, rgba(8,5,38,0.08) 48%, rgba(8,5,38,0.72) 100%);
       pointer-events: none;
       z-index: 1;
     }
@@ -236,69 +251,47 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      object-position: center;
+      object-position: center top;
       z-index: 0;
     }
 
     .hero-content {
-      position: relative;
+      position: absolute;
+      left: 38px;
+      right: 38px;
+      bottom: 30px;
       z-index: 2;
-      width: min(630px, 58%);
-      padding: 62px 54px 44px;
-    }
-
-    .hero-logo {
-      width: min(420px, 92%);
-      height: auto;
-      margin: 0 0 20px;
-      filter: drop-shadow(0 14px 24px rgba(0,0,0,0.30));
-    }
-
-    h1 {
-      margin: 0;
-      font-size: clamp(45px, 6vw, 72px);
-      line-height: 0.96;
-      letter-spacing: -0.055em;
-      color: var(--cream);
-      text-shadow: 0 5px 18px rgba(0,0,0,0.28);
-    }
-
-    h1 strong {
-      color: var(--gold);
-      display: inline-block;
-    }
-
-    .hero-copy {
-      margin: 20px 0 0;
-      max-width: 515px;
-      color: #efe8ff;
-      line-height: 1.65;
-      font-size: 18px;
-      font-weight: 600;
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 20px;
     }
 
     .benefit-row {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 12px;
-      margin: 28px 0 0;
+      width: min(620px, 58%);
     }
 
     .benefit-chip {
-      min-height: 84px;
-      padding: 14px;
+      min-height: 78px;
+      padding: 13px;
       border-radius: 17px;
-      background: rgba(255,255,255,0.11);
-      border: 1px solid rgba(255,255,255,0.16);
+      background: rgba(8, 5, 45, 0.62);
+      border: 1px solid rgba(255,255,255,0.18);
       display: flex;
       gap: 11px;
       align-items: center;
+      backdrop-filter: blur(14px);
+      box-shadow: 0 12px 28px rgba(0,0,0,0.18);
     }
 
     .benefit-chip img {
       width: 38px;
       height: 38px;
       flex: 0 0 auto;
+      object-fit: contain;
     }
 
     .benefit-chip strong {
@@ -318,53 +311,95 @@
 
     .hero-actions {
       display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 16px;
-      margin-top: 28px;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 12px;
+      width: min(390px, 38%);
     }
 
     .primary-btn {
-      min-height: 58px;
-      padding: 0 26px;
+      min-height: 56px;
+      padding: 0 24px;
       border-radius: 999px;
       border: 0;
       display: inline-flex;
       align-items: center;
+      justify-content: center;
       gap: 12px;
       background: linear-gradient(135deg, var(--gold), var(--gold-2));
       color: #160b36;
       text-decoration: none;
-      font-size: 16px;
+      font-size: 15px;
       font-weight: 950;
       box-shadow: 0 20px 42px rgba(255,169,35,0.30);
+      white-space: nowrap;
+    }
+
+    .primary-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 24px 50px rgba(255,169,35,0.38);
     }
 
     .primary-btn img {
       width: 28px;
       height: 28px;
+      object-fit: contain;
     }
 
     .rating {
       display: flex;
       align-items: center;
-      gap: 12px;
+      justify-content: flex-end;
+      gap: 10px;
       color: #f7efff;
-      font-size: 14px;
+      font-size: 13px;
       font-weight: 800;
+      text-align: right;
+      flex-wrap: wrap;
+      text-shadow: 0 3px 12px rgba(0,0,0,0.36);
     }
 
     .stars {
-      letter-spacing: 3px;
+      letter-spacing: 2px;
       color: var(--gold);
       text-shadow: 0 0 16px rgba(255,202,75,0.28);
     }
 
+    .seo-intro {
+      margin-top: 20px;
+      padding: 30px 34px;
+      border-radius: 30px;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.13);
+      box-shadow: var(--soft-shadow);
+    }
+
+    .seo-intro h1 {
+      margin: 0;
+      font-size: clamp(34px, 4.5vw, 56px);
+      line-height: 1.02;
+      letter-spacing: -0.055em;
+      color: var(--cream);
+    }
+
+    .seo-intro h1 strong {
+      color: var(--gold);
+    }
+
+    .seo-intro p {
+      margin: 14px 0 0;
+      max-width: 920px;
+      color: #e8e1ff;
+      font-size: 17px;
+      line-height: 1.75;
+      font-weight: 600;
+    }
+
     .routine {
-      margin: 0 auto;
+      margin: 28px auto 0;
       background: #fff8ff;
       color: #1a1240;
-      border-radius: 0 0 34px 34px;
+      border-radius: 34px;
       box-shadow: var(--soft-shadow);
       padding: 44px 34px 42px;
     }
@@ -403,6 +438,7 @@
       width: 62px;
       height: 62px;
       margin: 0 auto 14px;
+      object-fit: contain;
     }
 
     .routine-card h3 {
@@ -454,7 +490,7 @@
     .story-grid {
       display: grid;
       grid-template-columns: repeat(5, minmax(0, 1fr));
-      gap: 16px;
+      gap: 14px;
     }
 
     .story-card {
@@ -474,15 +510,16 @@
 
     .story-card img {
       width: 100%;
-      aspect-ratio: 1 / 1.15;
+      height: 230px;
       object-fit: cover;
+      object-position: center;
     }
 
     .story-card strong {
       display: block;
-      padding: 12px 12px 14px;
+      padding: 10px 10px 12px;
       color: #fff7d0;
-      font-size: 14px;
+      font-size: 13px;
       line-height: 1.22;
     }
 
@@ -503,6 +540,7 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
+      object-position: center;
       opacity: 0.95;
     }
 
@@ -542,7 +580,7 @@
     }
 
     .guide-card {
-      min-height: 148px;
+      min-height: 190px;
       text-decoration: none;
       overflow: hidden;
       position: relative;
@@ -552,6 +590,12 @@
       display: flex;
       align-items: end;
       box-shadow: 0 16px 40px rgba(0,0,0,0.18);
+      transition: transform 0.2s ease, border-color 0.2s ease;
+    }
+
+    .guide-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(255,202,75,0.48);
     }
 
     .guide-card img {
@@ -560,14 +604,15 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      opacity: 0.58;
+      object-position: center;
+      opacity: 0.54;
     }
 
     .guide-card::after {
       content: "";
       position: absolute;
       inset: 0;
-      background: linear-gradient(180deg, rgba(0,0,0,0.06), rgba(7,5,43,0.78));
+      background: linear-gradient(180deg, rgba(0,0,0,0.04), rgba(7,5,43,0.82));
     }
 
     .guide-card strong {
@@ -741,21 +786,45 @@
       font-size: 13px;
     }
 
-    @media (max-width: 980px) {
-      .hero-content { width: 68%; }
-      .story-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    @media (max-width: 1180px) {
+      .hero {
+        min-height: 600px;
+      }
+
+      .benefit-row {
+        width: min(560px, 56%);
+      }
+
+      .story-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
       .guide-grid,
-      .all-links { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-      .connect-grid { grid-template-columns: 1fr; }
+      .all-links {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .connect-grid {
+        grid-template-columns: 1fr;
+      }
     }
 
     @media (max-width: 760px) {
+      .shell {
+        width: calc(100% - 24px);
+      }
+
       .floating-play {
         right: 14px;
         bottom: 14px;
         min-height: 50px;
         padding: 0 14px;
         font-size: 13px;
+      }
+
+      .floating-play img {
+        width: 22px;
+        height: 22px;
       }
 
       .topbar {
@@ -767,12 +836,25 @@
         border-radius: 24px;
       }
 
-      .brand img { width: 160px; }
+      .brand {
+        min-width: 0;
+      }
+
+      .brand img {
+        width: 160px;
+      }
 
       .nav {
         width: 100%;
-        flex-wrap: wrap;
-        gap: 14px 18px;
+        overflow-x: auto;
+        flex-wrap: nowrap;
+        gap: 18px;
+        padding-bottom: 4px;
+        scrollbar-width: none;
+      }
+
+      .nav::-webkit-scrollbar {
+        display: none;
       }
 
       .nav-cta {
@@ -782,65 +864,96 @@
 
       .hero {
         width: calc(100% - 24px);
-        min-height: 0;
+        min-height: auto;
+        aspect-ratio: 900 / 1400;
         border-radius: 28px;
       }
 
       .hero::after {
         background:
-          linear-gradient(180deg, rgba(8,5,38,0.18) 0%, rgba(8,5,38,0.12) 42%, rgba(8,5,38,0.88) 100%);
+          linear-gradient(180deg, rgba(8,5,38,0.02) 0%, rgba(8,5,38,0.05) 48%, rgba(8,5,38,0.78) 100%);
       }
 
       .hero-bg {
-        position: relative;
-        aspect-ratio: 900 / 1400;
-        height: auto;
+        position: absolute;
+        height: 100%;
+        object-fit: cover;
+        object-position: center top;
       }
 
       .hero-content {
-        position: absolute;
-        inset: 0;
-        width: 100%;
-        padding: 24px 20px;
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-end;
-      }
-
-      .hero-logo { display: none; }
-
-      h1 { font-size: 42px; }
-
-      .hero-copy {
-        font-size: 15px;
-        line-height: 1.5;
+        left: 14px;
+        right: 14px;
+        bottom: 16px;
+        display: block;
       }
 
       .benefit-row {
+        width: 100%;
         grid-template-columns: 1fr;
-        gap: 9px;
-        margin-top: 16px;
+        gap: 8px;
       }
 
       .benefit-chip {
-        min-height: 58px;
-        padding: 10px 12px;
+        min-height: 55px;
+        padding: 9px 11px;
+        border-radius: 15px;
       }
 
       .benefit-chip img {
-        width: 34px;
-        height: 34px;
+        width: 32px;
+        height: 32px;
       }
 
-      .hero-actions { margin-top: 16px; }
+      .benefit-chip strong {
+        font-size: 12.5px;
+      }
+
+      .benefit-chip span {
+        font-size: 10.5px;
+      }
+
+      .hero-actions {
+        width: 100%;
+        align-items: stretch;
+        gap: 10px;
+        margin-top: 12px;
+      }
 
       .primary-btn {
-        min-height: 50px;
-        padding: 0 18px;
-        font-size: 14px;
+        min-height: 48px;
+        padding: 0 16px;
+        font-size: 13px;
+        width: 100%;
       }
 
-      .rating { font-size: 12px; flex-wrap: wrap; }
+      .primary-btn img {
+        width: 24px;
+        height: 24px;
+      }
+
+      .rating {
+        justify-content: center;
+        text-align: center;
+        font-size: 12px;
+        gap: 8px;
+      }
+
+      .seo-intro {
+        width: calc(100% - 24px);
+        margin: 18px auto 0;
+        padding: 24px 18px;
+        border-radius: 24px;
+      }
+
+      .seo-intro h1 {
+        font-size: 35px;
+      }
+
+      .seo-intro p {
+        font-size: 15px;
+        line-height: 1.65;
+      }
 
       .routine {
         width: calc(100% - 24px);
@@ -857,6 +970,12 @@
         border-right: 0;
         border-radius: 18px;
         background: #fff;
+        padding: 18px 12px;
+      }
+
+      .routine-card img {
+        width: 54px;
+        height: 54px;
       }
 
       .section-card,
@@ -869,32 +988,86 @@
         border-radius: 28px;
       }
 
-      .story-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .story-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+      }
 
-      .free-content {
-        width: 100%;
-        padding: 34px 20px 250px;
+      .story-card img {
+        height: 165px;
+      }
+
+      .story-card strong {
+        font-size: 12.5px;
       }
 
       .free-section {
-        min-height: 560px;
+        min-height: 460px;
+      }
+
+      .free-section > img {
+        object-position: center bottom;
       }
 
       .free-section::after {
-        background: linear-gradient(180deg, rgba(17,8,68,0.85), rgba(17,8,68,0.30), rgba(17,8,68,0.84));
+        background: linear-gradient(180deg, rgba(17,8,68,0.85), rgba(17,8,68,0.28), rgba(17,8,68,0.84));
+      }
+
+      .free-content {
+        width: 100%;
+        padding: 34px 20px 210px;
       }
 
       .guide-grid,
       .all-links,
-      .faq-grid { grid-template-columns: 1fr; }
+      .faq-grid {
+        grid-template-columns: 1fr;
+      }
 
-      .notify-form { flex-direction: column; }
+      .guide-card {
+        min-height: 170px;
+      }
+
+      .guide-card strong {
+        font-size: 17px;
+      }
+
+      .notify-form {
+        flex-direction: column;
+      }
+    }
+
+    @media (max-width: 420px) {
+      .hero-content {
+        bottom: 12px;
+      }
+
+      .benefit-chip {
+        min-height: 50px;
+      }
+
+      .benefit-chip:nth-child(3) {
+        display: none;
+      }
+
+      .primary-btn {
+        min-height: 46px;
+        font-size: 12.5px;
+      }
+
+      .rating {
+        display: none;
+      }
+
+      .story-card img {
+        height: 145px;
+      }
     }
   </style>
 </head>
 
 <body>
-  <a class="floating-play" href="/play" aria-label="Get Cozy Tales on Google Play" data-track="play_click" data-track-location="floating_google_play" data-track-title="Floating Google Play">
+  <a class="floating-play" href="/play/" aria-label="Get Cozy Tales on Google Play" data-track="play_click" data-track-location="floating_google_play" data-track-title="Floating Google Play">
     <img src="/images/cozy-tales/google-play-badge-small.webp" alt="" aria-hidden="true" />
     Get it on Google Play
   </a>
@@ -910,7 +1083,7 @@
       <a href="#guides" data-track="nav_click" data-track-location="cozy_header" data-track-title="Bedtime Guides">Bedtime Guides</a>
       <a href="#about" data-track="nav_click" data-track-location="cozy_header" data-track-title="About">About</a>
       <a href="#faq" data-track="nav_click" data-track-location="cozy_header" data-track-title="FAQ">FAQ</a>
-      <a class="nav-cta" href="/play" data-track="play_click" data-track-location="header_cta" data-track-title="Get the App">Get the App</a>
+      <a class="nav-cta" href="/play/" data-track="play_click" data-track-location="header_cta" data-track-title="Get the App">Get the App</a>
     </nav>
   </header>
 
@@ -923,10 +1096,6 @@
       </picture>
 
       <div class="hero-content">
-        <img class="hero-logo" src="/images/cozy-tales/cozy-tales-logo-full.webp" alt="Cozy Tales - Bedtime Stories for Kids" width="900" height="360" decoding="async" />
-        <h1>Magical stories. <strong>Better sleep.</strong></h1>
-        <p class="hero-copy">Calming read-aloud bedtime stories that help kids relax, unwind, and fall asleep happy.</p>
-
         <div class="benefit-row" aria-label="Cozy Tales benefits">
           <div class="benefit-chip">
             <img src="/images/cozy-tales/icon-2-free-books.webp" alt="" aria-hidden="true" />
@@ -954,10 +1123,11 @@
         </div>
 
         <div class="hero-actions">
-          <a class="primary-btn" href="/play" data-track="play_click" data-track-location="hero" data-track-title="Get Cozy Tales on Google Play">
+          <a class="primary-btn" href="/play/" data-track="play_click" data-track-location="hero" data-track-title="Get Cozy Tales on Google Play">
             Get Cozy Tales on Google Play
             <img src="/images/cozy-tales/google-play-badge-small.webp" alt="" aria-hidden="true" />
           </a>
+
           <div class="rating" aria-label="Cozy Tales trust signal">
             <span class="stars">★★★★★</span>
             <span>4.9</span>
@@ -965,6 +1135,13 @@
           </div>
         </div>
       </div>
+    </section>
+
+    <section class="seo-intro shell" data-section-track="cozy_seo_intro">
+      <h1>Bedtime stories for kids with <strong>calm, cozy sleep routines.</strong></h1>
+      <p>
+        Cozy Tales is a bedtime story app for kids, toddlers, and preschoolers with calming read-aloud bedtime stories, peaceful sleep stories, gentle storybook illustrations, and a simple no-subscription experience. Families can start with 2 free bedtime stories and build a happier bedtime routine with magical stories made for little dreamers.
+      </p>
     </section>
 
     <section class="routine shell" data-section-track="cozy_routine">
@@ -975,16 +1152,19 @@
           <h3>Calming Stories</h3>
           <p>Soothing narration to relax little minds.</p>
         </article>
+
         <article class="routine-card">
           <img src="/images/cozy-tales/icon-parent-approved.webp" alt="" aria-hidden="true" />
           <h3>Parent Approved</h3>
           <p>Loved by parents for bedtime and quiet time.</p>
         </article>
+
         <article class="routine-card">
           <img src="/images/cozy-tales/icon-safe-kid-friendly.webp" alt="" aria-hidden="true" />
           <h3>Safe & Ad-Free</h3>
           <p>100% kid-friendly, no ads, always safe.</p>
         </article>
+
         <article class="routine-card">
           <img src="/images/cozy-tales/icon-built-for-sleep.webp" alt="" aria-hidden="true" />
           <h3>Built for Sleep</h3>
@@ -995,6 +1175,7 @@
 
     <section class="section-card shell stories" id="stories" data-section-track="cozy_story_collection">
       <h2>Explore Our Story Collection</h2>
+
       <div class="story-filters" aria-label="Story categories">
         <span class="filter-chip">All Stories</span>
         <span class="filter-chip">Animal Friends</span>
@@ -1009,18 +1190,22 @@
           <img src="/images/cozy-tales/story-card-bunnys-garden-picnic.webp" alt="Bunny's Garden Picnic bedtime story card" width="600" height="760" loading="lazy" decoding="async" />
           <strong>Bunny’s Garden Picnic</strong>
         </a>
+
         <a class="story-card" href="/owl-and-the-moon" data-track="story_click" data-track-location="story_collection" data-track-title="Luna the Little Owl">
           <img src="/images/cozy-tales/story-card-luna-little-owl.webp" alt="Luna the Little Owl bedtime story card" width="600" height="760" loading="lazy" decoding="async" />
           <strong>Luna the Little Owl</strong>
         </a>
+
         <a class="story-card" href="/the-sleepy-star" data-track="story_click" data-track-location="story_collection" data-track-title="The Sleepy Star">
           <img src="/images/cozy-tales/story-card-sleepy-star.webp" alt="The Sleepy Star bedtime story card" width="600" height="760" loading="lazy" decoding="async" />
           <strong>The Sleepy Star</strong>
         </a>
+
         <a class="story-card" href="/little-fox-big-adventures" data-track="story_click" data-track-location="story_collection" data-track-title="The Brave Little Fox">
           <img src="/images/cozy-tales/story-card-brave-little-fox.webp" alt="The Brave Little Fox bedtime story card" width="600" height="760" loading="lazy" decoding="async" />
           <strong>The Brave Little Fox</strong>
         </a>
+
         <a class="story-card" href="/dreamland-adventures" data-track="story_click" data-track-location="story_collection" data-track-title="Dreamland Adventures">
           <img src="/images/cozy-tales/story-card-dreamland-adventures.webp" alt="Dreamland Adventures bedtime story card" width="600" height="760" loading="lazy" decoding="async" />
           <strong>Dreamland Adventures</strong>
@@ -1033,33 +1218,39 @@
       <div class="free-content">
         <h2>Try 2 FREE Stories!</h2>
         <p>Start your cozy bedtime adventure.</p>
-        <a class="primary-btn" href="/play" data-track="play_click" data-track-location="free_stories_section" data-track-title="Explore Free Books">Explore Free Books</a>
+        <a class="primary-btn" href="/play/" data-track="play_click" data-track-location="free_stories_section" data-track-title="Explore Free Books">Explore Free Books</a>
       </div>
     </section>
 
     <section class="guides shell" id="guides" data-section-track="cozy_guides">
       <h2>Bedtime Guides for Parents</h2>
+
       <div class="guide-grid">
         <a class="guide-card" href="/bedtime-routine-for-kids" data-track="guide_click" data-track-location="guide_cards" data-track-title="Bedtime Routine for Kids">
           <img src="/images/cozy-tales/guide-bedtime-routine-for-kids.webp" alt="Bedtime routine for kids guide preview" width="900" height="600" loading="lazy" decoding="async" />
           <strong>Bedtime Routine for Kids</strong>
         </a>
+
         <a class="guide-card" href="/sleep-stories-for-toddlers" data-track="guide_click" data-track-location="guide_cards" data-track-title="Sleep Stories for Toddlers">
           <img src="/images/cozy-tales/guide-sleep-stories-for-toddlers.webp" alt="Sleep stories for toddlers guide preview" width="900" height="600" loading="lazy" decoding="async" />
           <strong>Sleep Stories for Toddlers</strong>
         </a>
+
         <a class="guide-card" href="/short-bedtime-stories-for-kids" data-track="guide_click" data-track-location="guide_cards" data-track-title="Short Bedtime Stories for Kids">
           <img src="/images/cozy-tales/guide-short-bedtime-stories.webp" alt="Short bedtime stories guide preview" width="900" height="600" loading="lazy" decoding="async" />
           <strong>Short Bedtime Stories for Kids</strong>
         </a>
+
         <a class="guide-card" href="/benefits-of-bedtime-stories" data-track="guide_click" data-track-location="guide_cards" data-track-title="Benefits of Bedtime Stories">
           <img src="/images/cozy-tales/guide-benefits-of-bedtime-stories.webp" alt="Benefits of bedtime stories guide preview" width="900" height="600" loading="lazy" decoding="async" />
           <strong>Benefits of Bedtime Stories</strong>
         </a>
+
         <a class="guide-card" href="/calming-fairy-tales-for-kids" data-track="guide_click" data-track-location="guide_cards" data-track-title="Calming Fairy Tales for Kids">
           <img src="/images/cozy-tales/guide-calming-fairy-tales.webp" alt="Calming fairy tales guide preview" width="900" height="600" loading="lazy" decoding="async" />
           <strong>Calming Fairy Tales for Kids</strong>
         </a>
+
         <a class="guide-card" href="/how-to-help-kids-sleep" data-track="guide_click" data-track-location="guide_cards" data-track-title="How to Help Kids Sleep">
           <img src="/images/cozy-tales/guide-how-to-help-kids-sleep.webp" alt="How to help kids sleep guide preview" width="900" height="600" loading="lazy" decoding="async" />
           <strong>How to Help Kids Sleep</strong>
@@ -1081,6 +1272,7 @@
 
     <section class="guides shell" data-section-track="cozy_more_stories">
       <h2>More Cozy Tales Stories</h2>
+
       <div class="all-links" aria-label="More Cozy Tales story links">
         <a class="mini-link" href="/monkey-milos-big-sea-adventure" data-track="story_link_click" data-track-title="Monkey Milo's Big Sea Adventure">Monkey Milo’s Big Sea Adventure</a>
         <a class="mini-link" href="/cheerful-chicks-sunny-dream" data-track="story_link_click" data-track-title="The Cheerful Chick's Sunny Dream">The Cheerful Chick’s Sunny Dream</a>
@@ -1116,6 +1308,7 @@
 
     <section class="guides shell" data-section-track="cozy_extra_seo_resources">
       <h2>More Bedtime Story Resources</h2>
+
       <div class="all-links" aria-label="Additional bedtime story and sleep story SEO resources">
         <a class="mini-link" href="/bedtime-stories-for-children" data-track="seo_link_click" data-track-location="extra_resources" data-track-title="Bedtime Stories for Children">Bedtime Stories for Children</a>
         <a class="mini-link" href="/sleep-stories-for-kids" data-track="seo_link_click" data-track-location="extra_resources" data-track-title="Sleep Stories for Kids">Sleep Stories for Kids</a>
@@ -1134,19 +1327,23 @@
 
     <section class="faq shell" id="faq" data-section-track="cozy_faq">
       <h2>Frequently Asked Questions</h2>
+
       <div class="faq-grid">
         <article class="faq-item">
           <h3>What is the best bedtime stories app for kids?</h3>
           <p>Cozy Tales is designed for families looking for calming bedtime stories, read-aloud narration, peaceful visuals, and a simple no subscription experience.</p>
         </article>
+
         <article class="faq-item">
           <h3>Does Cozy Tales include free bedtime stories?</h3>
           <p>Yes. Cozy Tales includes 2 free books so families can explore the app before choosing more bedtime stories.</p>
         </article>
+
         <article class="faq-item">
           <h3>Is Cozy Tales a no subscription kids bedtime app?</h3>
           <p>Yes. Cozy Tales focuses on no monthly subscription, so parents can enjoy magical bedtime moments without recurring monthly fees.</p>
         </article>
+
         <article class="faq-item">
           <h3>Does the app include read-aloud bedtime stories?</h3>
           <p>Yes. Cozy Tales includes read-aloud narration to help children relax and enjoy peaceful sleep stories for children.</p>
@@ -1156,10 +1353,12 @@
 
     <section class="connect shell" data-section-track="cozy_stay_connected">
       <h2>Stay Connected ✨</h2>
+
       <div class="connect-grid">
         <div class="notify-box">
           <h3>Notify Me</h3>
           <p>Get updates when new Cozy Tales stories, videos, and bedtime guides are available.</p>
+
           <form class="notify-form" name="cozy-tales-notify" method="POST" data-netlify="true" action="/cozy-tales?success=true" data-track="notify_submit">
             <input type="hidden" name="form-name" value="cozy-tales-notify" />
             <input type="email" name="email" placeholder="Enter your email..." aria-label="Email address" required />
@@ -1170,13 +1369,16 @@
         <div class="social-box">
           <h3>Follow Us</h3>
           <p>Follow Cozy Tales for bedtime videos, story previews, and new story drops.</p>
+
           <div class="social-icons">
             <a href="https://www.youtube.com/@BedtimeStoriesCozyTales" target="_blank" rel="noopener noreferrer" data-track="social_click" data-track-location="footer" data-track-title="YouTube">
               <img src="/images/cozy-tales/icon-youtube.webp" alt="YouTube" width="64" height="64" loading="lazy" decoding="async" />
             </a>
+
             <a href="https://www.instagram.com/bedtime.stories.forkids/" target="_blank" rel="noopener noreferrer" data-track="social_click" data-track-location="footer" data-track-title="Instagram">
               <img src="/images/cozy-tales/icon-instagram.webp" alt="Instagram" width="64" height="64" loading="lazy" decoding="async" />
             </a>
+
             <a href="https://www.tiktok.com/@bedtimestoriescozytales" target="_blank" rel="noopener noreferrer" data-track="social_click" data-track-location="footer" data-track-title="TikTok">
               <img src="/images/cozy-tales/icon-tiktok.webp" alt="TikTok" width="64" height="64" loading="lazy" decoding="async" />
             </a>
@@ -1222,7 +1424,7 @@
         "@id": "https://softiceinnovationslabs.com/cozy-tales#webpage",
         "url": "https://softiceinnovationslabs.com/cozy-tales",
         "name": "Cozy Tales | Bedtime Stories for Kids",
-        "description": "Cozy Tales is a calming bedtime stories app for kids with read-aloud narration, 2 free books, and no monthly subscription.",
+        "description": "Cozy Tales is a calming bedtime stories app for kids with read-aloud narration, sleep stories for toddlers and preschoolers, 2 free books, and no monthly subscription.",
         "isPartOf": {
           "@type": "WebSite",
           "@id": "https://softiceinnovationslabs.com/#website",
@@ -1265,7 +1467,7 @@
         "operatingSystem": "Android",
         "description": "A bedtime stories app for kids with calming narration, peaceful visuals, 2 free books, and no monthly subscription.",
         "url": "https://softiceinnovationslabs.com/cozy-tales",
-        "downloadUrl": "https://softiceinnovationslabs.com/play",
+        "downloadUrl": "https://softiceinnovationslabs.com/play/",
         "publisher": {
           "@id": "https://softiceinnovationslabs.com/#organization"
         },
@@ -1450,6 +1652,7 @@
         if (docHeight <= 0) return;
 
         const percent = Math.min(100, Math.round((scrollTop / docHeight) * 100));
+
         scrollMilestones.forEach(function (milestone) {
           if (percent >= milestone && !reachedMilestones.has(milestone)) {
             reachedMilestones.add(milestone);
