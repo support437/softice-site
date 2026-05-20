@@ -114,6 +114,24 @@
       margin: 0 auto;
     }
 
+    .play-icon {
+      width: 31px;
+      height: 31px;
+      flex: 0 0 auto;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 9px;
+      background: rgba(255,255,255,0.92);
+      box-shadow: inset 0 0 0 1px rgba(0,0,0,0.08);
+    }
+
+    .play-icon svg {
+      width: 22px;
+      height: 22px;
+      display: block;
+    }
+
     .floating-play {
       position: fixed;
       right: 22px;
@@ -131,12 +149,6 @@
       text-decoration: none;
       box-shadow: 0 20px 42px rgba(255, 169, 35, 0.34);
       animation: pulsePlay 1.7s ease-in-out infinite;
-    }
-
-    .floating-play img {
-      width: 30px;
-      height: 30px;
-      object-fit: contain;
     }
 
     @keyframes pulsePlay {
@@ -299,12 +311,6 @@
       box-shadow: 0 24px 50px rgba(255,169,35,0.38);
     }
 
-    .primary-btn img {
-      width: 34px;
-      height: 34px;
-      object-fit: contain;
-    }
-
     .rating {
       display: flex;
       align-items: center;
@@ -418,7 +424,6 @@
 
     .routine h2,
     .stories h2,
-    .free-section h2,
     .guides h2,
     .faq h2,
     .connect h2 {
@@ -550,9 +555,11 @@
       background: #150858;
       border: 1px solid var(--line);
       box-shadow: var(--soft-shadow);
+      display: block;
+      text-decoration: none;
     }
 
-    .free-section > img {
+    .free-section img {
       position: relative;
       width: 100%;
       height: auto;
@@ -563,37 +570,9 @@
       background: #12064c;
     }
 
-    .free-section::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(90deg, rgba(17,8,68,0.72), rgba(17,8,68,0.18), rgba(17,8,68,0.02));
-      pointer-events: none;
-    }
-
-    .free-content {
-      position: absolute;
-      left: 44px;
-      top: 50%;
-      transform: translateY(-50%);
-      z-index: 2;
-      width: min(520px, 48%);
-      padding: 0;
-    }
-
-    .free-section h2 {
-      text-align: left;
-      font-size: clamp(38px, 5vw, 58px);
-      color: var(--gold);
-      text-shadow: 0 5px 20px rgba(0,0,0,0.36);
-    }
-
-    .free-section p {
-      margin: 12px 0 26px;
-      color: #f7efff;
-      font-size: 18px;
-      font-weight: 650;
-      text-shadow: 0 4px 16px rgba(0,0,0,0.34);
+    .free-section:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 26px 62px rgba(8,5,45,0.38);
     }
 
     .guide-grid {
@@ -632,10 +611,6 @@
       background:
         radial-gradient(circle at 50% 20%, rgba(255,202,75,0.10), transparent 38%),
         #090631;
-    }
-
-    .guide-card::after {
-      display: none;
     }
 
     .guide-card strong {
@@ -863,9 +838,15 @@
         font-size: 13px;
       }
 
-      .floating-play img {
-        width: 25px;
-        height: 25px;
+      .play-icon {
+        width: 27px;
+        height: 27px;
+        border-radius: 8px;
+      }
+
+      .play-icon svg {
+        width: 19px;
+        height: 19px;
       }
 
       .topbar {
@@ -941,11 +922,6 @@
         padding: 0 16px;
         font-size: 13px;
         width: 100%;
-      }
-
-      .primary-btn img {
-        width: 28px;
-        height: 28px;
       }
 
       .rating {
@@ -1043,6 +1019,10 @@
         border-radius: 28px;
       }
 
+      .free-section {
+        padding: 0;
+      }
+
       .story-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 12px;
@@ -1058,36 +1038,9 @@
         font-size: 12.5px;
       }
 
-      .free-section {
-        min-height: 0;
-        padding: 0;
-      }
-
-      .free-section > img {
+      .free-section img {
         aspect-ratio: 1400 / 800;
         object-fit: contain;
-      }
-
-      .free-section::after {
-        background: linear-gradient(180deg, rgba(17,8,68,0.70), rgba(17,8,68,0.20), rgba(17,8,68,0.70));
-      }
-
-      .free-content {
-        position: absolute;
-        left: 18px;
-        right: 18px;
-        top: 24px;
-        transform: none;
-        width: auto;
-      }
-
-      .free-section h2 {
-        font-size: 32px;
-      }
-
-      .free-section p {
-        font-size: 15px;
-        margin-bottom: 14px;
       }
 
       .guide-grid,
@@ -1157,17 +1110,20 @@
         aspect-ratio: 600 / 760;
         object-fit: contain;
       }
-
-      .free-section h2 {
-        font-size: 28px;
-      }
     }
   </style>
 </head>
 
 <body>
   <a class="floating-play" href="/play/" aria-label="Get Cozy Tales on Google Play" data-track="play_click" data-track-location="floating_google_play" data-track-title="Floating Google Play">
-    <img src="/images/cozy-tales/google-play-badge-small.webp" alt="" aria-hidden="true" />
+    <span class="play-icon" aria-hidden="true">
+      <svg viewBox="0 0 64 64" role="img" aria-hidden="true">
+        <path d="M12 8 L39 32 L12 56 Z" fill="#1a73e8"></path>
+        <path d="M39 32 L50 22 C53 25 55 28 55 32 C55 36 53 39 50 42 Z" fill="#fbbc04"></path>
+        <path d="M12 8 L50 22 L39 32 Z" fill="#34a853"></path>
+        <path d="M12 56 L39 32 L50 42 Z" fill="#ea4335"></path>
+      </svg>
+    </span>
     Get it on Google Play
   </a>
 
@@ -1198,7 +1154,14 @@
         <div class="hero-actions">
           <a class="primary-btn" href="/play/" data-track="play_click" data-track-location="hero" data-track-title="Get Cozy Tales on Google Play">
             Get Cozy Tales on Google Play
-            <img src="/images/cozy-tales/google-play-badge-small.webp" alt="" aria-hidden="true" />
+            <span class="play-icon" aria-hidden="true">
+              <svg viewBox="0 0 64 64" role="img" aria-hidden="true">
+                <path d="M12 8 L39 32 L12 56 Z" fill="#1a73e8"></path>
+                <path d="M39 32 L50 22 C53 25 55 28 55 32 C55 36 53 39 50 42 Z" fill="#fbbc04"></path>
+                <path d="M12 8 L50 22 L39 32 Z" fill="#34a853"></path>
+                <path d="M12 56 L39 32 L50 42 Z" fill="#ea4335"></path>
+              </svg>
+            </span>
           </a>
 
           <div class="rating" aria-label="Cozy Tales trust signal">
@@ -1315,15 +1278,9 @@
       </div>
     </section>
 
-    <section class="free-section shell" data-section-track="cozy_free_stories">
+    <a class="free-section shell" href="/play/" aria-label="Try 2 free Cozy Tales stories on Google Play" data-section-track="cozy_free_stories" data-track="play_click" data-track-location="free_stories_image" data-track-title="Try 2 Free Stories Image">
       <img src="/images/cozy-tales/cozy-tales-free-stories-section.webp" alt="Try 2 free Cozy Tales bedtime stories with Bunny's Garden Picnic preview" width="1400" height="800" loading="lazy" decoding="async" />
-
-      <div class="free-content">
-        <h2>Try 2 FREE Stories!</h2>
-        <p>Start your cozy bedtime adventure.</p>
-        <a class="primary-btn" href="/play/" data-track="play_click" data-track-location="free_stories_section" data-track-title="Explore Free Books">Explore Free Books</a>
-      </div>
-    </section>
+    </a>
 
     <section class="guides shell" id="guides" data-section-track="cozy_guides">
       <h2>Bedtime Guides for Parents</h2>
