@@ -1,0 +1,1590 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Zero Reset – Discipline Streak Tracker App | No Excuses Daily Accountability</title>
+
+  <meta
+    name="description"
+    content="Zero Reset is a no-excuses discipline streak tracker app for daily accountability, habit streaks, check-ins, reminders, and reset-to-zero motivation. Miss a day? Back to zero."
+  />
+
+  <meta
+    name="keywords"
+    content="discipline streak tracker, discipline streak tracker app, Zero Reset app, no excuses streak tracker, daily discipline app, accountability streak app, habit streak tracker, daily check in app, streak counter app, habit accountability app, personal discipline app, self improvement tracker, consistency tracker app, reset streak tracker, motivation streak app, miss a day back to zero, don't break the streak, no excuses app"
+  />
+
+  <link rel="canonical" href="https://softiceinnovationslabs.com/zero-reset" />
+
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <meta name="author" content="Softice Innovations Labs LLC" />
+  <meta name="theme-color" content="#050505" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Zero Reset – Discipline Streak Tracker App" />
+  <meta
+    property="og:description"
+    content="The no-excuses streak tracker for daily discipline. Check in, protect your streak, and stay accountable. Miss a day? Back to zero."
+  />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://softiceinnovationslabs.com/zero-reset" />
+  <meta property="og:image" content="https://softiceinnovationslabs.com/images/zero-reset/zero-reset-og.webp" />
+  <meta property="og:site_name" content="Softice Innovations Labs" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Zero Reset – Discipline Streak Tracker App" />
+  <meta
+    name="twitter:description"
+    content="Build discipline with streaks, daily check-ins, reminders, and reset-to-zero accountability."
+  />
+  <meta name="twitter:image" content="https://softiceinnovationslabs.com/images/zero-reset/zero-reset-og.webp" />
+
+  <!-- Performance -->
+  <link rel="preload" as="image" href="/images/zero-reset/zero-reset-hero-bg.webp" />
+  <link rel="preload" as="image" href="/images/zero-reset/zero-reset-hero-phone.webp" />
+  <link rel="preload" as="image" href="/images/zero-reset/zero-reset-logo-mark.webp" />
+
+  <style>
+    :root {
+      --bg: #050505;
+      --bg-2: #090909;
+      --panel: rgba(16, 16, 18, 0.84);
+      --panel-strong: rgba(22, 22, 25, 0.94);
+      --red: #ff102f;
+      --red-2: #d9001a;
+      --red-3: #7b000d;
+      --white: #ffffff;
+      --muted: #b9b9bd;
+      --muted-2: #77777f;
+      --border: rgba(255, 255, 255, 0.11);
+      --border-red: rgba(255, 16, 47, 0.42);
+      --shadow-red: 0 0 46px rgba(255, 16, 47, 0.28);
+      --max: 1180px;
+      --radius-lg: 28px;
+      --radius-md: 20px;
+      --radius-sm: 14px;
+      --font-display: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+      --font-body: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      background: #050505;
+    }
+
+    body {
+      margin: 0;
+      font-family: var(--font-body);
+      color: var(--white);
+      background:
+        radial-gradient(circle at 76% 12%, rgba(255, 16, 47, 0.19), transparent 30%),
+        radial-gradient(circle at 18% 68%, rgba(255, 16, 47, 0.16), transparent 32%),
+        linear-gradient(180deg, #020202 0%, #080808 45%, #030303 100%);
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0.14;
+      background-image:
+        linear-gradient(rgba(255,255,255,.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.04) 1px, transparent 1px);
+      background-size: 52px 52px;
+      mask-image: linear-gradient(to bottom, black, transparent 82%);
+      z-index: 0;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .page {
+      position: relative;
+      z-index: 1;
+      min-height: 100vh;
+    }
+
+    .shell {
+      width: min(var(--max), calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .top-strip {
+      border-bottom: 1px solid rgba(255,255,255,.1);
+      background: rgba(0,0,0,.84);
+      backdrop-filter: blur(20px);
+      position: sticky;
+      top: 0;
+      z-index: 50;
+    }
+
+    .nav {
+      height: 82px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 28px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      min-width: 165px;
+    }
+
+    .brand-mark {
+      width: 48px;
+      height: 48px;
+      object-fit: contain;
+      filter: drop-shadow(0 0 18px rgba(255, 16, 47, .42));
+    }
+
+    .brand-text {
+      display: grid;
+      line-height: .88;
+      font-family: var(--font-display);
+      letter-spacing: .8px;
+      text-transform: uppercase;
+      font-size: 1.22rem;
+    }
+
+    .brand-text span:first-child {
+      color: var(--white);
+    }
+
+    .brand-text span:last-child {
+      color: var(--red);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 28px;
+      color: rgba(255,255,255,.82);
+      font-size: .78rem;
+      font-weight: 900;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .nav-links a {
+      transition: color .18s ease, transform .18s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--red);
+      transform: translateY(-1px);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      border: 0;
+      border-radius: 999px;
+      padding: 15px 24px;
+      min-height: 50px;
+      font-weight: 950;
+      letter-spacing: .03em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: transform .18s ease, box-shadow .18s ease, background .18s ease, border-color .18s ease;
+      font-size: .9rem;
+      font-family: var(--font-body);
+    }
+
+    .btn-primary {
+      color: white;
+      background: linear-gradient(135deg, #ff1735 0%, #d9001a 48%, #a50012 100%);
+      box-shadow: 0 12px 32px rgba(255, 16, 47, .32);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 18px 44px rgba(255, 16, 47, .42);
+    }
+
+    .btn-dark {
+      color: white;
+      border: 1px solid rgba(255,255,255,.16);
+      background: rgba(255,255,255,.06);
+    }
+
+    .btn-dark:hover {
+      border-color: rgba(255, 16, 47, .55);
+      box-shadow: var(--shadow-red);
+      transform: translateY(-2px);
+    }
+
+    .hero {
+      position: relative;
+      min-height: 760px;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      border-bottom: 1px solid rgba(255,255,255,.08);
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(90deg, rgba(0,0,0,.94) 0%, rgba(0,0,0,.72) 43%, rgba(0,0,0,.32) 100%),
+        url("/images/zero-reset/zero-reset-hero-bg.webp") center/cover no-repeat;
+      opacity: .98;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: auto 0 0 0;
+      height: 230px;
+      background: linear-gradient(to top, #050505, transparent);
+      pointer-events: none;
+    }
+
+    .hero-grid {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: 1.05fr .95fr;
+      align-items: center;
+      gap: 28px;
+      padding: 70px 0 78px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--red);
+      font-size: .82rem;
+      font-weight: 950;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 34px;
+      height: 2px;
+      background: var(--red);
+      box-shadow: 0 0 18px rgba(255,16,47,.7);
+    }
+
+    h1 {
+      margin: 0;
+      font-family: var(--font-display);
+      font-size: clamp(4.3rem, 10vw, 8.9rem);
+      line-height: .83;
+      letter-spacing: .015em;
+      text-transform: uppercase;
+      text-wrap: balance;
+      text-shadow: 0 10px 34px rgba(0,0,0,.9);
+    }
+
+    .distressed {
+      color: #fff;
+      text-shadow:
+        0 1px 0 rgba(0,0,0,.9),
+        0 0 18px rgba(255,255,255,.08);
+    }
+
+    .red-line {
+      color: var(--red);
+      display: block;
+      text-shadow: 0 0 26px rgba(255,16,47,.32);
+    }
+
+    .hero-copy {
+      margin: 24px 0 0;
+      color: rgba(255,255,255,.9);
+      max-width: 590px;
+      font-size: clamp(1.02rem, 1.5vw, 1.24rem);
+      line-height: 1.62;
+      font-weight: 700;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 16px;
+      margin-top: 34px;
+    }
+
+    .social-proof {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-top: 28px;
+      color: rgba(255,255,255,.86);
+      font-size: .9rem;
+      font-weight: 750;
+    }
+
+    .avatar-row {
+      display: flex;
+      align-items: center;
+    }
+
+    .avatar-row img {
+      width: 38px;
+      height: 38px;
+      object-fit: cover;
+      border-radius: 999px;
+      border: 2px solid #080808;
+      margin-left: -10px;
+      box-shadow: 0 0 0 1px rgba(255,255,255,.16);
+    }
+
+    .avatar-row img:first-child {
+      margin-left: 0;
+    }
+
+    .stars {
+      color: #ffcd3c;
+      letter-spacing: .1em;
+      font-size: .96rem;
+    }
+
+    .phone-wrap {
+      position: relative;
+      min-height: 640px;
+      display: grid;
+      place-items: center;
+    }
+
+    .phone-glow {
+      position: absolute;
+      width: min(540px, 86vw);
+      aspect-ratio: 1;
+      border-radius: 999px;
+      background:
+        radial-gradient(circle, rgba(255, 16, 47, .34) 0%, rgba(255, 16, 47, .12) 36%, transparent 70%);
+      filter: blur(6px);
+      transform: translate(34px, 42px);
+    }
+
+    .chain-left {
+      position: absolute;
+      left: -26px;
+      bottom: 70px;
+      width: min(390px, 64vw);
+      opacity: .86;
+      filter: drop-shadow(0 18px 28px rgba(0,0,0,.8));
+      transform: rotate(-9deg);
+    }
+
+    .hero-phone {
+      position: relative;
+      z-index: 2;
+      width: min(390px, 78vw);
+      filter:
+        drop-shadow(0 34px 54px rgba(0,0,0,.94))
+        drop-shadow(0 0 38px rgba(255,16,47,.22));
+      transform: rotate(5deg);
+    }
+
+    .floating-flame {
+      position: absolute;
+      right: 38px;
+      bottom: 84px;
+      width: 128px;
+      opacity: .96;
+      filter: drop-shadow(0 0 28px rgba(255,16,47,.58));
+      animation: pulseFire 2.7s ease-in-out infinite;
+    }
+
+    @keyframes pulseFire {
+      0%, 100% {
+        transform: translateY(0) scale(1);
+        opacity: .92;
+      }
+
+      50% {
+        transform: translateY(-8px) scale(1.04);
+        opacity: 1;
+      }
+    }
+
+    .section {
+      padding: 88px 0;
+      position: relative;
+    }
+
+    .section-tight {
+      padding: 68px 0;
+    }
+
+    .center {
+      text-align: center;
+    }
+
+    .section-kicker {
+      color: var(--red);
+      font-weight: 950;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      font-size: .78rem;
+      margin-bottom: 14px;
+    }
+
+    h2 {
+      margin: 0;
+      font-family: var(--font-display);
+      font-size: clamp(2.7rem, 5vw, 5.2rem);
+      line-height: .9;
+      letter-spacing: .02em;
+      text-transform: uppercase;
+    }
+
+    .section-copy {
+      color: var(--muted);
+      font-size: 1.04rem;
+      line-height: 1.68;
+      max-width: 760px;
+      margin: 20px auto 0;
+      font-weight: 650;
+    }
+
+    .features-grid {
+      margin-top: 42px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+
+    .feature-card {
+      position: relative;
+      overflow: hidden;
+      padding: 30px 20px 26px;
+      border-radius: var(--radius-md);
+      background:
+        linear-gradient(180deg, rgba(255,255,255,.075), rgba(255,255,255,.028)),
+        rgba(14,14,16,.88);
+      border: 1px solid var(--border);
+      box-shadow: 0 20px 60px rgba(0,0,0,.42);
+      min-height: 210px;
+      transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease;
+      cursor: pointer;
+    }
+
+    .feature-card::after {
+      content: "";
+      position: absolute;
+      inset: auto 18px 0 18px;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, rgba(255,16,47,.72), transparent);
+      opacity: 0;
+      transition: opacity .2s ease;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-5px);
+      border-color: var(--border-red);
+      box-shadow: 0 28px 78px rgba(0,0,0,.58), var(--shadow-red);
+    }
+
+    .feature-card:hover::after {
+      opacity: 1;
+    }
+
+    .feature-icon {
+      width: 64px;
+      height: 64px;
+      margin: 0 auto 18px;
+      object-fit: contain;
+      filter: drop-shadow(0 0 24px rgba(255,16,47,.38));
+    }
+
+    .feature-card h3 {
+      margin: 0;
+      font-family: var(--font-display);
+      font-size: 1.35rem;
+      line-height: 1;
+      letter-spacing: .03em;
+      text-transform: uppercase;
+    }
+
+    .feature-card p {
+      margin: 12px 0 0;
+      color: var(--muted);
+      line-height: 1.55;
+      font-weight: 650;
+      font-size: .93rem;
+    }
+
+    .rule-section {
+      position: relative;
+      overflow: hidden;
+      border-top: 1px solid rgba(255,255,255,.08);
+      border-bottom: 1px solid rgba(255,255,255,.08);
+      background:
+        linear-gradient(90deg, rgba(0,0,0,.9), rgba(0,0,0,.62)),
+        url("/images/zero-reset/zero-reset-back-to-zero-bg.webp") center/cover no-repeat;
+    }
+
+    .rule-grid {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      align-items: center;
+      gap: 32px;
+      min-height: 560px;
+    }
+
+    .rule-copy {
+      position: relative;
+      z-index: 2;
+      padding: 46px 0;
+    }
+
+    .rule-copy h2 {
+      max-width: 540px;
+    }
+
+    .rule-copy h2 .red {
+      color: var(--red);
+      display: block;
+    }
+
+    .rule-copy p {
+      color: rgba(255,255,255,.9);
+      font-size: 1.15rem;
+      line-height: 1.74;
+      max-width: 520px;
+      font-weight: 750;
+      margin: 24px 0 0;
+    }
+
+    .rule-visual {
+      position: relative;
+      min-height: 520px;
+      display: grid;
+      place-items: center;
+    }
+
+    .lost-phone {
+      width: min(390px, 78vw);
+      position: relative;
+      z-index: 3;
+      filter:
+        drop-shadow(0 32px 52px rgba(0,0,0,.92))
+        drop-shadow(0 0 34px rgba(255,16,47,.22));
+      transform: rotate(-3deg);
+    }
+
+    .rule-chain {
+      position: absolute;
+      inset: auto 0 36px auto;
+      width: min(620px, 92vw);
+      opacity: .88;
+      z-index: 2;
+      filter: drop-shadow(0 22px 34px rgba(0,0,0,.86));
+    }
+
+    .stats-section {
+      background:
+        radial-gradient(circle at 50% 0%, rgba(255,16,47,.12), transparent 32%),
+        linear-gradient(180deg, #050505, #090909);
+    }
+
+    .stats-grid {
+      margin-top: 40px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .stat-card {
+      padding: 34px 24px;
+      border-radius: var(--radius-lg);
+      background:
+        linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,.025));
+      border: 1px solid var(--border);
+      text-align: center;
+    }
+
+    .stat-number {
+      font-family: var(--font-display);
+      color: var(--red);
+      font-size: clamp(3.1rem, 5vw, 5rem);
+      line-height: .9;
+      text-transform: uppercase;
+      text-shadow: 0 0 24px rgba(255,16,47,.28);
+    }
+
+    .stat-label {
+      margin-top: 10px;
+      color: rgba(255,255,255,.84);
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: .06em;
+      font-size: .88rem;
+    }
+
+    .reviews-grid {
+      margin-top: 42px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .review-card {
+      padding: 28px;
+      border-radius: var(--radius-lg);
+      background:
+        linear-gradient(180deg, rgba(255,255,255,.075), rgba(255,255,255,.028)),
+        rgba(12,12,14,.88);
+      border: 1px solid var(--border);
+      box-shadow: 0 22px 62px rgba(0,0,0,.42);
+    }
+
+    .review-stars {
+      color: #ffcd3c;
+      letter-spacing: .12em;
+      margin-bottom: 14px;
+    }
+
+    .review-card p {
+      color: rgba(255,255,255,.84);
+      line-height: 1.65;
+      font-weight: 700;
+      margin: 0;
+    }
+
+    .review-name {
+      margin-top: 18px;
+      color: var(--red);
+      font-family: var(--font-display);
+      letter-spacing: .04em;
+      text-transform: uppercase;
+      font-size: 1.1rem;
+    }
+
+    .faq-wrap {
+      max-width: 880px;
+      margin: 42px auto 0;
+      display: grid;
+      gap: 14px;
+    }
+
+    details {
+      border-radius: 18px;
+      background: rgba(255,255,255,.055);
+      border: 1px solid var(--border);
+      overflow: hidden;
+      text-align: left;
+    }
+
+    summary {
+      cursor: pointer;
+      padding: 22px 24px;
+      font-weight: 950;
+      text-transform: uppercase;
+      letter-spacing: .04em;
+      list-style: none;
+    }
+
+    summary::-webkit-details-marker {
+      display: none;
+    }
+
+    details p {
+      padding: 0 24px 22px;
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.68;
+      font-weight: 650;
+    }
+
+    .cta {
+      position: relative;
+      overflow: hidden;
+      border-radius: 34px;
+      padding: clamp(42px, 7vw, 76px);
+      background:
+        linear-gradient(135deg, rgba(255,16,47,.22), rgba(255,16,47,.045) 38%, rgba(255,255,255,.05)),
+        url("/images/zero-reset/zero-reset-final-cta-bg.webp") center/cover no-repeat;
+      border: 1px solid rgba(255,16,47,.32);
+      box-shadow: 0 34px 90px rgba(0,0,0,.62), var(--shadow-red);
+    }
+
+    .cta::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, rgba(0,0,0,.78), rgba(0,0,0,.34));
+      pointer-events: none;
+    }
+
+    .cta-content {
+      position: relative;
+      z-index: 2;
+      max-width: 670px;
+    }
+
+    .cta .section-copy {
+      margin-left: 0;
+      margin-right: 0;
+    }
+
+    .footer {
+      padding: 42px 0 54px;
+      border-top: 1px solid rgba(255,255,255,.08);
+      color: rgba(255,255,255,.65);
+    }
+
+    .footer-grid {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 22px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      font-size: .9rem;
+      font-weight: 750;
+    }
+
+    .floating-download {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      z-index: 60;
+      display: none;
+      box-shadow: 0 18px 44px rgba(255,16,47,.44);
+    }
+
+    @media (max-width: 980px) {
+      .nav {
+        height: auto;
+        padding: 18px 0;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .hero {
+        min-height: auto;
+      }
+
+      .hero-grid {
+        grid-template-columns: 1fr;
+        padding: 54px 0 74px;
+      }
+
+      .phone-wrap {
+        min-height: 520px;
+        order: -1;
+      }
+
+      .hero-copy {
+        max-width: 680px;
+      }
+
+      .features-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .rule-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .rule-visual {
+        min-height: 440px;
+      }
+
+      .stats-grid,
+      .reviews-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .shell {
+        width: min(100% - 28px, var(--max));
+      }
+
+      .brand-text {
+        font-size: 1rem;
+      }
+
+      .brand-mark {
+        width: 40px;
+        height: 40px;
+      }
+
+      .top-strip .btn {
+        padding: 12px 16px;
+        min-height: 44px;
+        font-size: .78rem;
+      }
+
+      h1 {
+        font-size: clamp(3.75rem, 17vw, 5.6rem);
+      }
+
+      .hero-grid {
+        padding-top: 34px;
+      }
+
+      .hero-actions .btn {
+        width: 100%;
+      }
+
+      .social-proof {
+        align-items: flex-start;
+      }
+
+      .phone-wrap {
+        min-height: 455px;
+      }
+
+      .hero-phone {
+        width: min(315px, 78vw);
+      }
+
+      .chain-left {
+        width: min(310px, 76vw);
+        left: -34px;
+      }
+
+      .floating-flame {
+        width: 92px;
+        right: 18px;
+      }
+
+      .features-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .section {
+        padding: 66px 0;
+      }
+
+      .rule-copy {
+        padding-bottom: 0;
+      }
+
+      .rule-copy p {
+        font-size: 1rem;
+      }
+
+      .floating-download {
+        display: inline-flex;
+        left: 16px;
+        right: 16px;
+        width: auto;
+      }
+
+      .footer {
+        padding-bottom: 96px;
+      }
+    }
+  </style>
+
+  <!-- Premium GA4 Tracking -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-CE1N5QBRTE"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-CE1N5QBRTE', {
+      page_title: 'Zero Reset – Discipline Streak Tracker App',
+      page_path: '/zero-reset',
+      page_location: 'https://softiceinnovationslabs.com/zero-reset'
+    });
+
+    gtag('event', 'zero_reset_page_view', {
+      app_name: 'Zero Reset',
+      brand: 'Softice Innovations Labs',
+      page_type: 'app_landing_page',
+      page_category: 'discipline_streak_tracker',
+      seo_keyword_primary: 'discipline streak tracker app'
+    });
+  </script>
+
+  <!-- Premium SEO Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://softiceinnovationslabs.com/#organization",
+        "name": "Softice Innovations Labs LLC",
+        "url": "https://softiceinnovationslabs.com/",
+        "email": "support@softiceinnovationslabs.com",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://softiceinnovationslabs.com/images/zero-reset/zero-reset-logo-mark.webp"
+        }
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://softiceinnovationslabs.com/#website",
+        "name": "Softice Innovations Labs",
+        "url": "https://softiceinnovationslabs.com/",
+        "publisher": {
+          "@id": "https://softiceinnovationslabs.com/#organization"
+        }
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://softiceinnovationslabs.com/zero-reset#webpage",
+        "url": "https://softiceinnovationslabs.com/zero-reset",
+        "name": "Zero Reset – Discipline Streak Tracker App",
+        "description": "Zero Reset is a no-excuses discipline streak tracker app for daily accountability, habit streaks, check-ins, reminders, and reset-to-zero motivation.",
+        "isPartOf": {
+          "@id": "https://softiceinnovationslabs.com/#website"
+        },
+        "publisher": {
+          "@id": "https://softiceinnovationslabs.com/#organization"
+        },
+        "primaryImageOfPage": {
+          "@type": "ImageObject",
+          "url": "https://softiceinnovationslabs.com/images/zero-reset/zero-reset-og.webp"
+        }
+      },
+      {
+        "@type": "SoftwareApplication",
+        "@id": "https://softiceinnovationslabs.com/zero-reset#app",
+        "name": "Zero Reset",
+        "alternateName": "Zero Reset Discipline Streak Tracker",
+        "applicationCategory": "LifestyleApplication",
+        "operatingSystem": "Android",
+        "description": "Zero Reset is a no-excuses discipline streak tracker app for daily accountability, habit streaks, check-ins, reminders, progress tracking, and reset-to-zero motivation.",
+        "keywords": [
+          "discipline streak tracker",
+          "discipline streak tracker app",
+          "daily discipline app",
+          "habit streak tracker",
+          "accountability streak app",
+          "daily check in app",
+          "no excuses tracker",
+          "personal discipline app",
+          "self improvement tracker",
+          "consistency tracker app"
+        ],
+        "image": "https://softiceinnovationslabs.com/images/zero-reset/zero-reset-og.webp",
+        "publisher": {
+          "@id": "https://softiceinnovationslabs.com/#organization"
+        },
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://softiceinnovationslabs.com/zero-reset#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Softice Innovations Labs",
+            "item": "https://softiceinnovationslabs.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Zero Reset",
+            "item": "https://softiceinnovationslabs.com/zero-reset"
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://softiceinnovationslabs.com/zero-reset#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is Zero Reset?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Zero Reset is a no-excuses discipline streak tracker app designed for daily accountability, habit streaks, check-ins, reminders, and reset-to-zero motivation."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What happens if I miss a day?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The core rule of Zero Reset is simple: miss a day and the streak goes back to zero. The app uses this consequence to create accountability and make the streak feel important."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is Zero Reset a habit tracker?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Zero Reset is a habit and discipline streak tracker, but it is designed with a stronger accountability style than a soft habit checklist."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is Zero Reset good for building discipline?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Zero Reset is designed for people who want a simple daily discipline system. The streak counter, daily check-in, reminders, and reset-to-zero rule help make consistency feel visible and important."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+
+<body>
+  <div class="page">
+
+    <header class="top-strip">
+      <nav class="shell nav" aria-label="Zero Reset navigation">
+        <a class="brand" href="/" aria-label="Softice Innovations Labs home">
+          <img
+            class="brand-mark"
+            src="/images/zero-reset/zero-reset-logo-mark.webp"
+            alt="Zero Reset flame logo"
+            width="96"
+            height="96"
+          />
+          <span class="brand-text" aria-label="Zero Reset">
+            <span>Zero</span>
+            <span>Reset</span>
+          </span>
+        </a>
+
+        <div class="nav-links">
+          <a href="/">Home</a>
+          <a href="#features">Features</a>
+          <a href="#reviews">Reviews</a>
+          <a href="#faq">FAQ</a>
+        </div>
+
+        <a
+          class="btn btn-primary js-download"
+          href="/play/"
+          data-location="header"
+          aria-label="Download Zero Reset on Google Play"
+        >
+          Download
+        </a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero" id="home" data-section="hero">
+        <div class="shell hero-grid">
+          <div class="hero-copy-wrap">
+            <div class="eyebrow">Discipline Streak Tracker</div>
+
+            <h1>
+              <span class="distressed">Discipline.</span><br />
+              <span class="distressed">No Excuses.</span>
+              <span class="red-line">Zero Reset.</span>
+            </h1>
+
+            <p class="hero-copy">
+              Zero Reset is a no-excuses discipline streak tracker app built for daily accountability,
+              habit streaks, reminders, and reset-to-zero motivation. Check in every day, protect
+              your streak, and build discipline one day at a time.
+            </p>
+
+            <div class="hero-actions">
+              <a
+                class="btn btn-primary js-download"
+                href="/play/"
+                data-location="hero"
+                aria-label="Download Zero Reset now"
+              >
+                Download Now
+                <span aria-hidden="true">▸</span>
+              </a>
+
+              <a class="btn btn-dark" href="#features">
+                See Features
+              </a>
+            </div>
+
+            <div class="social-proof" aria-label="App rating and trust signal">
+              <div class="avatar-row" aria-hidden="true">
+                <img src="/images/zero-reset/avatar-01.webp" alt="" width="76" height="76" />
+                <img src="/images/zero-reset/avatar-02.webp" alt="" width="76" height="76" />
+                <img src="/images/zero-reset/avatar-03.webp" alt="" width="76" height="76" />
+                <img src="/images/zero-reset/avatar-04.webp" alt="" width="76" height="76" />
+              </div>
+
+              <div>
+                <div class="stars">★★★★★ <strong>4.9</strong></div>
+                <div>Built for discipline, streaks, and accountability.</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="phone-wrap" aria-hidden="true">
+            <div class="phone-glow"></div>
+            <img
+              class="chain-left"
+              src="/images/zero-reset/zero-reset-chain.webp"
+              alt=""
+              width="780"
+              height="420"
+            />
+            <img
+              class="hero-phone"
+              src="/images/zero-reset/zero-reset-hero-phone.webp"
+              alt="Zero Reset app streak screen showing 12 days"
+              width="760"
+              height="1120"
+            />
+            <img
+              class="floating-flame"
+              src="/images/zero-reset/zero-reset-flame.webp"
+              alt=""
+              width="256"
+              height="256"
+            />
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-tight" id="features" data-section="features">
+        <div class="shell center">
+          <div class="section-kicker">Built for discipline</div>
+          <h2>Protect the streak</h2>
+          <p class="section-copy">
+            Unlike a soft habit tracker, Zero Reset is designed as a discipline streak tracker
+            with one clear rule: show up every day or start again. It helps you stay accountable,
+            track consistency, and turn daily check-ins into a personal discipline challenge.
+          </p>
+
+          <div class="features-grid">
+            <article class="feature-card">
+              <img
+                class="feature-icon"
+                src="/images/zero-reset/icon-track-streak.webp"
+                alt="Red flame icon for streak tracking"
+                width="128"
+                height="128"
+              />
+              <h3>Track your streak</h3>
+              <p>Build consistency one day at a time with a clear daily streak counter.</p>
+            </article>
+
+            <article class="feature-card">
+              <img
+                class="feature-icon"
+                src="/images/zero-reset/icon-accountability.webp"
+                alt="Red target icon for accountability"
+                width="128"
+                height="128"
+              />
+              <h3>Stay accountable</h3>
+              <p>Daily reminders keep your discipline visible before excuses take over.</p>
+            </article>
+
+            <article class="feature-card">
+              <img
+                class="feature-icon"
+                src="/images/zero-reset/icon-trophy.webp"
+                alt="Red trophy icon for best streak"
+                width="128"
+                height="128"
+              />
+              <h3>Beat your best</h3>
+              <p>Challenge your best streak and keep raising the standard.</p>
+            </article>
+
+            <article class="feature-card">
+              <img
+                class="feature-icon"
+                src="/images/zero-reset/icon-chain.webp"
+                alt="Red chain icon for no excuses discipline"
+                width="128"
+                height="128"
+              />
+              <h3>No excuses</h3>
+              <p>Miss a day? Back to zero. Simple, harsh, and effective.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="rule-section" id="rule" data-section="back_to_zero_rule">
+        <div class="shell rule-grid">
+          <div class="rule-copy">
+            <div class="section-kicker">The rule</div>
+            <h2>
+              <span class="red">Miss a day?</span>
+              Back to zero.
+            </h2>
+            <p>
+              That is the pressure. That is the consequence. That is how the streak
+              becomes something you protect. Zero Reset turns daily accountability into
+              a simple discipline challenge: don’t break the streak.
+            </p>
+          </div>
+
+          <div class="rule-visual" aria-hidden="true">
+            <img
+              class="rule-chain"
+              src="/images/zero-reset/zero-reset-chain-wide.webp"
+              alt=""
+              width="1100"
+              height="520"
+            />
+            <img
+              class="lost-phone"
+              src="/images/zero-reset/zero-reset-lost-phone.webp"
+              alt="Zero Reset app screen showing streak lost and 0 days"
+              width="760"
+              height="1120"
+            />
+          </div>
+        </div>
+      </section>
+
+      <section class="section stats-section" id="why-it-works" data-section="why_it_works">
+        <div class="shell center">
+          <div class="section-kicker">Why it works</div>
+          <h2>Simple pressure. Real discipline.</h2>
+          <p class="section-copy">
+            Zero Reset removes the soft middle. You either checked in today, or you did not.
+            That clarity makes the streak feel important and keeps your personal discipline
+            visible every day.
+          </p>
+
+          <div class="stats-grid">
+            <article class="stat-card">
+              <div class="stat-number">1</div>
+              <div class="stat-label">Daily check-in</div>
+            </article>
+
+            <article class="stat-card">
+              <div class="stat-number">0</div>
+              <div class="stat-label">Excuses allowed</div>
+            </article>
+
+            <article class="stat-card">
+              <div class="stat-number">∞</div>
+              <div class="stat-label">Room to grow</div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="reviews" data-section="reviews">
+        <div class="shell center">
+          <div class="section-kicker">Reviews</div>
+          <h2>Made for people who need the push</h2>
+          <p class="section-copy">
+            Built for users who want a bold accountability app, a habit streak tracker,
+            and a daily discipline system without clutter.
+          </p>
+
+          <div class="reviews-grid">
+            <article class="review-card">
+              <div class="review-stars">★★★★★</div>
+              <p>
+                “The reset rule makes me take the streak seriously. It feels intense in the best way.”
+              </p>
+              <div class="review-name">Discipline Builder</div>
+            </article>
+
+            <article class="review-card">
+              <div class="review-stars">★★★★★</div>
+              <p>
+                “I like that it is not bloated. Open it, check in, protect the streak.”
+              </p>
+              <div class="review-name">Daily Grinder</div>
+            </article>
+
+            <article class="review-card">
+              <div class="review-stars">★★★★★</div>
+              <p>
+                “The whole app feels like a challenge. It makes missing a day feel costly.”
+              </p>
+              <div class="review-name">No Excuses User</div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="faq" data-section="faq">
+        <div class="shell center">
+          <div class="section-kicker">FAQ</div>
+          <h2>Zero Reset questions</h2>
+
+          <div class="faq-wrap">
+            <details>
+              <summary>What is Zero Reset?</summary>
+              <p>
+                Zero Reset is a no-excuses discipline streak tracker app for daily check-ins,
+                habit streaks, accountability, reminders, reset-to-zero motivation, quotes,
+                and progress tracking.
+              </p>
+            </details>
+
+            <details>
+              <summary>What happens if I miss a day?</summary>
+              <p>
+                The core rule is simple: miss a day and the streak goes back to zero.
+                That consequence gives the streak emotional weight and helps you protect it.
+              </p>
+            </details>
+
+            <details>
+              <summary>Is Zero Reset a habit tracker?</summary>
+              <p>
+                Yes, but with a stronger discipline-first style. Zero Reset is a habit streak
+                tracker and accountability app built for people who want a clear daily rule,
+                not a soft checklist.
+              </p>
+            </details>
+
+            <details>
+              <summary>Is Zero Reset good for building discipline?</summary>
+              <p>
+                Yes. Zero Reset is designed for people who want a simple daily discipline system.
+                The streak counter, daily check-in, reminders, and reset-to-zero rule help make
+                consistency feel visible and important.
+              </p>
+            </details>
+
+            <details>
+              <summary>Who makes Zero Reset?</summary>
+              <p>
+                Zero Reset is developed by Softice Innovations Labs LLC. For support, contact
+                support@softiceinnovationslabs.com.
+              </p>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="download" data-section="final_cta">
+        <div class="shell">
+          <div class="cta">
+            <div class="cta-content">
+              <div class="section-kicker">Download Zero Reset</div>
+              <h2>Don’t break the streak.</h2>
+              <p class="section-copy">
+                Start your discipline streak today. Check in daily, stay accountable,
+                and remember the rule: miss a day, back to zero.
+              </p>
+
+              <div class="hero-actions">
+                <a
+                  class="btn btn-primary js-download"
+                  href="/play/"
+                  data-location="final_cta"
+                  aria-label="Download Zero Reset on Google Play"
+                >
+                  Download Now
+                </a>
+
+                <a class="btn btn-dark" href="/">
+                  Softice Apps
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <a
+      class="btn btn-primary floating-download js-download"
+      href="/play/"
+      data-location="floating_mobile"
+      aria-label="Download Zero Reset"
+    >
+      Download Zero Reset
+    </a>
+
+    <footer class="footer">
+      <div class="shell footer-grid">
+        <div>
+          © <span id="year"></span> Softice Innovations Labs LLC. All rights reserved.
+        </div>
+
+        <div class="footer-links">
+          <a href="/">Company</a>
+          <a href="/petcare">PetCare Log</a>
+          <a href="/calmpulse">CalmPulse</a>
+          <a href="/cozy-tales">Cozy Tales</a>
+          <a href="mailto:support@softiceinnovationslabs.com">Support</a>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    function trackZeroResetEvent(eventName, params = {}) {
+      if (typeof gtag !== 'function') return;
+
+      gtag('event', eventName, {
+        app_name: 'Zero Reset',
+        brand: 'Softice Innovations Labs',
+        page_path: '/zero-reset',
+        ...params
+      });
+    }
+
+    document.querySelectorAll('.js-download').forEach((link) => {
+      link.addEventListener('click', () => {
+        const location = link.getAttribute('data-location') || 'unknown';
+
+        trackZeroResetEvent('zero_reset_download_click', {
+          click_location: location,
+          link_url: link.href,
+          cta_type: 'google_play_download'
+        });
+
+        trackZeroResetEvent('select_content', {
+          content_type: 'download_cta',
+          item_id: 'zero_reset_' + location
+        });
+
+        trackZeroResetEvent('generate_lead', {
+          lead_type: 'google_play_click',
+          app_name: 'Zero Reset'
+        });
+      });
+    });
+
+    document.querySelectorAll('.feature-card').forEach((card, index) => {
+      card.addEventListener('click', () => {
+        const title = card.querySelector('h3')?.textContent?.trim() || 'Unknown feature';
+
+        trackZeroResetEvent('zero_reset_feature_click', {
+          feature_name: title,
+          feature_position: index + 1
+        });
+
+        trackZeroResetEvent('select_content', {
+          content_type: 'feature_card',
+          item_id: title.toLowerCase().replaceAll(' ', '_')
+        });
+      });
+    });
+
+    document.querySelectorAll('details').forEach((item, index) => {
+      item.addEventListener('toggle', () => {
+        if (!item.open) return;
+
+        const question = item.querySelector('summary')?.textContent?.trim() || 'Unknown FAQ';
+
+        trackZeroResetEvent('zero_reset_faq_open', {
+          faq_question: question,
+          faq_position: index + 1
+        });
+      });
+    });
+
+    const sectionObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+
+        const sectionId =
+          entry.target.getAttribute('id') ||
+          entry.target.getAttribute('data-section') ||
+          'unnamed_section';
+
+        trackZeroResetEvent('zero_reset_section_view', {
+          section_id: sectionId
+        });
+
+        trackZeroResetEvent('section_view', {
+          section_id: sectionId,
+          page_type: 'zero_reset_landing_page'
+        });
+
+        sectionObserver.unobserve(entry.target);
+      });
+    }, { threshold: 0.35 });
+
+    document.querySelectorAll('section').forEach((section) => {
+      sectionObserver.observe(section);
+    });
+
+    const scrollMarks = [25, 50, 75, 90, 100];
+    const sentScrollMarks = new Set();
+
+    function trackScrollDepth() {
+      const scrollTop = window.scrollY || document.documentElement.scrollTop;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+
+      if (docHeight <= 0) return;
+
+      const percent = Math.round((scrollTop / docHeight) * 100);
+
+      scrollMarks.forEach((mark) => {
+        if (percent >= mark && !sentScrollMarks.has(mark)) {
+          sentScrollMarks.add(mark);
+
+          trackZeroResetEvent('zero_reset_scroll_' + mark, {
+            percent_scrolled: mark
+          });
+
+          trackZeroResetEvent('scroll_depth', {
+            percent_scrolled: mark,
+            page_type: 'zero_reset_landing_page'
+          });
+        }
+      });
+    }
+
+    window.addEventListener('scroll', trackScrollDepth, { passive: true });
+
+    [10, 30, 60, 120].forEach((seconds) => {
+      window.setTimeout(() => {
+        trackZeroResetEvent('zero_reset_engaged_' + seconds + 's', {
+          seconds: seconds
+        });
+
+        trackZeroResetEvent('engaged_time', {
+          seconds: seconds,
+          page_type: 'zero_reset_landing_page'
+        });
+      }, seconds * 1000);
+    });
+  </script>
+</body>
+</html>
