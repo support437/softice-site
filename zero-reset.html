@@ -41,7 +41,8 @@
   <meta name="twitter:image" content="https://softiceinnovationslabs.com/images/zero-reset/zero-reset-og.webp" />
 
   <!-- Performance -->
-  <link rel="preload" as="image" href="/images/zero-reset/zero-reset-hero-desktop.webp" media="(min-width: 701px)" />
+  <link rel="preload" as="image" href="/images/zero-reset/zero-reset-hero-desktop.webp" media="(orientation: landscape), (min-width: 1025px)" />
+  <link rel="preload" as="image" href="/images/zero-reset/zero-reset-hero-tablet.webp" media="(min-width: 701px) and (max-width: 1024px) and (orientation: portrait)" />
   <link rel="preload" as="image" href="/images/zero-reset/zero-reset-hero-mobile.webp" media="(max-width: 700px) and (orientation: portrait)" />
   <link rel="preload" as="image" href="/images/zero-reset/zero-reset-logo-mark.webp" />
 
@@ -239,7 +240,7 @@
       transform: translateY(-2px);
     }
 
-    /* HERO — no crop, tablet uses desktop fallback */
+    /* HERO — no crop, no picture switching bug */
     .image-hero {
       position: relative;
       overflow: hidden;
@@ -265,14 +266,28 @@
       background: #020202;
     }
 
-    .hero-picture,
+    .hero-art {
+      position: relative;
+      background: #020202;
+    }
+
+    .hero-source {
+      display: none;
+      width: 100%;
+      height: auto;
+      background: #020202;
+    }
+
+    .hero-source-desktop {
+      display: block;
+    }
+
     .rule-picture {
       display: block;
       width: 100%;
       background: #020202;
     }
 
-    .hero-picture img,
     .rule-picture img {
       width: 100%;
       height: auto;
@@ -608,6 +623,26 @@
       box-shadow: 0 18px 44px rgba(255,16,47,.44);
     }
 
+    @media (min-width: 701px) and (max-width: 1024px) and (orientation: portrait) {
+      .hero-source-desktop {
+        display: none;
+      }
+
+      .hero-source-tablet {
+        display: block;
+      }
+    }
+
+    @media (max-width: 700px) and (orientation: portrait) {
+      .hero-source-desktop {
+        display: none;
+      }
+
+      .hero-source-mobile {
+        display: block;
+      }
+    }
+
     @media (max-width: 1024px) {
       .nav {
         height: auto;
@@ -907,29 +942,37 @@
         </div>
 
         <div class="hero-inner">
-          <picture class="hero-picture">
-  <source
-    srcset="/images/zero-reset/zero-reset-hero-mobile.webp"
-    media="(max-width: 700px) and (orientation: portrait)"
-    type="image/webp"
-  />
+          <div class="hero-art" aria-label="Zero Reset discipline streak tracker hero image">
+            <img
+              class="hero-source hero-source-desktop"
+              src="/images/zero-reset/zero-reset-hero-desktop.webp"
+              alt="Zero Reset discipline streak tracker hero with no excuses message and streak phone screen"
+              width="3840"
+              height="2160"
+              fetchpriority="high"
+              decoding="async"
+            />
 
-  <source
-    srcset="/images/zero-reset/zero-reset-hero-tablet.webp"
-    media="(min-width: 701px) and (max-width: 1024px) and (orientation: portrait)"
-    type="image/webp"
-  />
+            <img
+              class="hero-source hero-source-tablet"
+              src="/images/zero-reset/zero-reset-hero-tablet.webp"
+              alt="Zero Reset tablet portrait hero with discipline streak tracker phone screen"
+              width="1536"
+              height="2048"
+              decoding="async"
+              onerror="this.onerror=null;this.src='/images/zero-reset/zero-reset-hero-desktop.webp';"
+            />
 
-  <img
-    src="/images/zero-reset/zero-reset-hero-desktop.webp"
-    alt="Zero Reset discipline streak tracker hero with no excuses message and streak phone screen"
-    width="3840"
-    height="2160"
-    fetchpriority="high"
-    decoding="async"
-    onerror="this.onerror=null;this.src='/images/zero-reset/zero-reset-hero-desktop.webp';"
-  />
-</picture>
+            <img
+              class="hero-source hero-source-mobile"
+              src="/images/zero-reset/zero-reset-hero-mobile.webp"
+              alt="Zero Reset mobile portrait hero with discipline streak tracker phone screen"
+              width="1080"
+              height="1920"
+              decoding="async"
+              onerror="this.onerror=null;this.src='/images/zero-reset/zero-reset-hero-desktop.webp';"
+            />
+          </div>
 
           <div class="hero-overlay">
             <a
