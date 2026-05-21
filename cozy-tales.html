@@ -18,15 +18,13 @@
   <link rel="alternate" hreflang="en" href="https://softiceinnovationslabs.com/cozy-tales" />
   <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
 
-  <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin />
-  <link rel="preconnect" href="https://www.google-analytics.com" crossorigin />
-  <link rel="preconnect" href="https://play.google.com" crossorigin />
-  <link rel="dns-prefetch" href="//www.youtube.com" />
-  <link rel="dns-prefetch" href="//www.instagram.com" />
-  <link rel="dns-prefetch" href="//www.tiktok.com" />
-
   <link rel="icon" type="image/png" href="/images/cozy-tales/cozy-tales-logo-mark.png" />
   <link rel="apple-touch-icon" href="/images/cozy-tales/cozy-tales-logo-mark.png" />
+
+  <link rel="preconnect" href="https://www.googletagmanager.com" />
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+  <link rel="preconnect" href="https://play.google.com" />
+  <link rel="dns-prefetch" href="https://play.google.com" />
 
   <link rel="preload" as="image" href="/images/cozy-tales/cozy-tales-hero-desktop.webp" media="(min-width: 1181px)" />
   <link rel="preload" as="image" href="/images/cozy-tales/cozy-tales-hero-tablet.webp" media="(min-width: 761px) and (max-width: 1180px)" />
@@ -86,7 +84,6 @@
     }
 
     * { box-sizing: border-box; }
-
     html { scroll-behavior: smooth; }
 
     body {
@@ -101,11 +98,7 @@
     }
 
     a { color: inherit; }
-
-    img {
-      max-width: 100%;
-      display: block;
-    }
+    img { max-width: 100%; display: block; }
 
     .visually-hidden {
       position: absolute;
@@ -160,15 +153,8 @@
     }
 
     @keyframes pulsePlay {
-      0%, 100% {
-        transform: translateY(0) scale(1);
-        box-shadow: 0 20px 42px rgba(255,169,35,0.28);
-      }
-
-      50% {
-        transform: translateY(-3px) scale(1.035);
-        box-shadow: 0 26px 55px rgba(255,169,35,0.45);
-      }
+      0%, 100% { transform: translateY(0) scale(1); box-shadow: 0 20px 42px rgba(255,169,35,0.28); }
+      50% { transform: translateY(-3px) scale(1.035); box-shadow: 0 26px 55px rgba(255,169,35,0.45); }
     }
 
     .topbar {
@@ -225,7 +211,8 @@
       white-space: nowrap;
     }
 
-    .nav a:hover {
+    .nav a:hover,
+    .nav a:focus-visible {
       color: var(--gold);
     }
 
@@ -258,8 +245,7 @@
       content: "";
       position: absolute;
       inset: 0;
-      background:
-        linear-gradient(180deg, rgba(8,5,38,0.00) 0%, rgba(8,5,38,0.02) 52%, rgba(8,5,38,0.28) 100%);
+      background: linear-gradient(180deg, rgba(8,5,38,0.00) 0%, rgba(8,5,38,0.02) 52%, rgba(8,5,38,0.28) 100%);
       pointer-events: none;
       z-index: 1;
     }
@@ -314,7 +300,8 @@
       transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
 
-    .primary-btn:hover {
+    .primary-btn:hover,
+    .primary-btn:focus-visible {
       transform: translateY(-2px);
       box-shadow: 0 24px 50px rgba(255,169,35,0.38);
     }
@@ -355,18 +342,19 @@
       color: var(--cream);
     }
 
-    .seo-intro h1 strong {
-      color: var(--gold);
-    }
+    .seo-intro h1 strong { color: var(--gold); }
 
-    .seo-intro p {
-      margin: 14px 0 0;
-      max-width: 920px;
+    .seo-intro p,
+    .section-intro {
+      margin: 14px auto 0;
+      max-width: 900px;
       color: #e8e1ff;
       font-size: 17px;
       line-height: 1.75;
       font-weight: 600;
     }
+
+    .seo-intro p { margin-left: 0; }
 
     .hero-benefits {
       margin-top: 20px;
@@ -432,9 +420,12 @@
 
     .routine h2,
     .stories h2,
+    .trust h2,
     .guides h2,
+    .comparison h2,
     .faq h2,
-    .connect h2 {
+    .connect h2,
+    .final-cta h2 {
       margin: 0;
       text-align: center;
       font-size: clamp(30px, 4vw, 42px);
@@ -455,9 +446,7 @@
       border-right: 1px solid rgba(26,18,64,0.13);
     }
 
-    .routine-card:last-child {
-      border-right: 0;
-    }
+    .routine-card:last-child { border-right: 0; }
 
     .routine-card img {
       width: 180px;
@@ -480,8 +469,11 @@
     }
 
     .section-card,
+    .trust,
     .guides,
-    .connect {
+    .comparison,
+    .connect,
+    .final-cta {
       margin-top: 28px;
       padding: 34px;
       border-radius: 34px;
@@ -517,6 +509,7 @@
       display: grid;
       grid-template-columns: repeat(5, minmax(0, 1fr));
       gap: 16px;
+      margin-top: 28px;
     }
 
     .story-card {
@@ -529,7 +522,8 @@
       transition: transform 0.2s ease, border-color 0.2s ease;
     }
 
-    .story-card:hover {
+    .story-card:hover,
+    .story-card:focus-visible {
       transform: translateY(-5px);
       border-color: rgba(255,202,75,0.55);
     }
@@ -565,6 +559,7 @@
       box-shadow: var(--soft-shadow);
       display: block;
       text-decoration: none;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
 
     .free-section img {
@@ -578,9 +573,47 @@
       background: #12064c;
     }
 
-    .free-section:hover {
+    .free-section:hover,
+    .free-section:focus-visible {
       transform: translateY(-3px);
       box-shadow: 0 26px 62px rgba(8,5,45,0.38);
+    }
+
+    .trust-grid,
+    .comparison-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 18px;
+      margin-top: 28px;
+    }
+
+    .trust-card,
+    .compare-card {
+      padding: 22px;
+      border-radius: 24px;
+      background: rgba(255,255,255,0.09);
+      border: 1px solid rgba(255,255,255,0.13);
+      min-height: 160px;
+    }
+
+    .trust-card .icon {
+      font-size: 32px;
+      margin-bottom: 12px;
+    }
+
+    .trust-card h3,
+    .compare-card h3 {
+      margin: 0 0 10px;
+      color: #fff7d0;
+      font-size: 18px;
+    }
+
+    .trust-card p,
+    .compare-card p {
+      margin: 0;
+      color: #e7dfff;
+      line-height: 1.6;
+      font-size: 14px;
     }
 
     .guide-grid {
@@ -601,7 +634,8 @@
       transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
     }
 
-    .guide-card:hover {
+    .guide-card:hover,
+    .guide-card:focus-visible {
       transform: translateY(-5px);
       border-color: rgba(255,202,75,0.55);
       box-shadow: 0 24px 58px rgba(0,0,0,0.30);
@@ -654,7 +688,8 @@
       font-weight: 800;
     }
 
-    .mini-link:hover {
+    .mini-link:hover,
+    .mini-link:focus-visible {
       color: var(--gold);
       border-color: rgba(255,202,75,0.38);
     }
@@ -784,25 +819,41 @@
       font-weight: 750;
     }
 
-    .support-box a:hover {
+    .support-box a:hover,
+    .support-box a:focus-visible {
       color: var(--gold);
     }
 
+    .final-cta {
+      text-align: center;
+      padding: 46px 34px;
+      background:
+        radial-gradient(circle at 50% 0%, rgba(255,202,75,0.22), transparent 36%),
+        linear-gradient(180deg, #1e0d67 0%, #0a0632 100%);
+    }
+
+    .final-cta p {
+      margin: 14px auto 24px;
+      color: #ece5ff;
+      max-width: 720px;
+      font-size: 18px;
+      line-height: 1.65;
+      font-weight: 650;
+    }
+
     .footer {
-      padding: 0 0 34px;
+      padding: 18px 0 96px;
       text-align: center;
       color: rgba(255,255,255,0.68);
       font-size: 13px;
     }
 
     @media (max-width: 1180px) {
-      .hero {
-        min-height: 600px;
-      }
+      .hero { min-height: 600px; }
 
-      .benefit-row {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-      }
+      .benefit-row,
+      .trust-grid,
+      .comparison-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 
       .benefit-chip {
         min-height: 124px;
@@ -819,24 +870,16 @@
         height: 150px;
       }
 
-      .story-grid {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-      }
+      .story-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 
       .guide-grid,
-      .all-links {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
+      .all-links { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 
-      .connect-grid {
-        grid-template-columns: 1fr;
-      }
+      .connect-grid { grid-template-columns: 1fr; }
     }
 
     @media (max-width: 760px) {
-      .shell {
-        width: calc(100% - 24px);
-      }
+      .shell { width: calc(100% - 24px); }
 
       .floating-play {
         right: 14px;
@@ -866,13 +909,8 @@
         border-radius: 24px;
       }
 
-      .brand {
-        min-width: 0;
-      }
-
-      .brand img {
-        width: 170px;
-      }
+      .brand { min-width: 0; }
+      .brand img { width: 170px; }
 
       .nav {
         width: 100%;
@@ -883,9 +921,7 @@
         scrollbar-width: none;
       }
 
-      .nav::-webkit-scrollbar {
-        display: none;
-      }
+      .nav::-webkit-scrollbar { display: none; }
 
       .nav-cta {
         min-height: 40px;
@@ -900,8 +936,7 @@
       }
 
       .hero::after {
-        background:
-          linear-gradient(180deg, rgba(8,5,38,0.00) 0%, rgba(8,5,38,0.02) 58%, rgba(8,5,38,0.22) 100%);
+        background: linear-gradient(180deg, rgba(8,5,38,0.00) 0%, rgba(8,5,38,0.02) 58%, rgba(8,5,38,0.22) 100%);
       }
 
       .hero-bg {
@@ -911,9 +946,7 @@
         object-position: center top;
       }
 
-      .hero-content {
-        display: none;
-      }
+      .hero-content { display: none; }
 
       .seo-intro {
         width: calc(100% - 24px);
@@ -922,11 +955,10 @@
         border-radius: 24px;
       }
 
-      .seo-intro h1 {
-        font-size: 35px;
-      }
+      .seo-intro h1 { font-size: 35px; }
 
-      .seo-intro p {
+      .seo-intro p,
+      .section-intro {
         font-size: 15px;
         line-height: 1.65;
       }
@@ -938,7 +970,9 @@
         border-radius: 24px;
       }
 
-      .benefit-row {
+      .benefit-row,
+      .trust-grid,
+      .comparison-grid {
         grid-template-columns: 1fr;
         gap: 12px;
       }
@@ -954,13 +988,8 @@
         height: 76px;
       }
 
-      .benefit-chip strong {
-        font-size: 16px;
-      }
-
-      .benefit-chip span {
-        font-size: 12.5px;
-      }
+      .benefit-chip strong { font-size: 16px; }
+      .benefit-chip span { font-size: 12.5px; }
 
       .routine {
         width: calc(100% - 24px);
@@ -985,27 +1014,23 @@
         height: 135px;
       }
 
-      .routine-card h3 {
-        font-size: 15.5px;
-      }
-
-      .routine-card p {
-        font-size: 13px;
-      }
+      .routine-card h3 { font-size: 15.5px; }
+      .routine-card p { font-size: 13px; }
 
       .section-card,
       .free-section,
+      .trust,
       .guides,
+      .comparison,
       .faq,
-      .connect {
+      .connect,
+      .final-cta {
         width: calc(100% - 24px);
         padding: 24px 16px;
         border-radius: 28px;
       }
 
-      .free-section {
-        padding: 0;
-      }
+      .free-section { padding: 0; }
 
       .story-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1018,9 +1043,7 @@
         object-fit: contain;
       }
 
-      .story-card strong {
-        font-size: 12.5px;
-      }
+      .story-card strong { font-size: 12.5px; }
 
       .free-section img {
         aspect-ratio: 1400 / 800;
@@ -1029,17 +1052,11 @@
 
       .guide-grid,
       .all-links,
-      .faq-grid {
-        grid-template-columns: 1fr;
-      }
+      .faq-grid { grid-template-columns: 1fr; }
 
-      .guide-grid {
-        gap: 18px;
-      }
+      .guide-grid { gap: 18px; }
 
-      .guide-card {
-        border-radius: 22px;
-      }
+      .guide-card { border-radius: 22px; }
 
       .guide-card img {
         aspect-ratio: 900 / 600;
@@ -1061,72 +1078,13 @@
         height: 44px;
       }
 
-      .notify-form {
-        flex-direction: column;
-      }
-
-      .app-preview-wrap {
-        grid-template-columns: 1fr;
-        gap: 26px;
-      }
-
-      .premium-card {
-        width: calc(100% - 24px);
-        padding: 26px 18px;
-        border-radius: 28px;
-      }
-
-      .feature-list {
-        grid-template-columns: 1fr;
-      }
-
-      .phone-showcase {
-        gap: 12px;
-      }
-
-      .phone-frame {
-        border-radius: 24px;
-        padding: 7px;
-      }
-
-      .phone-frame img {
-        border-radius: 19px;
-      }
-
-      .phone-frame:nth-child(2) {
-        transform: translateY(18px) rotate(2deg);
-      }
-
-      .trust-grid,
-      .choice-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .final-cta {
-        width: calc(100% - 24px);
-        flex-direction: column;
-        align-items: stretch;
-        padding: 26px 18px;
-        border-radius: 28px;
-        padding-bottom: 92px;
-      }
-
+      .notify-form { flex-direction: column; }
     }
 
     @media (max-width: 420px) {
-      .benefit-chip {
-        min-height: 92px;
-      }
-
-      .benefit-chip img {
-        width: 68px;
-        height: 68px;
-      }
-
-      .routine-card img {
-        width: 118px;
-        height: 118px;
-      }
+      .benefit-chip { min-height: 92px; }
+      .benefit-chip img { width: 68px; height: 68px; }
+      .routine-card img { width: 118px; height: 118px; }
 
       .story-card img {
         height: auto;
@@ -1134,261 +1092,21 @@
         object-fit: contain;
       }
 
-      .story-grid {
-        grid-template-columns: 1fr;
-      }
-
       .floating-play {
         left: 14px;
         right: 14px;
         justify-content: center;
       }
-
-      body {
-        padding-bottom: 84px;
-      }
-    }
-
-
-    /* Premium upgrade: product proof, trust cards, richer SEO intros, stronger mobile polish */
-    :focus-visible {
-      outline: 3px solid rgba(255, 202, 75, 0.72);
-      outline-offset: 4px;
-    }
-
-    body::before {
-      content: "";
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      z-index: -1;
-      background:
-        radial-gradient(circle at 15% 18%, rgba(255,202,75,0.10), transparent 22%),
-        radial-gradient(circle at 84% 24%, rgba(241,92,155,0.10), transparent 26%),
-        radial-gradient(circle at 50% 92%, rgba(124,59,216,0.20), transparent 34%);
-    }
-
-    .section-intro {
-      width: min(820px, 100%);
-      margin: 14px auto 0;
-      color: #e9e2ff;
-      font-size: 16.5px;
-      line-height: 1.75;
-      font-weight: 600;
-      text-align: center;
-    }
-
-    .premium-card {
-      position: relative;
-      overflow: hidden;
-      margin-top: 28px;
-      padding: 38px;
-      border-radius: 34px;
-      border: 1px solid rgba(255,255,255,0.16);
-      box-shadow: var(--soft-shadow);
-      background:
-        radial-gradient(circle at 12% 10%, rgba(255,202,75,0.16), transparent 30%),
-        radial-gradient(circle at 86% 20%, rgba(241,92,155,0.13), transparent 32%),
-        linear-gradient(180deg, rgba(26,12,91,0.96), rgba(8,5,43,0.98));
-    }
-
-    .premium-card::before {
-      content: "";
-      position: absolute;
-      inset: 1px;
-      border-radius: inherit;
-      pointer-events: none;
-      background: linear-gradient(135deg, rgba(255,255,255,0.08), transparent 40%, rgba(255,202,75,0.10));
-    }
-
-    .app-preview-wrap {
-      position: relative;
-      z-index: 1;
-      display: grid;
-      grid-template-columns: minmax(0, 0.94fr) minmax(0, 1.06fr);
-      gap: 34px;
-      align-items: center;
-    }
-
-    .app-preview-copy h2,
-    .trust-section h2,
-    .choice-section h2 {
-      margin: 0;
-      font-size: clamp(32px, 4.4vw, 52px);
-      line-height: 1.02;
-      letter-spacing: -0.055em;
-      color: var(--cream);
-    }
-
-    .app-preview-copy h2 strong,
-    .trust-section h2 strong,
-    .choice-section h2 strong {
-      color: var(--gold);
-    }
-
-    .app-preview-copy p,
-    .trust-section > p,
-    .choice-section > p {
-      margin: 16px 0 0;
-      color: #e8e1ff;
-      font-size: 17px;
-      line-height: 1.75;
-      font-weight: 600;
-    }
-
-    .feature-list {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 12px;
-      margin-top: 24px;
-    }
-
-    .feature-pill {
-      min-height: 76px;
-      padding: 16px;
-      border-radius: 20px;
-      background: rgba(255,255,255,0.09);
-      border: 1px solid rgba(255,255,255,0.14);
-      color: #fff7d0;
-      font-weight: 900;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .feature-pill span {
-      width: 34px;
-      height: 34px;
-      border-radius: 12px;
-      display: grid;
-      place-items: center;
-      background: rgba(255,202,75,0.18);
-      box-shadow: inset 0 0 0 1px rgba(255,202,75,0.20);
-      flex: 0 0 auto;
-    }
-
-    .phone-showcase {
-      position: relative;
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 18px;
-      align-items: end;
-      justify-items: center;
-    }
-
-    .phone-frame {
-      position: relative;
-      border-radius: 32px;
-      padding: 10px;
-      background: linear-gradient(180deg, rgba(255,255,255,0.22), rgba(255,255,255,0.06));
-      border: 1px solid rgba(255,255,255,0.16);
-      box-shadow: 0 28px 70px rgba(0,0,0,0.32);
-      transform: rotate(-2deg);
-    }
-
-    .phone-frame:nth-child(2) {
-      transform: translateY(28px) rotate(2.5deg);
-    }
-
-    .phone-frame img {
-      width: 240px;
-      max-width: 100%;
-      border-radius: 25px;
-      filter: drop-shadow(0 18px 24px rgba(0,0,0,0.30));
-    }
-
-    .trust-grid,
-    .choice-grid {
-      position: relative;
-      z-index: 1;
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 16px;
-      margin-top: 28px;
-    }
-
-    .trust-item,
-    .choice-item {
-      min-height: 162px;
-      padding: 22px;
-      border-radius: 24px;
-      background: rgba(255,255,255,0.09);
-      border: 1px solid rgba(255,255,255,0.14);
-      box-shadow: 0 18px 42px rgba(0,0,0,0.20);
-    }
-
-    .trust-icon {
-      width: 46px;
-      height: 46px;
-      display: grid;
-      place-items: center;
-      border-radius: 16px;
-      background: linear-gradient(135deg, rgba(255,202,75,0.26), rgba(255,159,34,0.16));
-      color: var(--gold);
-      font-size: 24px;
-      margin-bottom: 16px;
-    }
-
-    .trust-item h3,
-    .choice-item h3 {
-      margin: 0 0 9px;
-      color: #fff7d0;
-      font-size: 17px;
-    }
-
-    .trust-item p,
-    .choice-item p {
-      margin: 0;
-      color: #ddd5ff;
-      font-size: 14px;
-      line-height: 1.58;
-    }
-
-    .choice-item.cozy-choice {
-      background: linear-gradient(180deg, rgba(255,202,75,0.15), rgba(255,255,255,0.08));
-      border-color: rgba(255,202,75,0.34);
-    }
-
-    .final-cta {
-      margin-top: 28px;
-      padding: 32px;
-      border-radius: 34px;
-      background:
-        radial-gradient(circle at 50% 0%, rgba(255,202,75,0.22), transparent 42%),
-        linear-gradient(135deg, rgba(124,59,216,0.95), rgba(10,6,50,0.98));
-      border: 1px solid rgba(255,255,255,0.16);
-      box-shadow: var(--soft-shadow);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 24px;
-    }
-
-    .final-cta h2 {
-      margin: 0;
-      font-size: clamp(30px, 4vw, 46px);
-      line-height: 1.02;
-      letter-spacing: -0.05em;
-      color: var(--cream);
-    }
-
-    .final-cta p {
-      margin: 10px 0 0;
-      color: #e8e1ff;
-      font-size: 16px;
-      line-height: 1.6;
-      font-weight: 600;
     }
 
     @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
       *, *::before, *::after {
         animation-duration: 0.001ms !important;
         animation-iteration-count: 1 !important;
-        scroll-behavior: auto !important;
         transition-duration: 0.001ms !important;
       }
     }
-
   </style>
 </head>
 
@@ -1516,35 +1234,11 @@
       </div>
     </section>
 
-
-    <section class="premium-card shell app-preview" data-section-track="cozy_inside_app">
-      <div class="app-preview-wrap">
-        <div class="app-preview-copy">
-          <h2>Inside the <strong>Cozy Tales app.</strong></h2>
-          <p>Give parents a real product preview with the home screen, story library, read-aloud flow, and calming bedtime tools. This section makes the page feel more like a premium app product page, not only a beautiful story brand page.</p>
-
-          <div class="feature-list" aria-label="Cozy Tales app features">
-            <div class="feature-pill"><span>📚</span> Story library made for bedtime</div>
-            <div class="feature-pill"><span>🎧</span> Gentle read-aloud narration</div>
-            <div class="feature-pill"><span>🌙</span> Calm sleep-friendly design</div>
-            <div class="feature-pill"><span>🔒</span> Simple parent-friendly experience</div>
-          </div>
-        </div>
-
-        <div class="phone-showcase" aria-label="Cozy Tales app screen previews">
-          <div class="phone-frame">
-            <img src="/images/cozy-tales/cozy-tales-phone-home.webp" alt="Cozy Tales app home screen preview" width="900" height="1400" loading="lazy" decoding="async" />
-          </div>
-          <div class="phone-frame">
-            <img src="/images/cozy-tales/cozy-tales-phone-library.webp" alt="Cozy Tales app story library screen preview" width="900" height="1400" loading="lazy" decoding="async" />
-          </div>
-        </div>
-      </div>
-    </section>
-
     <section class="section-card shell stories" id="stories" data-section-track="cozy_story_collection">
       <h2>Explore Our Story Collection</h2>
-      <p class="section-intro">Explore calming bedtime stories for kids, toddlers, and preschoolers, including animal friends, magical adventures, goodnight stories, and peaceful read-aloud stories made for cozy nighttime routines.</p>
+      <p class="section-intro">
+        Explore calming bedtime stories for kids, toddlers, and preschoolers, including animal friends, magical adventures, goodnight stories, and peaceful read-aloud stories made for cozy nighttime routines.
+      </p>
 
       <div class="story-filters" aria-label="Story categories">
         <span class="filter-chip">All Stories</span>
@@ -1587,28 +1281,30 @@
       <img src="/images/cozy-tales/cozy-tales-free-stories-section.webp" alt="Try 2 free Cozy Tales bedtime stories with Bunny's Garden Picnic preview" width="1400" height="800" loading="lazy" decoding="async" />
     </a>
 
-    <section class="premium-card shell trust-section" data-section-track="cozy_trust_section">
-      <h2>Made for <strong>calm bedtime moments.</strong></h2>
-      <p>Cozy Tales is built around a parent-first bedtime experience: gentle stories, simple navigation, no monthly subscription pressure, and a soft story world that feels safe and easy to use.</p>
+    <section class="trust shell" data-section-track="cozy_trust">
+      <h2>Made for calm bedtime moments.</h2>
+      <p class="section-intro">
+        Cozy Tales is built around a parent-first bedtime experience: gentle stories, simple navigation, no monthly subscription pressure, and a soft story world that feels safe and easy to use.
+      </p>
 
       <div class="trust-grid">
-        <article class="trust-item">
-          <div class="trust-icon" aria-hidden="true">🚫</div>
+        <article class="trust-card">
+          <div class="icon" aria-hidden="true">🌙</div>
           <h3>No distracting ads</h3>
           <p>A cleaner, kid-friendly experience focused on bedtime stories and quiet moments.</p>
         </article>
-        <article class="trust-item">
-          <div class="trust-icon" aria-hidden="true">👨‍👩‍👧</div>
+        <article class="trust-card">
+          <div class="icon" aria-hidden="true">👨‍👩‍👧</div>
           <h3>Parent-friendly flow</h3>
           <p>Simple screens and clear story choices designed for real bedtime routines.</p>
         </article>
-        <article class="trust-item">
-          <div class="trust-icon" aria-hidden="true">💛</div>
+        <article class="trust-card">
+          <div class="icon" aria-hidden="true">📖</div>
           <h3>No subscription</h3>
           <p>Start with 2 free books, then choose more stories without recurring monthly fees.</p>
         </article>
-        <article class="trust-item">
-          <div class="trust-icon" aria-hidden="true">🎧</div>
+        <article class="trust-card">
+          <div class="icon" aria-hidden="true">🎧</div>
           <h3>Gentle narration</h3>
           <p>Read-aloud stories are designed to help children relax and settle down.</p>
         </article>
@@ -1617,7 +1313,9 @@
 
     <section class="guides shell" id="guides" data-section-track="cozy_guides">
       <h2>Bedtime Guides for Parents</h2>
-      <p class="section-intro">Helpful bedtime guides for parents who want better sleep routines, shorter bedtime stories, calming fairy tales, toddler sleep stories, and simple ways to help kids wind down at night.</p>
+      <p class="section-intro">
+        Helpful bedtime guides for parents who want better sleep routines, shorter bedtime stories, calming fairy tales, toddler sleep stories, and simple ways to help kids wind down at night.
+      </p>
 
       <div class="guide-grid">
         <a class="guide-card" href="/bedtime-routine-for-kids" data-track="guide_click" data-track-location="guide_cards" data-track-title="Bedtime Routine for Kids">
@@ -1666,7 +1364,9 @@
 
     <section class="guides shell" data-section-track="cozy_more_stories">
       <h2>More Cozy Tales Stories</h2>
-      <p class="section-intro">Browse more Cozy Tales story pages, animal bedtime stories, magical sleep stories, and gentle nighttime adventures designed for calm evenings.</p>
+      <p class="section-intro">
+        Browse more Cozy Tales story pages, animal bedtime stories, magical sleep stories, and gentle nighttime adventures designed for calm evenings.
+      </p>
 
       <div class="all-links" aria-label="More Cozy Tales story links">
         <a class="mini-link" href="/monkey-milos-big-sea-adventure" data-track="story_link_click" data-track-title="Monkey Milo's Big Sea Adventure">Monkey Milo’s Big Sea Adventure</a>
@@ -1703,7 +1403,9 @@
 
     <section class="guides shell" data-section-track="cozy_extra_seo_resources">
       <h2>More Bedtime Story Resources</h2>
-      <p class="section-intro">Explore more parent resources around bedtime stories, sleep stories, calming bedtime routines, read-aloud stories, and kids sleep support.</p>
+      <p class="section-intro">
+        Explore more parent resources around bedtime stories, sleep stories, calming bedtime routines, read-aloud stories, and kids sleep support.
+      </p>
 
       <div class="all-links" aria-label="Additional bedtime story and sleep story SEO resources">
         <a class="mini-link" href="/bedtime-stories-for-children" data-track="seo_link_click" data-track-location="extra_resources" data-track-title="Bedtime Stories for Children">Bedtime Stories for Children</a>
@@ -1721,25 +1423,26 @@
       </div>
     </section>
 
+    <section class="comparison shell" data-section-track="cozy_comparison">
+      <h2>Why parents choose Cozy Tales.</h2>
+      <p class="section-intro">
+        A clear no-subscription bedtime story app can feel easier for families than apps that are noisy, confusing, or locked behind recurring plans.
+      </p>
 
-    <section class="premium-card shell choice-section" data-section-track="cozy_parent_choice">
-      <h2>Why parents choose <strong>Cozy Tales.</strong></h2>
-      <p>A clear no-subscription bedtime story app can feel easier for families than apps that are noisy, confusing, or locked behind recurring plans.</p>
-
-      <div class="choice-grid">
-        <article class="choice-item cozy-choice">
+      <div class="comparison-grid">
+        <article class="compare-card">
           <h3>Cozy Tales</h3>
           <p>2 free stories, read-aloud narration, calm visual design, and optional one-time story downloads.</p>
         </article>
-        <article class="choice-item">
+        <article class="compare-card">
           <h3>Subscription-heavy apps</h3>
           <p>Often require recurring monthly plans before families know whether the app fits bedtime.</p>
         </article>
-        <article class="choice-item">
+        <article class="compare-card">
           <h3>Video-first platforms</h3>
           <p>Can be overstimulating at night and may pull kids away from a focused bedtime routine.</p>
         </article>
-        <article class="choice-item">
+        <article class="compare-card">
           <h3>Plain story readers</h3>
           <p>May lack the cozy visual world, gentle narration, and sleep-focused structure parents want.</p>
         </article>
@@ -1815,13 +1518,10 @@
       </div>
     </section>
 
-
     <section class="final-cta shell" data-section-track="cozy_final_cta">
-      <div>
-        <h2>Start a calmer bedtime tonight.</h2>
-        <p>Download Cozy Tales, try 2 free bedtime stories, and build a softer nighttime routine for your little dreamer.</p>
-      </div>
-      <a class="primary-btn" href="/play/" data-track="play_click" data-track-location="final_cta" data-track-title="Final Google Play CTA">
+      <h2>Start a calmer bedtime tonight.</h2>
+      <p>Download Cozy Tales, try 2 free bedtime stories, and build a softer nighttime routine for your little dreamer.</p>
+      <a class="primary-btn" href="/play/" data-track="play_click" data-track-location="final_cta" data-track-title="Final CTA Google Play">
         Get Cozy Tales on Google Play
         <span class="play-icon" aria-hidden="true">
           <svg viewBox="0 0 64 64" role="img" aria-hidden="true">
@@ -1981,9 +1681,6 @@
 
   <script>
     (function () {
-      const PAGE_NAME = "cozy_tales_landing_page";
-      const CLEAN_URL = "/cozy-tales";
-
       function getDeviceType() {
         const ua = navigator.userAgent || "";
         if (/tablet|ipad|playbook|silk/i.test(ua)) return "tablet";
@@ -2005,8 +1702,6 @@
           page_location: window.location.href,
           page_path: window.location.pathname,
           page_title: document.title,
-          page_name: PAGE_NAME,
-          clean_url: CLEAN_URL,
           referrer: document.referrer || "direct",
           device_type: getDeviceType(),
           session_id: getSessionId()
@@ -2019,27 +1714,26 @@
         }
       }
 
-      function trackGooglePlayClick(location, title, url) {
-        const params = {
+      function playClickLocation(location, title, href) {
+        trackEvent("cozy_play_click", {
           ...commonParams(),
           click_location: location || "unknown",
-          click_title: title || "Google Play CTA",
-          link_url: url || "https://softiceinnovationslabs.com/play/",
-          app_name: "Cozy Tales"
-        };
+          click_title: title || "Google Play",
+          link_url: href || ""
+        });
 
-        trackEvent("cozy_play_click", params);
         trackEvent("select_content", {
-          ...params,
-          content_type: "google_play_cta",
-          item_id: "cozy_tales_google_play"
+          content_type: "cta",
+          item_id: "cozy_tales_google_play",
+          click_location: location || "unknown"
         });
       }
 
       window.addEventListener("load", function () {
         trackEvent("cozy_tales_page_view", {
           ...commonParams(),
-          landing_page_version: "premium_v2"
+          page_name: "cozy_tales_landing_page",
+          clean_url: "/cozy-tales"
         });
       });
 
@@ -2049,42 +1743,42 @@
 
         if (tracked) {
           const eventName = tracked.getAttribute("data-track");
-          const clickLocation = tracked.getAttribute("data-track-location") || "unknown";
-          const clickTitle = tracked.getAttribute("data-track-title") || (tracked.textContent || "").trim();
-          const linkUrl = tracked.href || "";
+          const location = tracked.getAttribute("data-track-location") || "unknown";
+          const title = tracked.getAttribute("data-track-title") || (tracked.textContent || "").trim();
+          const href = tracked.href || "";
 
           trackEvent(eventName, {
             ...commonParams(),
-            click_location: clickLocation,
-            click_title: clickTitle,
-            link_url: linkUrl
+            click_location: location,
+            click_title: title,
+            link_url: href
           });
 
           if (eventName === "play_click") {
-            trackGooglePlayClick(clickLocation, clickTitle, linkUrl);
+            playClickLocation(location, title, href);
           }
 
-          if (eventName === "story_click") {
+          if (eventName === "story_click" || eventName === "story_link_click") {
             trackEvent("cozy_story_card_click", {
               ...commonParams(),
-              story_title: clickTitle,
-              link_url: linkUrl
+              story_title: title,
+              link_url: href
             });
           }
 
-          if (eventName === "guide_click") {
+          if (eventName === "guide_click" || eventName === "seo_link_click") {
             trackEvent("cozy_guide_card_click", {
               ...commonParams(),
-              guide_title: clickTitle,
-              link_url: linkUrl
+              guide_title: title,
+              link_url: href
             });
           }
 
           if (eventName === "social_click") {
             trackEvent("cozy_social_click", {
               ...commonParams(),
-              social_platform: clickTitle,
-              link_url: linkUrl
+              social_platform: title,
+              link_url: href
             });
           }
         }
@@ -2111,17 +1805,20 @@
         const form = event.target.closest("form[data-track]");
         if (!form) return;
 
-        const params = {
+        trackEvent(form.getAttribute("data-track"), {
           ...commonParams(),
-          form_name: form.getAttribute("name") || "unknown",
-          form_location: "stay_connected"
-        };
+          form_name: form.getAttribute("name") || "unknown"
+        });
 
-        trackEvent(form.getAttribute("data-track"), params);
-        trackEvent("cozy_notify_submit", params);
+        trackEvent("cozy_notify_submit", {
+          ...commonParams(),
+          form_name: form.getAttribute("name") || "unknown"
+        });
+
         trackEvent("generate_lead", {
-          ...params,
-          method: "cozy_tales_notify_form"
+          currency: "USD",
+          value: 0,
+          lead_type: "cozy_tales_notify"
         });
       });
 
@@ -2135,6 +1832,11 @@
 
           trackedSections.add(sectionName);
           trackEvent("section_view", {
+            ...commonParams(),
+            section_name: sectionName
+          });
+
+          trackEvent("cozy_section_view", {
             ...commonParams(),
             section_name: sectionName
           });
@@ -2162,7 +1864,11 @@
               ...commonParams(),
               percent_scrolled: milestone
             });
-            trackEvent("cozy_scroll_" + milestone, commonParams());
+
+            trackEvent("cozy_scroll_" + milestone, {
+              ...commonParams(),
+              percent_scrolled: milestone
+            });
           }
         });
       }
@@ -2175,7 +1881,11 @@
             ...commonParams(),
             seconds_engaged: seconds
           });
-          trackEvent("cozy_engaged_" + seconds + "s", commonParams());
+
+          trackEvent("cozy_engaged_" + seconds + "s", {
+            ...commonParams(),
+            seconds_engaged: seconds
+          });
         }, seconds * 1000);
       });
     })();
