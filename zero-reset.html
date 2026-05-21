@@ -908,21 +908,28 @@
 
         <div class="hero-inner">
           <picture class="hero-picture">
-            <source
-              srcset="/images/zero-reset/zero-reset-hero-mobile.webp"
-              media="(max-width: 700px) and (orientation: portrait)"
-              type="image/webp"
-            />
-            <img
-              src="/images/zero-reset/zero-reset-hero-desktop.webp"
-              alt="Zero Reset discipline streak tracker hero with no excuses message and streak phone screen"
-              width="3840"
-              height="2160"
-              fetchpriority="high"
-              decoding="async"
-              onerror="this.onerror=null;this.src='/images/zero-reset/zero-reset-hero-desktop.webp';"
-            />
-          </picture>
+  <source
+    srcset="/images/zero-reset/zero-reset-hero-mobile.webp"
+    media="(max-width: 700px) and (orientation: portrait)"
+    type="image/webp"
+  />
+
+  <source
+    srcset="/images/zero-reset/zero-reset-hero-tablet.webp"
+    media="(min-width: 701px) and (max-width: 1024px) and (orientation: portrait)"
+    type="image/webp"
+  />
+
+  <img
+    src="/images/zero-reset/zero-reset-hero-desktop.webp"
+    alt="Zero Reset discipline streak tracker hero with no excuses message and streak phone screen"
+    width="3840"
+    height="2160"
+    fetchpriority="high"
+    decoding="async"
+    onerror="this.onerror=null;this.src='/images/zero-reset/zero-reset-hero-desktop.webp';"
+  />
+</picture>
 
           <div class="hero-overlay">
             <a
