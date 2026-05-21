@@ -22,7 +22,6 @@
   <meta name="author" content="Softice Innovations Labs LLC" />
   <meta name="theme-color" content="#050505" />
 
-  <!-- Open Graph -->
   <meta property="og:title" content="Zero Reset – Discipline Streak Tracker App" />
   <meta
     property="og:description"
@@ -33,7 +32,6 @@
   <meta property="og:image" content="https://softiceinnovationslabs.com/images/zero-reset/zero-reset-og.webp" />
   <meta property="og:site_name" content="Softice Innovations Labs" />
 
-  <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Zero Reset – Discipline Streak Tracker App" />
   <meta
@@ -42,7 +40,6 @@
   />
   <meta name="twitter:image" content="https://softiceinnovationslabs.com/images/zero-reset/zero-reset-og.webp" />
 
-  <!-- Performance -->
   <link rel="preload" as="image" href="/images/zero-reset/zero-reset-hero-desktop.webp" media="(min-width: 1025px)" />
   <link rel="preload" as="image" href="/images/zero-reset/zero-reset-hero-tablet.webp" media="(min-width: 701px) and (max-width: 1024px)" />
   <link rel="preload" as="image" href="/images/zero-reset/zero-reset-hero-mobile.webp" media="(max-width: 700px)" />
@@ -51,14 +48,10 @@
   <style>
     :root {
       --bg: #050505;
-      --bg-2: #090909;
-      --panel: rgba(16, 16, 18, 0.84);
       --red: #ff102f;
       --red-2: #d9001a;
-      --red-3: #7b000d;
       --white: #ffffff;
       --muted: #b9b9bd;
-      --muted-2: #77777f;
       --border: rgba(255, 255, 255, 0.11);
       --border-red: rgba(255, 16, 47, 0.42);
       --shadow-red: 0 0 46px rgba(255, 16, 47, 0.28);
@@ -246,51 +239,53 @@
       transform: translateY(-2px);
     }
 
-    /* Responsive image hero */
+    /* HERO — full image visible, no crop */
     .image-hero {
       position: relative;
       overflow: hidden;
-      background-color: #020202;
+      background: #020202;
       border-bottom: 1px solid rgba(255,255,255,.08);
-      min-height: 620px;
     }
 
     .image-hero::after {
       content: "";
       position: absolute;
       inset: auto 0 0 0;
-      height: 130px;
+      height: 100px;
       background: linear-gradient(to top, #050505, transparent);
       pointer-events: none;
       z-index: 2;
+    }
+
+    .hero-inner,
+    .rule-inner {
+      position: relative;
+      width: min(100%, 1920px);
+      margin: 0 auto;
+      background: #020202;
     }
 
     .hero-picture,
     .rule-picture {
       display: block;
       width: 100%;
-      height: 100%;
       background: #020202;
     }
 
     .hero-picture img,
     .rule-picture img {
       width: 100%;
+      height: auto;
       display: block;
+      object-fit: initial;
+      object-position: initial;
       background: #020202;
-    }
-
-    .hero-picture img {
-      height: min(72vh, 760px);
-      min-height: 560px;
-      object-fit: cover;
-      object-position: center;
     }
 
     .hero-overlay {
       position: absolute;
-      left: max(32px, calc((100vw - var(--max)) / 2));
-      bottom: clamp(24px, 4vw, 46px);
+      left: max(24px, 7vw);
+      bottom: clamp(22px, 4vw, 58px);
       z-index: 5;
       display: flex;
       gap: 16px;
@@ -405,7 +400,7 @@
       font-size: .93rem;
     }
 
-    /* Back-to-Zero image section */
+    /* Back-to-Zero — full image visible, no crop */
     .rule-image-section {
       position: relative;
       overflow: hidden;
@@ -426,21 +421,14 @@
 
     .rule-image-section::before {
       top: 0;
-      height: 80px;
+      height: 70px;
       background: linear-gradient(to bottom, #050505, transparent);
     }
 
     .rule-image-section::after {
       bottom: 0;
-      height: 90px;
+      height: 80px;
       background: linear-gradient(to top, #050505, transparent);
-    }
-
-    .rule-picture img {
-      height: min(58vh, 620px);
-      min-height: 430px;
-      object-fit: cover;
-      object-position: center;
     }
 
     .stats-section {
@@ -630,24 +618,10 @@
         display: none;
       }
 
-      .hero-picture img {
-        height: min(78vh, 820px);
-        min-height: 620px;
-        object-fit: contain;
-        object-position: center top;
-      }
-
-      .rule-picture img {
-        height: min(72vh, 760px);
-        min-height: 580px;
-        object-fit: contain;
-        object-position: center top;
-      }
-
       .hero-overlay {
         left: 24px;
         right: 24px;
-        bottom: 30px;
+        bottom: 24px;
       }
 
       .features-grid {
@@ -684,25 +658,16 @@
         font-size: .78rem;
       }
 
-      .hero-picture img {
-        height: min(74vh, 720px);
-        min-height: 560px;
-        object-fit: contain;
-        object-position: center top;
-      }
-
-      .rule-picture img {
-        height: min(70vh, 700px);
-        min-height: 560px;
-        object-fit: contain;
-        object-position: center top;
-      }
-
       .hero-overlay {
-        left: 16px;
-        right: 16px;
-        bottom: 16px;
+        position: relative;
+        left: auto;
+        right: auto;
+        bottom: auto;
+        padding: 18px 16px 22px;
         justify-content: center;
+        background:
+          radial-gradient(circle at 50% 0%, rgba(255, 16, 47, .16), transparent 55%),
+          #050505;
       }
 
       .hero-overlay .btn {
@@ -734,7 +699,6 @@
     }
   </style>
 
-  <!-- Premium GA4 Tracking -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-CE1N5QBRTE"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -760,7 +724,6 @@
     });
   </script>
 
-  <!-- Premium SEO Schema -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -941,42 +904,44 @@
           </p>
         </div>
 
-        <picture class="hero-picture">
-          <source
-            srcset="/images/zero-reset/zero-reset-hero-mobile.webp"
-            media="(max-width: 700px)"
-            type="image/webp"
-          />
-          <source
-            srcset="/images/zero-reset/zero-reset-hero-tablet.webp"
-            media="(max-width: 1024px)"
-            type="image/webp"
-          />
-          <img
-            src="/images/zero-reset/zero-reset-hero-desktop.webp"
-            alt="Zero Reset discipline streak tracker hero with no excuses message and streak phone screen"
-            width="3840"
-            height="2160"
-            fetchpriority="high"
-            decoding="async"
-            onerror="this.onerror=null;this.src='/images/zero-reset/zero-reset-hero-desktop.webp';"
-          />
-        </picture>
+        <div class="hero-inner">
+          <picture class="hero-picture">
+            <source
+              srcset="/images/zero-reset/zero-reset-hero-mobile.webp"
+              media="(max-width: 700px)"
+              type="image/webp"
+            />
+            <source
+              srcset="/images/zero-reset/zero-reset-hero-tablet.webp"
+              media="(max-width: 1024px)"
+              type="image/webp"
+            />
+            <img
+              src="/images/zero-reset/zero-reset-hero-desktop.webp"
+              alt="Zero Reset discipline streak tracker hero with no excuses message and streak phone screen"
+              width="3840"
+              height="2160"
+              fetchpriority="high"
+              decoding="async"
+              onerror="this.onerror=null;this.src='/images/zero-reset/zero-reset-hero-desktop.webp';"
+            />
+          </picture>
 
-        <div class="hero-overlay">
-          <a
-            class="btn btn-primary js-download"
-            href="/play/"
-            data-location="hero"
-            aria-label="Download Zero Reset now"
-          >
-            Download Now
-            <span aria-hidden="true">▸</span>
-          </a>
+          <div class="hero-overlay">
+            <a
+              class="btn btn-primary js-download"
+              href="/play/"
+              data-location="hero"
+              aria-label="Download Zero Reset now"
+            >
+              Download Now
+              <span aria-hidden="true">▸</span>
+            </a>
 
-          <a class="btn btn-dark" href="#features">
-            See Features
-          </a>
+            <a class="btn btn-dark" href="#features">
+              See Features
+            </a>
+          </div>
         </div>
       </section>
 
@@ -1052,27 +1017,29 @@
           </p>
         </div>
 
-        <picture class="rule-picture">
-          <source
-            srcset="/images/zero-reset/zero-reset-back-to-zero-mobile.webp"
-            media="(max-width: 700px)"
-            type="image/webp"
-          />
-          <source
-            srcset="/images/zero-reset/zero-reset-back-to-zero-tablet.webp"
-            media="(max-width: 1024px)"
-            type="image/webp"
-          />
-          <img
-            src="/images/zero-reset/zero-reset-back-to-zero-desktop.webp"
-            alt="Zero Reset streak lost screen showing miss a day back to zero message and chained phone with 0 days"
-            width="3840"
-            height="2160"
-            loading="lazy"
-            decoding="async"
-            onerror="this.onerror=null;this.src='/images/zero-reset/zero-reset-back-to-zero-desktop.webp';"
-          />
-        </picture>
+        <div class="rule-inner">
+          <picture class="rule-picture">
+            <source
+              srcset="/images/zero-reset/zero-reset-back-to-zero-mobile.webp"
+              media="(max-width: 700px)"
+              type="image/webp"
+            />
+            <source
+              srcset="/images/zero-reset/zero-reset-back-to-zero-tablet.webp"
+              media="(max-width: 1024px)"
+              type="image/webp"
+            />
+            <img
+              src="/images/zero-reset/zero-reset-back-to-zero-desktop.webp"
+              alt="Zero Reset streak lost screen showing miss a day back to zero message and chained phone with 0 days"
+              width="3840"
+              height="2160"
+              loading="lazy"
+              decoding="async"
+              onerror="this.onerror=null;this.src='/images/zero-reset/zero-reset-back-to-zero-desktop.webp';"
+            />
+          </picture>
+        </div>
       </section>
 
       <section class="section stats-section" id="why-it-works" data-section="why_it_works">
