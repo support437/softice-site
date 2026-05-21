@@ -40,9 +40,9 @@
   />
   <meta name="twitter:image" content="https://softiceinnovationslabs.com/images/zero-reset/zero-reset-og.webp" />
 
-  <link rel="preload" as="image" href="/images/zero-reset/zero-reset-hero-desktop.webp" media="(min-width: 1025px)" />
-  <link rel="preload" as="image" href="/images/zero-reset/zero-reset-hero-tablet.webp" media="(min-width: 701px) and (max-width: 1024px)" />
-  <link rel="preload" as="image" href="/images/zero-reset/zero-reset-hero-mobile.webp" media="(max-width: 700px)" />
+  <!-- Performance -->
+  <link rel="preload" as="image" href="/images/zero-reset/zero-reset-hero-desktop.webp" media="(min-width: 701px)" />
+  <link rel="preload" as="image" href="/images/zero-reset/zero-reset-hero-mobile.webp" media="(max-width: 700px) and (orientation: portrait)" />
   <link rel="preload" as="image" href="/images/zero-reset/zero-reset-logo-mark.webp" />
 
   <style>
@@ -239,7 +239,7 @@
       transform: translateY(-2px);
     }
 
-    /* HERO — full image visible, no crop */
+    /* HERO — no crop, tablet uses desktop fallback */
     .image-hero {
       position: relative;
       overflow: hidden;
@@ -400,7 +400,7 @@
       font-size: .93rem;
     }
 
-    /* Back-to-Zero — full image visible, no crop */
+    /* Back-to-Zero — keep responsive setup because it works */
     .rule-image-section {
       position: relative;
       overflow: hidden;
@@ -699,6 +699,7 @@
     }
   </style>
 
+  <!-- Premium GA4 Tracking -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-CE1N5QBRTE"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -724,6 +725,7 @@
     });
   </script>
 
+  <!-- Premium SEO Schema -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -908,12 +910,7 @@
           <picture class="hero-picture">
             <source
               srcset="/images/zero-reset/zero-reset-hero-mobile.webp"
-              media="(max-width: 700px)"
-              type="image/webp"
-            />
-            <source
-              srcset="/images/zero-reset/zero-reset-hero-tablet.webp"
-              media="(max-width: 1024px)"
+              media="(max-width: 700px) and (orientation: portrait)"
               type="image/webp"
             />
             <img
