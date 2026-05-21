@@ -43,8 +43,9 @@
   <meta name="twitter:image" content="https://softiceinnovationslabs.com/images/zero-reset/zero-reset-og.webp" />
 
   <!-- Performance -->
-  <link rel="preload" as="image" href="/images/zero-reset/zero-reset-hero-bg.webp" />
-  <link rel="preload" as="image" href="/images/zero-reset/zero-reset-hero-phone.webp" />
+  <link rel="preload" as="image" href="/images/zero-reset/zero-reset-hero-desktop.webp" media="(min-width: 981px)" />
+  <link rel="preload" as="image" href="/images/zero-reset/zero-reset-hero-tablet.webp" media="(min-width: 641px) and (max-width: 980px)" />
+  <link rel="preload" as="image" href="/images/zero-reset/zero-reset-hero-mobile.webp" media="(max-width: 640px)" />
   <link rel="preload" as="image" href="/images/zero-reset/zero-reset-logo-mark.webp" />
 
   <style>
@@ -52,7 +53,6 @@
       --bg: #050505;
       --bg-2: #090909;
       --panel: rgba(16, 16, 18, 0.84);
-      --panel-strong: rgba(22, 22, 25, 0.94);
       --red: #ff102f;
       --red-2: #d9001a;
       --red-3: #7b000d;
@@ -65,7 +65,6 @@
       --max: 1180px;
       --radius-lg: 28px;
       --radius-md: 20px;
-      --radius-sm: 14px;
       --font-display: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
       --font-body: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     }
@@ -123,6 +122,18 @@
     .shell {
       width: min(var(--max), calc(100% - 40px));
       margin: 0 auto;
+    }
+
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
     }
 
     .top-strip {
@@ -235,198 +246,46 @@
       transform: translateY(-2px);
     }
 
-    .hero {
+    /* New responsive image hero */
+    .image-hero {
       position: relative;
-      min-height: 760px;
-      display: flex;
-      align-items: center;
       overflow: hidden;
+      background: #020202;
       border-bottom: 1px solid rgba(255,255,255,.08);
     }
 
-    .hero::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background:
-        linear-gradient(90deg, rgba(0,0,0,.94) 0%, rgba(0,0,0,.72) 43%, rgba(0,0,0,.32) 100%),
-        url("/images/zero-reset/zero-reset-hero-bg.webp") center/cover no-repeat;
-      opacity: .98;
-    }
-
-    .hero::after {
+    .image-hero::after {
       content: "";
       position: absolute;
       inset: auto 0 0 0;
-      height: 230px;
+      height: 150px;
       background: linear-gradient(to top, #050505, transparent);
       pointer-events: none;
-    }
-
-    .hero-grid {
-      position: relative;
       z-index: 2;
-      display: grid;
-      grid-template-columns: 1.05fr .95fr;
-      align-items: center;
-      gap: 28px;
-      padding: 70px 0 78px;
     }
 
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      color: var(--red);
-      font-size: .82rem;
-      font-weight: 950;
-      letter-spacing: .16em;
-      text-transform: uppercase;
-      margin-bottom: 18px;
-    }
-
-    .eyebrow::before {
-      content: "";
-      width: 34px;
-      height: 2px;
-      background: var(--red);
-      box-shadow: 0 0 18px rgba(255,16,47,.7);
-    }
-
-    h1 {
-      margin: 0;
-      font-family: var(--font-display);
-      font-size: clamp(4.3rem, 10vw, 8.9rem);
-      line-height: .83;
-      letter-spacing: .015em;
-      text-transform: uppercase;
-      text-wrap: balance;
-      text-shadow: 0 10px 34px rgba(0,0,0,.9);
-    }
-
-    .distressed {
-      color: #fff;
-      text-shadow:
-        0 1px 0 rgba(0,0,0,.9),
-        0 0 18px rgba(255,255,255,.08);
-    }
-
-    .red-line {
-      color: var(--red);
+    .hero-picture,
+    .rule-picture {
       display: block;
-      text-shadow: 0 0 26px rgba(255,16,47,.32);
+      width: 100%;
     }
 
-    .hero-copy {
-      margin: 24px 0 0;
-      color: rgba(255,255,255,.9);
-      max-width: 590px;
-      font-size: clamp(1.02rem, 1.5vw, 1.24rem);
-      line-height: 1.62;
-      font-weight: 700;
+    .hero-picture img,
+    .rule-picture img {
+      width: 100%;
+      height: auto;
+      display: block;
     }
 
-    .hero-actions {
+    .hero-overlay {
+      position: absolute;
+      left: max(32px, calc((100vw - var(--max)) / 2));
+      bottom: clamp(34px, 5vw, 72px);
+      z-index: 5;
       display: flex;
+      gap: 16px;
       flex-wrap: wrap;
       align-items: center;
-      gap: 16px;
-      margin-top: 34px;
-    }
-
-    .social-proof {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      margin-top: 28px;
-      color: rgba(255,255,255,.86);
-      font-size: .9rem;
-      font-weight: 750;
-    }
-
-    .avatar-row {
-      display: flex;
-      align-items: center;
-    }
-
-    .avatar-row img {
-      width: 38px;
-      height: 38px;
-      object-fit: cover;
-      border-radius: 999px;
-      border: 2px solid #080808;
-      margin-left: -10px;
-      box-shadow: 0 0 0 1px rgba(255,255,255,.16);
-    }
-
-    .avatar-row img:first-child {
-      margin-left: 0;
-    }
-
-    .stars {
-      color: #ffcd3c;
-      letter-spacing: .1em;
-      font-size: .96rem;
-    }
-
-    .phone-wrap {
-      position: relative;
-      min-height: 640px;
-      display: grid;
-      place-items: center;
-    }
-
-    .phone-glow {
-      position: absolute;
-      width: min(540px, 86vw);
-      aspect-ratio: 1;
-      border-radius: 999px;
-      background:
-        radial-gradient(circle, rgba(255, 16, 47, .34) 0%, rgba(255, 16, 47, .12) 36%, transparent 70%);
-      filter: blur(6px);
-      transform: translate(34px, 42px);
-    }
-
-    .chain-left {
-      position: absolute;
-      left: -26px;
-      bottom: 70px;
-      width: min(390px, 64vw);
-      opacity: .86;
-      filter: drop-shadow(0 18px 28px rgba(0,0,0,.8));
-      transform: rotate(-9deg);
-    }
-
-    .hero-phone {
-      position: relative;
-      z-index: 2;
-      width: min(390px, 78vw);
-      filter:
-        drop-shadow(0 34px 54px rgba(0,0,0,.94))
-        drop-shadow(0 0 38px rgba(255,16,47,.22));
-      transform: rotate(5deg);
-    }
-
-    .floating-flame {
-      position: absolute;
-      right: 38px;
-      bottom: 84px;
-      width: 128px;
-      opacity: .96;
-      filter: drop-shadow(0 0 28px rgba(255,16,47,.58));
-      animation: pulseFire 2.7s ease-in-out infinite;
-    }
-
-    @keyframes pulseFire {
-      0%, 100% {
-        transform: translateY(0) scale(1);
-        opacity: .92;
-      }
-
-      50% {
-        transform: translateY(-8px) scale(1.04);
-        opacity: 1;
-      }
     }
 
     .section {
@@ -536,72 +395,35 @@
       font-size: .93rem;
     }
 
-    .rule-section {
+    /* New responsive Back to Zero image section */
+    .rule-image-section {
       position: relative;
       overflow: hidden;
+      background: #020202;
       border-top: 1px solid rgba(255,255,255,.08);
       border-bottom: 1px solid rgba(255,255,255,.08);
-      background:
-        linear-gradient(90deg, rgba(0,0,0,.9), rgba(0,0,0,.62)),
-        url("/images/zero-reset/zero-reset-back-to-zero-bg.webp") center/cover no-repeat;
     }
 
-    .rule-grid {
-      display: grid;
-      grid-template-columns: .9fr 1.1fr;
-      align-items: center;
-      gap: 32px;
-      min-height: 560px;
-    }
-
-    .rule-copy {
-      position: relative;
-      z-index: 2;
-      padding: 46px 0;
-    }
-
-    .rule-copy h2 {
-      max-width: 540px;
-    }
-
-    .rule-copy h2 .red {
-      color: var(--red);
-      display: block;
-    }
-
-    .rule-copy p {
-      color: rgba(255,255,255,.9);
-      font-size: 1.15rem;
-      line-height: 1.74;
-      max-width: 520px;
-      font-weight: 750;
-      margin: 24px 0 0;
-    }
-
-    .rule-visual {
-      position: relative;
-      min-height: 520px;
-      display: grid;
-      place-items: center;
-    }
-
-    .lost-phone {
-      width: min(390px, 78vw);
-      position: relative;
-      z-index: 3;
-      filter:
-        drop-shadow(0 32px 52px rgba(0,0,0,.92))
-        drop-shadow(0 0 34px rgba(255,16,47,.22));
-      transform: rotate(-3deg);
-    }
-
-    .rule-chain {
+    .rule-image-section::before,
+    .rule-image-section::after {
+      content: "";
       position: absolute;
-      inset: auto 0 36px auto;
-      width: min(620px, 92vw);
-      opacity: .88;
+      left: 0;
+      right: 0;
+      pointer-events: none;
       z-index: 2;
-      filter: drop-shadow(0 22px 34px rgba(0,0,0,.86));
+    }
+
+    .rule-image-section::before {
+      top: 0;
+      height: 90px;
+      background: linear-gradient(to bottom, #050505, transparent);
+    }
+
+    .rule-image-section::after {
+      bottom: 0;
+      height: 120px;
+      background: linear-gradient(to top, #050505, transparent);
     }
 
     .stats-section {
@@ -791,34 +613,13 @@
         display: none;
       }
 
-      .hero {
-        min-height: auto;
-      }
-
-      .hero-grid {
-        grid-template-columns: 1fr;
-        padding: 54px 0 74px;
-      }
-
-      .phone-wrap {
-        min-height: 520px;
-        order: -1;
-      }
-
-      .hero-copy {
-        max-width: 680px;
+      .hero-overlay {
+        left: 24px;
+        bottom: 36px;
       }
 
       .features-grid {
         grid-template-columns: repeat(2, 1fr);
-      }
-
-      .rule-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .rule-visual {
-        min-height: 440px;
       }
 
       .stats-grid,
@@ -847,38 +648,15 @@
         font-size: .78rem;
       }
 
-      h1 {
-        font-size: clamp(3.75rem, 17vw, 5.6rem);
+      .hero-overlay {
+        left: 16px;
+        right: 16px;
+        bottom: 22px;
+        justify-content: center;
       }
 
-      .hero-grid {
-        padding-top: 34px;
-      }
-
-      .hero-actions .btn {
+      .hero-overlay .btn {
         width: 100%;
-      }
-
-      .social-proof {
-        align-items: flex-start;
-      }
-
-      .phone-wrap {
-        min-height: 455px;
-      }
-
-      .hero-phone {
-        width: min(315px, 78vw);
-      }
-
-      .chain-left {
-        width: min(310px, 76vw);
-        left: -34px;
-      }
-
-      .floating-flame {
-        width: 92px;
-        right: 18px;
       }
 
       .features-grid {
@@ -887,14 +665,6 @@
 
       .section {
         padding: 66px 0;
-      }
-
-      .rule-copy {
-        padding-bottom: 0;
-      }
-
-      .rule-copy p {
-        font-size: 1rem;
       }
 
       .floating-download {
@@ -1107,78 +877,53 @@
     </header>
 
     <main>
-      <section class="hero" id="home" data-section="hero">
-        <div class="shell hero-grid">
-          <div class="hero-copy-wrap">
-            <div class="eyebrow">Discipline Streak Tracker</div>
+      <section class="image-hero" id="home" data-section="hero">
+        <div class="sr-only">
+          <h1>Zero Reset – Discipline Streak Tracker App</h1>
+          <p>
+            Zero Reset is a no-excuses discipline streak tracker app built for daily accountability,
+            habit streaks, reminders, and reset-to-zero motivation. Check in every day, protect
+            your streak, and build discipline one day at a time.
+          </p>
+        </div>
 
-            <h1>
-              <span class="distressed">Discipline.</span><br />
-              <span class="distressed">No Excuses.</span>
-              <span class="red-line">Zero Reset.</span>
-            </h1>
+        <picture class="hero-picture">
+          <source
+            srcset="/images/zero-reset/zero-reset-hero-mobile.webp"
+            media="(max-width: 640px)"
+            width="1080"
+            height="1920"
+          />
+          <source
+            srcset="/images/zero-reset/zero-reset-hero-tablet.webp"
+            media="(max-width: 980px)"
+            width="1536"
+            height="2048"
+          />
+          <img
+            src="/images/zero-reset/zero-reset-hero-desktop.webp"
+            alt="Zero Reset discipline streak tracker hero with no excuses message and streak phone screen"
+            width="3840"
+            height="2160"
+            fetchpriority="high"
+            decoding="async"
+          />
+        </picture>
 
-            <p class="hero-copy">
-              Zero Reset is a no-excuses discipline streak tracker app built for daily accountability,
-              habit streaks, reminders, and reset-to-zero motivation. Check in every day, protect
-              your streak, and build discipline one day at a time.
-            </p>
+        <div class="hero-overlay">
+          <a
+            class="btn btn-primary js-download"
+            href="/play/"
+            data-location="hero"
+            aria-label="Download Zero Reset now"
+          >
+            Download Now
+            <span aria-hidden="true">▸</span>
+          </a>
 
-            <div class="hero-actions">
-              <a
-                class="btn btn-primary js-download"
-                href="/play/"
-                data-location="hero"
-                aria-label="Download Zero Reset now"
-              >
-                Download Now
-                <span aria-hidden="true">▸</span>
-              </a>
-
-              <a class="btn btn-dark" href="#features">
-                See Features
-              </a>
-            </div>
-
-            <div class="social-proof" aria-label="App rating and trust signal">
-              <div class="avatar-row" aria-hidden="true">
-                <img src="/images/zero-reset/avatar-01.webp" alt="" width="76" height="76" />
-                <img src="/images/zero-reset/avatar-02.webp" alt="" width="76" height="76" />
-                <img src="/images/zero-reset/avatar-03.webp" alt="" width="76" height="76" />
-                <img src="/images/zero-reset/avatar-04.webp" alt="" width="76" height="76" />
-              </div>
-
-              <div>
-                <div class="stars">★★★★★ <strong>4.9</strong></div>
-                <div>Built for discipline, streaks, and accountability.</div>
-              </div>
-            </div>
-          </div>
-
-          <div class="phone-wrap" aria-hidden="true">
-            <div class="phone-glow"></div>
-            <img
-              class="chain-left"
-              src="/images/zero-reset/zero-reset-chain.webp"
-              alt=""
-              width="780"
-              height="420"
-            />
-            <img
-              class="hero-phone"
-              src="/images/zero-reset/zero-reset-hero-phone.webp"
-              alt="Zero Reset app streak screen showing 12 days"
-              width="760"
-              height="1120"
-            />
-            <img
-              class="floating-flame"
-              src="/images/zero-reset/zero-reset-flame.webp"
-              alt=""
-              width="256"
-              height="256"
-            />
-          </div>
+          <a class="btn btn-dark" href="#features">
+            See Features
+          </a>
         </div>
       </section>
 
@@ -1244,38 +989,38 @@
         </div>
       </section>
 
-      <section class="rule-section" id="rule" data-section="back_to_zero_rule">
-        <div class="shell rule-grid">
-          <div class="rule-copy">
-            <div class="section-kicker">The rule</div>
-            <h2>
-              <span class="red">Miss a day?</span>
-              Back to zero.
-            </h2>
-            <p>
-              That is the pressure. That is the consequence. That is how the streak
-              becomes something you protect. Zero Reset turns daily accountability into
-              a simple discipline challenge: don’t break the streak.
-            </p>
-          </div>
-
-          <div class="rule-visual" aria-hidden="true">
-            <img
-              class="rule-chain"
-              src="/images/zero-reset/zero-reset-chain-wide.webp"
-              alt=""
-              width="1100"
-              height="520"
-            />
-            <img
-              class="lost-phone"
-              src="/images/zero-reset/zero-reset-lost-phone.webp"
-              alt="Zero Reset app screen showing streak lost and 0 days"
-              width="760"
-              height="1120"
-            />
-          </div>
+      <section class="rule-image-section" id="rule" data-section="back_to_zero_rule">
+        <div class="sr-only">
+          <h2>Miss a day? Back to zero.</h2>
+          <p>
+            That is the pressure. That is the consequence. That is how the streak becomes something
+            you protect. Zero Reset turns daily accountability into a simple discipline challenge:
+            don’t break the streak.
+          </p>
         </div>
+
+        <picture class="rule-picture">
+          <source
+            srcset="/images/zero-reset/zero-reset-back-to-zero-mobile.webp"
+            media="(max-width: 640px)"
+            width="1080"
+            height="1920"
+          />
+          <source
+            srcset="/images/zero-reset/zero-reset-back-to-zero-tablet.webp"
+            media="(max-width: 980px)"
+            width="1536"
+            height="2048"
+          />
+          <img
+            src="/images/zero-reset/zero-reset-back-to-zero-desktop.webp"
+            alt="Zero Reset streak lost screen showing miss a day back to zero message and chained phone with 0 days"
+            width="3840"
+            height="2160"
+            loading="lazy"
+            decoding="async"
+          />
+        </picture>
       </section>
 
       <section class="section stats-section" id="why-it-works" data-section="why_it_works">
