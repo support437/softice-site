@@ -43,9 +43,9 @@
   <meta name="twitter:image" content="https://softiceinnovationslabs.com/images/zero-reset/zero-reset-og.webp" />
 
   <!-- Performance -->
-  <link rel="preload" as="image" href="/images/zero-reset/zero-reset-hero-desktop.webp" media="(min-width: 1025px)" />
-  <link rel="preload" as="image" href="/images/zero-reset/zero-reset-hero-tablet.webp" media="(min-width: 701px) and (max-width: 1024px)" />
-  <link rel="preload" as="image" href="/images/zero-reset/zero-reset-hero-mobile.webp" media="(max-width: 700px)" />
+  <link rel="preload" as="image" href="/images/zero-reset/zero-reset-hero-desktop.webp" media="(min-width: 981px)" />
+  <link rel="preload" as="image" href="/images/zero-reset/zero-reset-hero-tablet.webp" media="(min-width: 641px) and (max-width: 980px)" />
+  <link rel="preload" as="image" href="/images/zero-reset/zero-reset-hero-mobile.webp" media="(max-width: 640px)" />
   <link rel="preload" as="image" href="/images/zero-reset/zero-reset-logo-mark.webp" />
 
   <style>
@@ -246,17 +246,12 @@
       transform: translateY(-2px);
     }
 
-    /* Responsive image hero */
+    /* New responsive image hero */
     .image-hero {
       position: relative;
       overflow: hidden;
-      background-color: #020202;
-      background-image: url("/images/zero-reset/zero-reset-hero-desktop.webp");
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
+      background: #020202;
       border-bottom: 1px solid rgba(255,255,255,.08);
-      min-height: clamp(560px, 72vh, 820px);
     }
 
     .image-hero::after {
@@ -273,25 +268,19 @@
     .rule-picture {
       display: block;
       width: 100%;
-      height: 100%;
     }
 
     .hero-picture img,
     .rule-picture img {
       width: 100%;
+      height: auto;
       display: block;
-      object-fit: cover;
-      object-position: center;
-    }
-
-    .image-hero .hero-picture img {
-      height: clamp(560px, 72vh, 820px);
     }
 
     .hero-overlay {
       position: absolute;
       left: max(32px, calc((100vw - var(--max)) / 2));
-      bottom: clamp(28px, 4vw, 54px);
+      bottom: clamp(34px, 5vw, 72px);
       z-index: 5;
       display: flex;
       gap: 16px;
@@ -406,15 +395,11 @@
       font-size: .93rem;
     }
 
-    /* Responsive Back-to-Zero image section */
+    /* New responsive Back to Zero image section */
     .rule-image-section {
       position: relative;
       overflow: hidden;
-      background-color: #020202;
-      background-image: url("/images/zero-reset/zero-reset-back-to-zero-desktop.webp");
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
+      background: #020202;
       border-top: 1px solid rgba(255,255,255,.08);
       border-bottom: 1px solid rgba(255,255,255,.08);
     }
@@ -439,10 +424,6 @@
       bottom: 0;
       height: 120px;
       background: linear-gradient(to top, #050505, transparent);
-    }
-
-    .rule-image-section .rule-picture img {
-      height: clamp(430px, 56vh, 650px);
     }
 
     .stats-section {
@@ -622,7 +603,7 @@
       box-shadow: 0 18px 44px rgba(255,16,47,.44);
     }
 
-    @media (max-width: 1024px) {
+    @media (max-width: 980px) {
       .nav {
         height: auto;
         padding: 18px 0;
@@ -632,31 +613,9 @@
         display: none;
       }
 
-      .image-hero {
-        min-height: clamp(700px, 86vh, 940px);
-        background-image: url("/images/zero-reset/zero-reset-hero-tablet.webp");
-        background-position: center top;
-      }
-
-      .image-hero .hero-picture img {
-        height: clamp(700px, 86vh, 940px);
-        object-position: center top;
-      }
-
-      .rule-image-section {
-        background-image: url("/images/zero-reset/zero-reset-back-to-zero-tablet.webp");
-        background-position: center top;
-      }
-
-      .rule-image-section .rule-picture img {
-        height: clamp(620px, 76vh, 840px);
-        object-position: center top;
-      }
-
       .hero-overlay {
         left: 24px;
-        right: 24px;
-        bottom: 34px;
+        bottom: 36px;
       }
 
       .features-grid {
@@ -669,7 +628,7 @@
       }
     }
 
-    @media (max-width: 700px) {
+    @media (max-width: 640px) {
       .shell {
         width: min(100% - 28px, var(--max));
       }
@@ -689,31 +648,10 @@
         font-size: .78rem;
       }
 
-      .image-hero {
-        min-height: clamp(640px, 88vh, 820px);
-        background-image: url("/images/zero-reset/zero-reset-hero-mobile.webp");
-        background-position: center top;
-      }
-
-      .image-hero .hero-picture img {
-        height: clamp(640px, 88vh, 820px);
-        object-position: center top;
-      }
-
-      .rule-image-section {
-        background-image: url("/images/zero-reset/zero-reset-back-to-zero-mobile.webp");
-        background-position: center top;
-      }
-
-      .rule-image-section .rule-picture img {
-        height: clamp(600px, 78vh, 760px);
-        object-position: center top;
-      }
-
       .hero-overlay {
         left: 16px;
         right: 16px;
-        bottom: 20px;
+        bottom: 22px;
         justify-content: center;
       }
 
@@ -952,16 +890,17 @@
         <picture class="hero-picture">
           <source
             srcset="/images/zero-reset/zero-reset-hero-mobile.webp"
-            media="(max-width: 700px)"
-            type="image/webp"
+            media="(max-width: 640px)"
+            width="1080"
+            height="1920"
           />
           <source
             srcset="/images/zero-reset/zero-reset-hero-tablet.webp"
-            media="(max-width: 1024px)"
-            type="image/webp"
+            media="(max-width: 980px)"
+            width="1536"
+            height="2048"
           />
           <img
-            class="hero-responsive-img"
             src="/images/zero-reset/zero-reset-hero-desktop.webp"
             alt="Zero Reset discipline streak tracker hero with no excuses message and streak phone screen"
             width="3840"
@@ -1063,13 +1002,15 @@
         <picture class="rule-picture">
           <source
             srcset="/images/zero-reset/zero-reset-back-to-zero-mobile.webp"
-            media="(max-width: 700px)"
-            type="image/webp"
+            media="(max-width: 640px)"
+            width="1080"
+            height="1920"
           />
           <source
             srcset="/images/zero-reset/zero-reset-back-to-zero-tablet.webp"
-            media="(max-width: 1024px)"
-            type="image/webp"
+            media="(max-width: 980px)"
+            width="1536"
+            height="2048"
           />
           <img
             src="/images/zero-reset/zero-reset-back-to-zero-desktop.webp"
