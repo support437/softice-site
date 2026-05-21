@@ -138,7 +138,7 @@
 
     .top-strip {
       border-bottom: 1px solid rgba(255,255,255,.1);
-      background: rgba(0,0,0,.84);
+      background: rgba(0,0,0,.9);
       backdrop-filter: blur(20px);
       position: sticky;
       top: 0;
@@ -251,19 +251,15 @@
       position: relative;
       overflow: hidden;
       background-color: #020202;
-      background-image: url("/images/zero-reset/zero-reset-hero-desktop.webp");
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
       border-bottom: 1px solid rgba(255,255,255,.08);
-      min-height: clamp(560px, 72vh, 820px);
+      min-height: 620px;
     }
 
     .image-hero::after {
       content: "";
       position: absolute;
       inset: auto 0 0 0;
-      height: 150px;
+      height: 130px;
       background: linear-gradient(to top, #050505, transparent);
       pointer-events: none;
       z-index: 2;
@@ -274,24 +270,27 @@
       display: block;
       width: 100%;
       height: 100%;
+      background: #020202;
     }
 
     .hero-picture img,
     .rule-picture img {
       width: 100%;
       display: block;
-      object-fit: cover;
-      object-position: center;
+      background: #020202;
     }
 
-    .image-hero .hero-picture img {
-      height: clamp(560px, 72vh, 820px);
+    .hero-picture img {
+      height: min(72vh, 760px);
+      min-height: 560px;
+      object-fit: cover;
+      object-position: center;
     }
 
     .hero-overlay {
       position: absolute;
       left: max(32px, calc((100vw - var(--max)) / 2));
-      bottom: clamp(28px, 4vw, 54px);
+      bottom: clamp(24px, 4vw, 46px);
       z-index: 5;
       display: flex;
       gap: 16px;
@@ -406,15 +405,11 @@
       font-size: .93rem;
     }
 
-    /* Responsive Back-to-Zero image section */
+    /* Back-to-Zero image section */
     .rule-image-section {
       position: relative;
       overflow: hidden;
-      background-color: #020202;
-      background-image: url("/images/zero-reset/zero-reset-back-to-zero-desktop.webp");
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
+      background: #020202;
       border-top: 1px solid rgba(255,255,255,.08);
       border-bottom: 1px solid rgba(255,255,255,.08);
     }
@@ -431,18 +426,21 @@
 
     .rule-image-section::before {
       top: 0;
-      height: 90px;
+      height: 80px;
       background: linear-gradient(to bottom, #050505, transparent);
     }
 
     .rule-image-section::after {
       bottom: 0;
-      height: 120px;
+      height: 90px;
       background: linear-gradient(to top, #050505, transparent);
     }
 
-    .rule-image-section .rule-picture img {
-      height: clamp(430px, 56vh, 650px);
+    .rule-picture img {
+      height: min(58vh, 620px);
+      min-height: 430px;
+      object-fit: cover;
+      object-position: center;
     }
 
     .stats-section {
@@ -632,35 +630,24 @@
         display: none;
       }
 
-      .image-hero {
-        min-height: clamp(700px, 86vh, 940px);
-        background-image:
-          url("/images/zero-reset/zero-reset-hero-tablet.webp"),
-          url("/images/zero-reset/zero-reset-hero-desktop.webp");
-        background-position: center top;
-      }
-
-      .image-hero .hero-picture img {
-        height: clamp(700px, 86vh, 940px);
+      .hero-picture img {
+        height: min(78vh, 820px);
+        min-height: 620px;
+        object-fit: contain;
         object-position: center top;
       }
 
-      .rule-image-section {
-        background-image:
-          url("/images/zero-reset/zero-reset-back-to-zero-tablet.webp"),
-          url("/images/zero-reset/zero-reset-back-to-zero-desktop.webp");
-        background-position: center top;
-      }
-
-      .rule-image-section .rule-picture img {
-        height: clamp(620px, 76vh, 840px);
+      .rule-picture img {
+        height: min(72vh, 760px);
+        min-height: 580px;
+        object-fit: contain;
         object-position: center top;
       }
 
       .hero-overlay {
         left: 24px;
         right: 24px;
-        bottom: 34px;
+        bottom: 30px;
       }
 
       .features-grid {
@@ -678,6 +665,10 @@
         width: min(100% - 28px, var(--max));
       }
 
+      .brand {
+        min-width: auto;
+      }
+
       .brand-text {
         font-size: 1rem;
       }
@@ -693,40 +684,33 @@
         font-size: .78rem;
       }
 
-      .image-hero {
-        min-height: clamp(640px, 88vh, 820px);
-        background-image:
-          url("/images/zero-reset/zero-reset-hero-mobile.webp"),
-          url("/images/zero-reset/zero-reset-hero-desktop.webp");
-        background-position: center top;
-      }
-
-      .image-hero .hero-picture img {
-        height: clamp(640px, 88vh, 820px);
+      .hero-picture img {
+        height: min(74vh, 720px);
+        min-height: 560px;
+        object-fit: contain;
         object-position: center top;
       }
 
-      .rule-image-section {
-        background-image:
-          url("/images/zero-reset/zero-reset-back-to-zero-mobile.webp"),
-          url("/images/zero-reset/zero-reset-back-to-zero-desktop.webp");
-        background-position: center top;
-      }
-
-      .rule-image-section .rule-picture img {
-        height: clamp(600px, 78vh, 760px);
+      .rule-picture img {
+        height: min(70vh, 700px);
+        min-height: 560px;
+        object-fit: contain;
         object-position: center top;
       }
 
       .hero-overlay {
         left: 16px;
         right: 16px;
-        bottom: 20px;
+        bottom: 16px;
         justify-content: center;
       }
 
       .hero-overlay .btn {
         width: 100%;
+      }
+
+      .hero-overlay .btn-dark {
+        display: none;
       }
 
       .features-grid {
@@ -1096,4 +1080,308 @@
           <div class="section-kicker">Why it works</div>
           <h2>Simple pressure. Real discipline.</h2>
           <p class="section-copy">
-            Zero Reset removes the
+            Zero Reset removes the soft middle. You either checked in today, or you did not.
+            That clarity makes the streak feel important and keeps your personal discipline
+            visible every day.
+          </p>
+
+          <div class="stats-grid">
+            <article class="stat-card">
+              <div class="stat-number">1</div>
+              <div class="stat-label">Daily check-in</div>
+            </article>
+
+            <article class="stat-card">
+              <div class="stat-number">0</div>
+              <div class="stat-label">Excuses allowed</div>
+            </article>
+
+            <article class="stat-card">
+              <div class="stat-number">∞</div>
+              <div class="stat-label">Room to grow</div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="reviews" data-section="reviews">
+        <div class="shell center">
+          <div class="section-kicker">Reviews</div>
+          <h2>Made for people who need the push</h2>
+          <p class="section-copy">
+            Built for users who want a bold accountability app, a habit streak tracker,
+            and a daily discipline system without clutter.
+          </p>
+
+          <div class="reviews-grid">
+            <article class="review-card">
+              <div class="review-stars">★★★★★</div>
+              <p>
+                “The reset rule makes me take the streak seriously. It feels intense in the best way.”
+              </p>
+              <div class="review-name">Discipline Builder</div>
+            </article>
+
+            <article class="review-card">
+              <div class="review-stars">★★★★★</div>
+              <p>
+                “I like that it is not bloated. Open it, check in, protect the streak.”
+              </p>
+              <div class="review-name">Daily Grinder</div>
+            </article>
+
+            <article class="review-card">
+              <div class="review-stars">★★★★★</div>
+              <p>
+                “The whole app feels like a challenge. It makes missing a day feel costly.”
+              </p>
+              <div class="review-name">No Excuses User</div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="faq" data-section="faq">
+        <div class="shell center">
+          <div class="section-kicker">FAQ</div>
+          <h2>Zero Reset questions</h2>
+
+          <div class="faq-wrap">
+            <details>
+              <summary>What is Zero Reset?</summary>
+              <p>
+                Zero Reset is a no-excuses discipline streak tracker app for daily check-ins,
+                habit streaks, accountability, reminders, reset-to-zero motivation, quotes,
+                and progress tracking.
+              </p>
+            </details>
+
+            <details>
+              <summary>What happens if I miss a day?</summary>
+              <p>
+                The core rule is simple: miss a day and the streak goes back to zero.
+                That consequence gives the streak emotional weight and helps you protect it.
+              </p>
+            </details>
+
+            <details>
+              <summary>Is Zero Reset a habit tracker?</summary>
+              <p>
+                Yes, but with a stronger discipline-first style. Zero Reset is a habit streak
+                tracker and accountability app built for people who want a clear daily rule,
+                not a soft checklist.
+              </p>
+            </details>
+
+            <details>
+              <summary>Is Zero Reset good for building discipline?</summary>
+              <p>
+                Yes. Zero Reset is designed for people who want a simple daily discipline system.
+                The streak counter, daily check-in, reminders, and reset-to-zero rule help make
+                consistency feel visible and important.
+              </p>
+            </details>
+
+            <details>
+              <summary>Who makes Zero Reset?</summary>
+              <p>
+                Zero Reset is developed by Softice Innovations Labs LLC. For support, contact
+                support@softiceinnovationslabs.com.
+              </p>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="download" data-section="final_cta">
+        <div class="shell">
+          <div class="cta">
+            <div class="cta-content">
+              <div class="section-kicker">Download Zero Reset</div>
+              <h2>Don’t break the streak.</h2>
+              <p class="section-copy">
+                Start your discipline streak today. Check in daily, stay accountable,
+                and remember the rule: miss a day, back to zero.
+              </p>
+
+              <div class="hero-actions">
+                <a
+                  class="btn btn-primary js-download"
+                  href="/play/"
+                  data-location="final_cta"
+                  aria-label="Download Zero Reset on Google Play"
+                >
+                  Download Now
+                </a>
+
+                <a class="btn btn-dark" href="/">
+                  Softice Apps
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <a
+      class="btn btn-primary floating-download js-download"
+      href="/play/"
+      data-location="floating_mobile"
+      aria-label="Download Zero Reset"
+    >
+      Download Zero Reset
+    </a>
+
+    <footer class="footer">
+      <div class="shell footer-grid">
+        <div>
+          © <span id="year"></span> Softice Innovations Labs LLC. All rights reserved.
+        </div>
+
+        <div class="footer-links">
+          <a href="/">Company</a>
+          <a href="/petcare">PetCare Log</a>
+          <a href="/calmpulse">CalmPulse</a>
+          <a href="/cozy-tales">Cozy Tales</a>
+          <a href="mailto:support@softiceinnovationslabs.com">Support</a>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    function trackZeroResetEvent(eventName, params = {}) {
+      if (typeof gtag !== 'function') return;
+
+      gtag('event', eventName, {
+        app_name: 'Zero Reset',
+        brand: 'Softice Innovations Labs',
+        page_path: '/zero-reset',
+        ...params
+      });
+    }
+
+    document.querySelectorAll('.js-download').forEach((link) => {
+      link.addEventListener('click', () => {
+        const location = link.getAttribute('data-location') || 'unknown';
+
+        trackZeroResetEvent('zero_reset_download_click', {
+          click_location: location,
+          link_url: link.href,
+          cta_type: 'google_play_download'
+        });
+
+        trackZeroResetEvent('select_content', {
+          content_type: 'download_cta',
+          item_id: 'zero_reset_' + location
+        });
+
+        trackZeroResetEvent('generate_lead', {
+          lead_type: 'google_play_click',
+          app_name: 'Zero Reset'
+        });
+      });
+    });
+
+    document.querySelectorAll('.feature-card').forEach((card, index) => {
+      card.addEventListener('click', () => {
+        const title = card.querySelector('h3')?.textContent?.trim() || 'Unknown feature';
+
+        trackZeroResetEvent('zero_reset_feature_click', {
+          feature_name: title,
+          feature_position: index + 1
+        });
+
+        trackZeroResetEvent('select_content', {
+          content_type: 'feature_card',
+          item_id: title.toLowerCase().replaceAll(' ', '_')
+        });
+      });
+    });
+
+    document.querySelectorAll('details').forEach((item, index) => {
+      item.addEventListener('toggle', () => {
+        if (!item.open) return;
+
+        const question = item.querySelector('summary')?.textContent?.trim() || 'Unknown FAQ';
+
+        trackZeroResetEvent('zero_reset_faq_open', {
+          faq_question: question,
+          faq_position: index + 1
+        });
+      });
+    });
+
+    const sectionObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+
+        const sectionId =
+          entry.target.getAttribute('id') ||
+          entry.target.getAttribute('data-section') ||
+          'unnamed_section';
+
+        trackZeroResetEvent('zero_reset_section_view', {
+          section_id: sectionId
+        });
+
+        trackZeroResetEvent('section_view', {
+          section_id: sectionId,
+          page_type: 'zero_reset_landing_page'
+        });
+
+        sectionObserver.unobserve(entry.target);
+      });
+    }, { threshold: 0.35 });
+
+    document.querySelectorAll('section').forEach((section) => {
+      sectionObserver.observe(section);
+    });
+
+    const scrollMarks = [25, 50, 75, 90, 100];
+    const sentScrollMarks = new Set();
+
+    function trackScrollDepth() {
+      const scrollTop = window.scrollY || document.documentElement.scrollTop;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+
+      if (docHeight <= 0) return;
+
+      const percent = Math.round((scrollTop / docHeight) * 100);
+
+      scrollMarks.forEach((mark) => {
+        if (percent >= mark && !sentScrollMarks.has(mark)) {
+          sentScrollMarks.add(mark);
+
+          trackZeroResetEvent('zero_reset_scroll_' + mark, {
+            percent_scrolled: mark
+          });
+
+          trackZeroResetEvent('scroll_depth', {
+            percent_scrolled: mark,
+            page_type: 'zero_reset_landing_page'
+          });
+        }
+      });
+    }
+
+    window.addEventListener('scroll', trackScrollDepth, { passive: true });
+
+    [10, 30, 60, 120].forEach((seconds) => {
+      window.setTimeout(() => {
+        trackZeroResetEvent('zero_reset_engaged_' + seconds + 's', {
+          seconds: seconds
+        });
+
+        trackZeroResetEvent('engaged_time', {
+          seconds: seconds,
+          page_type: 'zero_reset_landing_page'
+        });
+      }, seconds * 1000);
+    });
+  </script>
+</body>
+</html>
