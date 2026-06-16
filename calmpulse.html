@@ -4,36 +4,36 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>CalmPulse: Anxiety Relief, Breathing & Panic Reset App</title>
+  <title>CalmPulse: Anxiety Relief, Breathing, Panic Reset & Stress Support App</title>
 
   <meta
     name="description"
-    content="CalmPulse is an anxiety relief and calm breathing app for adults with panic reset tools, breathing exercises, calm timer, Smart Calm check-ins, progress tracking, and optional CalmPulse Pro features."
+    content="Download CalmPulse, a calming anxiety relief app for adults with guided breathing exercises, panic reset support, stress relief tools, calm timer sessions, Smart Calm check-ins, mood progress tracking, and optional CalmPulse Pro features."
   />
 
   <meta
     name="keywords"
-    content="CalmPulse, anxiety relief app, calm breathing app, panic reset app, stress relief app, breathing exercises, calm timer app, overthinking support, mindfulness app, wellness app for adults, relaxation app, mood tracking app, panic attack support, calm app, Smart Calm Check-In, CalmPulse Pro"
+    content="CalmPulse, anxiety relief app, breathing exercises app, panic reset app, stress relief app, calm breathing app, anxiety support app, panic attack support app, relaxation app for adults, mindfulness breathing app, calm timer app, overthinking relief app, mood check-in app, emotional wellness app, self-care wellness app, guided breathing for anxiety, daily calm routine, Smart Calm Check-In, CalmPulse Pro, Softice Innovations Labs"
   />
 
   <meta name="robots" content="index, follow" />
 
   <link rel="canonical" href="https://softiceinnovationslabs.com/calmpulse/" />
 
-  <meta property="og:title" content="CalmPulse: Anxiety Relief, Breathing & Panic Reset App" />
+  <meta property="og:title" content="CalmPulse: Anxiety Relief, Breathing, Panic Reset & Stress Support App" />
   <meta
     property="og:description"
-    content="Use CalmPulse for quick calming tools, panic reset support, breathing exercises, calm timer sessions, Smart Calm check-ins, and progress tracking."
+    content="Download CalmPulse for guided breathing, panic reset support, stress relief tools, calm timer sessions, Smart Calm check-ins, and progress tracking."
   />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://softiceinnovationslabs.com/calmpulse/" />
   <meta property="og:image" content="https://softiceinnovationslabs.com/images/calmpulse/calmpulse-og.webp" />
 
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="CalmPulse: Anxiety Relief, Breathing & Panic Reset App" />
+  <meta name="twitter:title" content="CalmPulse: Anxiety Relief, Breathing, Panic Reset & Stress Support App" />
   <meta
     name="twitter:description"
-    content="Quick calming tools for anxiety, stress, panic reset, breathing, overthinking, and quiet reset moments."
+    content="Guided breathing, panic reset support, stress relief tools, calm timer sessions, and Smart Calm check-ins for quiet reset moments."
   />
   <meta name="twitter:image" content="https://softiceinnovationslabs.com/images/calmpulse/calmpulse-og.webp" />
 
@@ -53,7 +53,11 @@
     gtag("config", "G-CE1N5QBRTE", {
       page_title: "CalmPulse Landing Page",
       page_location: window.location.href,
-      send_page_view: true
+      send_page_view: true,
+      allow_google_signals: true,
+      linker: {
+        domains: ["softiceinnovationslabs.com", "play.google.com"]
+      }
     });
   </script>
 
@@ -65,7 +69,7 @@
     "alternateName": "CalmPulse: Anxiety Relief",
     "operatingSystem": "Android",
     "applicationCategory": "HealthApplication",
-    "description": "CalmPulse is an anxiety relief and calm breathing app for adults with panic reset tools, breathing exercises, calm timer sessions, Smart Calm check-ins, progress tracking, and optional CalmPulse Pro features.",
+    "description": "CalmPulse is an anxiety relief and calm breathing app for adults with guided breathing exercises, panic reset support, stress relief tools, calm timer sessions, Smart Calm check-ins, progress tracking, and optional CalmPulse Pro features.",
     "url": "https://softiceinnovationslabs.com/calmpulse/",
     "image": "https://softiceinnovationslabs.com/images/calmpulse/calmpulse-og.webp",
     "publisher": {
@@ -210,6 +214,79 @@
     .google-play-link:hover {
       transform: translateY(-2px);
       filter: brightness(1.04);
+    }
+
+    .google-play-link-heartbeat {
+      position: relative;
+      animation: calmPulseHeartbeat 2.8s ease-in-out infinite;
+      transform-origin: center;
+      will-change: transform, filter;
+    }
+
+    .google-play-link-heartbeat::before {
+      content: "";
+      position: absolute;
+      inset: -10px;
+      border-radius: 22px;
+      background: radial-gradient(circle, rgba(77, 124, 255, 0.22), transparent 68%);
+      opacity: 0;
+      animation: calmPulseGlow 2.8s ease-in-out infinite;
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    .google-play-link-heartbeat:hover {
+      transform: translateY(-2px) scale(1.04);
+      filter: brightness(1.06);
+    }
+
+    @keyframes calmPulseHeartbeat {
+      0%, 100% {
+        transform: scale(1);
+        filter: drop-shadow(0 8px 18px rgba(49, 201, 147, 0.12));
+      }
+
+      16% {
+        transform: scale(1.035);
+        filter: drop-shadow(0 12px 24px rgba(77, 124, 255, 0.22));
+      }
+
+      28% {
+        transform: scale(1);
+      }
+
+      44% {
+        transform: scale(1.025);
+        filter: drop-shadow(0 10px 22px rgba(49, 201, 147, 0.18));
+      }
+
+      60% {
+        transform: scale(1);
+      }
+    }
+
+    @keyframes calmPulseGlow {
+      0%, 100% {
+        opacity: 0;
+        transform: scale(0.94);
+      }
+
+      24% {
+        opacity: 1;
+        transform: scale(1.04);
+      }
+
+      58% {
+        opacity: 0;
+        transform: scale(1.12);
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .google-play-link-heartbeat,
+      .google-play-link-heartbeat::before {
+        animation: none;
+      }
     }
 
     .google-play-link img {
@@ -919,7 +996,7 @@
           </p>
 
           <a
-            class="google-play-link google-play-link-large js-google-play-click"
+            class="google-play-link google-play-link-large google-play-link-heartbeat js-google-play-click"
             href="https://play.google.com/store/apps/details?id=com.softiceinnovationslabs.calmpulseapp"
             data-link-location="hero"
             aria-label="Get CalmPulse on Google Play"
@@ -1212,7 +1289,7 @@
       </div>
 
       <a
-        class="google-play-link google-play-link-large js-google-play-click"
+        class="google-play-link google-play-link-large google-play-link-heartbeat js-google-play-click"
         href="https://play.google.com/store/apps/details?id=com.softiceinnovationslabs.calmpulseapp"
         data-link-location="bottom_cta"
         aria-label="Get CalmPulse on Google Play"
@@ -1244,29 +1321,46 @@
   <script>
     (function () {
       const hasGtag = typeof window.gtag === "function";
+      const pageName = "calmpulse_landing_page";
+      const appName = "CalmPulse";
 
       function sendEvent(eventName, params) {
         if (!hasGtag) {
           return;
         }
 
-        window.gtag("event", eventName, params);
+        window.gtag("event", eventName, Object.assign({
+          app_name: appName,
+          page_name: pageName,
+          transport_type: "beacon"
+        }, params || {}));
       }
 
       document.querySelectorAll(".js-google-play-click").forEach(function (link) {
         link.addEventListener("click", function () {
           sendEvent("google_play_click", {
-            app_name: "CalmPulse",
+            event_category: "app_install_intent",
+            event_label: link.dataset.linkLocation || "unknown",
             link_location: link.dataset.linkLocation || "unknown",
-            destination_url: link.href
+            destination_url: link.href,
+            button_text: "Get it on Google Play"
           });
         });
+      });
+
+      document.querySelectorAll(".google-play-link-heartbeat").forEach(function (link) {
+        link.addEventListener("mouseenter", function () {
+          sendEvent("download_cta_hover", {
+            event_category: "cta_engagement",
+            link_location: link.dataset.linkLocation || "unknown"
+          });
+        }, { once: true });
       });
 
       document.querySelectorAll(".nav-links a").forEach(function (link) {
         link.addEventListener("click", function () {
           sendEvent("nav_click", {
-            app_name: "CalmPulse",
+            event_category: "navigation",
             link_text: link.textContent.trim(),
             link_href: link.getAttribute("href")
           });
@@ -1276,10 +1370,21 @@
       document.querySelectorAll(".arrow").forEach(function (button) {
         button.addEventListener("click", function () {
           sendEvent("screenshot_arrow_click", {
-            app_name: "CalmPulse",
+            event_category: "screenshot_engagement",
             arrow_label: button.getAttribute("aria-label") || "unknown"
           });
         });
+      });
+
+      document.querySelectorAll(".price-card").forEach(function (card) {
+        card.addEventListener("mouseenter", function () {
+          const planName = card.querySelector("h3") ? card.querySelector("h3").textContent.trim() : "unknown";
+
+          sendEvent("pricing_card_view", {
+            event_category: "pricing_engagement",
+            plan_name: planName
+          });
+        }, { once: true });
       });
 
       const scrollDepthsTracked = {
@@ -1307,8 +1412,7 @@
             scrollDepthsTracked[depth] = true;
 
             sendEvent("scroll_depth", {
-              app_name: "CalmPulse",
-              page_name: "calmpulse_landing_page",
+              event_category: "page_engagement",
               percent_scrolled: numericDepth
             });
           }
@@ -1320,6 +1424,10 @@
       });
 
       const engagedTimes = [
+        {
+          seconds: 10,
+          sent: false
+        },
         {
           seconds: 30,
           sent: false
@@ -1340,8 +1448,7 @@
             item.sent = true;
 
             sendEvent("engaged_time", {
-              app_name: "CalmPulse",
-              page_name: "calmpulse_landing_page",
+              event_category: "page_engagement",
               seconds: item.seconds
             });
           }
