@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Zero Reset – Discipline Streak Tracker App | No Excuses Daily Accountability</title>
+  <title>Zero Reset App | Discipline Streak Tracker, Daily Check-In & Accountability</title>
 
   <meta
     name="description"
@@ -21,8 +21,11 @@
   <meta name="robots" content="index, follow, max-image-preview:large" />
   <meta name="author" content="Softice Innovations Labs LLC" />
   <meta name="theme-color" content="#050505" />
+  <meta name="application-name" content="Zero Reset" />
+  <meta name="apple-mobile-web-app-title" content="Zero Reset" />
+  <meta name="google-play-app" content="app-id=com.softiceinnovationslabs.zeroreset" />
 
-  <meta property="og:title" content="Zero Reset – Discipline Streak Tracker App" />
+  <meta property="og:title" content="Zero Reset App | Discipline Streak Tracker & Daily Accountability" />
   <meta
     property="og:description"
     content="The no-excuses streak tracker for daily discipline. Check in, protect your streak, and stay accountable. Miss a day? Back to zero."
@@ -33,7 +36,7 @@
   <meta property="og:site_name" content="Softice Innovations Labs" />
 
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Zero Reset – Discipline Streak Tracker App" />
+  <meta name="twitter:title" content="Zero Reset App | Discipline Streak Tracker" />
   <meta
     name="twitter:description"
     content="Build discipline with streaks, daily check-ins, reminders, and reset-to-zero accountability."
@@ -239,6 +242,62 @@
     .btn-primary:hover {
       transform: translateY(-2px);
       box-shadow: 0 18px 44px rgba(255, 16, 47, .42);
+    }
+
+    .btn-primary.js-download {
+      position: relative;
+      isolation: isolate;
+      overflow: hidden;
+      animation: zeroResetPulse 2.8s ease-in-out infinite;
+    }
+
+    .btn-primary.js-download::after {
+      content: "";
+      position: absolute;
+      inset: -2px;
+      border-radius: inherit;
+      border: 1px solid rgba(255, 16, 47, 0.58);
+      opacity: 0;
+      transform: scale(0.96);
+      animation: zeroResetGlowRing 2.8s ease-in-out infinite;
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    .btn-primary.js-download:hover {
+      animation-play-state: paused;
+    }
+
+    @keyframes zeroResetPulse {
+      0%, 100% {
+        transform: scale(1);
+        box-shadow: 0 12px 32px rgba(255, 16, 47, .32);
+      }
+      50% {
+        transform: scale(1.035);
+        box-shadow: 0 18px 48px rgba(255, 16, 47, .48);
+      }
+    }
+
+    @keyframes zeroResetGlowRing {
+      0% {
+        opacity: 0;
+        transform: scale(0.96);
+      }
+      45% {
+        opacity: 0.65;
+      }
+      100% {
+        opacity: 0;
+        transform: scale(1.18);
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .btn-primary.js-download,
+      .btn-primary.js-download::after {
+        animation: none;
+      }
     }
 
     .btn-dark {
@@ -766,9 +825,11 @@
     gtag('js', new Date());
 
     gtag('config', 'G-CE1N5QBRTE', {
-      page_title: 'Zero Reset – Discipline Streak Tracker App',
+      page_title: 'Zero Reset App | Discipline Streak Tracker',
       page_path: '/zero-reset',
-      page_location: 'https://softiceinnovationslabs.com/zero-reset'
+      page_location: 'https://softiceinnovationslabs.com/zero-reset',
+      send_page_view: true,
+      campaign_app: 'Zero Reset'
     });
 
     gtag('event', 'zero_reset_page_view', {
@@ -829,7 +890,9 @@
         "alternateName": "Zero Reset Discipline Streak Tracker",
         "applicationCategory": "LifestyleApplication",
         "operatingSystem": "Android",
-        "description": "Zero Reset is a no-excuses discipline streak tracker app for daily accountability, habit streaks, check-ins, reminders, progress tracking, and reset-to-zero motivation.",
+        "downloadUrl": "https://play.google.com/store/apps/details?id=com.softiceinnovationslabs.zeroreset",
+        "installUrl": "https://play.google.com/store/apps/details?id=com.softiceinnovationslabs.zeroreset",
+        "description": "Zero Reset is a discipline streak tracker app for daily accountability, habit streaks, daily check-ins, reminders, progress tracking, and reset-to-zero motivation.",
         "keywords": [
           "discipline streak tracker",
           "discipline streak tracker app",
@@ -1315,10 +1378,18 @@
       link.addEventListener('click', () => {
         const location = link.getAttribute('data-location') || 'unknown';
 
-        trackZeroResetEvent('zero_reset_download_click', {
+        trackZeroResetEvent('zero_reset_google_play_click', {
           click_location: location,
           link_url: link.href,
-          cta_type: 'google_play_download'
+          cta_type: 'google_play_download',
+          outbound: true
+        });
+
+        trackZeroResetEvent('click', {
+          link_url: link.href,
+          link_domain: 'play.google.com',
+          outbound: true,
+          click_location: location
         });
 
         trackZeroResetEvent('select_content', {
@@ -1328,7 +1399,18 @@
 
         trackZeroResetEvent('generate_lead', {
           lead_type: 'google_play_click',
-          app_name: 'Zero Reset'
+          app_name: 'Zero Reset',
+          value: 1
+        });
+      });
+    });
+
+    document.querySelectorAll('.nav-links a, .footer-links a, .btn-dark').forEach((link) => {
+      link.addEventListener('click', () => {
+        trackZeroResetEvent('zero_reset_navigation_click', {
+          link_text: link.textContent.trim(),
+          link_href: link.getAttribute('href') || '',
+          link_location: link.closest('footer') ? 'footer' : 'page'
         });
       });
     });
@@ -1428,6 +1510,26 @@
           page_type: 'zero_reset_landing_page'
         });
       }, seconds * 1000);
+    });
+
+    let heroCtaHovered = false;
+    document.querySelectorAll('.js-download').forEach((link) => {
+      link.addEventListener('mouseenter', () => {
+        if (heroCtaHovered) return;
+        heroCtaHovered = true;
+
+        trackZeroResetEvent('zero_reset_download_cta_hover', {
+          cta_type: 'google_play_download'
+        });
+      });
+    });
+
+    document.addEventListener('visibilitychange', () => {
+      if (document.visibilityState === 'hidden') {
+        trackZeroResetEvent('zero_reset_page_exit', {
+          exit_scroll_y: Math.round(window.scrollY || document.documentElement.scrollTop || 0)
+        });
+      }
     });
   </script>
 </body>
