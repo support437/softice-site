@@ -1096,7 +1096,7 @@
   <main class="page">
     <header class="hero">
       <nav class="nav" aria-label="Main navigation">
-        <a href="/" class="brand" aria-label="CalmPulse home">
+        <a href="/calmpulse/" class="brand" aria-label="CalmPulse home">
           <img
             class="brand-mark"
             src="images/calmpulse/calmpulse_lotus_icon.png"
@@ -1131,7 +1131,7 @@
 
       <section class="hero-inner">
         <div class="hero-copy">
-          <h1>Feeling anxious?<br />Open CalmPulse.</h1>
+          <h1>Need a calm moment?<br />Open CalmPulse.</h1>
           <p>
             An anxiety relief and calm breathing app with panic reset tools, stress support,
             Smart Calm check-ins, and quiet reset moments for everyday wellness.
@@ -1249,8 +1249,8 @@
           <span class="step-number">3</span>
           <div>
             <div class="step-icon">☘</div>
-            <h3>Feel better</h3>
-            <p>Use quick, effective calming tools for stressful moments.</p>
+            <h3>Start a reset</h3>
+            <p>Use simple calming tools for stressful moments.</p>
           </div>
         </article>
 
@@ -1370,7 +1370,7 @@
       <div class="privacy-items">
         <div><span>♙</span>No account<br />required</div>
         <div><span>✈</span>Offline<br />friendly</div>
-        <div><span>⊘</span>No tracking<br />or ads</div>
+        <div><span>⊘</span>No in-app<br />ads</div>
         <div><span>●</span>You stay<br />in control</div>
       </div>
     </section>
@@ -1458,8 +1458,8 @@
       <a class="js-related-app-click" href="/petcare/" data-related-app="PetCare Log">PetCare Log</a>
       <a class="js-related-app-click" href="/zero-reset/" data-related-app="Zero Reset">Zero Reset</a>
       <a class="js-related-app-click" href="/cozy-tales/" data-related-app="Cozy Tales">Cozy Tales</a>
-      <a class="js-footer-link" href="calmpulse-log-privacy-policy.html">Privacy Policy</a>
-      <a class="js-footer-link" href="calmpulse-log-terms.html">Terms</a>
+      <a class="js-footer-link" href="/calmpulse-privacy-policy">Privacy Policy</a>
+      <a class="js-footer-link" href="/calmpulse-terms">Terms</a>
       <a class="js-footer-link" href="mailto:support@softiceinnovationslabs.com">Support</a>
     </p>
     <p aria-label="Softice social links">
@@ -1492,6 +1492,14 @@
       document.querySelectorAll(".js-google-play-click").forEach(function (link) {
         link.addEventListener("click", function () {
           sendEvent("google_play_click", {
+            event_category: "app_install_intent",
+            event_label: link.dataset.linkLocation || "unknown",
+            link_location: link.dataset.linkLocation || "unknown",
+            destination_url: link.href,
+            button_text: "Get it on Google Play"
+          });
+
+          sendEvent("calmpulse_google_play_click", {
             event_category: "app_install_intent",
             event_label: link.dataset.linkLocation || "unknown",
             link_location: link.dataset.linkLocation || "unknown",
