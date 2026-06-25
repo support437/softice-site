@@ -41,7 +41,13 @@
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://softiceinnovationslabs.com/zero-reset/" />
   <meta property="og:image" content="https://softiceinnovationslabs.com/images/zero-reset/zero-reset-og.webp" />
+  <meta property="og:image:secure_url" content="https://softiceinnovationslabs.com/images/zero-reset/zero-reset-og.webp" />
+  <meta property="og:image:type" content="image/webp" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Zero Reset discipline streak tracker app preview" />
   <meta property="og:site_name" content="Softice Innovations Labs" />
+  <meta property="og:locale" content="en_US" />
 
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Zero Reset App | Discipline Streak Tracker" />
@@ -50,6 +56,7 @@
     content="Build discipline with streaks, daily check-ins, reminders, and reset-to-zero accountability."
   />
   <meta name="twitter:image" content="https://softiceinnovationslabs.com/images/zero-reset/zero-reset-og.webp" />
+  <meta name="twitter:image:alt" content="Zero Reset discipline streak tracker app preview" />
 
   <!-- Performance -->
   <link rel="preload" as="image" href="/images/zero-reset/zero-reset-hero-desktop.webp" media="(orientation: landscape), (min-width: 1025px)" />
@@ -834,8 +841,8 @@
 
     gtag('config', 'G-CE1N5QBRTE', {
       page_title: 'Zero Reset App | Discipline Streak Tracker',
-      page_path: '/zero-reset/',
-      page_location: 'https://softiceinnovationslabs.com/zero-reset/',
+      page_path: window.location.pathname,
+      page_location: window.location.href,
       send_page_view: true,
       campaign_app: 'Zero Reset'
     });
@@ -868,7 +875,7 @@
           "https://www.facebook.com/softiceinnovationslabs",
           "https://www.instagram.com/softiceinnovationslabs/",
           "https://www.tiktok.com/@softiceinnovationslabs",
-          "https://www.youtube.com/@softiceinnovationslabs"
+          "https://www.youtube.com/@ZeroResetApp"
         ]
       },
       {
@@ -1037,7 +1044,7 @@
         <div class="nav-links">
           <a href="/">Home</a>
           <a href="#features">Features</a>
-          <a href="#reviews">Reviews</a>
+          <a href="#reviews">Benefits</a>
           <a href="#faq">FAQ</a>
         </div>
 
@@ -1240,9 +1247,9 @@
         </div>
       </section>
 
-      <section class="section" id="reviews" data-section="reviews">
+      <section class="section" id="reviews" data-section="benefits">
         <div class="shell center">
-          <div class="section-kicker">Reviews</div>
+          <div class="section-kicker">Built for discipline</div>
           <h2>Made for people who need the push</h2>
           <p class="section-copy">
             Built for users who want a bold accountability app, a habit streak tracker,
@@ -1251,27 +1258,27 @@
 
           <div class="reviews-grid">
             <article class="review-card">
-              <div class="review-stars">★★★★★</div>
               <p>
-                “The reset rule makes me take the streak seriously. It feels intense in the best way.”
+                Turn your daily check-in into a clear accountability moment. Open the app,
+                protect the streak, and keep your discipline visible.
               </p>
-              <div class="review-name">Discipline Builder</div>
+              <div class="review-name">Daily Accountability</div>
             </article>
 
             <article class="review-card">
-              <div class="review-stars">★★★★★</div>
               <p>
-                “I like that it is not bloated. Open it, check in, protect the streak.”
+                Keep your current streak and best streak in front of you so every day feels
+                like a decision to keep building or start over.
               </p>
-              <div class="review-name">Daily Grinder</div>
+              <div class="review-name">Streak Protection</div>
             </article>
 
             <article class="review-card">
-              <div class="review-stars">★★★★★</div>
               <p>
-                “The whole app feels like a challenge. It makes missing a day feel costly.”
+                Miss a day and the streak goes back to zero. Simple, direct, and designed
+                for people who want stronger discipline pressure.
               </p>
-              <div class="review-name">No Excuses User</div>
+              <div class="review-name">Reset-to-Zero Rule</div>
             </article>
           </div>
         </div>
@@ -1377,13 +1384,15 @@
 
         <div class="footer-links">
           <a href="/">Company</a>
+          <a href="/zero-reset-privacy-policy">Privacy Policy</a>
+          <a href="/zero-reset-terms">Terms</a>
           <a href="/petcare/">PetCare Log</a>
           <a href="/calmpulse/">CalmPulse</a>
           <a href="/cozy-tales/">Cozy Tales</a>
           <a href="https://www.facebook.com/softiceinnovationslabs" target="_blank" rel="noopener noreferrer" data-social="facebook">Facebook</a>
           <a href="https://www.instagram.com/softiceinnovationslabs/" target="_blank" rel="noopener noreferrer" data-social="instagram">Instagram</a>
           <a href="https://www.tiktok.com/@softiceinnovationslabs" target="_blank" rel="noopener noreferrer" data-social="tiktok">TikTok</a>
-          <a href="https://www.youtube.com/@softiceinnovationslabs" target="_blank" rel="noopener noreferrer" data-social="youtube">YouTube</a>
+          <a href="https://www.youtube.com/@ZeroResetApp" target="_blank" rel="noopener noreferrer" data-social="youtube">YouTube</a>
           <a href="mailto:support@softiceinnovationslabs.com">Support</a>
         </div>
       </div>
@@ -1399,7 +1408,8 @@
       gtag('event', eventName, {
         app_name: 'Zero Reset',
         brand: 'Softice Innovations Labs',
-        page_path: '/zero-reset/',
+        page_path: window.location.pathname,
+        page_location: window.location.href,
         ...params
       });
     }
@@ -1425,12 +1435,6 @@
         trackZeroResetEvent('select_content', {
           content_type: 'download_cta',
           item_id: 'zero_reset_' + location
-        });
-
-        trackZeroResetEvent('generate_lead', {
-          lead_type: 'google_play_click',
-          app_name: 'Zero Reset',
-          value: 1
         });
       });
     });
