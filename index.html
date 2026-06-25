@@ -51,9 +51,9 @@
     function gtag(){dataLayer.push(arguments);}
     gtag("js", new Date());
     gtag("config", "G-CE1N5QBRTE", {
-      page_title: "Softice Innovations Labs - Main App Hub",
-      page_path: "/",
-      page_location: "https://softiceinnovationslabs.com/",
+      page_title: document.title,
+      page_path: window.location.pathname,
+      page_location: window.location.href,
       send_page_view: true
     });
   </script>
@@ -851,6 +851,54 @@
         ]
       },
       {
+        "@type": "SoftwareApplication",
+        "@id": "https://softiceinnovationslabs.com/petcare/#app",
+        "name": "PetCare Log",
+        "applicationCategory": "LifestyleApplication",
+        "operatingSystem": "Android",
+        "url": "https://softiceinnovationslabs.com/petcare/",
+        "publisher": {
+          "@id": "https://softiceinnovationslabs.com/#organization"
+        },
+        "description": "PetCare Log helps pet owners track feeding schedules, medication reminders, vet visits, health records, daily checklists, and pet care routines."
+      },
+      {
+        "@type": "SoftwareApplication",
+        "@id": "https://softiceinnovationslabs.com/calmpulse/#app",
+        "name": "CalmPulse",
+        "applicationCategory": "HealthApplication",
+        "operatingSystem": "Android",
+        "url": "https://softiceinnovationslabs.com/calmpulse/",
+        "publisher": {
+          "@id": "https://softiceinnovationslabs.com/#organization"
+        },
+        "description": "CalmPulse offers calming tools for panic reset, breathing, calm timer, mood check-ins, and peaceful daily moments."
+      },
+      {
+        "@type": "SoftwareApplication",
+        "@id": "https://softiceinnovationslabs.com/cozy-tales/#app",
+        "name": "Cozy Tales",
+        "applicationCategory": "EntertainmentApplication",
+        "operatingSystem": "Android",
+        "url": "https://softiceinnovationslabs.com/cozy-tales/",
+        "publisher": {
+          "@id": "https://softiceinnovationslabs.com/#organization"
+        },
+        "description": "Cozy Tales provides bedtime stories for kids with narration, soft music, and cozy illustrated storybook experiences."
+      },
+      {
+        "@type": "SoftwareApplication",
+        "@id": "https://softiceinnovationslabs.com/zero-reset/#app",
+        "name": "Zero Reset",
+        "applicationCategory": "LifestyleApplication",
+        "operatingSystem": "Android",
+        "url": "https://softiceinnovationslabs.com/zero-reset/",
+        "publisher": {
+          "@id": "https://softiceinnovationslabs.com/#organization"
+        },
+        "description": "Zero Reset helps users build discipline streaks, track daily check-ins, stay consistent, and reset with focus."
+      },
+      {
         "@type": "SiteNavigationElement",
         "@id": "https://softiceinnovationslabs.com/#site-navigation",
         "name": [
@@ -986,12 +1034,23 @@
           });
 
           if (tracked.getAttribute("data-track") === "app_card_click" || tracked.getAttribute("data-track") === "footer_app_click") {
+            const normalizedAppName = clickTitle.toLowerCase().replace(/[^a-z0-9]+/g, "_").replace(/^_+|_+$/g, "");
+
             trackEvent("softice_app_interest", {
               ...commonParams(),
               app_name: clickTitle,
               click_location: tracked.getAttribute("data-track-location") || "unknown",
               destination_url: tracked.href || ""
             });
+
+            if (normalizedAppName) {
+              trackEvent(normalizedAppName + "_interest_click", {
+                ...commonParams(),
+                app_name: clickTitle,
+                click_location: tracked.getAttribute("data-track-location") || "unknown",
+                destination_url: tracked.href || ""
+              });
+            }
           }
         }
 
