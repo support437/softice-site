@@ -15,8 +15,8 @@
   <meta name="apple-mobile-web-app-title" content="Cozy Tales" />
   <meta name="format-detection" content="telephone=no" />
 
-  <link rel="canonical" href="https://softiceinnovationslabs.com/cozy-tales" />
-  <link rel="alternate" hreflang="en" href="https://softiceinnovationslabs.com/cozy-tales" />
+  <link rel="canonical" href="https://softiceinnovationslabs.com/cozy-tales/" />
+  <link rel="alternate" hreflang="en" href="https://softiceinnovationslabs.com/cozy-tales/" />
   <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
 
   <link rel="icon" type="image/png" href="/images/cozy-tales/cozy-tales-logo-mark.png" />
@@ -35,7 +35,7 @@
   <meta property="og:title" content="Cozy Tales | Magical Bedtime Stories for Kids" />
   <meta property="og:description" content="Calming read-aloud bedtime stories, sleep stories, magical storybooks, and bedtime guides for kids. Start with 2 free books and no monthly subscription." />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://softiceinnovationslabs.com/cozy-tales" />
+  <meta property="og:url" content="https://softiceinnovationslabs.com/cozy-tales/" />
   <meta property="og:image" content="https://softiceinnovationslabs.com/images/cozy-tales/cozy-tales-og.webp" />
   <meta property="og:image:secure_url" content="https://softiceinnovationslabs.com/images/cozy-tales/cozy-tales-og.webp" />
   <meta property="og:image:type" content="image/webp" />
@@ -58,9 +58,11 @@
     function gtag(){dataLayer.push(arguments);}
     gtag("js", new Date());
     gtag("config", "G-CE1N5QBRTE", {
-      page_title: "Cozy Tales | Bedtime Stories for Kids",
-      page_path: "/cozy-tales",
-      page_location: "https://softiceinnovationslabs.com/cozy-tales"
+      page_title: document.title,
+      page_path: window.location.pathname,
+      page_location: window.location.href,
+      send_page_view: true,
+      campaign_app: "Cozy Tales"
     });
   </script>
 
@@ -1125,7 +1127,7 @@
   </a>
 
   <header class="topbar">
-    <a class="brand" href="/cozy-tales" aria-label="Cozy Tales homepage">
+    <a class="brand" href="/cozy-tales/" aria-label="Cozy Tales homepage">
       <img src="/images/cozy-tales/cozy-tales-logo-horizontal.webp" alt="Cozy Tales - Bedtime Stories for Kids" width="520" height="160" decoding="async" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" />
       <span class="brand-fallback">Cozy Tales</span>
     </a>
@@ -1162,9 +1164,8 @@
           </a>
 
           <div class="rating" aria-label="Cozy Tales trust signal">
-            <span class="stars">★★★★★</span>
-            <span>4.9</span>
-            <span>Trusted by 10,000+ parents</span>
+            <span aria-hidden="true">🌙</span>
+            <span>Made for calm bedtime routines</span>
           </div>
         </div>
       </div>
@@ -1484,7 +1485,7 @@
           <h3>Notify Me</h3>
           <p>Get updates when new Cozy Tales stories, videos, and bedtime guides are available.</p>
 
-          <form class="notify-form" name="cozy-tales-notify" method="POST" data-netlify="true" action="/cozy-tales?success=true" data-track="notify_submit">
+          <form class="notify-form" name="cozy-tales-notify" method="POST" data-netlify="true" action="/cozy-tales/?success=true" data-track="notify_submit">
             <input type="hidden" name="form-name" value="cozy-tales-notify" />
             <input type="email" name="email" placeholder="Enter your email..." aria-label="Email address" required />
             <button type="submit">Notify Me</button>
@@ -1505,7 +1506,7 @@
             </a>
 
             <a href="https://www.facebook.com/cozy-tales/" target="_blank" rel="noopener noreferrer" data-track="social_click" data-track-location="footer" data-track-title="Facebook">
-              <img src="/images/cozy-tales/icon-facebook.webp" alt="Instagram" width="64" height="64" loading="lazy" decoding="async" />
+              <img src="/images/cozy-tales/icon-facebook.webp" alt="Facebook" width="64" height="64" loading="lazy" decoding="async" />
             </a>
 
             <a href="https://www.tiktok.com/@bedtimestoriescozytales" target="_blank" rel="noopener noreferrer" data-track="social_click" data-track-location="footer" data-track-title="TikTok">
@@ -1517,7 +1518,8 @@
         <div class="support-box">
           <h3>Support</h3>
           <a href="mailto:support@softiceinnovationslabs.com" data-track="contact_click" data-track-location="footer" data-track-title="Support Email">support@softiceinnovationslabs.com</a>
-          <a href="/privacy-policy" data-track="footer_link_click" data-track-location="footer" data-track-title="Privacy Policy">Privacy Policy</a>
+          <a href="/privacy-policy/" data-track="footer_link_click" data-track-location="footer" data-track-title="Privacy Policy">Privacy Policy</a>
+          <a href="/terms/" data-track="footer_link_click" data-track-location="footer" data-track-title="Terms">Terms</a>
           <a href="/" data-track="footer_link_click" data-track-location="footer" data-track-title="Softice Homepage">Softice Innovations Labs</a>
         </div>
       </div>
@@ -1567,7 +1569,7 @@
 
         <div class="support-box">
           <h3>App Hubs</h3>
-          <a href="/cozy-tales" data-track="related_app_click" data-track-location="softice_social_section" data-track-title="Cozy Tales">Cozy Tales</a>
+          <a href="/cozy-tales/" data-track="related_app_click" data-track-location="softice_social_section" data-track-title="Cozy Tales">Cozy Tales</a>
           <a href="/petcare/" data-track="related_app_click" data-track-location="softice_social_section" data-track-title="PetCare Log">PetCare Log</a>
           <a href="/calmpulse/" data-track="related_app_click" data-track-location="softice_social_section" data-track-title="CalmPulse">CalmPulse</a>
           <a href="/zero-reset/" data-track="related_app_click" data-track-location="softice_social_section" data-track-title="Zero Reset">Zero Reset</a>
@@ -1620,13 +1622,14 @@
         "sameAs": [
           "https://www.youtube.com/@BedtimeStoriesCozyTales",
           "https://www.instagram.com/bedtime.stories.forkids/",
+          "https://www.facebook.com/cozy-tales/",
           "https://www.tiktok.com/@bedtimestoriescozytales"
         ]
       },
       {
         "@type": "WebPage",
-        "@id": "https://softiceinnovationslabs.com/cozy-tales#webpage",
-        "url": "https://softiceinnovationslabs.com/cozy-tales",
+        "@id": "https://softiceinnovationslabs.com/cozy-tales/#webpage",
+        "url": "https://softiceinnovationslabs.com/cozy-tales/",
         "name": "Cozy Tales | Bedtime Stories for Kids",
         "description": "Cozy Tales is a calming bedtime stories app for kids with read-aloud narration, sleep stories for toddlers and preschoolers, magical storybooks, bedtime routine guides, 2 free books, and no monthly subscription.",
         "isPartOf": {
@@ -1647,7 +1650,7 @@
       },
       {
         "@type": "BreadcrumbList",
-        "@id": "https://softiceinnovationslabs.com/cozy-tales#breadcrumbs",
+        "@id": "https://softiceinnovationslabs.com/cozy-tales/#breadcrumbs",
         "itemListElement": [
           {
             "@type": "ListItem",
@@ -1659,19 +1662,20 @@
             "@type": "ListItem",
             "position": 2,
             "name": "Cozy Tales",
-            "item": "https://softiceinnovationslabs.com/cozy-tales"
+            "item": "https://softiceinnovationslabs.com/cozy-tales/"
           }
         ]
       },
       {
         "@type": "SoftwareApplication",
-        "@id": "https://softiceinnovationslabs.com/cozy-tales#app",
+        "@id": "https://softiceinnovationslabs.com/cozy-tales/#app",
         "name": "Cozy Tales",
-        "applicationCategory": "KidsApplication",
+        "applicationCategory": "EducationApplication",
         "operatingSystem": "Android",
         "description": "A bedtime stories app for kids with calming narration, peaceful visuals, 2 free books, and no monthly subscription.",
-        "url": "https://softiceinnovationslabs.com/cozy-tales",
+        "url": "https://softiceinnovationslabs.com/cozy-tales/",
         "downloadUrl": "https://softiceinnovationslabs.com/play/",
+        "image": "https://softiceinnovationslabs.com/images/cozy-tales/cozy-tales-og.webp",
         "publisher": {
           "@id": "https://softiceinnovationslabs.com/#organization"
         },
@@ -1684,7 +1688,7 @@
       },
       {
         "@type": "ItemList",
-        "@id": "https://softiceinnovationslabs.com/cozy-tales#story-list",
+        "@id": "https://softiceinnovationslabs.com/cozy-tales/#story-list",
         "name": "Cozy Tales bedtime story collection",
         "itemListElement": [
           { "@type": "ListItem", "position": 1, "name": "Bunny’s Garden Picnic", "url": "https://softiceinnovationslabs.com/bunnys-garden-picnic" },
@@ -1703,7 +1707,7 @@
       },
       {
         "@type": "FAQPage",
-        "@id": "https://softiceinnovationslabs.com/cozy-tales#faq",
+        "@id": "https://softiceinnovationslabs.com/cozy-tales/#faq",
         "mainEntity": [
           {
             "@type": "Question",
@@ -1786,6 +1790,13 @@
           link_url: href || ""
         });
 
+        trackEvent("cozy_tales_google_play_click", {
+          ...commonParams(),
+          click_location: location || "unknown",
+          click_title: title || "Google Play",
+          link_url: href || ""
+        });
+
         trackEvent("select_content", {
           content_type: "cta",
           item_id: "cozy_tales_google_play",
@@ -1797,7 +1808,7 @@
         trackEvent("cozy_tales_page_view", {
           ...commonParams(),
           page_name: "cozy_tales_landing_page",
-          clean_url: "/cozy-tales"
+          clean_url: "/cozy-tales/"
         });
       });
 
