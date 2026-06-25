@@ -4,52 +4,44 @@
   <!-- HOMEPAGE / COMPANY HUB -->
   <url>
     <loc>https://softiceinnovationslabs.com/</loc>
-    <lastmod>2026-06-08</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>1.00</priority>
   </url>
 
   <!-- MAIN APP LANDING PAGES -->
   <url>
     <loc>https://softiceinnovationslabs.com/cozy-tales</loc>
-    <lastmod>2026-06-08</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.95</priority>
   </url>
 
   <url>
     <loc>https://softiceinnovationslabs.com/petcare</loc>
-    <lastmod>2026-06-08</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.95</priority>
   </url>
 
   <url>
     <loc>https://softiceinnovationslabs.com/calmpulse</loc>
-    <lastmod>2026-06-08</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.95</priority>
   </url>
 
   <url>
     <loc>https://softiceinnovationslabs.com/zero-reset</loc>
-    <lastmod>2026-06-08</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.95</priority>
-  </url>
-
-  <!-- GOOGLE PLAY / INSTALL REDIRECT PAGE -->
-  <url>
-    <loc>https://softiceinnovationslabs.com/play</loc>
-    <lastmod>2026-06-08</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.80</priority>
   </url>
 
   <!-- COZY TALES / BEDTIME STORIES HUB -->
   <url>
     <loc>https://softiceinnovationslabs.com/bedtime-stories-for-kids</loc>
-    <lastmod>2026-06-08</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.90</priority>
   </url>
@@ -57,21 +49,21 @@
   <!-- CORE COZY TALES SEO PAGES -->
   <url>
     <loc>https://softiceinnovationslabs.com/best-bedtime-stories-for-kids</loc>
-    <lastmod>2026-06-08</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.82</priority>
   </url>
 
   <url>
     <loc>https://softiceinnovationslabs.com/free-bedtime-stories-for-kids</loc>
-    <lastmod>2026-06-08</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.82</priority>
   </url>
 
   <url>
     <loc>https://softiceinnovationslabs.com/bedtime-story-app-for-kids</loc>
-    <lastmod>2026-06-08</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.82</priority>
   </url>
@@ -79,21 +71,21 @@
   <!-- AGE-BASED COZY TALES CONTENT -->
   <url>
     <loc>https://softiceinnovationslabs.com/bedtime-stories-for-babies</loc>
-    <lastmod>2026-06-08</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.78</priority>
   </url>
 
   <url>
     <loc>https://softiceinnovationslabs.com/bedtime-stories-for-toddlers</loc>
-    <lastmod>2026-06-08</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.78</priority>
   </url>
 
   <url>
     <loc>https://softiceinnovationslabs.com/bedtime-stories-for-preschoolers</loc>
-    <lastmod>2026-06-08</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.78</priority>
   </url>
@@ -101,28 +93,28 @@
   <!-- SUPPORTING COZY TALES CONTENT -->
   <url>
     <loc>https://softiceinnovationslabs.com/sleep-stories-for-toddlers</loc>
-    <lastmod>2026-06-08</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.76</priority>
   </url>
 
   <url>
     <loc>https://softiceinnovationslabs.com/calming-stories-for-kids</loc>
-    <lastmod>2026-06-08</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.76</priority>
   </url>
 
   <url>
     <loc>https://softiceinnovationslabs.com/calming-fairy-tales-for-kids</loc>
-    <lastmod>2026-06-08</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.72</priority>
   </url>
 
   <url>
     <loc>https://softiceinnovationslabs.com/short-bedtime-stories-for-kids</loc>
-    <lastmod>2026-06-08</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.72</priority>
   </url>
@@ -130,21 +122,21 @@
   <!-- PARENTING / SLEEP GUIDES -->
   <url>
     <loc>https://softiceinnovationslabs.com/how-to-help-kids-sleep</loc>
-    <lastmod>2026-06-08</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.74</priority>
   </url>
 
   <url>
     <loc>https://softiceinnovationslabs.com/bedtime-routine-for-kids</loc>
-    <lastmod>2026-06-08</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.74</priority>
   </url>
 
   <url>
     <loc>https://softiceinnovationslabs.com/benefits-of-bedtime-stories</loc>
-    <lastmod>2026-06-08</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.74</priority>
   </url>
@@ -152,14 +144,14 @@
   <!-- STORY LANDING PAGES -->
   <url>
     <loc>https://softiceinnovationslabs.com/monkey-milos-big-sea-adventure</loc>
-    <lastmod>2026-06-08</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.70</priority>
   </url>
 
   <url>
     <loc>https://softiceinnovationslabs.com/the-cheerful-chicks-sunny-dream</loc>
-    <lastmod>2026-06-08</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.70</priority>
   </url>
@@ -167,7 +159,7 @@
   <!-- COMPANY LEGAL -->
   <url>
     <loc>https://softiceinnovationslabs.com/privacy-policy</loc>
-    <lastmod>2026-06-08</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.35</priority>
   </url>
@@ -175,21 +167,21 @@
   <!-- CALMPULSE LEGAL / SUPPORT PAGES -->
   <url>
     <loc>https://softiceinnovationslabs.com/calmpulse-log-legal</loc>
-    <lastmod>2026-06-08</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.30</priority>
   </url>
 
   <url>
     <loc>https://softiceinnovationslabs.com/calmpulse-log-privacy-policy</loc>
-    <lastmod>2026-06-08</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.30</priority>
   </url>
 
   <url>
     <loc>https://softiceinnovationslabs.com/calmpulse-log-terms</loc>
-    <lastmod>2026-06-08</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.30</priority>
   </url>
@@ -197,21 +189,21 @@
   <!-- PETCARE LOG LEGAL / SUPPORT PAGES -->
   <url>
     <loc>https://softiceinnovationslabs.com/petcare-log-legal</loc>
-    <lastmod>2026-06-08</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.30</priority>
   </url>
 
   <url>
     <loc>https://softiceinnovationslabs.com/petcare-log-privacy-policy</loc>
-    <lastmod>2026-06-08</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.30</priority>
   </url>
 
   <url>
     <loc>https://softiceinnovationslabs.com/petcare-log-terms</loc>
-    <lastmod>2026-06-08</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.30</priority>
   </url>
@@ -219,21 +211,21 @@
   <!-- ZERO RESET LEGAL / SUPPORT PAGES -->
   <url>
     <loc>https://softiceinnovationslabs.com/zero-reset-legal</loc>
-    <lastmod>2026-06-08</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.30</priority>
   </url>
 
   <url>
     <loc>https://softiceinnovationslabs.com/zero-reset-privacy-policy</loc>
-    <lastmod>2026-06-08</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.30</priority>
   </url>
 
   <url>
     <loc>https://softiceinnovationslabs.com/zero-reset-terms</loc>
-    <lastmod>2026-06-08</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.30</priority>
   </url>
