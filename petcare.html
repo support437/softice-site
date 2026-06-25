@@ -22,7 +22,6 @@
   <meta name="application-name" content="PetCare Log" />
   <meta name="apple-mobile-web-app-title" content="PetCare Log" />
   <meta name="format-detection" content="telephone=no" />
-  <meta name="apple-itunes-app" content="app-id=, app-argument=https://softiceinnovationslabs.com/petcare/" />
 
   <link rel="canonical" href="https://softiceinnovationslabs.com/petcare/" />
   <link rel="alternate" hreflang="en" href="https://softiceinnovationslabs.com/petcare/" />
@@ -188,7 +187,7 @@
         "mainEntity": [
           { "@type": "Question", "name": "What is PetCare Log?", "acceptedAnswer": { "@type": "Answer", "text": "PetCare Log is a pet care tracker app that helps pet parents organize pet profiles, feeding logs, medication reminders, vet visits, health history, daily care tasks, and photo memories." } },
           { "@type": "Question", "name": "Is PetCare Log only for dogs and cats?", "acceptedAnswer": { "@type": "Answer", "text": "No. PetCare Log is designed for dogs, cats, rabbits, birds, and other pets that need daily care, reminders, health tracking, and photo memories." } },
-          { "@type": "Question", "name": "Is PetCare Log free?", "acceptedAnswer": { "@type": "Answer", "text": "PetCare Log is free to start. PetCare Log Pro is optional and unlocks additional pet care tools and premium features." } },
+          { "@type": "Question", "name": "Is PetCare Log free?", "acceptedAnswer": { "@type": "Answer", "text": "PetCare Log is free to start. PetCare Log Pro is optional and unlocks unlimited pets, unlimited reminders, unlimited logs, unlimited health records, and premium future features." } },
           { "@type": "Question", "name": "Does PetCare Log help with medication reminders?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. PetCare Log includes reminder tools for medication, feeding, vet visits, grooming, and daily care routines." } },
           { "@type": "Question", "name": "Can PetCare Log track vet visits and health history?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. PetCare Log helps pet parents track vet visits, health records, medication notes, symptoms, treatments, daily care history, and pet wellness routines." } }
         ]
@@ -728,6 +727,19 @@
       object-fit: cover;
     }
 
+    .review-icon {
+      width: 64px;
+      height: 64px;
+      border-radius: 18px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, #fff3df, #ffe1b6);
+      color: var(--orange);
+      font-size: 30px;
+      font-weight: 950;
+      box-shadow: 0 8px 18px rgba(88,49,21,0.06);
+    }
+
     .review h3 {
       margin: 0;
       font-size: 13px;
@@ -1126,7 +1138,7 @@
         <div class="feature-icon">🔔</div>
         <div>
           <h2>Smart Pet Reminders</h2>
-          <p>Never miss meals, medication, grooming, or vet visits.</p>
+          <p>Stay organized with meals, medication, grooming, and vet visits.</p>
         </div>
       </article>
 
@@ -1280,32 +1292,32 @@
           </thead>
           <tbody>
             <tr>
-              <td>Up to 1 pet profile</td>
+              <td>Up to 3 pet profiles</td>
               <td><span class="yes">✓</span> Unlimited pet profiles</td>
             </tr>
             <tr>
               <td>Basic pet reminders</td>
-              <td><span class="yes">✓</span> Advanced reminders</td>
+              <td><span class="yes">✓</span> Unlimited reminders</td>
+            </tr>
+            <tr>
+              <td>Basic feeding logs</td>
+              <td><span class="yes">✓</span> Unlimited feeding logs</td>
+            </tr>
+            <tr>
+              <td>Basic medication logs</td>
+              <td><span class="yes">✓</span> Unlimited medication logs</td>
+            </tr>
+            <tr>
+              <td>Basic vet visit records</td>
+              <td><span class="yes">✓</span> Unlimited vet visit records</td>
             </tr>
             <tr>
               <td>Basic health history</td>
-              <td><span class="yes">✓</span> Full health analytics</td>
+              <td><span class="yes">✓</span> Unlimited health records</td>
             </tr>
             <tr>
               <td>Limited photo memories</td>
-              <td><span class="yes">✓</span> Unlimited photos</td>
-            </tr>
-            <tr>
-              <td><span class="no">—</span> Data backup</td>
-              <td><span class="yes">✓</span> Cloud backup</td>
-            </tr>
-            <tr>
-              <td><span class="no">—</span> Export health reports</td>
-              <td><span class="yes">✓</span> Export to PDF</td>
-            </tr>
-            <tr>
-              <td><span class="no">—</span> Premium support</td>
-              <td><span class="yes">✓</span> Priority support</td>
+              <td><span class="yes">✓</span> Unlimited photo memories</td>
             </tr>
           </tbody>
         </table>
@@ -1324,46 +1336,40 @@
 
       <section class="panel reviews-panel js-observe-section" data-section-name="reviews">
         <div class="reviews-head">
-          <h2>Loved by pet parents</h2>
-          <div class="reviews-score"><span class="stars">★★★★★</span> 4.8/5</div>
+          <h2>Built for pet parents</h2>
+          <div class="reviews-score">Simple care tools</div>
         </div>
 
         <article class="review">
-          <img src="/images/petcare/petcare-review-jessica.webp" alt="Pet parent Jessica review avatar with dog" loading="lazy" />
+          <div class="review-icon" aria-hidden="true">🔔</div>
           <div>
-            <h3>Jessica L.</h3>
-            <div class="stars">★★★★★</div>
-            <p>PetCare Log has made my life so much easier. The reminders and health history tracking help me take better care of my pup.</p>
-            <time>2 days ago</time>
+            <h3>Care reminders</h3>
+            <p>Keep feeding, medication, grooming, vet visits, and daily care routines organized in one simple place.</p>
           </div>
         </article>
 
         <article class="review">
-          <img src="/images/petcare/petcare-review-mike.webp" alt="Pet parent Mike review avatar with cat" loading="lazy" />
+          <div class="review-icon" aria-hidden="true">💓</div>
           <div>
-            <h3>Mike R.</h3>
-            <div class="stars">★★★★★</div>
-            <p>Love how simple and beautiful the app is. I use it for my two cats and it keeps everything organized.</p>
-            <time>1 week ago</time>
+            <h3>Health history</h3>
+            <p>Save vet visits, symptoms, medication notes, allergies, vaccines, and pet wellness details.</p>
           </div>
         </article>
 
         <article class="review">
-          <img src="/images/petcare/petcare-review-priya.webp" alt="Pet parent Priya review avatar with dog" loading="lazy" />
+          <div class="review-icon" aria-hidden="true">🖼</div>
           <div>
-            <h3>Priya S.</h3>
-            <div class="stars">★★★★★</div>
-            <p>The photo memories feature is my favorite. It’s like a diary of all our special moments.</p>
-            <time>2 weeks ago</time>
+            <h3>Photo memories</h3>
+            <p>Build a warm photo journal for milestones, everyday moments, and special memories with your pet.</p>
           </div>
         </article>
 
         <a
           class="read-more js-google-play-click"
           href="https://play.google.com/store/apps/details?id=com.softiceinnovationslabs.petcarelogapp"
-          data-link-location="reviews_read_more"
+          data-link-location="pet_parent_tools_google_play"
         >
-          Read more reviews on Google Play ›
+          Get PetCare Log on Google Play ›
         </a>
       </section>
     </section>
@@ -1393,7 +1399,7 @@
           <h3>Is PetCare Log free?</h3>
           <p>
             PetCare Log is free to start. PetCare Log Pro is optional and unlocks unlimited pets,
-            more photo memories, advanced reminders, backup, exports, and premium features.
+            unlimited reminders, unlimited logs, unlimited health records, and premium future features.
           </p>
         </article>
 
