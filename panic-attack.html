@@ -1,0 +1,236 @@
+// app/panic-attack/page.jsx
+
+export const metadata = {
+  title: "Panic Attack Relief | Breathing Tools & Calm Support | CalmPulse",
+  description:
+    "Experiencing a panic attack? CalmPulse offers guided breathing exercises, grounding techniques, and calming tools to help you regain control and feel calmer.",
+  keywords: [
+    "panic attack",
+    "panic attack relief",
+    "panic attack help",
+    "how to stop a panic attack",
+    "panic attack breathing",
+    "anxiety attack help",
+    "anxiety relief app",
+    "CalmPulse",
+  ],
+  openGraph: {
+    title: "Panic Attack Relief Starts With One Breath | CalmPulse",
+    description:
+      "Guided breathing, grounding tools, and panic reset support from CalmPulse.",
+    url: "https://softiceinnovationslabs.com/panic-attack",
+    siteName: "Softice Innovations Labs",
+    images: [
+      {
+        url: "https://softiceinnovationslabs.com/images/calmpulse/panic-attack-hero.webp",
+        width: 1200,
+        height: 628,
+        alt: "CalmPulse panic attack relief hero image",
+      },
+    ],
+    type: "website",
+  },
+};
+
+export default function PanicAttackPage() {
+  return (
+    <main className="min-h-screen bg-[#020817] text-white">
+      {/* GA4 Premium Tracking */}
+      <script
+        dangerouslySetInnerHTML={{
+          __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+
+            gtag('event', 'page_view_panic_attack', {
+              page_title: 'Panic Attack Relief',
+              page_location: window.location.href,
+              app_name: 'CalmPulse',
+              landing_page_type: 'seo_topic_page',
+              topic: 'panic_attack'
+            });
+
+            function trackCalmPulseEvent(eventName, extra = {}) {
+              gtag('event', eventName, {
+                app_name: 'CalmPulse',
+                page_topic: 'panic_attack',
+                page_location: window.location.href,
+                ...extra
+              });
+            }
+          `,
+        }}
+      />
+
+      {/* Hero */}
+      <section className="relative overflow-hidden">
+        <div
+          className="absolute inset-0 bg-cover bg-center opacity-80"
+          style={{
+            backgroundImage:
+              "url('/images/calmpulse/panic-attack-hero.webp')",
+          }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#020817] via-[#020817]/90 to-[#020817]/40" />
+
+        <div className="relative mx-auto max-w-7xl px-6 py-24 lg:py-32">
+          <div className="max-w-2xl">
+            <p className="mb-4 text-sm font-semibold uppercase tracking-[0.3em] text-blue-400">
+              CalmPulse Panic Reset
+            </p>
+
+            <h1 className="text-5xl font-extrabold leading-tight md:text-7xl">
+              Panic Attack Relief Starts With One Breath
+            </h1>
+
+            <p className="mt-6 text-lg leading-8 text-blue-100">
+              CalmPulse helps you slow your breathing, reduce overwhelming
+              feelings, and regain control with guided breathing exercises,
+              grounding techniques, and calming tools — all from your phone.
+            </p>
+
+            <div className="mt-8 flex flex-col gap-4 sm:flex-row">
+              <a
+                href="https://play.google.com/store/apps/details?id=com.softiceinnovationslabs.calmpulseapp"
+                onClick={() =>
+                  trackCalmPulseEvent("google_play_click", {
+                    cta_location: "hero",
+                  })
+                }
+                className="rounded-full bg-blue-600 px-7 py-4 text-center font-bold text-white shadow-lg shadow-blue-600/30 hover:bg-blue-500"
+              >
+                Download on Google Play
+              </a>
+
+              <a
+                href="#how-it-works"
+                onClick={() =>
+                  trackCalmPulseEvent("hero_cta_click", {
+                    cta_name: "start_your_calm_reset",
+                  })
+                }
+                className="rounded-full border border-blue-400 px-7 py-4 text-center font-bold text-blue-100 hover:bg-blue-950"
+              >
+                Start Your Calm Reset
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Feature Strip */}
+      <section className="border-y border-blue-900/50 bg-[#061229] px-6 py-10">
+        <div className="mx-auto grid max-w-7xl gap-6 md:grid-cols-5">
+          {[
+            ["Panic Reset", "Step-by-step support for overwhelming moments."],
+            ["2-Minute Breathing", "Slow your breath and reset your body."],
+            ["Grounding Tools", "Return your mind to the present moment."],
+            ["Calm Timer", "Use soft sounds to create space and calm."],
+            ["Progress Tracking", "Build a daily calm practice over time."],
+          ].map(([title, text]) => (
+            <div
+              key={title}
+              className="rounded-2xl border border-blue-800/60 bg-white/5 p-5 backdrop-blur"
+            >
+              <h3 className="text-lg font-bold text-white">{title}</h3>
+              <p className="mt-2 text-sm text-blue-100">{text}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* SEO Content */}
+      <section id="how-it-works" className="mx-auto max-w-5xl px-6 py-20">
+        <h2 className="text-4xl font-extrabold">
+          What to Do During a Panic Attack
+        </h2>
+
+        <p className="mt-6 text-lg leading-8 text-blue-100">
+          A panic attack can feel intense, sudden, and frightening. Your heart
+          may race, your breathing may feel shallow, and your thoughts may tell
+          you something is wrong. CalmPulse is designed to help you pause,
+          breathe, and move through the moment one step at a time.
+        </p>
+
+        <div className="mt-10 grid gap-6 md:grid-cols-3">
+          {[
+            ["1. Plant Your Feet", "Feel the floor under you and notice where your body is."],
+            ["2. Take One Slow Breath", "Breathe in slowly, then exhale longer than you inhale."],
+            ["3. Name What You See", "Bring your mind back by naming three things around you."],
+          ].map(([title, text]) => (
+            <div key={title} className="rounded-3xl bg-blue-950/60 p-6">
+              <h3 className="text-xl font-bold text-blue-300">{title}</h3>
+              <p className="mt-3 text-blue-100">{text}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="bg-[#061229] px-6 py-20">
+        <div className="mx-auto max-w-5xl">
+          <h2 className="text-4xl font-extrabold">Panic Attack FAQ</h2>
+
+          <div className="mt-8 space-y-4">
+            {[
+              [
+                "What is a panic attack?",
+                "A panic attack is a sudden wave of intense fear or discomfort that can include racing thoughts, rapid heartbeat, shortness of breath, trembling, or a sense of losing control.",
+              ],
+              [
+                "Can breathing help during a panic attack?",
+                "Slow breathing can help signal safety to your body and reduce the intensity of the stress response.",
+              ],
+              [
+                "How does CalmPulse help?",
+                "CalmPulse gives you Panic Reset, guided breathing, grounding prompts, calm timers, and progress tracking to support anxious moments.",
+              ],
+              [
+                "Is CalmPulse a medical treatment?",
+                "No. CalmPulse is a self-care support tool. It does not replace medical advice, diagnosis, therapy, or emergency care.",
+              ],
+            ].map(([q, a]) => (
+              <details
+                key={q}
+                className="rounded-2xl border border-blue-900 bg-white/5 p-5"
+                onClick={() =>
+                  trackCalmPulseEvent("faq_expand", {
+                    faq_question: q,
+                  })
+                }
+              >
+                <summary className="cursor-pointer text-lg font-bold">
+                  {q}
+                </summary>
+                <p className="mt-3 text-blue-100">{a}</p>
+              </details>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Final CTA */}
+      <section className="px-6 py-20 text-center">
+        <h2 className="text-4xl font-extrabold">
+          Breathe. Reset. Feel Better.
+        </h2>
+        <p className="mx-auto mt-4 max-w-2xl text-blue-100">
+          Download CalmPulse and keep simple calming tools with you wherever
+          anxiety shows up.
+        </p>
+
+        <a
+          href="https://play.google.com/store/apps/details?id=com.softiceinnovationslabs.calmpulseapp"
+          onClick={() =>
+            trackCalmPulseEvent("google_play_click", {
+              cta_location: "bottom_cta",
+            })
+          }
+          className="mt-8 inline-block rounded-full bg-blue-600 px-8 py-4 font-bold hover:bg-blue-500"
+        >
+          Get CalmPulse on Google Play
+        </a>
+      </section>
+    </main>
+  );
+}
