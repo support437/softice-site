@@ -301,10 +301,28 @@
       color: white;
     }
 
+    /* Covers any embedded text on the left side of the hero image so only this page's real HTML headline is visible. */
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      background:
+        linear-gradient(90deg,
+          rgba(3, 10, 34, 0.98) 0%,
+          rgba(3, 10, 34, 0.94) 34%,
+          rgba(3, 10, 34, 0.72) 54%,
+          rgba(3, 10, 34, 0.28) 75%,
+          rgba(3, 10, 34, 0.08) 100%
+        );
+      pointer-events: none;
+    }
+
     .hero::after {
       content: "";
       position: absolute;
       inset: auto 0 0;
+      z-index: 2;
       height: 150px;
       background: linear-gradient(180deg, transparent, rgba(255, 255, 255, 1));
       pointer-events: none;
@@ -421,11 +439,11 @@
 
     .hero-inner {
       position: relative;
-      z-index: 2;
+      z-index: 3;
       width: min(var(--max), calc(100% - 48px));
       margin: 0 auto;
       display: grid;
-      grid-template-columns: 1fr 430px;
+      grid-template-columns: minmax(0, 660px);
       gap: 80px;
       align-items: center;
       padding: 55px 0 120px;
@@ -1128,16 +1146,6 @@
           </div>
         </div>
 
-        <div class="phone-wrap" aria-label="CalmPulse app preview">
-          <div class="phone">
-            <img
-              class="phone-image"
-              src="/images/calmpulse/calmpulse-phone-home.webp"
-              alt="CalmPulse app home screen showing Smart Calm Check-In, Panic Reset, Breathing, and Calm Timer"
-              loading="eager"
-            />
-          </div>
-        </div>
       </section>
     </header>
 
