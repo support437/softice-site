@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
   <!-- HOMEPAGE / COMPANY HUB -->
 
   <url>
     <loc>https://softiceinnovationslabs.com/</loc>
-    <lastmod>2026-06-25</lastmod>
+    <lastmod>2026-07-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.00</priority>
   </url>
@@ -15,28 +14,79 @@
 
   <url>
     <loc>https://softiceinnovationslabs.com/cozy-tales</loc>
-    <lastmod>2026-06-25</lastmod>
+    <lastmod>2026-07-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.95</priority>
   </url>
 
   <url>
     <loc>https://softiceinnovationslabs.com/petcare</loc>
-    <lastmod>2026-06-25</lastmod>
+    <lastmod>2026-07-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.95</priority>
   </url>
 
   <url>
     <loc>https://softiceinnovationslabs.com/calmpulse</loc>
-    <lastmod>2026-06-25</lastmod>
+    <lastmod>2026-07-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.95</priority>
   </url>
 
+  <!-- CALMPULSE SEO LANDING PAGES -->
+
+  <url>
+    <loc>https://softiceinnovationslabs.com/anxiety-relief</loc>
+    <lastmod>2026-07-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+  </url>
+
+  <url>
+    <loc>https://softiceinnovationslabs.com/panic-attack</loc>
+    <lastmod>2026-07-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+  </url>
+
+  <url>
+    <loc>https://softiceinnovationslabs.com/stress-relief</loc>
+    <lastmod>2026-07-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.88</priority>
+  </url>
+
+  <url>
+    <loc>https://softiceinnovationslabs.com/anxiety-relief</loc>
+    <lastmod>2026-07-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.88</priority>
+  </url>
+
+  <url>
+    <loc>https://softiceinnovationslabs.com/fighting-anxiety</loc>
+    <lastmod>2026-07-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.88</priority>
+  </url>
+
+  <url>
+    <loc>https://softiceinnovationslabs.com/breathing-exercises</loc>
+    <lastmod>2026-07-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.88</priority>
+  </url>
+
+  <url>
+    <loc>https://softiceinnovationslabs.com/overthinking</loc>
+    <lastmod>2026-07-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.88</priority>
+  </url>
+
   <url>
     <loc>https://softiceinnovationslabs.com/zero-reset</loc>
-    <lastmod>2026-06-25</lastmod>
+    <lastmod>2026-07-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.95</priority>
   </url>
@@ -174,7 +224,7 @@
     <priority>0.35</priority>
   </url>
 
-  <!-- CALMPULSE LEGAL / SUPPORT PAGES -->
+  <!-- CALMPULSE LEGAL -->
 
   <url>
     <loc>https://softiceinnovationslabs.com/calmpulse-log-legal</loc>
@@ -197,7 +247,7 @@
     <priority>0.30</priority>
   </url>
 
-  <!-- PETCARE LOG LEGAL / SUPPORT PAGES -->
+  <!-- PETCARE LEGAL -->
 
   <url>
     <loc>https://softiceinnovationslabs.com/petcare-log-legal</loc>
@@ -220,7 +270,7 @@
     <priority>0.30</priority>
   </url>
 
-  <!-- ZERO RESET LEGAL / SUPPORT PAGES -->
+  <!-- ZERO RESET LEGAL -->
 
   <url>
     <loc>https://softiceinnovationslabs.com/zero-reset-legal</loc>
