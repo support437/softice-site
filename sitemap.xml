@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
-  <!-- HOMEPAGE / COMPANY HUB -->
+  <!-- HOMEPAGE -->
 
   <url>
     <loc>https://softiceinnovationslabs.com/</loc>
@@ -33,7 +33,14 @@
     <priority>0.95</priority>
   </url>
 
-  <!-- CALMPULSE SEO LANDING PAGES -->
+  <url>
+    <loc>https://softiceinnovationslabs.com/zero-reset</loc>
+    <lastmod>2026-07-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+
+  <!-- CALMPULSE SEO PAGES -->
 
   <url>
     <loc>https://softiceinnovationslabs.com/anxiety-relief</loc>
@@ -51,13 +58,6 @@
 
   <url>
     <loc>https://softiceinnovationslabs.com/stress-relief</loc>
-    <lastmod>2026-07-02</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.88</priority>
-  </url>
-
-  <url>
-    <loc>https://softiceinnovationslabs.com/anxiety-relief</loc>
     <lastmod>2026-07-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.88</priority>
@@ -84,14 +84,7 @@
     <priority>0.88</priority>
   </url>
 
-  <url>
-    <loc>https://softiceinnovationslabs.com/zero-reset</loc>
-    <lastmod>2026-07-02</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.95</priority>
-  </url>
-
-  <!-- COZY TALES / BEDTIME STORIES HUB -->
+  <!-- COZY TALES HUB -->
 
   <url>
     <loc>https://softiceinnovationslabs.com/bedtime-stories-for-kids</loc>
@@ -100,7 +93,7 @@
     <priority>0.90</priority>
   </url>
 
-  <!-- CORE COZY TALES SEO PAGES -->
+  <!-- CORE COZY TALES SEO -->
 
   <url>
     <loc>https://softiceinnovationslabs.com/best-bedtime-stories-for-kids</loc>
@@ -123,7 +116,7 @@
     <priority>0.82</priority>
   </url>
 
-  <!-- AGE-BASED COZY TALES CONTENT -->
+  <!-- AGE-BASED CONTENT -->
 
   <url>
     <loc>https://softiceinnovationslabs.com/bedtime-stories-for-babies</loc>
@@ -146,7 +139,7 @@
     <priority>0.78</priority>
   </url>
 
-  <!-- SUPPORTING COZY TALES CONTENT -->
+  <!-- SUPPORTING CONTENT -->
 
   <url>
     <loc>https://softiceinnovationslabs.com/sleep-stories-for-toddlers</loc>
@@ -176,7 +169,7 @@
     <priority>0.72</priority>
   </url>
 
-  <!-- PARENTING / SLEEP GUIDES -->
+  <!-- PARENTING GUIDES -->
 
   <url>
     <loc>https://softiceinnovationslabs.com/how-to-help-kids-sleep</loc>
@@ -213,84 +206,6 @@
     <lastmod>2026-06-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.70</priority>
-  </url>
-
-  <!-- COMPANY LEGAL -->
-
-  <url>
-    <loc>https://softiceinnovationslabs.com/privacy-policy</loc>
-    <lastmod>2026-06-25</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.35</priority>
-  </url>
-
-  <!-- CALMPULSE LEGAL -->
-
-  <url>
-    <loc>https://softiceinnovationslabs.com/calmpulse-log-legal</loc>
-    <lastmod>2026-06-25</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.30</priority>
-  </url>
-
-  <url>
-    <loc>https://softiceinnovationslabs.com/calmpulse-log-privacy-policy</loc>
-    <lastmod>2026-06-25</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.30</priority>
-  </url>
-
-  <url>
-    <loc>https://softiceinnovationslabs.com/calmpulse-log-terms</loc>
-    <lastmod>2026-06-25</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.30</priority>
-  </url>
-
-  <!-- PETCARE LEGAL -->
-
-  <url>
-    <loc>https://softiceinnovationslabs.com/petcare-log-legal</loc>
-    <lastmod>2026-06-25</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.30</priority>
-  </url>
-
-  <url>
-    <loc>https://softiceinnovationslabs.com/petcare-log-privacy-policy</loc>
-    <lastmod>2026-06-25</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.30</priority>
-  </url>
-
-  <url>
-    <loc>https://softiceinnovationslabs.com/petcare-log-terms</loc>
-    <lastmod>2026-06-25</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.30</priority>
-  </url>
-
-  <!-- ZERO RESET LEGAL -->
-
-  <url>
-    <loc>https://softiceinnovationslabs.com/zero-reset-legal</loc>
-    <lastmod>2026-06-25</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.30</priority>
-  </url>
-
-  <url>
-    <loc>https://softiceinnovationslabs.com/zero-reset-privacy-policy</loc>
-    <lastmod>2026-06-25</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.30</priority>
-  </url>
-
-  <url>
-    <loc>https://softiceinnovationslabs.com/zero-reset-terms</loc>
-    <lastmod>2026-06-25</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.30</priority>
   </url>
 
 </urlset>
