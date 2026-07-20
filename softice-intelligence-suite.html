@@ -1,1 +1,1801 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
 
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>
+    Softice Intelligence Suite | Internal App Business Intelligence
+  </title>
+
+  <meta
+    name="description"
+    content="Softice Intelligence Suite is a private internal business intelligence and reporting platform developed by Softice Innovations Labs LLC to monitor app performance, Google Ads campaigns, ASO, retention, product health, and business growth."
+  >
+
+  <meta
+    name="keywords"
+    content="Softice Intelligence Suite, Google Ads API reporting, app analytics, app business intelligence, mobile app portfolio, Softice Innovations Labs"
+  >
+
+  <meta name="author" content="Softice Innovations Labs LLC">
+
+  <meta name="robots" content="index, follow">
+
+  <link
+    rel="canonical"
+    href="https://softiceinnovationslabs.com/softice-intelligence-suite.html"
+  >
+
+  <meta property="og:type" content="website">
+
+  <meta
+    property="og:title"
+    content="Softice Intelligence Suite"
+  >
+
+  <meta
+    property="og:description"
+    content="Private internal reporting and business intelligence for the Softice Innovations Labs mobile app portfolio."
+  >
+
+  <meta
+    property="og:url"
+    content="https://softiceinnovationslabs.com/softice-intelligence-suite.html"
+  >
+
+  <meta
+    property="og:site_name"
+    content="Softice Innovations Labs"
+  >
+
+  <meta name="twitter:card" content="summary_large_image">
+
+  <meta
+    name="twitter:title"
+    content="Softice Intelligence Suite"
+  >
+
+  <meta
+    name="twitter:description"
+    content="Internal app portfolio intelligence, Google Ads reporting, ASO, retention, and AI-assisted business analysis."
+  >
+
+  <style>
+    :root {
+      --background: #050816;
+      --background-soft: #0a1022;
+      --surface: rgba(17, 25, 54, 0.88);
+      --surface-solid: #111936;
+      --surface-light: #172142;
+      --primary: #7c5cff;
+      --primary-light: #9b86ff;
+      --secondary: #19c6ff;
+      --accent: #32e6a1;
+      --warning: #ffb84d;
+      --text: #f8fafc;
+      --text-soft: #b8c0d9;
+      --text-muted: #7f8aa8;
+      --border: rgba(255, 255, 255, 0.1);
+      --shadow: 0 24px 80px rgba(0, 0, 0, 0.35);
+      --radius-large: 28px;
+      --radius-medium: 18px;
+      --radius-small: 12px;
+      --max-width: 1180px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      min-height: 100vh;
+      overflow-x: hidden;
+      color: var(--text);
+      background:
+        radial-gradient(
+          circle at 10% 5%,
+          rgba(124, 92, 255, 0.2),
+          transparent 32%
+        ),
+        radial-gradient(
+          circle at 90% 10%,
+          rgba(25, 198, 255, 0.15),
+          transparent 30%
+        ),
+        radial-gradient(
+          circle at 50% 85%,
+          rgba(50, 230, 161, 0.07),
+          transparent 35%
+        ),
+        var(--background);
+      font-family:
+        Inter,
+        ui-sans-serif,
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+      line-height: 1.65;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    button,
+    a {
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .container {
+      width: min(calc(100% - 40px), var(--max-width));
+      margin: 0 auto;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid var(--border);
+      background: rgba(5, 8, 22, 0.82);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+    }
+
+    .nav {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      min-width: 0;
+    }
+
+    .brand-mark {
+      width: 42px;
+      height: 42px;
+      flex: 0 0 42px;
+      display: grid;
+      place-items: center;
+      border-radius: 13px;
+      background:
+        linear-gradient(
+          145deg,
+          var(--primary),
+          var(--secondary)
+        );
+      box-shadow:
+        0 10px 30px rgba(124, 92, 255, 0.35);
+      font-weight: 900;
+      letter-spacing: -1px;
+    }
+
+    .brand-copy {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.15;
+    }
+
+    .brand-copy strong {
+      font-size: 0.98rem;
+    }
+
+    .brand-copy span {
+      color: var(--text-muted);
+      font-size: 0.73rem;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 26px;
+      color: var(--text-soft);
+      font-size: 0.91rem;
+      font-weight: 600;
+    }
+
+    .nav-links a {
+      transition:
+        color 180ms ease,
+        transform 180ms ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--text);
+      transform: translateY(-1px);
+    }
+
+    .nav-cta {
+      padding: 10px 17px;
+      color: #ffffff !important;
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      border-radius: 999px;
+      background:
+        linear-gradient(
+          135deg,
+          var(--primary),
+          #5a8cff
+        );
+      box-shadow:
+        0 10px 25px rgba(86, 92, 255, 0.28);
+    }
+
+    .hero {
+      position: relative;
+      padding: 112px 0 82px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns:
+        minmax(0, 1.08fr)
+        minmax(360px, 0.92fr);
+      align-items: center;
+      gap: 64px;
+    }
+
+    .eyebrow {
+      width: fit-content;
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      margin-bottom: 22px;
+      padding: 8px 14px;
+      color: #dcd5ff;
+      border: 1px solid rgba(155, 134, 255, 0.28);
+      border-radius: 999px;
+      background: rgba(124, 92, 255, 0.1);
+      font-size: 0.79rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 15px rgba(50, 230, 161, 0.75);
+    }
+
+    h1 {
+      max-width: 760px;
+      font-size: clamp(2.8rem, 6vw, 5.7rem);
+      line-height: 0.98;
+      letter-spacing: -0.055em;
+    }
+
+    .gradient-text {
+      color: transparent;
+      background:
+        linear-gradient(
+          100deg,
+          #ffffff 4%,
+          #a996ff 44%,
+          #55d9ff 75%,
+          #51efb2 100%
+        );
+      background-clip: text;
+      -webkit-background-clip: text;
+    }
+
+    .hero-description {
+      max-width: 720px;
+      margin-top: 26px;
+      color: var(--text-soft);
+      font-size: clamp(1rem, 1.8vw, 1.22rem);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 34px;
+    }
+
+    .button {
+      min-height: 50px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      padding: 13px 21px;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      font-weight: 800;
+      transition:
+        transform 180ms ease,
+        border-color 180ms ease,
+        background 180ms ease;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+    }
+
+    .button-primary {
+      border-color: transparent;
+      background:
+        linear-gradient(
+          135deg,
+          var(--primary),
+          #4e93ff
+        );
+      box-shadow:
+        0 16px 36px rgba(86, 92, 255, 0.28);
+    }
+
+    .button-secondary {
+      color: var(--text-soft);
+      background: rgba(255, 255, 255, 0.04);
+    }
+
+    .button-secondary:hover {
+      color: var(--text);
+      border-color: rgba(255, 255, 255, 0.22);
+      background: rgba(255, 255, 255, 0.07);
+    }
+
+    .hero-note {
+      margin-top: 22px;
+      color: var(--text-muted);
+      font-size: 0.83rem;
+    }
+
+    .dashboard-preview {
+      position: relative;
+      padding: 22px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: var(--radius-large);
+      background:
+        linear-gradient(
+          150deg,
+          rgba(24, 35, 73, 0.96),
+          rgba(10, 15, 35, 0.96)
+        );
+      box-shadow: var(--shadow);
+    }
+
+    .dashboard-preview::before {
+      content: "";
+      position: absolute;
+      inset: -40% auto auto -20%;
+      width: 280px;
+      height: 280px;
+      border-radius: 50%;
+      background: rgba(124, 92, 255, 0.22);
+      filter: blur(70px);
+      pointer-events: none;
+    }
+
+    .preview-header {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      margin-bottom: 20px;
+    }
+
+    .preview-title {
+      font-size: 0.94rem;
+      font-weight: 800;
+    }
+
+    .live-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 6px 10px;
+      color: #a9f7d4;
+      border: 1px solid rgba(50, 230, 161, 0.25);
+      border-radius: 999px;
+      background: rgba(50, 230, 161, 0.08);
+      font-size: 0.7rem;
+      font-weight: 800;
+    }
+
+    .live-badge::before {
+      content: "";
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 11px rgba(50, 230, 161, 0.7);
+    }
+
+    .metric-grid {
+      position: relative;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 13px;
+    }
+
+    .metric-card {
+      min-height: 110px;
+      padding: 16px;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      background: rgba(255, 255, 255, 0.045);
+    }
+
+    .metric-card span {
+      display: block;
+      color: var(--text-muted);
+      font-size: 0.72rem;
+      font-weight: 700;
+    }
+
+    .metric-card strong {
+      display: block;
+      margin-top: 8px;
+      font-size: 1.48rem;
+      letter-spacing: -0.03em;
+    }
+
+    .metric-card small {
+      display: block;
+      margin-top: 6px;
+      color: var(--accent);
+      font-size: 0.68rem;
+    }
+
+    .chart-card {
+      position: relative;
+      margin-top: 13px;
+      padding: 18px;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      background: rgba(255, 255, 255, 0.04);
+    }
+
+    .chart-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 16px;
+      color: var(--text-soft);
+      font-size: 0.77rem;
+      font-weight: 700;
+    }
+
+    .chart {
+      height: 92px;
+      display: flex;
+      align-items: end;
+      gap: 8px;
+    }
+
+    .chart span {
+      flex: 1;
+      min-width: 9px;
+      border-radius: 7px 7px 3px 3px;
+      background:
+        linear-gradient(
+          180deg,
+          var(--secondary),
+          var(--primary)
+        );
+      opacity: 0.86;
+    }
+
+    .chart span:nth-child(1) {
+      height: 36%;
+    }
+
+    .chart span:nth-child(2) {
+      height: 48%;
+    }
+
+    .chart span:nth-child(3) {
+      height: 41%;
+    }
+
+    .chart span:nth-child(4) {
+      height: 68%;
+    }
+
+    .chart span:nth-child(5) {
+      height: 59%;
+    }
+
+    .chart span:nth-child(6) {
+      height: 80%;
+    }
+
+    .chart span:nth-child(7) {
+      height: 72%;
+    }
+
+    .chart span:nth-child(8) {
+      height: 93%;
+    }
+
+    section {
+      padding: 88px 0;
+    }
+
+    .section-heading {
+      max-width: 760px;
+      margin-bottom: 42px;
+    }
+
+    .section-kicker {
+      display: block;
+      margin-bottom: 10px;
+      color: var(--secondary);
+      font-size: 0.78rem;
+      font-weight: 900;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    h2 {
+      font-size: clamp(2rem, 4vw, 3.35rem);
+      line-height: 1.08;
+      letter-spacing: -0.04em;
+    }
+
+    .section-heading p {
+      margin-top: 15px;
+      color: var(--text-soft);
+      font-size: 1.03rem;
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .card {
+      position: relative;
+      padding: 27px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-medium);
+      background:
+        linear-gradient(
+          145deg,
+          rgba(20, 29, 61, 0.8),
+          rgba(10, 15, 34, 0.88)
+        );
+      box-shadow:
+        0 18px 45px rgba(0, 0, 0, 0.17);
+    }
+
+    .card::after {
+      content: "";
+      position: absolute;
+      top: -50px;
+      right: -50px;
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      background: rgba(124, 92, 255, 0.09);
+      filter: blur(22px);
+    }
+
+    .card-icon {
+      width: 46px;
+      height: 46px;
+      display: grid;
+      place-items: center;
+      margin-bottom: 19px;
+      border: 1px solid rgba(155, 134, 255, 0.25);
+      border-radius: 14px;
+      background: rgba(124, 92, 255, 0.1);
+      font-size: 1.28rem;
+    }
+
+    .card h3 {
+      margin-bottom: 9px;
+      font-size: 1.12rem;
+    }
+
+    .card p {
+      color: var(--text-soft);
+      font-size: 0.91rem;
+    }
+
+    .api-section {
+      border-block: 1px solid var(--border);
+      background:
+        linear-gradient(
+          180deg,
+          rgba(14, 21, 45, 0.6),
+          rgba(7, 11, 26, 0.76)
+        );
+    }
+
+    .split-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 0.86fr) minmax(0, 1.14fr);
+      gap: 58px;
+      align-items: start;
+    }
+
+    .sticky-copy {
+      position: sticky;
+      top: 118px;
+    }
+
+    .check-list {
+      display: grid;
+      gap: 13px;
+      margin-top: 28px;
+    }
+
+    .check-item {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      color: var(--text-soft);
+    }
+
+    .check-icon {
+      width: 22px;
+      height: 22px;
+      flex: 0 0 22px;
+      display: grid;
+      place-items: center;
+      margin-top: 2px;
+      color: #05120d;
+      border-radius: 50%;
+      background: var(--accent);
+      font-size: 0.72rem;
+      font-weight: 900;
+    }
+
+    .info-panel {
+      display: grid;
+      gap: 18px;
+    }
+
+    .info-card {
+      padding: 26px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-medium);
+      background: var(--surface);
+    }
+
+    .info-card h3 {
+      margin-bottom: 11px;
+      font-size: 1.12rem;
+    }
+
+    .info-card p,
+    .info-card li {
+      color: var(--text-soft);
+      font-size: 0.91rem;
+    }
+
+    .info-card ul {
+      display: grid;
+      gap: 8px;
+      padding-left: 20px;
+    }
+
+    .status-label {
+      width: fit-content;
+      display: inline-flex;
+      margin-bottom: 13px;
+      padding: 6px 10px;
+      color: #b9acf8;
+      border: 1px solid rgba(155, 134, 255, 0.24);
+      border-radius: 999px;
+      background: rgba(124, 92, 255, 0.09);
+      font-size: 0.7rem;
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .architecture {
+      display: grid;
+      grid-template-columns:
+        minmax(0, 1fr)
+        48px
+        minmax(0, 1fr)
+        48px
+        minmax(0, 1fr)
+        48px
+        minmax(0, 1fr);
+      align-items: center;
+      gap: 7px;
+      margin-top: 36px;
+    }
+
+    .architecture-card {
+      min-height: 168px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 20px 15px;
+      text-align: center;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-medium);
+      background: rgba(255, 255, 255, 0.045);
+    }
+
+    .architecture-card strong {
+      margin-bottom: 8px;
+      font-size: 0.95rem;
+    }
+
+    .architecture-card span {
+      color: var(--text-muted);
+      font-size: 0.78rem;
+    }
+
+    .architecture-icon {
+      margin-bottom: 13px;
+      font-size: 1.55rem;
+    }
+
+    .architecture-arrow {
+      color: var(--primary-light);
+      text-align: center;
+      font-size: 1.45rem;
+      font-weight: 900;
+    }
+
+    .privacy-box {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 22px;
+      margin-top: 42px;
+    }
+
+    .allow-box,
+    .deny-box {
+      padding: 28px;
+      border-radius: var(--radius-medium);
+    }
+
+    .allow-box {
+      border: 1px solid rgba(50, 230, 161, 0.25);
+      background: rgba(50, 230, 161, 0.055);
+    }
+
+    .deny-box {
+      border: 1px solid rgba(255, 184, 77, 0.23);
+      background: rgba(255, 184, 77, 0.055);
+    }
+
+    .allow-box h3 {
+      color: #91f1c6;
+    }
+
+    .deny-box h3 {
+      color: #ffd18d;
+    }
+
+    .privacy-box h3 {
+      margin-bottom: 15px;
+    }
+
+    .privacy-box ul {
+      display: grid;
+      gap: 9px;
+      padding-left: 19px;
+      color: var(--text-soft);
+      font-size: 0.9rem;
+    }
+
+    .disclosure {
+      padding: 36px;
+      border: 1px solid rgba(85, 217, 255, 0.23);
+      border-radius: var(--radius-large);
+      background:
+        linear-gradient(
+          135deg,
+          rgba(25, 198, 255, 0.08),
+          rgba(124, 92, 255, 0.08)
+        );
+    }
+
+    .disclosure h2 {
+      margin-bottom: 15px;
+      font-size: clamp(1.8rem, 3vw, 2.7rem);
+    }
+
+    .disclosure p {
+      max-width: 950px;
+      color: var(--text-soft);
+    }
+
+    .contact-card {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      gap: 28px;
+      padding: 42px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-large);
+      background:
+        linear-gradient(
+          135deg,
+          rgba(124, 92, 255, 0.13),
+          rgba(25, 198, 255, 0.07)
+        );
+      box-shadow: var(--shadow);
+    }
+
+    .contact-card p {
+      margin-top: 10px;
+      color: var(--text-soft);
+    }
+
+    .site-footer {
+      padding: 45px 0 30px;
+      border-top: 1px solid var(--border);
+      background: rgba(3, 5, 15, 0.7);
+    }
+
+    .footer-main {
+      display: flex;
+      justify-content: space-between;
+      gap: 40px;
+      padding-bottom: 28px;
+    }
+
+    .footer-company {
+      max-width: 520px;
+    }
+
+    .footer-company p {
+      margin-top: 13px;
+      color: var(--text-muted);
+      font-size: 0.87rem;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      align-content: flex-start;
+      gap: 16px 24px;
+      color: var(--text-soft);
+      font-size: 0.86rem;
+    }
+
+    .footer-links a:hover {
+      color: var(--text);
+    }
+
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      padding-top: 24px;
+      color: var(--text-muted);
+      border-top: 1px solid var(--border);
+      font-size: 0.78rem;
+    }
+
+    @media (max-width: 980px) {
+      .nav-links a:not(.nav-cta) {
+        display: none;
+      }
+
+      .hero {
+        padding-top: 82px;
+      }
+
+      .hero-grid,
+      .split-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .dashboard-preview {
+        max-width: 660px;
+      }
+
+      .sticky-copy {
+        position: static;
+      }
+
+      .card-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .architecture {
+        grid-template-columns: 1fr;
+      }
+
+      .architecture-arrow {
+        transform: rotate(90deg);
+      }
+    }
+
+    @media (max-width: 680px) {
+      .container {
+        width: min(calc(100% - 26px), var(--max-width));
+      }
+
+      .brand-copy span {
+        display: none;
+      }
+
+      .nav-cta {
+        padding: 9px 13px;
+        font-size: 0.8rem;
+      }
+
+      .hero {
+        padding: 68px 0 58px;
+      }
+
+      h1 {
+        font-size: clamp(2.55rem, 14vw, 4.1rem);
+      }
+
+      section {
+        padding: 65px 0;
+      }
+
+      .card-grid,
+      .privacy-box {
+        grid-template-columns: 1fr;
+      }
+
+      .metric-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .contact-card {
+        grid-template-columns: 1fr;
+        padding: 29px;
+      }
+
+      .contact-card .button {
+        width: 100%;
+      }
+
+      .footer-main,
+      .footer-bottom {
+        flex-direction: column;
+      }
+    }
+
+    @media (max-width: 420px) {
+      .metric-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-actions {
+        flex-direction: column;
+      }
+
+      .hero-actions .button {
+        width: 100%;
+      }
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Softice Intelligence Suite",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Android",
+    "description": "A private internal business intelligence and reporting application used by Softice Innovations Labs LLC to monitor its own app portfolio and Google Ads campaign performance.",
+    "url": "https://softiceinnovationslabs.com/softice-intelligence-suite.html",
+    "author": {
+      "@type": "Organization",
+      "name": "Softice Innovations Labs LLC",
+      "url": "https://softiceinnovationslabs.com"
+    },
+    "audience": {
+      "@type": "Audience",
+      "audienceType": "Authorized internal Softice Innovations Labs personnel"
+    }
+  }
+  </script>
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a
+        class="brand"
+        href="/"
+        aria-label="Softice Innovations Labs homepage"
+      >
+        <div class="brand-mark">SI</div>
+
+        <div class="brand-copy">
+          <strong>Softice Innovations Labs</strong>
+          <span>Building intelligent digital products</span>
+        </div>
+      </a>
+
+      <nav
+        class="nav-links"
+        aria-label="Main navigation"
+      >
+        <a href="#overview">Overview</a>
+        <a href="#google-ads">Google Ads API</a>
+        <a href="#security">Security</a>
+        <a href="#contact">Contact</a>
+
+        <a
+          class="nav-cta"
+          href="/"
+        >
+          Explore Our Apps
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">
+            <span class="eyebrow-dot"></span>
+            Internal business intelligence platform
+          </div>
+
+          <h1>
+            One command center for the
+            <span class="gradient-text">
+              Softice app portfolio.
+            </span>
+          </h1>
+
+          <p class="hero-description">
+            Softice Intelligence Suite is a private internal
+            reporting and decision-support application developed
+            by Softice Innovations Labs LLC. It brings together
+            advertising performance, app portfolio management,
+            ASO intelligence, product planning, reporting, and
+            AI-assisted business analysis.
+          </p>
+
+          <div class="hero-actions">
+            <a
+              class="button button-primary"
+              href="#google-ads"
+            >
+              View Google Ads Integration
+              <span aria-hidden="true">→</span>
+            </a>
+
+            <a
+              class="button button-secondary"
+              href="#security"
+            >
+              Review Security
+            </a>
+          </div>
+
+          <p class="hero-note">
+            Private internal software. Not offered as a public
+            Google Ads management service.
+          </p>
+        </div>
+
+        <div
+          class="dashboard-preview"
+          aria-label="Illustration of the internal dashboard"
+        >
+          <div class="preview-header">
+            <div>
+              <div class="preview-title">
+                Portfolio Intelligence
+              </div>
+            </div>
+
+            <div class="live-badge">
+              Verified data
+            </div>
+          </div>
+
+          <div class="metric-grid">
+            <div class="metric-card">
+              <span>Campaign reporting</span>
+              <strong>Live API</strong>
+              <small>Read-only integration</small>
+            </div>
+
+            <div class="metric-card">
+              <span>Portfolio view</span>
+              <strong>Unified</strong>
+              <small>Multiple Softice apps</small>
+            </div>
+
+            <div class="metric-card">
+              <span>AI analysis</span>
+              <strong>Advisory</strong>
+              <small>Human approval required</small>
+            </div>
+
+            <div class="metric-card">
+              <span>Access model</span>
+              <strong>Internal</strong>
+              <small>Authorized personnel only</small>
+            </div>
+          </div>
+
+          <div class="chart-card">
+            <div class="chart-header">
+              <span>Campaign performance overview</span>
+              <span>Reporting</span>
+            </div>
+
+            <div
+              class="chart"
+              aria-hidden="true"
+            >
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="overview">
+      <div class="container">
+        <div class="section-heading">
+          <span class="section-kicker">
+            Product overview
+          </span>
+
+          <h2>
+            Built to help manage a growing mobile app company.
+          </h2>
+
+          <p>
+            The Suite gives authorized Softice personnel a
+            consolidated view of advertising, app growth,
+            product quality, retention priorities, ASO work,
+            and company planning.
+          </p>
+        </div>
+
+        <div class="card-grid">
+          <article class="card">
+            <div class="card-icon" aria-hidden="true">◈</div>
+
+            <h3>Portfolio Intelligence</h3>
+
+            <p>
+              Compare Softice applications, development
+              priorities, growth progress, product readiness,
+              marketing activity, and strategic opportunities.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="card-icon" aria-hidden="true">↗</div>
+
+            <h3>Advertising Reporting</h3>
+
+            <p>
+              Retrieve and organize verified performance data
+              from advertising campaigns owned and operated by
+              Softice Innovations Labs LLC.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="card-icon" aria-hidden="true">◎</div>
+
+            <h3>ASO Intelligence</h3>
+
+            <p>
+              Analyze app titles, descriptions, keywords,
+              screenshots, listing quality, and opportunities
+              for stronger store visibility.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="card-icon" aria-hidden="true">✓</div>
+
+            <h3>Retention Planning</h3>
+
+            <p>
+              Support onboarding reviews, retention standards,
+              engagement planning, feature prioritization, and
+              long-term product quality improvements.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="card-icon" aria-hidden="true">▦</div>
+
+            <h3>Executive Reports</h3>
+
+            <p>
+              Produce internal campaign, portfolio, launch,
+              marketing, and business reports using clearly
+              labeled data sources.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="card-icon" aria-hidden="true">✦</div>
+
+            <h3>AI-Assisted Analysis</h3>
+
+            <p>
+              Provide advisory insights and prioritized
+              recommendations while keeping all final business
+              and advertising decisions under human control.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section
+      class="api-section"
+      id="google-ads"
+    >
+      <div class="container split-layout">
+        <div class="sticky-copy">
+          <span class="section-kicker">
+            Google Ads API
+          </span>
+
+          <h2>
+            Read-only reporting for Softice-owned campaigns.
+          </h2>
+
+          <p class="hero-description">
+            Softice Intelligence Suite uses the Google Ads API
+            to retrieve performance information from Google Ads
+            accounts owned and operated by Softice Innovations
+            Labs LLC.
+          </p>
+
+          <div class="check-list">
+            <div class="check-item">
+              <span class="check-icon">✓</span>
+
+              <span>
+                Used only for internal reporting and business
+                intelligence.
+              </span>
+            </div>
+
+            <div class="check-item">
+              <span class="check-icon">✓</span>
+
+              <span>
+                Restricted to authorized internal Softice
+                personnel.
+              </span>
+            </div>
+
+            <div class="check-item">
+              <span class="check-icon">✓</span>
+
+              <span>
+                No third-party advertising accounts or clients
+                are managed.
+              </span>
+            </div>
+
+            <div class="check-item">
+              <span class="check-icon">✓</span>
+
+              <span>
+                No autonomous campaign modifications are
+                performed.
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <div class="info-panel">
+          <article class="info-card">
+            <span class="status-label">
+              Reporting capability
+            </span>
+
+            <h3>Campaign and account data retrieved</h3>
+
+            <ul>
+              <li>Account descriptive name</li>
+              <li>Account currency and time zone</li>
+              <li>Campaign ID and campaign name</li>
+              <li>Campaign status and primary status</li>
+              <li>Advertising channel type</li>
+              <li>Campaign start and end dates</li>
+              <li>Campaign budget information</li>
+              <li>Advertising spend</li>
+              <li>Impressions and clicks</li>
+              <li>Conversions and all conversions</li>
+              <li>Conversion value</li>
+              <li>Click-through rate</li>
+              <li>Average cost per click</li>
+              <li>Cost per conversion</li>
+            </ul>
+          </article>
+
+          <article class="info-card">
+            <span class="status-label">
+              Internal calculations
+            </span>
+
+            <h3>Business metrics and summaries</h3>
+
+            <p>
+              Retrieved data may be organized into internal
+              summaries such as total campaign spend, active
+              campaign count, active daily budget, CTR, CPC,
+              CPA, conversion totals, campaign comparisons, and
+              budget-limitation indicators.
+            </p>
+          </article>
+
+          <article class="info-card">
+            <span class="status-label">
+              Supported campaigns
+            </span>
+
+            <h3>App campaign reporting</h3>
+
+            <p>
+              The current primary use is reporting on Google
+              Ads app campaigns promoting applications
+              developed and published by Softice Innovations
+              Labs LLC.
+            </p>
+          </article>
+
+          <article class="info-card">
+            <span class="status-label">
+              Access model
+            </span>
+
+            <h3>Private internal users only</h3>
+
+            <p>
+              Softice Intelligence Suite is not publicly
+              available and is not used to provide advertising
+              management services to external customers,
+              agencies, affiliates, or other advertisers.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="architecture">
+      <div class="container">
+        <div class="section-heading">
+          <span class="section-kicker">
+            Technical architecture
+          </span>
+
+          <h2>
+            Credentials remain outside the Android application.
+          </h2>
+
+          <p>
+            Google Ads credentials are handled by a protected
+            backend service rather than being embedded inside
+            the mobile client.
+          </p>
+        </div>
+
+        <div class="architecture">
+          <div class="architecture-card">
+            <div
+              class="architecture-icon"
+              aria-hidden="true"
+            >
+              ▣
+            </div>
+
+            <strong>
+              Android Application
+            </strong>
+
+            <span>
+              Private Softice Intelligence Suite client
+            </span>
+          </div>
+
+          <div
+            class="architecture-arrow"
+            aria-hidden="true"
+          >
+            →
+          </div>
+
+          <div class="architecture-card">
+            <div
+              class="architecture-icon"
+              aria-hidden="true"
+            >
+              ◇
+            </div>
+
+            <strong>
+              Cloudflare Worker
+            </strong>
+
+            <span>
+              Authentication, validation, API requests,
+              and response mapping
+            </span>
+          </div>
+
+          <div
+            class="architecture-arrow"
+            aria-hidden="true"
+          >
+            →
+          </div>
+
+          <div class="architecture-card">
+            <div
+              class="architecture-icon"
+              aria-hidden="true"
+            >
+              🔐
+            </div>
+
+            <strong>
+              Google OAuth 2.0
+            </strong>
+
+            <span>
+              Secure access-token exchange using protected
+              server-side credentials
+            </span>
+          </div>
+
+          <div
+            class="architecture-arrow"
+            aria-hidden="true"
+          >
+            →
+          </div>
+
+          <div class="architecture-card">
+            <div
+              class="architecture-icon"
+              aria-hidden="true"
+            >
+              ↗
+            </div>
+
+            <strong>
+              Google Ads API
+            </strong>
+
+            <span>
+              Read-only account and campaign reporting
+            </span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section
+      class="api-section"
+      id="security"
+    >
+      <div class="container">
+        <div class="section-heading">
+          <span class="section-kicker">
+            Security and control
+          </span>
+
+          <h2>
+            Designed around protected credentials and human
+            decision-making.
+          </h2>
+
+          <p>
+            The Suite limits its current Google Ads integration
+            to reporting and internal analysis.
+          </p>
+        </div>
+
+        <div class="privacy-box">
+          <article class="allow-box">
+            <h3>What the integration does</h3>
+
+            <ul>
+              <li>
+                Authenticates through Google OAuth 2.0.
+              </li>
+
+              <li>
+                Uses a Google Ads developer token for API
+                requests.
+              </li>
+
+              <li>
+                Reads authorized account and campaign
+                performance data.
+              </li>
+
+              <li>
+                Converts verified results into internal
+                dashboards and reports.
+              </li>
+
+              <li>
+                Labels live API data separately from demo,
+                imported, seed, and calculated data.
+              </li>
+
+              <li>
+                Masks customer identifiers in diagnostic
+                responses.
+              </li>
+
+              <li>
+                Provides advisory analysis for an authorized
+                human reviewer.
+              </li>
+            </ul>
+          </article>
+
+          <article class="deny-box">
+            <h3>What the integration does not do</h3>
+
+            <ul>
+              <li>Create or delete Google Ads accounts.</li>
+              <li>Create or delete campaigns.</li>
+              <li>Change campaign budgets.</li>
+              <li>Change bids, targeting, or creative assets.</li>
+              <li>Pause or enable campaigns automatically.</li>
+              <li>Upload offline or app conversions.</li>
+              <li>Create remarketing audiences.</li>
+              <li>Serve external advertising clients.</li>
+              <li>
+                Allow AI recommendations to execute campaign
+                changes.
+              </li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="human-control">
+      <div class="container">
+        <div class="disclosure">
+          <span class="section-kicker">
+            Human oversight
+          </span>
+
+          <h2>
+            All advertising decisions remain under direct
+            human control.
+          </h2>
+
+          <p>
+            Softice Intelligence Suite is a decision-support
+            and reporting system. It may organize data,
+            calculate performance summaries, and provide
+            AI-assisted recommendations. It does not have
+            authority to make autonomous changes to Google Ads
+            campaigns. An authorized representative of Softice
+            Innovations Labs LLC reviews the evidence and makes
+            every final advertising and business decision.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="privacy">
+      <div class="container split-layout">
+        <div>
+          <span class="section-kicker">
+            Data handling
+          </span>
+
+          <h2>
+            Google Ads data is used only for internal company
+            operations.
+          </h2>
+        </div>
+
+        <div class="info-panel">
+          <article class="info-card">
+            <h3>Purpose limitation</h3>
+
+            <p>
+              Google Ads information is used for internal
+              campaign reporting, portfolio comparisons,
+              advertising-efficiency analysis, and business
+              planning for Softice-owned applications.
+            </p>
+          </article>
+
+          <article class="info-card">
+            <h3>Credential protection</h3>
+
+            <p>
+              OAuth credentials, refresh tokens, developer
+              tokens, and related API secrets are maintained
+              as encrypted backend secrets. They are not
+              embedded in public website code or distributed
+              inside the Android application.
+            </p>
+          </article>
+
+          <article class="info-card">
+            <h3>No external client access</h3>
+
+            <p>
+              Google Ads data retrieved by the Suite is not
+              sold, publicly displayed, or used to operate
+              advertising accounts belonging to external
+              customers.
+            </p>
+          </article>
+
+          <article class="info-card">
+            <h3>Internal accountability</h3>
+
+            <p>
+              Important metrics are accompanied by their data
+              source and reporting period. Assumptions and
+              missing information are identified rather than
+              presented as verified facts.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <div class="contact-card">
+          <div>
+            <span class="section-kicker">
+              Company contact
+            </span>
+
+            <h2>
+              Softice Innovations Labs LLC
+            </h2>
+
+            <p>
+              Questions regarding Softice Intelligence Suite,
+              its Google Ads API use, privacy, security, or
+              internal reporting functionality may be sent to
+              our official support address.
+            </p>
+          </div>
+
+          <a
+            class="button button-primary"
+            href="mailto:support@softiceinnovationslabs.com"
+          >
+            Contact Support
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section aria-label="Google trademark disclosure">
+      <div class="container">
+        <div class="disclosure">
+          <h2>Third-party service disclosure</h2>
+
+          <p>
+            Google Ads is a service provided by Google LLC.
+            Softice Intelligence Suite is developed by Softice
+            Innovations Labs LLC and is not endorsed by,
+            sponsored by, or affiliated with Google LLC.
+            Google Ads and related marks are trademarks of
+            Google LLC.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-main">
+        <div class="footer-company">
+          <div class="brand">
+            <div class="brand-mark">SI</div>
+
+            <div class="brand-copy">
+              <strong>Softice Innovations Labs LLC</strong>
+              <span>Independent mobile application company</span>
+            </div>
+          </div>
+
+          <p>
+            Softice Intelligence Suite is a private internal
+            reporting and business intelligence application.
+            It is not offered as a public advertising
+            management service.
+          </p>
+        </div>
+
+        <div class="footer-links">
+          <a href="/">Home</a>
+          <a href="/calmpulse">CalmPulse</a>
+          <a href="/petcare">PetCare Log</a>
+          <a href="/zero-reset">Zero Reset</a>
+          <a href="/cozy-tales">Cozy Tales</a>
+
+          <!--
+            Update these two paths if your actual legal page
+            filenames are different.
+          -->
+          <a href="/privacy-policy">Privacy Policy</a>
+          <a href="/terms">Terms of Service</a>
+
+          <a href="mailto:support@softiceinnovationslabs.com">
+            Contact
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>
+          © <span id="current-year"></span>
+          Softice Innovations Labs LLC. All rights reserved.
+        </span>
+
+        <span>
+          Internal Use Only · Reporting · Human Controlled
+        </span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const yearElement =
+      document.getElementById("current-year");
+
+    if (yearElement) {
+      yearElement.textContent =
+        new Date().getFullYear();
+    }
+  </script>
+</body>
+</html>
