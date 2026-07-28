@@ -22,7 +22,9 @@
   <meta name="apple-mobile-web-app-title" content="CalmPulse" />
   <meta name="google-play-app" content="app-id=com.softiceinnovationslabs.calmpulseapp" />
 
-  <link rel="canonical" href="https://softiceinnovationslabs.com/calmpulse/" />
+  <link rel="canonical" href="https://softiceinnovationslabs.com/calmpulse" />
+  <link rel="alternate" hreflang="en" href="https://softiceinnovationslabs.com/calmpulse" />
+  <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
 
   <meta property="og:title" content="CalmPulse App | Anxiety Relief, Guided Breathing & Panic Reset" />
   <meta
@@ -30,7 +32,7 @@
     content="Download CalmPulse for guided breathing, panic reset support, stress relief tools, calm timer sessions, Smart Calm check-ins, and progress tracking."
   />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://softiceinnovationslabs.com/calmpulse/" />
+  <meta property="og:url" content="https://softiceinnovationslabs.com/calmpulse" />
   <meta property="og:image" content="https://softiceinnovationslabs.com/images/calmpulse/calmpulse-og.webp" />
   <meta property="og:site_name" content="Softice Innovations Labs" />
   <meta property="og:locale" content="en_US" />
@@ -63,7 +65,7 @@
 
     gtag("config", "G-CE1N5QBRTE", {
       page_title: "CalmPulse App | Anxiety Relief & Guided Breathing",
-      page_path: "/calmpulse/",
+      page_path: window.location.pathname,
       page_location: window.location.href,
       send_page_view: true,
       allow_google_signals: true,
@@ -117,15 +119,15 @@
       },
       {
         "@type": "WebPage",
-        "@id": "https://softiceinnovationslabs.com/calmpulse/#webpage",
-        "url": "https://softiceinnovationslabs.com/calmpulse/",
+        "@id": "https://softiceinnovationslabs.com/calmpulse#webpage",
+        "url": "https://softiceinnovationslabs.com/calmpulse",
         "name": "CalmPulse App | Anxiety Relief, Guided Breathing & Panic Reset",
         "description": "CalmPulse is a calming Android wellness app for anxiety relief, panic attack support, guided breathing exercises, stress relief, overthinking help, fighting anxiety, calm timer sessions, Smart Calm check-ins, mood progress tracking, and daily self-care routines.",
         "isPartOf": {
           "@id": "https://softiceinnovationslabs.com/#website"
         },
         "about": {
-          "@id": "https://softiceinnovationslabs.com/calmpulse/#app"
+          "@id": "https://softiceinnovationslabs.com/calmpulse#app"
         },
         "publisher": {
           "@id": "https://softiceinnovationslabs.com/#organization"
@@ -135,15 +137,19 @@
           "url": "https://softiceinnovationslabs.com/images/calmpulse/calmpulse-og.webp",
           "width": 1200,
           "height": 630
+        },
+        "breadcrumb": {
+          "@id": "https://softiceinnovationslabs.com/calmpulse#breadcrumb"
         }
       },
       {
         "@type": "SoftwareApplication",
-        "@id": "https://softiceinnovationslabs.com/calmpulse/#app",
+        "@id": "https://softiceinnovationslabs.com/calmpulse#app",
         "name": "CalmPulse",
         "alternateName": "CalmPulse Anxiety Relief App",
         "applicationCategory": "HealthApplication",
         "operatingSystem": "Android",
+        "url": "https://softiceinnovationslabs.com/calmpulse",
         "downloadUrl": "https://play.google.com/store/apps/details?id=com.softiceinnovationslabs.calmpulseapp",
         "installUrl": "https://play.google.com/store/apps/details?id=com.softiceinnovationslabs.calmpulseapp",
         "description": "CalmPulse is an anxiety relief and calm breathing app with guided breathing exercises, panic reset support, stress relief tools, calm timer sessions, Smart Calm check-ins, mood progress tracking, and optional CalmPulse Pro features.",
@@ -178,7 +184,7 @@
       },
       {
         "@type": "BreadcrumbList",
-        "@id": "https://softiceinnovationslabs.com/calmpulse/#breadcrumb",
+        "@id": "https://softiceinnovationslabs.com/calmpulse#breadcrumb",
         "itemListElement": [
           {
             "@type": "ListItem",
@@ -190,13 +196,13 @@
             "@type": "ListItem",
             "position": 2,
             "name": "CalmPulse",
-            "item": "https://softiceinnovationslabs.com/calmpulse/"
+            "item": "https://softiceinnovationslabs.com/calmpulse"
           }
         ]
       },
       {
         "@type": "FAQPage",
-        "@id": "https://softiceinnovationslabs.com/calmpulse/#faq",
+        "@id": "https://softiceinnovationslabs.com/calmpulse#faq",
         "mainEntity": [
           {
             "@type": "Question",
@@ -295,7 +301,7 @@
       min-height: 690px;
       background:
         linear-gradient(180deg, rgba(5, 18, 57, 0.18), rgba(5, 18, 57, 0.88)),
-        url("images/calmpulse/calmpulse-mountain-hero.webp") center / cover no-repeat,
+        url("/images/calmpulse/calmpulse-mountain-hero.webp") center / cover no-repeat,
         linear-gradient(135deg, #06123a, #09256c 58%, #0d3a85);
       color: white;
     }
@@ -724,6 +730,28 @@
       object-fit: cover;
     }
 
+
+    .screens-viewport {
+      overflow: hidden;
+      min-width: 0;
+    }
+
+    .screens-track {
+      display: flex;
+      gap: 22px;
+      transition: transform 0.35s ease;
+      will-change: transform;
+    }
+
+    .screens-track .screenshot {
+      flex: 0 0 calc((100% - 88px) / 5);
+    }
+
+    .arrow:disabled {
+      opacity: 0.35;
+      cursor: default;
+    }
+
     .pricing {
       padding: 46px 0 28px;
     }
@@ -1109,11 +1137,11 @@
       }
 
       .screen-row {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: 42px 1fr 42px;
       }
 
-      .screen-row .arrow {
-        display: none;
+      .screens-track .screenshot {
+        flex-basis: calc((100% - 22px) / 2);
       }
 
       .pricing-grid,
@@ -1127,92 +1155,14 @@
       }
 
   
-    .resource-guides {
-      padding: 48px 0 18px;
-      text-align: center;
-    }
-
-    .resource-guides h2 {
-      max-width: 760px;
-      margin: 0 auto 14px;
-      font-size: clamp(30px, 4vw, 42px);
-      line-height: 1.08;
-      letter-spacing: -0.055em;
-      font-weight: 900;
-      color: var(--text);
-    }
-
-    .resource-guides > p {
-      max-width: 820px;
-      margin: 0 auto 30px;
-      color: var(--muted);
-      font-size: 17px;
-      line-height: 1.65;
-      font-weight: 600;
-    }
-
     .guide-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
-      text-align: left;
-    }
-
-    .guide-card {
-      padding: 24px;
-      border-radius: var(--radius-lg);
-      background: white;
-      box-shadow: var(--soft-shadow);
-      border: 1px solid rgba(59, 91, 255, 0.1);
-      transition: transform 0.18s ease, box-shadow 0.18s ease;
-    }
-
-    .guide-card:hover {
-      transform: translateY(-4px);
-      box-shadow: var(--shadow);
-    }
-
-    .guide-card span {
-      display: inline-flex;
-      width: 46px;
-      height: 46px;
-      margin-bottom: 16px;
-      border-radius: 16px;
-      align-items: center;
-      justify-content: center;
-      color: #fff;
-      font-size: 22px;
-      font-weight: 900;
-      background: linear-gradient(135deg, var(--blue), var(--blue-2));
-      box-shadow: 0 12px 26px rgba(59, 91, 255, 0.24);
-    }
-
-    .guide-card h3 {
-      margin: 0 0 8px;
-      font-size: 20px;
-      letter-spacing: -0.025em;
-      font-weight: 900;
-      color: var(--text);
-    }
-
-    .guide-card p {
-      margin: 0 0 14px;
-      color: var(--muted);
-      font-size: 14px;
-      line-height: 1.48;
-      font-weight: 600;
-    }
-
-    .guide-card strong {
-      color: var(--blue);
-      font-size: 14px;
-      font-weight: 900;
+      grid-template-columns: repeat(2, 1fr);
     }
 
     .bottom-cta {
-        flex-direction: column;
-        text-align: center;
-      }
+      flex-direction: column;
+      text-align: center;
+    }
     }
 
     @media (max-width: 620px) {
@@ -1256,7 +1206,12 @@
       }
 
       .screen-row {
-        grid-template-columns: 1fr;
+        grid-template-columns: 38px 1fr 38px;
+        gap: 12px;
+      }
+
+      .screens-track .screenshot {
+        flex-basis: 100%;
       }
 
       .screenshot {
@@ -1274,10 +1229,10 @@
   <main class="page">
     <header class="hero">
       <nav class="nav" aria-label="Main navigation">
-        <a href="/calmpulse/" class="brand" aria-label="CalmPulse home">
+        <a href="/calmpulse" class="brand" aria-label="CalmPulse home">
           <img
             class="brand-mark"
-            src="images/calmpulse/calmpulse_lotus_icon.png"
+            src="/images/calmpulse/calmpulse_lotus_icon.png"
             alt=""
             aria-hidden="true"
             loading="eager"
@@ -1300,7 +1255,7 @@
           aria-label="Download CalmPulse on Google Play"
         >
           <img
-            src="images/calmpulse/google-play-badge.png"
+            src="/images/calmpulse/google-play-badge.png"
             alt="Get it on Google Play"
             loading="eager"
           />
@@ -1322,7 +1277,7 @@
             aria-label="Get CalmPulse on Google Play"
           >
             <img
-              src="images/calmpulse/google-play-badge.png"
+              src="/images/calmpulse/google-play-badge.png"
               alt="Get it on Google Play"
               loading="eager"
             />
@@ -1340,7 +1295,7 @@
           <div class="phone">
             <img
               class="phone-image"
-              src="images/calmpulse/calmpulse-phone-home.webp"
+              src="/images/calmpulse/calmpulse-phone-home.webp"
               alt="CalmPulse app home screen showing Smart Calm Check-In, Panic Reset, Breathing, and Calm Timer"
               loading="eager"
             />
@@ -1447,49 +1402,53 @@
       <h2>Everything you need, right when you need it</h2>
 
       <div class="screen-row">
-        <button class="arrow" type="button" aria-label="Previous screenshot">‹</button>
+        <button class="arrow js-carousel-prev" type="button" aria-label="Previous screenshot">‹</button>
 
-        <div class="screenshot js-screenshot-card" data-screen-name="home">
+        <div class="screens-viewport">
+          <div class="screens-track">
+            <div class="screenshot js-screenshot-card" data-screen-name="home">
           <img
-            src="images/calmpulse/calmpulse-screen-home.webp"
+            src="/images/calmpulse/calmpulse-screen-home.webp"
             alt="CalmPulse home screen with Smart Calm Check-In, Panic Reset, Breathing, and Calm Timer"
             loading="lazy"
           />
         </div>
 
-        <div class="screenshot js-screenshot-card" data-screen-name="panic_reset">
+            <div class="screenshot js-screenshot-card" data-screen-name="panic_reset">
           <img
-            src="images/calmpulse/calmpulse-screen-panic-reset.webp"
+            src="/images/calmpulse/calmpulse-screen-panic-reset.webp"
             alt="CalmPulse Panic Reset screen for anxiety relief support"
             loading="lazy"
           />
         </div>
 
-        <div class="screenshot js-screenshot-card" data-screen-name="breathing">
+            <div class="screenshot js-screenshot-card" data-screen-name="breathing">
           <img
-            src="images/calmpulse/calmpulse-screen-breathing.webp"
+            src="/images/calmpulse/calmpulse-screen-breathing.webp"
             alt="CalmPulse 2-Minute Breathing exercise screen"
             loading="lazy"
           />
         </div>
 
-        <div class="screenshot js-screenshot-card" data-screen-name="calm_timer">
+            <div class="screenshot js-screenshot-card" data-screen-name="calm_timer">
           <img
-            src="images/calmpulse/calmpulse-screen-calm-timer.webp"
+            src="/images/calmpulse/calmpulse-screen-calm-timer.webp"
             alt="CalmPulse Calm Timer screen with relaxing timer controls"
             loading="lazy"
           />
         </div>
 
-        <div class="screenshot js-screenshot-card" data-screen-name="progress">
-          <img
-            src="images/calmpulse/calmpulse-screen-progress.webp"
-            alt="CalmPulse Progress screen with mood and calming session tracking"
-            loading="lazy"
-          />
+            <div class="screenshot js-screenshot-card" data-screen-name="progress">
+              <img
+                src="/images/calmpulse/calmpulse-screen-progress.webp"
+                alt="CalmPulse Progress screen with mood and calming session tracking"
+                loading="lazy"
+              />
+            </div>
+          </div>
         </div>
 
-        <button class="arrow" type="button" aria-label="Next screenshot">›</button>
+        <button class="arrow js-carousel-next" type="button" aria-label="Next screenshot">›</button>
       </div>
     </section>
 
@@ -1650,7 +1609,7 @@
       <div class="bottom-copy">
         <img
           class="brand-mark"
-          src="images/calmpulse/calmpulse_lotus_icon.png"
+          src="/images/calmpulse/calmpulse_lotus_icon.png"
           alt=""
           aria-hidden="true"
           loading="lazy"
@@ -1668,7 +1627,7 @@
         aria-label="Get CalmPulse on Google Play"
       >
         <img
-          src="images/calmpulse/google-play-badge.png"
+          src="/images/calmpulse/google-play-badge.png"
           alt="Get it on Google Play"
           loading="lazy"
         />
@@ -1686,9 +1645,9 @@
     <p>
       © 2026 Softice Innovations Labs LLC ·
       <a class="js-footer-link" href="/">Softice Home</a>
-      <a class="js-related-app-click" href="/petcare/" data-related-app="PetCare Log">PetCare Log</a>
-      <a class="js-related-app-click" href="/zero-reset/" data-related-app="Zero Reset">Zero Reset</a>
-      <a class="js-related-app-click" href="/cozy-tales/" data-related-app="Cozy Tales">Cozy Tales</a>
+      <a class="js-related-app-click" href="/petcare" data-related-app="PetCare Log">PetCare Log</a>
+      <a class="js-related-app-click" href="/zero-reset" data-related-app="Zero Reset">Zero Reset</a>
+      <a class="js-related-app-click" href="/cozy-tales" data-related-app="Cozy Tales">Cozy Tales</a>
       <a class="js-footer-link" href="/calmpulse-privacy-policy">Privacy Policy</a>
       <a class="js-footer-link" href="/calmpulse-terms">Terms</a>
       <a class="js-topic-link" href="/panic-attack" data-topic-name="panic_attack">Panic Attack</a>
@@ -1752,6 +1711,21 @@
         }, { once: true });
       });
 
+
+      document.addEventListener("click", function (event) {
+        const link = event.target.closest("a[href]");
+        if (!link) return;
+
+        if (link.hostname && link.hostname !== window.location.hostname) {
+          sendEvent("outbound_click", {
+            event_category: "outbound_navigation",
+            link_url: link.href,
+            link_domain: link.hostname,
+            link_text: (link.textContent || "").trim()
+          });
+        }
+      });
+
       document.querySelectorAll(".nav-links a").forEach(function (link) {
         link.addEventListener("click", function () {
           sendEvent("nav_click", {
@@ -1781,6 +1755,56 @@
           });
         }, { once: true });
       });
+
+
+      const carouselTrack = document.querySelector(".screens-track");
+      const carouselCards = Array.from(document.querySelectorAll(".screens-track .screenshot"));
+      const carouselPrev = document.querySelector(".js-carousel-prev");
+      const carouselNext = document.querySelector(".js-carousel-next");
+      let carouselIndex = 0;
+
+      function getCardsPerView() {
+        if (window.innerWidth <= 620) return 1;
+        if (window.innerWidth <= 980) return 2;
+        return 5;
+      }
+
+      function getMaxCarouselIndex() {
+        return Math.max(0, carouselCards.length - getCardsPerView());
+      }
+
+      function updateCarousel() {
+        if (!carouselTrack || carouselCards.length === 0) return;
+
+        const maxIndex = getMaxCarouselIndex();
+        carouselIndex = Math.max(0, Math.min(carouselIndex, maxIndex));
+
+        const firstCard = carouselCards[0];
+        const cardWidth = firstCard.getBoundingClientRect().width;
+        const gap = parseFloat(window.getComputedStyle(carouselTrack).gap) || 0;
+        carouselTrack.style.transform =
+          "translateX(-" + (carouselIndex * (cardWidth + gap)) + "px)";
+
+        if (carouselPrev) carouselPrev.disabled = carouselIndex === 0;
+        if (carouselNext) carouselNext.disabled = carouselIndex >= maxIndex;
+      }
+
+      if (carouselPrev) {
+        carouselPrev.addEventListener("click", function () {
+          carouselIndex -= getCardsPerView();
+          updateCarousel();
+        });
+      }
+
+      if (carouselNext) {
+        carouselNext.addEventListener("click", function () {
+          carouselIndex += getCardsPerView();
+          updateCarousel();
+        });
+      }
+
+      window.addEventListener("resize", updateCarousel);
+      updateCarousel();
 
       const scrollDepthsTracked = {
         25: false,
