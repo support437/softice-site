@@ -1,1 +1,933 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>Zero Reset iOS Privacy Policy | Softice Innovations Labs</title>
+
+  <meta
+    name="description"
+    content="Privacy Policy for the Zero Reset app for iPhone and iPad, developed by Softice Innovations Labs LLC."
+  >
+
+  <meta
+    name="robots"
+    content="index, follow"
+  >
+
+  <link
+    rel="canonical"
+    href="https://softiceinnovationslabs.com/zero-reset-ios-privacy-policy"
+  >
+
+  <style>
+    :root {
+      --background: #090909;
+      --surface: #151515;
+      --surface-raised: #1c1c1c;
+      --text-primary: #ffffff;
+      --text-secondary: #b9b9b9;
+      --accent: #e5232e;
+      --accent-light: #ff7b83;
+      --border: rgba(255, 255, 255, 0.1);
+      --notice-background: rgba(229, 35, 46, 0.08);
+      --notice-border: rgba(229, 35, 46, 0.32);
+      --shadow: 0 20px 60px rgba(0, 0, 0, 0.32);
+      --max-width: 920px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        Helvetica,
+        Arial,
+        sans-serif;
+      color: var(--text-primary);
+      background:
+        radial-gradient(
+          circle at top,
+          rgba(229, 35, 46, 0.14),
+          transparent 38rem
+        ),
+        var(--background);
+      line-height: 1.7;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      border-bottom: 1px solid var(--border);
+      background: rgba(9, 9, 9, 0.88);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+    }
+
+    .header-inner {
+      width: min(calc(100% - 32px), var(--max-width));
+      min-height: 72px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--text-primary);
+      font-weight: 850;
+      letter-spacing: 0.02em;
+      text-decoration: none;
+    }
+
+    .brand-mark {
+      width: 38px;
+      height: 38px;
+      display: grid;
+      place-items: center;
+      border-radius: 12px;
+      background: var(--accent);
+      box-shadow: 0 10px 28px rgba(229, 35, 46, 0.25);
+      font-size: 20px;
+    }
+
+    .legal-hub-link {
+      color: var(--text-secondary);
+      font-size: 0.94rem;
+      text-decoration: none;
+    }
+
+    .legal-hub-link:hover,
+    .legal-hub-link:focus-visible {
+      color: var(--text-primary);
+    }
+
+    main {
+      width: min(calc(100% - 32px), var(--max-width));
+      margin: 0 auto;
+      padding: 70px 0 72px;
+    }
+
+    .hero {
+      max-width: 780px;
+      margin-bottom: 40px;
+    }
+
+    .eyebrow {
+      margin: 0 0 14px;
+      color: var(--accent-light);
+      font-size: 0.78rem;
+      font-weight: 850;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(2.35rem, 7vw, 4.6rem);
+      line-height: 1.02;
+      letter-spacing: -0.052em;
+    }
+
+    .effective-date {
+      margin: 18px 0 0;
+      color: var(--text-secondary);
+    }
+
+    .summary {
+      margin-top: 28px;
+      padding: 22px 24px;
+      border: 1px solid var(--notice-border);
+      border-radius: 18px;
+      background: var(--notice-background);
+      color: #f3d0d2;
+    }
+
+    .summary strong {
+      color: var(--text-primary);
+    }
+
+    .content-card {
+      padding: 36px;
+      border: 1px solid var(--border);
+      border-radius: 26px;
+      background:
+        linear-gradient(
+          145deg,
+          rgba(255, 255, 255, 0.035),
+          rgba(255, 255, 255, 0.012)
+        ),
+        var(--surface);
+      box-shadow: var(--shadow);
+    }
+
+    .policy-section + .policy-section {
+      margin-top: 42px;
+      padding-top: 36px;
+      border-top: 1px solid var(--border);
+    }
+
+    .policy-section h2 {
+      margin: 0 0 14px;
+      font-size: clamp(1.45rem, 3vw, 1.85rem);
+      line-height: 1.25;
+      letter-spacing: -0.025em;
+    }
+
+    .policy-section h3 {
+      margin: 26px 0 8px;
+      font-size: 1.08rem;
+    }
+
+    .policy-section p {
+      margin: 12px 0 0;
+      color: var(--text-secondary);
+    }
+
+    .policy-section ul {
+      margin: 14px 0 0;
+      padding-left: 24px;
+      color: var(--text-secondary);
+    }
+
+    .policy-section li + li {
+      margin-top: 8px;
+    }
+
+    .policy-section strong {
+      color: var(--text-primary);
+    }
+
+    .data-table-wrapper {
+      margin-top: 20px;
+      overflow-x: auto;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+    }
+
+    table {
+      width: 100%;
+      min-width: 720px;
+      border-collapse: collapse;
+      background: var(--surface-raised);
+    }
+
+    th,
+    td {
+      padding: 16px;
+      border-bottom: 1px solid var(--border);
+      text-align: left;
+      vertical-align: top;
+    }
+
+    th {
+      color: var(--text-primary);
+      background: rgba(255, 255, 255, 0.035);
+      font-size: 0.88rem;
+    }
+
+    td {
+      color: var(--text-secondary);
+      font-size: 0.93rem;
+    }
+
+    tr:last-child td {
+      border-bottom: 0;
+    }
+
+    .not-collected {
+      margin-top: 20px;
+      padding: 20px;
+      border-radius: 16px;
+      background: rgba(255, 255, 255, 0.035);
+    }
+
+    .not-collected h3 {
+      margin-top: 0;
+    }
+
+    .contact-box {
+      margin-top: 20px;
+      padding: 24px;
+      border: 1px solid var(--notice-border);
+      border-radius: 18px;
+      background: var(--notice-background);
+    }
+
+    .contact-box p:first-child {
+      margin-top: 0;
+    }
+
+    .support-link {
+      color: var(--accent-light);
+      font-weight: 750;
+      overflow-wrap: anywhere;
+    }
+
+    .page-navigation {
+      margin-top: 34px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .page-navigation a {
+      min-height: 48px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 11px 17px;
+      border: 1px solid var(--border);
+      border-radius: 13px;
+      background: var(--surface);
+      color: var(--text-primary);
+      font-weight: 750;
+      text-decoration: none;
+    }
+
+    .page-navigation a:hover,
+    .page-navigation a:focus-visible {
+      border-color: var(--accent-light);
+    }
+
+    footer {
+      padding: 32px 16px 44px;
+      border-top: 1px solid var(--border);
+      color: var(--text-secondary);
+      text-align: center;
+      font-size: 0.9rem;
+    }
+
+    footer a {
+      color: var(--text-primary);
+    }
+
+    :focus-visible {
+      outline: 3px solid var(--accent-light);
+      outline-offset: 4px;
+    }
+
+    @media (max-width: 720px) {
+      .header-inner {
+        min-height: 64px;
+      }
+
+      .legal-hub-link {
+        display: none;
+      }
+
+      main {
+        padding-top: 48px;
+      }
+
+      .content-card {
+        padding: 24px;
+        border-radius: 20px;
+      }
+
+      .policy-section + .policy-section {
+        margin-top: 34px;
+        padding-top: 30px;
+      }
+
+      .summary {
+        padding: 20px;
+      }
+
+      .page-navigation {
+        flex-direction: column;
+      }
+
+      .page-navigation a {
+        width: 100%;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        transition: none !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a
+        class="brand"
+        href="/zero-reset"
+        aria-label="Zero Reset home"
+      >
+        <span class="brand-mark" aria-hidden="true">0</span>
+        <span>ZERO RESET</span>
+      </a>
+
+      <a
+        class="legal-hub-link"
+        href="/zero-reset-ios-legal"
+      >
+        iOS Legal Information
+      </a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <p class="eyebrow">Zero Reset for iPhone and iPad</p>
+
+      <h1>Privacy Policy</h1>
+
+      <p class="effective-date">
+        Effective date: July 29, 2026<br>
+        Last updated: July 29, 2026
+      </p>
+
+      <div class="summary">
+        <strong>Privacy summary:</strong>
+        Zero Reset stores your disciplines, check-ins, progress, and
+        preferences primarily on your device. We do not sell your personal
+        information. We do not use advertising trackers. We do not send
+        discipline names, descriptions, notes, or reset reasons through
+        retention analytics.
+      </div>
+    </section>
+
+    <article class="content-card">
+      <section class="policy-section">
+        <h2>1. Introduction</h2>
+
+        <p>
+          This Privacy Policy explains how Softice Innovations Labs LLC
+          (“Softice,” “we,” “us,” or “our”) handles information in connection
+          with the Zero Reset application for iPhone and iPad (“Zero Reset”
+          or the “App”).
+        </p>
+
+        <p>
+          By using Zero Reset, you acknowledge the practices described in
+          this Privacy Policy. If you do not agree with this policy, please
+          discontinue use of the App.
+        </p>
+      </section>
+
+      <section class="policy-section">
+        <h2>2. Information stored on your device</h2>
+
+        <p>
+          Zero Reset is designed primarily as an on-device discipline and
+          consistency tracker. Information you enter into the App may include:
+        </p>
+
+        <ul>
+          <li>Discipline names and descriptions</li>
+          <li>Daily success or reset check-ins</li>
+          <li>Reset reasons or optional notes</li>
+          <li>Streaks, milestones, achievements, and progress history</li>
+          <li>Reminder preferences and selected reminder times</li>
+          <li>Appearance and other App preferences</li>
+        </ul>
+
+        <p>
+          This information is stored locally using Apple platform storage
+          technologies, including SwiftData and system preferences.
+        </p>
+
+        <p>
+          Softice does not receive or remotely access this user-entered
+          content unless a future feature clearly explains the transfer and
+          obtains any consent required by law.
+        </p>
+      </section>
+
+      <section class="policy-section">
+        <h2>3. Information we may collect</h2>
+
+        <p>
+          When production analytics are enabled, Zero Reset may collect
+          limited technical and usage information needed to measure app
+          reliability, onboarding, feature adoption, and retention.
+        </p>
+
+        <div class="data-table-wrapper">
+          <table>
+            <thead>
+              <tr>
+                <th>Information category</th>
+                <th>Examples</th>
+                <th>Purpose</th>
+                <th>Linked to identity?</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td>App activity</td>
+                <td>
+                  Onboarding started or completed, first meaningful action,
+                  daily core action, reminder enabled or disabled
+                </td>
+                <td>
+                  Understand whether important app experiences are working
+                  and where users encounter friction
+                </td>
+                <td>No, unless technical circumstances require otherwise</td>
+              </tr>
+
+              <tr>
+                <td>Retention signals</td>
+                <td>
+                  First open, Day 1 return, Day 7 return, and inactivity or
+                  churn indicators
+                </td>
+                <td>
+                  Measure retention and guide product improvements
+                </td>
+                <td>No</td>
+              </tr>
+
+              <tr>
+                <td>Technical information</td>
+                <td>
+                  App version, build number, operating-system version,
+                  device category, event time, and export status
+                </td>
+                <td>
+                  Diagnose compatibility, reliability, and analytics delivery
+                </td>
+                <td>No</td>
+              </tr>
+
+              <tr>
+                <td>Random installation identifier</td>
+                <td>
+                  An app-generated identifier that distinguishes one
+                  installation from another
+                </td>
+                <td>
+                  Prevent duplicate retention events and calculate anonymous
+                  usage patterns
+                </td>
+                <td>
+                  Not intended to identify you personally
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="not-collected">
+          <h3>Information excluded from analytics</h3>
+
+          <p>
+            Zero Reset is designed not to send the following user-entered
+            content through retention analytics:
+          </p>
+
+          <ul>
+            <li>Discipline names</li>
+            <li>Discipline descriptions</li>
+            <li>Personal notes</li>
+            <li>Reset or failure reasons</li>
+            <li>Journal-style content</li>
+            <li>Contacts, photos, precise location, or health information</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="policy-section">
+        <h2>4. How information is collected</h2>
+
+        <p>
+          Information may be collected through:
+        </p>
+
+        <ul>
+          <li>
+            Information you enter directly into the App and that remains
+            stored locally
+          </li>
+          <li>
+            App-generated events created when you complete selected actions
+          </li>
+          <li>
+            Technical details supplied by iOS, such as the App version or
+            operating-system version
+          </li>
+          <li>
+            Local notification authorization and reminder-state changes
+          </li>
+        </ul>
+
+        <p>
+          Zero Reset does not require you to create an account for the
+          current iOS version.
+        </p>
+      </section>
+
+      <section class="policy-section">
+        <h2>5. How we use information</h2>
+
+        <p>
+          Limited technical and analytics information may be used to:
+        </p>
+
+        <ul>
+          <li>Operate and maintain the App</li>
+          <li>Understand onboarding completion</li>
+          <li>Measure first-session success and retention</li>
+          <li>Improve reminders, progress displays, and recovery experiences</li>
+          <li>Detect crashes, errors, misuse, or technical problems</li>
+          <li>Evaluate product performance across supported iOS devices</li>
+          <li>Comply with legal obligations and enforce applicable terms</li>
+        </ul>
+
+        <p>
+          We do not use user-entered discipline content for advertising,
+          profiling, or sale.
+        </p>
+      </section>
+
+      <section class="policy-section">
+        <h2>6. Local notifications</h2>
+
+        <p>
+          Zero Reset may ask for permission to schedule local reminders.
+          Notification permission is optional and is controlled by Apple’s
+          iOS notification settings.
+        </p>
+
+        <p>
+          Reminder requests are scheduled on your device. You may disable
+          reminders within the App or through:
+        </p>
+
+        <p>
+          <strong>
+            Settings → Notifications → Zero Reset
+          </strong>
+        </p>
+
+        <p>
+          Denying notification permission does not prevent you from using
+          the App’s primary discipline-tracking functions.
+        </p>
+      </section>
+
+      <section class="policy-section">
+        <h2>7. Analytics providers and service providers</h2>
+
+        <p>
+          Zero Reset may use a production analytics or hosting provider to
+          receive limited events described in this policy. Any provider used
+          will process information on our behalf for app operation,
+          reliability, analytics, or security purposes.
+        </p>
+
+        <p>
+          We will update this policy if the production version begins using
+          a provider whose identity or data practices require additional
+          disclosure.
+        </p>
+
+        <p>
+          We do not authorize service providers to sell Zero Reset user data
+          or use it for cross-app advertising tracking.
+        </p>
+      </section>
+
+      <section class="policy-section">
+        <h2>8. Advertising and tracking</h2>
+
+        <p>
+          The current iOS version of Zero Reset does not include third-party
+          advertising and is not designed to track users across apps or
+          websites owned by other companies.
+        </p>
+
+        <p>
+          Zero Reset does not request App Tracking Transparency permission
+          unless a future feature introduces activity that requires it.
+        </p>
+      </section>
+
+      <section class="policy-section">
+        <h2>9. Purchases and payment information</h2>
+
+        <p>
+          Zero Reset iOS version 1.0 is planned as a free-only release and
+          does not currently offer an active StoreKit purchase or
+          subscription flow.
+        </p>
+
+        <p>
+          If paid features are introduced later, payments will be processed
+          by Apple through the App Store. Softice will not directly receive
+          your complete payment-card information. This policy and the App
+          Store privacy disclosures will be updated as appropriate.
+        </p>
+      </section>
+
+      <section class="policy-section">
+        <h2>10. Data sharing</h2>
+
+        <p>
+          We do not sell your personal information.
+        </p>
+
+        <p>
+          Limited information may be disclosed:
+        </p>
+
+        <ul>
+          <li>
+            To service providers working on our behalf for hosting,
+            analytics, reliability, or security
+          </li>
+          <li>
+            When required by law, legal process, or a valid government request
+          </li>
+          <li>
+            To protect the rights, safety, property, or security of Softice,
+            our users, or others
+          </li>
+          <li>
+            In connection with a merger, acquisition, financing, or transfer
+            of business assets, subject to applicable legal protections
+          </li>
+        </ul>
+      </section>
+
+      <section class="policy-section">
+        <h2>11. Data retention</h2>
+
+        <h3>On-device information</h3>
+
+        <p>
+          Locally stored disciplines, check-ins, history, and preferences
+          generally remain on your device until you delete them within the
+          App, uninstall the App, erase the device, or otherwise remove the
+          data through Apple platform controls.
+        </p>
+
+        <h3>Analytics information</h3>
+
+        <p>
+          Analytics information will be retained only for as long as
+          reasonably necessary to measure product performance, investigate
+          reliability issues, satisfy legal obligations, and support
+          legitimate business purposes.
+        </p>
+
+        <p>
+          Specific retention periods may depend on the production analytics
+          provider and will be documented when that provider is activated.
+        </p>
+      </section>
+
+      <section class="policy-section">
+        <h2>12. Deleting information and privacy choices</h2>
+
+        <p>
+          You may manage local information by:
+        </p>
+
+        <ul>
+          <li>Editing or archiving disciplines within Zero Reset</li>
+          <li>Deleting available app records through provided controls</li>
+          <li>Disabling reminders</li>
+          <li>Changing notification permission through iOS Settings</li>
+          <li>Uninstalling the App to remove locally stored application data</li>
+        </ul>
+
+        <p>
+          To ask a privacy question or request deletion of information that
+          may have reached a Softice-operated service, contact us at the
+          email address listed below.
+        </p>
+
+        <p>
+          Because the App currently does not require an account, we may need
+          limited technical information to determine whether we can identify
+          the relevant analytics records. Some anonymous or aggregated data
+          may not be reasonably attributable to a particular person.
+        </p>
+      </section>
+
+      <section class="policy-section">
+        <h2>13. Data security</h2>
+
+        <p>
+          We use reasonable administrative, technical, and organizational
+          safeguards intended to protect information against unauthorized
+          access, disclosure, alteration, or destruction.
+        </p>
+
+        <p>
+          However, no storage system, device, network, or transmission method
+          can be guaranteed to be completely secure.
+        </p>
+      </section>
+
+      <section class="policy-section">
+        <h2>14. Children’s privacy</h2>
+
+        <p>
+          Zero Reset is a general productivity and self-management tool and
+          is not directed to children under 13.
+        </p>
+
+        <p>
+          We do not knowingly collect personal information from children
+          under 13. If you believe a child has provided personal information
+          to us, contact us so that we can review and address the matter.
+        </p>
+      </section>
+
+      <section class="policy-section">
+        <h2>15. International users</h2>
+
+        <p>
+          Softice Innovations Labs LLC is based in the United States.
+          Information processed by an activated analytics or infrastructure
+          provider may be handled in the United States or other countries
+          where that provider operates.
+        </p>
+
+        <p>
+          Those jurisdictions may have data-protection laws that differ from
+          the laws in your location. We will apply protections required by
+          applicable law.
+        </p>
+      </section>
+
+      <section class="policy-section">
+        <h2>16. Your privacy rights</h2>
+
+        <p>
+          Depending on where you live, you may have rights relating to
+          personal information, including rights to request access,
+          correction, deletion, restriction, objection, or information about
+          data practices.
+        </p>
+
+        <p>
+          To submit a request, contact us using the information below. We may
+          need to verify the request before responding. These rights may be
+          subject to legal limitations and may not apply to information that
+          cannot reasonably be linked to you.
+        </p>
+      </section>
+
+      <section class="policy-section">
+        <h2>17. Changes to this Privacy Policy</h2>
+
+        <p>
+          We may update this Privacy Policy when Zero Reset changes, when a
+          production analytics provider is activated, when paid functionality
+          is introduced, or when legal requirements change.
+        </p>
+
+        <p>
+          The updated policy will be posted at this URL with a revised
+          “Last updated” date. Material changes may also be communicated
+          through the App or App Store information when appropriate.
+        </p>
+      </section>
+
+      <section class="policy-section">
+        <h2>18. Contact us</h2>
+
+        <div class="contact-box">
+          <p>
+            For privacy questions, privacy-rights requests, or concerns about
+            Zero Reset, contact:
+          </p>
+
+          <p>
+            <strong>Softice Innovations Labs LLC</strong><br>
+            United States
+          </p>
+
+          <p>
+            Email:
+            <a
+              class="support-link"
+              href="mailto:support@softiceinnovationslabs.com"
+            >
+              support@softiceinnovationslabs.com
+            </a>
+          </p>
+
+          <p>
+            Please include “Zero Reset iOS Privacy” in the subject line so
+            your request can be routed correctly.
+          </p>
+        </div>
+      </section>
+    </article>
+
+    <nav
+      class="page-navigation"
+      aria-label="Zero Reset iOS legal pages"
+    >
+      <a href="/zero-reset-ios-legal">
+        Legal Information
+      </a>
+
+      <a href="/zero-reset-ios-terms">
+        Terms of Use
+      </a>
+
+      <a href="/zero-reset">
+        Zero Reset Home
+      </a>
+    </nav>
+  </main>
+
+  <footer>
+    <p>
+      © 2026 Softice Innovations Labs LLC. All rights reserved.
+    </p>
+
+    <p>
+      <a href="/">Company website</a>
+      &nbsp;·&nbsp;
+      <a href="/zero-reset-ios-legal">iOS Legal</a>
+      &nbsp;·&nbsp;
+      <a href="mailto:support@softiceinnovationslabs.com">Support</a>
+    </p>
+  </footer>
+</body>
+</html>
