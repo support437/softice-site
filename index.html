@@ -232,6 +232,35 @@
       pointer-events: none;
     }
 
+
+    .hero-copy {
+      position: absolute;
+      left: 4.25%;
+      top: 12%;
+      max-width: 560px;
+      z-index: 4;
+      pointer-events: none;
+    }
+
+    .hero-copy h1 {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(38px, 4.6vw, 68px);
+      line-height: 0.98;
+      letter-spacing: -0.05em;
+      color: var(--ink);
+      text-wrap: balance;
+    }
+
+    .hero-copy p {
+      margin: 18px 0 0;
+      max-width: 520px;
+      color: #3d4858;
+      font-size: clamp(16px, 1.45vw, 20px);
+      line-height: 1.55;
+      text-wrap: balance;
+    }
+
     .hero-overlay-cta {
       position: absolute;
       left: 4.25%;
@@ -488,6 +517,22 @@
       padding-top: 6px;
     }
 
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
+
     @media (max-width: 1180px) {
       .apps-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .why-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -553,7 +598,53 @@
         object-position: center top;
       }
 
-      .hero-overlay-cta {
+      .hero-copy {
+        left: 7%;
+        right: 7%;
+        top: 7%;
+        max-width: none;
+      }
+
+      .hero-copy h1 {
+        font-size: clamp(34px, 10vw, 52px);
+      }
+
+      .hero-copy p {
+        margin-top: 12px;
+        font-size: 15px;
+        line-height: 1.5;
+      }
+
+  
+    .hero-copy {
+      position: absolute;
+      left: 4.25%;
+      top: 12%;
+      max-width: 560px;
+      z-index: 4;
+      pointer-events: none;
+    }
+
+    .hero-copy h1 {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(38px, 4.6vw, 68px);
+      line-height: 0.98;
+      letter-spacing: -0.05em;
+      color: var(--ink);
+      text-wrap: balance;
+    }
+
+    .hero-copy p {
+      margin: 18px 0 0;
+      max-width: 520px;
+      color: #3d4858;
+      font-size: clamp(16px, 1.45vw, 20px);
+      line-height: 1.55;
+      text-wrap: balance;
+    }
+
+    .hero-overlay-cta {
         left: 50%;
         bottom: 5.4%;
         transform: translateX(-50%);
@@ -592,7 +683,7 @@
   <header class="site-header">
     <a class="brand" href="/" aria-label="Softice Innovations Labs homepage">
       <span class="brand-logo-wrap">
-        <img class="brand-logo-img" src="/softice-logo-mark.webp" alt="Softice Innovations Labs logo" width="54" height="54" decoding="async" data-logo-srcs="/softice-logo-mark.webp,/images/softice/softice-logo-mark.webp,/images/softice-logo-mark.webp,softice-logo-mark.webp,/softice-logo-mark.png,/images/softice/softice-logo-mark.png" />
+        <img class="brand-logo-img" src="/softice-logo-mark.webp" alt="Softice Innovations Labs logo" width="54" height="54" decoding="async" />
         <span class="brand-logo-fallback">S</span>
       </span>
       <span class="brand-text">
@@ -612,8 +703,11 @@
 
   <main>
     <section class="hero" id="about" data-section-track="company_hero">
-      <h1 class="visually-hidden">Softice Innovations Labs builds thoughtful mobile apps for calmer, easier everyday life</h1>
       <div class="hero-card">
+        <div class="hero-copy">
+          <h1>Thoughtful mobile apps for calmer, easier everyday life</h1>
+          <p>Explore Softice apps for pet care, calm, bedtime stories, discipline, habits, and practical daily routines.</p>
+        </div>
         <picture>
           <source media="(max-width: 760px)" srcset="/images/softice/softice-og-mobile.webp" width="900" height="1400" />
           <img class="hero-banner" src="/images/softice/softice-og.webp" alt="Softice Innovations Labs hero banner with PetCare Log, CalmPulse, Cozy Tales, and Zero Reset app previews" width="1200" height="630" fetchpriority="high" decoding="async" />
@@ -715,7 +809,7 @@
     <div>
       <a class="brand" href="/" aria-label="Softice Innovations Labs homepage">
         <span class="brand-logo-wrap">
-          <img class="brand-logo-img" src="/softice-logo-mark.webp" alt="Softice Innovations Labs logo" width="54" height="54" decoding="async" data-logo-srcs="/softice-logo-mark.webp,/images/softice/softice-logo-mark.webp,/images/softice-logo-mark.webp,softice-logo-mark.webp,/softice-logo-mark.png,/images/softice/softice-logo-mark.png" />
+          <img class="brand-logo-img" src="/softice-logo-mark.webp" alt="Softice Innovations Labs logo" width="54" height="54" decoding="async" />
           <span class="brand-logo-fallback">S</span>
         </span>
         <span class="brand-text">
@@ -735,10 +829,10 @@
 
     <div>
       <h3>Apps</h3>
-      <a href="/petcare" data-track="footer_app_click" data-track-location="footer_apps" data-track-title="PetCare Log">PetCare Log</a>
-      <a href="/calmpulse" data-track="footer_app_click" data-track-location="footer_apps" data-track-title="CalmPulse">CalmPulse</a>
-      <a href="/cozy-tales" data-track="footer_app_click" data-track-location="footer_apps" data-track-title="Cozy Tales">Cozy Tales</a>
-      <a href="/zero-reset" data-track="footer_app_click" data-track-location="footer_apps" data-track-title="Zero Reset">Zero Reset</a>
+      <a href="/petcare" data-track="footer_app_click" data-track-location="footer_apps" data-track-title="PetCare Log" data-app-slug="petcare">PetCare Log</a>
+      <a href="/calmpulse" data-track="footer_app_click" data-track-location="footer_apps" data-track-title="CalmPulse" data-app-slug="calmpulse">CalmPulse</a>
+      <a href="/cozy-tales" data-track="footer_app_click" data-track-location="footer_apps" data-track-title="Cozy Tales" data-app-slug="cozy_tales">Cozy Tales</a>
+      <a href="/zero-reset" data-track="footer_app_click" data-track-location="footer_apps" data-track-title="Zero Reset" data-app-slug="zero_reset">Zero Reset</a>
     </div>
 
     <div>
@@ -761,231 +855,202 @@
   </footer>
 
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "Organization",
-        "@id": "https://softiceinnovationslabs.com/#organization",
-        "name": "Softice Innovations Labs LLC",
-        "url": "https://softiceinnovationslabs.com/",
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://softiceinnovationslabs.com/#organization",
+      "name": "Softice Innovations Labs LLC",
+      "url": "https://softiceinnovationslabs.com/",
+      "email": "support@softiceinnovationslabs.com",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://softiceinnovationslabs.com/softice-logo-mark.webp",
+        "width": 512,
+        "height": 512
+      },
+      "image": "https://softiceinnovationslabs.com/images/softice/softice-og.webp",
+      "sameAs": [
+        "https://www.facebook.com/softiceinnovationslabs",
+        "https://www.instagram.com/softiceinnovationslabs/",
+        "https://www.tiktok.com/@softiceinnovationslabs",
+        "https://www.youtube.com/@SofticeInnovationsLabs"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
         "email": "support@softiceinnovationslabs.com",
-        "logo": {
-          "@type": "ImageObject",
-          "url": "https://softiceinnovationslabs.com/softice-logo-mark.webp",
-          "width": 512,
-          "height": 512
-        },
-        "image": "https://softiceinnovationslabs.com/images/softice/softice-og.webp",
-        "sameAs": [
-          "https://www.facebook.com/softiceinnovationslabs",
-          "https://www.instagram.com/softiceinnovationslabs/",
-          "https://www.tiktok.com/@softiceinnovationslabs",
-          "https://www.youtube.com/@SofticeInnovationsLabs"
-        ],
-        "contactPoint": {
-          "@type": "ContactPoint",
-          "email": "support@softiceinnovationslabs.com",
-          "contactType": "customer support",
-          "availableLanguage": "English"
-        }
-      },
-      {
-        "@type": "WebSite",
-        "@id": "https://softiceinnovationslabs.com/#website",
-        "name": "Softice Innovations Labs",
-        "url": "https://softiceinnovationslabs.com/",
-        "description": "Softice Innovations Labs is the main mobile app hub for PetCare Log, CalmPulse, Cozy Tales, Zero Reset, and future apps for care, calm, stories, discipline, habits, and everyday life.",
-        "publisher": {
-          "@id": "https://softiceinnovationslabs.com/#organization"
-        }
-      },
-      {
-        "@type": "WebPage",
-        "@id": "https://softiceinnovationslabs.com/#webpage",
-        "url": "https://softiceinnovationslabs.com/",
-        "name": "Softice Innovations Labs | Mobile App Hub for Pet Care, Calm, Stories and Discipline",
-        "description": "Explore Softice apps from one central hub: PetCare Log, CalmPulse, Cozy Tales, Zero Reset, and future mobile apps for everyday life.",
-        "isPartOf": {
-          "@id": "https://softiceinnovationslabs.com/#website"
-        },
-        "about": {
-          "@id": "https://softiceinnovationslabs.com/#organization"
-        },
-        "publisher": {
-          "@id": "https://softiceinnovationslabs.com/#organization"
-        },
-        "primaryImageOfPage": {
-          "@type": "ImageObject",
-          "url": "https://softiceinnovationslabs.com/images/softice/softice-og.webp",
-          "width": 1200,
-          "height": 630
-        }
-      },
-      {
-        "@type": "ItemList",
-        "@id": "https://softiceinnovationslabs.com/#apps",
-        "name": "Softice Innovations Labs mobile apps",
-        "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "PetCare Log",
-            "url": "https://softiceinnovationslabs.com/petcare"
-        "downloadUrl": "https://play.google.com/store/apps/details?id=com.softiceinnovationslabs.petcarelogapp",
-        "installUrl": "https://play.google.com/store/apps/details?id=com.softiceinnovationslabs.petcarelogapp",
-          },
-          {
-            "@type": "ListItem",
-            "position": 2,
-            "name": "CalmPulse",
-            "url": "https://softiceinnovationslabs.com/calmpulse"
-        "downloadUrl": "https://play.google.com/store/apps/details?id=com.softiceinnovationslabs.calmpulseapp",
-        "installUrl": "https://play.google.com/store/apps/details?id=com.softiceinnovationslabs.calmpulseapp",
-          },
-          {
-            "@type": "ListItem",
-            "position": 3,
-            "name": "Cozy Tales",
-            "url": "https://softiceinnovationslabs.com/cozy-tales"
-        "downloadUrl": "https://softiceinnovationslabs.com/play/cozy-tales",
-        "installUrl": "https://softiceinnovationslabs.com/play/cozy-tales",
-          },
-          {
-            "@type": "ListItem",
-            "position": 4,
-            "name": "Zero Reset",
-            "url": "https://softiceinnovationslabs.com/zero-reset"
-        "downloadUrl": "https://play.google.com/store/apps/details?id=com.softiceinnovationslabs.zeroreset",
-        "installUrl": "https://play.google.com/store/apps/details?id=com.softiceinnovationslabs.zeroreset",
-          }
-        ]
-      },
-      {
-        "@type": "SoftwareApplication",
-        "@id": "https://softiceinnovationslabs.com/petcare#app",
-        "name": "PetCare Log",
-        "applicationCategory": "LifestyleApplication",
-        "operatingSystem": "Android",
-        "url": "https://softiceinnovationslabs.com/petcare",
-        "publisher": {
-          "@id": "https://softiceinnovationslabs.com/#organization"
-        },
-        "description": "PetCare Log helps pet owners track feeding schedules, medication reminders, vet visits, health records, daily checklists, and pet care routines."
-      },
-      {
-        "@type": "SoftwareApplication",
-        "@id": "https://softiceinnovationslabs.com/calmpulse#app",
-        "name": "CalmPulse",
-        "applicationCategory": "HealthApplication",
-        "operatingSystem": "Android",
-        "url": "https://softiceinnovationslabs.com/calmpulse",
-        "publisher": {
-          "@id": "https://softiceinnovationslabs.com/#organization"
-        },
-        "description": "CalmPulse offers calming tools for panic reset, breathing, calm timer, mood check-ins, and peaceful daily moments."
-      },
-      {
-        "@type": "SoftwareApplication",
-        "@id": "https://softiceinnovationslabs.com/cozy-tales#app",
-        "name": "Cozy Tales",
-        "applicationCategory": "EntertainmentApplication",
-        "operatingSystem": "Android",
-        "url": "https://softiceinnovationslabs.com/cozy-tales",
-        "publisher": {
-          "@id": "https://softiceinnovationslabs.com/#organization"
-        },
-        "description": "Cozy Tales provides bedtime stories for kids with narration, soft music, and cozy illustrated storybook experiences."
-      },
-      {
-        "@type": "SoftwareApplication",
-        "@id": "https://softiceinnovationslabs.com/zero-reset#app",
-        "name": "Zero Reset",
-        "applicationCategory": "LifestyleApplication",
-        "operatingSystem": "Android",
-        "url": "https://softiceinnovationslabs.com/zero-reset",
-        "publisher": {
-          "@id": "https://softiceinnovationslabs.com/#organization"
-        },
-        "description": "Zero Reset helps users build discipline streaks, track daily check-ins, stay consistent, and reset with focus."
-      },
-      {
-        "@type": "SiteNavigationElement",
-        "@id": "https://softiceinnovationslabs.com/#site-navigation",
-        "name": [
-          "Apps",
-          "About",
-          "Support",
-          "Contact",
-          "PetCare Log",
-          "CalmPulse",
-          "Cozy Tales",
-          "Zero Reset"
-        ],
-        "url": [
-          "https://softiceinnovationslabs.com/#apps",
-          "https://softiceinnovationslabs.com/#about",
-          "https://softiceinnovationslabs.com/#support",
-          "mailto:support@softiceinnovationslabs.com",
-          "https://softiceinnovationslabs.com/petcare",
-          "https://softiceinnovationslabs.com/calmpulse",
-          "https://softiceinnovationslabs.com/cozy-tales",
-          "https://softiceinnovationslabs.com/zero-reset"
-        ]
+        "contactType": "customer support",
+        "availableLanguage": "English"
       }
-    ]
-  }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://softiceinnovationslabs.com/#website",
+      "name": "Softice Innovations Labs",
+      "url": "https://softiceinnovationslabs.com/",
+      "description": "Softice Innovations Labs is the main mobile app hub for PetCare Log, CalmPulse, Cozy Tales, Zero Reset, and future apps for care, calm, stories, discipline, habits, and everyday life.",
+      "publisher": {
+        "@id": "https://softiceinnovationslabs.com/#organization"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://softiceinnovationslabs.com/#webpage",
+      "url": "https://softiceinnovationslabs.com/",
+      "name": "Softice Innovations Labs | Mobile App Hub for Pet Care, Calm, Stories and Discipline",
+      "description": "Explore Softice apps from one central hub: PetCare Log, CalmPulse, Cozy Tales, Zero Reset, and future mobile apps for everyday life.",
+      "isPartOf": {
+        "@id": "https://softiceinnovationslabs.com/#website"
+      },
+      "about": {
+        "@id": "https://softiceinnovationslabs.com/#organization"
+      },
+      "publisher": {
+        "@id": "https://softiceinnovationslabs.com/#organization"
+      },
+      "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "url": "https://softiceinnovationslabs.com/images/softice/softice-og.webp",
+        "width": 1200,
+        "height": 630
+      }
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://softiceinnovationslabs.com/#apps",
+      "name": "Softice Innovations Labs mobile apps",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "PetCare Log",
+          "url": "https://softiceinnovationslabs.com/petcare"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "CalmPulse",
+          "url": "https://softiceinnovationslabs.com/calmpulse"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Cozy Tales",
+          "url": "https://softiceinnovationslabs.com/cozy-tales"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Zero Reset",
+          "url": "https://softiceinnovationslabs.com/zero-reset"
+        }
+      ]
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://softiceinnovationslabs.com/petcare#app",
+      "name": "PetCare Log",
+      "applicationCategory": "LifestyleApplication",
+      "operatingSystem": "Android",
+      "url": "https://softiceinnovationslabs.com/petcare",
+      "downloadUrl": "https://play.google.com/store/apps/details?id=com.softiceinnovationslabs.petcarelogapp",
+      "installUrl": "https://play.google.com/store/apps/details?id=com.softiceinnovationslabs.petcarelogapp",
+      "isAccessibleForFree": true,
+      "publisher": {
+        "@id": "https://softiceinnovationslabs.com/#organization"
+      },
+      "description": "PetCare Log helps pet owners track feeding schedules, medication reminders, vet visits, health records, daily checklists, and pet care routines."
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://softiceinnovationslabs.com/calmpulse#app",
+      "name": "CalmPulse",
+      "applicationCategory": "HealthApplication",
+      "operatingSystem": "Android",
+      "url": "https://softiceinnovationslabs.com/calmpulse",
+      "downloadUrl": "https://play.google.com/store/apps/details?id=com.softiceinnovationslabs.calmpulseapp",
+      "installUrl": "https://play.google.com/store/apps/details?id=com.softiceinnovationslabs.calmpulseapp",
+      "isAccessibleForFree": true,
+      "publisher": {
+        "@id": "https://softiceinnovationslabs.com/#organization"
+      },
+      "description": "CalmPulse offers calming tools for panic reset, breathing, calm timer, mood check-ins, and peaceful daily moments."
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://softiceinnovationslabs.com/cozy-tales#app",
+      "name": "Cozy Tales",
+      "applicationCategory": "EntertainmentApplication",
+      "operatingSystem": "Android",
+      "url": "https://softiceinnovationslabs.com/cozy-tales",
+      "downloadUrl": "https://softiceinnovationslabs.com/play/cozy-tales",
+      "installUrl": "https://softiceinnovationslabs.com/play/cozy-tales",
+      "isAccessibleForFree": true,
+      "publisher": {
+        "@id": "https://softiceinnovationslabs.com/#organization"
+      },
+      "description": "Cozy Tales provides bedtime stories for kids with read-aloud narration and cozy illustrated storybook experiences."
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://softiceinnovationslabs.com/zero-reset#app",
+      "name": "Zero Reset",
+      "applicationCategory": "LifestyleApplication",
+      "operatingSystem": "Android",
+      "url": "https://softiceinnovationslabs.com/zero-reset",
+      "downloadUrl": "https://play.google.com/store/apps/details?id=com.softiceinnovationslabs.zeroreset",
+      "installUrl": "https://play.google.com/store/apps/details?id=com.softiceinnovationslabs.zeroreset",
+      "isAccessibleForFree": true,
+      "publisher": {
+        "@id": "https://softiceinnovationslabs.com/#organization"
+      },
+      "description": "Zero Reset helps users build discipline streaks, track daily check-ins, stay consistent, and reset with focus."
+    },
+    {
+      "@type": "SiteNavigationElement",
+      "@id": "https://softiceinnovationslabs.com/#site-navigation",
+      "name": [
+        "Apps",
+        "About",
+        "Support",
+        "Contact",
+        "PetCare Log",
+        "CalmPulse",
+        "Cozy Tales",
+        "Zero Reset"
+      ],
+      "url": [
+        "https://softiceinnovationslabs.com/#apps",
+        "https://softiceinnovationslabs.com/#about",
+        "https://softiceinnovationslabs.com/#support",
+        "mailto:support@softiceinnovationslabs.com",
+        "https://softiceinnovationslabs.com/petcare",
+        "https://softiceinnovationslabs.com/calmpulse",
+        "https://softiceinnovationslabs.com/cozy-tales",
+        "https://softiceinnovationslabs.com/zero-reset"
+      ]
+    }
+  ]
+}
   </script>
 
   <script>
     (function () {
-      const LOGO_CANDIDATES = [
-        "/softice-logo-mark.webp",
-        "/images/softice/softice-logo-mark.webp",
-        "/images/softice-logo-mark.webp",
-        "softice-logo-mark.webp",
-        "/softice-logo-mark.png",
-        "/images/softice/softice-logo-mark.png"
-      ];
-
-      function testImage(src) {
-        return new Promise(function (resolve) {
-          const img = new Image();
-          img.onload = function () { resolve(src); };
-          img.onerror = function () { resolve(null); };
-          img.src = src;
-        });
+      function enableLogoFallback(img) {
+        const wrap = img.closest(".brand-logo-wrap");
+        if (wrap) wrap.classList.add("logo-fallback-active");
       }
 
-      async function loadBrandLogo() {
-        let workingLogo = null;
-
-        for (const src of LOGO_CANDIDATES) {
-          workingLogo = await testImage(src);
-          if (workingLogo) break;
-        }
-
-        document.querySelectorAll(".brand-logo-wrap").forEach(function (wrap) {
-          const img = wrap.querySelector(".brand-logo-img");
-          const fallback = wrap.querySelector(".brand-logo-fallback");
-
-          if (workingLogo && img) {
-            img.src = workingLogo;
-            img.style.display = "block";
-            wrap.classList.remove("logo-fallback-active");
-            if (fallback) fallback.style.display = "none";
-          } else {
-            wrap.classList.add("logo-fallback-active");
-          }
-        });
-
-        if (!workingLogo) {
+      document.querySelectorAll(".brand-logo-img").forEach(function (img) {
+        img.addEventListener("error", function () {
+          enableLogoFallback(img);
           trackEvent("logo_load_error", {
             ...commonParams(),
-            attempted_paths: LOGO_CANDIDATES.join(",")
+            attempted_path: img.getAttribute("src") || ""
           });
-        }
-      }
+        }, { once: true });
+      });
 
       function getDeviceType() {
         const ua = navigator.userAgent || "";
@@ -1024,8 +1089,6 @@
       }
 
       window.addEventListener("load", function () {
-        loadBrandLogo();
-
         trackEvent("company_homepage_view", {
           ...commonParams(),
           page_name: "softice_company_homepage"
@@ -1043,7 +1106,6 @@
             click_location: tracked.getAttribute("data-track-location") || "unknown",
             click_title: clickTitle,
             link_url: tracked.href || "",
-            app_name: clickTitle,
             hub_name: "Softice Main App Hub"
           });
 
@@ -1051,7 +1113,10 @@
             const normalizedAppName = clickTitle.toLowerCase().replace(/[^a-z0-9]+/g, "_").replace(/^_+|_+$/g, "");
 
             const card = tracked.closest("[data-app-card]");
-            const appSlug = card ? (card.getAttribute("data-app-slug") || "") : normalizedAppName;
+            const appSlug =
+              tracked.getAttribute("data-app-slug") ||
+              (card ? (card.getAttribute("data-app-slug") || "") : "") ||
+              normalizedAppName;
 
             trackEvent("softice_app_interest", {
               ...commonParams(),
@@ -1159,14 +1224,26 @@
 
       window.addEventListener("scroll", handleScrollDepth, { passive: true });
 
-      [10, 30, 60, 120].forEach(function (seconds) {
-        window.setTimeout(function () {
-          trackEvent("engaged_time", {
-            ...commonParams(),
-            seconds_engaged: seconds
-          });
-        }, seconds * 1000);
-      });
+      const engagementMilestones = [10, 30, 60, 120];
+      const sentEngagementMilestones = new Set();
+      let visibleSeconds = 0;
+
+      window.setInterval(function () {
+        if (document.visibilityState !== "visible") return;
+
+        visibleSeconds += 1;
+
+        engagementMilestones.forEach(function (seconds) {
+          if (visibleSeconds >= seconds && !sentEngagementMilestones.has(seconds)) {
+            sentEngagementMilestones.add(seconds);
+            trackEvent("engaged_time", {
+              ...commonParams(),
+              seconds_engaged: seconds,
+              engagement_basis: "visible_tab_time"
+            });
+          }
+        });
+      }, 1000);
     })();
   </script>
 </body>
