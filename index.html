@@ -454,6 +454,10 @@
       line-height: 1.55;
     }
 
+    #support {
+      scroll-margin-top: 110px;
+    }
+
     .footer {
       width: min(var(--max), calc(100% - 40px));
       margin: 42px auto 26px;
@@ -507,7 +511,11 @@
     @media (max-width: 1180px) {
       .apps-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .why-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-      .footer { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      #support {
+      scroll-margin-top: 110px;
+    }
+
+    .footer { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     }
 
     @media (max-width: 760px) {
@@ -551,7 +559,11 @@
 
       .hero,
       .section,
-      .footer {
+      #support {
+      scroll-margin-top: 110px;
+    }
+
+    .footer {
         width: calc(100% - 24px);
       }
 
@@ -594,7 +606,11 @@
 
       .why-grid { grid-template-columns: 1fr; }
 
-      .footer { grid-template-columns: 1fr; }
+      #support {
+      scroll-margin-top: 110px;
+    }
+
+    .footer { grid-template-columns: 1fr; }
 
       .section-header {
         align-items: start;
@@ -621,8 +637,8 @@
       <a href="#apps" data-track="nav_click" data-track-location="header" data-track-title="Apps">Apps</a>
       <a href="#about" data-track="nav_click" data-track-location="header" data-track-title="About">About</a>
       <a href="#support" data-track="nav_click" data-track-location="header" data-track-title="Support">Support</a>
-      <a href="mailto:support@softiceinnovationslabs.com" data-track="contact_click" data-track-location="header" data-track-title="Contact Email">Contact</a>
-      <a class="nav-cta" href="mailto:support@softiceinnovationslabs.com" data-track="contact_click" data-track-location="header_cta" data-track-title="Get in Touch">Get in Touch</a>
+      <a href="#support" data-track="contact_section_click" data-track-location="header" data-track-title="Contact">Contact</a>
+      <a class="nav-cta" href="#support" data-track="contact_section_click" data-track-location="header_cta" data-track-title="Get in Touch">Get in Touch</a>
     </nav>
   </header>
 
@@ -746,7 +762,7 @@
       <h3>Company</h3>
       <a href="#about">About Us</a>
       <a href="#apps">Our Apps</a>
-      <a href="mailto:support@softiceinnovationslabs.com">Contact</a>
+      <a href="mailto:support@softiceinnovationslabs.com" data-track="contact_click" data-track-location="footer_company" data-track-title="Email Support">Contact</a>
     </div>
 
     <div>
@@ -759,6 +775,7 @@
 
     <div>
       <h3>Support</h3>
+      <a href="mailto:support@softiceinnovationslabs.com" data-track="contact_click" data-track-location="footer_support" data-track-title="Email Support">Email Support</a>
       <a href="/support">Help Center</a>
       <a href="/privacy-policy">Privacy Policy</a>
       <a href="/terms">Terms of Service</a>
