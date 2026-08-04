@@ -232,35 +232,6 @@
       pointer-events: none;
     }
 
-
-    .hero-copy {
-      position: absolute;
-      left: 4.25%;
-      top: 12%;
-      max-width: 560px;
-      z-index: 4;
-      pointer-events: none;
-    }
-
-    .hero-copy h1 {
-      margin: 0;
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(38px, 4.6vw, 68px);
-      line-height: 0.98;
-      letter-spacing: -0.05em;
-      color: var(--ink);
-      text-wrap: balance;
-    }
-
-    .hero-copy p {
-      margin: 18px 0 0;
-      max-width: 520px;
-      color: #3d4858;
-      font-size: clamp(16px, 1.45vw, 20px);
-      line-height: 1.55;
-      text-wrap: balance;
-    }
-
     .hero-overlay-cta {
       position: absolute;
       left: 4.25%;
@@ -598,53 +569,7 @@
         object-position: center top;
       }
 
-      .hero-copy {
-        left: 7%;
-        right: 7%;
-        top: 7%;
-        max-width: none;
-      }
-
-      .hero-copy h1 {
-        font-size: clamp(34px, 10vw, 52px);
-      }
-
-      .hero-copy p {
-        margin-top: 12px;
-        font-size: 15px;
-        line-height: 1.5;
-      }
-
-  
-    .hero-copy {
-      position: absolute;
-      left: 4.25%;
-      top: 12%;
-      max-width: 560px;
-      z-index: 4;
-      pointer-events: none;
-    }
-
-    .hero-copy h1 {
-      margin: 0;
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(38px, 4.6vw, 68px);
-      line-height: 0.98;
-      letter-spacing: -0.05em;
-      color: var(--ink);
-      text-wrap: balance;
-    }
-
-    .hero-copy p {
-      margin: 18px 0 0;
-      max-width: 520px;
-      color: #3d4858;
-      font-size: clamp(16px, 1.45vw, 20px);
-      line-height: 1.55;
-      text-wrap: balance;
-    }
-
-    .hero-overlay-cta {
+      .hero-overlay-cta {
         left: 50%;
         bottom: 5.4%;
         transform: translateX(-50%);
@@ -683,7 +608,7 @@
   <header class="site-header">
     <a class="brand" href="/" aria-label="Softice Innovations Labs homepage">
       <span class="brand-logo-wrap">
-        <img class="brand-logo-img" src="/softice-logo-mark.webp" alt="Softice Innovations Labs logo" width="54" height="54" decoding="async" />
+        <img class="brand-logo-img" src="/softice-logo-mark.webp" alt="Softice Innovations Labs logo" width="54" height="54" decoding="async" data-logo-srcs="/softice-logo-mark.webp,/images/softice/softice-logo-mark.webp,/images/softice-logo-mark.webp,softice-logo-mark.webp,/softice-logo-mark.png,/images/softice/softice-logo-mark.png" />
         <span class="brand-logo-fallback">S</span>
       </span>
       <span class="brand-text">
@@ -703,11 +628,8 @@
 
   <main>
     <section class="hero" id="about" data-section-track="company_hero">
+      <h1 class="visually-hidden">Softice Innovations Labs builds thoughtful mobile apps for calmer, easier everyday life</h1>
       <div class="hero-card">
-        <div class="hero-copy">
-          <h1>Thoughtful mobile apps for calmer, easier everyday life</h1>
-          <p>Explore Softice apps for pet care, calm, bedtime stories, discipline, habits, and practical daily routines.</p>
-        </div>
         <picture>
           <source media="(max-width: 760px)" srcset="/images/softice/softice-og-mobile.webp" width="900" height="1400" />
           <img class="hero-banner" src="/images/softice/softice-og.webp" alt="Softice Innovations Labs hero banner with PetCare Log, CalmPulse, Cozy Tales, and Zero Reset app previews" width="1200" height="630" fetchpriority="high" decoding="async" />
@@ -809,7 +731,7 @@
     <div>
       <a class="brand" href="/" aria-label="Softice Innovations Labs homepage">
         <span class="brand-logo-wrap">
-          <img class="brand-logo-img" src="/softice-logo-mark.webp" alt="Softice Innovations Labs logo" width="54" height="54" decoding="async" />
+          <img class="brand-logo-img" src="/softice-logo-mark.webp" alt="Softice Innovations Labs logo" width="54" height="54" decoding="async" data-logo-srcs="/softice-logo-mark.webp,/images/softice/softice-logo-mark.webp,/images/softice-logo-mark.webp,softice-logo-mark.webp,/softice-logo-mark.png,/images/softice/softice-logo-mark.png" />
           <span class="brand-logo-fallback">S</span>
         </span>
         <span class="brand-text">
@@ -1037,20 +959,53 @@
 
   <script>
     (function () {
-      function enableLogoFallback(img) {
-        const wrap = img.closest(".brand-logo-wrap");
-        if (wrap) wrap.classList.add("logo-fallback-active");
+      const LOGO_CANDIDATES = [
+        "/softice-logo-mark.webp",
+        "/images/softice/softice-logo-mark.webp",
+        "/images/softice-logo-mark.webp",
+        "softice-logo-mark.webp",
+        "/softice-logo-mark.png",
+        "/images/softice/softice-logo-mark.png"
+      ];
+
+      function testImage(src) {
+        return new Promise(function (resolve) {
+          const img = new Image();
+          img.onload = function () { resolve(src); };
+          img.onerror = function () { resolve(null); };
+          img.src = src;
+        });
       }
 
-      document.querySelectorAll(".brand-logo-img").forEach(function (img) {
-        img.addEventListener("error", function () {
-          enableLogoFallback(img);
+      async function loadBrandLogo() {
+        let workingLogo = null;
+
+        for (const src of LOGO_CANDIDATES) {
+          workingLogo = await testImage(src);
+          if (workingLogo) break;
+        }
+
+        document.querySelectorAll(".brand-logo-wrap").forEach(function (wrap) {
+          const img = wrap.querySelector(".brand-logo-img");
+          const fallback = wrap.querySelector(".brand-logo-fallback");
+
+          if (workingLogo && img) {
+            img.src = workingLogo;
+            img.style.display = "block";
+            wrap.classList.remove("logo-fallback-active");
+            if (fallback) fallback.style.display = "none";
+          } else {
+            wrap.classList.add("logo-fallback-active");
+          }
+        });
+
+        if (!workingLogo) {
           trackEvent("logo_load_error", {
             ...commonParams(),
-            attempted_path: img.getAttribute("src") || ""
+            attempted_paths: LOGO_CANDIDATES.join(",")
           });
-        }, { once: true });
-      });
+        }
+      }
 
       function getDeviceType() {
         const ua = navigator.userAgent || "";
@@ -1089,6 +1044,8 @@
       }
 
       window.addEventListener("load", function () {
+        loadBrandLogo();
+
         trackEvent("company_homepage_view", {
           ...commonParams(),
           page_name: "softice_company_homepage"
