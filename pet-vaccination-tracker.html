@@ -268,11 +268,15 @@
       object-position: center;
     }
 
+    .hero-download-wrap {
+      display: flex;
+      justify-content: flex-start;
+      padding: 18px 22px 22px;
+      background: rgba(255, 250, 243, 0.96);
+      border-top: 1px solid rgba(8, 40, 68, 0.08);
+    }
+
     .hero-download-button {
-      position: absolute;
-      left: 28px;
-      right: auto;
-      bottom: 28px;
       min-height: 58px;
       display: inline-flex;
       align-items: center;
@@ -667,12 +671,15 @@
         object-position: center top;
       }
 
+      .hero-download-wrap {
+        justify-content: center;
+        padding: 14px;
+      }
+
       .hero-download-button {
-        left: 14px;
-        right: auto;
-        bottom: 14px;
+        width: 100%;
+        max-width: 340px;
         min-height: 50px;
-        max-width: calc(100% - 28px);
         padding: 0 17px;
         border-radius: 12px;
         font-size: 15px;
@@ -773,19 +780,21 @@
             />
           </picture>
 
-          <a
-            class="hero-download-button"
-            href="https://play.google.com/store/apps/details?id=com.softiceinnovationslabs.petcarelogapp"
-            aria-label="Download PetCare Log on Google Play"
-            data-track="google_play_click"
-            data-track-location="hero_download_button_left"
-          >
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M6.5 4.8 18 12 6.5 19.2Z"/>
-              <path d="m6.5 4.8 5.2 7.2-5.2 7.2"/>
-            </svg>
-            <span>Download on Google Play</span>
-          </a>
+          <div class="hero-download-wrap">
+            <a
+              class="hero-download-button"
+              href="https://play.google.com/store/apps/details?id=com.softiceinnovationslabs.petcarelogapp"
+              aria-label="Download PetCare Log on Google Play"
+              data-track="google_play_click"
+              data-track-location="hero_download_button_below_image"
+            >
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M6.5 4.8 18 12 6.5 19.2Z"/>
+                <path d="m6.5 4.8 5.2 7.2-5.2 7.2"/>
+              </svg>
+              <span>Download on Google Play</span>
+            </a>
+          </div>
         </div>
       </div>
     </section>
