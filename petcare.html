@@ -82,120 +82,257 @@
 
   <!-- Enhanced SEO Schema: App, Organization, WebPage, Breadcrumbs, FAQ -->
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "Organization",
-        "@id": "https://softiceinnovationslabs.com/#organization",
-        "name": "Softice Innovations Labs LLC",
-        "url": "https://softiceinnovationslabs.com/",
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://softiceinnovationslabs.com/#organization",
+      "name": "Softice Innovations Labs LLC",
+      "url": "https://softiceinnovationslabs.com/",
+      "email": "support@softiceinnovationslabs.com",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://softiceinnovationslabs.com/softice-logo-mark.webp",
+        "width": 512,
+        "height": 512
+      },
+      "sameAs": [
+        "https://www.facebook.com/softiceinnovationslabs",
+        "https://www.instagram.com/softiceinnovationslabs/",
+        "https://www.tiktok.com/@softiceinnovationslabs",
+        "https://www.youtube.com/@SofticeInnovationsLabs"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
         "email": "support@softiceinnovationslabs.com",
-        "logo": {
-          "@type": "ImageObject",
-          "url": "https://softiceinnovationslabs.com/softice-logo-mark.webp",
-          "width": 512,
-          "height": 512
-        },
-        "sameAs": [
-          "https://www.facebook.com/softiceinnovationslabs",
-          "https://www.instagram.com/softiceinnovationslabs/",
-          "https://www.tiktok.com/@softiceinnovationslabs",
-          "https://www.youtube.com/@SofticeInnovationsLabs"
-        ],
-        "contactPoint": {
-          "@type": "ContactPoint",
-          "email": "support@softiceinnovationslabs.com",
-          "contactType": "customer support",
-          "availableLanguage": "English"
-        }
-      },
-      {
-        "@type": "WebSite",
-        "@id": "https://softiceinnovationslabs.com/#website",
-        "name": "Softice Innovations Labs",
-        "url": "https://softiceinnovationslabs.com/",
-        "publisher": { "@id": "https://softiceinnovationslabs.com/#organization" }
-      },
-      {
-        "@type": "WebPage",
-        "@id": "https://softiceinnovationslabs.com/petcare#webpage",
-        "url": "https://softiceinnovationslabs.com/petcare",
-        "name": "PetCare Log | Pet Care Tracker, Medication Reminders & Vet Visit App",
-        "description": "PetCare Log helps pet parents organize feeding, medication reminders, vet visits, pet health records, daily care checklists, photo memories, and multi-pet routines.",
-        "isPartOf": { "@id": "https://softiceinnovationslabs.com/#website" },
-        "about": { "@id": "https://softiceinnovationslabs.com/petcare#app" },
-        "primaryImageOfPage": {
-          "@type": "ImageObject",
-          "url": "https://softiceinnovationslabs.com/images/petcare/petcare-og.webp",
-          "width": 1200,
-          "height": 630
-        },
-        "publisher": { "@id": "https://softiceinnovationslabs.com/#organization" },
-        "breadcrumb": { "@id": "https://softiceinnovationslabs.com/petcare#breadcrumb" }
-      },
-      {
-        "@type": "BreadcrumbList",
-        "@id": "https://softiceinnovationslabs.com/petcare#breadcrumb",
-        "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Softice Innovations Labs", "item": "https://softiceinnovationslabs.com/" },
-          { "@type": "ListItem", "position": 2, "name": "PetCare Log", "item": "https://softiceinnovationslabs.com/petcare" }
-        ]
-      },
-      {
-        "@type": "MobileApplication",
-        "@id": "https://softiceinnovationslabs.com/petcare#app",
-        "name": "PetCare Log",
-        "alternateName": "PetCare Log: Pet Care Tracker",
-        "operatingSystem": "Android",
-        "applicationCategory": "LifestyleApplication",
-        "applicationSubCategory": "Pet care, pet health tracking, reminders",
-        "description": "PetCare Log is a pet care tracker app for pet profiles, feeding schedules, medication reminders, vet visits, health history, photo memories, daily checklists, and pet care routines for every pet.",
-        "url": "https://softiceinnovationslabs.com/petcare",
-        "downloadUrl": "https://play.google.com/store/apps/details?id=com.softiceinnovationslabs.petcarelogapp",
-        "installUrl": "https://play.google.com/store/apps/details?id=com.softiceinnovationslabs.petcarelogapp",
-        "image": "https://softiceinnovationslabs.com/images/petcare/petcare-og.webp",
-        "screenshot": [
-          "https://softiceinnovationslabs.com/images/petcare/petcare-dashboard-screen.webp",
-          "https://softiceinnovationslabs.com/images/petcare/petcare-screen-reminders.webp",
-          "https://softiceinnovationslabs.com/images/petcare/petcare-screen-health-history.webp",
-          "https://softiceinnovationslabs.com/images/petcare/petcare-screen-photo-memories.webp"
-        ],
-        "publisher": { "@id": "https://softiceinnovationslabs.com/#organization" },
-        "brand": { "@type": "Brand", "name": "PetCare Log" },
-        "offers": {
-          "@type": "Offer",
-          "price": "0",
-          "priceCurrency": "USD",
-          "availability": "https://schema.org/InStock",
-          "url": "https://play.google.com/store/apps/details?id=com.softiceinnovationslabs.petcarelogapp"
-        },
-        "featureList": [
-          "Multiple pet profiles",
-          "Feeding tracker",
-          "Medication reminders",
-          "Vet visit tracker",
-          "Pet health history",
-          "Photo memories",
-          "Daily care checklist",
-          "Pet reminders"
-        ],
-        "inLanguage": "en-US",
-        "keywords": "pet care app, pet care tracker, pet medication reminder, pet feeding tracker, vet visit tracker, pet health records, dog care app, cat care app, pet care organizer"
-      },
-      {
-        "@type": "FAQPage",
-        "@id": "https://softiceinnovationslabs.com/petcare#faq",
-        "mainEntity": [
-          { "@type": "Question", "name": "What is PetCare Log?", "acceptedAnswer": { "@type": "Answer", "text": "PetCare Log is a pet care tracker app that helps pet parents organize pet profiles, feeding logs, medication reminders, vet visits, health history, daily care tasks, and photo memories." } },
-          { "@type": "Question", "name": "Is PetCare Log only for dogs and cats?", "acceptedAnswer": { "@type": "Answer", "text": "No. PetCare Log is designed for dogs, cats, rabbits, birds, and other pets that need daily care, reminders, health tracking, and photo memories." } },
-          { "@type": "Question", "name": "Is PetCare Log free?", "acceptedAnswer": { "@type": "Answer", "text": "PetCare Log is free to start. PetCare Log Pro is optional and unlocks unlimited pets, unlimited reminders, unlimited logs, unlimited health records, and premium future features." } },
-          { "@type": "Question", "name": "Does PetCare Log help with medication reminders?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. PetCare Log includes reminder tools for medication, feeding, vet visits, grooming, and daily care routines." } },
-          { "@type": "Question", "name": "Can PetCare Log track vet visits and health history?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. PetCare Log helps pet parents track vet visits, health records, medication notes, symptoms, treatments, daily care history, and pet wellness routines." } }
-        ]
+        "contactType": "customer support",
+        "availableLanguage": "English"
       }
-    ]
-  }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://softiceinnovationslabs.com/#website",
+      "name": "Softice Innovations Labs",
+      "url": "https://softiceinnovationslabs.com/",
+      "publisher": {
+        "@id": "https://softiceinnovationslabs.com/#organization"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://softiceinnovationslabs.com/petcare#webpage",
+      "url": "https://softiceinnovationslabs.com/petcare",
+      "name": "PetCare Log | Pet Care Tracker, Medication Reminders & Vet Visit App",
+      "description": "PetCare Log helps pet parents organize feeding, medication reminders, vet visits, pet health records, daily care checklists, photo memories, and multi-pet routines.",
+      "isPartOf": {
+        "@id": "https://softiceinnovationslabs.com/#website"
+      },
+      "about": {
+        "@id": "https://softiceinnovationslabs.com/petcare#app"
+      },
+      "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "url": "https://softiceinnovationslabs.com/images/petcare/petcare-og.webp",
+        "width": 1200,
+        "height": 630
+      },
+      "publisher": {
+        "@id": "https://softiceinnovationslabs.com/#organization"
+      },
+      "breadcrumb": {
+        "@id": "https://softiceinnovationslabs.com/petcare#breadcrumb"
+      },
+      "hasPart": [
+        {
+          "@type": "WebPage",
+          "name": "Pet Medication Reminder",
+          "url": "https://softiceinnovationslabs.com/pet-medication-reminder"
+        },
+        {
+          "@type": "WebPage",
+          "name": "Pet Vaccination Tracker",
+          "url": "https://softiceinnovationslabs.com/pet-vaccination-tracker"
+        },
+        {
+          "@type": "WebPage",
+          "name": "Pet Health Records",
+          "url": "https://softiceinnovationslabs.com/pet-health-records"
+        },
+        {
+          "@type": "WebPage",
+          "name": "Pet Feeding Schedule",
+          "url": "https://softiceinnovationslabs.com/pet-feeding-schedule"
+        },
+        {
+          "@type": "WebPage",
+          "name": "Pet Vet Visit Tracker",
+          "url": "https://softiceinnovationslabs.com/pet-vet-visit-tracker"
+        },
+        {
+          "@type": "WebPage",
+          "name": "Pet Care Checklist",
+          "url": "https://softiceinnovationslabs.com/pet-care-checklist"
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://softiceinnovationslabs.com/petcare#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Softice Innovations Labs",
+          "item": "https://softiceinnovationslabs.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "PetCare Log",
+          "item": "https://softiceinnovationslabs.com/petcare"
+        }
+      ]
+    },
+    {
+      "@type": "MobileApplication",
+      "@id": "https://softiceinnovationslabs.com/petcare#app",
+      "name": "PetCare Log",
+      "alternateName": "PetCare Log: Pet Care Tracker",
+      "operatingSystem": "Android",
+      "applicationCategory": "LifestyleApplication",
+      "applicationSubCategory": "Pet care, pet health tracking, reminders",
+      "description": "PetCare Log is a pet care tracker app for pet profiles, feeding schedules, medication reminders, vet visits, health history, photo memories, daily checklists, and pet care routines for every pet.",
+      "url": "https://softiceinnovationslabs.com/petcare",
+      "downloadUrl": "https://play.google.com/store/apps/details?id=com.softiceinnovationslabs.petcarelogapp",
+      "installUrl": "https://play.google.com/store/apps/details?id=com.softiceinnovationslabs.petcarelogapp",
+      "image": "https://softiceinnovationslabs.com/images/petcare/petcare-og.webp",
+      "screenshot": [
+        "https://softiceinnovationslabs.com/images/petcare/petcare-dashboard-screen.webp",
+        "https://softiceinnovationslabs.com/images/petcare/petcare-screen-reminders.webp",
+        "https://softiceinnovationslabs.com/images/petcare/petcare-screen-health-history.webp",
+        "https://softiceinnovationslabs.com/images/petcare/petcare-screen-photo-memories.webp"
+      ],
+      "publisher": {
+        "@id": "https://softiceinnovationslabs.com/#organization"
+      },
+      "brand": {
+        "@type": "Brand",
+        "name": "PetCare Log"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "url": "https://play.google.com/store/apps/details?id=com.softiceinnovationslabs.petcarelogapp"
+      },
+      "featureList": [
+        "Multiple pet profiles",
+        "Feeding tracker",
+        "Medication reminders",
+        "Vet visit tracker",
+        "Pet health history",
+        "Photo memories",
+        "Daily care checklist",
+        "Pet reminders"
+      ],
+      "inLanguage": "en-US",
+      "keywords": "pet care app, pet care tracker, pet medication reminder, pet feeding tracker, vet visit tracker, pet health records, dog care app, cat care app, pet care organizer"
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://softiceinnovationslabs.com/petcare#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is PetCare Log?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "PetCare Log is a pet care tracker app that helps pet parents organize pet profiles, feeding logs, medication reminders, vet visits, health history, daily care tasks, and photo memories."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is PetCare Log only for dogs and cats?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. PetCare Log is designed for dogs, cats, rabbits, birds, and other pets that need daily care, reminders, health tracking, and photo memories."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is PetCare Log free?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "PetCare Log is free to start. PetCare Log Pro is optional and unlocks unlimited pets, unlimited reminders, unlimited logs, unlimited health records, and premium future features."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does PetCare Log help with medication reminders?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. PetCare Log includes reminder tools for medication, feeding, vet visits, grooming, and daily care routines."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can PetCare Log track vet visits and health history?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. PetCare Log helps pet parents track vet visits, health records, medication notes, symptoms, treatments, daily care history, and pet wellness routines."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://softiceinnovationslabs.com/petcare#feature-guides",
+      "name": "PetCare Log Feature Guides",
+      "itemListOrder": "https://schema.org/ItemListOrderAscending",
+      "numberOfItems": 6,
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Pet Medication Reminder",
+          "url": "https://softiceinnovationslabs.com/pet-medication-reminder"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Pet Vaccination Tracker",
+          "url": "https://softiceinnovationslabs.com/pet-vaccination-tracker"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Pet Health Records",
+          "url": "https://softiceinnovationslabs.com/pet-health-records"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Pet Feeding Schedule",
+          "url": "https://softiceinnovationslabs.com/pet-feeding-schedule"
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "name": "Pet Vet Visit Tracker",
+          "url": "https://softiceinnovationslabs.com/pet-vet-visit-tracker"
+        },
+        {
+          "@type": "ListItem",
+          "position": 6,
+          "name": "Pet Care Checklist",
+          "url": "https://softiceinnovationslabs.com/pet-care-checklist"
+        }
+      ]
+    }
+  ]
+}
   </script>
 
   <style>
@@ -1133,6 +1270,156 @@
         margin: 6px 8px;
       }
     }
+
+
+    /* PetCare SEO resource hub */
+    .resource-center {
+      padding: 44px 0 18px;
+    }
+
+    .resource-header {
+      max-width: 900px;
+      margin: 0 auto 34px;
+      text-align: center;
+    }
+
+    .resource-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      margin: 0 0 10px;
+      padding: 7px 12px;
+      border-radius: 999px;
+      color: #a9470a;
+      background: #fff0dc;
+      border: 1px solid rgba(249, 115, 22, 0.20);
+      font-size: 12px;
+      font-weight: 950;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .resource-header h2 {
+      margin: 0 0 14px;
+      font-size: clamp(32px, 4vw, 48px);
+      line-height: 1.06;
+      letter-spacing: -0.055em;
+      font-weight: 950;
+    }
+
+    .resource-header p {
+      max-width: 820px;
+      margin: 0 auto;
+      color: var(--brown-2);
+      font-size: 17px;
+      line-height: 1.65;
+      font-weight: 650;
+    }
+
+    .resource-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .resource-card {
+      position: relative;
+      min-height: 244px;
+      padding: 26px;
+      display: flex;
+      flex-direction: column;
+      border-radius: var(--radius-lg);
+      background: rgba(255, 255, 255, 0.92);
+      border: 1px solid rgba(116, 82, 54, 0.13);
+      box-shadow: var(--soft-shadow);
+      transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
+    }
+
+    .resource-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(249, 115, 22, 0.34);
+      box-shadow: 0 22px 46px rgba(88, 49, 21, 0.14);
+    }
+
+    .resource-card:focus-visible {
+      outline: 4px solid rgba(249, 115, 22, 0.26);
+      outline-offset: 4px;
+    }
+
+    .resource-icon {
+      width: 56px;
+      height: 56px;
+      display: grid;
+      place-items: center;
+      margin-bottom: 18px;
+      border-radius: 18px;
+      color: var(--orange);
+      background: linear-gradient(135deg, #fff3df, #ffe1b6);
+      box-shadow: 0 10px 22px rgba(249, 115, 22, 0.13);
+      font-size: 27px;
+    }
+
+    .resource-card h3 {
+      margin: 0 0 9px;
+      font-size: 21px;
+      line-height: 1.15;
+      letter-spacing: -0.035em;
+      font-weight: 950;
+    }
+
+    .resource-card p {
+      margin: 0 0 22px;
+      color: var(--brown-2);
+      font-size: 14px;
+      line-height: 1.55;
+      font-weight: 650;
+    }
+
+    .resource-link-label {
+      margin-top: auto;
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      color: var(--orange);
+      font-size: 13px;
+      font-weight: 950;
+    }
+
+    .resource-link-label::after {
+      content: "→";
+      transition: transform 0.2s ease;
+    }
+
+    .resource-card:hover .resource-link-label::after {
+      transform: translateX(4px);
+    }
+
+    @media (max-width: 980px) {
+      .resource-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 640px) {
+      .resource-center {
+        padding-top: 34px;
+      }
+
+      .resource-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .resource-card {
+        min-height: 0;
+        padding: 23px;
+      }
+
+      .resource-header p {
+        font-size: 16px;
+      }
+    }
+
   </style>
 </head>
 
@@ -1446,6 +1733,65 @@
       </section>
     </section>
 
+
+
+    <!-- PetCare Log SEO hub: core feature guides -->
+    <section id="petcare-guides" class="section resource-center js-observe-section" data-section-name="petcare_guides" aria-labelledby="petcare-guides-title">
+      <div class="resource-header">
+        <p class="resource-eyebrow">PetCare feature guides</p>
+        <h2 id="petcare-guides-title">Explore PetCare Log tools for every part of your pet’s routine</h2>
+        <p>
+          Find focused guides for medication reminders, vaccinations, health records, feeding schedules,
+          veterinary visits, and daily care checklists. Each guide explains how PetCare Log helps keep
+          important routines organized in one simple app.
+        </p>
+      </div>
+
+      <div class="resource-grid">
+        <a class="resource-card js-resource-link" href="/pet-medication-reminder" data-guide-name="pet_medication_reminder" data-link-location="petcare_resource_hub">
+          <span class="resource-icon" aria-hidden="true">💊</span>
+          <h3>Pet Medication Reminder</h3>
+          <p>Organize medicine names, doses, schedules, recurring reminders, and completed medication routines.</p>
+          <span class="resource-link-label">Explore medication reminders</span>
+        </a>
+
+        <a class="resource-card js-resource-link" href="/pet-vaccination-tracker" data-guide-name="pet_vaccination_tracker" data-link-location="petcare_resource_hub">
+          <span class="resource-icon" aria-hidden="true">💉</span>
+          <h3>Pet Vaccination Tracker</h3>
+          <p>Keep vaccine history, booster dates, upcoming due dates, and vaccination reminders connected to each pet.</p>
+          <span class="resource-link-label">Explore vaccination tracking</span>
+        </a>
+
+        <a class="resource-card js-resource-link" href="/pet-health-records" data-guide-name="pet_health_records" data-link-location="petcare_resource_hub">
+          <span class="resource-icon" aria-hidden="true">📁</span>
+          <h3>Pet Health Records</h3>
+          <p>Review vaccinations, medications, vet visits, allergies, health notes, and everyday care history in one place.</p>
+          <span class="resource-link-label">Explore health records</span>
+        </a>
+
+        <a class="resource-card js-resource-link" href="/pet-feeding-schedule" data-guide-name="pet_feeding_schedule" data-link-location="petcare_resource_hub">
+          <span class="resource-icon" aria-hidden="true">🥣</span>
+          <h3>Pet Feeding Schedule</h3>
+          <p>Plan meal times, portion notes, food details, and recurring feeding routines for every pet.</p>
+          <span class="resource-link-label">Explore feeding schedules</span>
+        </a>
+
+        <a class="resource-card js-resource-link" href="/pet-vet-visit-tracker" data-guide-name="pet_vet_visit_tracker" data-link-location="petcare_resource_hub">
+          <span class="resource-icon" aria-hidden="true">🩺</span>
+          <h3>Pet Vet Visit Tracker</h3>
+          <p>Track appointment dates, treatments, visit notes, veterinary history, and recommended follow-ups.</p>
+          <span class="resource-link-label">Explore vet visit tracking</span>
+        </a>
+
+        <a class="resource-card js-resource-link" href="/pet-care-checklist" data-guide-name="pet_care_checklist" data-link-location="petcare_resource_hub">
+          <span class="resource-icon" aria-hidden="true">✅</span>
+          <h3>Pet Care Checklist</h3>
+          <p>Build daily and weekly routines for walks, meals, grooming, medication, cleaning, and other care tasks.</p>
+          <span class="resource-link-label">Explore care checklists</span>
+        </a>
+      </div>
+    </section>
+
     <section class="section faq js-observe-section" data-section-name="faq">
       <h2>PetCare Log FAQ</h2>
 
@@ -1662,6 +2008,27 @@
             link_text: (link.textContent || "").trim()
           });
         }
+      });
+
+
+
+      document.querySelectorAll(".js-resource-link").forEach(function (link) {
+        link.addEventListener("click", function () {
+          sendEvent("petcare_guide_click", {
+            app_name: "PetCare Log",
+            page_name: "petcare_landing_page",
+            guide_name: link.dataset.guideName || "unknown",
+            link_location: link.dataset.linkLocation || "petcare_resource_hub",
+            destination_url: link.href
+          });
+
+          sendEvent("internal_link_click", {
+            app_name: "PetCare Log",
+            content_group: "petcare_seo_cluster",
+            link_text: (link.querySelector("h3")?.textContent || link.textContent || "").trim(),
+            destination_url: link.href
+          });
+        });
       });
 
       document.querySelectorAll(".nav-links a, .js-nav-cta").forEach(function (link) {
