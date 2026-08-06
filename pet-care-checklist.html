@@ -7,7 +7,7 @@
   <title>Pet Care Checklist App for Dogs and Cats | PetCare Log</title>
   <meta
     name="description"
-    content="Organize daialy and weekly pet-care tasks, reminders and routines in one place with the PetCare Log pet care checklist app."
+    content="Organize daily and weekly pet-care tasks, reminders and routines in one place with the PetCare Log pet care checklist app."
   />
   <meta
     name="keywords"
@@ -22,7 +22,7 @@
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Softice Innovations Labs" />
   <meta property="og:title" content="Pet Care Checklist App | PetCare Log" />
-  <meta property="og:description" content="Keep vaccinations, medications, vet visits, allergies and important pet-health notes organized in one place." />
+  <meta property="og:description" content="Organize daily and weekly pet-care checklists, reminders and recurring routines for dogs, cats and every pet." />
   <meta property="og:url" content="https://softiceinnovationslabs.com/pet-care-checklist" />
   <meta property="og:image" content="https://softiceinnovationslabs.com/images/petcare/pet-care-checklist-hero-desktop.webp" />
   <meta property="og:image:width" content="1920" />
@@ -80,7 +80,15 @@
         "url": "https://softiceinnovationslabs.com/images/petcare/pet-care-checklist-hero-desktop.webp",
         "width": 1920,
         "height": 1080
-      }
+      },
+      "relatedLink": [
+        "https://softiceinnovationslabs.com/petcare",
+        "https://softiceinnovationslabs.com/pet-medication-reminder",
+        "https://softiceinnovationslabs.com/pet-vaccination-tracker",
+        "https://softiceinnovationslabs.com/pet-health-records",
+        "https://softiceinnovationslabs.com/pet-feeding-schedule",
+        "https://softiceinnovationslabs.com/pet-vet-visit-tracker"
+      ]
     },
     {
       "@type": "SoftwareApplication",
@@ -134,6 +142,49 @@
             "@type": "Answer",
             "text": "No. PetCare Log is an organization tool and does not replace veterinary diagnosis, treatment or professional medical advice."
           }
+        }
+      ]
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://softiceinnovationslabs.com/pet-care-checklist#related-guides",
+      "name": "Related PetCare Log guides",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "PetCare Log",
+          "url": "https://softiceinnovationslabs.com/petcare"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Pet Medication Reminder",
+          "url": "https://softiceinnovationslabs.com/pet-medication-reminder"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Pet Vaccination Tracker",
+          "url": "https://softiceinnovationslabs.com/pet-vaccination-tracker"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Pet Health Records",
+          "url": "https://softiceinnovationslabs.com/pet-health-records"
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "name": "Pet Feeding Schedule",
+          "url": "https://softiceinnovationslabs.com/pet-feeding-schedule"
+        },
+        {
+          "@type": "ListItem",
+          "position": 6,
+          "name": "Pet Vet Visit Tracker",
+          "url": "https://softiceinnovationslabs.com/pet-vet-visit-tracker"
         }
       ]
     }
@@ -543,6 +594,21 @@
       cursor: default;
     }
 
+    .related-links a {
+      transition: transform 0.18s ease, border-color 0.18s ease, background 0.18s ease;
+    }
+
+    .related-links a:hover {
+      transform: translateY(-2px);
+      border-color: rgba(255, 90, 31, 0.34);
+      background: var(--orange-soft);
+    }
+
+    .related-links a:focus-visible {
+      outline: 3px solid rgba(255, 90, 31, 0.35);
+      outline-offset: 3px;
+    }
+
     .faq { padding: 74px 0; }
 
     .faq-list {
@@ -880,12 +946,12 @@
           <p class="eyebrow">Explore more PetCare tools</p>
           <h2>Build a complete pet-care routine</h2>
           <div class="related-links">
-            <a href="/petcare">Main PetCare Log page <span aria-hidden="true">→</span></a>
-            <a href="/pet-feeding-schedule">Pet feeding schedule <span aria-hidden="true">→</span></a>
-            <a href="/pet-medication-reminder">Pet medication reminder <span aria-hidden="true">→</span></a>
-            <a href="/pet-health-records">Pet health records <span aria-hidden="true">→</span></a>
-            <a href="/pet-vet-visit-tracker">Pet vet visit tracker <span aria-hidden="true">→</span></a>
-            <a href="/pet-vaccination-tracker">Pet vaccination tracker <span aria-hidden="true">→</span></a>
+            <a href="/petcare" data-track="petcare_guide_click" data-track-location="related_guides" data-guide-slug="petcare">Main PetCare Log page <span aria-hidden="true">→</span></a>
+            <a href="/pet-feeding-schedule" data-track="petcare_guide_click" data-track-location="related_guides" data-guide-slug="pet-feeding-schedule">Pet feeding schedule <span aria-hidden="true">→</span></a>
+            <a href="/pet-medication-reminder" data-track="petcare_guide_click" data-track-location="related_guides" data-guide-slug="pet-medication-reminder">Pet medication reminder <span aria-hidden="true">→</span></a>
+            <a href="/pet-health-records" data-track="petcare_guide_click" data-track-location="related_guides" data-guide-slug="pet-health-records">Pet health records <span aria-hidden="true">→</span></a>
+            <a href="/pet-vet-visit-tracker" data-track="petcare_guide_click" data-track-location="related_guides" data-guide-slug="pet-vet-visit-tracker">Pet vet visit tracker <span aria-hidden="true">→</span></a>
+            <a href="/pet-vaccination-tracker" data-track="petcare_guide_click" data-track-location="related_guides" data-guide-slug="pet-vaccination-tracker">Pet vaccination tracker <span aria-hidden="true">→</span></a>
           </div>
         </aside>
       </div>
@@ -974,7 +1040,8 @@
           page_name: "pet_care_checklist",
           page_type: "seo_landing_page",
           click_location: link.getAttribute("data-track-location") || "unknown",
-          destination_url: link.href || ""
+          destination_url: link.href || "",
+          guide_slug: link.getAttribute("data-guide-slug") || ""
         });
       });
 
