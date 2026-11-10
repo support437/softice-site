@@ -11,15 +11,8 @@
     content="Zero Reset is a no-excuses discipline streak tracker app for daily accountability, habit streaks, check-ins, reminders, and reset-to-zero motivation. Miss a day? Back to zero."
   />
 
-  <meta
-    name="keywords"
-    content="discipline streak tracker, discipline streak tracker app, Zero Reset app, no excuses streak tracker, daily discipline app, accountability streak app, habit streak tracker, daily check in app, streak counter app, habit accountability app, personal discipline app, self improvement tracker, consistency tracker app, reset streak tracker, motivation streak app, miss a day back to zero, don't break the streak, no excuses app"
-  />
-
   <link rel="canonical" href="https://softiceinnovationslabs.com/zero-reset" />
   <meta name="subject" content="Zero Reset discipline streak tracker app by Softice Innovations Labs" />
-  <meta name="classification" content="Mobile App, Habit Tracker, Discipline App, Productivity App, Android App" />
-  <meta name="rating" content="General" />
   <meta name="referrer" content="strict-origin-when-cross-origin" />
   <link rel="alternate" hreflang="en" href="https://softiceinnovationslabs.com/zero-reset" />
   <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
@@ -848,6 +841,34 @@
         padding-bottom: 96px;
       }
     }
+
+    .zero-intro {
+      padding: 42px 20px 10px;
+      text-align: center;
+    }
+    .zero-intro h1 {
+      margin: 0 auto;
+      max-width: 900px;
+      font: 900 clamp(2.1rem, 4.8vw, 4.1rem)/1.06 var(--font-display);
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+    }
+    .zero-intro p {
+      max-width: 760px;
+      margin: 14px auto 0;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+    :focus-visible { outline: 3px solid #ffcd3c; outline-offset: 4px; }
+    [id] { scroll-margin-top: 95px; }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
   </style>
 
   <!-- Premium GA4 Tracking -->
@@ -867,14 +888,6 @@
       page_location: window.location.href,
       send_page_view: true,
       campaign_app: 'Zero Reset'
-    });
-
-    gtag('event', 'zero_reset_page_view', {
-      app_name: 'Zero Reset',
-      brand: 'Softice Innovations Labs',
-      page_type: 'app_landing_page',
-      page_category: 'discipline_streak_tracker',
-      seo_keyword_primary: 'discipline streak tracker app'
     });
   </script>
 
@@ -1032,6 +1045,7 @@
 </head>
 
 <body>
+  <!-- /zero- is a separate legacy route. Configure a server-side 301 to /zero-reset; this HTML cannot change its response. -->
   <div class="page">
 
     <header class="top-strip">
@@ -1083,14 +1097,7 @@
 
     <main>
       <section class="image-hero" id="home" data-section="hero">
-        <div class="sr-only">
-          <h1>Zero Reset – Discipline Streak Tracker App</h1>
-          <p>
-            Zero Reset is a no-excuses discipline streak tracker app built for daily accountability,
-            habit streaks, reminders, and reset-to-zero motivation. Check in every day, protect
-            your streak, and build discipline one day at a time.
-          </p>
-        </div>
+
 
         <div class="hero-inner">
           <div class="hero-art" aria-label="Zero Reset discipline streak tracker hero image">
@@ -1141,6 +1148,11 @@
             </a>
           </div>
         </div>
+      </section>
+
+      <section class="zero-intro shell" aria-labelledby="zero-page-title">
+        <h1 id="zero-page-title">Zero Reset: Discipline Streak Tracker App</h1>
+        <p>Make your daily check-in count. Track your streak, get reminders, and build a consistent routine with Zero Reset's straightforward reset-to-zero rule.</p>
       </section>
 
       <section class="section section-tight" id="features" data-section="features">
@@ -1424,191 +1436,69 @@
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    function trackZeroResetEvent(eventName, params = {}) {
+    function trackZeroResetEvent(name, details = {}) {
       if (typeof gtag !== 'function') return;
-
-      gtag('event', eventName, {
+      gtag('event', name, {
         app_name: 'Zero Reset',
-        brand: 'Softice Innovations Labs',
-        page_path: window.location.pathname,
-        page_location: window.location.href,
-        ...params
+        page_type: 'app_landing_page',
+        ...details
       });
     }
 
-    document.querySelectorAll('.js-download').forEach((link) => {
+    // Do not prevent navigation or send artificial installation events.
+    // GA4 Enhanced Measurement may also register its standard outbound-click event.
+    document.querySelectorAll('.js-download').forEach(link => {
       link.addEventListener('click', () => {
-        const location = link.getAttribute('data-location') || 'unknown';
-
-        trackZeroResetEvent('zero_reset_google_play_click', {
-          click_location: location,
-          link_url: link.href,
-          cta_type: 'google_play_download',
-          outbound: true
-        });
-
-        trackZeroResetEvent('click', {
-          link_url: link.href,
-          link_domain: 'play.google.com',
-          outbound: true,
-          click_location: location
-        });
-
-        trackZeroResetEvent('select_content', {
-          content_type: 'download_cta',
-          item_id: 'zero_reset_' + location
+        trackZeroResetEvent('zero_reset_store_click', {
+          cta_location: link.dataset.location || 'unknown',
+          link_url: link.href
         });
       });
     });
 
-    document.querySelectorAll('.nav-links a, .footer-links a, .btn-dark').forEach((link) => {
+    document.querySelectorAll('.nav-links a, .footer-links a, .btn-dark').forEach(link => {
       link.addEventListener('click', () => {
         trackZeroResetEvent('zero_reset_navigation_click', {
-          link_text: link.textContent.trim(),
-          link_href: link.getAttribute('href') || '',
-          link_location: link.closest('footer') ? 'footer' : 'page'
-        });
-      });
-    });
-
-    document.querySelectorAll('.feature-card').forEach((card, index) => {
-      card.addEventListener('click', () => {
-        const title = card.querySelector('h3')?.textContent?.trim() || 'Unknown feature';
-
-        trackZeroResetEvent('zero_reset_feature_click', {
-          feature_name: title,
-          feature_position: index + 1
-        });
-
-        trackZeroResetEvent('select_content', {
-          content_type: 'feature_card',
-          item_id: title.toLowerCase().replaceAll(' ', '_')
+          link_text: (link.textContent || '').trim(),
+          link_url: link.href
         });
       });
     });
 
     document.querySelectorAll('details').forEach((item, index) => {
       item.addEventListener('toggle', () => {
-        if (!item.open) return;
-
-        const question = item.querySelector('summary')?.textContent?.trim() || 'Unknown FAQ';
-
-        trackZeroResetEvent('zero_reset_faq_open', {
-          faq_question: question,
-          faq_position: index + 1
-        });
-      });
-    });
-
-    const sectionObserver = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (!entry.isIntersecting) return;
-
-        const sectionId =
-          entry.target.getAttribute('id') ||
-          entry.target.getAttribute('data-section') ||
-          'unnamed_section';
-
-        trackZeroResetEvent('zero_reset_section_view', {
-          section_id: sectionId
-        });
-
-        trackZeroResetEvent('section_view', {
-          section_id: sectionId,
-          page_type: 'zero_reset_landing_page'
-        });
-
-        sectionObserver.unobserve(entry.target);
-      });
-    }, { threshold: 0.35 });
-
-    document.querySelectorAll('section').forEach((section) => {
-      sectionObserver.observe(section);
-    });
-
-    const scrollMarks = [25, 50, 75, 90, 100];
-    const sentScrollMarks = new Set();
-
-    function trackScrollDepth() {
-      const scrollTop = window.scrollY || document.documentElement.scrollTop;
-      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-
-      if (docHeight <= 0) return;
-
-      const percent = Math.round((scrollTop / docHeight) * 100);
-
-      scrollMarks.forEach((mark) => {
-        if (percent >= mark && !sentScrollMarks.has(mark)) {
-          sentScrollMarks.add(mark);
-
-          trackZeroResetEvent('zero_reset_scroll_' + mark, {
-            percent_scrolled: mark
-          });
-
-          trackZeroResetEvent('scroll_depth', {
-            percent_scrolled: mark,
-            page_type: 'zero_reset_landing_page'
+        if (item.open) {
+          trackZeroResetEvent('zero_reset_faq_open', {
+            faq_question: (item.querySelector('summary')?.textContent || '').trim(),
+            faq_position: index + 1
           });
         }
       });
+    });
+
+    if ('IntersectionObserver' in window) {
+      const seen = new Set();
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (!entry.isIntersecting) return;
+          const id = entry.target.id || entry.target.dataset.section;
+          if (!id || seen.has(id)) return;
+          seen.add(id);
+          trackZeroResetEvent('zero_reset_section_view', { section_id: id });
+          observer.unobserve(entry.target);
+        });
+      }, { threshold: 0.35 });
+      document.querySelectorAll('section[id], section[data-section]').forEach(section => observer.observe(section));
     }
 
-    window.addEventListener('scroll', trackScrollDepth, { passive: true });
-
-    [10, 30, 60, 120].forEach((seconds) => {
-      window.setTimeout(() => {
-        trackZeroResetEvent('zero_reset_engaged_' + seconds + 's', {
-          seconds: seconds
-        });
-
-        trackZeroResetEvent('engaged_time', {
-          seconds: seconds,
-          page_type: 'zero_reset_landing_page'
-        });
-      }, seconds * 1000);
-    });
-
-    let heroCtaHovered = false;
-    document.querySelectorAll('.js-download').forEach((link) => {
-      link.addEventListener('mouseenter', () => {
-        if (heroCtaHovered) return;
-        heroCtaHovered = true;
-
-        trackZeroResetEvent('zero_reset_download_cta_hover', {
-          cta_type: 'google_play_download'
-        });
-      });
-    });
-
-
-
-    document.querySelectorAll('[data-social]').forEach((link) => {
+    document.querySelectorAll('[data-social]').forEach(link => {
       link.addEventListener('click', () => {
         trackZeroResetEvent('softice_social_click', {
-          social_platform: link.getAttribute('data-social') || 'unknown',
+          social_platform: link.dataset.social || 'unknown',
           link_url: link.href,
-          source_app_page: 'Zero Reset',
-          click_location: 'footer_social'
-        });
-      });
-    });
-
-    document.querySelectorAll('a[href^="/petcare"], a[href^="/calmpulse"], a[href^="/cozy-tales"], a[href="/"]').forEach((link) => {
-      link.addEventListener('click', () => {
-        trackZeroResetEvent('softice_hub_cross_promotion_click', {
-          link_text: link.textContent.trim(),
-          link_href: link.getAttribute('href') || '',
           source_app_page: 'Zero Reset'
         });
       });
-    });
-
-    document.addEventListener('visibilitychange', () => {
-      if (document.visibilityState === 'hidden') {
-        trackZeroResetEvent('zero_reset_page_exit', {
-          exit_scroll_y: Math.round(window.scrollY || document.documentElement.scrollTop || 0)
-        });
-      }
     });
   </script>
 </body>
