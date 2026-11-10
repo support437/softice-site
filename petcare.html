@@ -11,11 +11,6 @@
     content="PetCare Log is a pet care tracker app for feeding schedules, medication reminders, vet visits, pet health records, daily care checklists, photo memories, and multi-pet organization for dogs, cats, birds, bunnies, and every pet."
   />
 
-  <meta
-    name="keywords"
-    content="PetCare Log, pet care app, pet tracker app, pet care tracker, pet health tracker, pet reminder app, pet medication reminder app, pet feeding tracker, pet feeding schedule app, pet vet visit tracker, pet medical records app, pet health records app, pet profile app, pet journal app, pet photo log app, pet daily checklist app, dog care app, cat care app, bird care app, bunny care app, pet parent app, pet care organizer, pet routine tracker, pet wellness app, pet care reminders, Android pet care app"
-  />
-
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
   <meta name="theme-color" content="#f97316" />
   <meta name="author" content="Softice Innovations Labs LLC" />
@@ -575,6 +570,8 @@
       border-radius: 16px;
       z-index: 5;
     }
+
+    .hero-main-click-area:focus-visible { outline: 3px solid #7b3200; outline-offset: 3px; }
 
     .hero-main-click-area:hover {
       background: rgba(255, 255, 255, 0.06);
@@ -1420,10 +1417,19 @@
       }
     }
 
+    .petcare-skip-link { position: absolute; top: -100px; left: 16px; z-index: 999; padding: 12px 16px; background: #fff; color: #2b160c; border-radius: 8px; }
+    .petcare-skip-link:focus { top: 12px; }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .play-button, .play-button::after { animation: none !important; transition: none !important; }
+      .screens-track { transition: none; }
+    }
   </style>
+  <!-- Legacy /petcarelog must redirect to /petcare in the HOST routing configuration, not this document. -->
 </head>
 
 <body>
+  <a class="petcare-skip-link" href="#why">Skip to main content</a>
   <main class="page">
     <nav class="nav" aria-label="Main navigation">
       <a href="/" class="brand js-hub-click" data-link-location="top_brand" aria-label="Softice Innovations Labs home">
@@ -1908,16 +1914,6 @@
         if (/Mobile|Android|iPhone|iPod/i.test(ua)) return "mobile";
         return "desktop";
       }
-
-      function getSessionId() {
-        let sessionId = sessionStorage.getItem("softice_petcare_session_id");
-        if (!sessionId) {
-          sessionId = "petcare_" + Date.now() + "_" + Math.random().toString(36).slice(2, 10);
-          sessionStorage.setItem("softice_petcare_session_id", sessionId);
-        }
-        return sessionId;
-      }
-
       function baseParams() {
         return {
           app_name: "PetCare Log",
@@ -1927,9 +1923,8 @@
           page_location: window.location.href,
           page_path: window.location.pathname,
           page_title: document.title,
-          referrer: document.referrer || "direct",
           device_type: getDeviceType(),
-          session_id: getSessionId()
+          content_group: "petcare"
         };
       }
 
@@ -1941,41 +1936,15 @@
         window.gtag("event", eventName, Object.assign({}, baseParams(), params || {}));
       }
 
-      sendEvent("petcare_page_view", {
-        app_name: "PetCare Log",
-        page_name: "petcare_landing_page",
-        page_location: window.location.href
-      });
-
-      sendEvent("petcare_hero_view", {
-        app_name: "PetCare Log",
-        page_name: "petcare_landing_page",
-        hero_type: "single_full_image"
-      });
 
       document.querySelectorAll(".js-google-play-click").forEach(function (link) {
         link.addEventListener("click", function () {
-          sendEvent("google_play_click", {
-            app_name: "PetCare Log",
-            page_name: "petcare_landing_page",
-            link_location: link.dataset.linkLocation || "unknown",
-            destination_url: link.href
-          });
 
           sendEvent("petcare_google_play_click", {
             app_name: "PetCare Log",
             link_location: link.dataset.linkLocation || "unknown",
             destination_url: link.href
           });
-
-          if (link.classList.contains("hero-main-click-area")) {
-            sendEvent("petcare_hero_image_cta_click", {
-              app_name: "PetCare Log",
-              page_name: "petcare_landing_page",
-              link_location: link.dataset.linkLocation || "hero_image_google_play",
-              destination_url: link.href
-            });
-          }
         });
       });
 
@@ -2021,13 +1990,6 @@
             link_location: link.dataset.linkLocation || "petcare_resource_hub",
             destination_url: link.href
           });
-
-          sendEvent("internal_link_click", {
-            app_name: "PetCare Log",
-            content_group: "petcare_seo_cluster",
-            link_text: (link.querySelector("h3")?.textContent || link.textContent || "").trim(),
-            destination_url: link.href
-          });
         });
       });
 
@@ -2048,11 +2010,6 @@
           sendEvent("screenshot_arrow_click", {
             app_name: "PetCare Log",
             page_name: "petcare_landing_page",
-            arrow_label: button.getAttribute("aria-label") || "unknown"
-          });
-
-          sendEvent("petcare_screenshot_interaction", {
-            app_name: "PetCare Log",
             arrow_label: button.getAttribute("aria-label") || "unknown"
           });
         });
@@ -2259,12 +2216,6 @@
               page_name: "petcare_landing_page",
               percent_scrolled: numericDepth
             });
-
-            sendEvent("petcare_scroll_" + numericDepth, {
-              app_name: "PetCare Log",
-              page_name: "petcare_landing_page",
-              percent_scrolled: numericDepth
-            });
           }
         });
       }
@@ -2273,32 +2224,8 @@
         passive: true
       });
 
-      const engagedTimes = [
-        { seconds: 15, sent: false },
-        { seconds: 30, sent: false },
-        { seconds: 60, sent: false },
-        { seconds: 120, sent: false }
-      ];
+      // GA4 provides native engagement measurement.
 
-      engagedTimes.forEach(function (item) {
-        window.setTimeout(function () {
-          if (!item.sent) {
-            item.sent = true;
-
-            sendEvent("engaged_time", {
-              app_name: "PetCare Log",
-              page_name: "petcare_landing_page",
-              seconds: item.seconds
-            });
-
-            sendEvent("petcare_engaged_" + item.seconds + "s", {
-              app_name: "PetCare Log",
-              page_name: "petcare_landing_page",
-              seconds: item.seconds
-            });
-          }
-        }, item.seconds * 1000);
-      });
     })();
   </script>
 </body>
