@@ -94,6 +94,9 @@
     a { color: inherit; }
     img { max-width: 100%; display: block; }
 
+    .skip-link { position: absolute; left: 12px; top: -80px; z-index: 100; padding: 12px 18px; background: #ffca4b; color: #140933; border-radius: 10px; font-weight: 800; }
+    .skip-link:focus { top: 12px; }
+
     .visually-hidden {
       position: absolute;
       width: 1px;
@@ -1110,7 +1113,8 @@
   </style>
 </head>
 <body>
-<!-- Deployment: verify internal story, guide, privacy and terms routes at the server before publishing. -->
+<a class="skip-link" href="#main-content">Skip to main content</a>
+<!-- IMPORTANT: This HTML does not configure server redirects. Verify each internal route serves unique content or returns a true 404. Configure /cozy- -> /cozy-tales as a 301 on the hosting platform. -->
 <a aria-label="Get Cozy Tales on Google Play" class="floating-play" data-track="play_click" data-track-location="floating_google_play" data-track-title="Floating Google Play" href="https://play.google.com/store/apps/details?id=com.softiceinnovationslabs.bedtimestorybooks">
 <span aria-hidden="true" class="play-icon">
 <svg aria-hidden="true" role="img" viewbox="0 0 64 64">
@@ -1135,7 +1139,7 @@
 <a class="nav-cta" data-track="play_click" data-track-location="header_cta" data-track-title="Get the App" href="https://play.google.com/store/apps/details?id=com.softiceinnovationslabs.bedtimestorybooks">Get the App</a>
 </nav>
 </header>
-<main>
+<main id="main-content">
 <section class="hero" data-section-track="cozy_hero" id="about">
 <picture>
 <source height="1400" media="(max-width: 760px)" srcset="/images/cozy-tales/cozy-tales-hero-mobile.webp" width="900"/>
@@ -1224,7 +1228,7 @@
 <p class="section-intro">
         Explore calming bedtime stories for kids, toddlers, and preschoolers, including animal friends, magical adventures, goodnight stories, and peaceful read-aloud stories made for cozy nighttime routines.
       </p>
-<div aria-label="Story categories" class="story-filters">
+<div aria-label="Story themes (descriptive labels, not filters)" class="story-filters">
 <span class="filter-chip">All Stories</span>
 <span class="filter-chip">Animal Friends</span>
 <span class="filter-chip">Magical Adventures</span>
