@@ -1110,7 +1110,14 @@
         transition-duration: 0.001ms !important;
       }
     }
-  </style>
+  
+/* Published story cards: no placeholder destinations */
+.story-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
+.published-story { min-height:180px; padding:28px; display:flex; flex-direction:column; justify-content:center; background:linear-gradient(135deg,#29106e,#120a43); }
+.published-story strong { padding:0; border:0; background:transparent; font-size:22px; line-height:1.2; }
+.published-story p { color:#e7ddff; line-height:1.55; margin:12px 0 0; }
+@media(max-width:760px) { .story-grid { grid-template-columns:1fr; } .published-story { min-height:145px; padding:22px; } }
+</style>
 </head>
 <body>
 <a class="skip-link" href="#main-content">Skip to main content</a>
@@ -1225,39 +1232,9 @@
 </section>
 <section class="section-card shell stories" data-section-track="cozy_story_collection" id="stories">
 <h2>Explore Our Story Collection</h2>
-<p class="section-intro">
-        Explore calming bedtime stories for kids, toddlers, and preschoolers, including animal friends, magical adventures, goodnight stories, and peaceful read-aloud stories made for cozy nighttime routines.
-      </p>
-<div aria-label="Story themes (descriptive labels, not filters)" class="story-filters">
-<span class="filter-chip">All Stories</span>
-<span class="filter-chip">Animal Friends</span>
-<span class="filter-chip">Magical Adventures</span>
-<span class="filter-chip">Goodnight Stories</span>
-<span class="filter-chip">Friendship</span>
-<span class="filter-chip">Nature</span>
-</div>
-<div class="story-grid">
-<a class="story-card" data-track="story_click" data-track-location="story_collection" data-track-title="Bunny's Garden Picnic" href="/bunnys-garden-picnic">
-<img alt="Bunny's Garden Picnic bedtime story card" decoding="async" height="760" loading="lazy" src="/images/cozy-tales/story-card-bunnys-garden-picnic.webp" width="600"/>
-<strong>Bunny’s Garden Picnic</strong>
-</a>
-<a class="story-card" data-track="story_click" data-track-location="story_collection" data-track-title="Luna the Little Owl" href="/owl-and-the-moon">
-<img alt="Luna the Little Owl bedtime story card" decoding="async" height="760" loading="lazy" src="/images/cozy-tales/story-card-luna-little-owl.webp" width="600"/>
-<strong>Luna the Little Owl</strong>
-</a>
-<a class="story-card" data-track="story_click" data-track-location="story_collection" data-track-title="The Sleepy Star" href="/the-sleepy-star">
-<img alt="The Sleepy Star bedtime story card" decoding="async" height="760" loading="lazy" src="/images/cozy-tales/story-card-sleepy-star.webp" width="600"/>
-<strong>The Sleepy Star</strong>
-</a>
-<a class="story-card" data-track="story_click" data-track-location="story_collection" data-track-title="The Brave Little Fox" href="/little-fox-big-adventures">
-<img alt="The Brave Little Fox bedtime story card" decoding="async" height="760" loading="lazy" src="/images/cozy-tales/story-card-brave-little-fox.webp" width="600"/>
-<strong>The Brave Little Fox</strong>
-</a>
-<a class="story-card" data-track="story_click" data-track-location="story_collection" data-track-title="Dreamland Adventures" href="/dreamland-adventures">
-<img alt="Dreamland Adventures bedtime story card" decoding="async" height="760" loading="lazy" src="/images/cozy-tales/story-card-dreamland-adventures.webp" width="600"/>
-<strong>Dreamland Adventures</strong>
-</a>
-</div>
+<p class="section-intro">Explore our published Cozy Tales stories, with gentle adventures and peaceful bedtime moments. New stories will be added as their pages are released.</p>
+
+<div class="story-grid"><a class="story-card published-story" data-track="story_click" data-track-location="story_collection" data-track-title="Monkey Milo’s Big Sea Adventure" href="/monkey-milos-big-sea-adventure"><strong>Monkey Milo’s Big Sea Adventure</strong><p>A gentle adventure across sparkling seas.</p></a><a class="story-card published-story" data-track="story_click" data-track-location="story_collection" data-track-title="The Cheerful Chick’s Sunny Dream" href="/the-cheerful-chicks-sunny-dream"><strong>The Cheerful Chick’s Sunny Dream</strong><p>A warm story of sunshine, friendship, and dreams.</p></a></div>
 </section>
 <a aria-label="Try 2 free Cozy Tales stories on Google Play" class="free-section shell" data-section-track="cozy_free_stories" data-track="play_click" data-track-location="free_stories_image" data-track-title="Try 2 Free Stories Image" href="https://play.google.com/store/apps/details?id=com.softiceinnovationslabs.bedtimestorybooks">
 <img alt="Try 2 free Cozy Tales bedtime stories with Bunny's Garden Picnic preview" decoding="async" height="800" loading="lazy" src="/images/cozy-tales/cozy-tales-free-stories-section.webp" width="1400"/>
@@ -1333,43 +1310,7 @@
 <a class="mini-link" data-track="seo_link_click" data-track-location="bedtime_guides" data-track-title="Short Bedtime Stories for Kids" href="/short-bedtime-stories-for-kids">Short Bedtime Stories for Kids</a>
 </div>
 </section>
-<section class="guides shell" data-section-track="cozy_more_stories">
-<h2>More Cozy Tales Stories</h2>
-<p class="section-intro">
-        Browse more Cozy Tales story pages, animal bedtime stories, magical sleep stories, and gentle nighttime adventures designed for calm evenings.
-      </p>
-<div aria-label="More Cozy Tales story links" class="all-links">
-<a class="mini-link" data-track="story_link_click" data-track-title="Monkey Milo's Big Sea Adventure" href="/monkey-milos-big-sea-adventure">Monkey Milo’s Big Sea Adventure</a>
-<a class="mini-link" data-track="story_link_click" data-track-title="The Cheerful Chick's Sunny Dream" href="/the-cheerful-chicks-sunny-dream">The Cheerful Chick’s Sunny Dream</a>
-<a class="mini-link" data-track="story_link_click" data-track-title="Zara the Zippy Zebra" href="/zara-the-zippy-zebra">Zara the Zippy Zebra</a>
-<a class="mini-link" data-track="story_link_click" data-track-title="Timmy the Dreamy Tiger" href="/timmy-the-dreamy-tiger">Timmy the Dreamy Tiger</a>
-<a class="mini-link" data-track="story_link_click" data-track-title="The Sleepy Dinosaur" href="/the-sleepy-dinosaur">The Sleepy Dinosaur</a>
-<a class="mini-link" data-track="story_link_click" data-track-title="The Friendly Fish" href="/the-friendly-fish">The Friendly Fish</a>
-<a class="mini-link" data-track="story_link_click" data-track-title="Little Lion's Adventure" href="/little-lions-adventure">Little Lion’s Adventure</a>
-<a class="mini-link" data-track="story_link_click" data-track-title="Monkey Milo's Big Adventures" href="/monkey-milos-big-adventures">Monkey Milo’s Big Adventures</a>
-<a class="mini-link" data-track="story_link_click" data-track-title="Bear Big Adventure" href="/bear-big-adventure">Bear Big Adventure</a>
-<a class="mini-link" data-track="story_link_click" data-track-title="Bunny's Garden Picnic" href="/bunnys-garden-picnic">Bunny’s Garden Picnic</a>
-<a class="mini-link" data-track="story_link_click" data-track-title="Cuddly Cow's Starry Night" href="/cuddly-cows-starry-night">Cuddly Cow’s Starry Night</a>
-<a class="mini-link" data-track="story_link_click" data-track-title="The Sleepy Dinosaur #2" href="/the-sleepy-dinosaur-2">The Sleepy Dinosaur #2</a>
-<a class="mini-link" data-track="story_link_click" data-track-title="The Little Duck's Rainy Day" href="/little-ducks-rainy-day">The Little Duck’s Rainy Day</a>
-<a class="mini-link" data-track="story_link_click" data-track-title="Ellie's Sweet Dreams" href="/ellies-sweet-dreams">Ellie’s Sweet Dreams</a>
-<a class="mini-link" data-track="story_link_click" data-track-title="Little Fox Big Adventures" href="/little-fox-big-adventures">Little Fox Big Adventures</a>
-<a class="mini-link" data-track="story_link_click" data-track-title="Giraffe's Tall Tales" href="/giraffes-tall-tales">Giraffe’s Tall Tales</a>
-<a class="mini-link" data-track="story_link_click" data-track-title="Koala's Moonlit Cuddle" href="/koalas-moonlit-cuddle">Koala’s Moonlit Cuddle</a>
-<a class="mini-link" data-track="story_link_click" data-track-title="The Little Lamb's Adventures" href="/little-lambs-adventures">The Little Lamb’s Adventures</a>
-<a class="mini-link" data-track="story_link_click" data-track-title="Little Lion's Adventure #2" href="/little-lions-adventure-2">Little Lion’s Adventure #2</a>
-<a class="mini-link" data-track="story_link_click" data-track-title="Monkey Milo's Big Adventure" href="/monkey-milos-big-adventure">Monkey Milo’s Big Adventure</a>
-<a class="mini-link" data-track="story_link_click" data-track-title="Owl and the Moon" href="/owl-and-the-moon">Owl and the Moon</a>
-<a class="mini-link" data-track="story_link_click" data-track-title="Panda's Cozy Bamboo Nap" href="/pandas-cozy-bamboo-nap">Panda’s Cozy Bamboo Nap</a>
-<a class="mini-link" data-track="story_link_click" data-track-title="The Little Penguin" href="/the-little-penguin">The Little Penguin</a>
-<a class="mini-link" data-track="story_link_click" data-track-title="The Playful Puppy's Night Adventure" href="/the-playful-puppys-night-adventure">The Playful Puppy’s Night Adventure</a>
-<a class="mini-link" data-track="story_link_click" data-track-title="The Sleepy Kitten" href="/the-sleepy-kitten">The Sleepy Kitten</a>
-<a class="mini-link" data-track="story_link_click" data-track-title="The Little Turtle's Moon Swim" href="/the-little-turtles-moon-swim">The Little Turtle’s Moon Swim</a>
-<a class="mini-link" data-track="story_link_click" data-track-title="Magical Unicorn Dreams" href="/magical-unicorn-dreams">Magical Unicorn Dreams</a>
-<a class="mini-link" data-track="story_link_click" data-track-title="The Playful Puppy's Snow Adventure" href="/the-playful-puppys-snow-adventure">The Playful Puppy’s Snow Adventure</a>
-<a class="mini-link" data-track="story_link_click" data-track-title="Monkey Milo's Big Adventures #2" href="/monkey-milos-big-adventures-2">Monkey Milo’s Big Adventures #2</a>
-</div>
-</section>
+
 <section class="guides shell" data-section-track="cozy_extra_seo_resources">
 <h2>More Bedtime Story Resources</h2>
 <p class="section-intro">
